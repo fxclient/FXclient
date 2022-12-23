@@ -3,11 +3,25 @@
     <head>
         <meta charset="utf-8"/>
         <title>FXclient.cf</title>
-        <meta name="description" content="Modified Version - Territorial.io - FX Client">
+        <meta name="description" content="Modified Version of Territorial.io - FX Client">
         <meta name="keywords" content="territorial.io,territory games,territorial io,map games,conquest games,conquest game,david tschacher,territorial,territory game,io game,io games,territory.io,territory io,territory games io">
         <meta name="author" content="MohsenEMX, orlemley1, David Tschacher">
-        <meta property="og:image" content="og.jpg"/>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <meta name="og:image" content="https://fxclient.cf/og.png"/>
+
+
+        <meta property="og:url" content="https://fxclient.cf">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="FXclient.cf">
+        <meta property="og:description" content="Modified Version - Territorial.io - FX Client">
+        <meta property="og:image" content="https://fxclient.cf/og.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="FXclient.cf">
+        <meta name="twitter:description" content="Modified Version - Territorial.io - FX Client">
+        <meta name="twitter:image" content="https://fxclient.cf/og.png">
+        <meta itemprop="name" content="FXclient.cf">
+        <meta itemprop="description" content="Modified Version - Territorial.io - FX Client">
+        <meta itemprop="image" content="https://fxclient.cf/og.png">
         <style>
             html, body {
                 overflow: hidden;
@@ -27,6 +41,7 @@
     <body onload="aiCommand746(0);">
         <canvas id="canvasA" width="128" height="128"></canvas>
         <script>
+            const fx_version = '0.4.1';
             (function() {
                 function a() {
                     if (b)
@@ -145,7 +160,7 @@
                 }
                 function aB() {
                     //b ? window.webkit.messageHandlers.iosCommandA.postMessage("show ad 1800000") : 12 <= d && e.presentAd(18E5)
-                    console.log('Game tried to display an ad on iOS devices, but we prevented it.');
+                    console.log('Game tried to display an ad, but we prevented it.');
                 }
                 function aC() {
                     b ? location.reload() : 7 <= d ? e.setState(5) : location.reload()
@@ -8572,7 +8587,7 @@
                 function a1o() {
                     a1k = 2;
                     a1e = 4262;
-                    a1d = "0.3.9   23 December 2022";
+                    a1d = fx_version +"   23 December 2022";
                     jq();
                     d8();
                     a1n = !0;
@@ -8580,7 +8595,7 @@
                     12 <= d && e.prepareAd("6685097465");
                     b = !1;
                     window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.iosCommandA && (b = !0,
-                    window.webkit.messageHandlers.iosCommandA.postMessage("prepare ad 5907904081"),
+                    // window.webkit.messageHandlers.iosCommandA.postMessage("prepare ad 5907904081"),
                     c = "undefined" !== typeof mwIOSdataX ? mwIOSdataX : {
                         username: "[FX] iOS User " + Math.floor(1E3 * Math.random()),
                         id: Math.floor(1 + Math.random() * (Math.pow(2, 30) - 1)),
