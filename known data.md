@@ -9,17 +9,26 @@ Line 34: Android User usernames with random 1-3 digit number
 Line 38: Computer Player usernames with random 1-3 digit number
 Line 590: Bot difficulty names
 Line 2317: About messages in chat
+Line 2338: Battle royale win announcement text
+Line 2360: Team win announcement text
+Line 2382: Clan game/team contest points announcement text
+Line 2386-2388: Non agression pact text
+Line 2393: "You" text in ordering someone to attack
 Line 2458: About Cookies Policy stuff?
+Line 2590: Contest timer
+Line 3136: "YOU CONQUERED", "YOU WERE CONQUERED BY", "THE GAME WAS WON BY", "MAP:" text
 Line 3739: Events stuff
 Line 4427: Right-SideBar Info
 Line 5879: Errors and stuff
 Line 6649: Displaying number of players?
+Line 11154: Important game notifications
 
 
-Line 6997: Maps and stuff 
+Line 6997: Visual Assets
 
 ## Variables
 dl is a variable used for bot difficulty names
+F is an array ["YOU CONQUERED", "YOU WERE CONQUERED BY", "THE GAME WAS WON BY", "MAP:"] at line 3136
 
 ## Functions
 
