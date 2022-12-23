@@ -18,10 +18,12 @@ Line 2458: About Cookies Policy stuff?
 Line 2590: Contest timer
 Line 3136: "YOU CONQUERED", "YOU WERE CONQUERED BY", "THE GAME WAS WON BY", "MAP:" text
 Line 3739: Events stuff
-Line 4427: Right-SideBar Info
+Line 4427: Right-SideBar Info - and values
 Line 5879: Errors and stuff
 Line 6649: Displaying number of players?
 Line 11154: Important game notifications
+
+Line 7515: Custom Map stuff
 
 
 Line 6997: Visual Assets
@@ -32,4 +34,4 @@ F is an array ["YOU CONQUERED", "YOU WERE CONQUERED BY", "THE GAME WAS WON BY", 
 
 ## Functions
 
-1. g is a function that is declared 50 times
+1. g is a function that is declared 50 times and used many times
