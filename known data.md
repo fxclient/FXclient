@@ -29,9 +29,10 @@ Line 7515: Custom Map stuff
 Line 6997: Visual Assets
 
 ## Variables
-dl is a variable used for bot difficulty names
-F is an array ["YOU CONQUERED", "YOU WERE CONQUERED BY", "THE GAME WAS WON BY", "MAP:"] at line 3136
-
+1. dl is a variable used for bot difficulty names
+2. F is an array ["YOU CONQUERED", "YOU WERE CONQUERED BY", "THE GAME WAS WON BY", "MAP:"] at line 3136
+3. gE is an global array containing player names.
+4. jm.xd is lobby number
 ## Functions
 
 1. g is a function that is declared 50 times and used many times

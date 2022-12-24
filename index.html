@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-Q96FGB3L05');
     </script>
         <meta charset="utf-8"/>
@@ -50,7 +49,21 @@
     <body onload="aiCommand746(0);">
         <canvas id="canvasA" width="128" height="128"></canvas>
         <script>
-            const fx_version = '0.4.4';
+            const fx_version = '0.4.6'; // FX Client Version
+            const fx_update = 'Dec 24'; // FX Client Last Updated
+
+            const ter_version = '1.82.9'; // Territorial Version
+            const ter_update = 'December 2'; // Territorial Last Updated 
+
+
+            var username_i0 = ''; // alternative username variable
+            if (localStorage.getItem("win_count") == undefined || localStorage.getItem("win_count") == null)  {
+                var wins_counter = 0;
+                console.log('Couldn\'t find a saved win data. creating one...');
+            } else if (localStorage.getItem("win_count") != undefined || localStorage.getItem("win_count") != null) {
+                var wins_counter = localStorage.getItem("win_count");
+                console.log('Loaded Number of Wins from Saved Data: ' + wins_counter);
+            }
             (function() {
                 function a() {
                     if (b)
@@ -59,10 +72,12 @@
                         var g = e.loadString(20);
                         "" === g && (g = "[FX] " + "Android User " + Math.floor(1E3 * Math.random()),
                         e.saveString(20, g))
+                        username_i0 = g;
                     } else
                         5 <= d ? (g = e.loadString(0),
                         "" === g && (g = "[FX] " + "Player " + Math.floor(1E3 * Math.random()),
                         e.saveString(0, g))) : g = f.g(0);
+                        username_i0 = g;
                     return g
                 }
                 function h() {
@@ -1543,14 +1558,11 @@
                                 (k = g === aw) ? e5.fh(g, 2) : e5.fh(1 - aw, 3);
                                 ia.i2(g)
                             } else
-                                dA ? (g = eP.ib(),
-                                k = dW.dX[aw] === g,
-                                9 === dr ? x = k ? ei[0] : 512 : (g = dW.ic(dW.id[g]),
-                                x = g[0],
-                                512 !== x && e5.ie(g[1])),
-                                e5.ig(k)) : (x = ei[0],
-                                k = x === aw,
-                                e5.ih(x));
+                                dA ? (
+                                    g = eP.ib(), k = dW.dX[aw] === g,
+                                    9 === dr ? x = k ? ei[0] : 512 : (g = dW.ic(dW.id[g]), x = g[0], 512 !== x && e5.ie(g[1])),
+                                    e5.ig(k)
+                                ) : (x = ei[0], k = x === aw, e5.ih(x));
                             dt || ii.ij(ik(), x);
                             eS.show(k, !1);
                             e5.iq(!0);
@@ -2339,21 +2351,18 @@
                     }
                     ;
                     this.fh = function(G, M) {
-                        0 === M ? (b0.b1[G < cq ? 4 : 3]++,
-                        c2.cQ(G, 0),
-                        A(q ? 100 : 160, "You conquered " + gE[G] + ".", 0, G, "rgb(10,220,10)", hq, -1, !1)) : 1 === M ? (F(50, b8),
-                        c2.cQ(G, 1),
-                        A(360, "You were conquered by " + gE[G] + ".", 0, G, "rgb(255,40,40)", hq, -1, !0),
-                        eR.gc(G, 2700, !0, 0)) : 2 === M ? (c2.cQ(G, 2),
-                        A(0, "Congratulations! You won the game.", 0, G, "rgb(10,255,255)", hq, -1, !0),
-                        eR.gc(G, 2700, !0, 0)) : 3 === M ? (c2.cQ(G, 2),
-                        A(0, gE[G] + " won the game.", 0, G, cK, hq, -1, !0),
-                        eR.gc(G, 2700, !0, 0)) : 4 === M ? (ip--,
-                        io--,
-                        this.mb(1, G, G)) : 5 === M ? 2 !== fP[G] && hm.l9(aw) && (B(1, 5),
-                        e6.md(G) ? A(180, gE[G] + " has broken the non-aggression pact and invades you!", 1, G, C(255, 200, 180), hq, -1, !0) : A(180, gE[G] + " is attacking you!", 1, G, "rgb(255,70,10)", hq, -1, !0)) : 18 === M ? A(255, "Choose your start position!", 18, 0, cK, hq, -1, !1) : 21 === M ? A(220, "You surrendered!", M, 0, "rgb(255,40,40)", hq, -1, !1) : 22 === M && this.mb(2, G, G)
-                    }
-                    ;
+                        console.log('Username = ' + username_i0);
+                        0 === M ? (b0.b1[G < cq ? 4 : 3]++, c2.cQ(G, 0), A(q ? 100 : 160, "You conquered " + gE[G] + ".", 0, G, "rgb(10,220,10)", hq, -1, !1)) :
+                        1 === M ? (F(50, b8), c2.cQ(G, 1), A(360, "You were conquered by " + gE[G] + ".", 0, G, "rgb(255,40,40)", hq, -1, !0), eR.gc(G, 2700, !0, 0)) :
+                        2 === M ? (c2.cQ(G, 2), A(0, "Congratulations! You won the game.", 0, G, "rgb(10,255,255)", hq, -1, !0), // i don't think this is the right part for win counter
+                        eR.gc(G, 2700, !0, 0)) :
+                        3 === M ? (c2.cQ(G, 2), A(0, gE[G] + " won the game.", 0, G, cK, hq, -1, !0), eR.gc(G, 2700, !0, 0)) :
+                        4 === M ? (ip--, io--, this.mb(1, G, G)) :
+                        5 === M ? 2 !== fP[G] && hm.l9(aw) && (B(1, 5), e6.md(G) ? A(180, gE[G] + " has broken the non-aggression pact and invades you!", 1, G, C(255, 200, 180), hq, -1, !0) : A(180, gE[G] + " is attacking you!", 1, G, "rgb(255,70,10)", hq, -1, !0)) :
+                        18 === M ? A(255, "Choose your start position!", 18, 0, cK, hq, -1, !1) :
+                        21 === M ? A(220, "You surrendered!", M, 0, "rgb(255,40,40)", hq, -1, !1) :
+                        22 === M && this.mb(2, G, G)
+                    };
                     this.mf = function(G) {
                         A(200, "Error [" + G + "]", 94, 0, cK, mh, -1, !1)
                     }
@@ -2361,7 +2370,15 @@
                     this.ih = function(G) {
                         c2.cQ(G, 2);
                         100 > cq ? A(0, gE[G] + " won the game.", 3, G, cK, hq, -1, !0) : A(0, gE[G] + " has been immortalized!", 3, G, cK, hq, -1, !0);
+                        // So we copy paste it ?
                         eR.gc(G, 2700, !0, 0)
+                        if (aw === G) {
+                            console.log(`${gE[aw]} Won the Game!`);
+                            wins_counter++; // Win counter
+                            A(0, "Your Current Win Count is Now " + wins_counter + " !", 3, aw, cK, hq, -1, true)
+                            window.localStorage.setItem("win_count", wins_counter);
+                            // console.log('Local Storage win count:' + localStorage.getItem("win_count"));
+                        }
                     }
                     ;
                     this.mi = function(G, M, Q) {
@@ -2379,6 +2396,7 @@
                             }
                     }
                     ;
+                    // Zombie mode
                     this.ig = function(G) {
                         var M = dW.id[eP.mp()];
                         G ? (9 === dr ? (G = "The Resistance defeated the virus.",
@@ -2390,6 +2408,7 @@
                         eR.gl(2700)
                     }
                     ;
+                    // 1v1
                     this.i1 = function(G) {
                         A(300, G[0].name + " [" + ia.i7(G[0].i4) + "] vs " + G[1].name + " [" + ia.i7(G[1].i4) + "]", 65, 0, gD, "rgba(100,255,255,0.75)", -1, !1)
                     }
@@ -2411,8 +2430,7 @@
                         0 === M ? F(50, G) ? (A(128, "You signed a non-aggression pact with " + gE[G] + ".", 52, G, C(180, 255, 180), hq, -1, !0),
                         e6.mv(G, 2, 255)) : A(384, "You asked " + gE[G] + " to sign a non-aggression pact.", 51, G, C(210, 210, 255), hq, -1, !0) : F(51, G) ? (A(128, gE[G] + " accepted the non-aggression pact.", 52, G, cK, "rgba(60,120,10,0.9)", -1, !0),
                         e6.mv(G, 2, 255)) : (A(384, gE[G] + " requests a non-aggression pact.", 50, G, cK, "rgba(90,90,90,0.9)", -1, !0),
-                        e6.mv(G, 2, 96))
-                    }
+                        e6.mv(G, 2, 96))                    }
                     ;
                     this.lK = function(G, M) {
                         var Q = "You ", R;
@@ -6019,6 +6037,7 @@
                         });
                         var t = k.length - 1;
                         k[t].input.setAttribute("type", "text");
+                        k[t].input.setAttribute("id", "userna");
                         k[t].input.value = "";
                         k[t].input.style.textAlign = 0 === t ? "center" : "left";
                         k[t].input.style.backgroundColor = x;
@@ -6028,6 +6047,7 @@
                         k[t].input.readOnly = 3 === t;
                         k[t].input.addEventListener("input", function() {
                             0 === t && jX.vv()
+                            username_i0 = document.getElementById('userna').value;
                         })
                     }
                     var k, x, l;
@@ -6422,6 +6442,8 @@
                                     cH.textAlign = mZ;
                                     cH.fillStyle = oU;
                                     cH.fillText(E[V].joined.toString(), Math.floor(ba + .07 * n), Math.floor(ca + .9 * n));
+                                    console.log('ba value: ' + ba + 'n: ' + n + 'ca:' + ca);
+                                    console.log(E[V]);
                                     256 >= E[V].wu && (cH.textAlign = cJ,
                                     cH.fillStyle = oD,
                                     cH.fillText(E[V].wu.toString(), Math.floor(ba + .5 * n), Math.floor(ca + .9 * n)));
@@ -8614,7 +8636,8 @@
                 function a1o() {
                     a1k = 2;
                     a1e = 4262;
-                    a1d = fx_version +"   23 December 2022";
+                    a1d = ter_version + ter_update;
+                    
                     jq();
                     d8();
                     a1n = !0;
@@ -9630,11 +9653,18 @@
                             cm: 0
                         });
                         z.push({
-                            name: a1d,
+                            name: ter_version + ' ' + ter_update,
                             id: 10,
                             f7: 90,
                             mx: 0,
                             cm: 0
+                        });
+                        z.push({
+                            name: 'FX Client v' + fx_version + ' ' + fx_update,
+                            id: 16,
+                            f7: 0,
+                            mx: 0,
+                            cm: 70
                         });
                         if (b)
                             this.a10 = c.freeSpawn,
@@ -9707,18 +9737,31 @@
                         }
                     }
                     ;
+                    // render "More" menu
                     this.cG = function() {
                         var y;
                         if (!(7 <= aJ.pR())) {
                             var A = x();
                             cH.textAlign = cJ;
                             cH.textBaseline = cI;
+                            // Render "More" button
                             l(A.f3, A.f4, A.hw, A.nI, z[0].f7, z[0].mx, z[0].cm, 0 === t, z[0].name, .6);
+                            // render win count
+                            //l(A.f3, A.f4, A.hw, A.nI, z[0].f7, z[0].mx, z[0].cm, 0 === t, "test", .6);
+                            //cH.fillText(K, Math.floor(y + B / 2), Math.floor(A + C / 2 + .1 * D))
+                            //function l(y, A, B, C, F, E, H, J, K, D) {
+                            //cH.fillText("test", Math.floor(A.f3 + A.f4 / 2), Math.floor(A.f4 + A.nI / 2 + .1 * .6));
+                            //cH.textAlign = "right";
+                            cH.font = bt + Math.floor(A.nI*0.4) + bu;
+                            if (!n) cH.fillText("Win count: " + wins_counter , Math.floor(A.f3 + A.hw / 2), Math.floor((A.f4 + A.nI / 2)*2.1));
+                            //cH.textAlign = cJ;
+                            // If menu is open render the buttons inside
                             if (n) {
                                 var B = z.length;
                                 for (y = 1; y < B; y++)
-                                    l(A.f5, A.f4 + y * A.nI - 2 * y, A.hx, A.nI, z[y].f7, z[y].mx, z[y].cm, t === y, z[y].name, y === B - 1 ? .32 : .45)
+                                    l(A.f5, A.f4 + y * A.nI - 2 * y, A.hx, A.nI, z[y].f7, z[y].mx, z[y].cm, t === y, z[y].name, (y === B-1 || y === B-2) ? .32 : .45)
                             }
+                            
                         }
                     }
                 }
