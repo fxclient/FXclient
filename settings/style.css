@@ -28,11 +28,19 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
     border-radius: 10px;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: 0.3s;
 }
 button:hover {
     color: #fff;
     background-color: #000;
     opacity: 1;
+}
+.gback {
+    padding: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    border-radius: 6px;
+    opacity: 0.9;
+    transition: 0.3s;
 }

@@ -49,7 +49,7 @@
     <body onload="aiCommand746(0);">
         <canvas id="canvasA" width="128" height="128"></canvas>
         <script>
-            const fx_version = '0.4.6'; // FX Client Version
+            const fx_version = '0.4.7'; // FX Client Version
             const fx_update = 'Dec 24'; // FX Client Last Updated
 
             const ter_version = '1.82.9'; // Territorial Version
@@ -2351,7 +2351,7 @@
                     }
                     ;
                     this.fh = function(G, M) {
-                        console.log('Username = ' + username_i0);
+                        // console.log('Username = ' + username_i0);
                         0 === M ? (b0.b1[G < cq ? 4 : 3]++, c2.cQ(G, 0), A(q ? 100 : 160, "You conquered " + gE[G] + ".", 0, G, "rgb(10,220,10)", hq, -1, !1)) :
                         1 === M ? (F(50, b8), c2.cQ(G, 1), A(360, "You were conquered by " + gE[G] + ".", 0, G, "rgb(255,40,40)", hq, -1, !0), eR.gc(G, 2700, !0, 0)) :
                         2 === M ? (c2.cQ(G, 2), A(0, "Congratulations! You won the game.", 0, G, "rgb(10,255,255)", hq, -1, !0), // i don't think this is the right part for win counter
@@ -2370,7 +2370,6 @@
                     this.ih = function(G) {
                         c2.cQ(G, 2);
                         100 > cq ? A(0, gE[G] + " won the game.", 3, G, cK, hq, -1, !0) : A(0, gE[G] + " has been immortalized!", 3, G, cK, hq, -1, !0);
-                        // So we copy paste it ?
                         eR.gc(G, 2700, !0, 0)
                         if (aw === G) {
                             console.log(`${gE[aw]} Won the Game!`);
@@ -4451,7 +4450,8 @@
                         5 === P ? e7.n9(L[P] / 100, 2) :
                         P === 6 ? eL.gF(L[P]) :
                         P === 7 ? e7.s8(L[7]) : 
-                        P === 8 ? Math.floor(bU[aw]*150) : (Math.floor((bU[aw]*100 / ax[aw]) * 100) + "%") // max amount of troops / current amount of troops
+                        P === 8 ? Math.floor(bU[aw]*150) : (Math.floor((ax[aw] / (bU[aw]*150)) * 100) + "%") // max amount of troops / current amount of troops
+                        
                     }
                     
                     function x(P) {
@@ -6442,8 +6442,6 @@
                                     cH.textAlign = mZ;
                                     cH.fillStyle = oU;
                                     cH.fillText(E[V].joined.toString(), Math.floor(ba + .07 * n), Math.floor(ca + .9 * n));
-                                    console.log('ba value: ' + ba + 'n: ' + n + 'ca:' + ca);
-                                    console.log(E[V]);
                                     256 >= E[V].wu && (cH.textAlign = cJ,
                                     cH.fillStyle = oD,
                                     cH.fillText(E[V].wu.toString(), Math.floor(ba + .5 * n), Math.floor(ca + .9 * n)));
