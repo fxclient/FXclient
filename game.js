@@ -15,7 +15,7 @@ if (localStorage.getItem("win_count") == undefined || localStorage.getItem("win_
 }
 
 var settings = {
-    "fontName": "Arial"
+    "fontName": "Trebuchet MS"
 };
 var settingsWindowOpen = false;
 var settingsManager = new (function() {
