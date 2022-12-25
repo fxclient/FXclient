@@ -30,6 +30,7 @@
         <meta itemprop="name" content="FXclient.cf">
         <meta itemprop="description" content="Modified Version of Territorial.io - FX Client">
         <meta itemprop="image" content="https://fxclient.cf/og.png">
+        <link rel="stylesheet" href="assets/astyle.css">
         <style>
             html, body {
                 overflow: hidden;
@@ -49,11 +50,11 @@
     <body onload="aiCommand746(0);">
         <canvas id="canvasA" width="128" height="128"></canvas>
         <script>
-            const fx_version = '0.4.7'; // FX Client Version
-            const fx_update = 'Dec 24'; // FX Client Last Updated
+            const fx_version = '0.4.8'; // FX Client Version
+            const fx_update = 'Dec 25'; // FX Client Last Updated
 
             const ter_version = '1.82.9'; // Territorial Version
-            const ter_update = 'December 2'; // Territorial Last Updated 
+            const ter_update = 'December 2 2022'; // Territorial Last Updated 
 
 
             var username_i0 = ''; // alternative username variable
@@ -2831,7 +2832,7 @@
                         cH.setTransform(1, 0, 0, 1, 0, 0)
                     }
                 }
-                var gD = "rgb(0,0,0)", o6 = "rgba(0,0,0,0.7)", o7 = "rgba(0,0,0,0.5)", ls = "rgba(0,0,0,0.5)", hq = "rgba(0,0,0,0.75)", o8 = "rgba(0,0,0,0.85)", o9 = "rgba(0,96,96,0.75)", oA = "rgb(255,255,255)", m6 = "rgb(128,128,128)", oB = "rgb(30,255,30)", oC = "rgb(0,200,0)", oD = "rgb(0,255,0)", oE = "rgba(0,255,0,0.6)", oF = "rgba(0,255,0,0.5)", oG = "rgba(0,200,0,0.5)", mR = "rgba(0,100,0,0.75)", oH = "rgba(0,40,0,0.8)", oI = "rgb(128,255,128)", oJ = "rgba(255,255,150,0.2)", oK = "rgba(0,255,0,0.3)", lt = "rgba(255,255,255,0.3)", oL = "rgba(0,40,90,0.75)", oM = "rgba(220,0,0,0.6)", oN = "rgba(255,100,100,0.8)", mh = "rgba(100,0,0,0.85)", oO = "rgba(60,0,0,0.85)", oP = "rgb(255,120,120)", oQ = "rgb(255,160,160)", oR = "rgb(255,70,70)", oS = "rgb(230,0,0)", oT = "rgba(0,60,60,0.85)", oU = "rgb(160,160,255)", cK = "rgb(255,255,255)", oV = "rgba(255,255,255,0.6)", oW = "rgba(255,255,255,0.4)", nQ = "rgba(255,255,255,0.25)", oX = "rgba(255,255,255,0.85)", oY = "rgba(255,255,255,0.75)", oZ = "rgb(255,120,100)", oa = "rgba(255,255,0,0.5)", cI = "middle", ob = "bottom", cJ = "center", mZ = "left", oc = "right", bt = "bold ", od = "italic ", oe = "normal ", bu = "px Arial", of = [bt, od + bt, bt], og = "https://play.google.com/store/apps/details?id=territorial.io", oh = "https://apps.apple.com/app/id1581110913", oi = "https://www.youtube.com/watch?v=toZTQ8aRdFc", oj = "https://discord.gg/pa5TH6hZrv", ok = "https://www.instagram.com/davidtschacher/", nO = "https://territorial.io/cookie_policy", ol = "https://territorial.io/privacy_policy", om = "https://territorial.io/tutorial", on = ["https://territorial.io/players", "https://territorial.io/clans"], m0, oo, cA, op, oq, or, os, cC, ot = ["wss://", "/s50/", "/s51/", "/s52/"];
+                var gD = "rgb(0,0,0)", o6 = "rgba(0,0,0,0.7)", o7 = "rgba(0,0,0,0.5)", ls = "rgba(0,0,0,0.5)", hq = "rgba(0,0,0,0.75)", o8 = "rgba(0,0,0,0.85)", o9 = "rgba(0,96,96,0.75)", oA = "rgb(255,255,255)", m6 = "rgb(128,128,128)", oB = "rgb(30,255,30)", oC = "rgb(0,200,0)", oD = "rgb(0,255,0)", oE = "rgba(0,255,0,0.6)", oF = "rgba(0,255,0,0.5)", oG = "rgba(0,200,0,0.5)", mR = "rgba(0,100,0,0.75)", oH = "rgba(0,40,0,0.8)", oI = "rgb(128,255,128)", oJ = "rgba(255,255,150,0.2)", oK = "rgba(0,255,0,0.3)", lt = "rgba(255,255,255,0.3)", oL = "rgba(0,40,90,0.75)", oM = "rgba(220,0,0,0.6)", oN = "rgba(255,100,100,0.8)", mh = "rgba(100,0,0,0.85)", oO = "rgba(60,0,0,0.85)", oP = "rgb(255,120,120)", oQ = "rgb(255,160,160)", oR = "rgb(255,70,70)", oS = "rgb(230,0,0)", oT = "rgba(0,60,60,0.85)", oU = "rgb(160,160,255)", cK = "rgb(255,255,255)", oV = "rgba(255,255,255,0.6)", oW = "rgba(255,255,255,0.4)", nQ = "rgba(255,255,255,0.25)", oX = "rgba(255,255,255,0.85)", oY = "rgba(255,255,255,0.75)", oZ = "rgb(255,120,100)", oa = "rgba(255,255,0,0.5)", cI = "middle", ob = "bottom", cJ = "center", mZ = "left", oc = "right", bt = "bold ", od = "italic ", oe = "normal ", bu = "px Arial", of = [bt, od + bt, bt], og = "https://play.google.com/store/apps/details?id=territorial.io", oh = "https://apps.apple.com/app/id1581110913", oi = "https://www.youtube.com/watch?v=toZTQ8aRdFc", oj = "https://discord.gg/ZYBdYDzc", ok = "https://www.instagram.com/davidtschacher/", nO = "https://fxclient.cf/cookie_policy", ol = "https://fxclient.cf/privacy_policy", om = "https://territorial.io/tutorial", on = ["https://territorial.io/players", "https://territorial.io/clans"], m0, oo, cA, op, oq, or, os, cC, ot = ["wss://", "/s50/", "/s51/", "/s52/"];
                 function ou() {
                     ov();
                     op = 3;
@@ -11817,6 +11818,13 @@
             }
             )();
             console.log('Successfully loaded FX Client');
+            var tfxc = document.createElement('div');
+            tfxc.setAttribute('class', 'settingsd');
+            var gear = document.createElement('img');
+            gear.setAttribute('src', 'assets/geari.png');
+            gear.setAttribute('id', 'optionsimg');
+            tfxc.appendChild(gear);
+
         </script>
     </body>
 </html>
