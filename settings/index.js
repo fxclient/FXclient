@@ -14,6 +14,6 @@ function removeWins() {
         document.getElementById('dr').innerHTML = 'Successfully Reset Your Wins!';
     }
 }
-function goback() {
+function goBack() {
     window.location.href= 'https://fxclient.cf';
 }

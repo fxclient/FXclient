@@ -1,5 +1,5 @@
 ## What is FX Client?
-FX Client is first Territorial.io client, targeting better User Interface and better User Experience, It's basically Territorial.io but better.
+FX Client is the first Territorial.io client, targeting better User Interface and better User Experience, It's basically Territorial.io but better.
 
 ### Features:
 1. It's 100% free and open source on Github
@@ -10,6 +10,8 @@ FX Client is first Territorial.io client, targeting better User Interface and be
 6. It makes minimum size for custom maps 25x smaller! (from 10 x 10 to 2 x 2)
 7. Adds a text to display "Troop Density"
 8. Adds a text to display "Maximum Troops"
+9. Adds a win counter
+10. Adds a settings menu from which the game font can be changed
 
 ### Contact Us
 Our Website: https://fxclient.cf
