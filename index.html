@@ -51,7 +51,7 @@
     </style>
     <!-- FX Client CSS -->
     <style>
-        .settings {
+        .window {
             position: fixed;
             background-color: rgba(0, 0, 0, 0.7);
             width: 90%;
@@ -72,7 +72,7 @@
             font-size: calc(14px + (0.6*(1vw+1vh+4)));
             transition: 0.2s;
         }
-        .settings button, .settings input {
+        .window button, .window input {
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
             font-size: 20px;
@@ -96,25 +96,38 @@
             /*border: 1px solid white;*/
             border-radius: 8px;
         }
-        .settings input:focus {
+        .window input:focus {
             background-color: rgba(222, 222, 222, 0.36);
             /*border: 1px solid white;*/
             border-radius: 8px;
         }
         input#userna {
-  transition: 0.2s
-}
+        transition: 0.2s
+    }
+    </style>
+
+
+    <!-- Styles for in-game stuff -->
+    <style>
+        .inputfilebtn {
+            padding: 10px;
+        }
     </style>
 </head>
 
 <body onload="aiCommand746(0);">
     <canvas id="canvasA" width="128" height="128"></canvas>
-    <div class="settings" style="display:none">
+    <div class="window settings" style="display:none">
         <h1>Settings</h1>
         Font name: <input id="settings_fontname" placeholder="Enter font name" value="Arial"><br>
         <br><button onclick="removeWins()">Reset Wins Counter</button><hr>
         <button onclick="settingsManager.resetAll()">Reset Settings</button>
         <button onclick="settingsManager.save()">Save Settings</button>
+    </div>
+    <div class="window" id="donationhistory" style="display:none">
+        <h1>Donation history for </h1>
+        <p>Note: donations from bots are not shown here</p>
+        <p id="donationhistory_text"></p>
     </div>
     <script src="game.js"></script>
 </body>

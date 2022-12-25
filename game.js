@@ -1,4 +1,4 @@
-const fx_version = '0.5.1'; // FX Client Version
+const fx_version = '0.5.2'; // FX Client Version
 const fx_update = 'Dec 25'; // FX Client Last Updated
 
 const ter_version = '1.82.9'; // Territorial Version
@@ -18,6 +18,7 @@ var settings = {
     "fontName": "Trebuchet MS"
 };
 var settingsWindowOpen = false;
+var donationHistoryWindowOpen = false;
 var settingsManager = new (function() {
     this.save = function() {
         settings.fontName = document.getElementById("settings_fontname").value.trim();
@@ -44,6 +45,7 @@ function removeWins() {
         alert("Successfully reset wins");
     }
 }
+// yes, I know, this code is 🤮, I will fix it later
 function openSettingsWindow() {
     settingsWindowOpen = true;
     document.getElementById("settings_fontname").value = settings.fontName;
@@ -54,13 +56,56 @@ function closeSettingsWindow() {
     settingsWindowOpen = false;
     document.querySelector(".settings").style.display = "none";
 }
-document.getElementById("canvasA").addEventListener("mousedown", closeSettingsWindow);
+function openDonationHistoryWindow() {
+    donationHistoryWindowOpen = true;
+    document.querySelector("#donationhistory").style.display = "block";
+}
+function closeDonationHistoryWindow() {
+    if (!donationHistoryWindowOpen) return;
+    donationHistoryWindowOpen = false;
+    document.querySelector("#donationhistory").style.display = "none";
+}
+function closeAllWindows() {
+    if (settingsWindowOpen) closeSettingsWindow();
+    if (donationHistoryWindowOpen) closeDonationHistoryWindow();
+}
+document.getElementById("canvasA").addEventListener("mousedown", closeAllWindows);
 //var tfxc = document.createElement('div');
 //tfxc.setAttribute('class', 'settingsd');
 var settingsGearIcon = document.createElement('img');
 settingsGearIcon.setAttribute('src', 'assets/geari_white.png');
 //gear.setAttribute('id', 'optionsimg');
 //tfxc.appendChild(gear);
+
+var donationsTracker = new (function(){
+    this.donationHistory = Array();
+    // fill the array with empty arrays with length of 3
+    for (var i = 0; i < 512; i++) this.donationHistory.push([]);
+    // from inside of game:
+    // (!gE[g].startsWith("[Bot] ") && donationsTracker.logDonation(g,k,x))
+    this.logDonation = function(senderID, receiverID, amount) {
+        this.donationHistory[receiverID].push([senderID,amount]);
+    };
+    this.getRecipientHistoryOf = function(playerID) {
+        return this.donationHistory[playerID];
+    };
+});
+// usage from inside: displayDonationsHistory(Y, gE);
+function displayDonationsHistory(playerID, playerNames) {
+    var history = donationsTracker.getRecipientHistoryOf(playerID);
+    console.log("History for " + playerNames[playerID] + ":");
+    console.log(history);
+    document.querySelector("#donationhistory h1").innerHTML = "Donation history for " + playerNames[playerID];
+    var historyText = "";
+    history.reverse();
+    if (history.length > 0) history.forEach(function(historyItem, index) {
+        historyText += (history.length - index) + ". Received " + historyItem[1] + " resources from " + playerNames[historyItem[0]] + "<br>";
+    });
+    else historyText = "Nothing to display";
+    document.querySelector("#donationhistory p#donationhistory_text").innerHTML = historyText;
+    openDonationHistoryWindow();
+}
+
 var setVarByName;
 
 
@@ -2034,18 +2079,23 @@ var setVarByName;
             if (n)
                 a5.cG();
             else {
+                // draw order buttons
                 var N = (A + J) / D;
                 cH.imageSmoothingEnabled = !0;
                 cH.setTransform(D, 0, 0, D, z, y);
                 t[0] ? fY ? cH.drawImage(this.kx[3], 0, 0) : cH.drawImage(this.kx[0], 0, 0) : t[8] ? cH.drawImage(this.kv[0], 0, 0) : cH.drawImage(K[0], 0, 0);
                 t[1] && cH.drawImage(this.kx[1], N, 0);
+                // donation
                 t[2] && cH.drawImage(this.kx[2], -N, 0);
                 t[4] && cH.drawImage(this.kx[4], 0, N);
+                // non-agression pact
                 t[5] && cH.drawImage(this.kx[5], N, N);
+                // point
                 t[6] && cH.drawImage(this.kx[6], 0, -N);
+                // target
                 t[7] && cH.drawImage(this.kx[7], N, -N);
                 cH.imageSmoothingEnabled = !1;
-                cH.setTransform(1, 0, 0, 1, 0, 0)
+                cH.setTransform(1, 0, 0, 1, 0, 0);
             }
         }
     }
@@ -2461,16 +2511,15 @@ var setVarByName;
             ;
         this.lN = function () {
             100 <= ax[aw] || A(80, "Your balance is too low!", 9, 0, cK, hq, -1, !1)
-        }
-            ;
+        };
         this.lM = function () {
             A(80, "Boosting is disallowed in the first minute!", 9, 0, cK, hq, -1, !1)
-        }
-            ;
+        };
+        // Sending donation
         this.n1 = function (G, M) {
             2 !== fP[aw] && A(200, "You exported " + eL.gF(G) + " resource" + (1 === G ? "" : "s") + " to " + gE[M] + ".", 30, M, "rgb(190,255,190)", hq, -1, !0)
-        }
-            ;
+        };
+        // Receiving donation
         this.n3 = function (G, M) {
             if (2 !== fP[aw]) {
                 var Q = 2 === fP[M] || M >= cq;
@@ -2478,8 +2527,7 @@ var setVarByName;
                 A(80 > R ? 80 : R, (Q ? "A bot" : gE[M]) + " supported you with " + eL.gF(G) + " resource" + (1 === G ? "" : "s") + ".", 31, M, gD, Q ? "rgba(205,205,205,0.9)" : "rgba(205,255,205,0.9)", -1, !0);
                 B(31, q ? 4 : 6)
             }
-        }
-            ;
+        };
         this.iq = function (G) {
             var M, Q = c4.dU();
             for (M = 2; 0 <= M; M--)
@@ -2705,8 +2753,7 @@ var setVarByName;
             t.clearRect(0, 0, this.c1, this.c1);
             23 === k ? t.drawImage(hm.ky[2], 0, 0) : 36 === k ? t.drawImage(hm.ky[0], 0, 0) : 49 === k ? t.drawImage(hm.ky[1], 0, 0) : t.drawImage(x, this.c1 * g % (g === k ? this.na * this.c1 : 4E3), g === k ? as(g, this.na) * this.c1 : 0, this.c1, this.c1, 0, 0, this.c1, this.c1);
             this.l0[k] = l
-        }
-            ;
+        };
         this.nr = function () {
             this.l0[this.a6 - 5] = this.l0[26];
             this.l0[this.a6 - 4] = this.ns(this.a6 - 5, 2);
@@ -4389,8 +4436,8 @@ var setVarByName;
             return X !== T ? (X = T,
                 g(),
                 c4.c5 = !0) : !1
-        }
-            ;
+        };
+        // mouseClick
         this.pO = function (S, O) {
             if (!ba)
                 return !1;
@@ -4404,11 +4451,11 @@ var setVarByName;
                 -1 !== T)) {
                 var Y = ei[T + V];
                 T === y - 1 && sD[aw] >= V + y - 1 && (Y = aw);
-                0 !== fB[Y] && eR.gc(Y, 800, !1, 0)
+                //0 !== fB[Y] && eR.gc(Y, 800, !1, 0)
+                displayDonationsHistory(Y, gE);
             }
             return !0
-        }
-            ;
+        };
         this.pU = function (S, O, T) {
             return ba ? !1 : z(S, O) ? (S = n(O),
                 S = sy(-1, S, y),
@@ -4421,8 +4468,7 @@ var setVarByName;
                         g(),
                         c4.c5 = !0),
                 !0) : !1
-        }
-            ;
+        };
         this.cG = function () {
             cH.drawImage(A, m0, m0)
         }
@@ -4844,13 +4890,18 @@ var setVarByName;
             x -= x >= as(ax[g], 2) ? l : 0;
             var t = bU[k] * iz - ax[k];
             0 >= t || (x = x > t ? t : x,
-                g === aw && (e5.n1(x, k),
-                    b0.b1[12] += l,
-                    b0.b1[16] += x),
-                k === aw && (e5.n3(x, g),
-                    b0.b1[10] += x),
+                // if the donating player is us, show a message and add to statistics
+                g === aw && (e5.n1(x, k), b0.b1[12] += l, b0.b1[16] += x),
+                // if the receiving player is us, show message and add to statistics
+                k === aw && (e5.n3(x, g), b0.b1[10] += x),
+                // remove points (+tax) from donating player
                 ax[g] -= x + l,
-                ax[k] += x)
+                // add points to receiving player
+                ax[k] += x,
+                // track donations
+                ((!gE[g].startsWith("[Bot] ")) && donationsTracker.logDonation(g,k,x))
+                //donationsTracker.logDonation(g,k,x)
+            )
         }
     }
     function tl() {
@@ -7518,6 +7569,7 @@ var setVarByName;
             this.z7 = document.createElement("INPUT");
             this.z7.setAttribute("type", "file");
             this.z7.setAttribute("accept", ".gif,.jpg,.jpeg,.png,.json");
+            this.z7.setAttribute("id", "inputfilebtn");
             this.z7.style.position = "absolute";
             this.z7.style.color = this.me(255, 255, 255);
             this.lq();

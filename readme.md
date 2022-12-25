@@ -12,6 +12,7 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 8. Adds a text to display "Maximum Troops"
 9. Adds a win counter
 10. Adds a settings menu from which the game font can be changed
+11. Adds the ability to view the history of who donated to a player during the game
 
 ### Contact Us
 Our Website: https://fxclient.cf
