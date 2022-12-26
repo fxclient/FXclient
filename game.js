@@ -1,8 +1,8 @@
-const fx_version = '0.5.2'; // FX Client Version
-const fx_update = 'Dec 25'; // FX Client Last Updated
+const fx_version = '0.5.3'; // FX Client Version
+const fx_update = 'Dec 26'; // FX Client Last Updated
 
 const ter_version = '1.82.9'; // Territorial Version
-const ter_update = 'December 2 2022'; // Territorial Last Updated 
+const ter_update = 'December 2 2022'; // Territorial Last Updated
 
 
 var username_i0 = ''; // alternative username variable
@@ -15,15 +15,15 @@ if (localStorage.getItem("win_count") == undefined || localStorage.getItem("win_
 }
 
 var settings = {
-    "fontName": "Trebuchet MS"
+    "fontName": "Trebuchet MS",
+    "showBotDonations": false
 };
-var settingsWindowOpen = false;
-var donationHistoryWindowOpen = false;
 var settingsManager = new (function() {
     this.save = function() {
         settings.fontName = document.getElementById("settings_fontname").value.trim();
+        settings.showBotDonations = document.getElementById("settings_donations_bots").checked;
         this.applySettings();
-        closeSettingsWindow();
+        WindowManager.closeWindow("settings");
         localStorage.setItem("settings", JSON.stringify(settings));
         // should probably firgure out a way to do this without reloading
         window.location.reload();
@@ -45,31 +45,45 @@ function removeWins() {
         alert("Successfully reset wins");
     }
 }
-// yes, I know, this code is 🤮, I will fix it later
-function openSettingsWindow() {
-    settingsWindowOpen = true;
-    document.getElementById("settings_fontname").value = settings.fontName;
-    document.querySelector(".settings").style.display = "block";
-}
-function closeSettingsWindow() {
-    if (!settingsWindowOpen) return;
-    settingsWindowOpen = false;
-    document.querySelector(".settings").style.display = "none";
-}
-function openDonationHistoryWindow() {
-    donationHistoryWindowOpen = true;
-    document.querySelector("#donationhistory").style.display = "block";
-}
-function closeDonationHistoryWindow() {
-    if (!donationHistoryWindowOpen) return;
-    donationHistoryWindowOpen = false;
-    document.querySelector("#donationhistory").style.display = "none";
-}
-function closeAllWindows() {
-    if (settingsWindowOpen) closeSettingsWindow();
-    if (donationHistoryWindowOpen) closeDonationHistoryWindow();
-}
-document.getElementById("canvasA").addEventListener("mousedown", closeAllWindows);
+var WindowManager = new (function() {
+    var windows = {};
+    this.add = function(newWindow) {
+        windows[newWindow.name] = newWindow;
+        windows[newWindow.name].isOpen = false;
+    };
+    this.openWindow = function(windowName) {
+        if (windows[windowName].isOpen === true) return;
+        if (windows[windowName].beforeOpen !== undefined) windows[windowName].beforeOpen();
+        windows[windowName].isOpen = true;
+        windows[windowName].element.style.display = "block";
+    };
+    this.closeWindow = function(windowName) {
+        if (windows[windowName].isOpen === false) return;
+        windows[windowName].isOpen = false;
+        windows[windowName].element.style.display = "none";
+    };
+    this.closeAll = function() {
+        Object.values(windows).forEach(function(windowObj) {
+            WindowManager.closeWindow(windowObj.name);
+        });
+    };
+});
+WindowManager.add({
+    name: "settings",
+    element: document.querySelector(".settings"),
+    beforeOpen: function() {
+        document.getElementById("settings_fontname").value = settings.fontName;
+        document.getElementById("settings_donations_bots").checked = settings.showBotDonations;
+    }
+});
+WindowManager.add({
+    name: "donationHistory",
+    element: document.querySelector("#donationhistory"),
+    beforeOpen: function() {
+        document.getElementById("donationhistory_note").style.display = (settings.showBotDonations ? "none" : "block");
+    }
+});
+document.getElementById("canvasA").addEventListener("mousedown", WindowManager.closeAll);
 //var tfxc = document.createElement('div');
 //tfxc.setAttribute('class', 'settingsd');
 var settingsGearIcon = document.createElement('img');
@@ -82,7 +96,7 @@ var donationsTracker = new (function(){
     // fill the array with empty arrays with length of 3
     for (var i = 0; i < 512; i++) this.donationHistory.push([]);
     // from inside of game:
-    // (!gE[g].startsWith("[Bot] ") && donationsTracker.logDonation(g,k,x))
+    // ((!gE[g].startsWith("[Bot] ") || settings.showBotDonations) && donationsTracker.logDonation(g,k,x))
     this.logDonation = function(senderID, receiverID, amount) {
         this.donationHistory[receiverID].push([senderID,amount]);
     };
@@ -103,7 +117,7 @@ function displayDonationsHistory(playerID, playerNames) {
     });
     else historyText = "Nothing to display";
     document.querySelector("#donationhistory p#donationhistory_text").innerHTML = historyText;
-    openDonationHistoryWindow();
+    WindowManager.openWindow("donationHistory");
 }
 
 var setVarByName;
@@ -1606,11 +1620,15 @@ var setVarByName;
                     (k = g === aw) ? e5.fh(g, 2) : e5.fh(1 - aw, 3);
                     ia.i2(g)
                 } else
+                    // if the game is team game
                     dA ? (
                         g = eP.ib(), k = dW.dX[aw] === g,
-                        9 === dr ? x = k ? ei[0] : 512 : (g = dW.ic(dW.id[g]), x = g[0], 512 !== x && e5.ie(g[1])),
+                        9 === dr ? (x = (k ? ei[0] : 512))
+                        : (g = dW.ic(dW.id[g]), x = g[0], 512 !== x && e5.ie(g[1])),
                         e5.ig(k)
-                    ) : (x = ei[0], k = x === aw, e5.ih(x));
+                    ) : (
+                        x = ei[0], k = (x === aw), e5.ih(x)
+                    );
                 dt || ii.ij(ik(), x);
                 eS.show(k, !1);
                 e5.iq(!0);
@@ -2448,14 +2466,18 @@ var setVarByName;
                 }
         }
             ;
-        // Zombie mode
+        // End of team game
         this.ig = function (G) {
             var M = dW.id[eP.mp()];
-            G ? (9 === dr ? (G = "The Resistance defeated the virus.",
-                c2.mq("The Resistance", 2, 1, 12)) : G = "Congratulations! Team " + dW.bo[M] + " has won the game!",
-                A(0, G, 40, 0, "rgb(10,220,10)", hq, -1, !1)) : (9 === dr ? (G = "Mankind lost the war against the virus.",
-                    c2.mq("The Virus", 2, 0, 16)) : G = "Our alliance has been defeated!",
-                    A(0, G, 41, 0, "rgb(200,80,80)", hq, -1, !1));
+            G ? (
+                9 === dr ? (G = "The Resistance defeated the virus.", c2.mq("The Resistance", 2, 1, 12))
+                : G = "Congratulations! Team " + dW.bo[M] + " has won the game!",
+                A(0, G, 40, 0, "rgb(10,220,10)", hq, -1, !1)
+            ) : (
+                9 === dr ? (G = "Mankind lost the war against the virus.", c2.mq("The Virus", 2, 0, 16))
+                : G = "Our alliance has been defeated!",
+                A(0, G, 41, 0, "rgb(200,80,80)", hq, -1, !1)
+            );
             9 !== dr && c2.mq("Team " + dW.bo[M], 2, 1, 12);
             eR.gl(2700)
         }
@@ -4452,7 +4474,9 @@ var setVarByName;
                 var Y = ei[T + V];
                 T === y - 1 && sD[aw] >= V + y - 1 && (Y = aw);
                 //0 !== fB[Y] && eR.gc(Y, 800, !1, 0)
-                displayDonationsHistory(Y, gE);
+                // if the game is a team game, display donation history, else trigger default click behaviour
+                if (dA) displayDonationsHistory(Y, gE);
+                else eR.gc(Y, 800, !1, 0);
             }
             return !0
         };
@@ -4899,7 +4923,7 @@ var setVarByName;
                 // add points to receiving player
                 ax[k] += x,
                 // track donations
-                ((!gE[g].startsWith("[Bot] ")) && donationsTracker.logDonation(g,k,x))
+                ((!gE[g].startsWith("[Bot] ") || settings.showBotDonations) && donationsTracker.logDonation(g,k,x))
                 //donationsTracker.logDonation(g,k,x)
             )
         }
@@ -9781,12 +9805,12 @@ var setVarByName;
                                                             nN.bp(ol, !1)) : 9 === z[B].id && (nN.bp(nO, !0),
                                                                 nN.bp(nO, !1)), !0;
                     //cH.drawImage(settingsGearIcon,A.f3-A.hw/2,A.f4,A.nI,A.nI);
-                    if (y > (C.f3-C.hw/2) && y < ((C.f3-C.hw/2)+C.nI) && A > C.f4 && A < (C.f4 + C.nI)) openSettingsWindow();
+                    if (y > (C.f3-C.hw/2) && y < ((C.f3-C.hw/2)+C.nI) && A > C.f4 && A < (C.f4 + C.nI)) WindowManager.openWindow("settings");
                     n = false;
                     c4.c5 = true;
                     return false
                 }
-                if (y > (C.f3-C.hw/2) && y < ((C.f3-C.hw/2)+C.nI) && A > C.f4 && A < (C.f4 + C.nI)) openSettingsWindow();
+                if (y > (C.f3-C.hw/2) && y < ((C.f3-C.hw/2)+C.nI) && A > C.f4 && A < (C.f4 + C.nI)) WindowManager.openWindow("settings");
                 return k(y, A, C, 0) ? (n = true, c4.c5 = true) : false
             }
         };
@@ -11899,7 +11923,7 @@ var setVarByName;
 
 if (localStorage.getItem("settings") !== null) {
     settings = JSON.parse(localStorage.getItem("settings"));
-    settingsManager.applySettings();
 }
+settingsManager.applySettings();
 
 console.log('Successfully loaded FX Client');

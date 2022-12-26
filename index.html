@@ -103,19 +103,19 @@
             /*border: 1px solid white;*/
             border-radius: 8px;
         }
-        input#userna {
-        transition: 0.2s
-    }
+        input#userna, input#inputfilebtn {
+            transition: 0.2s
+        }
         ::-webkit-file-upload-button {
             color: white;
             background-color: #120076;
             border: 2px solid #fff;
             top: 0;
             bottom: 0;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
             text-align: center;
         }
@@ -128,15 +128,20 @@
     <div class="window settings" style="display:none">
         <h1>Settings</h1>
         Font name: <input id="settings_fontname" placeholder="Enter font name" value="Arial"><br>
-        <br><button onclick="removeWins()">Reset Wins Counter</button><hr>
+        <br><button onclick="removeWins()">Reset Wins Counter</button><br>
+        <br><input type="checkbox" id="settings_donations_bots">
+        <label for="settings_donations_bots">Display donations from bots (applies to multiplayer bots only)</label><br>
+        <hr>
         <button onclick="settingsManager.resetAll()">Reset Settings</button>
         <button onclick="settingsManager.save()">Save Settings</button>
     </div>
     <div class="window" id="donationhistory" style="display:none">
         <h1>Donation history for </h1>
-        <p>Note: donations from bots are not shown here</p>
+        <p id="donationhistory_note">Note: donations from bots are not shown here</p>
         <p id="donationhistory_text"></p>
     </div>
     <script src="game.js"></script>
 </body>
 </html>
+
+<!-- This line of code is proudly useless -->
