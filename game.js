@@ -7565,11 +7565,23 @@ var setVarByName;
     }
     function kk() {
         this.z7 = null;
+        this.z9 = null; 
         this.bp = function () {
             this.z7 = document.createElement("INPUT");
             this.z7.setAttribute("type", "file");
             this.z7.setAttribute("accept", ".gif,.jpg,.jpeg,.png,.json");
             this.z7.setAttribute("id", "inputfilebtn");
+
+                    // Don't touch this part lol it might all break
+
+            /*
+            this.z9 = document.createElement("LABEL");
+            this.z9.setAttribute("id", "inputfilelabel");
+            this.z9.setAttribute("for", "inputfilebtn");
+            this.z9.innerHTML = 'YES WE GO!';
+            this.z9.style.color = '#000';
+            this.z9.style.position = 'absolute';
+            */
             this.z7.style.position = "absolute";
             this.z7.style.color = this.me(255, 255, 255);
             this.lq();
