@@ -1,11 +1,10 @@
-const fx_version = '0.5.3.1'; // FX Client Version
-const fx_update = 'Dec 26'; // FX Client Last Updated
+const fx_version = '0.5.3.2'; // FX Client Version
+const fx_update = 'Dec 27'; // FX Client Last Updated
 
 const ter_version = '1.82.9'; // Territorial Version
 const ter_update = 'December 2 2022'; // Territorial Last Updated
 
 
-var username_i0 = '[FX] Default'; // alternative username variable
 if (localStorage.getItem("win_count") == undefined || localStorage.getItem("win_count") == null) {
     var wins_counter = 0;
     console.log('Couldn\'t find a saved win data. creating one...');
@@ -16,12 +15,14 @@ if (localStorage.getItem("win_count") == undefined || localStorage.getItem("win_
 
 var settings = {
     "fontName": "Trebuchet MS",
-    "showBotDonations": false
+    "showBotDonations": false,
+    "hideAllLinks": false,
 };
 var settingsManager = new (function() {
     this.save = function() {
         settings.fontName = document.getElementById("settings_fontname").value.trim();
         settings.showBotDonations = document.getElementById("settings_donations_bots").checked;
+        settings.hideAllLinks = document.getElementById("settings_hidealllinks").checked;
         this.applySettings();
         WindowManager.closeWindow("settings");
         localStorage.setItem("settings", JSON.stringify(settings));
@@ -55,7 +56,7 @@ var WindowManager = new (function() {
         if (windows[windowName].isOpen === true) return;
         if (windows[windowName].beforeOpen !== undefined) windows[windowName].beforeOpen();
         windows[windowName].isOpen = true;
-        windows[windowName].element.style.display = "block";
+        windows[windowName].element.style.display = null;
     };
     this.closeWindow = function(windowName) {
         if (windows[windowName].isOpen === false) return;
@@ -74,6 +75,7 @@ WindowManager.add({
     beforeOpen: function() {
         document.getElementById("settings_fontname").value = settings.fontName;
         document.getElementById("settings_donations_bots").checked = settings.showBotDonations;
+        document.getElementById("settings_hidealllinks").checked = settings.hideAllLinks;
     }
 });
 WindowManager.add({
@@ -120,6 +122,14 @@ function displayDonationsHistory(playerID, playerNames) {
     WindowManager.openWindow("donationHistory");
 }
 
+var utils = new (function() {
+    this.getMaxTroops = function(playerTerritories, playerID) { return playerTerritories[playerID]*150; };
+    this.getDensity = function(playerBalances, playerTerritories, playerID) {
+        return (Math.floor((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100) + "%");
+    };
+});
+
+
 var setVarByName;
 
 
@@ -134,12 +144,10 @@ var setVarByName;
             var g = e.loadString(20);
             "" === g && (g = "[FX] " + "Android User " + Math.floor(1E3 * Math.random()),
                 e.saveString(20, g))
-            username_i0 = g;
         } else
             5 <= d ? (g = e.loadString(0),
                 "" === g && (g = "[FX] " + "Player " + Math.floor(1E3 * Math.random()),
                     e.saveString(0, g))) : g = f.g(0);
-        username_i0 = g;
         return g
     }
     function h() {
@@ -2422,7 +2430,6 @@ var setVarByName;
         }
             ;
         this.fh = function (G, M) {
-            // console.log('Username = ' + username_i0);
             0 === M ? (b0.b1[G < cq ? 4 : 3]++, c2.cQ(G, 0), A(q ? 100 : 160, "You conquered " + gE[G] + ".", 0, G, "rgb(10,220,10)", hq, -1, !1)) :
                 1 === M ? (F(50, b8), c2.cQ(G, 1), A(360, "You were conquered by " + gE[G] + ".", 0, G, "rgb(255,40,40)", hq, -1, !0), eR.gc(G, 2700, !0, 0)) :
                     2 === M ? (c2.cQ(G, 2), A(0, "Congratulations! You won the game.", 0, G, "rgb(10,255,255)", hq, -1, !0), // i don't think this is the right part for win counter
@@ -4533,7 +4540,7 @@ var setVarByName;
                         5 === P ? e7.n9(L[P] / 100, 2) :
                             P === 6 ? eL.gF(L[P]) :
                                 P === 7 ? e7.s8(L[7]) :
-                                    P === 8 ? Math.floor(bU[aw] * 150) : (Math.floor((ax[aw] / ((bU[aw] === 0 ? 1 : bU[aw]) * 150)) * 100) + "%") // max amount of troops / current amount of troops
+                                    P === 8 ? utils.getMaxTroops(bU, aw) : utils.getDensity(ax, bU, aw) // max amount of troops / current amount of troops
         }
 
         function x(P) {
@@ -6134,7 +6141,6 @@ var setVarByName;
             k[t].input.readOnly = 3 === t;
             k[t].input.addEventListener("input", function () {
                 0 === t && jX.vv()
-                username_i0 = document.getElementById('userna').value;
             })
         }
         var k, x, l;
@@ -9621,6 +9627,8 @@ var setVarByName;
     function ke() {
         function g() {
             vd.uc[2] = vd.uc[3] = vd.uc[4] = !jm.a3t;
+            if (settings.hideAllLinks && (jm.a3t)) vd.uc[0] = vd.uc[1] = false;
+            else vd.uc[0] = vd.uc[1] = true;
             var y = jm.a10 ? 1 : 0
                 , A = jm.a3t ? 1 : 0
                 , B = jm.a0L ? 1 : 0;
@@ -9771,7 +9779,9 @@ var setVarByName;
             z[2].mx = this.a10 ? 130 : 0;
             z[3].mx = this.a3t ? 130 : 0;
             !b && 5 > d && (z[4].mx = this.a0L ? 130 : 0);
-            this.a3t && (vd.uc[2] = vd.uc[3] = vd.uc[4] = !1)
+            this.a3t && (vd.uc[2] = vd.uc[3] = vd.uc[4] = false);
+            this.a3t && settings.hideAllLinks && (vd.uc[0] = vd.uc[1] = false);
+            (!settings.hideAllLinks) && (vd.uc[0] = vd.uc[1] = true);
         };
         // mouseDown
         this.c7 = function (y, A) {

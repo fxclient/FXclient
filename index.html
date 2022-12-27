@@ -31,7 +31,8 @@
     <meta itemprop="description" content="Modified Version of Territorial.io - FX Client">
     <meta itemprop="image" content="https://fxclient.cf/logo.png">
     
-    <link rel="stylesheet" href="assets/astyle.css">
+    <!-- FX Client CSS -->
+    <link rel="stylesheet" href="main.css">
     <!-- Game CSS -->
     <style>
         html,
@@ -49,91 +50,32 @@
             user-select: none;
         }
     </style>
-    <!-- FX Client CSS -->
-    <style>
-        .window {
-            position: fixed;
-            background-color: rgba(0, 0, 0, 0.7);
-            width: 90%;
-            top: 0;
-            color: white;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            margin: auto;
-            margin-top: 20px;
-            right: 0;
-            left: 0;
-            padding: 15px;
-            box-sizing: border-box;
-            border-color: white;
-            border-style: solid;
-            border-width: 2px;
-            border-width: calc(0.2*(1vw+1vh+4));
-            font-size: 20px;
-            font-size: calc(14px + (0.6*(1vw+1vh+4)));
-            max-height: 90%;
-            overflow: auto;
-            transition: 0.2s;
-        }
-        .window button, .window input {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            font-size: 20px;
-            font-size: calc(10px + (0.6*(1vw+1vh+4)));
-            padding: calc(7px + 1vw - 1.7vh);
-            transition: 0.2s;
-            border: 1px solid #fff;
-            border-radius: 5px;
-        }
-        h1 {
-            font-weight: normal;
-            margin-block-start: 0.5em;
-            margin-block-end: 0.5em;
-            transition: 0.2s;
-        }
-        canvas {
-            transition: 0.2s;
-        }
-        button:hover {
-            background-color: rgba(222, 222, 222, 0.52);
-            border-radius: 8px;
-        }
-        .window input:focus {
-            background-color: rgba(222, 222, 222, 0.36);
-            border-radius: 8px;
-        }
-        input#userna, input#inputfilebtn {
-            transition: 0.2s
-        }
-        ::-webkit-file-upload-button {
-            color: white;
-            background-color: #120076;
-            border: 2px solid #fff;
-            top: 0;
-            bottom: 0;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            padding-left: 20px;
-            padding-right: 20px;
-            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
-            text-align: center;
-        }
-    </style>
-
 </head>
 
 <body onload="aiCommand746(0);">
     <canvas id="canvasA" width="128" height="128"></canvas>
-    <div class="window settings" style="display:none">
+    <div class="window flex settings" style="display:none">
         <h1>Settings</h1>
-        Font name: <input id="settings_fontname" placeholder="Enter font name" value="Arial"><br>
-        <br><button onclick="removeWins()">Reset Wins Counter</button><br>
-        <br><input type="checkbox" id="settings_donations_bots">
-        <label for="settings_donations_bots">Display donations from bots (applies to multiplayer bots only)</label><br>
+        <div class="scrollable">
+            <label title="Name of the font to be used for rendering. For example: Arial, Georgia, sans-serif, serif, Comic Sans MS, ...">
+                Font name: <input id="settings_fontname" placeholder="Enter font name" value="Arial"></label><br>
+            <br><button onclick="removeWins()">Reset Wins Counter</button><br><br>
+            <label for="settings_donations_bots" class="checkbox">
+                Display donations from bots (applies to multiplayer bots only)
+                <input type="checkbox" id="settings_donations_bots"><span class="checkmark"></span>
+            </label><br>
+            <label for="settings_hidealllinks" class="checkbox">
+                Hide Links option also hides app store links
+                <input type="checkbox" id="settings_hidealllinks"><span class="checkmark"></span>
+            </label>
+        </div>
         <hr>
-        <button onclick="settingsManager.resetAll()">Reset Settings</button>
-        <button onclick="settingsManager.save()">Save Settings</button>
+        <footer>
+            <button onclick="settingsManager.resetAll()">Reset Settings</button>
+            <button onclick="settingsManager.save()">Save Settings</button>
+        </footer>
     </div>
-    <div class="window" id="donationhistory" style="display:none">
+    <div class="window scrollable" id="donationhistory" style="display:none">
         <h1>Donation history for </h1>
         <p id="donationhistory_note">Note: donations from bots are not shown here</p>
         <p id="donationhistory_text"></p>
