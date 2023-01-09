@@ -1,8 +1,8 @@
-const fx_version = '0.5.3.3'; // FX Client Version
-const fx_update = 'Dec 28'; // FX Client Last Updated
+const fx_version = '0.5.3.4'; // FX Client Version
+const fx_update = 'Jan 9'; // FX Client Last Updated
 
-const ter_version = '1.82.9'; // Territorial Version
-const ter_update = 'December 2 2022'; // Territorial Last Updated
+const ter_version = '1.83.0'; // Territorial Version
+const ter_update = '8 January 2023'; // Territorial Last Updated
 
 
 if (localStorage.getItem("win_count") == undefined || localStorage.getItem("win_count") == null) {
@@ -16,7 +16,8 @@ var settings = {
     "fontName": "Trebuchet MS",
     "showBotDonations": false,
     "hideAllLinks": false,
-    "realisticNames": false
+    "realisticNames": false,
+    "customMapFileBtn": true
 };
 var settingsManager = new (function() {
     var inputFields = {
@@ -25,7 +26,8 @@ var settingsManager = new (function() {
     var checkboxFields = {
         showBotDonations: document.getElementById("settings_donations_bots"),
         hideAllLinks: document.getElementById("settings_hidealllinks"),
-        realisticNames: document.getElementById("settings_realisticnames")
+        realisticNames: document.getElementById("settings_realisticnames"),
+        customMapFileBtn: document.getElementById("settings_custommapfileinput")
     };
     this.save = function() {
         Object.keys(inputFields).forEach(function(key) { settings[key] = inputFields[key].value.trim(); });
@@ -89,10 +91,11 @@ WindowManager.add({
     name: "donationHistory",
     element: document.querySelector("#donationhistory"),
     beforeOpen: function() {
-        document.getElementById("donationhistory_note").style.display = (settings.showBotDonations ? "none" : "block");
+        document.getElementById("donationhistory_note").style.display = ((settings.showBotDonations || getVarByName("dt")) ? "none" : "block");
     }
 });
 document.getElementById("canvasA").addEventListener("mousedown", WindowManager.closeAll);
+document.getElementById("canvasA").addEventListener("touchstart", WindowManager.closeAll);
 //var tfxc = document.createElement('div');
 //tfxc.setAttribute('class', 'settingsd');
 var settingsGearIcon = document.createElement('img');
@@ -137,12 +140,13 @@ var utils = new (function() {
 });
 
 
-var setVarByName;
+var setVarByName, getVarByName;
 
 
 (function () {
 
     setVarByName = function(varName, newValue) { return eval(varName + ' = "' + newValue + '"'); }
+    getVarByName = function(varName) { return eval(varName); }
 
     function a() {
         if (b)
@@ -2917,7 +2921,7 @@ var setVarByName;
             cH.setTransform(1, 0, 0, 1, 0, 0)
         }
     }
-    var gD = "rgb(0,0,0)", o6 = "rgba(0,0,0,0.7)", o7 = "rgba(0,0,0,0.5)", ls = "rgba(0,0,0,0.5)", hq = "rgba(0,0,0,0.75)", o8 = "rgba(0,0,0,0.85)", o9 = "rgba(0,96,96,0.75)", oA = "rgb(255,255,255)", m6 = "rgb(128,128,128)", oB = "rgb(30,255,30)", oC = "rgb(0,200,0)", oD = "rgb(0,255,0)", oE = "rgba(0,255,0,0.6)", oF = "rgba(0,255,0,0.5)", oG = "rgba(0,200,0,0.5)", mR = "rgba(0,100,0,0.75)", oH = "rgba(0,40,0,0.8)", oI = "rgb(128,255,128)", oJ = "rgba(255,255,150,0.2)", oK = "rgba(0,255,0,0.3)", lt = "rgba(255,255,255,0.3)", oL = "rgba(0,40,90,0.75)", oM = "rgba(220,0,0,0.6)", oN = "rgba(255,100,100,0.8)", mh = "rgba(100,0,0,0.85)", oO = "rgba(60,0,0,0.85)", oP = "rgb(255,120,120)", oQ = "rgb(255,160,160)", oR = "rgb(255,70,70)", oS = "rgb(230,0,0)", oT = "rgba(0,60,60,0.85)", oU = "rgb(160,160,255)", cK = "rgb(255,255,255)", oV = "rgba(255,255,255,0.6)", oW = "rgba(255,255,255,0.4)", nQ = "rgba(255,255,255,0.25)", oX = "rgba(255,255,255,0.85)", oY = "rgba(255,255,255,0.75)", oZ = "rgb(255,120,100)", oa = "rgba(255,255,0,0.5)", cI = "middle", ob = "bottom", cJ = "center", mZ = "left", oc = "right", bt = "bold ", od = "italic ", oe = "normal ", bu = "px Arial", of = [bt, od + bt, bt], og = "https://play.google.com/store/apps/details?id=territorial.io", oh = "https://apps.apple.com/app/id1581110913", oi = "https://www.youtube.com/watch?v=toZTQ8aRdFc", oj = "https://discord.gg/ZYBdYDzc", ok = "https://www.instagram.com/davidtschacher/", nO = "https://fxclient.cf/cookie_policy", ol = "https://fxclient.cf/privacy_policy", om = "https://territorial.io/tutorial", on = ["https://territorial.io/players", "https://territorial.io/clans"], m0, oo, cA, op, oq, or, os, cC, ot = ["wss://", "/s50/", "/s51/", "/s52/"];
+    var gD = "rgb(0,0,0)", o6 = "rgba(0,0,0,0.7)", o7 = "rgba(0,0,0,0.5)", ls = "rgba(0,0,0,0.5)", hq = "rgba(0,0,0,0.75)", o8 = "rgba(0,0,0,0.85)", o9 = "rgba(0,96,96,0.75)", oA = "rgb(255,255,255)", m6 = "rgb(128,128,128)", oB = "rgb(30,255,30)", oC = "rgb(0,200,0)", oD = "rgb(0,255,0)", oE = "rgba(0,255,0,0.6)", oF = "rgba(0,255,0,0.5)", oG = "rgba(0,200,0,0.5)", mR = "rgba(0,100,0,0.75)", oH = "rgba(0,40,0,0.8)", oI = "rgb(128,255,128)", oJ = "rgba(255,255,150,0.2)", oK = "rgba(0,255,0,0.3)", lt = "rgba(255,255,255,0.3)", oL = "rgba(0,40,90,0.75)", oM = "rgba(220,0,0,0.6)", oN = "rgba(255,100,100,0.8)", mh = "rgba(100,0,0,0.85)", oO = "rgba(60,0,0,0.85)", oP = "rgb(255,120,120)", oQ = "rgb(255,160,160)", oR = "rgb(255,70,70)", oS = "rgb(230,0,0)", oT = "rgba(0,60,60,0.85)", oU = "rgb(160,160,255)", cK = "rgb(255,255,255)", oV = "rgba(255,255,255,0.6)", oW = "rgba(255,255,255,0.4)", nQ = "rgba(255,255,255,0.25)", oX = "rgba(255,255,255,0.85)", oY = "rgba(255,255,255,0.75)", oZ = "rgb(255,120,100)", oa = "rgba(255,255,0,0.5)", cI = "middle", ob = "bottom", cJ = "center", mZ = "left", oc = "right", bt = "bold ", od = "italic ", oe = "normal ", bu = "px Arial", of = [bt, od + bt, bt], og = "https://play.google.com/store/apps/details?id=territorial.io", oh = "https://apps.apple.com/app/id1581110913", oi = "https://www.youtube.com/watch?v=toZTQ8aRdFc", oj = "https://discord.gg/pthqvpTXmh", ok = "https://www.instagram.com/davidtschacher/", nO = "https://fxclient.cf/cookie_policy", ol = "https://fxclient.cf/privacy_policy", om = "https://territorial.io/tutorial", on = ["https://territorial.io/players", "https://territorial.io/clans"], m0, oo, cA, op, oq, or, os, cC, ot = ["wss://", "/s50/", "/s51/", "/s52/"];
     function ou() {
         ov();
         op = 3;
@@ -6611,23 +6615,20 @@ var setVarByName;
         }];
         this.bp = function () {
             aJ.setState(2);
-            jp.cE(!0);
+            if (settings.customMapFileBtn) jp.cE(true); // custom map file select button, removed in 1.83.0
             this.lq();
             c4.c5 = !0
-        }
-            ;
+        };
         this.ta = function () {
-            jp.cE(!1)
-        }
-            ;
+            if (settings.customMapFileBtn) jp.cE(false) // custom map file select button, removed in 1.83.0
+        };
         this.lq = function () {
-            jp.lq();
+            if (settings.customMapFileBtn) jp.lq(); // custom map file select button, removed in 1.83.0
             k[2] = Math.floor((q ? .49 : .4) * bq);
             k[1] = Math.floor((s - k[2] / 6 - this.dv.length * (cA + k[2] / 10)) / 2);
             k[0] = Math.floor((r - k[2]) / 2);
             jl.l7 && jl.lq()
-        }
-            ;
+        };
         this.xD = function (x) {
             var l;
             if (6 < x)
@@ -8589,8 +8590,8 @@ var setVarByName;
         }
             ;
         this.dF = function () {
-            dt || (80 === this.nS && this.a1E(),
-                this.nS = (this.nS + 1) % 100)
+            dt || (30 === this.nS && this.a1E(),
+                this.nS = (this.nS + 1) % 60)
         }
             ;
         this.a1E = function () {
@@ -8598,7 +8599,7 @@ var setVarByName;
             for (g = k.length - 1; 0 <= g; g--) {
                 var x = k[g];
                 if (ae.dD(x)) {
-                    var l = as(40 * ax[x], 100);
+                    var l = as(20 * ax[x], 100);
                     60 > l || (0 === bM[x].length ? !dE.dF(x, 2) && dA && dI(x, l, 0, 0) : dA ? dT(x, l) : db(x, l))
                 }
             }
@@ -8747,7 +8748,7 @@ var setVarByName;
     var oy, cH, a1d, a1e, r, s, pB, bq, gA, cB, pF, a1f, b, c, e, d, q, a1g = !1, a1h, a1i, i, gu, sf, h4, a5, b0, hn, vV, c4, dW, eP, cD, fe, vd, nN, uH, a1j, a1k, a1l = 0, a1m = "", a1n = !1;
     function a1o() {
         a1k = 2;
-        a1e = 4262;
+        a1e = 2515;
         a1d = ter_version + ter_update;
         jq();
         d8();
@@ -9809,7 +9810,7 @@ var setVarByName;
                     for (B = 1; B < z.length; B++)
                         if (k(y, A, C, B))
                             return 1 === z[B].id ? (jm.xd = 1 === jm.xd ? 2 : 2 === jm.xd ? 5 : 1,
-                                z[1].name = "Lobby " + jm.xd,
+                                z[1].name = "Lobby " + (5 === jm.xd ? "1B" : jm.xd),
                                 c4.c5 = !0) : 2 === z[B].id ? (jm.a10 = !jm.a10,
                                     z[B].mx = jm.a10 ? 130 : 0,
                                     g(),
@@ -11944,7 +11945,7 @@ var setVarByName;
 )();
 
 if (localStorage.getItem("settings") !== null) {
-    settings = JSON.parse(localStorage.getItem("settings"));
+    settings = {...settings, ...JSON.parse(localStorage.getItem("settings"))};
 }
 settingsManager.applySettings();
 
