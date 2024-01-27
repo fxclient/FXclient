@@ -1,5 +1,5 @@
 #Notice: This project is currently dicontinued
-You can still use the old version currently available at https://fxclient.cf and it's actually useful because the map upload button is still there, while the real creator removed it from the real game, so it is very useful on mobile devices where you can't drag and drop the map
+You can still use the old version currently available at https://mohsenemx.github.io/FXclient/ and it's actually useful because the map upload button is still there, while the real creator removed it from the real game, so it is very useful on mobile devices where you can't drag and drop the map
 Maybe the project will be revived sometime but currently it will stay like this.
 
 
@@ -18,5 +18,5 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 9. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard
 
 ### Contact Us
-Our Website: https://fxclient.cf
+Our Website: (https://mohsenemx.github.io/FXclient/)
 Our Discord: https://discord.gg/JEwYWGraj7
