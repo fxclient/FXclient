@@ -2,6 +2,8 @@
 You can still use the old version currently available at https://mohsenemx.github.io/FXclient/ and it's actually useful because the map upload button is still there, while the real creator removed it from the real game, so it is very useful on mobile devices where you can't drag and drop the map
 Maybe the project will be revived sometime but currently it will stay like this.
 
+UPDATE: The project is in the process of being revived
+
 
 ## What is FX Client?
 FX Client is the first Territorial.io client, targeting better User Interface and better User Experience, It's basically Territorial.io but better.

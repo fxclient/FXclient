@@ -1,0 +1,23 @@
+{
+  "name": "fxclient",
+  "version": "0.5.3",
+  "description": "A modded territorial.io client",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "build-only": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohsenemx/FXclient.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohsenemx/FXclient/issues"
+  },
+  "homepage": "https://github.com/mohsenemx/FXclient#readme",
+  "dependencies": {
+    "js-beautify": "^1.14.11"
+  }
+}

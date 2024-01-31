@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q96FGB3L05"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Q96FGB3L05');
+    </script>
+    <meta charset="utf-8" />
+    <title>FX Client</title>
+    <meta name="description" content="Modified Version of Territorial.io - FX Client">
+    <meta name="keywords"
+        content="territorial.io,territory games,territorial io,map games,conquest games,conquest game,david tschacher,territorial,territory game,io game,io games,territory.io,territory io,territory games io">
+    <meta name="author" content="MohsenEMX, peshomir,orlemley1, David Tschacher">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <meta name="og:image" content="https://fxclient.cf/logo.png" />
+    <meta property="og:url" content="https://fxclient.cf">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FXclient.cf">
+    <meta property="og:description" content="Modified Version of Territorial.io - FX Client">
+    <meta property="og:image" content="https://fxclient.cf/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FX Client">
+    <meta name="twitter:description" content="Modified Version of Territorial.io - FX Client">
+    <meta name="twitter:image" content="https://fxclient.cf/logo.png">
+    <meta itemprop="name" content="FXclient.cf">
+    <meta itemprop="description" content="Modified Version of Territorial.io - FX Client">
+    <meta itemprop="image" content="https://fxclient.cf/logo.png">
+    
+    <!-- FX Client CSS -->
+    <link rel="stylesheet" href="main.css">
+    <!-- Game CSS -->
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background: rgb(0, 0, 0);
+            touch-action: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body onload="aiCommand746(0);">
+    <canvas id="canvasA" width="128" height="128"></canvas>
+    <div class="window flex settings" style="display:none">
+        <h1>Settings</h1>
+        <div class="scrollable">
+            <label title="Name of the font to be used for rendering. For example: Arial, Georgia, sans-serif, serif, Comic Sans MS, ...">
+                Font name: <input id="settings_fontname" placeholder="Enter font name" value="Arial"></label><br>
+            <br><button onclick="removeWins()">Reset Wins Counter</button><br><br>
+            <label for="settings_donations_bots" class="checkbox">
+                Display donations from bots in donation history viewer (applies to multiplayer only)
+                <input type="checkbox" id="settings_donations_bots"><span class="checkmark"></span>
+            </label><br>
+            <label for="settings_hidealllinks" class="checkbox">
+                Hide Links option also hides app store links
+                <input type="checkbox" id="settings_hidealllinks"><span class="checkmark"></span>
+            </label><br>
+            <label for="settings_realisticnames" class="checkbox">
+                Realistic Bot Names
+                <input type="checkbox" id="settings_realisticnames"><span class="checkmark"></span>
+            </label><br>
+            <!--<label for="settings_custommapfileinput" class="checkbox">
+                Bring back the custom map file button after the creator removed it in 1.83.0
+                <input type="checkbox" id="settings_custommapfileinput"><span class="checkmark"></span>
+            </label>-->
+        </div>
+        <hr>
+        <footer>
+            <button onclick="settingsManager.resetAll()">Reset Settings</button>
+            <button onclick="settingsManager.save()">Save Settings</button>
+        </footer>
+    </div>
+    <div class="window scrollable" id="donationhistory" style="display:none">
+        <h1>Donation history for </h1>
+        <p id="donationhistory_note">Note: donations from bots are not shown here</p>
+        <p id="donationhistory_text"></p>
+    </div>
+    <script src="variables.js"></script>
+    <script src="fx_core.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
