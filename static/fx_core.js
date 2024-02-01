@@ -1,5 +1,5 @@
-const fx_version = '0.6'; // FX Client Version
-const fx_update = 'Jan 31'; // FX Client Last Updated
+const fx_version = '0.6.0.1'; // FX Client Version
+const fx_update = 'Feb 1'; // FX Client Last Updated
 
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
@@ -21,7 +21,7 @@ var settingsManager = new (function() {
         fontName: document.getElementById("settings_fontname")
     };
     var checkboxFields = {
-        showBotDonations: document.getElementById("settings_donations_bots"),
+        //showBotDonations: document.getElementById("settings_donations_bots"),
         hideAllLinks: document.getElementById("settings_hidealllinks"),
         realisticNames: document.getElementById("settings_realisticnames"),
         //customMapFileBtn: document.getElementById("settings_custommapfileinput")
@@ -88,7 +88,7 @@ WindowManager.add({
     name: "donationHistory",
     element: document.querySelector("#donationhistory"),
     beforeOpen: function(isSingleplayer) {
-        document.getElementById("donationhistory_note").style.display = ((settings.showBotDonations || /*getVarByName("dt")*/ isSingleplayer) ? "none" : "block");
+        document.getElementById("donationhistory_note").style.display = ((true || settings.showBotDonations || /*getVarByName("dt")*/ isSingleplayer) ? "none" : "block");
     }
 });
 document.getElementById("canvasA").addEventListener("mousedown", WindowManager.closeAll);
@@ -103,7 +103,9 @@ var donationsTracker = new (function(){
     // from inside of game:
     // ((!gE[g].startsWith("[Bot] ") || settings.showBotDonations) && donationsTracker.logDonation(g,k,x))
     this.logDonation = function(senderID, receiverID, amount) {
-        this.donationHistory[receiverID].push([senderID,amount]);
+        const donationInfo = [senderID, receiverID, amount];
+        this.donationHistory[receiverID].push(donationInfo);
+        this.donationHistory[senderID].push(donationInfo);
     };
     this.getRecipientHistoryOf = function(playerID) {
         return this.donationHistory[playerID];
@@ -118,7 +120,8 @@ function displayDonationsHistory(playerID, playerNames, isSingleplayer) {
     var historyText = "";
     history.reverse();
     if (history.length > 0) history.forEach(function(historyItem, index) {
-        historyText += (history.length - index) + ". Received " + historyItem[1] + " resources from " + playerNames[historyItem[0]] + "<br>";
+        if (playerID === historyItem[1]) historyText += `${(history.length - index)}. Received ${historyItem[2]} resources from ${playerNames[historyItem[0]]}<br>`;
+        else historyText += `${(history.length - index)}. Sent ${historyItem[2]} resources to ${playerNames[historyItem[1]]}<br>`;
     });
     else historyText = "Nothing to display";
     document.querySelector("#donationhistory p#donationhistory_text").innerHTML = historyText;

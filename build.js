@@ -73,8 +73,9 @@ replaceOne(/(((\w+)\[\w+\])=\2\.replace\(\w+(\[\w+\]),\w+\4\))/g, "$1; if (setti
 replaceOne(/(this\.\w+=function\(\){)((\w+\.\w+)\[2\]=\3\[3\]=\3\[4\]=(?<linksHidden>!this\.\w+\.\w+),)/g,
 "$1 if (settings.hideAllLinks) $3[0] = $3[1] = $<linksHidden>; else $3[0] = $3[1] = true; $2")
 
-// Track donations -- todo
-
+// Track donations
+replaceOne(/(this\.\w+=function\((\w+),(\w+)\)\{)(\2===\w+&&\(\w+\.\w+\((\w+\.\w+)\[0\],\5\[1\],\3\),this\.(\w+)\[12\]\+=\5\[1\],this\.\6\[16\]\+=\5\[0\]\),\3===\w+&&\()/g,
+"$1 donationsTracker.logDonation($2, $3, $5[0]); $4")
 
 // Display donations for a player when clicking on them in the leaderboard
 // match , 0 !== dG[x]) && fq.hB(x, 800, false, 0),
