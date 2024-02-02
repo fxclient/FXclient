@@ -14,7 +14,7 @@ const replaceOne = (expression, replaceValue) => {
     return result;
 }
 
-const dictionary = { __dictionaryVersion: '1.89.6   1 Feb 2024', playerId: 'bA', playerNames: 'gq',	gIsSingleplayer: 'fH', gIsTeamGame: 'di' };
+const dictionary = { __dictionaryVersion: '1.89.7   2 Feb 2024', playerId: 'bB', playerNames: 'hA', gIsSingleplayer: 'fc', gIsTeamGame: 'cH' };
 if (!script.includes(`"${dictionary.__dictionaryVersion}"`)) throw new Error("Dictionary is outdated.");
 
 // Replace assets
