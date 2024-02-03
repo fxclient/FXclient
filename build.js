@@ -14,7 +14,7 @@ const replaceOne = (expression, replaceValue) => {
     return result;
 }
 
-const dictionary = { __dictionaryVersion: '1.89.7   2 Feb 2024', playerId: 'bB', playerNames: 'hA', gIsSingleplayer: 'fc', gIsTeamGame: 'cH' };
+const dictionary = { __dictionaryVersion: '1.89.8   3 Feb 2024', playerId: 'bB', playerNames: 'hA', playerBalances: 'bC', playerTerritories: 'bj', gIsSingleplayer: 'fc', gIsTeamGame: 'cH' };
 if (!script.includes(`"${dictionary.__dictionaryVersion}"`)) throw new Error("Dictionary is outdated.");
 
 // Replace assets
@@ -33,14 +33,26 @@ replaceOne(/(0===(\w+)\?(\w+)\[\2\]\.length)-1:(\3\[\2\]\.length:1,)/g, "$1 - 2 
 // Max size for custom maps: from 4096x4096 to 8192x8192
 // TODO: test this; it might cause issues with new boat mechanics?
 
-// Add Troop Density and Maximum Troops in side panel -- todo
+{ // Add Troop Density and Maximum Troops in side panel -- todo
+	const { groups: { valuesArray } } = replaceOne(/(,(?<labelsArray>\w+)\[\d\]="Interest",\2\[\d\]="Income",\2\[\d\]="Time"),(\w+=\w+-\w+\(\w+,100\),\((?<valuesArray>\w+)=new Array\(\2\.length\)\)\[0\]=\w+)/g,
+		'$1, $<labelsArray>.push("Max Troops", "Density"), $3'); // add labels
+	replaceOne(new RegExp(/(:(?<valueIndex>\w+)<7\?\w+\.\w+\(valuesArray\[\2\]\)):(\w+\.\w+\(valuesArray\[7\]\))}/
+		.source.replace(/valuesArray/g, valuesArray), "g"),
+		'$1 : $<valueIndex> === 7 ? $3 '
+		+ `: $<valueIndex> === 8 ? utils.getMaxTroops(${dictionary.playerTerritories}, ${dictionary.playerId}) `
+		+ `: utils.getDensity(${dictionary.playerBalances}, ${dictionary.playerTerritories}, ${dictionary.playerId}) }`);
+	// increase the size of the side panel by 25% to make the text easier to read
+	// match this.w = Math.floor((o ? .1646 : .126) * cZ),
+	replaceOne(/(this\.\w+=Math\.floor\(\(\w+\?\.1646:\.126\))\*(\w+\),)/g, "$1 * 1.25 * $2");
+}
 
 // Increment win counter on wins
 replaceOne(/(=function\((\w+)\){)([^}]+),((\w+\(0),\w+<100\?\w+\[\w+\]\+" won the game."[^,]+,([^()]+?\))),(?<end>[^}]+},)/g,
-`$1 if (${dictionary.playerId} === $2) wins_counter++, window.localStorage.setItem("fx_win_count", wins_counter); ` +
+`$1 if (${dictionary.playerId} === $2) wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter); ` +
 `$3, $4, $5, "Your Current Win Count is Now " + wins_counter, $6, $<end>`);
 
-// Add settings button and win count
+
+{ // Add settings button and win count
 // render gear icon and win count
 // cV.textAlign=cX,cV.textBaseline=cW,a03(a9Y.gb,a9Y.gc,a9Y.m5,a9Y.tD,ug[a9P][0].mf,ug[a9P][0].oU,ug[a9P][0].e8,0===yk,ug[a9P][0].name),a9O))
 // l(A.f3, A.f4, A.hw, A.nI, z[0].f7, z[0].mx, z[0].cm, 0 === t, z[0].name, .6);
@@ -61,6 +73,7 @@ replaceOne(/(this\.\w+=function\((?<mouseX>\w+),(?<mouseY>\w+)\){[^}]+?)if\((?<c
 // if (y > (C.f3-C.hw/2) && y < ((C.f3-C.hw/2)+C.nI) && A > C.f4 && A < (C.f4 + C.nI)) WindowManager.openWindow("settings");
 `if ($<mouseX> > gearIconX && $<mouseX> < (gearIconX+${groups.h}) && $<mouseY> > ${groups.y} && $<mouseY> < (${groups.y}+${groups.h})) return WindowManager.openWindow("settings"); ` +
 'if ($<isMenuOpened>) $<end>');
+}
 
 // Enforce custom font name
 script = script.replace(/"px sans-serif"/g, '"px " + settings.fontName');
@@ -81,6 +94,9 @@ replaceOne(/(this\.\w+=function\((\w+),(\w+)\)\{)(\2===\w+&&\(\w+\.\w+\((\w+\.\w
 // match , 0 !== dG[x]) && fq.hB(x, 800, false, 0),
 replaceOne(/,(0!==\w+\[(\w+)\]\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
 	`, ${dictionary.gIsTeamGame} && displayDonationsHistory($2, ${dictionary.playerNames}, ${dictionary.gIsSingleplayer}), $1`);
+
+// Reset donation history when a new game is started
+replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), ");
 
 console.log("Formatting code...");
 

@@ -1,5 +1,5 @@
-const fx_version = '0.6.0.1'; // FX Client Version
-const fx_update = 'Feb 1'; // FX Client Last Updated
+const fx_version = '0.6.0.2'; // FX Client Version
+const fx_update = 'Feb 3'; // FX Client Last Updated
 
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
@@ -97,9 +97,9 @@ var settingsGearIcon = document.createElement('img');
 settingsGearIcon.setAttribute('src', 'geari_white.png');
 
 var donationsTracker = new (function(){
-    this.donationHistory = Array();
+    this.donationHistory = Array(512);
     // fill the array with empty arrays with length of 3
-    for (var i = 0; i < 512; i++) this.donationHistory.push([]);
+    //for (var i = 0; i < 512; i++) this.donationHistory.push([]); // not needed as .reset is called on game start
     // from inside of game:
     // ((!gE[g].startsWith("[Bot] ") || settings.showBotDonations) && donationsTracker.logDonation(g,k,x))
     this.logDonation = function(senderID, receiverID, amount) {
@@ -110,6 +110,7 @@ var donationsTracker = new (function(){
     this.getRecipientHistoryOf = function(playerID) {
         return this.donationHistory[playerID];
     };
+    this.reset = function() { for (var i = 0; i < 512; i++) this.donationHistory[i] = []; };
 });
 // usage from inside: displayDonationsHistory(Y, gE);
 function displayDonationsHistory(playerID, playerNames, isSingleplayer) {
@@ -129,7 +130,7 @@ function displayDonationsHistory(playerID, playerNames, isSingleplayer) {
 }
 
 var utils = new (function() {
-    this.getMaxTroops = function(playerTerritories, playerID) { return playerTerritories[playerID]*150; };
+    this.getMaxTroops = function(playerTerritories, playerID) { return (playerTerritories[playerID]*150).toString(); };
     this.getDensity = function(playerBalances, playerTerritories, playerID) {
         return (Math.floor((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100) + "%");
     };
