@@ -1,5 +1,5 @@
-const fx_version = '0.6.0.2'; // FX Client Version
-const fx_update = 'Feb 3'; // FX Client Last Updated
+const fx_version = '0.6.0.3'; // FX Client Version
+const fx_update = 'Feb 6'; // FX Client Last Updated
 
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
@@ -121,8 +121,10 @@ function displayDonationsHistory(playerID, playerNames, isSingleplayer) {
     var historyText = "";
     history.reverse();
     if (history.length > 0) history.forEach(function(historyItem, index) {
-        if (playerID === historyItem[1]) historyText += `${(history.length - index)}. Received ${historyItem[2]} resources from ${playerNames[historyItem[0]]}<br>`;
-        else historyText += `${(history.length - index)}. Sent ${historyItem[2]} resources to ${playerNames[historyItem[1]]}<br>`;
+        historyText += `<span class="color-light-gray">${(history.length - index)}.</span> `;
+        if (playerID === historyItem[1])
+            historyText += `Received <span class="color-green">${historyItem[2]}</span> resources from ${playerNames[historyItem[0]]}<br>`;
+        else historyText += `Sent <span class="color-red">${historyItem[2]}</span> resources to ${playerNames[historyItem[1]]}<br>`;
     });
     else historyText = "Nothing to display";
     document.querySelector("#donationhistory p#donationhistory_text").innerHTML = historyText;

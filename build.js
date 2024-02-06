@@ -14,8 +14,20 @@ const replaceOne = (expression, replaceValue) => {
     return result;
 }
 
-const dictionary = { __dictionaryVersion: '1.90.0   4 Feb 2024', playerId: 'bB', playerNames: 'hA', playerBalances: 'bC', playerTerritories: 'bj', gIsSingleplayer: 'fc', gIsTeamGame: 'cH' };
-if (!script.includes(`"${dictionary.__dictionaryVersion}"`)) throw new Error("Dictionary is outdated.");
+//const dictionary = { __dictionaryVersion: '1.90.0   4 Feb 2024', playerId: 'bB', playerNames: 'hA', playerBalances: 'bC', playerTerritories: 'bj', gIsSingleplayer: 'fc', gIsTeamGame: 'cH' };
+//if (!script.includes(`"${dictionary.__dictionaryVersion}"`)) throw new Error("Dictionary is outdated.");
+let dictionary = {};
+[/,\w+="Player: "\+(?<playerNames>\w+)\[\w+\],\w+=\(\w\+="   Balance: "\+\w+\.\w+\((?<playerBalances>\w+)\[\w+\]\)\)\+\("   Territory: "\+\w+\.\w+\((?<playerTerritories>\w+)\[\w+\]\)\)\+\("   Coords: "/g,
+/{\w+===(?<playerId>\w+)\?\w+\(175," Message to "/g,
+/=(?<gIsSingleplayer>\w+)\?"Players":"Bots"/g,
+/,(?<gIsTeamGame>\w+)=\(\w+=\w+\)<7\|\|9===\w+,/g,
+]
+	.forEach(expression => {
+		result = expression.exec(script);
+		if (result === null) throw new Error("no match for ") + expression;
+		if (expression.exec(script) !== null) throw new Error("more than one match for: ") + expression;
+		for (let [key, value] of Object.entries(result.groups)) dictionary[key] = value;
+	});
 
 // Replace assets
 const assets = require('./assets.js');

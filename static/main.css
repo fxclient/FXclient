@@ -54,7 +54,7 @@ h1 {
 	transition        : 0.2s;
 }
 
-canvas {
+canvas, input, textarea {
 	transition: 0.2s;
 }
 
@@ -73,6 +73,11 @@ input#inputfilebtn {
 	transition: 0.2s
 }
 
+.window#donationhistory { user-select: text; }
+
+.color-red { color: #dc143c; }
+.color-green { color: #32cd32; }
+.color-light-gray { color: #aaaaaa; }
 
 /* Checkbox */
 label.checkbox {
