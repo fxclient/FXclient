@@ -30,11 +30,12 @@ function a() {
 			}), (g = document.createElement("div")).id = "videoad", document.body.appendChild(g), (g = document.createElement("script")).async = !0, g.src = "//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/tag.min.js", document.head
 			.appendChild(g))
 	}, this.i = function() {
-		if (!c()) {
-			if (void 0 !== aiptag.adplayer) return aiptag.cmd.player.push(function() {
+		if (console.log("showVideo"), c()) console.log("error 0");
+		else {
+			if (void 0 !== aiptag.adplayer) return console.log("Success: Ad will be shown!"), aiptag.cmd.player.push(function() {
 				aiptag.adplayer.startVideoAd()
 			}), !0;
-			console.log("Ad Could not be loaded, load your content here")
+			console.log("error: aiptag.adplayer is undefined")
 		}
 		return !1
 	}, this.k = function(l) {
@@ -107,7 +108,8 @@ function aJ(j) {
 }
 
 function aK() {
-	return !(aL.aM < aN) && (aN = aL.aM + 135e4, !!aO.i() || (m ? (window.webkit.messageHandlers.iosCommandA.postMessage("show ad " + 135e4), !0) : 12 <= q && (n.presentAd(135e4), !0)))
+	return aL.aM < aN ? (console.log("can't show ad, next ad will be shown in " + ((aN - aL.aM) / 1e3).toFixed(0) + "s"), !1) : (aN = aL.aM + 135e4, !!aO.i() || (m ? (window.webkit.messageHandlers.iosCommandA.postMessage("show ad " + 135e4), !0) :
+		12 <= q && (n.presentAd(135e4), !0)))
 }
 
 function aP() {
@@ -5084,7 +5086,7 @@ var mX, zQ, q9, qA, aN = 0,
 	o6 = 0;
 
 function a7u() {
-	a7t = 2, a7q = 2173, a7p = 10, a7o = "1.90.3   6 Feb 2024", a7v(), qW(), fA();
+	a7t = 2, a7q = 2173, a7p = 10, a7o = "1.90.4   7 Feb 2024", a7v(), qW(), fA();
 	var a7w = document.getElementById("usernameField");
 	a7w && document.body.removeChild(a7w), n = "undefined" != typeof Android ? Android : null, 12 <= (q = n ? n.getVersion() : 0) && n.prepareAd("6685097465"), m = !1, window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers
 		.iosCommandA && (m = !0, window.webkit.messageHandlers.iosCommandA.postMessage("prepare ad 4500876070"), p = "undefined" != typeof mwIOSdataX ? mwIOSdataX : {
@@ -5919,13 +5921,13 @@ function rK() {
 			if (aA2) {
 				for (aE = 1; aE < vP[aA3].length; aE++)
 					if (or(hD, hE, aAC, aE)) return aAF = vP[aA3][aE], 0 === aA3 ? 1 === aAF.id ? (hR.a3S = (hR.a3S + 1) % 4, aAF.name = (hR.a3S % 2 ? "Proxy " : "Lobby ") + (1 + (hR.a3S >> 1)), aL.cx = !0) : 2 === aAF.id ? (aA3 = 1, aL.cx = !
-						0) : 3 === aAF.id ? (aA3 = 2, aL.cx = !0) : 4 === aAF.id && kj.show() : 1 === aA3 ? 1 === aAF.id ? (hR.hS.tu = !hR.hS.tu, aAF.pN = hR.hS.tu ? 130 : 0, hR.a0k(), aL.cx = !0) : 2 === aAF.id ? (hR.hS.aA8 = !hR.hS.aA8, hR
-							.aA7(), hR.a0k(), aL.cx = !0) : 3 === aAF.id ? (hR.hS.wr = !hR.hS.wr, aAF.pN = hR.hS.wr ? 130 : 0, hR.a0k(), aL.cx = !0) : 4 === aAF.id ? (hR.hS.hT = !hR.hS.hT, aAF.pN = hR.hS.hT ? 130 : 0, hR.a0k(), aL.cx = !0) :
-						5 === aAF.id ? (hR.hS.aA9++, hR.hS.aA9 %= 8, hR.aAA(aAF.id), hR.a0k(), p9.a3D(1), aL.cx = !0) : 6 === aAF.id ? (hR.hS.a6U++, hR.hS.a6U %= 10, hR.aAA(aAF.id), hR.a0k(), aL.cx = !0) : 7 === aAF.id ? (hR.hS.yN++, hR.hS
-							.yN %= 4, hR.aAA(aAF.id), hR.a0k(), aL.cx = !0) : 8 === aAF.id ? (hR.aA4(), hR.aA7(), hR.a0k(), p9.a3D(1), aL.cx = !0) : 9 === aAF.id && (aA3 = 0, aL.cx = !0) : 1 === aAF.id ? (os.b(qV.aAG, !0), os.b(qV.aAG, !1)) :
-						2 === aAF.id ? (os.b(qV.aAH, !0), os.b(qV.aAH, !1)) : 3 === aAF.id ? (os.b(qV.aAI, !0), os.b(qV.aAI, !1)) : 4 === aAF.id ? (os.b(qV.a7x, !0), os.b(qV.a7x, !1)) : 5 === aAF.id ? (os.b(qV.u2, !0), os.b(qV.u2, !1)) :
-						13 === aAF.id ? (os.b(qV.aAJ, !0), os.b(qV.aAJ, !1)) : 14 === aAF.id ? (os.b(qV.aAK, !0), os.b(qV.aAK, !1)) : 6 === aAF.id ? (aA3 = 0, aL.cx = !0) : 7 === aAF.id ? m ? window.webkit.messageHandlers.iosCommandA
-						.postMessage("showConsentForm") : n.setState(7) : 12 === aAF.id && n.setState(14), !0;
+						0) : 3 === aAF.id ? (aA3 = 2, aL.cx = !0) : 4 === aAF.id ? kj.show() : 5 === aAF.id && (console.log("try showing ad:"), aO.i()) : 1 === aA3 ? 1 === aAF.id ? (hR.hS.tu = !hR.hS.tu, aAF.pN = hR.hS.tu ? 130 : 0, hR.a0k(),
+							aL.cx = !0) : 2 === aAF.id ? (hR.hS.aA8 = !hR.hS.aA8, hR.aA7(), hR.a0k(), aL.cx = !0) : 3 === aAF.id ? (hR.hS.wr = !hR.hS.wr, aAF.pN = hR.hS.wr ? 130 : 0, hR.a0k(), aL.cx = !0) : 4 === aAF.id ? (hR.hS.hT = !hR.hS
+							.hT, aAF.pN = hR.hS.hT ? 130 : 0, hR.a0k(), aL.cx = !0) : 5 === aAF.id ? (hR.hS.aA9++, hR.hS.aA9 %= 8, hR.aAA(aAF.id), hR.a0k(), p9.a3D(1), aL.cx = !0) : 6 === aAF.id ? (hR.hS.a6U++, hR.hS.a6U %= 10, hR.aAA(aAF
+							.id), hR.a0k(), aL.cx = !0) : 7 === aAF.id ? (hR.hS.yN++, hR.hS.yN %= 4, hR.aAA(aAF.id), hR.a0k(), aL.cx = !0) : 8 === aAF.id ? (hR.aA4(), hR.aA7(), hR.a0k(), p9.a3D(1), aL.cx = !0) : 9 === aAF.id && (aA3 = 0, aL
+							.cx = !0) : 1 === aAF.id ? (os.b(qV.aAG, !0), os.b(qV.aAG, !1)) : 2 === aAF.id ? (os.b(qV.aAH, !0), os.b(qV.aAH, !1)) : 3 === aAF.id ? (os.b(qV.aAI, !0), os.b(qV.aAI, !1)) : 4 === aAF.id ? (os.b(qV.a7x, !0), os.b(
+							qV.a7x, !1)) : 5 === aAF.id ? (os.b(qV.u2, !0), os.b(qV.u2, !1)) : 13 === aAF.id ? (os.b(qV.aAJ, !0), os.b(qV.aAJ, !1)) : 14 === aAF.id ? (os.b(qV.aAK, !0), os.b(qV.aAK, !1)) : 6 === aAF.id ? (aA3 = 0, aL.cx = !
+						0) : 7 === aAF.id ? m ? window.webkit.messageHandlers.iosCommandA.postMessage("showConsentForm") : n.setState(7) : 12 === aAF.id && n.setState(14), !0;
 				return aA2 = !1, !(aL.cx = !0)
 			}
 			return !!or(hD, hE, aAC, 0) && (aA2 = !(aA3 = 0), aL.cx = !0)
