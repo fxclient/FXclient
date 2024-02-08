@@ -601,7 +601,7 @@ function g6() {
 }
 
 function gF() {
-	bP.fF(), gG.fF(), gH.fF(), gI.fF(), gJ.fF(), bL.fF(), gK.fF(), eO.gL.fF(), gM(), gN.fF(), g1.fF(), g8.fF(), g8.gO(), g9.fF(), gP.fF(), gQ.fF(), gR.fF(), g7.fF(), gS.fF(), cf.fF(), gT.fF(), bR.fF(), gU.fF(), gV.fF(), gB.fF(), gW.fF(), aL.fF()
+	gG.fF(), gH.fF(), bP.fF(), gI.fF(), gJ.fF(), bL.fF(), gK.fF(), eO.gL.fF(), gM(), gN.fF(), g1.fF(), g8.fF(), g8.gO(), g9.fF(), gP.fF(), gQ.fF(), gR.fF(), g7.fF(), gS.fF(), cf.fF(), gT.fF(), bR.fF(), gU.fF(), gV.fF(), gB.fF(), gW.fF(), aL.fF()
 }
 
 function gX() {
@@ -1492,7 +1492,7 @@ function pm() {
 			eA = cA.cB(q8 * (eA + 1), 1024),
 			qB = cA.cB(qB * q8, 1024),
 			eA = Math.min(eA, q8 - qB);
-		return 10 === fv && (eA = gG.qE(player, eA)), eU.aX[0] = eA, eU.aX[1] = qB, qC <= eA
+		return 10 === fv && (eA = gI.qE(player, eA)), eU.aX[0] = eA, eU.aX[1] = qB, qC <= eA
 	}, this.jl = function(player, jQ, jP) {
 		var player = bO[player],
 			qD = cA.cB(64 * player, 1024);
@@ -1525,8 +1525,8 @@ function qJ() {
 			.qQ(), fx && aJ(1)
 	}
 }
-var fx, cJ, qR, qA, qS, bN, hu, hr, qT, cS, qU, fv, oS, kG, o0, qV, fG, bL, gJ, gK, gY, qK, w, n5, cK, g7, qu, gR, cv, cf, hv, pH, gQ, gN, g9, gZ, qv, qw, aT, qx, pR, qy, fy, qt, cq, bW, r, b5, bP, g8, qj, g1, qh, qz, hz, r0, em, h6, n1, p8, r1, ga,
-	jK, ph, r2, r3, gT, gc, gB, gH, hR, r4, gI, gG, gS, pN, fr, r5, cc, gW, lJ, cM, dB, gb, lb, r6, k9, lm, r7, pB, r8, cA, kD, eO, eU, gP, gV, gC, az, pX, r9, aO, bZ = 512,
+var fx, cJ, qR, qA, qS, bN, hu, hr, qT, cS, qU, fv, oS, kG, o0, qV, fG, bL, gH, gK, gY, qK, w, n5, cK, g7, qu, gR, cv, cf, hv, pH, gQ, gN, g9, gZ, qv, qw, aT, qx, pR, qy, fy, qt, cq, bW, r, b5, bP, g8, qj, g1, qh, qz, hz, r0, em, h6, n1, p8, r1, ga,
+	jK, ph, r2, r3, gT, gc, gB, gG, hR, r4, gJ, gI, gS, pN, fr, r5, cc, gW, lJ, cM, dB, gb, lb, r6, k9, lm, r7, pB, r8, cA, kD, eO, eU, gP, gV, gC, az, pX, r9, aO, bZ = 512,
 	mW = 512,
 	q9 = 150,
 	gg = 0,
@@ -1537,7 +1537,7 @@ function qW(qX, qY, nH, qZ, qa, qb) {
 	hu = !1, cJ = qb, oS = qa, cS = (fv = qZ) < 7 || 9 === fv, o6 = e5 = nH.length, fx = 1 === o6, qU = 9 === (fv = 8 === (fv = 10 === fv && fx ? 7 : fv) && 2 !== e5 ? 7 : fv) ? 2 : fv + 2, qV = e5 <= 2 ? 30 : e5 <= 50 ? 40 : 50, qT = hr = !(fr.fs &&
 			!fr.ft.qc) && (cS || e5 < 100), kG = hr ? new qJ : null, mm = 512, mW = bZ, fx && (mW = fy.qd()), fq = mW - e5, o5 = 0, bN = qY, em.qe(qX), g1.b(), qf(nH), fW.b(nH), gg = 1, qA = 15e8, qS = 1e9, bR.b(), qg(), qh.qi(), iI.b(), bP.b(),
 	fB(), bW.b(nH), n1.b(), kD.b(), eO.b(), gC.b(), fG.b(), qj.lc(), qj.qk(), qK.b(), ql(), gW.b(qX, nH, qZ, qa), gU.b(), gV.b(), gP.b(), n6.b(), qm.putImageData(qn, 0, 0), gN.b(), hv.b(), cf.b(), gb.b(), gT.b(), gQ.b(), g9.b(), cK.b(), cv.b(), g7
-		.b(), gR.b(), n5.b(), gZ.b(), gK.b(), bL.b(), gJ.b(), ay(), b5.b(), g8.b(), pX.b(), gG.b(), gI.b(), gS.b(), gH.b(), aO.k(!1), 8 === fv ? (o0 = new nG).b(nH) : o0 = null, aL.qo(), qp(), ga.b(), aL.cx = !0, cJ || fx && hr || aJ(1)
+		.b(), gR.b(), n5.b(), gZ.b(), gK.b(), bL.b(), gH.b(), ay(), b5.b(), g8.b(), pX.b(), gI.b(), gJ.b(), gS.b(), gG.b(), aO.k(!1), 8 === fv ? (o0 = new nG).b(nH) : o0 = null, aL.qo(), qp(), ga.b(), aL.cx = !0, cJ || fx && hr || aJ(1)
 }
 
 function qp() {
@@ -1549,10 +1549,10 @@ function qq(qr) {
 }
 
 function rA() {
-	cA = new rB, r8 = new rC, fG = new ff, bL = new gi, gJ = new gw, gK = new gz, gY = new hW, qK = new mL, w = new nX, n5 = new rD, cK = new rE, g7 = new rF, qu = new rG, gR = new rH, cv = new rI, cf = new rJ, hv = new rK, pH = new rL, gQ = new rM,
+	cA = new rB, r8 = new rC, fG = new ff, bL = new gi, gH = new gw, gK = new gz, gY = new hW, qK = new mL, w = new nX, n5 = new rD, cK = new rE, g7 = new rF, qu = new rG, gR = new rH, cv = new rI, cf = new rJ, hv = new rK, pH = new rL, gQ = new rM,
 		gN = new rN, g9 = new rO, gZ = new rP, qv = new rQ, qw = new rR, aT = new rS, (qx = new rT).lc(), pR = new rU, qy = new rV, fy = new rW, qt = new rX, cq = new rY, bW = new rZ, r = new ra, b5 = new rb, bP = new rc, g8 = new rd, qj = new re,
-		g1 = new rf, qh = new rg, qz = new rh, hz = new ri, r0 = new rj, em = new rk, h6 = new rl, n1 = new rm, p8 = new rn, r1 = new ro, ga = new rp, jK = new rq, ph = new rr, r2 = new rs, r3 = new rt, gT = new ru, gc = new rv, gB = new rw, gH =
-		new rx, hR = new ry, r4 = new rz, gI = new s0, gG = new s1, gS = new s2, pN = new s3, fr = new s4, r5 = new s5, cc = new jB, gW = new s6, lJ = new s7, cM = new pj, dB = new iK, gb = new s8, lb = new ob, (r6 = new nR).b(), k9 = new s9, (lm =
+		g1 = new rf, qh = new rg, qz = new rh, hz = new ri, r0 = new rj, em = new rk, h6 = new rl, n1 = new rm, p8 = new rn, r1 = new ro, ga = new rp, jK = new rq, ph = new rr, r2 = new rs, r3 = new rt, gT = new ru, gc = new rv, gB = new rw, gG =
+		new rx, hR = new ry, r4 = new rz, gJ = new s0, gI = new s1, gS = new s2, pN = new s3, fr = new s4, r5 = new s5, cc = new jB, gW = new s6, lJ = new s7, cM = new pj, dB = new iK, gb = new s8, lb = new ob, (r6 = new nR).b(), k9 = new s9, (lm =
 			new lT).b(), r7 = new sA, pB = new og, kD = new dP, eO = new sB, eU = new aV, gP = new sC, gV = new sD, gC = new no, (az = new sE).b(), pX = new cF, r9 = new sF, aO = new a
 }
 
@@ -1625,7 +1625,7 @@ function rD() {
 				if (0 === sG[0].sQ) {
 					if (qT && g9.sd() < 300) return 1;
 					cc.cd.ce(cf.cg(), player)
-				} else gH.se(player, cf.cg());
+				} else gG.se(player, cf.cg());
 			else if (1 === sW) cc.cd.jS(cf.cg(), sK);
 			else {
 				if (7 === sW) return aF.show(d0, d1), 2;
@@ -2090,8 +2090,8 @@ function us() {
 			d8.imageSmoothingEnabled = !0, d8.setTransform(this.zoom, 0, 0, this.zoom, hD, hE), d8.drawImage(this.sS[jd], 0, 0), d8.imageSmoothingEnabled = !1, d8.setTransform(1, 0, 0, 1, 0, 0)
 		}
 }
-var ko, vR, d2, pz, p6, p7, d4, eC, eB, eD, wM, gr, yU, hV, ua, e6, f3, f6, f2, f5, bv, ml, bO, bV, bn, bo, br, e7, fZ, fY, ol, d8, a8R, a8S, a8T, a1, a2, vW, ck, hL, d3, lM, a8U, m, p, n, q, a0, od, oc, i8, iI, aF, bR, n6, a1v, aL, fW, gU, d5, a26,
-	pQ, a0W, a8V, a8W, d9 = "middle",
+var ko, vR, d2, pz, p6, p7, d4, eC, eB, eD, wM, gr, yU, hV, ua, e6, f3, f6, f2, f5, bv, ml, bO, bV, bn, bo, br, e7, fZ, fY, ol, d8, a8S, a8T, a8U, a1, a2, vW, ck, hL, d3, lM, a8V, m, p, n, q, a0, od, oc, i8, iI, aF, bR, n6, a1v, aL, fW, gU, d5, a26,
+	pQ, a0W, a8W, a8X, d9 = "middle",
 	vM = "bottom",
 	dA = "center",
 	tv = "left",
@@ -4154,8 +4154,14 @@ function rY() {
 					for (hD = cu - 1; 0 <= hD; hD--)
 						for (hE = ez - 1; 0 <= hE; hE--) lz[(aE = 4 * (hD + hE * cu)) + 1] > lz[aE + 2] + 10 && (lz[aE + 3] = lz[aE], lz[aE + 1] = lz[aE + 2]);
 				dM.putImageData(dI, 0, 0), dL[cm] = fV
-			}(cm, a4H), a4C--, cq.cr() && (a0W.cp(), n5.sM(), aF.b(), a26.a0q([dL[8], dL[16], dL[7], dL[9], dL[10]], [!m, 0 === q, !0, !0, !0]), aL.cx = !0, dL[7] = a4D, dL[8] = a4D, dL[9] = a4D, dL[10] = a4D)
+			}(cm, a4H), a4J()
+		}, dL[cm].onerror = function(oX) {
+			console.error("Error loading image at index", cm, "Error:", oX), a4J()
 		}, dL[cm].src = "data:image/png;base64," + v
+	}
+
+	function a4J() {
+		cq.cr() || (a4C--, cq.cr() && (a0W.cp(), n5.sM(), aF.b(), a26.a0q([dL[8], dL[16], dL[7], dL[9], dL[10]], [!m, 0 === q, !0, !0, !0]), aL.cx = !0, dL[7] = a4D, dL[8] = a4D, dL[9] = a4D, dL[10] = a4D))
 	}
 	this.b = function() {
 		if (void 0 === dL) {
@@ -4219,8 +4225,8 @@ function rY() {
 }
 
 function rZ() {
-	var a4R, a4S, a4T, a4U, a4V, a4W, a4X, a4Y, a4Z, a4a, a4b, a4O = [224, 224, 224],
-		a4P = [
+	var a4S, a4T, a4U, a4V, a4W, a4X, a4Y, a4Z, a4a, a4b, a4c, a4P = [224, 224, 224],
+		a4Q = [
 			[172, 172, 172],
 			[144, 0, 0],
 			[0, 128, 0],
@@ -4231,7 +4237,7 @@ function rZ() {
 			[196, 196, 196],
 			[0, 0, 0]
 		],
-		a4Q = [
+		a4R = [
 			[4, 4, 4, 20],
 			[4, 0, 0, 27],
 			[0, 4, 0, 31],
@@ -4243,46 +4249,46 @@ function rZ() {
 			[4, 4, 4, 13]
 		];
 
-	function a4y(bc, a50) {
-		a05[bc] = 0, a05[bc + 1] = 0, a05[bc + 2] = a50, a05[bc + 3] = 0, a51(bc)
+	function a4z(bc, a51) {
+		a05[bc] = 0, a05[bc + 1] = 0, a05[bc + 2] = a51, a05[bc + 3] = 0, a52(bc)
 	}
 
-	function a51(bc) {
+	function a52(bc) {
 		var hD;
 		iI.iJ || (hD = bW.hN(bc), bc = bW.d6(bc), iI.iJ = hD >= i8.a04[0] && hD <= i8.a04[2] && bc >= i8.a04[1] && bc <= i8.a04[3])
 	}
 	this.b = function(nH) {
-		if (a4R = new Uint8Array(bZ), a4S = new Uint8Array(bZ), a4T = new Uint8Array(bZ), a4U = new Uint8Array(bZ), a4V = new Uint8Array(bZ), a4W = new Uint8Array(bZ), a4X = new Uint8Array(bZ), a4Y = new Uint8Array(bZ), a4Z = new Uint8Array(bZ),
-			a4a = new Uint8Array(bZ), this.wn = new Uint8Array(bZ), (a4b = new Int32Array(4))[0] = -4 * az.b0, a4b[1] = 4, a4b[2] = -a4b[0], a4b[3] = -a4b[1], cS)
-			for (var ca, fV, aE = bZ - 1; 0 <= aE; aE--) fV = fW.oE[fW.fX[aE]], ca = bJ((a4Q[fV][3] + 1) * em.random(), em.value(100)), a4R[aE] = a4P[fV][0] + ca * a4Q[fV][0], a4S[aE] = a4P[fV][1] + ca * a4Q[fV][1], a4T[aE] = a4P[fV][2] + ca *
-				a4Q[fV][2];
-		else fr.fs && fr.ft.a4i ? function(ad) {
+		if (a4S = new Uint8Array(bZ), a4T = new Uint8Array(bZ), a4U = new Uint8Array(bZ), a4V = new Uint8Array(bZ), a4W = new Uint8Array(bZ), a4X = new Uint8Array(bZ), a4Y = new Uint8Array(bZ), a4Z = new Uint8Array(bZ), a4a = new Uint8Array(bZ),
+			a4b = new Uint8Array(bZ), this.wn = new Uint8Array(bZ), (a4c = new Int32Array(4))[0] = -4 * az.b0, a4c[1] = 4, a4c[2] = -a4c[0], a4c[3] = -a4c[1], cS)
+			for (var ca, fV, aE = bZ - 1; 0 <= aE; aE--) fV = fW.oE[fW.fX[aE]], ca = bJ((a4R[fV][3] + 1) * em.random(), em.value(100)), a4S[aE] = a4Q[fV][0] + ca * a4R[fV][0], a4T[aE] = a4Q[fV][1] + ca * a4R[fV][1], a4U[aE] = a4Q[fV][2] + ca *
+				a4R[fV][2];
+		else fr.fs && fr.ft.a4j ? function(ad) {
 			var aE;
-			for (aE = mW - 1; 0 <= aE; aE--) a4R[aE] = 4 * ad[aE][0], a4S[aE] = 4 * ad[aE][1], a4T[aE] = 4 * ad[aE][2]
-		}(fr.ft.a4i) : (function() {
-			for (var aE = bZ - 1; e5 <= aE; aE--) a4R[aE] = 4 * bJ(64 * em.random(), em.value(100)), a4S[aE] = 4 * bJ(64 * em.random(), em.value(100)), a4T[aE] = 4 * bJ(64 * em.random(), em.value(100))
+			for (aE = mW - 1; 0 <= aE; aE--) a4S[aE] = 4 * ad[aE][0], a4T[aE] = 4 * ad[aE][1], a4U[aE] = 4 * ad[aE][2]
+		}(fr.ft.a4j) : (function() {
+			for (var aE = bZ - 1; e5 <= aE; aE--) a4S[aE] = 4 * bJ(64 * em.random(), em.value(100)), a4T[aE] = 4 * bJ(64 * em.random(), em.value(100)), a4U[aE] = 4 * bJ(64 * em.random(), em.value(100))
 		}(), function(nH) {
-			for (var aE = e5 - 1; 0 <= aE; aE--) a4R[aE] = 4 * nH[aE].a3i[0], a4S[aE] = 4 * nH[aE].a3i[1], a4T[aE] = 4 * nH[aE].a3i[2]
+			for (var aE = e5 - 1; 0 <= aE; aE--) a4S[aE] = 4 * nH[aE].a3i[0], a4T[aE] = 4 * nH[aE].a3i[1], a4U[aE] = 4 * nH[aE].a3i[2]
 		}(nH));
 		! function() {
 			var aE, be;
-			for (aE = bZ - 1; 0 <= aE; aE--) be = bJ(a4R[aE] + a4S[aE] + a4T[aE], 3), a4R[aE] += a4s(be - a4R[aE], 2), a4S[aE] += a4s(be - a4S[aE], 2), a4T[aE] += a4s(be - a4T[aE], 2), a4R[aE] -= a4R[aE] % 4, a4S[aE] -= a4S[aE] % 4, a4T[aE] -=
-				a4T[aE] % 4
+			for (aE = bZ - 1; 0 <= aE; aE--) be = bJ(a4S[aE] + a4T[aE] + a4U[aE], 3), a4S[aE] += a4t(be - a4S[aE], 2), a4T[aE] += a4t(be - a4T[aE], 2), a4U[aE] += a4t(be - a4U[aE], 2), a4S[aE] -= a4S[aE] % 4, a4T[aE] -= a4T[aE] % 4, a4U[aE] -=
+				a4U[aE] % 4
 		}(),
 		function() {
-			for (var aE = bZ - 1; 0 <= aE; aE--) a4R[aE] += bJ(aE, 128), a4S[aE] += bJ(aE % 128, 32), a4T[aE] += bJ(aE % 32, 8), a4U[aE] = aE % 8
-		}(), this.a4o(),
+			for (var aE = bZ - 1; 0 <= aE; aE--) a4S[aE] += bJ(aE, 128), a4T[aE] += bJ(aE % 128, 32), a4U[aE] += bJ(aE % 32, 8), a4V[aE] = aE % 8
+		}(), this.a4p(),
 			function() {
-				for (var aE = bZ - 1; 0 <= aE; aE--) a4V[aE] = a4R[aE] < 32 ? a4R[aE] + 32 : a4R[aE] - 32, a4W[aE] = a4S[aE] < 32 ? a4S[aE] + 32 : a4S[aE] - 32, a4X[aE] = a4T[aE] < 32 ? a4T[aE] + 32 : a4T[aE] - 32
+				for (var aE = bZ - 1; 0 <= aE; aE--) a4W[aE] = a4S[aE] < 32 ? a4S[aE] + 32 : a4S[aE] - 32, a4X[aE] = a4T[aE] < 32 ? a4T[aE] + 32 : a4T[aE] - 32, a4Y[aE] = a4U[aE] < 32 ? a4U[aE] + 32 : a4U[aE] - 32
 			}(),
 			function() {
-				for (var aE = bZ - 1; 0 <= aE; aE--) a4Y[aE] = 235 < a4R[aE] ? a4R[aE] - 20 : a4R[aE] + 20, a4Z[aE] = 235 < a4S[aE] ? a4S[aE] - 20 : a4S[aE] + 20, a4a[aE] = 235 < a4T[aE] ? a4T[aE] - 20 : a4T[aE] + 20
+				for (var aE = bZ - 1; 0 <= aE; aE--) a4Z[aE] = 235 < a4S[aE] ? a4S[aE] - 20 : a4S[aE] + 20, a4a[aE] = 235 < a4T[aE] ? a4T[aE] - 20 : a4T[aE] + 20, a4b[aE] = 235 < a4U[aE] ? a4U[aE] - 20 : a4U[aE] + 20
 			}()
-	}, this.a4r = function(player) {
+	}, this.a4s = function(player) {
 		var ad = eU.aY;
-		return ad[0] = a4R[player], ad[1] = a4S[player], ad[2] = a4T[player], ad
-	}, this.a4o = function() {
-		for (var aE = bZ - 1; 0 <= aE; aE--) this.wn[aE] = a4R[aE] + a4S[aE] + a4T[aE] < 280 ? 0 : 1
+		return ad[0] = a4S[player], ad[1] = a4T[player], ad[2] = a4U[player], ad
+	}, this.a4p = function() {
+		for (var aE = bZ - 1; 0 <= aE; aE--) this.wn[aE] = a4S[aE] + a4T[aE] + a4U[aE] < 280 ? 0 : 1
 	}, this.hN = function(bc) {
 		return bJ(bc, 4) % az.b0
 	}, this.d6 = function(bc) {
@@ -4290,29 +4296,29 @@ function rZ() {
 	}, this.md = function(hD, hE) {
 		return Math.floor(4 * (hE * az.b0 + hD))
 	}, this.ms = function(bc) {
-		return this.m9(bc + a4b[0]) || this.m9(bc + a4b[1]) || this.m9(bc + a4b[2]) || this.m9(bc + a4b[3])
+		return this.m9(bc + a4c[0]) || this.m9(bc + a4c[1]) || this.m9(bc + a4c[2]) || this.m9(bc + a4c[3])
 	}, this.mq = function(bc, player) {
-		return this.a4t(bc + a4b[0], player) || this.a4t(bc + a4b[1], player) || this.a4t(bc + a4b[2], player) || this.a4t(bc + a4b[3], player)
+		return this.a4u(bc + a4c[0], player) || this.a4u(bc + a4c[1], player) || this.a4u(bc + a4c[2], player) || this.a4u(bc + a4c[3], player)
 	}, this.sk = function(player) {
 		return player < e5 && 2 !== e7[player]
 	}, this.bf = function(bc) {
 		return 208 <= a05[bc + 3]
 	}, this.mx = function(player, bc) {
-		return this.bf(bc) && this.a4u(player, bc)
-	}, this.a4u = function(player, bc) {
+		return this.bf(bc) && this.a4v(player, bc)
+	}, this.a4v = function(player, bc) {
 		return player === this.bg(bc)
-	}, this.a4v = function(bc) {
+	}, this.a4w = function(bc) {
 		return 208 <= a05[bc + 3] && a05[bc + 3] < 224
 	}, this.eg = function(bc) {
 		return 224 <= a05[bc + 3] && a05[bc + 3] < 248
 	}, this.mr = function(bc) {
 		for (var aE = 3; 0 <= aE; aE--)
-			if (this.sm(bc + a4b[aE])) return !0;
+			if (this.sm(bc + a4c[aE])) return !0;
 		return !1
-	}, this.a4w = function(bc) {
+	}, this.a4x = function(bc) {
 		return 192 <= a05[bc + 3] && a05[bc + 3] < 208
-	}, this.a4x = function(bc, player) {
-		return this.a4w(bc) && player === this.bg(bc)
+	}, this.a4y = function(bc, player) {
+		return this.a4x(bc) && player === this.bg(bc)
 	}, this.bX = function(bc) {
 		return this.bf(bc) || this.bh(bc)
 	}, this.sm = function(bc) {
@@ -4323,77 +4329,77 @@ function rZ() {
 		return 0 === a05[bc + 3] && 3 === a05[bc + 2]
 	}, this.sl = function(bc) {
 		return this.m9(bc)
-	}, this.a4t = function(bc, player) {
+	}, this.a4u = function(bc, player) {
 		return this.bh(bc) || this.bf(bc) && player !== this.bg(bc)
 	}, this.bg = function(bc) {
 		return a05[bc] % 4 * 128 + a05[bc + 1] % 4 * 32 + a05[bc + 2] % 4 * 8 + a05[bc + 3] % 8
 	}, this.my = function(bc) {
-		a4y(bc, 1)
-	}, this.a4z = function(bc) {
-		a4y(bc, 2)
+		a4z(bc, 1)
+	}, this.a50 = function(bc) {
+		a4z(bc, 2)
 	}, this.mp = function(bc, player) {
-		a05[bc] = a4R[player], a05[bc + 1] = a4S[player], a05[bc + 2] = a4T[player], a05[bc + 3] = 208 + a4U[player], a51(bc)
+		a05[bc] = a4S[player], a05[bc + 1] = a4T[player], a05[bc + 2] = a4U[player], a05[bc + 3] = 208 + a4V[player], a52(bc)
 	}, this.bY = function(bc, player) {
-		a05[bc] = a4V[player], a05[bc + 1] = a4W[player], a05[bc + 2] = a4X[player], a05[bc + 3] = 224 + a4U[player], a51(bc)
+		a05[bc] = a4W[player], a05[bc + 1] = a4X[player], a05[bc + 2] = a4Y[player], a05[bc + 3] = 224 + a4V[player], a52(bc)
 	}, this.eh = function(bc, player) {
-		a05[bc] = a4Y[player], a05[bc + 1] = a4Z[player], a05[bc + 2] = a4a[player], a05[bc + 3] = 248 + a4U[player], a51(bc)
-	}, this.a52 = function(bc, player) {
-		a05[bc] = a4O[0] + a4R[player] % 4, a05[bc + 1] = a4O[1] + a4S[player] % 4, a05[bc + 2] = a4O[2] + a4T[player] % 4, a05[bc + 3] = 192 + a4U[player], a51(bc)
+		a05[bc] = a4Z[player], a05[bc + 1] = a4a[player], a05[bc + 2] = a4b[player], a05[bc + 3] = 248 + a4V[player], a52(bc)
+	}, this.a53 = function(bc, player) {
+		a05[bc] = a4P[0] + a4S[player] % 4, a05[bc + 1] = a4P[1] + a4T[player] % 4, a05[bc + 2] = a4P[2] + a4U[player] % 4, a05[bc + 3] = 192 + a4V[player], a52(bc)
 	}
 }
 
 function ra() {
-	var cj, bS, bU, aA, a53;
-
-	function a58() {
-		for (var a5D = 0, aE = 1; aE < 5; aE++) a5D += bS[aE] % 1024;
-		return a5D
-	}
-
-	function a57() {
-		for (var aE = 1; aE < bU - a53; aE++) bS[aE] = parseInt(bS[aE])
-	}
+	var cj, bS, bU, aA, a54;
 
 	function a59() {
+		for (var a5E = 0, aE = 1; aE < 5; aE++) a5E += bS[aE] % 1024;
+		return a5E
+	}
+
+	function a58() {
+		for (var aE = 1; aE < bU - a54; aE++) bS[aE] = parseInt(bS[aE])
+	}
+
+	function a5A() {
 		bS[0] = "Player " + Math.floor(1e3 * Math.random()), bS[1] = a1 < a2 ? Math.floor(1 + Math.random() * (Math.pow(2, 30) - 1)) : 0, bS[2] = 1, bS[3] = 1, bS[4] = a1 < a2 ? 0 : 1, bS[5] = 0, bS[6] = "000", bS[7] = "0", bS[8] = "0", bS[9] = "0",
 			r.a8()
 	}
 
-	function a56() {
-		for (var aE = bU - a53 - 1; 0 <= aE; aE--) bS[aE] = w.x(bS[aE]);
+	function a57() {
+		for (var aE = bU - a54 - 1; 0 <= aE; aE--) bS[aE] = w.x(bS[aE]);
 		bS[0] = w.nk(bS[0])
 	}
 
-	function a5G(name, value, a5H) {
-		var a5I = new Date,
-			a5H = (a5I.setTime(a5I.getTime() + Math.floor(31536e6 * a5H)), name + "=" + value + ";expires=" + a5I.toUTCString() + ";SameSite=Strict;Secure;path=/");
-		document.cookie = a5H
+	function a5H(name, value, a5I) {
+		var a5J = new Date,
+			a5I = (a5J.setTime(a5J.getTime() + Math.floor(31536e6 * a5I)), name + "=" + value + ";expires=" + a5J.toUTCString() + ";SameSite=Strict;Secure;path=/");
+		document.cookie = a5I
 	}
 	this.b = function() {
 		if (!(5 <= q || m)) {
-			a53 = 4, cj = [], bU = 10;
+			a54 = 4, cj = [], bU = 10;
 			for (var aE = aA = 0; aE < bU; aE++) cj.push("u" + aE);
-			bS = new Array(bU), ! function(a5E) {
-				for (var ej, bc, a5F = a5E.split(";"), aE = a5F.length - 1; 0 <= aE; aE--) {
-					for (a5F[aE] = a5F[aE].trim(), ej = 2; 0 <= ej; ej--) a5F[aE] = a5F[aE].replace(" ", "");
-					3 < a5F[aE].length && (ej = cj.indexOf(a5F[aE].substring(0, 2)), bc = a5F[aE].indexOf("="), 0 <= ej && 2 === bc ? bS[ej] = a5F[aE].substring(bc + 1, a5F[aE].length) : 0 < bc && a5G(a5F[aE].substring(0, bc), "0", 0))
+			bS = new Array(bU), ! function(a5F) {
+				for (var ej, bc, a5G = a5F.split(";"), aE = a5G.length - 1; 0 <= aE; aE--) {
+					for (a5G[aE] = a5G[aE].trim(), ej = 2; 0 <= ej; ej--) a5G[aE] = a5G[aE].replace(" ", "");
+					3 < a5G[aE].length && (ej = cj.indexOf(a5G[aE].substring(0, 2)), bc = a5G[aE].indexOf("="), 0 <= ej && 2 === bc ? bS[ej] = a5G[aE].substring(bc + 1, a5G[aE].length) : 0 < bc && a5H(a5G[aE].substring(0, bc), "0", 0))
 				}
 			}(document.cookie), bS[9] || (bS[9] = "0"), (! function() {
 				for (var aE = bU - 1; 0 <= aE; aE--)
 					if (void 0 === bS[aE]) return;
 				return 1
-			}() || (aA = 2, a56(), a57(), a58() !== bS[5])) && a59()
+			}() || (aA = 2, a57(), a58(), a59() !== bS[5])) && a5A()
 		}
 	}, this.a8 = function() {
 		if (2 === aA) {
-			bS[1] = 0 === bS[1] ? Math.floor(1 + Math.random() * (Math.pow(2, 30) - 1)) : bS[1], bS[5] = a58(), ! function() {
-				for (var aE = 1; aE < bU - a53; aE++) bS[aE] = bS[aE].toString()
+			bS[1] = 0 === bS[1] ? Math.floor(1 + Math.random() * (Math.pow(2, 30) - 1)) : bS[1], bS[5] = a59(), ! function() {
+				for (var aE = 1; aE < bU - a54; aE++) bS[aE] = bS[aE].toString()
 			}(), ! function() {
 				bS[0] = w.nj(bS[0]);
-				for (var aE = bU - a53 - 1; 0 <= aE; aE--) bS[aE] = w.a9(bS[aE])
+				for (var aE = bU - a54 - 1; 0 <= aE; aE--) bS[aE] = w.a9(bS[aE])
 			}();
-			for (var aE = bU - 1; 0 <= aE; aE--) a5G(cj[aE], bS[aE], 1);
-			a56(), a57()
+			for (var aE = bU - 1; 0 <= aE; aE--) a5H(cj[aE], bS[aE], 1);
+			a57(), a58()
 		}
 	}, this.aA = function() {
 		return aA
@@ -4408,68 +4414,68 @@ function ra() {
 
 function rx() {
 	var cm = 0,
-		a5J = new Uint16Array(32);
+		a5K = new Uint16Array(32);
 
 	function remove(sW) {
 		var aE;
-		for (cm -= 2, aE = sW; aE < cm; aE += 2) a5J[aE] = a5J[aE + 2], a5J[aE + 1] = a5J[aE + 3]
+		for (cm -= 2, aE = sW; aE < cm; aE += 2) a5K[aE] = a5K[aE + 2], a5K[aE + 1] = a5K[aE + 3]
 	}
 	this.b = function() {
 		cm = 0
 	}, this.fF = function() {
 		var aE, ed, eA;
 		if (0 !== cm)
-			if (0 === e6[bN] || b5.a5K(bN) === b5.b6(bN)) cm = 0;
+			if (0 === e6[bN] || b5.a5L(bN) === b5.b6(bN)) cm = 0;
 			else
-				for (aE = cm - 2; 0 <= aE; aE -= 2)(ed = a5J[aE]) < bZ && 0 === e6[ed] ? remove(aE) : (eA = a5J[aE + 1], (bZ <= ed && sn(bN) || ed < bZ && ss(bN, ed)) && (cc.cd.ce(eA, ed), remove(aE)))
+				for (aE = cm - 2; 0 <= aE; aE -= 2)(ed = a5K[aE]) < bZ && 0 === e6[ed] ? remove(aE) : (eA = a5K[aE + 1], (bZ <= ed && sn(bN) || ed < bZ && ss(bN, ed)) && (cc.cd.ce(eA, ed), remove(aE)))
 	}, this.se = function(ed, eA) {
 		! function(ed, eA) {
 			var aE;
 			for (aE = 0; aE < cm; aE += 2)
-				if (a5J[aE] === ed) return a5J[aE + 1] = Math.min(a5J[aE + 1] + eA, 1023), 1;
+				if (a5K[aE] === ed) return a5K[aE + 1] = Math.min(a5K[aE + 1] + eA, 1023), 1;
 			return
-		}(ed, eA) && 32 !== cm && (a5J[cm] = ed, a5J[cm + 1] = eA, cm += 2)
+		}(ed, eA) && 32 !== cm && (a5K[cm] = ed, a5K[cm + 1] = eA, cm += 2)
 	}
-}
-
-function a5M(player) {
-	a5N(player), a5O(player), a5P(player), bL.bM(player), gK.h8(player), b5.lQ(player), eO.a5Q.a5R(player)
 }
 
 function a5N(player) {
-	bW.sk(player) && o5++;
-	var a5S = b5.a5T(player);
-	0 === a5S.length ? player === bN && a5U() : (a5V(player, a5S), a5W(player, a5S))
-}
-
-function a5U() {
-	bR.bS[17] += bO[bN] + b5.a5X(bN), gZ.show(!1, !1, !1, !0), g9.zY()
-}
-
-function a5V(player, a5S) {
-	for (var aE = a5S.length - 1; 0 <= aE; aE--) b5.a5Y(a5S[aE], player)
-}
-
-function a5Z(a5S) {
-	for (var cm = 0, aE = a5S.length - 1; 1 <= aE; aE--) bv[a5S[aE]] > bv[a5S[cm]] && (cm = aE);
-	return cm
-}
-
-function a5W(player, a5S) {
-	var aE, uI, a5a = a5S[a5Z(a5S)];
-	if (9 === fv && 1 === fW.fX[player] && em.fP(8) && g1.a5b(a5a), player === bN) 2 !== e7[player] && g7.nv(a5a, 1), a5U();
-	else {
-		for (uI = !1, aE = a5S.length - 1; 0 <= aE; aE--)
-			if (a5S[aE] === bN) return uI = !0, void g7.nv(player, 0);
-		!uI && player < e5 && 2 !== e7[player] && g7.tx(0, player, a5a)
-	}
-}
-
-function a5P(player) {
-	e6[player] = bO[player] = 0, bV[player] = null, bn[player] = null, bo[player] = null, br[player] = null, gI.a5c(player)
+	a5O(player), a5P(player), a5Q(player), bL.bM(player), gK.h8(player), b5.lQ(player), eO.a5R.a5S(player)
 }
 
 function a5O(player) {
+	bW.sk(player) && o5++;
+	var a5T = b5.a5U(player);
+	0 === a5T.length ? player === bN && a5V() : (a5W(player, a5T), a5X(player, a5T))
+}
+
+function a5V() {
+	bR.bS[17] += bO[bN] + b5.a5Y(bN), gZ.show(!1, !1, !1, !0), g9.zY()
+}
+
+function a5W(player, a5T) {
+	for (var aE = a5T.length - 1; 0 <= aE; aE--) b5.a5Z(a5T[aE], player)
+}
+
+function a5a(a5T) {
+	for (var cm = 0, aE = a5T.length - 1; 1 <= aE; aE--) bv[a5T[aE]] > bv[a5T[cm]] && (cm = aE);
+	return cm
+}
+
+function a5X(player, a5T) {
+	var aE, uI, a5b = a5T[a5a(a5T)];
+	if (9 === fv && 1 === fW.fX[player] && em.fP(8) && g1.a5c(a5b), player === bN) 2 !== e7[player] && g7.nv(a5b, 1), a5V();
+	else {
+		for (uI = !1, aE = a5T.length - 1; 0 <= aE; aE--)
+			if (a5T[aE] === bN) return uI = !0, void g7.nv(player, 0);
+		!uI && player < e5 && 2 !== e7[player] && g7.tx(0, player, a5b)
+	}
+}
+
+function a5Q(player) {
+	e6[player] = bO[player] = 0, bV[player] = null, bn[player] = null, bo[player] = null, br[player] = null, gJ.a5d(player)
+}
+
+function a5P(player) {
 	for (var bc, hE, hD = f2[player]; hD >= f3[player]; hD--)
 		for (hE = f5[player]; hE >= f6[player]; hE--) bc = 4 * (hE * az.b0 + hD), bW.mx(player, bc) && (bW.my(bc), bv[player]--)
 }
@@ -4477,239 +4483,239 @@ function a5O(player) {
 function s3() {
 	var input;
 
-	function a5d(oX) {
-		a5f(oX.target.files)
+	function a5e(oX) {
+		a5g(oX.target.files)
 	}
 
-	function a5f(files) {
-		files && 0 < files.length && pN.a5g(files[0])
-	}
-
-	function a5l(oX) {
-		var fV = new Image;
-		fV.onload = a5m, fV.src = oX.target.result
+	function a5g(files) {
+		files && 0 < files.length && pN.a5h(files[0])
 	}
 
 	function a5m(oX) {
-		var a5n, oX = oX.target,
-			cu = oX.width,
-			ez = oX.height;
-		4096 < cu || 4096 < ez || cu < 10 || ez < 10 ? (a5n = "Image w & h must be between 10 and 4096.", n ? n.showToast(a5n) : alert(a5n)) : (fr.pI(), az.mJ = az.xD(), az.a39 = 0, az.b0 = cu, az.b1 = ez, az.lv.width = az.b0, az.lv.height = az.b1,
-			az.lr.drawImage(oX, 0, 0), a5n = az.lr.getImageData(0, 0, az.b0, az.b1), az.lw = a5n.data)
+		var fV = new Image;
+		fV.onload = a5n, fV.src = oX.target.result
 	}
 
-	function a5o(oX) {
+	function a5n(oX) {
+		var a5o, oX = oX.target,
+			cu = oX.width,
+			ez = oX.height;
+		4096 < cu || 4096 < ez || cu < 10 || ez < 10 ? (a5o = "Image w & h must be between 10 and 4096.", n ? n.showToast(a5o) : alert(a5o)) : (fr.pI(), az.mJ = az.xD(), az.a39 = 0, az.b0 = cu, az.b1 = ez, az.lv.width = az.b0, az.lv.height = az.b1,
+			az.lr.drawImage(oX, 0, 0), a5o = az.lr.getImageData(0, 0, az.b0, az.b1), az.lw = a5o.data)
+	}
+
+	function a5p(oX) {
 		oX.stopPropagation(), oX.preventDefault()
 	}
 
-	function a5p() {
+	function a5q() {
 		return 0 === aT.pT() || 2 === aT.pT()
 	}
 	this.b = function() {
-		(input = document.createElement("input")).type = "file", input.setAttribute("accept", ".json, .png, .jpg, .gif, .jpeg"), input.onchange = a5d
+		(input = document.createElement("input")).type = "file", input.setAttribute("accept", ".json, .png, .jpg, .gif, .jpeg"), input.onchange = a5e
 	}, this.a3k = function() {
 		input.click()
-	}, this.a5e = function(oX) {
-		a5d(oX)
-	}, this.a5g = function(a5h) {
-		var ad = a5h.name.split("."),
-			a5i = ad[ad.length - 1].toLowerCase();
-		"json" === a5i ? fr.a5k(a5h) : "gif" !== a5i && "jpg" !== a5i && "jpeg" !== a5i && "png" !== a5i || (az.ft.mI[az.xD()].name = ad[0], (a5i = new FileReader).onload = a5l, a5i.readAsDataURL(a5h))
+	}, this.a5f = function(oX) {
+		a5e(oX)
+	}, this.a5h = function(a5i) {
+		var ad = a5i.name.split("."),
+			a5j = ad[ad.length - 1].toLowerCase();
+		"json" === a5j ? fr.a5l(a5i) : "gif" !== a5j && "jpg" !== a5j && "jpeg" !== a5j && "png" !== a5j || (az.ft.mI[az.xD()].name = ad[0], (a5j = new FileReader).onload = a5m, a5j.readAsDataURL(a5i))
 	}, this.ou = function(oX) {
-		a5p() && (a5o(oX), oX.dataTransfer.dropEffect = "copy")
+		a5q() && (a5p(oX), oX.dataTransfer.dropEffect = "copy")
 	}, this.ov = function(oX) {
-		a5p() && (a5o(oX), a5f(oX.dataTransfer.files))
+		a5q() && (a5p(oX), a5g(oX.dataTransfer.files))
 	}
 }
 
 function s1() {
-	this.a5q = null, this.b = function() {
-		this.a5q = 10 !== fv ? null : new Uint32Array(bZ)
+	this.a5r = null, this.b = function() {
+		this.a5r = 10 !== fv ? null : new Uint32Array(bZ)
 	}, this.fF = function() {
 		10 === fv && this.cU()
 	}, this.cU = function() {
-		for (var bc, target, zj, a5q = this.a5q, nH = fZ, q8 = bO, aE = fY - 1; 0 <= aE; aE--) bc = nH[aE], e5 <= bc || (target = Math.max(bJ(q8[bc], 4), 2048), zj = Math.max(bP.zk(bc), 100), a5q[bc] += bJ(zj * target, 1e4), a5q[bc] > target && (
-			a5q[bc] = target))
+		for (var bc, target, zj, a5r = this.a5r, nH = fZ, q8 = bO, aE = fY - 1; 0 <= aE; aE--) bc = nH[aE], e5 <= bc || (target = Math.max(bJ(q8[bc], 4), 2048), zj = Math.max(bP.zk(bc), 100), a5r[bc] += bJ(zj * target, 1e4), a5r[bc] > target && (
+			a5r[bc] = target))
 	}, this.qE = function(player, ee) {
-		return ee > this.a5q[player] ? (ee = this.a5q[player], this.a5q[player] = 0) : this.a5q[player] -= ee, ee
+		return ee > this.a5r[player] ? (ee = this.a5r[player], this.a5r[player] = 0) : this.a5r[player] -= ee, ee
 	}
 }
 
 function s4() {
-	function a5l(oX) {
-		fr.fs = !0, fr.a5w(JSON.parse(oX.target.result)), fr.vI()
+	function a5m(oX) {
+		fr.fs = !0, fr.a5x(JSON.parse(oX.target.result)), fr.vI()
 	}
 
-	function a62(v, min, max, a6B) {
-		return "string" != typeof v || v.length < min ? a6B : v.length > max ? v.substring(0, max) : v
+	function a63(v, min, max, a6C) {
+		return "string" != typeof v || v.length < min ? a6C : v.length > max ? v.substring(0, max) : v
 	}
 
-	function a5x(aR, min, max) {
+	function a5y(aR, min, max) {
 		return aR = "number" == typeof aR ? Math.floor(aR) : min, Math.min(Math.max(aR, min), max)
 	}
 
-	function a60(aR, a6D) {
-		return "boolean" == typeof aR ? aR : a6D
+	function a61(aR, a6E) {
+		return "boolean" == typeof aR ? aR : a6E
 	}
 
-	function a64(aR, bU, max, a6E) {
+	function a65(aR, bU, max, a6F) {
 		var aE, ad, ca;
 		if (!Array.isArray(aR) || aR.length < 1) return null;
-		for (ad = new(8 === a6E ? Uint8Array : Uint16Array)(bU), ca = aR.length, aE = 0; aE < bU; aE++) ad[aE] = a5x(aR[aE % ca], 0, max);
+		for (ad = new(8 === a6F ? Uint8Array : Uint16Array)(bU), ca = aR.length, aE = 0; aE < bU; aE++) ad[aE] = a5y(aR[aE % ca], 0, max);
 		return ad
 	}
 	this.fs = !1, this.ft = null, this.pI = function() {
 		this.fs = !1, this.ft = null
 	}, this.a3g = function() {
-		this.ft.a4i && this.ft.a5r && (this.ft.a4i[0] = d4.tP[2].nz.a1M()), qW(this.ft.a5s, 0, this.a5t(), this.ft.qZ, !1, !1)
-	}, this.a5t = function() {
+		this.ft.a4j && this.ft.a5s && (this.ft.a4j[0] = d4.tP[2].nz.a1M()), qW(this.ft.a5t, 0, this.a5u(), this.ft.qZ, !1, !1)
+	}, this.a5u = function() {
 		return [{
-			name: this.ft.a5u ? qt.a3h() : this.ft.a5v[0],
+			name: this.ft.a5v ? qt.a3h() : this.ft.a5w[0],
 			a3i: [0, 0, 0],
 			a3j: 0
 		}]
-	}, this.a5k = function(a5h) {
-		var a5j = new FileReader;
-		a5j.onload = a5l, a5j.readAsText(a5h)
-	}, this.a5w = function(tt) {
-		this.ft = {}, this.ft.a3c = a5x(tt.numberPlayers, 1, 512), this.ft.a5y = a5x(tt.modeID, 0, 1), this.ft.mJ = a5x(tt["gMap.mapID"], 0, az.a5z - 1), this.ft.a3D = a5x(tt.seedMap, 0, 16383), this.ft.a5s = a5x(tt.seedSpawn, 0, 16383), this.ft
-			.qc = a60(tt.selectableSpawn, !1), this.ft.a5u = a60(tt.selectableName, !1), this.ft.a5r = a60(tt.selectableColor, !1), az.ft.mI[az.xD()].name = this.ft.a61 = a62(tt.mapName, 1, 25, "Custom Map"), this.ft.tc = function(aR) {
+	}, this.a5l = function(a5i) {
+		var a5k = new FileReader;
+		a5k.onload = a5m, a5k.readAsText(a5i)
+	}, this.a5x = function(tt) {
+		this.ft = {}, this.ft.a3c = a5y(tt.numberPlayers, 1, 512), this.ft.a5z = a5y(tt.modeID, 0, 1), this.ft.mJ = a5y(tt["gMap.mapID"], 0, az.a60 - 1), this.ft.a3D = a5y(tt.seedMap, 0, 16383), this.ft.a5t = a5y(tt.seedSpawn, 0, 16383), this.ft
+			.qc = a61(tt.selectableSpawn, !1), this.ft.a5v = a61(tt.selectableName, !1), this.ft.a5s = a61(tt.selectableColor, !1), az.ft.mI[az.xD()].name = this.ft.a62 = a63(tt.mapName, 1, 25, "Custom Map"), this.ft.tc = function(aR) {
 				var aE, bU;
 				if (!Array.isArray(aR) || aR.length < 1) return [];
-				for (bU = aR.length, aE = 0; aE < bU; aE++) aR[aE] = a62(aR[aE], 0, 100, "");
+				for (bU = aR.length, aE = 0; aE < bU; aE++) aR[aE] = a63(aR[aE], 0, 100, "");
 				return aR
-			}(tt.description), this.ft.mR = a64(tt.playerX, this.ft.a3c, 4096, 16), this.ft.mc = a64(tt.playerY, this.ft.a3c, 4096, 16), this.ft.a65 = a64(tt.playerTeam, this.ft.a3c, 8, 8), this.ft.fu = a64(tt.playerStrength, this.ft.a3c, 5, 8),
-			this.ft.a4i = function(aR, bU) {
+			}(tt.description), this.ft.mR = a65(tt.playerX, this.ft.a3c, 4096, 16), this.ft.mc = a65(tt.playerY, this.ft.a3c, 4096, 16), this.ft.a66 = a65(tt.playerTeam, this.ft.a3c, 8, 8), this.ft.fu = a65(tt.playerStrength, this.ft.a3c, 5, 8),
+			this.ft.a4j = function(aR, bU) {
 				var aE, ad, ca;
 				if (!Array.isArray(aR) || aR.length < 1) return null;
-				for (ad = new Array(bU), ca = aR.length, aE = 0; aE < bU; aE++) ad[aE] = a64(aR[aE % ca], 3, 63, 8);
+				for (ad = new Array(bU), ca = aR.length, aE = 0; aE < bU; aE++) ad[aE] = a65(aR[aE % ca], 3, 63, 8);
 				return ad
-			}(tt.playerColor, this.ft.a3c), this.ft.a5v = function(aR, bU) {
+			}(tt.playerColor, this.ft.a3c), this.ft.a5w = function(aR, bU) {
 				var aE, ad, ca;
 				if (!Array.isArray(aR) || aR.length < 1) return null;
-				for (ad = new Array(bU), ca = aR.length, aE = 0; aE < bU; aE++) ad[aE] = a62(aR[aE % ca], 3, 26, "Bot");
+				for (ad = new Array(bU), ca = aR.length, aE = 0; aE < bU; aE++) ad[aE] = a63(aR[aE % ca], 3, 26, "Bot");
 				return ad
-			}(tt.playerName, this.ft.a3c), this.ft.a68 = "string" == typeof tt.mapBase64 ? tt.mapBase64 : "", this.ft.a5u = this.ft.a5u || !this.ft.a5v, this.ft.qZ = 0 === this.ft.a5y ? 7 : 2 === this.ft.a5y ? 9 : 6, this.ft.mR = this.ft.mc ?
+			}(tt.playerName, this.ft.a3c), this.ft.a69 = "string" == typeof tt.mapBase64 ? tt.mapBase64 : "", this.ft.a5v = this.ft.a5v || !this.ft.a5w, this.ft.qZ = 0 === this.ft.a5z ? 7 : 2 === this.ft.a5z ? 9 : 6, this.ft.mR = this.ft.mc ?
 			this.ft.mR : null
 	}, this.vI = function() {
 		! function(v) {
-			var dL, dI, a6A = "data:image/png;base64,";
-			if (v.length <= a6A.length) return;
-			fr.ft.mJ = 0, fr.ft.a3D = 0, az.lc(0, 0), v.substring(0, a6A.length) !== a6A && (v = a6A + v);
+			var dL, dI, a6B = "data:image/png;base64,";
+			if (v.length <= a6B.length) return;
+			fr.ft.mJ = 0, fr.ft.a3D = 0, az.lc(0, 0), v.substring(0, a6B.length) !== a6B && (v = a6B + v);
 			return (dL = new Image).onload = function() {
 				az.b0 = dL.width, az.b1 = dL.height, 4096 < az.b0 || 4096 < az.b1 || az.b0 < 10 || az.b1 < 10 ? (az.lc(0, 0), alert("Image w & h must be between 10 and 4096.")) : (az.mJ = az.xD(), az.a39 = 0, az.lv.width = az.b0, az.lv
 					.height = az.b1, az.lr.drawImage(dL, 0, 0), dI = az.lr.getImageData(0, 0, az.b0, az.b1), az.lw = dI.data)
-			}, dL.src = v, fr.ft.a68 = "", 1
-		}(this.ft.a68) && az.lc(this.ft.mJ, this.ft.a3D)
-	}, this.a6F = function() {
-		for (var max = 0, bU = this.ft.a3c, aE = 0; aE < bU; aE++) this.ft.a65[aE] > max && (max = this.ft.a65[aE]);
+			}, dL.src = v, fr.ft.a69 = "", 1
+		}(this.ft.a69) && az.lc(this.ft.mJ, this.ft.a3D)
+	}, this.a6G = function() {
+		for (var max = 0, bU = this.ft.a3c, aE = 0; aE < bU; aE++) this.ft.a66[aE] > max && (max = this.ft.a66[aE]);
 		return Math.max(0, max - 1)
 	}
 }
 
 function rb() {
-	var a6G, a6H, dF, ed, ee, id;
+	var a6H, a6I, dF, ed, ee, id;
 
-	function a6I(player) {
-		return player < e5 ? a6G * player : a6G * e5 + a6H * (player - e5)
+	function a6J(player) {
+		return player < e5 ? a6H * player : a6H * e5 + a6I * (player - e5)
 	}
 	this.b = function() {
-		a6G = e5 < 16 ? 12 : 8, a6H = 4;
-		var bU = a6I(bZ);
+		a6H = e5 < 16 ? 12 : 8, a6I = 4;
+		var bU = a6J(bZ);
 		dF = new Uint8Array(bZ), ed = new Uint16Array(bU), ee = new Uint32Array(bU), id = new Uint16Array(bU)
-	}, this.kX = function(wH, a6J) {
-		var a6K = this.c9(wH, a6J);
-		this.c8(wH, a6J, 0), a6K = cM.cN.jo(wH, a6K), wH === bN && (bR.bS[13] -= a6K)
+	}, this.kX = function(wH, a6K) {
+		var a6L = this.c9(wH, a6K);
+		this.c8(wH, a6K, 0), a6L = cM.cN.jo(wH, a6L), wH === bN && (bR.bS[13] -= a6L)
 	}, this.lQ = function(player) {
 		dF[player] = 0
-	}, this.a5Y = function(player, a6J) {
-		var fd, a6J = function(player, a6J) {
-			var aE, ca = a6I(player);
+	}, this.a5Z = function(player, a6K) {
+		var fd, a6K = function(player, a6K) {
+			var aE, ca = a6J(player);
 			for (aE = dF[player] - 1; 0 <= aE; aE--)
-				if (0 === id[ca + aE] && ed[ca + aE] === a6J) return aE;
+				if (0 === id[ca + aE] && ed[ca + aE] === a6K) return aE;
 			return dF[player]
-		}(player, a6J);
-		a6J !== dF[player] && (fd = ee[a6I(player) + a6J], this.bT(player, a6J), this.ea(player, fd, bZ))
-	}, this.es = function(player, a6J) {
-		for (var ca = a6I(player), aE = dF[player] - 1; 0 <= aE; aE--)
-			if (0 === id[ca + aE] && ed[ca + aE] === a6J) return !0;
+		}(player, a6K);
+		a6K !== dF[player] && (fd = ee[a6J(player) + a6K], this.bT(player, a6K), this.ea(player, fd, bZ))
+	}, this.es = function(player, a6K) {
+		for (var ca = a6J(player), aE = dF[player] - 1; 0 <= aE; aE--)
+			if (0 === id[ca + aE] && ed[ca + aE] === a6K) return !0;
 		return !1
 	}, this.cQ = function(player) {
-		return player < e5 ? dF[player] < a6G : dF[player] < a6H
+		return player < e5 ? dF[player] < a6H : dF[player] < a6I
 	}, this.b6 = function(player) {
 		return dF[player]
 	}, this.bC = function(player, aE) {
-		return ed[a6I(player) + aE]
+		return ed[a6J(player) + aE]
 	}, this.b7 = function(player, aE) {
-		return id[a6I(player) + aE]
-	}, this.hQ = function(player, a6M) {
-		for (var ca = a6I(player), aE = dF[player] - 1; 0 <= aE; aE--)
-			if (id[ca + aE] === a6M) return aE;
+		return id[a6J(player) + aE]
+	}, this.hQ = function(player, a6N) {
+		for (var ca = a6J(player), aE = dF[player] - 1; 0 <= aE; aE--)
+			if (id[ca + aE] === a6N) return aE;
 		return -1
 	}, this.bD = function(player, aE) {
-		return ee[a6I(player) + aE]
-	}, this.c9 = function(player, a6J) {
-		for (var ca = a6I(player), aE = dF[player] - 1; 0 <= aE; aE--)
-			if (0 === id[ca + aE] && ed[ca + aE] === a6J) return ee[ca + aE];
+		return ee[a6J(player) + aE]
+	}, this.c9 = function(player, a6K) {
+		for (var ca = a6J(player), aE = dF[player] - 1; 0 <= aE; aE--)
+			if (0 === id[ca + aE] && ed[ca + aE] === a6K) return ee[ca + aE];
 		return 0
-	}, this.a5X = function(player) {
-		for (var ca = a6I(player), aR = 0, aE = dF[player] - 1; 0 <= aE; aE--) aR += ee[ca + aE];
+	}, this.a5Y = function(player) {
+		for (var ca = a6J(player), aR = 0, aE = dF[player] - 1; 0 <= aE; aE--) aR += ee[ca + aE];
 		return aR
-	}, this.a6N = function(player) {
-		for (var ca = a6I(player), aR = 0, aE = dF[player] - 1; 0 <= aE; aE--) 0 === id[ca + aE] && (aR += ee[ca + aE]);
+	}, this.a6O = function(player) {
+		for (var ca = a6J(player), aR = 0, aE = dF[player] - 1; 0 <= aE; aE--) 0 === id[ca + aE] && (aR += ee[ca + aE]);
 		return aR
-	}, this.a5K = function(player) {
-		for (var ca = a6I(player), uH = 0, aE = dF[player] - 1; 0 <= aE; aE--) 0 < id[ca + aE] && uH++;
+	}, this.a5L = function(player) {
+		for (var ca = a6J(player), uH = 0, aE = dF[player] - 1; 0 <= aE; aE--) 0 < id[ca + aE] && uH++;
 		return uH
-	}, this.c8 = function(player, a6J, fd) {
-		for (var ca = a6I(player), aE = dF[player] - 1; 0 <= aE; aE--) 0 === id[ca + aE] && ed[ca + aE] === a6J && (ee[ca + aE] = fd)
+	}, this.c8 = function(player, a6K, fd) {
+		for (var ca = a6J(player), aE = dF[player] - 1; 0 <= aE; aE--) 0 === id[ca + aE] && ed[ca + aE] === a6K && (ee[ca + aE] = fd)
 	}, this.bu = function(player, aE, fd) {
-		ee[a6I(player) + aE] = fd
-	}, this.ea = function(player, fd, a6J) {
-		var aE, ca = a6I(player);
-		for (a6J === bN && bR.bS[player < e5 ? 6 : 5]++, aE = dF[player] - 1; 0 <= aE; aE--)
-			if (0 === id[ca + aE] && ed[ca + aE] === a6J) return ee[ca + aE] += fd, void(ee[ca + aE] = ee[ca + aE] > qA ? qA : ee[ca + aE]);
-		ed[ca + dF[player]] = a6J, ee[ca + dF[player]] = fd, id[ca + dF[player]] = 0, dF[player]++, player < e5 && (a6J === bN ? g7.nv(player, 5) : player === bN && g8.tz(a6J))
-	}, this.a6O = function(player, fd, a6M) {
-		var ca = a6I(player);
-		e6[player] = 2, ed[ca + dF[player]] = 0, ee[ca + dF[player]] = fd, id[ca + dF[player]] = a6M, dF[player]++
+		ee[a6J(player) + aE] = fd
+	}, this.ea = function(player, fd, a6K) {
+		var aE, ca = a6J(player);
+		for (a6K === bN && bR.bS[player < e5 ? 6 : 5]++, aE = dF[player] - 1; 0 <= aE; aE--)
+			if (0 === id[ca + aE] && ed[ca + aE] === a6K) return ee[ca + aE] += fd, void(ee[ca + aE] = ee[ca + aE] > qA ? qA : ee[ca + aE]);
+		ed[ca + dF[player]] = a6K, ee[ca + dF[player]] = fd, id[ca + dF[player]] = 0, dF[player]++, player < e5 && (a6K === bN ? g7.nv(player, 5) : player === bN && g8.tz(a6K))
+	}, this.a6P = function(player, fd, a6N) {
+		var ca = a6J(player);
+		e6[player] = 2, ed[ca + dF[player]] = 0, ee[ca + dF[player]] = fd, id[ca + dF[player]] = a6N, dF[player]++
 	}, this.bT = function(player, cm) {
 		var ej, ca;
 		if (0 !== dF[player])
-			for (ca = a6I(player), dF[player]--, ej = cm; ej < dF[player]; ej++) ed[ca + ej] = ed[ca + ej + 1], ee[ca + ej] = ee[ca + ej + 1], id[ca + ej] = id[ca + ej + 1]
-	}, this.a5T = function(player) {
-		for (var ej, ca, a5S = [], aE = fY - 1; 0 <= aE; aE--)
-			for (ca = a6I(fZ[aE]), ej = dF[fZ[aE]] - 1; 0 <= ej; ej--)
+			for (ca = a6J(player), dF[player]--, ej = cm; ej < dF[player]; ej++) ed[ca + ej] = ed[ca + ej + 1], ee[ca + ej] = ee[ca + ej + 1], id[ca + ej] = id[ca + ej + 1]
+	}, this.a5U = function(player) {
+		for (var ej, ca, a5T = [], aE = fY - 1; 0 <= aE; aE--)
+			for (ca = a6J(fZ[aE]), ej = dF[fZ[aE]] - 1; 0 <= ej; ej--)
 				if (0 === id[ca + ej] && ed[ca + ej] === player) {
-					a5S.push(fZ[aE]);
+					a5T.push(fZ[aE]);
 					break
-				} return a5S
+				} return a5T
 	}
 }
 
 function rc() {
-	var a6P, a6Q, a6R, a6S, a6T, a6U;
+	var a6Q, a6R, a6S, a6T, a6U, a6V;
 	this.b = function() {
-		a6R = a6P = 10, a6S = a6Q = 10
-	}, this.a6V = function() {
-		a6U = 512, a6T = new Uint16Array(a6U);
-		for (var aE = 0; aE < a6U; aE++) a6T[aE] = 100 + cD(bJ(25600 * aE, a6U - 4), 9)
+		a6S = a6Q = 10, a6T = a6R = 10
+	}, this.a6W = function() {
+		a6V = 512, a6U = new Uint16Array(a6V);
+		for (var aE = 0; aE < a6V; aE++) a6U[aE] = 100 + cD(bJ(25600 * aE, a6V - 4), 9)
 	}, this.yT = function() {
-		return a6S
+		return a6T
 	}, this.fF = function() {
-		if (--a6R <= 0 && (a6R = a6P, function() {
-				var aE, a6a, a3 = bO[bN];
-				for (fx && !cS && 0 !== e6[0] && 0 === fy.fz[0].be && (bO[0] += bJ(bv[0], 6)), aE = fY - 1; 0 <= aE; aE--) a6a = bJ(bP.zk(fZ[aE]) * bO[fZ[aE]], 1e4), bO[fZ[aE]] += a6a < 1 ? 1 : a6a, bP.bQ(fZ[aE]);
+		if (--a6S <= 0 && (a6S = a6Q, function() {
+				var aE, a6b, a3 = bO[bN];
+				for (fx && !cS && 0 !== e6[0] && 0 === fy.fz[0].be && (bO[0] += bJ(bv[0], 6)), aE = fY - 1; 0 <= aE; aE--) a6b = bJ(bP.zk(fZ[aE]) * bO[fZ[aE]], 1e4), bO[fZ[aE]] += a6b < 1 ? 1 : a6b, bP.bQ(fZ[aE]);
 				bR.bS[9] += bO[bN] - a3
-			}(), --a6S <= 0)) {
-			a6S = a6Q;
+			}(), --a6T <= 0)) {
+			a6T = a6R;
 			for (var a3 = bO[bN], aE = fY - 1; 0 <= aE; aE--) bO[fZ[aE]] += bv[fZ[aE]], bP.bQ(fZ[aE]);
 			bR.bS[8] += bO[bN] - a3
 		}
 	}, this.zk = function(player) {
-		var dO = a6T[bJ((a6U - 1) * bv[player], qR)],
-			a6Z = (aL.fU() < 1920 && (dO = dO < (a6Z = bJ(100 * (13440 - 6 * aL.fU()), 1920)) ? a6Z : dO), this.fJ(player));
-		return bO[player] > a6Z && (dO -= bJ(2 * dO * (bO[player] - a6Z), a6Z)), dO < 0 ? 0 : 700 < dO ? 700 : dO
+		var dO = a6U[bJ((a6V - 1) * bv[player], qR)],
+			a6a = (aL.fU() < 1920 && (dO = dO < (a6a = bJ(100 * (13440 - 6 * aL.fU()), 1920)) ? a6a : dO), this.fJ(player));
+		return bO[player] > a6a && (dO -= bJ(2 * dO * (bO[player] - a6a), a6a)), dO < 0 ? 0 : 700 < dO ? 700 : dO
 	}, this.fJ = function(player) {
 		player = 100 * bv[player];
 		return qS < player ? qS : player
@@ -4717,260 +4723,260 @@ function rc() {
 		var aR = bv[player] * q9;
 		bO[player] = Math.min(Math.min(bO[player], qA), aR)
 	}, this.jO = function(player, jP) {
-		cM.cN.jo(jP, eU.aX[0]), bR.jp(player, jP), g8.a6c(player, eU.aX[0] + eU.aX[1]), g8.jq(jP, eU.aX[0]), cM.cN.kK(player)
+		cM.cN.jo(jP, eU.aX[0]), bR.jp(player, jP), g8.a6d(player, eU.aX[0] + eU.aX[1]), g8.jq(jP, eU.aX[0]), cM.cN.kK(player)
 	}
 }
 
 function rd() {
-	var a6d, a6e, a6f, a6g, a6h, a6i, a6j, a6k, a6l, a6m, a6n, a6o, a6p, a6q, a6r, a6s, a6t, a6u, a6w, a6x, a6y, a6z, a70, a76, a77, a6v = null,
-		a72 = 0,
-		a73 = new Float32Array(4),
-		a74 = 0,
-		a75 = !0;
-
-	function a79() {
-		a6v.width = hL, a6v.height = d3, (a6w = a6v.getContext("2d", {
-			alpha: !0
-		})).textAlign = dA, a6w.textBaseline = d9, a6w.imageSmoothingEnabled = !0
-	}
+	var a6e, a6f, a6g, a6h, a6i, a6j, a6k, a6l, a6m, a6n, a6o, a6p, a6q, a6r, a6s, a6t, a6u, a6v, a6x, a6y, a6z, a70, a71, a77, a78, a6w = null,
+		a73 = 0,
+		a74 = new Float32Array(4),
+		a75 = 0,
+		a76 = !0;
 
 	function a7A() {
-		var aE, a7E;
-		for (d8.font = cn + Math.floor(100 * a6n) + co, a7E = 80 / Math.floor(d8.measureText(gR.hU(qA)).width), d8.font = cn + 100 + co, aE = bZ - 1; 0 <= aE; aE--) a6k[aE] = 100 / Math.floor(d8.measureText(hV[aE]).width), a6j[aE] = Math.min(a7E,
-			a6k[aE])
+		a6w.width = hL, a6w.height = d3, (a6x = a6w.getContext("2d", {
+			alpha: !0
+		})).textAlign = dA, a6x.textBaseline = d9, a6x.imageSmoothingEnabled = !0
 	}
 
-	function a7F(aE) {
-		return !hR.hS.hT || bO[aE] < 1e6 ? 1 : bO[aE] < 1e7 ? a73[0] : a73[Math.min(Math.floor(Math.log10(bO[aE])) - 6, 3)]
+	function a7B() {
+		var aE, a7F;
+		for (d8.font = cn + Math.floor(100 * a6o) + co, a7F = 80 / Math.floor(d8.measureText(gR.hU(qA)).width), d8.font = cn + 100 + co, aE = bZ - 1; 0 <= aE; aE--) a6l[aE] = 100 / Math.floor(d8.measureText(hV[aE]).width), a6k[aE] = Math.min(a7F,
+			a6l[aE])
 	}
 
-	function a7D(dM) {
-		a6u = !1, a6t = 1, a6r = a6s = 0, a75 ? (dM.textAlign = dA, dM.textBaseline = d9) : dM.clearRect(0, 0, hL, d3);
+	function a7G(aE) {
+		return !hR.hS.hT || bO[aE] < 1e6 ? 1 : bO[aE] < 1e7 ? a74[0] : a74[Math.min(Math.floor(Math.log10(bO[aE])) - 6, 3)]
+	}
+
+	function a7E(dM) {
+		a6v = !1, a6u = 1, a6s = a6t = 0, a76 ? (dM.textAlign = dA, dM.textBaseline = d9) : dM.clearRect(0, 0, hL, d3);
 		var hF, hG, aE, cs, hH, hI = eB / eC,
 			hJ = eD / eC,
 			hK = (hL + eB) / eC,
 			hM = (d3 + eD) / eC,
-			a7J = 0 !== e6[bN] && bW.sk(bN);
+			a7K = 0 !== e6[bN] && bW.sk(bN);
 		dM.imageSmoothingEnabled = !0;
-		for (var ej = fY - 1; 0 <= ej; ej--) aE = fZ[ej], (cs = a6q * eC * a7F(aE) * a6j[aE] * a6h[aE]) < a6p || a6l <= cs || a6f[aE] + a6h[aE] > hI && a6f[aE] < hK && a6g[aE] + a6i[aE] > hJ && a6g[aE] < hM && (hF = hL * (a6f[aE] + a6h[aE] / 2 -
-			hI) / (hK - hI), hG = d3 * (a6g[aE] + a6i[aE] / 2 - hJ) / (hM - hJ) - .1 * cs, dM.font = vQ[e7[aE]] + cs + co, dM.fillStyle = function(cs, aE) {
-				if (a6m <= cs && cs < a6l) return fW.a7W[bW.wn[aE]] + a7S(cs).toFixed(3) + ")";
-				return fW.a7X[bW.wn[aE]]
-			}(cs, aE), hR.hS.hT ? dM.fillText(gR.hU(bO[aE]), hF, hG) : a7L(aE, cs, hF, hG, dM), a6u = !0, 0 < a6y[aE] ? function(hF, hG, cs, aE, dM) {
-				0 === yU[aE] ? aF.vK(a6x[aE]) ? (function(hF, hG, cs, player, jd, dM) {
-					for (var t9 = .9 * cs / aF.cu, mV = hG - .5 * t9 * aF.cu - .05 * cs, dK = (dM.globalAlpha = a7S(cs), a7F(player) * (hR.hS.hT ? a74 : a6k[player])), mU = hF - .5 * cs / dK - .4 * cs - t9 * aF.cu, cV = 0; cV < 2; cV++)
+		for (var ej = fY - 1; 0 <= ej; ej--) aE = fZ[ej], (cs = a6r * eC * a7G(aE) * a6k[aE] * a6i[aE]) < a6q || a6m <= cs || a6g[aE] + a6i[aE] > hI && a6g[aE] < hK && a6h[aE] + a6j[aE] > hJ && a6h[aE] < hM && (hF = hL * (a6g[aE] + a6i[aE] / 2 -
+			hI) / (hK - hI), hG = d3 * (a6h[aE] + a6j[aE] / 2 - hJ) / (hM - hJ) - .1 * cs, dM.font = vQ[e7[aE]] + cs + co, dM.fillStyle = function(cs, aE) {
+				if (a6n <= cs && cs < a6m) return fW.a7X[bW.wn[aE]] + a7T(cs).toFixed(3) + ")";
+				return fW.a7Y[bW.wn[aE]]
+			}(cs, aE), hR.hS.hT ? dM.fillText(gR.hU(bO[aE]), hF, hG) : a7M(aE, cs, hF, hG, dM), a6v = !0, 0 < a6z[aE] ? function(hF, hG, cs, aE, dM) {
+				0 === yU[aE] ? aF.vK(a6y[aE]) ? (function(hF, hG, cs, player, jd, dM) {
+					for (var t9 = .9 * cs / aF.cu, mV = hG - .5 * t9 * aF.cu - .05 * cs, dK = (dM.globalAlpha = a7T(cs), a7G(player) * (hR.hS.hT ? a75 : a6l[player])), mU = hF - .5 * cs / dK - .4 * cs - t9 * aF.cu, cV = 0; cV < 2; cV++)
 						dM.setTransform(t9, 0, 0, t9, mU, mV), dM.drawImage(aF.sS[jd], 0, 0), mU = hF + .5 * cs / dK + .4 * cs;
 					dM.globalAlpha = 1, dM.setTransform(1, 0, 0, 1, 0, 0)
-				}(hF, hG, cs, aE, a6x[aE], dM), a7N(hF, hG, cs, 0, 0, dM)) : aF.vJ(a6x[aE]) ? (a7V(hF, hG, cs, a6x[aE], 0, dM), a7N(hF, hG, cs, 0, 1, dM)) : (a7V(hF, hG, cs, a6x[aE], 1, dM), a7N(hF, hG, cs, 1, 0, dM)) : a7V(hF, hG, cs, a6x[
+				}(hF, hG, cs, aE, a6y[aE], dM), a7O(hF, hG, cs, 0, 0, dM)) : aF.vJ(a6y[aE]) ? (a7W(hF, hG, cs, a6y[aE], 0, dM), a7O(hF, hG, cs, 0, 1, dM)) : (a7W(hF, hG, cs, a6y[aE], 1, dM), a7O(hF, hG, cs, 1, 0, dM)) : a7W(hF, hG, cs, a6y[
 					aE], 0, dM)
-			}(hF, hG, cs, aE, dM) : 0 === yU[aE] && a7N(hF, hG, cs, 0, 0, dM), a7J && (0 < a6y[aE + bZ] || 0 < a6y[aE + 2 * bZ] || 0 < a6y[aE + 3 * bZ] || 0 < a6y[aE + 4 * bZ]) && function(hF, hG, cs, aE, dM) {
+			}(hF, hG, cs, aE, dM) : 0 === yU[aE] && a7O(hF, hG, cs, 0, 0, dM), a7K && (0 < a6z[aE + bZ] || 0 < a6z[aE + 2 * bZ] || 0 < a6z[aE + 3 * bZ] || 0 < a6z[aE + 4 * bZ]) && function(hF, hG, cs, aE, dM) {
 				var fV, uH = -1;
-				for (fV = 4; 1 <= fV; fV--) 0 < a6y[aE + fV * bZ] && uH++;
-				for (fV = 1; fV < 5; fV++) 0 < a6y[aE + fV * bZ] && (! function(hF, hG, cs, fV, aE, a7Q, a3, dM) {
+				for (fV = 4; 1 <= fV; fV--) 0 < a6z[aE + fV * bZ] && uH++;
+				for (fV = 1; fV < 5; fV++) 0 < a6z[aE + fV * bZ] && (! function(hF, hG, cs, fV, aE, a7R, a3, dM) {
 					var t9 = .8 * cs / aF.cu,
-						hF = hF - .5 * t9 * aF.cu - .534 * a7Q * cs,
-						a7Q = hG + 1.4 * t9 * aF.cu;
-					dM.setTransform(t9, 0, 0, t9, hF, a7Q), dM.globalAlpha = a7S(cs), hG = 1 === fV ? aF.sS[a6x[aE + bZ]] : 2 === fV ? n5.sO()[4].dL[a3 < 255 ? 1 : 0] : (3 === fV ? n5.sO()[5] : n5.sO()[6]).dL[0];
+						hF = hF - .5 * t9 * aF.cu - .534 * a7R * cs,
+						a7R = hG + 1.4 * t9 * aF.cu;
+					dM.setTransform(t9, 0, 0, t9, hF, a7R), dM.globalAlpha = a7T(cs), hG = 1 === fV ? aF.sS[a6y[aE + bZ]] : 2 === fV ? n5.sO()[4].dL[a3 < 255 ? 1 : 0] : (3 === fV ? n5.sO()[5] : n5.sO()[6]).dL[0];
 					dM.drawImage(hG, 0, 0), dM.globalAlpha = 1, dM.setTransform(1, 0, 0, 1, 0, 0)
-				}(hF, hG, cs, fV, aE, uH, a6y[aE + fV * bZ], dM), uH -= 2)
-			}(hF, hG, cs, aE, dM), (hH = a6n * cs) < a6p || (dM.font = cn + hH + co, hR.hS.hT ? a7L(aE, hH, hF, hG + .78 * cs, dM) : dM.fillText(gR.hU(bO[aE]), hF, hG + .78 * cs)));
+				}(hF, hG, cs, fV, aE, uH, a6z[aE + fV * bZ], dM), uH -= 2)
+			}(hF, hG, cs, aE, dM), (hH = a6o * cs) < a6q || (dM.font = cn + hH + co, hR.hS.hT ? a7M(aE, hH, hF, hG + .78 * cs, dM) : dM.fillText(gR.hU(bO[aE]), hF, hG + .78 * cs)));
 		dM.imageSmoothingEnabled = !1
 	}
 
-	function a7L(aE, cs, hD, hE, dM) {
-		dM.fillText(hV[aE], hD, hE), aE < e5 && 2 !== e7[aE] || (aE = cs / a6k[aE], dM.fillRect(hD - .5 * aE, hE + cM.iL.pu * cs, aE, Math.max(1, .1 * cs)))
+	function a7M(aE, cs, hD, hE, dM) {
+		dM.fillText(hV[aE], hD, hE), aE < e5 && 2 !== e7[aE] || (aE = cs / a6l[aE], dM.fillRect(hD - .5 * aE, hE + cM.iL.pu * cs, aE, Math.max(1, .1 * cs)))
 	}
 
-	function a7N(hF, hG, cs, a7Q, a7R, dM) {
-		var t9 = .95 * cs / a70,
-			hF = hF - .5 * t9 * a6z + .8 * a7Q * cs,
-			a7Q = hG - 1.76 * t9 * a70 - .82 * a7R * cs;
-		dM.setTransform(t9, 0, 0, t9, hF, a7Q), dM.globalAlpha = a7S(cs), dM.drawImage(cq.get(4), 0, 0), dM.globalAlpha = 1, dM.setTransform(1, 0, 0, 1, 0, 0)
+	function a7O(hF, hG, cs, a7R, a7S, dM) {
+		var t9 = .95 * cs / a71,
+			hF = hF - .5 * t9 * a70 + .8 * a7R * cs,
+			a7R = hG - 1.76 * t9 * a71 - .82 * a7S * cs;
+		dM.setTransform(t9, 0, 0, t9, hF, a7R), dM.globalAlpha = a7T(cs), dM.drawImage(cq.get(4), 0, 0), dM.globalAlpha = 1, dM.setTransform(1, 0, 0, 1, 0, 0)
 	}
 
-	function a7V(hF, hG, cs, jd, a7Q, dM) {
+	function a7W(hF, hG, cs, jd, a7R, dM) {
 		var t9 = 1.2 * cs / aF.cu,
-			hF = hF - .5 * t9 * aF.cu - .8 * a7Q * cs,
-			a7Q = hG - 1.5 * t9 * aF.cu;
-		dM.setTransform(t9, 0, 0, t9, hF, a7Q), dM.globalAlpha = a7S(cs), dM.drawImage(aF.sS[jd], 0, 0), dM.globalAlpha = 1, dM.setTransform(1, 0, 0, 1, 0, 0)
+			hF = hF - .5 * t9 * aF.cu - .8 * a7R * cs,
+			a7R = hG - 1.5 * t9 * aF.cu;
+		dM.setTransform(t9, 0, 0, t9, hF, a7R), dM.globalAlpha = a7T(cs), dM.drawImage(aF.sS[jd], 0, 0), dM.globalAlpha = 1, dM.setTransform(1, 0, 0, 1, 0, 0)
 	}
 
-	function a7S(cs) {
-		return a6m <= cs && cs < a6l ? 1 - (cs - a6m) / (a6l - a6m) : 1
+	function a7T(cs) {
+		return a6n <= cs && cs < a6m ? 1 - (cs - a6n) / (a6m - a6n) : 1
 	}
 
-	function a7g(dK, cu) {
-		return 1 + Math.floor(a6o * dK * cu)
+	function a7h(dK, cu) {
+		return 1 + Math.floor(a6p * dK * cu)
 	}
 
-	function a7d(aE) {
-		for (var left = a6f[aE], ej = a6f[aE] - f3[aE] - 1; 0 <= ej; ej--)
-			if (!a7i(aE, --left, a6g[aE], a6i[aE])) {
+	function a7e(aE) {
+		for (var left = a6g[aE], ej = a6g[aE] - f3[aE] - 1; 0 <= ej; ej--)
+			if (!a7j(aE, --left, a6h[aE], a6j[aE])) {
 				left++;
 				break
-			} var lA = a6f[aE];
-		for (ej = f2[aE] - a6f[aE] - a6h[aE]; 0 <= ej; ej--)
-			if (!a7i(aE, ++lA + a6h[aE] - 1, a6g[aE], a6i[aE])) {
+			} var lA = a6g[aE];
+		for (ej = f2[aE] - a6g[aE] - a6i[aE]; 0 <= ej; ej--)
+			if (!a7j(aE, ++lA + a6i[aE] - 1, a6h[aE], a6j[aE])) {
 				lA--;
 				break
 			} var hD = Math.floor((left + lA) / 2),
-			top = a6g[aE];
-		for (ej = a6g[aE] - f6[aE] - 1; 0 <= ej; ej--)
-			if (!a7j(aE, hD, --top, a6h[aE])) {
+			top = a6h[aE];
+		for (ej = a6h[aE] - f6[aE] - 1; 0 <= ej; ej--)
+			if (!a7k(aE, hD, --top, a6i[aE])) {
 				top++;
 				break
-			} var bottom = a6g[aE];
-		for (ej = f5[aE] - a6g[aE] - a6i[aE]; 0 <= ej; ej--)
-			if (!a7j(aE, hD, ++bottom + a6i[aE] - 1, a6h[aE])) {
+			} var bottom = a6h[aE];
+		for (ej = f5[aE] - a6h[aE] - a6j[aE]; 0 <= ej; ej--)
+			if (!a7k(aE, hD, ++bottom + a6j[aE] - 1, a6i[aE])) {
 				bottom--;
 				break
 			} var hE = Math.floor((top + bottom) / 2);
-		a7a(aE, hD, hE, a6h[aE], a6i[aE]) && (a6f[aE] = hD, a6g[aE] = hE)
+		a7b(aE, hD, hE, a6i[aE], a6j[aE]) && (a6g[aE] = hD, a6h[aE] = hE)
 	}
 
-	function a7a(player, hD, hE, cu, ez) {
+	function a7b(player, hD, hE, cu, ez) {
 		be = Math.floor(.2 * cu);
 		for (var be, fV = hD + cu - 1; hD <= fV; fV--)
-			if (!a7i(player, fV, hE, ez)) return;
+			if (!a7j(player, fV, hE, ez)) return;
 		for (fV = hE + ez - 1 - (be = (be = Math.floor(.25 * ez)) < 1 ? 1 : be); hE + be <= fV; fV--)
-			if (!a7j(player, hD, fV, cu)) return;
+			if (!a7k(player, hD, fV, cu)) return;
 		return 1
 	}
 
-	function a7i(player, hD, hE, ez) {
+	function a7j(player, hD, hE, ez) {
 		return bW.mx(player, 4 * (hE * az.b0 + hD)) && bW.mx(player, 4 * ((hE + ez - 1) * az.b0 + hD))
 	}
 
-	function a7j(player, hD, hE, cu) {
+	function a7k(player, hD, hE, cu) {
 		return bW.mx(player, 4 * (hE * az.b0 + hD)) && bW.mx(player, 4 * (hE * az.b0 + hD + cu - 1))
 	}
 	this.b = function() {
-		if (a6u = !1, a6q = .88, a6n = .5, a6o = 1.8, a6l = Math.floor(.5 * vW), a6m = Math.floor(.2 * a6l), a6p = hR.hS.a78 < 4 ? 1 + hR.hS.a78 : 2 * (hR.hS.a78 - 1), a6e = a6d = 0, a6f = new Uint16Array(bZ), a6g = new Uint16Array(bZ), a6h =
-			new Uint16Array(bZ), a6i = new Uint16Array(bZ), a6j = new Float32Array(bZ), a6k = new Float32Array(bZ), a6x = new Uint8Array(2 * bZ), a6y = new Uint8Array(5 * bZ), a76 = new Uint8Array(bZ), a77 = new Uint8Array(bZ), a75 || (a6v =
-				a6v || document.createElement("canvas"), a79()), a6s = a6r = 0, a6t = 1, hR.hS.hT) {
-			var aE, a7E;
-			for (a7A(), d8.font = cn + Math.floor(100) + co, a7E = 100 / Math.floor(d8.measureText("900 000").width), aE = bZ - 1; 0 <= aE; aE--) a6j[aE] = Math.min(a7E, 2 * a6k[aE]);
-			a74 = a7E, a73[0] = 100 / (a7E * Math.floor(d8.measureText("5 000 000").width)), a73[1] = 100 / (a7E * Math.floor(d8.measureText("50 000 000").width)), a73[2] = 100 / (a7E * Math.floor(d8.measureText("500 000 000").width)), a73[3] =
-				100 / (a7E * Math.floor(d8.measureText("1 000 000 000").width))
-		} else a7A();
+		if (a6v = !1, a6r = .88, a6o = .5, a6p = 1.8, a6m = Math.floor(.5 * vW), a6n = Math.floor(.2 * a6m), a6q = hR.hS.a79 < 4 ? 1 + hR.hS.a79 : 2 * (hR.hS.a79 - 1), a6f = a6e = 0, a6g = new Uint16Array(bZ), a6h = new Uint16Array(bZ), a6i =
+			new Uint16Array(bZ), a6j = new Uint16Array(bZ), a6k = new Float32Array(bZ), a6l = new Float32Array(bZ), a6y = new Uint8Array(2 * bZ), a6z = new Uint8Array(5 * bZ), a77 = new Uint8Array(bZ), a78 = new Uint8Array(bZ), a76 || (a6w =
+				a6w || document.createElement("canvas"), a7A()), a6t = a6s = 0, a6u = 1, hR.hS.hT) {
+			var aE, a7F;
+			for (a7B(), d8.font = cn + Math.floor(100) + co, a7F = 100 / Math.floor(d8.measureText("900 000").width), aE = bZ - 1; 0 <= aE; aE--) a6k[aE] = Math.min(a7F, 2 * a6l[aE]);
+			a75 = a7F, a74[0] = 100 / (a7F * Math.floor(d8.measureText("5 000 000").width)), a74[1] = 100 / (a7F * Math.floor(d8.measureText("50 000 000").width)), a74[2] = 100 / (a7F * Math.floor(d8.measureText("500 000 000").width)), a74[3] =
+				100 / (a7F * Math.floor(d8.measureText("1 000 000 000").width))
+		} else a7B();
 		! function() {
 			var aE;
-			for (aE = bZ - 1; 0 <= aE; aE--) bv[aE] < 12 ? (a6f[aE] = f3[aE] + 1, a6g[aE] = f6[aE] + 1, a6h[aE] = 1, a6i[aE] = 1) : (a6f[aE] = f3[aE], a6g[aE] = f6[aE] + 1, a6h[aE] = 4, a6i[aE] = 2);
+			for (aE = bZ - 1; 0 <= aE; aE--) bv[aE] < 12 ? (a6g[aE] = f3[aE] + 1, a6h[aE] = f6[aE] + 1, a6i[aE] = 1, a6j[aE] = 1) : (a6g[aE] = f3[aE], a6h[aE] = f6[aE] + 1, a6i[aE] = 4, a6j[aE] = 2);
 			if (hr)
-				for (aE = 0; aE < e5; aE++) a6h[aE] = 0;
-			a6z = cq.get(4).width, a70 = cq.get(4).height
+				for (aE = 0; aE < e5; aE++) a6i[aE] = 0;
+			a70 = cq.get(4).width, a71 = cq.get(4).height
 		}()
-	}, this.a6c = function(bc, uK) {
-		uK > 18 * bv[bc] ? (a77[bc] = 6, bW.wn[bc] = 2 + bW.wn[bc] % 2) : (a76[bc] = 4, (bW.wn[bc] < 2 || 3 < bW.wn[bc]) && (bW.wn[bc] = 6 + bW.wn[bc] % 2))
+	}, this.a6d = function(bc, uK) {
+		uK > 18 * bv[bc] ? (a78[bc] = 6, bW.wn[bc] = 2 + bW.wn[bc] % 2) : (a77[bc] = 4, (bW.wn[bc] < 2 || 3 < bW.wn[bc]) && (bW.wn[bc] = 6 + bW.wn[bc] % 2))
 	}, this.jq = function(bc, uK) {
-		uK > 6 * bv[bc] ? (a77[bc] = 6, bW.wn[bc] = 4 + bW.wn[bc] % 2) : (a76[bc] = 4, (bW.wn[bc] < 4 || 5 < bW.wn[bc]) && (bW.wn[bc] = 8 + bW.wn[bc] % 2))
+		uK > 6 * bv[bc] ? (a78[bc] = 6, bW.wn[bc] = 4 + bW.wn[bc] % 2) : (a77[bc] = 4, (bW.wn[bc] < 4 || 5 < bW.wn[bc]) && (bW.wn[bc] = 8 + bW.wn[bc] % 2))
 	}, this.resize = function() {
-		a75 || (a79(), a7D(a6w))
+		a76 || (a7A(), a7E(a6x))
 	}, this.qN = function() {
-		for (var aE = 0; aE < e5; aE++) f2[aE] - f3[aE] != 3 || f5[aE] - f6[aE] != 3 ? (a6f[aE] = f3[aE] + (f2[aE] !== f3[aE] ? 1 : 0), a6g[aE] = f6[aE], a6h[aE] = 1, a6i[aE] = 1) : (a6f[aE] = f3[aE], a6g[aE] = f6[aE] + 1, a6h[aE] = 4, a6i[aE] =
+		for (var aE = 0; aE < e5; aE++) f2[aE] - f3[aE] != 3 || f5[aE] - f6[aE] != 3 ? (a6g[aE] = f3[aE] + (f2[aE] !== f3[aE] ? 1 : 0), a6h[aE] = f6[aE], a6i[aE] = 1, a6j[aE] = 1) : (a6g[aE] = f3[aE], a6h[aE] = f6[aE] + 1, a6i[aE] = 4, a6j[aE] =
 			2)
-	}, this.kY = function(player, cm, a7G) {
+	}, this.kY = function(player, cm, a7H) {
 		player += cm * bZ;
-		if (0 === cm) return a6x[player] === a7G && 0 < a6y[player] ? void(a6y[player] = 0) : (a6x[player] = a7G, void(a6y[player] = aF.vK(a7G) ? 255 : 64));
-		1 === cm ? (a6y[player] = 64, a6x[player] = a7G) : a6y[player] = a7G
+		if (0 === cm) return a6y[player] === a7H && 0 < a6z[player] ? void(a6z[player] = 0) : (a6y[player] = a7H, void(a6z[player] = aF.vK(a7H) ? 255 : 64));
+		1 === cm ? (a6z[player] = 64, a6y[player] = a7H) : a6z[player] = a7H
 	}, this.d7 = function() {
-		a75 ? a7D(d8) : a6u && (1 !== a6t ? (d8.imageSmoothingEnabled = !0, d8.setTransform(a6t, 0, 0, a6t, 0, 0), d8.drawImage(a6v, -a6r / a6t, -a6s / a6t), d8.setTransform(1, 0, 0, 1, 0, 0)) : (d8.imageSmoothingEnabled = !1, d8.drawImage(a6v, -
-			a6r, -a6s)))
+		a76 ? a7E(d8) : a6v && (1 !== a6u ? (d8.imageSmoothingEnabled = !0, d8.setTransform(a6u, 0, 0, a6u, 0, 0), d8.drawImage(a6w, -a6s / a6u, -a6t / a6u), d8.setTransform(1, 0, 0, 1, 0, 0)) : (d8.imageSmoothingEnabled = !1, d8.drawImage(a6w, -
+			a6s, -a6t)))
 	}, this.xf = function(dx, e0) {
-		a6r += dx, a6s += e0
+		a6s += dx, a6t += e0
 	}, this.om = function(dx, e0) {
 		g8.xf(dx, e0)
 	}, this.zoom = function(ci, d0, d1) {
-		a6t *= ci, a6r = (a6r + d0) * ci - d0, a6s = (a6s + d1) * ci - d1
+		a6u *= ci, a6s = (a6s + d0) * ci - d0, a6t = (a6t + d1) * ci - d1
 	}, this.gf = function(uV) {
-		return !a75 && (uV ? ++a72 % hR.z1[hR.hS.a7H] == 0 : aL.fU() % hR.z1[hR.hS.a7H] == 0) && (a72 = 0, a7D(a6w), !0)
+		return !a76 && (uV ? ++a73 % hR.z1[hR.hS.a7I] == 0 : aL.fU() % hR.z1[hR.hS.a7I] == 0) && (a73 = 0, a7E(a6x), !0)
 	}, this.hO = function(aE) {
-		return a7F(aE) * a6j[aE]
-	}, this.a7I = function(player) {
-		return a6j[player]
+		return a7G(aE) * a6k[aE]
+	}, this.a7J = function(player) {
+		return a6k[player]
 	}, this.fF = function() {
-		4 <= ++a6e && ! function() {
+		4 <= ++a6f && ! function() {
 			var aE, ej, cV;
-			for (a6e = 0, cV = 4; 1 <= cV; cV--)
-				for (ej = fY - 1; 0 <= ej; ej--) aE = fZ[ej] + cV * bZ, 0 < a6y[aE] && a6y[aE] < 255 && a6y[aE]--;
+			for (a6f = 0, cV = 4; 1 <= cV; cV--)
+				for (ej = fY - 1; 0 <= ej; ej--) aE = fZ[ej] + cV * bZ, 0 < a6z[aE] && a6z[aE] < 255 && a6z[aE]--;
 			if (2 !== gg)
-				for (ej = fY - 1; 0 <= ej; ej--) aE = fZ[ej], 0 < a6y[aE] && a6y[aE] < 255 && a6y[aE]--
+				for (ej = fY - 1; 0 <= ej; ej--) aE = fZ[ej], 0 < a6z[aE] && a6z[aE] < 255 && a6z[aE]--
 		}();
-		for (var bU = Math.floor(.1 * fY), aE = a6d + (bU = fY < (bU = bU < 8 ? 8 : bU) ? fY : bU) - 1; a6d <= aE; aE--) ! function(aE) {
-			var dK = a7F(aE) * a6j[aE];
-			0 < a6h[aE] && a7a(aE, a6f[aE], a6g[aE], a6h[aE], a6i[aE]) ? ! function(aE) {
+		for (var bU = Math.floor(.1 * fY), aE = a6e + (bU = fY < (bU = bU < 8 ? 8 : bU) ? fY : bU) - 1; a6e <= aE; aE--) ! function(aE) {
+			var dK = a7G(aE) * a6k[aE];
+			0 < a6i[aE] && a7b(aE, a6g[aE], a6h[aE], a6i[aE], a6j[aE]) ? ! function(aE) {
 				for (var hD, hE, cu, ez, dq = !1, cV = 0; cV < 8; cV++) {
-					if (cu = a6h[aE] + 2, ez = a6i[aE] + 2, cu > f2[aE] - f3[aE] + 1 || ez > f5[aE] - f6[aE] + 1) return dq;
-					if (hD = a6f[aE] - 1, hE = a6g[aE] - 1, !a7a(aE, hD, hE, cu, ez)) return dq;
-					a6f[aE] = hD, a6g[aE] = hE, a6h[aE] = cu, a6i[aE] = ez, dq = !0
+					if (cu = a6i[aE] + 2, ez = a6j[aE] + 2, cu > f2[aE] - f3[aE] + 1 || ez > f5[aE] - f6[aE] + 1) return dq;
+					if (hD = a6g[aE] - 1, hE = a6h[aE] - 1, !a7b(aE, hD, hE, cu, ez)) return dq;
+					a6g[aE] = hD, a6h[aE] = hE, a6i[aE] = cu, a6j[aE] = ez, dq = !0
 				}
 				return dq
 			}(aE) && function(aE, dK) {
-				for (var hD, hE, cu, ez, dq = !1, a0o = a6h[aE], i4 = 1 + Math.floor(.02 * a0o), cV = 1; cV < 5; cV++) {
+				for (var hD, hE, cu, ez, dq = !1, a0o = a6i[aE], i4 = 1 + Math.floor(.02 * a0o), cV = 1; cV < 5; cV++) {
 					if ((cu = a0o + cV * i4) > f2[aE] - f3[aE] + 1) return dq;
-					if ((ez = a7g(dK, cu)) > f5[aE] - f6[aE] + 1) return dq;
-					hD = f3[aE] + Math.floor(Math.random() * (f2[aE] - f3[aE] + 2 - cu)), hE = f6[aE] + Math.floor(Math.random() * (f5[aE] - f6[aE] + 2 - ez)), a7a(aE, hD, hE, cu, ez) && (a6f[aE] = hD, a6g[aE] = hE, a6h[aE] = cu, a6i[
+					if ((ez = a7h(dK, cu)) > f5[aE] - f6[aE] + 1) return dq;
+					hD = f3[aE] + Math.floor(Math.random() * (f2[aE] - f3[aE] + 2 - cu)), hE = f6[aE] + Math.floor(Math.random() * (f5[aE] - f6[aE] + 2 - ez)), a7b(aE, hD, hE, cu, ez) && (a6g[aE] = hD, a6h[aE] = hE, a6i[aE] = cu, a6j[
 						aE] = ez, dq = !0)
 				}
 				return dq
-			}(aE, dK) && a7d(aE) : ! function(aE, dK) {
-				var ez, hD = a6f[aE] + 1,
-					hE = a6g[aE] + 1,
-					cu = a6h[aE] - 2;
+			}(aE, dK) && a7e(aE) : ! function(aE, dK) {
+				var ez, hD = a6g[aE] + 1,
+					hE = a6h[aE] + 1,
+					cu = a6i[aE] - 2;
 				for (;;) {
 					if (cu < 1) {
-						a6h[aE] = 0;
+						a6i[aE] = 0;
 						break
 					}
-					if (ez = a7g(dK, cu), a7a(aE, hD, hE, cu, ez)) return a6f[aE] = hD, a6g[aE] = hE, a6h[aE] = cu, a6i[aE] = ez, 1;
+					if (ez = a7h(dK, cu), a7b(aE, hD, hE, cu, ez)) return a6g[aE] = hD, a6h[aE] = hE, a6i[aE] = cu, a6j[aE] = ez, 1;
 					hD++, hE++, cu -= 2
 				}
 				return
 			}(aE, dK) ? function(aE, dK) {
 				var hD, hE, cu, ez, cV, iA, el = f2[aE] - f3[aE] + 1,
-					a7h = Math.floor(.02 * el);
-				for (iA = -6 * (a7h = a7h < 1 ? 1 : a7h), cV = el; iA <= cV; cV -= a7h)
-					if (ez = a7g(dK, cu = 0 < cV ? cV : 1), hD = f3[aE] + Math.floor(Math.random() * (f2[aE] - f3[aE] + 2 - cu)), hE = f6[aE] + Math.floor(Math.random() * (f5[aE] - f6[aE] + 2 - ez)), a7a(aE, hD, hE, cu, ez)) return a6f[
-						aE] = hD, a6g[aE] = hE, a6h[aE] = cu, a6i[aE] = ez
-			}(aE, dK) : a7d(aE)
+					a7i = Math.floor(.02 * el);
+				for (iA = -6 * (a7i = a7i < 1 ? 1 : a7i), cV = el; iA <= cV; cV -= a7i)
+					if (ez = a7h(dK, cu = 0 < cV ? cV : 1), hD = f3[aE] + Math.floor(Math.random() * (f2[aE] - f3[aE] + 2 - cu)), hE = f6[aE] + Math.floor(Math.random() * (f5[aE] - f6[aE] + 2 - ez)), a7b(aE, hD, hE, cu, ez)) return a6g[
+						aE] = hD, a6h[aE] = hE, a6i[aE] = cu, a6j[aE] = ez
+			}(aE, dK) : a7e(aE)
 		}(fZ[aE % fY]);
-		a6d = (a6d + bU) % fY
+		a6e = (a6e + bU) % fY
 	}, this.gO = function() {
 		var aE, bc, dZ, da;
 		if (aL.fU() % 4 == 1)
-			for (aE = fY - 1; 0 <= aE; aE--) bc = fZ[aE], bW.wn[bc] < 2 || ((dZ = Math.max(a76[bc] - 1, 0)) === (da = Math.max(a77[bc] - 1, 0)) ? 0 === dZ && (bW.wn[bc] %= 2) : 0 === da && bW.wn[bc] < 6 && (bW.wn[bc] += 4), a76[bc] = dZ, a77[
+			for (aE = fY - 1; 0 <= aE; aE--) bc = fZ[aE], bW.wn[bc] < 2 || ((dZ = Math.max(a77[bc] - 1, 0)) === (da = Math.max(a78[bc] - 1, 0)) ? 0 === dZ && (bW.wn[bc] %= 2) : 0 === da && bW.wn[bc] < 6 && (bW.wn[bc] += 4), a77[bc] = dZ, a78[
 				bc] = da)
 	}, this.tz = function(player) {
 		var aE = player + 2 * bZ,
-			a3 = a6y[aE];
-		return 0 < a3 && (g7.nu(50, player), a6y[aE] = 0, 255 === a3)
+			a3 = a6z[aE];
+		return 0 < a3 && (g7.nu(50, player), a6z[aE] = 0, 255 === a3)
 	}, this.sq = function(player) {
-		return 255 === a6y[player + 2 * bZ]
+		return 255 === a6z[player + 2 * bZ]
 	}
 }
 
 function re() {
-	var cj, a7k;
+	var cj, a7l;
 	this.b = function() {
 		cj = "Abbasid Caliphate;Aceh s;Achaemenid Z;Afsharid z;Aghlabid Emirate;Ahom z;Akkadian Z;Aksumite Z;Akwamu;Alaouite z;Almohad Caliphate;Almoravid z;Angevin Z;Aq Qoyunlu;Armenian Z;Assyria;Ashanti Z;Austrian Z;Austria-Hungary;Ayyubid z;Aztec Z;Aulikara Z;Babylonian Z;Balhae;Banten s;S Banjar;Bamana Z;Bengal s;Benin Z;Kadamba z;Bornu Z;E Brazil;Britannic Z;British Z;British Raj;Bruneian Z;Bukhara Z;Burgundian State;Buyid z;Byzantine Z;Caliphate of Córdoba;Cao Wei;Carthaginian Z;Cebu Rajahnate;Chagatai Khanate;Chalukya z;Chauhan z;Chavín Z;Chenla;Chera z;Chola z;Comanche Z;Congo Free State;Crimean Khanate;Dacian Z;Delhi s;Demak s;Durrani Z;Dutch Z;Egyptian Z;Elamite Z;Exarchate of Africa;Abyssinia;Fatimid Caliphate;First French Z;Frankish Z;Funan;Gallic Z;Gaza Z;Republic of Genoa;German Z;Ghana Z;Ghaznavid z;Ghurid z;Goguryeo;Goryeo;Gorkha Z;Göktürk Khaganate;Golden Horde;S Gowa;Seljuq Z;Gupta Z;Hafsid Y;Han z;Hanseatic League;E Harsha;Hephthalite Z;Hittite Z;Holy Roman Z;Hotak z;Hoysala Z;Hunnic Z;Husainid z;Idrisid z;Ilkhanate;K Israel;K Judah;Inca Z;Italian Z;E Japan;Jin z;Johor Z;Jolof Z;Joseon;Kaabu Z;Kachari Y;Kalmar Union;Kanem Z;Kanva z;Kara-Khanid Khanate;Kazakh Khanate;Khazar Khaganate;Khmer Z;Khilji z;Khwarazmian z;Kievan Rus';Konbaung z;Kong Z;Korean Z;Kushan Z;K Kush;Lakota;Latin Z;Later Lê z;Liao z;Lodi s;Khmer Z;Macedonian Z;Majapahit Z;Mali Z;Malacca Z;Mamluk s;Manchukuo;Maratha Z;Marinid z;Massina Z;Mataram s;Mauretania;Mauryan Z;Median Z;Mlechchha z;Ming z;Mitanni Z;Mongol Z;Mughal Z;Nanda Z;Nguyễn z;North Sea Z;E Nicaea;Numidia;Omani Z;Ottoman Z;Oyo Z;Pagan Z;Pahlavi z;Pala Z;Palmyrene Z;Parthian Z;Pontic Z;Portuguese Z;K Prussia;Ptolemaic Z;Qajar z;Qara Qoyunlu;Qin z;Qing z;Ramnad Sethupathis;Rashidun Caliphate;Rashtrakuta z;Roman Z;Rouran Khaganate;Rozwi Z;Rustamid z;Russian Z;Tsardom of Russia;Saadi z;Safavid z;Saffarid z;Sassanid z;Satavahana z;Samanid Z;Soviet Union;Saudeleur z;Duchy of Savoy;Seleucid Z;Serbian Z;Shu Han;Shang z;Siam Z;Sikh Z;Singhasari;Sokoto Caliphate;Song z;Songhai Z;Spanish Z;Srivijaya Z;Sui z;K Mysore;Shunga Z;S Sulu;Sumer;Sur Z;Swedish Z;Tahirid z;Tang z;Tây Sơn z;S Ternate;E Thessalonica;German Reich;Tibetan Z;Tondo z;S Tidore;Timurid Z;K Tlemcen;E Trebizond;Toltec Z;Toungoo z;Toucouleur Z;Tu'i Tonga Z;Turgesh Khaganate;Umayyad Caliphate;Uyunid Emirate;Uyghur Khaganate;Uzbek Khanate;Vandal Y;Vijayanagara Z;Republic of Venice;Wari Z;Wassoulou Z;Wattasids;Western Roman Z;Eastern Wu;Western Xia z;Xin z;Yuan z;Zand z;Zhou z;Zulu Z;Yugoslavia;Kosovo;Sikkim;Kanem–Bornu Z;Wadai Z;Ethiopian Z;Rozvi Z;Sasanian Z;E Vietnam;Shilluk Y;K Aksum;Gwiriko Y;Toro Y;Malindi Y;K Loango;K Mapungubwe;Ryukyu Y;K Cyprus;K Jerusalem;Garhwal Y;K Nepal;K Cambodia;Champa Y;Hanthawaddy Y;Phayao Y;K Sardinia;K Sicily;K Gwynedd;K Scotland;K Desmond;K Poland;K Hungary;K Croatia;K Bohemia;Albanian Y;K Georgia;K Portugal;Khanate of Sibir;K Romania;Cossack Hetmanate;Duchy of Bouillon;K Ireland;Lordship of Ireland;K Italy;Republic of Pisa;Idrisid z;Almoravid z;Almohad Caliphate;Marinid z;Wattasid z;Saadian z;Republic of Salé;Rif Republic;K Kush;Makuria;Alodia;Ayyubid z;Mamluk s;Egypt Eyalet;K Fazughli;S Sennar;S Darfur;Mahdist State;S Egypt;K Egypt;Emirate of Cyrenaica;K Libya;Republic of Egypt;Republic of the Sudan;United Arab Republic;Libyan Arab Republic;Zirid z;Hafsid z;K Kuku;Regency of Algiers;Gurunsi;Liptako;Tenkodogo;Wogodogo;Yatenga;Bilanga;Bilayanga;Bongandini;Con;Macakoali;Piela;Nungu;K Sine;K Saloum;K Baol;K Cayor;K Waalo;Bundu;Bonoman;Gyaaman;Denkyira;Mankessim Y;K Dahomey;Oyo Z;K Nri;Aro Confederacy;Kwararafa;Biafra;Buganda;Bunyoro;Ankole;Busoga;Tanganyika;Kuba Y;K Luba;K Lunda;Yeke Y;K Ndongo;Kasanje Y;K Matamba;Mbunda Y;Chokwe Y;Kazembe Y;K Butua;Ndebele Y;Mthethwa Z;Bophuthatswana;Ciskei;Transkei;Venda;Rhodesia;Kart z;Nogai Horde;Khanate of Bukhara;Khanate of Khiva;Khamag Mongol;Northern Fujiwara;Kamakura Shogunate;Ashikaga Shogunate;Jaxa;Republic of Ezo;Jiangxi Soviet;Hunan Soviet;Guangzhou Commune;Gojoseon;Alaiye;Beylik of Bafra;Kara Koyunlu;Kars Republic;K Iraq;Arab Federation;Kar-Kiya z;Baduspanids;Marashiyan z;Afrasiyab z;Mihrabanid z;Safavid Iran;Sheikhdom of Kuwait;Bani Khalid Emirate;Emirate of Diriyah;Emirate of Najd;Muscat and Oman;Emirate of Riyadh;S Najd;K Hejaz;Fadhli s;Emirate of Beihan;Emirate of Dhala;S Lahej;Republic of Kuwait;K Cochin;Jaffna Y;Laur Y;Pandya z;Jaunpur s;Jaintia Y;Hyderabad State;Travancore;Udaipur State;Manikya z;Lan Xang;K Vientiane;K Champasak;Lao Issara;K Laos;Pyu States;Ava;Mon Ys;Pegu;K Mrauk U;Taungoo z;Shan States;Arakan;Raktamaritika;Singhanavati;Dvaravati;Ngoenyang;Hariphunchai;Tambralinga;Lavo Y;Langkasuka;Sukhothai Y;S Singora;Ayutthaya Y;Thonburi Y;Lan Na;Pattani Y;Jambi s;Palembang s;S Deli;S Langkat;S Serdang;S Cirebon;K Pajang;K Bali;Bima s;K Larantuka;K Banggai;Luwu;S Bone;Caucasian Albania;Kabardia;Circassia;K Abkhazia;Elisu s;Avar Khanate;Caucasian Imamate;K Imereti;K Kartli;K Kakheti;Crown of Aragon;Emirate of Granada;K Majorca;Crown of Castile;K Haiti;Cocollán;Zapotec Civilization;Mosquito Y;Somoza Regime;Iroquois Confederacy;Cherokee Nation;Vermont Republic;State of Muskogee;K Alo;K Sigave;K Fiji;K Nauru;K Chile;Muisca Confederation;El Stronato;K Chimor;Jungle Republic;Liga Federal;Supreme Junta;Weimar Republic;K Bavaria;Bremen;Frankfurt;Hamburg;K Hanover;Holstein;Lippe;Nassau;Oldenburg;Pomerania;Reuss;Saxe-Altenburg;Saxony;Schleswig;Waldeck;Württemberg;Helvetic Republic;Republic of Florence;Duchy of Urbino;Republic of Cospaia;Duchy of Lucca;Duchy of Mantua;Duchy of Milan;Papal States"
 			.split(";");
-		var aE, ej, a7l = ["K ", " Y", "E ", " Z", " z", " s", "S "],
-			a7m = ["Kingdom of ", " Kingdom", "Empire of ", " Empire", " Dynasty", " Sultanate", "Sultanate of "];
-		for (a7k =
+		var aE, ej, a7m = ["K ", " Y", "E ", " Z", " z", " s", "S "],
+			a7n = ["Kingdom of ", " Kingdom", "Empire of ", " Empire", " Dynasty", " Sultanate", "Sultanate of "];
+		for (a7l =
 			"Pestilent Dominion;Wretched Realm;Damned Province;Corrupt Zone;Cursed Territory;Blight Nation;Haunted Expanse;Malevolent State;Ruined Empire;Contaminated Land;Epidemic Domain;Forsaken District;Abandoned Wasteland;Necrotic Enclave;Tainted Domain;Decayed Principality;Infested Region;Malignant Territory;Toxic Dominion;Ravaged Sector;Ghostly Realm;Plagued Commonwealth;Afflicted State;Desolate Nation;Apocalyptic Zone;Radiated Province;Deathly District;Pestilence Haven;Doom Territory;Malefic Expanse;Abandoned State;Cursed Haven;Corroded Zone;Hauntland;Noxious Nation;Infected Enclave;Ruinous Domain;Wasteland Woe;Rotten Principality;Voided Land;Vile Dominion;Catastrophic Region;Eerie Expanse;Desolation State;Forsaken Outpost;Contagion District;Damaged Province;Abhorrent Sector;Accursed Nation;Doomstruck Land;Radiant Ruin;Deathly Enclave;Malefic Dominion;Plague District;Infected Haven;Corrupt State;Pestilent Territory;Razed Realm;Haunted Wasteland;Toxic Sector;Cursed Dominion;Decaying Province;Forsaken Enclave;Ruinous Region;Malignant Haven;Infested State;Ghostly Nation;Tainted Territory;Damned District;Radiated Dominion;Desolate Expanse;Apocalyptic Land;Death Zone;Wretched State;Malevolent Haven;Plagued Nation;Noxious Domain;Voided Territory;Eerie Sector;Accursed Province;Necrotic District;Doom Haven;Haunt Realm;Rotten Nation;Forsaken Territory;Infected State;Abhorrent Expanse;Malignant Land;Toxic Dominion;Ruined District;Ghostland;Cursed Sector;Radiant Nation"
 			.split(";"), aE = cj.length - 1; 0 <= aE; aE--)
-			for (ej = a7l.length - 1; 0 <= ej; ej--) cj[aE] = cj[aE].replace(a7l[ej], a7m[ej]);
+			for (ej = a7m.length - 1; 0 <= ej; ej--) cj[aE] = cj[aE].replace(a7m[ej], a7n[ej]);
 		if (settings.realisticNames) cj = realisticNames;
 	}, this.lc = function() {
 		var aE;
-		if (fr.fs && fr.ft.a5v)
-			for (aE = e5; aE < bZ; aE++) hV[aE] = fr.ft.a5v[aE % mW];
+		if (fr.fs && fr.ft.a5w)
+			for (aE = e5; aE < bZ; aE++) hV[aE] = fr.ft.a5w[aE % mW];
 		else(9 === fv ? function() {
 			var aE, dO = em.random(),
 				bU = cj.length,
-				ca = e5 + g1.a7s;
+				ca = e5 + g1.a7t;
 			for (aE = ca - 1; e5 <= aE; aE--) hV[aE] = cj[(aE + dO) % bU];
-			for (bU = a7k.length, aE = ca; aE < bZ; aE++) hV[aE] = a7k[aE % bU]
+			for (bU = a7l.length, aE = ca; aE < bZ; aE++) hV[aE] = a7l[aE % bU]
 		} : fx ? function() {
 			var aE, dO = em.random();
 			for (aE = e5; aE < bZ; aE++) hV[aE] = cj[(aE + dO) % bZ]
@@ -4984,7 +4990,7 @@ function re() {
 		if (!fx) {
 			for (ua = new Array(e5), bU = e5, aE = 0; aE < bU; aE++) ua[aE] = hV[aE];
 			if (hR.hS.uZ) {
-				for (ca = cj.length, dO = em.a7r(), aE = 0; aE < bU; aE++) hV[aE] = cj[(aE + dO) % ca];
+				for (ca = cj.length, dO = em.a7s(), aE = 0; aE < bU; aE++) hV[aE] = cj[(aE + dO) % ca];
 				hV[bN] = ua[bN]
 			}
 		}
@@ -4992,28 +4998,28 @@ function re() {
 }
 
 function s2() {
-	this.a7t = [], this.a7u = [], this.b = function() {
-		this.a7t = [], this.a7u = []
+	this.a7u = [], this.a7v = [], this.b = function() {
+		this.a7u = [], this.a7v = []
 	}, this.fF = function() {
-		0 <= this.a7t.length && this.a7v(this.a7t), 0 <= this.a7u.length && this.a7v(this.a7u)
-	}, this.a7v = function(ad) {
+		0 <= this.a7u.length && this.a7w(this.a7u), 0 <= this.a7v.length && this.a7w(this.a7v)
+	}, this.a7w = function(ad) {
 		for (var cV = -1, aE = ad.length - 1; 0 <= aE; aE--)
 			if (ad[aE].aM--, ad[aE].aM <= 0) {
 				cV = aE;
 				break
 			} for (aE = cV; 0 <= aE; aE--) ad.shift()
-	}, this.sc = function(id, nH, a7w) {
-		return this.a7x(this.a7t, id, nH, a7w)
-	}, this.a7y = function(id, nH, a7w) {
-		return this.a7x(this.a7u, id, nH, a7w)
-	}, this.a7x = function(ad, id, nH, a7w) {
+	}, this.sc = function(id, nH, a7x) {
+		return this.a7y(this.a7u, id, nH, a7x)
+	}, this.a7z = function(id, nH, a7x) {
+		return this.a7y(this.a7v, id, nH, a7x)
+	}, this.a7y = function(ad, id, nH, a7x) {
 		return ! function(ad, id, nH) {
 			var aE, mC;
 			for (aE = nH.length - 1; 0 <= aE; aE--)
 				for (mC = ad.length - 1; 0 <= mC; mC--)
 					if (ad[mC].player === nH[aE] && id === ad[mC].id) return 1;
 			return
-		}(ad, id, nH) && (a7w && function(ad, id, nH) {
+		}(ad, id, nH) && (a7x && function(ad, id, nH) {
 			var aE;
 			for (aE = nH.length - 1; 0 <= aE; aE--) ad.push({
 				player: nH[aE],
@@ -5033,16 +5039,16 @@ function qf(nH) {
 function s0() {
 	this.uk = 0, this.nH = null, this.b = function() {
 		this.uk = 0, this.nH = []
-	}, this.a81 = function(player) {
+	}, this.a82 = function(player) {
 		this.nH.push(player), o5++, e7[player] = 2, player === bN && (gZ.show(!1, !1), g9.zY()), g8.tz(player)
-	}, this.a5c = function(player) {
+	}, this.a5d = function(player) {
 		var aE, nH;
 		if (2 !== e7[player])
 			for (aE = (nH = this.nH).length - 1; 0 <= aE; aE--)
 				if (nH[aE] === player) return void nH.splice(aE, 1)
 	}, this.fF = function() {
-		fx || (30 === this.uk && 2140 <= aL.fU() && this.a82(), this.uk = (this.uk + 1) % 60)
-	}, this.a82 = function() {
+		fx || (30 === this.uk && 2140 <= aL.fU() && this.a83(), this.uk = (this.uk + 1) % 60)
+	}, this.a83 = function() {
 		for (var nH = this.nH, aE = nH.length - 1; 0 <= aE; aE--) ! function(player, eA) {
 			!b5.cQ(player) || (eA = Math.max(Math.min(100, bO[player]), bJ(eA * bO[player], 100))) < 100 || (0 === bn[player].length ? !eO.fE.fF(player) && cS && fI(player, eA, 0, 0) : (cS ? fT : fc)(player, eA))
 		}(nH[aE], 12)
@@ -5050,58 +5056,58 @@ function s0() {
 }
 
 function rw() {
-	var a84, a86;
-	this.a2V = 5, this.a2W = this.a2V - 1, this.a1f = this.a2V + this.a2W, this.a1e = [0, 1, 5, 2, 6, 3, 7, 4, 8], this.a85 = null;
+	var a85, a87;
+	this.a2V = 5, this.a2W = this.a2V - 1, this.a1f = this.a2V + this.a2W, this.a1e = [0, 1, 5, 2, 6, 3, 7, 4, 8], this.a86 = null;
 
-	function a8E(aE) {
-		return a86[aE].a89 && a84[aE].a8E()
+	function a8F(aE) {
+		return a87[aE].a8A && a85[aE].a8F()
 	}
 
-	function a8G(a1i) {
-		a86[a1i].aM = aL.aM, a86[a1i].a8A = !1
+	function a8H(a1i) {
+		a87[a1i].aM = aL.aM, a87[a1i].a8B = !1
 	}
 	this.p4 = 0, this.a2H = 0, this.b = function() {
-		this.a85 = new Array(this.a2V);
-		this.a85[0] = "territorial.io";
-		var aE, a88 = em.a7r(0);
-		for (em.qe(0), aE = 1; aE < this.a2V; aE++) this.a85[aE] = w.nm() + ".territorial.io";
-		for (em.qe(a88), a84 = new Array(this.a1f), a86 = new Array(this.a1f), aE = this.a1f - 1; 0 <= aE; aE--) a86[aE] = {
-			a89: !1,
+		this.a86 = new Array(this.a2V);
+		this.a86[0] = "territorial.io";
+		var aE, a89 = em.a7s(0);
+		for (em.qe(0), aE = 1; aE < this.a2V; aE++) this.a86[aE] = w.nm() + ".territorial.io";
+		for (em.qe(a89), a85 = new Array(this.a1f), a87 = new Array(this.a1f), aE = this.a1f - 1; 0 <= aE; aE--) a87[aE] = {
+			a8A: !1,
 			aM: 0,
-			a8A: !1
+			a8B: !1
 		}
 	}, this.uE = function() {
 		return this.a2H < this.a2V ? this.a2H : this.a2H - this.a2W
 	}, this.fF = function() {
-		for (var aE = this.a1f - 1; 0 <= aE; aE--) this.a1a(aE) && aL.aM > a86[aE].aM + 15e3 && jK.a8B(aE, a86[aE].a8A)
-	}, this.xx = function(a1i, a8C) {
-		if (a86[a1i].a89) {
-			if (a84[a1i].a8E()) return a84[a1i].a8F(a8C), a84[a1i].a1a();
-			a84[a1i].lE()
+		for (var aE = this.a1f - 1; 0 <= aE; aE--) this.a1a(aE) && aL.aM > a87[aE].aM + 15e3 && jK.a8C(aE, a87[aE].a8B)
+	}, this.xx = function(a1i, a8D) {
+		if (a87[a1i].a8A) {
+			if (a85[a1i].a8F()) return a85[a1i].a8G(a8D), a85[a1i].a1a();
+			a85[a1i].lE()
 		}
-		return this.a8D(a1i, a8C), !1
-	}, this.a8D = function(a1i, a8C) {
-		a86[a1i].a89 = !0, a8G(a1i), a84[a1i] = new a8H, a84[a1i].b(a1i, a8C)
-	}, this.a8F = function(a1i, a8C) {
-		a8E(a1i) && a84[a1i].a8F(a8C)
-	}, this.a8I = function(a1i, a8C) {
-		0 === a8C ? pH.xz() : a8C < 3 ? jK.a0N(a1i, a8C - 1) : 3 === a8C ? jK.a3e(a1i) : 4 === a8C ? qw.xz(a1i) : 5 === a8C ? a1i === this.p4 && jK.a8J() : 6 !== a8C && 7 === a8C && jK.a48(a1i)
+		return this.a8E(a1i, a8D), !1
+	}, this.a8E = function(a1i, a8D) {
+		a87[a1i].a8A = !0, a8H(a1i), a85[a1i] = new a8I, a85[a1i].b(a1i, a8D)
+	}, this.a8G = function(a1i, a8D) {
+		a8F(a1i) && a85[a1i].a8G(a8D)
+	}, this.a8J = function(a1i, a8D) {
+		0 === a8D ? pH.xz() : a8D < 3 ? jK.a0N(a1i, a8D - 1) : 3 === a8D ? jK.a3e(a1i) : 4 === a8D ? qw.xz(a1i) : 5 === a8D ? a1i === this.p4 && jK.a8K() : 6 !== a8D && 7 === a8D && jK.a48(a1i)
 	}, this.a1a = function(aE) {
-		return a86[aE].a89 && a84[aE].a1a()
+		return a87[aE].a8A && a85[aE].a1a()
 	}, this.send = function(a1i, k8) {
-		a8G(a1i), a84[a1i].send(k8)
+		a8H(a1i), a85[a1i].send(k8)
 	}, this.p3 = function(a1i) {
-		a86[a1i].a8A = !0
-	}, this.close = function(a1i, a8K) {
-		a8E(a1i) && a84[a1i].close(a8K)
-	}, this.a8L = function(a1i, a8K) {
-		qx.a1l(a8K), a8E(a1i) && a84[a1i].close(a8K)
-	}, this.a1n = function(a8K) {
-		for (var aE = this.a1f - 1; 0 <= aE; aE--) this.close(aE, a8K)
-	}, this.a8M = function(a1i, a8K) {
-		for (var aE = this.a1f - 1; 0 <= aE; aE--) aE !== a1i && this.close(aE, a8K)
-	}, this.a8N = function(a1i, oX) {
-		a84[a1i].lE(), qx.b(a1i, oX.code)
+		a87[a1i].a8B = !0
+	}, this.close = function(a1i, a8L) {
+		a8F(a1i) && a85[a1i].close(a8L)
+	}, this.a8M = function(a1i, a8L) {
+		qx.a1l(a8L), a8F(a1i) && a85[a1i].close(a8L)
+	}, this.a1n = function(a8L) {
+		for (var aE = this.a1f - 1; 0 <= aE; aE--) this.close(aE, a8L)
+	}, this.a8N = function(a1i, a8L) {
+		for (var aE = this.a1f - 1; 0 <= aE; aE--) aE !== a1i && this.close(aE, a8L)
+	}, this.a8O = function(a1i, oX) {
+		a85[a1i].lE(), qx.b(a1i, oX.code)
 	}
 }
 
@@ -5112,34 +5118,34 @@ function ql() {
 }
 
 function gM() {
-	a8O(), a8P()
+	a8P(), a8Q()
 }
 
-function a8P() {
-	for (var aE = fY - 1; 0 <= aE; aE--) 0 === e6[fZ[aE]] && a8Q(aE)
+function a8Q() {
+	for (var aE = fY - 1; 0 <= aE; aE--) 0 === e6[fZ[aE]] && a8R(aE)
 }
 
-function a8Q(aE) {
+function a8R(aE) {
 	fY--;
 	for (var ej = aE; ej < fY; ej++) fZ[ej] = fZ[ej + 1]
 }
 
-function a8O() {
-	for (var de, aE = fY - 1; 0 <= aE; aE--) bv[fZ[aE]] <= bJ(ml[fZ[aE]], 4) ? bv[fZ[aE]] <= 1e3 && (2 !== e6[fZ[aE]] || 0 === bv[fZ[aE]]) && a5M(fZ[aE]) : bv[fZ[aE]] >= ml[fZ[aE]] ? ml[fZ[aE]] = bv[fZ[aE]] : (de = bJ(ml[fZ[aE]] - bv[fZ[aE]], 1e3),
+function a8P() {
+	for (var de, aE = fY - 1; 0 <= aE; aE--) bv[fZ[aE]] <= bJ(ml[fZ[aE]], 4) ? bv[fZ[aE]] <= 1e3 && (2 !== e6[fZ[aE]] || 0 === bv[fZ[aE]]) && a5N(fZ[aE]) : bv[fZ[aE]] >= ml[fZ[aE]] ? ml[fZ[aE]] = bv[fZ[aE]] : (de = bJ(ml[fZ[aE]] - bv[fZ[aE]], 1e3),
 		ml[fZ[aE]] -= de < 1 ? 1 : de)
 }
 
 function k3() {
-	for (var a5D = 0, aE = fY - 1; 0 <= aE; aE--) a5D += bO[fZ[aE]];
-	return a5D % 4096
+	for (var a5E = 0, aE = fY - 1; 0 <= aE; aE--) a5E += bO[fZ[aE]];
+	return a5E % 4096
 }
 var n4, a05, qm, qn, aN = 0,
 	oe = 0;
 
-function a8X() {
-	a8W = 2, a8T = 2173, a8S = 10, a8R = "1.90.8   7 Feb 2024", a8Y(), rA(), fA();
-	var a8Z = document.getElementById("usernameField");
-	a8Z && document.body.removeChild(a8Z), n = "undefined" != typeof Android ? Android : null, 12 <= (q = n ? n.getVersion() : 0) && n.prepareAd("1688441405"), m = !1, window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers
+function a8Y() {
+	a8X = 2, a8U = 2174, a8T = 11, a8S = "1.90.9   8 Feb 2024", a8Z(), rA(), fA();
+	var a8a = document.getElementById("usernameField");
+	a8a && document.body.removeChild(a8a), n = "undefined" != typeof Android ? Android : null, 12 <= (q = n ? n.getVersion() : 0) && n.prepareAd("1688441405"), m = !1, window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers
 		.iosCommandA && (m = !0, window.webkit.messageHandlers.iosCommandA.postMessage("prepare ad 4500876070"), p = "undefined" != typeof mwIOSdataX ? mwIOSdataX : {
 			username: "iOS User " + Math.floor(1e3 * Math.random()),
 			id: Math.floor(1 + Math.random() * (Math.pow(2, 30) - 1)),
@@ -5152,17 +5158,17 @@ function a8X() {
 			unlimitedTime: !1,
 			alliances: !1,
 			mustShowConsentButton: "0"
-		}), n || m || (r8.a8a += "_browser"), a8V = (new Date).getTime() % 1024, od = a8b(), r.b(), a26 = new a0p, hR.b(), ph.b(), z(), aQ(), a8c(), i8 = new a8d, iI = new a00, aF = new us, bR = new a8e, n6 = new a8f, a1v = new uc, (aL = new a8g)
-	.b(), fW = new a8h, gU = new a8i, (a0W = new ch).b(), (d5 = new a06).b(), pQ = new a0e, vT(), em.b(), bP.a6V(), qh.b(), aT.b(), pN.b(), gB.b(), pH.b(), qj.b(), pB.b(), cq.b(), r5.b(), aO.b(), r7.a2T(), aL.cx = !0, setTimeout(function() {
+		}), n || m || (r8.a8b += "_browser"), a8W = (new Date).getTime() % 1024, od = a8c(), r.b(), a26 = new a0p, hR.b(), ph.b(), z(), aQ(), a8d(), i8 = new a8e, iI = new a00, aF = new us, bR = new a8f, n6 = new a8g, a1v = new uc, (aL = new a8h)
+	.b(), fW = new a8i, gU = new a8j, (a0W = new ch).b(), (d5 = new a06).b(), pQ = new a0e, vT(), em.b(), bP.a6W(), qh.b(), aT.b(), pN.b(), gB.b(), pH.b(), qj.b(), pB.b(), cq.b(), r5.b(), aO.b(), r7.a2T(), aL.cx = !0, setTimeout(function() {
 			az.lc(2, 14071)
 		}, 0), oe = 2
 }
 
 function aS() {
-	oe || (oe = 1, oV(), a8X())
+	oe || (oe = 1, oV(), a8Y())
 }
 
-function a8b() {
+function a8c() {
 	try {
 		return window.self !== window.top
 	} catch (oX) {
@@ -5170,378 +5176,378 @@ function a8b() {
 	}
 }
 
-function a8c() {
-	a8U = window.location.hostname, oc = 0 <= a8U.toLowerCase().indexOf("territorial.io")
+function a8d() {
+	a8V = window.location.hostname, oc = 0 <= a8V.toLowerCase().indexOf("territorial.io")
 }
 
 function rf() {
-	var a8j;
+	var a8k;
 	this.g2 = null, this.b = function() {
-		a8j = [], 9 === fv && this.a8k()
-	}, this.a8k = function() {
-		var aE, a8l = [45, 70, 95, 150, 190, 333];
-		if (this.a7s = 0, this.g2 = [0, 0, 0, 0, 0, 0], e5 <= a8l[0]) this.g2[0] = Math.max(cA.cB(e5 * (512 - e5), a8l[0]), 16), fq = this.g2[0];
+		a8k = [], 9 === fv && this.a8l()
+	}, this.a8l = function() {
+		var aE, a8m = [45, 70, 95, 150, 190, 333];
+		if (this.a7t = 0, this.g2 = [0, 0, 0, 0, 0, 0], e5 <= a8m[0]) this.g2[0] = Math.max(cA.cB(e5 * (512 - e5), a8m[0]), 16), fq = this.g2[0];
 		else
 			for (fq = bZ - e5, aE = 1; aE < 6; aE++)
-				if (e5 <= a8l[aE]) {
-					this.g2[aE - 1] = 512 - a8l[aE - 1] - bJ((512 - a8l[aE - 1]) * (e5 - a8l[aE - 1]), a8l[aE] - a8l[aE - 1]), this.g2[aE] = 512 - e5 - this.g2[aE - 1];
+				if (e5 <= a8m[aE]) {
+					this.g2[aE - 1] = 512 - a8m[aE - 1] - bJ((512 - a8m[aE - 1]) * (e5 - a8m[aE - 1]), a8m[aE] - a8m[aE - 1]), this.g2[aE] = 512 - e5 - this.g2[aE - 1];
 					break
 				} mW = e5 + fq
-	}, this.a5b = function(player) {
-		a8j.push({
+	}, this.a5c = function(player) {
+		a8k.push({
 			player: player,
 			uH: 14 + em.en(20)
 		})
 	}, this.fF = function() {
 		var aE;
 		if (9 === fv)
-			for (aE = a8j.length - 1; 0 <= aE; aE--) --a8j[aE].uH <= 0 && (g8.kY(a8j[aE].player, 0, 46), a8j.splice(aE))
+			for (aE = a8k.length - 1; 0 <= aE; aE--) --a8k[aE].uH <= 0 && (g8.kY(a8k[aE].player, 0, 46), a8k.splice(aE))
 	}
 }
 
 function sE() {
-	function a8q(aE) {
-		return !(1 === aE || aE >= az.a8w())
+	function a8r(aE) {
+		return !(1 === aE || aE >= az.a8x())
 	}
-	this.b0 = 0, this.b1 = 0, this.lv = null, this.lr = null, this.ls = null, this.lw = null, this.mJ = 0, this.a39 = 0, this.lt = !1, this.a5z = 19, this.lu = new a8n, this.ft = new a8o, this.b = function() {
+	this.b0 = 0, this.b1 = 0, this.lv = null, this.lr = null, this.ls = null, this.lw = null, this.mJ = 0, this.a39 = 0, this.lt = !1, this.a60 = 19, this.lu = new a8o, this.ft = new a8p, this.b = function() {
 		this.ft.b()
-	}, this.lc = function(a8p, a3D) {
-		((a8p %= this.a5z) !== this.mJ || a8q(this.mJ) && a3D !== this.a39) && (this.lt = !1, this.lu.a3J(), em.qe(a8p), this.mJ = a8p, this.a39 = a3D, a8q(a8p) && (az.ft.mI[a8p].a88 = a3D), this.mJ >= az.a8w() ? a8s() : (a8p = az.ft.mI[this.mJ],
-			this.b0 = a8p.cu, this.b1 = a8p.ez, em.qe(a8p.a88), qz.lc([this.b0, this.b1, a8p.ha, a8p.hX]), a8t(), qh.a8u(), qz.a8v()))
-	}, this.a8w = function() {
+	}, this.lc = function(a8q, a3D) {
+		((a8q %= this.a60) !== this.mJ || a8r(this.mJ) && a3D !== this.a39) && (this.lt = !1, this.lu.a3J(), em.qe(a8q), this.mJ = a8q, this.a39 = a3D, a8r(a8q) && (az.ft.mI[a8q].a89 = a3D), this.mJ >= az.a8x() ? a8t() : (a8q = az.ft.mI[this.mJ],
+			this.b0 = a8q.cu, this.b1 = a8q.ez, em.qe(a8q.a89), qz.lc([this.b0, this.b1, a8q.ha, a8q.hX]), a8u(), qh.a8v(), qz.a8w()))
+	}, this.a8x = function() {
 		return 10
-	}, this.a8x = function(aE) {
-		return 3 === aE || 7 === aE || 9 === aE || aE === az.a5z
 	}, this.a8y = function(aE) {
-		return 2 === aE || 7 === aE || 9 === aE
+		return 3 === aE || 7 === aE || 9 === aE || aE === az.a60
 	}, this.a8z = function(aE) {
+		return 2 === aE || 7 === aE || 9 === aE
+	}, this.a90 = function(aE) {
 		return 1 === aE
 	}, this.xD = function() {
 		return 19
 	}
 }
 
-function a8n() {
-	function a99() {
+function a8o() {
+	function a9A() {
 		az.lu.fF()
 	}
 
-	function a9E(bc, a9D) {
-		0 < a9D && (az.lw[bc] += a9D, az.lw[bc + 1] += a9D, az.lw[bc + 2] += a9D)
+	function a9F(bc, a9E) {
+		0 < a9E && (az.lw[bc] += a9E, az.lw[bc + 1] += a9E, az.lw[bc + 2] += a9E)
 	}
 
 	function sm(bc) {
 		return az.lw[bc + 2] > az.lw[bc] && az.lw[bc + 2] > az.lw[bc + 1]
 	}
-	this.xs = -1, this.j = 0, this.a90 = 0, this.a91 = 8, this.a92 = 32, this.a93 = 8, this.a94 = 32, this.a95 = [0, 0], this.wn = [0, 0, 0, 0], this.eP = null, this.a96 = !0, this.a97 = !1, this.a3J = function() {
-		-1 !== this.xs && clearTimeout(this.xs), this.xs = -1, this.eP = null, qz.a8v()
+	this.xs = -1, this.j = 0, this.a91 = 0, this.a92 = 8, this.a93 = 32, this.a94 = 8, this.a95 = 32, this.a96 = [0, 0], this.wn = [0, 0, 0, 0], this.eP = null, this.a97 = !0, this.a98 = !1, this.a3J = function() {
+		-1 !== this.xs && clearTimeout(this.xs), this.xs = -1, this.eP = null, qz.a8w()
 	}, this.b = function() {
-		7 === aT.pT() || this.a97 || (this.a96 = !0, this.j = 0, this.a90 = 1, this.a95 = [az.ft.mI[az.mJ].mH[0], az.ft.mI[az.mJ].mK[0]], this.wn = [az.ft.mI[az.mJ].a98[3], az.ft.mI[az.mJ].a98[4], az.ft.mI[az.mJ].a98[5], az.ft.mI[az.mJ].a98[6]],
-			this.a91 = az.ft.mI[az.mJ].a98[7], this.a92 = az.ft.mI[az.mJ].a98[8], this.a93 = az.ft.mI[az.mJ].a98[9], this.a94 = az.ft.mI[az.mJ].a98[10], this.a96 ? this.xs = setTimeout(a99, 16) : this.fF())
+		7 === aT.pT() || this.a98 || (this.a97 = !0, this.j = 0, this.a91 = 1, this.a96 = [az.ft.mI[az.mJ].mH[0], az.ft.mI[az.mJ].mK[0]], this.wn = [az.ft.mI[az.mJ].a99[3], az.ft.mI[az.mJ].a99[4], az.ft.mI[az.mJ].a99[5], az.ft.mI[az.mJ].a99[6]],
+			this.a92 = az.ft.mI[az.mJ].a99[7], this.a93 = az.ft.mI[az.mJ].a99[8], this.a94 = az.ft.mI[az.mJ].a99[9], this.a95 = az.ft.mI[az.mJ].a99[10], this.a97 ? this.xs = setTimeout(a9A, 16) : this.fF())
 	}, this.fF = function() {
-		if (8 === aT.pT() && gY.ho()) this.xs = setTimeout(a99, 16);
+		if (8 === aT.pT() && gY.ho()) this.xs = setTimeout(a9A, 16);
 		else {
 			if (0 === this.j) {
-				var a88 = em.a7r();
-				if (em.qe(az.ft.mI[az.mJ].a98[2]), qz.lc([az.b0, az.b1, az.ft.mI[az.mJ].a98[0], az.ft.mI[az.mJ].a98[1]]), em.qe(a88), this.eP = qz.a9A(), this.j++, this.a96) return void(this.xs = setTimeout(a99, 16))
+				var a89 = em.a7s();
+				if (em.qe(az.ft.mI[az.mJ].a99[2]), qz.lc([az.b0, az.b1, az.ft.mI[az.mJ].a99[0], az.ft.mI[az.mJ].a99[1]]), em.qe(a89), this.eP = qz.a9B(), this.j++, this.a97) return void(this.xs = setTimeout(a9A, 16))
 			}
-			for (var bc, dg, a88 = this.a96 ? 10 : 1e6, a88 = az.b1 - this.a90 - 1 < a88 ? az.b1 - this.a90 - 1 : a88, mi = this.a90 + a88, hE = this.a90; hE < mi; hE++)
-				for (var hD = 1; hD < az.b0 - 1; hD++) sm(bc = 4 * (dg = hD + hE * az.b0)) ? this.a9B(bc, dg, 1) : (this.a9B(bc, dg, 0), function(hD, hE, bc) {
+			for (var bc, dg, a89 = this.a97 ? 10 : 1e6, a89 = az.b1 - this.a91 - 1 < a89 ? az.b1 - this.a91 - 1 : a89, mi = this.a91 + a89, hE = this.a91; hE < mi; hE++)
+				for (var hD = 1; hD < az.b0 - 1; hD++) sm(bc = 4 * (dg = hD + hE * az.b0)) ? this.a9C(bc, dg, 1) : (this.a9C(bc, dg, 0), function(hD, hE, bc) {
 					return 1 < hD && sm(bc - 4) || hD < az.b0 - 2 && sm(bc + 4) || 1 < hE && sm(bc - 4 * az.b0) || hE < az.b1 - 2 && sm(bc + 4 * az.b0)
-				}(hD, hE, bc) && this.a9C(hD, hE));
-			this.a90 = mi, this.a90 >= az.b1 - 1 ? (az.lr.putImageData(az.ls, 0, 0, 1, 1, az.b0 - 2, az.b1 - 2), aL.cx = !0, this.a3J()) : this.a96 && (this.xs = setTimeout(a99, 16))
+				}(hD, hE, bc) && this.a9D(hD, hE));
+			this.a91 = mi, this.a91 >= az.b1 - 1 ? (az.lr.putImageData(az.ls, 0, 0, 1, 1, az.b0 - 2, az.b1 - 2), aL.cx = !0, this.a3J()) : this.a97 && (this.xs = setTimeout(a9A, 16))
 		}
-	}, this.a9B = function(bc, dg, cm) {
-		a9E(bc, Math.floor(this.a95[cm] + this.wn[cm] * this.eP[dg] / 1e4) - az.lw[bc])
-	}, this.a9F = function(bc, dO, a9G, cm, wn) {
-		a9E(bc, Math.floor(this.a95[cm] + (1 - dO / a9G) * wn) - az.lw[bc])
-	}, this.a9C = function(d0, d1) {
-		for (var bc, dO, a9G, mN = d0 - this.a92, mO = d1 - this.a92, mj = d0 + this.a92, mi = d1 + this.a92, mN = mN < 1 ? 1 : mN, mj = mj > az.b0 - 2 ? az.b0 - 2 : mj, mi = mi > az.b1 - 2 ? az.b1 - 2 : mi, hE = mO < 1 ? 1 : mO; hE <= mi; hE++)
-			for (var hD = mN; hD <= mj; hD++) sm(bc = 4 * (hD + hE * az.b0)) ? (a9G = this.a91 + (this.a92 - this.a91) * this.eP[hD + az.b0 * hE] / 1e4, Math.abs(d0 - hD) > a9G || Math.abs(d1 - hE) > a9G || a9G <= (dO = Math.sqrt((d0 - hD) * (
-				d0 - hD) + (d1 - hE) * (d1 - hE))) || this.a9F(bc, dO, a9G, 1, this.wn[3])) : (a9G = this.a93 + (this.a94 - this.a93) * this.eP[hD + az.b0 * hE] / 1e4, Math.abs(d0 - hD) > a9G || Math.abs(d1 - hE) > a9G || a9G <= (dO = Math
-				.sqrt((d0 - hD) * (d0 - hD) + (d1 - hE) * (d1 - hE))) || this.a9F(bc, dO, a9G, 0, this.wn[2]))
+	}, this.a9C = function(bc, dg, cm) {
+		a9F(bc, Math.floor(this.a96[cm] + this.wn[cm] * this.eP[dg] / 1e4) - az.lw[bc])
+	}, this.a9G = function(bc, dO, a9H, cm, wn) {
+		a9F(bc, Math.floor(this.a96[cm] + (1 - dO / a9H) * wn) - az.lw[bc])
+	}, this.a9D = function(d0, d1) {
+		for (var bc, dO, a9H, mN = d0 - this.a93, mO = d1 - this.a93, mj = d0 + this.a93, mi = d1 + this.a93, mN = mN < 1 ? 1 : mN, mj = mj > az.b0 - 2 ? az.b0 - 2 : mj, mi = mi > az.b1 - 2 ? az.b1 - 2 : mi, hE = mO < 1 ? 1 : mO; hE <= mi; hE++)
+			for (var hD = mN; hD <= mj; hD++) sm(bc = 4 * (hD + hE * az.b0)) ? (a9H = this.a92 + (this.a93 - this.a92) * this.eP[hD + az.b0 * hE] / 1e4, Math.abs(d0 - hD) > a9H || Math.abs(d1 - hE) > a9H || a9H <= (dO = Math.sqrt((d0 - hD) * (
+				d0 - hD) + (d1 - hE) * (d1 - hE))) || this.a9G(bc, dO, a9H, 1, this.wn[3])) : (a9H = this.a94 + (this.a95 - this.a94) * this.eP[hD + az.b0 * hE] / 1e4, Math.abs(d0 - hD) > a9H || Math.abs(d1 - hE) > a9H || a9H <= (dO = Math
+				.sqrt((d0 - hD) * (d0 - hD) + (d1 - hE) * (d1 - hE))) || this.a9G(bc, dO, a9H, 0, this.wn[2]))
 	}
 }
 
-function a8t() {
-	2 === az.mJ ? a9H([256], [256], [0, 205, 256], [500, 500, 0], [0, 0, 0]) : 7 === az.mJ ? a9H([512], [512], [0, 380, 512], [500, 500, 0], [0, 0, 0]) : 8 === az.mJ ? a9H([410], [410], [0, 120, 210], [0, 80, 640], [0, 0, 0]) : 9 === az.mJ && a9H([
+function a8u() {
+	2 === az.mJ ? a9I([256], [256], [0, 205, 256], [500, 500, 0], [0, 0, 0]) : 7 === az.mJ ? a9I([512], [512], [0, 380, 512], [500, 500, 0], [0, 0, 0]) : 8 === az.mJ ? a9I([410], [410], [0, 120, 210], [0, 80, 640], [0, 0, 0]) : 9 === az.mJ && a9I([
 		512
 	], [512], [0, 70, 180, 200, 290, 420, 512], [500, 500, 0, 0, 500, 500, 0], [0, 0, 0, 0, 0, 0, 0])
 }
 
-function a9H(a9I, a9J, a9K, a9L, a9M) {
-	for (var hD, hE, a9O, a9P, ci, a9Q, dw = a9I.length - 1, a9N = az.b0 + az.b1, bU = (a9N *= a9N, a9K.length), aE = bU - 1; 0 <= aE; aE--) a9K[aE] *= a9K[aE];
-	var a9R = new Array(bU),
-		a9S = new Array(bU),
+function a9I(a9J, a9K, a9L, a9M, a9N) {
+	for (var hD, hE, a9P, a9Q, ci, a9R, dw = a9J.length - 1, a9O = az.b0 + az.b1, bU = (a9O *= a9O, a9L.length), aE = bU - 1; 0 <= aE; aE--) a9L[aE] *= a9L[aE];
+	var a9S = new Array(bU),
 		a9T = new Array(bU),
-		aR = qz.a9A();
-	if (void 0 === a9M)
-		for (a9M = new Array(bU), aE = bU - 1; 0 <= aE; aE--) a9M[aE] = 0;
-	for (aE = 1; aE < bU; aE++) a9R[aE] = a9K[aE] - a9K[aE - 1], a9S[aE] = a9L[aE] - a9L[aE - 1], a9T[aE] = a9M[aE] - a9M[aE - 1];
+		a9U = new Array(bU),
+		aR = qz.a9B();
+	if (void 0 === a9N)
+		for (a9N = new Array(bU), aE = bU - 1; 0 <= aE; aE--) a9N[aE] = 0;
+	for (aE = 1; aE < bU; aE++) a9S[aE] = a9L[aE] - a9L[aE - 1], a9T[aE] = a9M[aE] - a9M[aE - 1], a9U[aE] = a9N[aE] - a9N[aE - 1];
 	for (hD = az.b0 - 1; 0 <= hD; hD--)
 		for (hE = az.b1 - 1; 0 <= hE; hE--) {
-			for (a9O = a9N, aE = dw; 0 <= aE; aE--) a9O = (a9P = (hD - a9I[aE]) * (hD - a9I[aE]) + (hE - a9J[aE]) * (hE - a9J[aE])) < a9O ? a9P : a9O;
-			for (ci = a9L[bU - 1], a9Q = a9M[bU - 1], aE = 1; aE < bU; aE++)
-				if (a9O < a9K[aE]) {
-					ci = a9L[aE - 1] + a4s((a9O - a9K[aE - 1]) * a9S[aE], a9R[aE]), a9Q = a9M[aE - 1] + a4s((a9O - a9K[aE - 1]) * a9T[aE], a9R[aE]);
+			for (a9P = a9O, aE = dw; 0 <= aE; aE--) a9P = (a9Q = (hD - a9J[aE]) * (hD - a9J[aE]) + (hE - a9K[aE]) * (hE - a9K[aE])) < a9P ? a9Q : a9P;
+			for (ci = a9M[bU - 1], a9R = a9N[bU - 1], aE = 1; aE < bU; aE++)
+				if (a9P < a9L[aE]) {
+					ci = a9M[aE - 1] + a4t((a9P - a9L[aE - 1]) * a9T[aE], a9S[aE]), a9R = a9N[aE - 1] + a4t((a9P - a9L[aE - 1]) * a9U[aE], a9S[aE]);
 					break
-				} a9U(az.b0 * hE + hD, ci, a9Q, aR)
+				} a9V(az.b0 * hE + hD, ci, a9R, aR)
 		}
 }
 
-function a9U(cm, ci, a9Q, aR) {
-	ci < 500 ? aR[cm] = bJ(aR[cm] * ci * 2, 1e3) : 500 < ci && (aR[cm] += bJ(2 * (1e4 - aR[cm]) * (ci - 500), 1e3)), aR[cm] += bJ(a9Q * (10 * ci - aR[cm]), 1e3)
+function a9V(cm, ci, a9R, aR) {
+	ci < 500 ? aR[cm] = bJ(aR[cm] * ci * 2, 1e3) : 500 < ci && (aR[cm] += bJ(2 * (1e4 - aR[cm]) * (ci - 500), 1e3)), aR[cm] += bJ(a9R * (10 * ci - aR[cm]), 1e3)
 }
 
 function rg() {
-	var a9V;
+	var a9W;
 	this.uR = 0, this.uS = 0, this.uT = 0, this.uU = 0, this.b = function() {
-		(a9V = new Array(az.a8w()))[0] = {
+		(a9W = new Array(az.a8x()))[0] = {
 			cu: [0, 5e3, 8e3, 1e4],
 			dO: [220, 250, 255, 220],
 			pv: [190, 220, 0, 0],
 			cV: [170, 200, 0, 0]
-		}, a9V[1] = {
+		}, a9W[1] = {
 			cu: [0, 4e3, 5e3, 6e3, 1e4],
 			dO: [25, 0, 100, 0, 25],
 			pv: [25, 0, 0, 0, 25],
 			cV: [25, 0, 0, 0, 25]
-		}, a9V[2] = {
+		}, a9W[2] = {
 			cu: [0, 500, 2500, 2999, 3e3, 3200, 4200, 5200, 5700, 8800, 1e4],
 			dO: [15, 15, 70, 40, 48, 48, 252, 40, 40, 20, 30],
 			pv: [80, 80, 190, 90, 46, 46, 248, 180, 180, 90, 140],
 			cV: [120, 120, 220, 110, 37, 37, 217, 10, 10, 10, 10]
-		}, a9V[3] = {
+		}, a9W[3] = {
 			cu: [0, 400, 1800, 2e3, 3200, 4500, 6e3, 7700, 8500, 9500, 1e4],
 			dO: [10, 10, 20, 10, 30, 10, 16, 40, 55, 230, 230],
 			pv: [10, 10, 40, 50, 100, 40, 80, 120, 55, 230, 230],
 			cV: [80, 80, 200, 10, 60, 10, 16, 40, 55, 230, 230]
-		}, a9V[4] = {
+		}, a9W[4] = {
 			cu: [0, 300, 1400, 1700, 3e3, 4e3, 1e4],
 			dO: [10, 10, 20, 10, 10, 170, 212],
 			pv: [20, 20, 60, 100, 100, 110, 170],
 			cV: [70, 70, 160, 30, 30, 60, 120]
-		}, a9V[5] = {
+		}, a9W[5] = {
 			cu: [0, 1e3, 3e3, 3500, 4e3, 4500, 7e3, 7500, 8e3, 1e4],
 			dO: [10, 10, 20, 10, 5, 10, 20, 5, 20, 25],
 			pv: [30, 30, 50, 100, 30, 100, 140, 60, 140, 200],
 			cV: [80, 80, 200, 10, 5, 10, 20, 5, 20, 25]
-		}, a9V[6] = {
+		}, a9W[6] = {
 			cu: [0, 700, 2650, 3200, 5e3, 8e3, 1e4],
 			dO: [10, 10, 60, 255, 255, 200, 200],
 			pv: [10, 10, 60, 255, 255, 200, 200],
 			cV: [80, 80, 255, 255, 255, 200, 200]
-		}, a9V[7] = {
+		}, a9W[7] = {
 			cu: [0, 400, 1999, 2e3, 3200, 4e3, 4700, 5500, 6500, 9500, 1e4],
 			dO: [10, 10, 80, 255, 255, 55, 6, 70, 20, 155, 255],
 			pv: [10, 10, 90, 245, 245, 170, 80, 190, 20, 155, 255],
 			cV: [80, 80, 255, 235, 235, 55, 26, 10, 20, 155, 255]
-		}, a9V[8] = {
+		}, a9W[8] = {
 			cu: [0, 700, 1300, 1900, 1901, 2500, 3400, 6e3, 1e4],
 			dO: [25, 30, 30, 30, 255, 255, 30, 40, 20],
 			pv: [25, 30, 150, 150, 245, 245, 80, 150, 70],
 			cV: [60, 170, 170, 170, 235, 235, 30, 40, 40]
-		}, a9V[9] = {
+		}, a9W[9] = {
 			cu: [0, 400, 2009, 2010, 3300, 4e3, 5200, 6500, 8e3, 9500, 1e4],
 			dO: [10, 10, 80, 255, 255, 55, 23, 36, 20, 155, 255],
 			pv: [10, 10, 90, 245, 245, 170, 60, 160, 20, 155, 255],
 			cV: [80, 80, 255, 235, 235, 55, 9, 72, 20, 155, 255]
 		}
-	}, this.a8u = function() {
+	}, this.a8v = function() {
 		var aE, ej, ae, dI = function() {
 				var dI;
 				return az.lv = document.createElement("canvas"), az.lv.width = az.b0, az.lv.height = az.b1, az.lr = az.lv.getContext("2d", {
 					alpha: !1
 				}), dI = az.lr.getImageData(0, 0, az.b0, az.b1), az.lw = dI.data, dI
 			}(),
-			cu = a9V[az.mJ].cu,
-			dO = a9V[az.mJ].dO,
-			pv = a9V[az.mJ].pv,
-			cV = a9V[az.mJ].cV,
-			aR = qz.a9A(),
+			cu = a9W[az.mJ].cu,
+			dO = a9W[az.mJ].dO,
+			pv = a9W[az.mJ].pv,
+			cV = a9W[az.mJ].cV,
+			aR = qz.a9B(),
 			bU = cu.length - 2,
-			a9Z = new Array(1 + bU),
 			a9a = new Array(1 + bU),
 			a9b = new Array(1 + bU),
-			a9c = new Array(1 + bU);
-		for (ej = bU; 0 <= ej; ej--) a9Z[ej] = cu[ej + 1] - cu[ej], a9a[ej] = dO[ej + 1] - dO[ej], a9b[ej] = pv[ej + 1] - pv[ej], a9c[ej] = cV[ej + 1] - cV[ej];
+			a9c = new Array(1 + bU),
+			a9d = new Array(1 + bU);
+		for (ej = bU; 0 <= ej; ej--) a9a[ej] = cu[ej + 1] - cu[ej], a9b[ej] = dO[ej + 1] - dO[ej], a9c[ej] = pv[ej + 1] - pv[ej], a9d[ej] = cV[ej + 1] - cV[ej];
 		for (aE = az.b0 * az.b1 - 1; 0 <= aE; aE--)
 			for (ej = bU; 0 <= ej; ej--)
 				if (aR[aE] >= cu[ej]) {
-					ae = aR[aE] - cu[ej], az.lw[4 * aE] = dO[ej] + a4s(a9a[ej] * ae, a9Z[ej]), az.lw[4 * aE + 1] = pv[ej] + a4s(a9b[ej] * ae, a9Z[ej]), az.lw[4 * aE + 2] = cV[ej] + a4s(a9c[ej] * ae, a9Z[ej]), az.lw[4 * aE + 3] = 255;
+					ae = aR[aE] - cu[ej], az.lw[4 * aE] = dO[ej] + a4t(a9b[ej] * ae, a9a[ej]), az.lw[4 * aE + 1] = pv[ej] + a4t(a9c[ej] * ae, a9a[ej]), az.lw[4 * aE + 2] = cV[ej] + a4t(a9d[ej] * ae, a9a[ej]), az.lw[4 * aE + 3] = 255;
 					break
-				} az.lr.putImageData(dI, 0, 0), az.a8z(az.mJ) && cq.cr() && az.a8z(az.mJ) && (dI = cq.sT("arena"), az.lr.save(), az.lr.globalAlpha = 1 === az.mJ ? .1 : 1, az.lr.imageSmoothingEnabled = !0, az.lr.scale(2.8, 2.8), az.lr.drawImage(
+				} az.lr.putImageData(dI, 0, 0), az.a90(az.mJ) && cq.cr() && az.a90(az.mJ) && (dI = cq.sT("arena"), az.lr.save(), az.lr.globalAlpha = 1 === az.mJ ? .1 : 1, az.lr.imageSmoothingEnabled = !0, az.lr.scale(2.8, 2.8), az.lr.drawImage(
 				dI, Math.floor((az.b0 / 2.8 - dI.width) / 2), Math.floor(.5 * az.b1 / 2.8 - dI.height / 2)), az.lr.restore(), dI = cq.sT("territorial.io"), az.lr.save(), az.lr.globalAlpha = 1 === az.mJ ? .1 : 1, az.lr
 			.imageSmoothingEnabled = !0, az.lr.scale(.87, .87), az.lr.drawImage(dI, Math.floor(.745 * (az.b0 / .87 - dI.width)), Math.floor(.422 * az.b1 / .87 - dI.height / 2)), az.lr.restore()), az.lt = !0, aL.cx = !0
 	}, this.qi = function() {
-		for (var bc, hD, hE, a9f, a9g, ag, uS = 0, cu = az.b0, ez = az.b1, ae = cu * ez * 4, a9h = a05, a9i = az.lw, aE = cu - 1; 0 <= aE; aE--) a9h[(bc = aE << 2) + 2] = a9h[ae - bc - 2] = 3;
-		for (ae = 4 * cu, aE = ez - 1; 0 <= aE; aE--) a9h[(bc = aE * ae) + 2] = a9h[bc + ae - 2] = 3;
-		for (a9f = cu - 1, a9g = ez - 1, hE = 1; hE < a9g; hE++)
-			for (ae = hE * cu, hD = 1; hD < a9f; hD++) ag = 1 - (a9i[(bc = ae + hD << 2) + 2] > a9i[bc + 1] && a9i[bc + 2] > a9i[bc]), a9h[bc + 2] = 2 - ag, uS += ag;
-		this.uR = (cu - 2) * (ez - 2), this.uU = 0, az.a8x(az.mJ) && function() {
-			var bc, hD, hE, ae, a9h = a05,
-				a9i = az.lw,
+		for (var bc, hD, hE, a9g, a9h, ag, uS = 0, cu = az.b0, ez = az.b1, ae = cu * ez * 4, a9i = a05, a9j = az.lw, aE = cu - 1; 0 <= aE; aE--) a9i[(bc = aE << 2) + 2] = a9i[ae - bc - 2] = 3;
+		for (ae = 4 * cu, aE = ez - 1; 0 <= aE; aE--) a9i[(bc = aE * ae) + 2] = a9i[bc + ae - 2] = 3;
+		for (a9g = cu - 1, a9h = ez - 1, hE = 1; hE < a9h; hE++)
+			for (ae = hE * cu, hD = 1; hD < a9g; hD++) ag = 1 - (a9j[(bc = ae + hD << 2) + 2] > a9j[bc + 1] && a9j[bc + 2] > a9j[bc]), a9i[bc + 2] = 2 - ag, uS += ag;
+		this.uR = (cu - 2) * (ez - 2), this.uU = 0, az.a8y(az.mJ) && function() {
+			var bc, hD, hE, ae, a9i = a05,
+				a9j = az.lw,
 				cu = az.b0,
-				a9f = cu - 1,
-				a9g = az.b1 - 1,
+				a9g = cu - 1,
+				a9h = az.b1 - 1,
 				uH = 0;
-			for (hE = 1; hE < a9g; hE++)
-				for (ae = hE * cu, hD = 1; hD < a9f; hD++) a9i[bc = ae + hD << 2] === a9i[1 + bc] && a9i[bc] === a9i[2 + bc] && (uH++, a9h[2 + bc] = 3);
+			for (hE = 1; hE < a9h; hE++)
+				for (ae = hE * cu, hD = 1; hD < a9g; hD++) a9j[bc = ae + hD << 2] === a9j[1 + bc] && a9j[bc] === a9j[2 + bc] && (uH++, a9i[2 + bc] = 3);
 			qh.uU = uH
 		}(), this.uS = qR = uS - this.uU, this.uT = this.uR - this.uS - this.uU
 	}
 }
 
-function a8s() {
-	var v, a9k = az.a8w();
-	az.mJ === a9k ? v =
+function a8t() {
+	var v, a9l = az.a8x();
+	az.mJ === a9l ? v =
 		"DYDz2ESNu-0UYCCrS9c3pBUrKHc94BhIBhIJpIIBnMIAAIrKSSpKABmgf9e7X7ecX-5P0baOy191XXX7eegf9mcfUrrxrKppppKpKSrzUMMMSKKKrJcXcXcmgcXnKIKBmnCIJonCKrrSrrSSxSS9XcJnBe9XemmWXeX99chMIAEprrSrrtbrxIrMKBn9eBcecX9X7f99X90e577VX1VcOWX16XX7X999cX7eWyXXccVVX6rUSrrwUrlzpbbrrU6xzztzxzrztzbaOtaOa5-0WV-77e-9119HcXXZecccceXXX7ce9Xcce9e9meeVof919ee9Wzy5XeXYS9KBcXee_He6ce1ee0zxzta5UaX99c1mXcXhEJp9cNHWcTN9BcnAzJoorIBe0c--nIJoonSIBe-OX-NNOXWbcBgzIHX9xHzS9mcCSI9-nBrrorK9VcP-jHe9_BhxzKHcWC9mZp9-3n9fBnS970a6zs7egrIAAIRUKocXX9gx9npKaUxBppABe5OdHpBe-AC9-17TOWABpKI9-7JmnC6zGtxIBmen9egp6aUlyOzbrbbqUzxHXgjKKBc-ZehlxoeeoxObonox9XonAUbzS9efBdCAArHmjISBhEJnAofBUIJgrpocXxIBUoxHVmnBmmXAExoUxABmdAIBgnBonIAC6oxHVgfMHcXcUXAAGxIBgfxJch9c3enCMzSBe9eXomxHeBgmeCSBgpKMp9hzHfIEzHnArSxHX7pSrUHcnCMrUpSa5UIonABrSBccnBopJttzbxpBonHXpIEKMrMSrxpKxzUzltyUtaTOaOaObaT5UzNTOV0c116rMMKSKrxIKpJpKMSKMGxISCrKMSpKMKrSpSpI9xp9_pMMMMSBoxSryTUUxa5P7-0ttbWzzzxzaN5-NOWVN--0Wa5-0X-0VNVN7TOzaOWzL0bbX0y7NN5Ua17V111749c79e1c-V-----Ow7--N57-OzaN0ba156byNNT6q5OzWaT55-OsOX1777Oa55-5T5UX16tzUOyUtzrpzUrSKKSSAoemnKCIAIICI9KHn9CKBhCSHgenSAJnIJxSMMKKSSpKoopKKHpSoorSzxpWxMS-UKISaOxMOxttyOzy5OzbbtyTOzbtaUxyUyTT6porUrSztzzMSp9eceoogeZp9ZxJx9geeeXe9eZgeC9gegemp9gmpKMSonSxKrrbaUMIKJpMKKKpIACBmeccV71XX7V1mmmmhCCCKJompKKJpMKSKSKpKMJpKBeeceenKpzHnBnBmceee-X1117ememfBn9mfCBmgemf9mfBmf9xromcec7Us8He0u99cWtbc-PeCCS9VecZnBnBemfBn9X9c6aOXA997Y99755VXc6tXXmV5Os-ObVN0yN0bzaT-7ec7N70Wa-OV-5eggnHon9f9efCBpMzop97epCKIpSIBpKrrSKKIKKMKMJehzKKErJeABnIAJc717f9eBnAJzrHe7V9d9ef9gmopKUKC9gmcV6tX73eCIJoonIBnBnBgnCHgjJeZfA9megeegfKCICCJnIA9meZf9mfIEMof9XceXe97X-59XdCIKKpKKCJoeVcf97mZmVVV199YJmX7gceY9gpEOxMMJecrSSGzOxSrxprSxzJzUopSrIxKBpUMIpMprSropEMHnBrpprK91AJpJpIICpBopICCJonKBn9mcme9VcX9ee7X7e9ece9Xe19XcX91Xee9Xcce9VVVccefAAABe7emhBnSSKMSIJhCIJpKJppCKKIIIICJgpIBpAIHpBcoooonIKLObpBnKlzrKIKCJpCJpBnBpUzrrxpxSbbwUxzUprpppppJppMMIrrSSRUbWsOwUzUltbzrxzUzSzUbrrTTUUrSbbV6WbaTOzxzyN5TN-T5TOxbtts71-X-70V0sOWsObbaT0sTObw70tbbzbxbzzyOtyUtbyUaOV1-N0cVN-50aOtza6tzlxzUxSrzUzSSxUSzzOzzs5OyOtyOyUztyObaNOtaUrUxrrUSrrUrMSJrSIMSpKISzKUSpSrSSrzSMMxMSrMSpSrUzSSzzrTUMSpprSzMSzUxSSIEUSrzrUSpMKKxpKrKMKBmmrIKBgpKrzs6VOsUa--5ObzyN77-7X7e970V-5Oa5ObzxSxrzzSrKMUw-OV17X7X1X99X97X9X99cXXXXX977OaOVXeeeeecX7cX7X7X177-7-X-71-7XX97X97cX7VVV1--VObs970cVObtzbtyObrzxSomdKKSSMKqTN5NN0xrMIM5UrKKKpEKrSMSMprSrxMMUzrzrzSrSrSrHXenOtxrrxrxzSrrSrUrrSrSxMSxxKJpKKKJnKKrKIUUSrSrKKzKxKrSrSwUxIBnrxpSSpUzyOzzzzyUSxzRUpCBee7ecXce89omegpIBrpxzSrMJnKrMSFT0tbrMKxKL0VObxprSSlXV-11-c-X-WxzxFUaPcX777OzztzrSrMV-V75X96zzMKrUa9e-7V17gc9XeV90Bf957cVOzrMOX17X7X-X7X7V-N-6aUxCKzUUKprcX-UzSrN17WzrxrNX7ecV17WzzbaOtbxraObrOxrbxwUxpUzrzraOy5OVOWtzyOzzxbzVNXccXcXcX1-V197V-ec5Oy5N1--555UyN-N1---VOWX0Wtcc0aUMMyOs----Zc5-TOtsOWX7c0xzLN-NWbyOyUyUzrbxJe9gfTUxAMxrxzlbzbzbq5UKrJnAABnAAICETUtxSrzrpIpKIUSxraOaOVNTObzWa5NOtxxyOyOc-5A9YBmnBfHceX7-XXcX9e9Y9e5OzUbxSyVUX5OcUa1-UMqNNUbyOtsUWtWbWaObtzbyUWy6bzpJmoh9nIUI99oghSUzrrrSHeHohKCJgrKJemgcrS9nry6xSrUMStxzUSzqUrbrUxUSxxrrprUU6zSrbrtzUSUSzxMKxSMprMKIIIoonIBmohAIAHgf9eHeemfI9nA9mf9c9n9ZeXc9d9n9ccX7VZmoceeHVX1Zn9meZegegegfBhABehABonAHnABhCIBemee9eBfBeecgeohCUxzUbzxI9egegfAUUrHmegemecWcfCUp9meX9Beeef9onrSpAAKKKIyOzyUzJnBjSrxSSIBhMSHgcVYKxBmnzrROzpzxzSKKCKUzKBnoUzzbzpJmegfzyUzFObyUzrrzpKUSlzry6sUyUVN-7NOzbzzlzrzUrUSrrURUxzbzsTUsUWts5NOWa5ObzrUxrtyOWWaOzMSJnIAIprMJorKMIrSKMKKpUKCBonKMJnCJpCIKIKMJmpKIMKJpCJpBxBonHomoemmegnHf9f9cX7ce99emecgn9h9eA9nCHgfBnAIBfHh9eXXce9emec7f9ec1me89eeceme89fHeemX77-ceeeemeX9X9eeecV-V9e9Xe7e9eefBnBeefBfHmnBnBnKBpIEpKxMSKJnBpBnBnBmgmeeX9cXXVcX7Xce1eXcXe7ee9eXeeeX9X7V7V77V--XcXee7ec7X9eXXceX9f9eeee997X9Ve7Zee7WaX5X2Be-cee17X--0tsUbtaT0ta5-Oc--7Xe-X7--OVUtbVT--QA9nBmcXV--97X9ememggnBecJceeXme-cXdABeXeX97cnHgeeI9IA9XcVX7eX99e9e9mgeXeXemmceZmXe9ceXemXmggf9mmnAI9X1eIHcXfBghBmf9BemcX9Y9Ve9--JmZeccXA9Xd9cX9VXVVc7-V-Xee_BnJhIIBnJnBmohBgohBcmmf9eHf99Hf9HmommmmV5N-MvxppxrIICWzsOxX--OV5s0i1mopMKppzTOaN-0XXceV--0lJ7-90mzBlV2N7tRof9JqUsOaW7c8bwrrJchpK9-X7PBfHjKogcP0Jd92SMUwUlxMSErHegnrlxI9X7cY99e7hSzxpxSIIUHozogmgecYIExxxrrrKpKrSrMMrrlxtyUtxblxUyTUbyUUSaUy6Wzttbbc5N5N7V7XWaT7V6aZeVWsV9nIA9X2BmcWc7ooc--f9IBomV-0cnICBeXgn90Wc5TOa7-1-5cX---d11---esD---m8D-1VvAYqV-92glC5--NEEiqV-7Hsjk014I4wognBxwOs0Wc-D4y4gcT--0Y8X-0WalAk--0pHX-1Wsy6EV-a7EDhCBtaT9--X3IIV--_VJV0Ndepmzq1-0XeJbD-5XhvrCqTe-07iCnpteV-7iejk-iAtCxEIrrX71-2smknnEUUpze-e-c-1BtMB--2Kbq--YMmzV-sqPmrF7--Culc-HCwyxxcV-DEWXhte-DZ7mzorSr56eX170LG-rUSrSItzOueVc93c-5ZH-rrRP9-2d613nHdRUR6kP7-CZVZUEKUyUe91e-2ZYhnTPV-t8OMny7-1HZrT-DZf16A9mjFUzlsV--Hh_N-1HlyB-CZhCrSpzrkX7cX-2ZibAr-VMdC8brSrzUxSSIBxpHX17c8CrJe7rrUIpSrUxxzSrMIMOs5OVV7X7X7977V-7P19Xcce--8DNHk-LIcPSpN7-0ODtgnMN1-7Zz5USxyX9c--J2As-9J2CSu-08FHSrR7V-0G5xV-OH5vqV-0LEoV0OLiAnMN70D_f4UKIBnSBgzSrSxSSMSxpSpppzc-5TTUMbV716s117X1Xcce-cXXHcX--0Rs7V3dS04nKonpSSkV7----TMGPxrS-V7--MN-c0HMYnBnrIAIrK-OWV75V-tTEHotV-qMoqSMUUbe9HXV-mNcawnr6xtcVe-3aNiUIq1-6aOwMISlc1-6aSe6rROec-8ac9fISzuX-V1tf-1mnBrlWaN-NajMY9ggeoopCTTTTN6aN1HdgkXoohABnK9n9KJmpogeV-0XJenppSrUzJgghomhp9VnxIAAzOxWbbrIBnJmenBegozlWyObxIKBonIGaOVT50xSk6xJpEpIHnBonBoptxpr56xrzzbonCBnCMMSonzxJmopCIJomX7mceHcV7nJxSABhrbxEKCIJhAA9HgenABrUMbqUpSUrprSrbzzp9hABeXce9YAHcoomnBmmnBmmnpzaTTUrzzMpzWWblbyUUSrUrxbbzzblxrUUbrzSrtztzw6btV19ceWXWzq0aU6aTOta0a0V5777Xce7nA97VOa0X-17VUVV0V17-17X7V7-V----1-V-VcX9A9cWbbzyV-U5T5TOa5NNOaOV1Xe9ce99mZee5OtcWbaTTTTTOWe9ZeXcmcXVV38gtRnCMzSw1X6VcV08hu4rq9--tiGRrac-1Qfbg-dax4zrrIKoeBxErUlzSGbs0VP3eXX97XV-9R0KCsV1OlXjprrP7X7-HRQsCpVc2TRgLxJrKBeKKJe7BhIKKBlwOaUrNTUsNNNcNP91V---PS6VgopVN-LbHRrK999ezrxxoy5Tc7-0bJGjF--6Spy-5bU7rSbuXV4tsIYpKSSrSp50aX-177e-2baNMC5-2Otd7nHrpOba7cV2tv2dnICxz-Uk7cc0mUIkRnBpCBpCIJOWa0VNOtc-19UQnBeegmnIISxJns56zaOWtu7TV--URWN--VDLc-eVE7zSrUX7Xc-5WM4BN1DWTIggpBnEKKKESCWV5T5Wa-N0a9VsP6YRn9cmY9JggoggzUKHfA9XmcP9XZfIJhronABfISpxrUrrI9ABnBggrxxoe9fHmeBdCDUUrHf9orUogrzzJfUU6zUzbbbzrty6brbrxxz57OtsN5OsN5V5VT5V57N56yTUtsNN1cNNVV5VNeeeZeWtu77-XX-KgxCqWVV-P8w5qV-uAjtz5c15XwhBooopBonIKKJNN5-N5-6WVN-8ckmzArUOVeV-uDoWxNV--YoA7-TYoYRoxa57-1_P1T--8NKD-9dNS2ACAUta---dQzr-DPM79mmgcpI9chMKCppxxxrSzIbXc0aT1WVOxk7-N-9c0eauZgfAKrSrrSla-5-7n9-V1eVE3nKUwNVcV0eWZinCF5N0TcbkCMSrzr5OVPXCA9VXV-1b0uV0ezUBxUsXc--mhTc--n9_c1DnTIxCCSMKC9eCKClsT5OsN-V7NNV6QJcYxzUSxzSwUa7X9I99Xd9X-BhW8EE6rUw7ceV6fXkApBmf9f9hKGaOWzzzObV1V-PuipRpJ5--6iiarprP77--DrhL-0iv-fN-7jNKjExzXcc-Y1kshKK-5-V-wF2umWs-03EWs-03_Ms-23gdy-qlmyACJmcgfBnCIIrKpICUSIprUa0VOV5N5---V5---wRnFru7-E6kMClX-4lwIAzq9c-A7r-z5V7gdk8monBgfCCCElzbzxsN995-T5-KgiSunBnABmeeIHprrKJxpIISKICJpKprUzOcOzzUTN---0V--50aN1-1-PV7XX-SnCeY9f9mnUSSKzMtaOWa9VX--bBy1gzSxX-e-4nFNEAqTc-6C7Wgs-EC_DBjN-0nVb2N-3n_EYByN--nfWnV1Bx8ZorUaV9-CnqgbKISrNN9-9-8o5aACrSVWXV-C0gPk-jFRwSM6rsW9VV3h23TmfBjOxMUtaX17-6GYfE-0UHSjwfEzbxpUUq17ZcXeV-h8rqr--3odX6MF--8ogzvMJrN--V1xAI4npKwT7cV0Xp-Yf9nBeehKMKrzzSxrSxrUSzzSxrSMzSzzV-T-7V10Wa6VOWVT1mmeeegn9eeeXmcX97V-IJGnCr1--2JVvD-Bp7gzSxw6aeZcV0hHX5merts-EJjUhq7-2pGMvBtV-hJmVz1-1pJofqV-0KQ3c-0KztN-0L5k7-6LYvE--ILYxhTNc-0LZ57-ALu1CaV-4SIqV-hSQ3na--KpjX--ppknVESTPknBgmgn9f9f9onBmenSpMGzxbtbzbaOV6zbX9-NObWV-4TmmV3SToLnBnJnST5Oa-1-0px0YD-0pylvD--L3Ge--q54IV2CWmWnUUz5Pcec-nO-URhBoUy6VX-1qFuQGc-MOcagpR---CcERs-0PQUc3MPs8gehClzSzbzzUzxMr6tyUzzbzaTP0HgmcVXegeeeXeh9eX7e-JqqUEKIMpzz5T7cXX97-bRBpSKoT5X7--M4g1-grMIbBecemgfMxUpzMzObtu7V0zrrq7e9eV-MTaFhOy9VfLnt2-9-17117VcX1-1X97cVXX9177V-VXV9-WaOSMSSSSrrUSKMKxrrrUSxrrUzsOV7--N-tVN--N0bKIKKQCKRnKQCUtrTUtUSxpMprrUUKxSpxrpprMrxF-EcVGxTX" :
-		az.mJ === a9k + 1 ? v =
+		az.mJ === a9l + 1 ? v =
 		"QREc7lR7oVUYGy_KJOJKKKKuK4OKT_K4KG_u_GJJO_3K_KKKL_4KL__KK_4_LKK_MjzuOOK_KKKOKLKKLLUjzji_KKMgyzdMjzgzzzEszzyzzjvuQvieeid_POOvzkzvzy_TvuOK4GKKvyyzzydJQi_OdKKaLOLajdOPuueaYBzydJdPOybvdbjeuvizwzujuQnunl2wBnBE2-EYBz2nk2kFzwBzznBydnwznEYwnnEBnnwkyvwzEgznzzEwwwwznnxK4KGOJ2zl2nzifvwyw-J0GGJ042nvzEvzwznJEnzlG42zg02KKGFzzEzzeT-woKK3EvoKLOJBnBnzE2EznnwnwznznzpJKKKKOOKG_G_LKFwl2zK8K4JK4KKKKKKKKKKKKF_g38EBemXeeeeeemeemgeXeegf9XgeeexCxzzzoenErMroeXeeegfEzSS9eVcghoeemf9YBe9ee9eXghrzzzKBfIUzrbzUzzzbryOxrzzbbsTXe9geY9egeeBeY91cUy6z6xtxbxzbzlzObrx6ztztue5UyT6zzbzbae7UxyOzzbzzbbtzyUyUtzztbyUzzbuecZeBeXeeecgeV--1ViZ-00JJIV379xwOLKKgzyzK2zF5g4ccBgcn9ggepUxAprzztxtyOzbzzbe90f9cXX99V-cAQAOx-PFLqqmemxp9zzttzIAzrrzzxzzze7X9ZeceX5ece---AorF0B4uUghzzae9-6VjJh_UznK---NUXV1NBEpOLYnzlJ--0X1X--Vl4pk-B5KYEc-D29vazJ-HkP9DmexzxxzzzrbztbseeeHeYHceXV-NC5uUF-R5YYCyX-2Vpc0jCF--5lM7-12TuM-hkQrZrS9X7f9e9enrSxrzaUxx9f9zzHhzUxqOaOsObbzSxoqUxyUY999c9Xcecce7eV5NDrSOLauUwzzzzEGK4K_0F2Z6YfEUoefUtzUzMyNNe9ceec0a2zdLQdyjwynxKKFznpGGJ--1-_X-AW0ZpjvnzCKKJ--1309--02HO---WrDV1sGfOOjzzn4KK-0FYN1qP-2W7RtfkF6J8G-geeemf9gemegfEbqUrxEbyTgecOwUbbxEbyTTUac-H3crrjCLEE1KoQBrofHegeecBefBeeegfAACxUHemeeeeegxrSrzxxoeeXXe9ecdAzUomXexzrzroeXeecc711_rI9nUSxxKMSryUzrzUpxKx9cV7cceghrrJnJmhBe9ee9VUrxy0a5-7e7VVX-7XccOVX99eefKKAAMxMIUxzMrxK9XXXXeXceXceee9mxxp9oeV9mf9eHgmeeWsXnHcmfA9oenJf9XcXcOby999exKKzMIJcceYBggghxrI9e9e99pxzpHeccceX110cXe7cXWzrUzUxzzrzrtzbaOcVcceXccce9Xceegcce6emeZe96buXeXoe7TZhBe2Bmc6eIBdC9eC9fHcHcAC9erxHed90C9MTUzoh9ZjJeofIAzHghHzI9nHYACCA9VxIHcfx9gmmnEJrKErJzSC9xrrrtyTOaUa0xSxKroxMSSrIMKqUlc6bztWx51--P7OyOy0tcX997V-NP6WsUaUbaOaX6VTOzzzxxpHnBnBggofCKSpJxUUo6pzzbtzyUzbxSzogfABeceef9mpSzoppI9e7X9nCCKMMK9fEI9ee19mfBgemh9W91WuI9gf9e5eX17N5NUXc0a1nBenUHfSorpMKMrHXh9XgmY9nMJmV1nIISC93fA9gnKBemp9e9XxKoeeeA9fSMzrxrpMSxMMHorIKII9eecgeceeee9gmghrKKCpKCIJonMozKJp6xyUzSppr5OttzzzzWWtyN5ObcV-5OaOWttyTTN5VWWbbzzrrxaOtbyNTUUrrSMMSpxrrSrUxxUUpSzSMKonIOaN6aVcVNOzUrL17ccXccVPeccX7717cXX-5V0zbzJxOboUKrKrrUxxrrSxxrSorIKSrMpUUISxxAESpGxrsVWzP7XXWzrrxVNXoccWcOcX-6xrV6tx0zxzUtbtzq99777WWVUV-50xaV0tsNUbzpUUzp9nUrpIyOzaUy9ge197e6zlbbbzbbyUzommhxonCHeIxxrxrxrUSxrUrrMKoogmmecmeeZcceX7eXHeeemmmn9eedCzHfoeeeZe_IMzIpoxHXKzUJxxUoUUprza0zxxxrUtyOaUUlbxIMKKKoopCIJpJoommeeeX9A9mmn9cce9Xe9ee19eXe17eA9mgnCKpJnBee7XXXcee7X-99XXeee9993cXV0ba5-XV0aOA919HgmeeBeY9mmX9ememef9ggn9ghA9mXcmeecX7gpCCCBnAAAABnCIICIKpJonCABnBgf9hBpBnBnCCCJonBnJnJonCIKprSKIMKKpJpCIKIIIHrSMpJjJxMpz6zHxCrrMMUSprKSIrMrMUUMrSxrSrSrrUUyTUbbtz6zbr6xxxtbtyOtyU56tzyUTUxzrSpxKMU6lWxzqNUSxpUxEMKJxCJnMKEUHhICEMrHxSUMSrMSrSppppMKMSSMKpKBxMKpppKKCBnCBopIKIKCEKCKKMMSpppSSSMMMMSSKKKKpSKKSKSMMMSrSSSMKpSSSppKICppMrUSyTUztbzzbrxaUq6zttbaObaOa5TOa5NOWWa5TT5-N50V7WWbaUbbtaOX-N-7-1-170cTT5ObaOa5OtttttbaOa5N5-1510c5V--0VVcX-1-V51-N7X-WWV55N55550ta6aNNOa5Oa5OaOaOtbaOaOaOaNOa55NNOV50a5-T50WWV-N--7nBf9mcmgcmmmeBgmee7X17eWba11X7VX7X79X97Jc7V7-V7117X7cV7---V1-X7X97--7X111111711-VX77V7-UMMMSMSrN0V5-UKKCMxpprSSSrMSSKprxrSSSMKKSKrMrrSrMKpprSrKrSSCKKppKpoxMUOzaTOzyUaTUttWtzbbyOts-OyUbbztVObyNNOyTV-0WxWWaNNN7X7VXceXXX17-7WWIBnIBonBd9eAA9Vc7NNV1CIK9117-797X7VX1111WbWy0xUzprSSSpprUxrSxxrzTUbqP6zrSKprxzxzzTUUUztzztxzzbtzSSUSMSzprSrrtzJmmfrSrSUSzaTN756xKxCSSIKMMKKpSKpMKprKprMKpSKpprMMMMMKrJxSSrSaNNOtVN6s---0WV17N-V-0aUWbyN0baOaOaNNOWbyOsN70btaUL0xLT6o-UM6lX6brSppSSSUUSrppEF6pSSSMKKCKVUMUL0tba-USSUKSKSSMKrMKpKSKKCKpIKIM6rSSpxMSppKSMKSSSpSrSxrUSlwT777VV---777X7XX19XXX--7V1Hc1--N0VN570c6bzKMUzrSxprK6xMxxrpCKS5NTT6cN0zltaTOa--57-11-V7X7VcX7c7X77977VN-Oa0aTObaUUoOxpKpqP70btyOwUsOw776rS6twUkUOtWaObX6ta0bVcOcWy5N-5T96XWaWccZeWWtaX97cecWzUxxq1X7cVX77VX999750a6VOttw1XecXnIBe9-VZceX7V0zTT-OtWWbrzSpCCUJltWbbbzxzUpoxopxTUUxprS9zMMSKKxGtaUtzV177177cX7X7X997-OtWaNX150a6V6rxUxtbaOV-NN0WV-75-0V77777X711-1X195XccccXZe_on9c29c799ecVOWaN-55NP-T-TUzzzzlzzzsUzxzzrxAqUyUzuA9770V-5UzbzOzSSUrOVOac7WzzxCrSUMJgpIJrKIHgrSJxSrMSrSrSrrSrSrSrrSrSrU55-X77TOe775OxsXX7X15WzMcXccX-Xee77-VX-UzkOzSq7UbzzxzSX5OVNUbaTP6xzrzccccce1XXeccWzzsP7ce-U6rSzSzbzUxxxzxzUwUqXcPVTT99XXce9eeXzS9cXXX9XceXe9e9ce9cece9e9ececeeeeeceexxxxrHee7ece7Ue9omeeXeeeeeeeccX999e9eeXgef9eeXXXeceec5eXefC9eWcPn9WeXeeef9hzSxHcfx9cBe9emee9X_Sp9e9Xe999XWyce7X9ceeeeXerp9eeeceecVeeeeen97d9ec_BemgeemVTOyTNUbttXVe9cce9eeef9e1ee95eeec--3mJ3-01RcfV-NIoOUF8R8uLgf9hIHeec1Xe9fBeh9mfEzzyUrHenxyUyUtzyUxzzbyTTNf9e0a0cWEvKdK_KKKLKOK_aJaPPOOUeKdUddLTyEukyvizjzzzGK43G3322EBkwBzkwwzwzwzwznwoKKJ0K1X2ABrpzzozzzaUWtacme9hxBcXBoeV9--7KZ5R0K1i5QpxUxzUyUzbxztyX9e9oe7eAHXe9eV--KycF0gAC-Bf9rUzta7c-54dtbV-61qbAAy---LztF1oAWqEUzrzxzbeXeecf9V-94pL6xF--Agu7--4xl31226aIBogfABfBf9nxxMyUztttttzbbzbyUtzbsX9f9e99eeec--5HLZ-A28MQry9f055LVqKKPKOaOddaKaKOOd_bizvy_MeOOOK_LPPK42BnJFzszEo0G4aLKOUjuOLO__GKKKKJHKG32K_KOKbnzzdKOLOeOO_-EoJG5KK_KKKGK2wzElGLK4K44JGJKLLLKFnLLOJF23dLLLK43_OK_KOOKFqKOKeK4KG43KKGGGOKKGKKJKKKKG0OKF_FOK_OKKKPLJK_KLK____LKOKKOLLMjidbzzdPPKOKJOG2pOKOKLLKOUu_PUzzzzYwzwydKdaOOKKOOKKLKaOK_OO__aEeOLTdzzEBydaaKdbEnzjfBnuzdPLLO_OLLOK_OLLLUzEnnEnzEnwwnz42zuRzEwwwwznK2nnwzEnEEEnnwzEzvdKKOLO_OOdOUEnwznnzYwnkEEzyEiuUvjzzzvjnyaTyuiz02yyawBkyeQeeOueddaUibuPJi__9gwnyaOOPTvuPJTbeLzEiYuEiaQEeRydiddddaJ-x4K4deadddaa_daaOdaOaOddePaPOaauddeufEeaLiuOfevduazjuzfvieeeuPueefiviiebe_3KvfjfEfiveePivjfiuiE-FGJ--3--4-FFF-FF33F-B-22vjyjeauefeiiuzefujidavuyuivfiuuvfeeuePaPiuvvjiiyyzyivvvvvyziyvzjzEnnEvyviviuvivjjzvjyyzwEii_viuviuo-2vjffdKHPdivgEijjieEigzjvfYyfno3-z2BzvvjeOiivffdideeeieOdeLKbeLuOOOOedaeOeidjgnueaaLOaafeveLyyvivffiiuuiiiiiiiivevfiiieiiviviyyvvvvvvvjiuvvjefeueieieeeddveTefeaieeeeQePevedeffeuieeuaeeeaeee_fiffiieeQeffideufj3323FwEjdyuMeuaveTuQeuLEeudG33_eLVzizvdjfzi_JibeJF44fzeeu2vc3BEfdvdjfy_vvfyEvd_TyfyeTgyY2yzFF-wz2zJGF3F-kz-F22Bn-0GKG43F-2BwzFk3-BoFC4300-EyzjzBo3-l0-zzzwzwzEBk2B-440-04443-EivzjjvzzwwkkBn2-B322BB-zyadY2-B2-nBkk-oF0-o-o2wBnnBnnEsnE2Ezsnvzk2nn32-nB-kk--BBl-2-23-3-BF-B-ysn2-kBBnEBBkn22-B--00-00GKK43GG03JG43KKOGJ_444OOFddF23BJHJGGGJJKOddG-kBKHJ44G-nB-K3-F3-F403JG3GJK45KGdGK8J3G44-3G04J3_LK2B23JK8G3FExKOLK__KGG4KOKG-3K4OHLK_affedaK-G-n2-F-wn3_aO___KaPJ4aOeadaOaLdG3G3GGK5O_OOOGGJFG3FFFF-k-22--n--GJ2K4KK_KKG_KF2n2-2-C-nu22-2-nBn-KKKOK_OPaeOdd_eOK0O_KOLJG44J33-FFF3-F-2-B-B-k2E202--n-wnE2yEEEB2ynkygEfynEvijz2y2GJ2zgzEgwygwyzvyigwwziiiveaaidfuuevfiE22-k-0---F----knBnBnnnnBnBwzBnnEwx-EsnGJEnkCJBBBFkB22nyaLdfeaBknB-EsnBnB-zznzKK2nzznEzx03BknBnBwznByEwzBnzBynnzjzdLJ_OL_aOigwnnBnyEnzEEnlGOJK4FpF-FnBOJGFzywnwkoJKOK_OK____aOJBEBwnEEEwwknwzzzzzzzzzzzEBwnnwzEswwwk-nC3LK2BLKK2wznJK4JK23J4-FzYsCG2lFoJEC332JCaOT_aLPJ8_OOJ34JBFnFwBEK4JF3G48K_4_44HLLPdaPaeOOaLLQiuudeOdaLOOOOOLKOeePPduOaOdGOdGJB3G2FFnBB-nB4K4_GG44GJC3GJK4KOKFwB-kG_F2BknBnnBwnEBzBwwnzwzC3EzwnEjzEEEEE4KK0-zjizwwwwFzzvih-yC02yijEnnnwkF2Ez2CJGGKKdeOKaO_Gbd___Fo-nEB48O_aOG2k2pK3EBzF2042wwwnzznnEEnlK_4F--Bnu7-D5P0Mj4-NFneHn99fHdEpA9e1mrUrMMy6rbyObacVUbsXc-95VQqU-0RC72gfrLTUX9WL7PGHOKOLKaLLO_aOzjzdKK8fyy2yvzzzzjnvEyszn-yvuyji_KjEzfvvdedLOOK_au_K_8KK4O_Oavznwzj2vYyiizdQjjyvjvzjnFJ43FEvyyvysEV2vkG-oJJ-J2vC2nzfvdvcyvB2EgwkznoHKJEKF44K444Fwkzjx4JEwoLK2EGKJ34KOGFCFK2C3GKKKLujnzuK_aK4K2Bl0KK_K__OOd_id_032E-wwwznKK-5koy5rxzzye9XeV0NQGfQzp409Fr2emf9gemeoemhxzoeenrzzzzzzxoeeeeHeeemnrUzzJr6zzzzbyUztttzIzrzrtzaP5Uxy1XXc7TOVNOcXemnCBoeVOX9IHeX9ec9V-7QyMR-O2VLYCrzOcTXeV-7R7oR-42W7vEc-16Tkb---xZJV2sUexOjjEzzlK4KJ--2yzH--10C8--0-gFV-7VNER-038rYV-7WePR--3FiX-8X7VOizvlGJF--GAnc-q7b4qavzwz43KJ--3In9--193W--G5YBk--7uzo-03SVI---Z6nF-JH3JgtV1NZFfOiznCGJ-03ZUnV-NZy-Ok--HUC7-18Epr--G9ncs--8SB3-23innD--1O-0-6lCPTmmnCzzbWa9c--8glJ--3qO1-3XRYCbzK-XlIJjmegemef9efDUzwUzx9fHfBfxyTTTUpsTUxzWttf9eeWtzu7-19Vk6-2lJH2nUze9VKcf22OuK5ObzzuOLKUzviaKzzzfzvwwzEwwwzYBzB0GF5JGaKOJOG__3a_OJBG4-PlNXPmfBnBnBofADUzJzbbbbbzpxzbXe0ccX9Bc6s--1mmx-6lYOwmextzUrP7cc-5BSZbV-45HC2T7-9BdhMxF6JOkqwemmmmf9e19nJemmmenzryUyTTUyUbbbbzbtzue7-qBstqKOOYvEEBo-45TmAqV-1Bzxq-CGcDCxzS9dEMrxowOX7V19X-6YINKaOgnk--leh3lV-cqZnQo-AGhLznASpxpObxa-cXcXV--sj9F--RjYc-9DO8aRk-JRodC5V1Ntt6OKvznCJ--6Flm--Yf48k-BTXJhc-LEJ7aTYC-0BTkwjJhyP7P1LYtQd_KPPLbePLnuafp-yEeddzzEuOiydeKOGdzeaK_jzjjuKKaOaOUEnynBzvnzVyzzEE4FnBwBGGOJBF334G0-3JKJEknBBlKKK-wnCF-RUIqgju-4Yv7daLnB--6voH-EYxyt_ueaYBBE24F-wUjugoqOWc09F4K5OGOOYyzBzElK-1m02NnLNP--32h4-0m0qgnqV-1FPCq--H2Gus--FRXJ--7Gue--38td-6H3zimfGzxLPWaX--3E7C--16gBV2O3CZOuLecn-n3--RX7jgyP--3G5C--18RXV3t3nbP_3_iju_Hz2-B-03XWAgfxyTcV-047KF--Xjy7--GPHJ0W7iC6CSKKIICJnCBemzqUbV6sUa5PX6w1711-V0d4t8OOwwo--7o-P-3ZP3pin4--1CVBV-85mEN0d7rPv9hEIBeXrICxpCAIBtxrtbttztWV--UWc7ec--ZRVOk-3Y_fi--3SWl-1HE1urq7V-06YZF0JYnKBgltzy9c-1GuEq--1Ey3V-87P_R--8B0X--3aep-1HIL9xw7V-08jeF1RZt2BoxCKLV5NOaTeV-LHXk5OUn-3B_KjRnEJxK6xSIBnGsOV5-5-N7e0PZfppdQivevivviuviuvfffiviiiuuivV2vxJG3G400-F2zoG43G3G3G43G3043FJF-B_XHC--1HrHb--1Ml9V0OBPSTykK--mPGuw--0CdCF-3bQrg--_-bGk--c3w7-1J1Tb-nHWSNmnBmnCBnBognAxAACOzzzUbzOzIAAEbaOtbpICxtaNHW9WWttge-Ou9dHce0uXWaOaNTc0qJ_j5Tfuiyfuvyn-43-C4GJJF-ZdZ-CEN--qKF5MivvzoGGJJ--9fZm--4NVG0OHj5Imgmgn9mggggggzbxlyUttxUxrltzzxUp9mcegf9nBx9HzICBnICCIKMbaOWa0c55OWaUlaOaUxxrIJogmqTUpK6aNNOaN0xMUNT1-XXceee7cN575ec0cecV-0P9QF-3hh-D-7_jKnaJ2nyZ-YA_nYBnBnEUttXVOc8aMCmTLLKaaLKPddbjiuievivijivfivy_PPeaeffjyyvjjvzEnzso3-F-3G42l4J-2zvEBGG00LLuJF-3KFK003GFEyxG-nEzvp-B33G_JK--muI9w-5OSJStaOeji--wBzzzKGOK-0JieNwmeCzzaV-TMQgDzvlJJ-GAk2vrxkPe7--MV8o-6At0AC5--OURXy--gjqMEraeV2OUrqueTfVFl22F--jvyN-PNAgydcnF-Yn1WRrSpppMJeYrJnrUKq6ce7WzTUzUUUNVNUtsX7VJece9XXX97c--5440-2I2OHnJsOV-1NxR5-Bn6z2mgeegenBzbzzUbtsN--0_72F--nKlc11OxXDLKKO_OKLQvzwwwzEnnnnKF0RnydBghMMNN--dOfypPMdfibveueeaPaOO_3eafd_J8KOKKaaOaLuLaLvcyEieQevy2l---GFpJFzz-ynwwzzyeiyv-Bx3FEjjzVEvV2s2ufk2G0--3FF2020003JG33F-dC_NYAASKopSbtV--77--QufZ--CxYX-5b-NCbjY3F--sGR7-DRSQ6v4--2ZTFV-OmFuQF--tWp7--Rrk3-2DRQfF-ObG_p_LKK4LQjvvvvjk3BB--2cnkV-0opdF-BuUUE--1SP5b--2fOPV-0qQ8F-JvLKBlV-ttYkOgB--EKfm-GbimObjzjzzK4JOJJ-QEW629fAEU6aT5-Kbx48aOGeQiv-nzVk1K--4-Bei-2c4b_aEF-00fX7--VsoZ--FYHH--7bwK--3KeVV-19ymF-456Wg-0cmm4s--oPB-o--PCDOOk-46F9i--7vjd--oSsBlV-uEMIQY3-0GwSv--1EeMF-06tTc-5Z2ZLk-2HUyYu-0dG4tY--3dhcV-1KhfF-09wIc0ea0y5OddePfiivc-kk---0--hB85hIq---PPqqQ-ACDhYBegf9nBoyOyOtzzxAUzUxrxzxKrqUSHnEyUzzOzbcXXe5e9X97XXXccX9Xee--1UpAF-SFcxhOX-1eB0xgo--Jd31--9KJS-9pBVymefBnKMUUaOVNN72Xdb-LMveiuLKJKMinzzzvfY2BzjEzzY3GK3FK4KOGKF-0Ji17-ueZcLLyvwzYGGK-0KK8igpzza9cc4aecw5eQeefeK3iifeyVyyaPysnzivW-yvivjf3G32JdFG5OJG-3--EB2003-C_GGF-0M4Pc--fYVJ-0L1VIV-1kjSF-0NOQ7--gXeJ--LIdm--AAXh--Kaimk--h2YJ--LYMm--fHOlV-4QMoB-1fQzGbV-OM1DQUKrSV17XV-PsGvQ--0R8xc-Pi9hLee----4n7gV0uuK8Ovwo_F-0SPF7-Tihf5jioG3-rMLqIMSxJfMpp51-Uk7-X7mV-1vH3F-0SiM7--ivJJ-4MU-YL--5j0_5V--MW4m-Ffnz4uebcnu-E0K3--4umFV-1xQQF0KULdhJnCaOX--5ji96o-jMt7YCKBproNN55-KC9-7-Pjp4LPbw---4zuVV-2-p7F-4VdEB-3g5r8awo-6q3GTnIBnBlaOaOV--kXLJ-0NJ5IV7f1wFOePedueiffjEBwB-FFFFFG0F7pWV6CJfCAHcXBnHgpIN5Ox6lbxrJpMSxbpNN7V56rMF5-7-X577V--lo2Z-0O25AV-28oRFJ__7yBm_ICCAEJgcnBdJonCBgegnJpS9XXe7nIKCSSKpxppCpKUrbzKOzaUUoUzKLOttxGVV557-OWtbVWV0a6ryX7X70cX1-cUu-Uy90zaPcXe90XX--AA8ER--Oap9--gnQdkH4b2ThSprSrUSrMSSUSxpMKpUSprMKrMKSpprUMMSrrSrSR6rbr--N--0X71d9-VV7e7WaWu1Zc-cVe95BcZe7917X7cXV7VX9eeX9--Bw-4--LXIak-9oUkasF-KdZHh5--QKOSQF-0f7Ac-DpZnLQC--5ifVV-2M_TF2_g-RhCKoxKSR7-6xX7OVh9-77uqCsLOaOKKK4K45PKaadudaaeddaejyeedeTsz--o-k0-nzuafiueskznG3FB3FG3EBnknEs4_OOGa_K03F-BBzvnywzvvzEBBkk-EQ93ASrF17--hcV8V-0ho3c-1r18a-KLsKtn9ghIKopJxGbzlz5PcOWWV6bZeVXV-erChLbuawo3F-0QgRIV0AS_oTz4F-0iqsc-LrVEayh0F-0jBw7-1raaM0sqwtimmmocCrUzKrUzbxJeYBexrSIoT50xMUUSrzrrxxxrppMMIrI9gnJzzaUOzSrSUUzxtbX7OsU-UOzrUxxSSSpxSrzxzrr57cWue-BcVX-X7X10bqN7e7ce7-7cX7eX7ecccXce9e9997eBhHmhBnBme7791-5119cXV-ATZeR--Qs0X--CxF4-2M-EHrMNVV-1s18b-0M09Rrc-3i33Gcy3-7r1pBmhExpSrcP9-7-3i6ThbzJ-0r2kLmxV-LsT9bywKF-Cl8ajc-5sg76o--RNyP--DBcS--r75Dw--AZP8N-CRYLYIrWcV-AZ_gR-hRb0Q9efBUUzzxrq7Ve9--DIcG--69X3V-2_KXF0CmrNBxUTN7e--DM2x--MBNss1qtbGTeeeiebfeviufifjG-FF-FK-2F-F0-F--6CEoV-2b0EF-pnx7hKlVX--DWBO-IrGX5pJgomd9Beefrr6rUttyNUsWaN9c-iuOLLLPjcnF2--0p_uc--uwAJ-ISZnnCIKWa---QgbdT-0_qJ7CprKy7917--Do60-0MPdwpc0LirO4eLzjezyyzzzyyzjzjzzzvvsFEiyn3OJFKKJFEwwKOKJJKGd_GKKG3JK4KJ-ESx2nSrP79-5j2XKaPVn--_t4Cgjtc-1wYGa--6ZPXV-Ama9N-CTK4nUSXX--2n3-F24thzhrHcXnIqUttxbcd97-3jCxpvh0-1rbiZpEa1-JjETd_azzgznzC_KK4F-0TTz2V-2nrwF-Ctvzgs-Dwy-LEp--Mcags11x3uLKKLPLLLOeNwzBknnwwzECF-0uAGc-ax4e5iii30---6dYeV-2pDWF-0v0pc-uxhu5KvzivnG3GF-0vS9c-Tximavyl4F0GTtRbKpKKKIMKorSKxcP77--50cV1--X-0jSM8x--MlFHs-PyMyriv3J--6njmV-AuIRR--UKqu7wjf1GaaeOdiaPdeeaeadePOdd_OGG3FK43G443G3G-nBB-En2B3P_3HKJKGJJHPdOKJO_aOeOaaQe_K4_F3G3O_8PKOeLOPeOK9TddJ01OaPPu_aOdaO__OKKaK___GOOOaLLLOd_-9PPeaPPefeueOH_Afeeeueuaeaieeeaadd_OdvvivzynwnnwnEnzzzzzznBnBzEEEEzznwzEnwzzzzvizyzuuaveuePv-wnBwwnBnEePaOaPaOLEwBknueaaMwzeeePPujjczvyvwnnnEuuusEnnEEEEzznEBBBkn2BnE2BknknBnBwwn2Bn2B2BBBkkn2--3Bk-k-F3F3J0F-BK8J-0-3Fl43J0JJFC0220-FFB--434_F02-3-FoF-3--ULK1-9jk6__KPzsnC-0rs2uxu7-5z6oLo-0Ua7Y--2yTuFFpzEegnKCAHYSIEIBgmnBen9mhJonKKpKpKIICCBopKMKpCMMMSxxtbbyOVNN50V550VN50VN50WVN-0a--0xLN-V--711-V0R4w-PfBJ-5sCnMpUSzGcVcX--36DPF-a3T2CpX7-21Rkb--7L9iV-3CdyF-D7K1E--E3yyLPB-AsdryprMSrUMUXVXX77X7-0lNuCb-0sh-cpsV-24z4a-0O5skoP--HJcO--8cjcVMwvW_PePffuOedddaOd_OLivedaLOQswwnnBwnnBBEEz2EknBl___JJF2-ddFJBB-kFJF-3Oxo3mryUe9--oNo0k-L_0tBtV-x9UXPVk0Kd_2QCCKJnKMU6Wy6x0a5OtWWaA9f9eX9VNhBeeOaOaK_aOaOOOOOOOLK___aLLLL_aLbzjjjEnnnEEBnEBnBwwzEzFnBzBnnnBwkBOJ3--9Q2JV0hFDWPTj03-0esaIV-4M3pF-DfxqCV-0LPM3-8fbYnBy5-Cq8_WadYzEwLK3--A59FV-CZXbR-2ghDYk--LQk_-0vCsPnTV-0OncZ--gxEe--LXbt-4QGLNnIMaTP9V-4d4NF0DoYGBxBttWe--LdTx--AJjgV-4fDgF-1q1n72bQ0Tq_fzyaLyy__JbzjyiyEvnzoEzz4K44GG440J0GJ--AQaoV-hj4xQW--QUtTs-0QzBZ-2hzuIu--M0W0-3QVpXzUSX9X--r954k-6-LVD--s6udk-U12pBUe--NKbO--B9nkV-55gUGAILAU-ee9eeXeeXeee9eeXeyN9eeeee9XAzbzzzUUtzxzrza1fzrzs7Xe9XmeeiUzrWztzbzzsUztbyUUrztzUzzyUVfzMzzzzzzzzzzyUzzzy1SzSxzrzVczzSpUzbrzzztzzzzrzzy1cXXecXe9zzxzV9eeee99USzzzztzSzzzzzzzzzzWtzMUbUztUSzzzrzzsD2xzxrzbxrzbVeXUzMMzbztzztyUWVX7cX7X7ccX8rtVX2Vc1gVWrVNOta1UbbaT6byOyTMqXggpFemnBnLpThScXXopfJppUhSzt_USUrxSxSzUUKwepzznMzUwefMzSCJXAKRemgegeeoeeeeeeXe99eACMxzUrxzUzzzPmeceeeeXeepzrzzzr9eee9e9ehUrxzrzryUzzzxwg-3sRUlgzK-1wGfBrUXc-1s_20ck-8lARQMsc-6sakWaUYsG--BJEyXtygSR0KGMwzkKK_KK_KJKK4JRnEEEEzEnwznzwzwzzzwzzwzjw3wkznnnkKOKGnEzwEEwzB0wn2vyizz0nEEqPvnzzzwjjEjzEEwznzzEzzwnvz2jjvvzwnkTzzzj2vznzvzyzzyzzwzzwzzwzwzzzEnwnknzfjvuzECfjDzEBBwzEwzEwzwzzE2vfwzk6njvw-nzEEzEzyzvjvLizyyzzzyzzzzzvzzzzzeOPPKd_4aPuwnaLK_aOezjEwznnn2EEnn2wzzEmwznzEn2nwwzznwwnywwzzvzEznwwnDPzzwzzzzvzEvznzjEyjEEnnwzzzzvzvzywviwzzEBwzwzzveznyuzjEzzzwznzjwzjwwztfvzznEEEnzzzzzwn2BwuO_fizzvzzjzjDywzjjEqKfyvzEOfzzyLjzmzzn2hPjjAwzjvjezvnfzzzjAzfjjqKOO___OL_KKKOK_LKLO_KKaKKOaOOLOO_ePLiKKKLKKLKKLOOKa--wN-ww--DBg5N-4latIyc-MYUfaRyCF066q1CJxa5X--5F6mF7z9BugfEUSrSArzxBefBeJcrrzbtzUzHmfUzzzttVX7X7XXX7XXX9--yKGGTsF-2mkw2k-3tQstjx4--BkdsV0DNK7PzGF-6B9ki-9tXkO_K_zznl-0RovXrc--OeZW-IRqTXoeXefUzzzxHYUyWzzzu9XZmZe7-1tmAWzJ-0nbeYV0DRxYTvG--2Dto7-0bYlJ-0nm6v-4DTdBTzyzvzvlJKJK4K-8wxJTrrrzrzOceXce9V-DTg9R-dnsbYExxryUzaeeceec-6bz2Lk-2o5Gnu-1u2YOv3-0oCyAV-iaLAUp--CCXRV2Db2oOOwzvnpKF-ppYW0bVVaOyUzzzrxpxpzPk-2eBMb-8xGoerUUxzry9Xce9XV2ydQ2OK_OjjnBwnJ--pC19-2uliNEyk" :
-		az.mJ === a9k + 2 ? v =
+		az.mJ === a9l + 2 ? v =
 		"JJAf2uP6y-0nEiiuyywnyueuTbfevfvvjivivivjfvivviyvuuyEgzjjzzvviyvizvviuNziyvijvijfvyvgzvvvvfeu0-F-n5a_GG4KJGGG3G3G3FFJFmKGJ4JGGGG3GJJFJG3G3G323G--kLPeduaKGFGGGG443JJJJJJG--B-C0FJK__443-BJ-66wmpBnJopCMJpCCCIIIJoopKKICKCBnCKJgooopMIDOzzSzUzbzzUSyTUxxrrrrrP1XcXXX9Hcn9cceemece7cPIoeX0sWWaOWVNTOcTNNcN0V0V5-N0aOa-0V--N50a5Obyc-M0z3TPOdgBnBF0NOpxpMV7-M2mMiLbinz03F0sTx8mfrNT-2l6QEdMwwp-5XX7UMTP1V1GIuvaNn-5Xfxrpw5XV1GNTEfn4-_XvzjAAA9mfA9ed9fpzyTUzyUaUyOX3n59NTKLLKHPPPO_LK4iidea_O_QeideeaLOLLJG3-0eeddOaPO_OKLKzEznzjgnnzBykknByEYnByug-3332ElJ222-2wBko2BnBnBwwzwx-9Y6j6rrrkccc-E5ctEizpJF-aDYgSMGz-X10G6VyjiyuuPeiuzjivh3G3K3G--k-9JGFAPEIZSKBghKSMIpKpCJnI9gcXeccehHccoeXBeoppKIJoghIHnCJnJmemmecmfA9jyTUzzzbbxbV0WaTT-OtWWWV0zxtyUN6yUzSxrSqTUztaN71190V7-5V15VUy--V-lxHEg--33oL-67Dhyu0--3FoL--7ahw-LGYowfzu-0HFMIfF-aHWWwxxxcXX-E8ZrUdfVl--TIJLzSr17V0wcDLvivjysGK3G4XaJb1zppIJpBccccge7fUxx9eocX7cXX6y7Y99Heggen9nJdAHp9Xnp9IIJfICIBdCKKIIMMJme19eXxxp9X9VVfEMMMSBpooe7XCSBomccxxpHcrKKCMHmXXmcxoeX1mpJe70BrMJmVV--gxExIpJcX71nKCJmhCKKCIJoopCKKKHX8KHd9nKrKBj6xrSrKpz6xSMMSrKppwObaP-UzSCAICIKCIKKKCMMKKCpCMMSrrrKpKprUSprMUSMrSprKrSpSrUrUSxpxprSrMrMprSSSppMKprSprrSrxKSUSqUGbqUbbrxrSxrSrKHXXeggeYBnBgmnBnKCrJnKpIKpBnKCMMrSS9chKKIBeX77EIAE5OxIIKKKIIEKSKSKKSKKMKpKpKKSMSSSSrSzxxxzlzzUzzzzzUxrMMMMSxxxrrxrrxxxxzUzOzrbxzrxzzzw6w6yOtttttyUbbyTTTTTTTTTUtzIrzbzbzbba-71-VVV77V--7711-V1-1---51--1-1-V0cN-N5VN1e-ee7-1mc71Xe9fIBcVV0WbyOzxX-VV7VNN5TUzUu1ce9menBecmf9gxHc7c7V-777---50VP-V-N-0WxppSJpr6zyObzttV6rMKpUyObttbryUbzWaP0sNNOX757X97X7ce9XXXXXVc7-V-X7VX5-V7eeA9menA9fBnCBnIIJoorMIRObpIKMJpppSSSMSoeX71-V7777X97c5V-ccWV0VX77--NN55-N--7U5111cXXenBcc7fABgcX117X7c-gf9emV---1--XXXVX7X17579VVV117Xed9XecXX--WV5Uzz6zyUzrSrUUaNUlxtzXXXee1777X1e-5NOy--WV5OttttaTUzyUrxxtzzzlzMUrzzxaUttbbxWzxpSonBmpCCJpCKCIJpJooeACHpprSxaOV577U6sOWV-NNN70WVOWzwTTT5NUxryUba5NNOba1cc79cXX199X-91X99mhIHfJmXgxxxpHe9XccX997c7X0zV--V-N7P6k49V711-111X-77cX79mmeHeccV1mdbn_Uno-DKNVSo1-O9kaiKKzzEzpK-8_SLEzzzeeeV1Hinzjh3-8_UsM9mjtyTVBHk8AfiyvivizpG43G3GG--0OIzV2mnjMaLEBxn29mc4SSpprSSSUprrKprSSpppKMMSrMrxrKIKHhKHfIKKpIBpCIIJpIJnIKpSKJo1AKKpppxprSprpMKphIKhMUSrCKMRpMKrrSMMMMSKUVUxxUxSJe19efAKKUbKnMxKKUKIKUStaSrUMTUrzbzxxrSzzUy5SSKtbqprTprzSxxSrBXe9ghSrMMUyUzzbySKrUKpUSpSUMtV---D--0aN-X9997977VVe9XD-19XX1-9XcXXXXYxzUttzbV-7VX78by0rUSppKMbs5-V77V77X-X71--17-X-7V-0WWVN-6byTOrJepKpSrpxrUSSIKSKSzrrrs797c1711ObUSxxpSSSSSSy5--7997VV6z_rrSrxpSprs-7VX17XeXVXN-11-TUUSxztyTT5ObzrSSrzbtbbtUKzrxrSxzUrzUzShKhMKrxzzzxyMtzqnAA9mgfAAACKICBnKzbbWWbaOtbaOaTUbtyUyTTTOaOa556zyMxrUtaTUzrxrrrzSzxzbta5N0s-ee997cX97cX7cX7X771-V-aT--V17V7X1--V7Xea6ty5T5Mts5--5-550aT55NU_ySxxta5OVD--0VN5NND-N--8a6a5OsN1og55OVVOta-75OTSqhCMrBmhMbbtzzzzta--NN5-8Us0V-N1eD-XN0VOKppraT18zs0SyOUaOa5OaN1-VcX7X5OSpSxpMSra5NNObV5-N19cVc-W_KMSrrxxztzsND--MJpKMrzb_pyTMzUa5-0a5-X-VOIMMMSBnKKSMrMzprzaQBen1ceeXcccempprtzUUSv9mmfMrxzUMxpUUUrzbztrxyOzUxrrMzbWbJppSvC7gmenA9mgggfABgnBf9nBppUrttbzUzCKrSSxzbaUxPfMSKpKnJhRpIAIIKrSzUMMzxztyTObaTOWWaTTTUbzzrza5ObaTOWbbbUrSrStzyUUzbyN--s5T2rs-1XeXeefBn97VfBnIBemf97cXcX7bWV1111c1eiN7f-ABa6s19n77X7g97cceX7f11UzUppry-N0MMAIKzV4UW_rJoppza55-TMSsNObztaOa6KzV-77N-SKKSUzbaOaOyUtzzzyTUbtzxrsOaObtttSraOWaObzzzzz_ptaUbyMzzyUtbVUyUrUzzzzzUzzxyQMzzUzzzeeeeXee9Xeee9eeeefKMIKcf9ggnABemefCCKzrLf99X1fABgeeXAKSSMKxxzUSrSraMRpSxrQA7X7X9oopBo1N9gnIKCIJmmmnKIKJomn7emfMBc51997cenKMUzPmegmfMMSzzyNA9OzzUUIKMUKrKpSSrUrxza6SrMSrrMSrUUxzrxxxrUSSzSSxSUSxSrSSrSrpUrMMUSprrUUUUSpKrySzSrxzzxpzSppprrzUrSpSSCSRprSMKKpMKrMKKCIIIBohIBonAAABnABmgemhBmmmeenBnA9X9ecceeXX7Xemmcemgef9nA7en9kecee9eXeX1-enBkeX7XeXce92VXX99ceACBn9XX77XVVV--X7XemmgeeXXX997VVc75OVeX9hAAA7eeme9eXe9Xeeee9e9ceemmmmf9meegfHenBmfBnA9mgggemnBggfBnIHmmekeeceX9e9cXXXmoeceeXce9Xce99eXnBpCBpSrSrSrMSxzzxyeeeeemkeemgf9pprUzUHmeXXem99e9eceef1dbs17ecepKrMgg9XeXccX-Xeen7cXeenBmnBghCBgnBACCCMCKJohCCMrzzzyUzzzzqognBmnCKprMSMACKpz_wmoogepCKrMSMStUZkeeeeAH15-11-X9hCKMSRomcgpKzprpprs0z_rKppzrSrzSpIKIBgXmprrUKIKKrttpKzSUBomm97ghJpSyUzSzzzUbzzUtrzfAI9epnHceceemegghUUzxzWbzzrbTopMSta5OVOrzzUSKUUxrsOrpxQCSrIIKSxSrSzSrzUrUUtttztUtbzxxMaOV-sOWV5--NNOUzUzxzxzUUrSxrrUSrrSzrrSxSprSppprSpxrrrUUrbbtzrbbrztzzrbbyTT6bSyOa0aTOaOy5T6aTOzbzpxxxxpzUSxs7XESrKyOUrtaOa17zyUaTOaOSxprKCKgnIAAABnBnKppppppJnHnCMJnCCKMSrSSKKICCKKKKppKo-2AYFDB--MPns--j8uk-0TwQV7mzO6ievyyvFGK3F--qNX0zxzxrXce9c-3mKUw-DOJuzw9-lBkNyuuuviyzjJK43G000-OaPJEprzSKMrrkccc-1997-2C8pDo-uPOqwf9mnbbtyTV-2Jzv--5gXT-CCmSUvvGG--5xsy-0D-rE-4b-qzSqX7--sMmk-0lNEV-IZ0nk-tm6EnFN-Rt3BvgF-5ReOUc-otNAvisG30DRoZzUzzzrwP9eeecc-3uJps0eSSKRrMGzrzrrM-V-eXXeX--2fpn--6MiT-0DoXD--6ULD--E2lg--TGhs--wrkk-0uNAV-npyzx-0bkCEF-6EeL6jG-5bpJQAEbaV0nuubvp-0dya3mhrk--BzMKzF28zMOzrMUP779c-gziXufkG-2byBQrcV-J-IhV490elopIKKJzlX70V---2FCPyV-HVlaxpX7-x0_hzvvGGF-12_CV1o6LCaeB---Vy4s-K15tuR-0cH3EP-AFalyPf--1u44Wxxxr17cc-CFkqTusBG-2cO5jMcV3oE3YuuiB3FF0P7tWrre9-4GLRUh--19rRV-JN8nk-1B7iV-3OQA--cpNzV8oQxrjjizyyw4KKG44-1d-ezGV-_77wzvGF0eJQZmxL0V-C9jlvF09OI0rTX--JoI0k-PTDyyV-40oK--e5AbV7K29M_OLMfgznEB4-IfrEMASpSUSq-7-Nee-ANaSDyx3F0A69npL--1qoP6bvVF-qtlNxCKCUa0V7V0xqOguudaNznk-G3-Lvq2RrOc-2N7SOfvlG-2g3LFmnKUrla-7X--Vg031A1AJgoxMSporMSSr-XV--10aNXeV-y7CVQfz0GF0RIcNptae02XdsiLTezvzyyyzjzGGGGGGGGG3--GRVT-QXt0TTyyzwK4GJ-r5K0genCxtwT-V-yBnotTvg-F-RR4WyVBNuCtdejvYyi-knBLOFJJF3BSAjnMSzUbsX9XeV3t0vf_fzv-GF0wZ8bxrOe9--8AQA--HN1m-CZlGTLRwx-cmONzIxrprppKprUyUts-XccX1e97cXc--_7pw029QbgoonJUROV5-V-iJrguik4--mdjY-0tQAdaRk-BiCss-aMQLTjJ--3jUaV4tUqAvjzx5KGF-YB7rwfzwOeVuOXlO_O__Kbj2vizuviyuuvfeveTiviynvYziefiiefvfiYvjB-444G3F-0-2-kJ304K3GGG3JG34--F3GJ-IBbGxS--3yOw8PPd_GaaiC-Eueibvyvx-304--C-2IBzcggmeenCMSrwOaOzKHmnrUSxzTOu--V7VVV9c-yPFVPuf0-F0gt0ZpKs17-aTPhOiBFxRy2ZmgnJeeXAICBnBenJzSrKKrrSSrKpMKJnBnCKMSMIKMrxSOV0V0zzUKSpppSKSEKIESOV-Oa0sOzUrMKSppSUMMkP77V-0a1--VP-17--71--7-UxSrrrrSJpqOtzzOX770hBcX7V5--XXV11cc717X7X9XX999777X7e-_chDLLiiivYEl33G3-Vock29fSpSKonCMU5OaNV-NNX7c2DaQYtPjzvjfiywGK33G3G-0xDlzpUyX9V5PSx2jyuzVGGK-0CFZWnwNV1uXF0_fBo1IJJoSSJnACCCKppSxyUV-117-N711-6evlav4-JpSyQKUSSSpaX517c-c-yg6luPzk3F0CNJQpy9-iumBnaLKKeudOKG_KLKLLLueLOaQEEjEjyinEyzejjnskBnwC043F2-nn2zE2EEoKGKFASOdporHX8CBhzxraUqUzSlzSX77eeeXBc0V-LhikvW--KmlL-EfebDLTskk-YMe-RrMTV7V2uyCCaPEBC-5q1sjK6a7V-A2Ih-Aq892rMUNP7cc-TlB1tv--ANsVBjV2v6d6aOwnp-7qIGAIJlaNV1imQQOPszivwzE8GGGGJ0vODuRhCrppCBpULN5N7NX90WX-6gppqPk-GqSXfBnqOxtaUemec-5nnTs-YPD2wz6re9-3QGmz__bnno-2PJQD-KhKnTaaTn-nF-0Pg_N-aphUzj4FKhhRbmhUrKHohIzMpxrpKKKSMKSKxrU5N5OaUL--X11777Hf9VX-N7--5P-XHXe-0hhca-WqtqMCppppSJp6ltz5NVXV-X17eV0QUJbjJ-nREfwnBwOtbae-IiGGaLPvEk0-Er7eI9nCKpUa0V--1v_ZSfcl--0T7Zc0TwsLPNzgz8K4--MdCP-8jMTqMno-QTv6BfDUs-CjSgLdjBG--rknYV0vttlfW-0CxT2mcUV6Qv4daeffkn3J3B-EUOXBja1CjifiOvd_LdKKaaOaK--nBw8aOFFeeKbfivzjix3En-2Ennz-n-3-2UYTi-bkAQ5LLKaRzgwnznGJ-MWJCRr5NV0wBylcwF0D6jaola--BJZx--NfgX-6lRkav3--sx_2V7RUnUaK_aLLQjzzz-atBrI9mgmnICCpCKLTOaOzs0aNOWV9c-E9stskaiM_-pIJnKoxxzxzrUrrxzUxzSrUSzSpISxzxbxzzzzrzzrzxbzrzUta-0YBe7mf9eeV--P9eee7XXcecVXeXceA9eeeXX-c7T9Bee997n9X-0wqC2ylF4iQ5frxSUzJzqNX9cX97V1wr6EuslF-YbY3xSUaeX--x1Jxc--uDnn-6S8wKaPedvn-FFB-zea6RfESrSq7-WX-6pPVqNx-dun9rIIKMSrSrSxxBzbts7XeX97XX7N---2MXGF3ilDMnrSppGa50VeXcHjS0jOLKO_LOaK_K_K_LKK_JKK4K4KGPedaOK44KOPaK_3aefffeTzivizzzyuvkBzwzszEEnwnn-nzyzwzv03G00-B2EzBEBwzBwnEE2-ow4SEIJmcccxxrUJnBonSrrztzyTOts-9X7VX7X9-YvBN2wwwwzvvjjzzk0zOXTUyUxzV" :
-		az.mJ === a9k + 3 ? v =
+		az.mJ === a9l + 3 ? v =
 		"C0DX0NP1V--QqeadnzzjynEEzzjjivdivfezjj2BBwzwnEzzzzzEjnnvYBBBBEBnzz-UV-hflzUUSrrUzSxSxzk0a1-V50K-0pMiudevf-zvfeBnyviVF-F33-yzgp3bVV02IKUrHnUzzpHz5UzUzSKrUrzbyNN-OzzxzUUUSrSrrrtzttzWaOaTUzSxxaOaOxrKBnCSKCIMSKKKKIBpIJoonIJopCJpJpCCCBnBggeXn9eccc9X7geXXn9efHfBnABemcXX9eece7XHXeXecegeeVV1ee9eX9ecc70eXcXe9enA9fAABnBnJpMKpKJnBnHmmeeXX7X7cceXXce9eeccXVVVV-VeXe97Xcee9f9eXeXXXXceWVWBc29cX7V-6aOaTOWWV-1XX17-NOtWaNVnBn97X-7cf9mmnBemXgece9I9eXXomgeh9eX99eeeemf9BmmeHgeeegfBggmnHoeABeggnIBggeeeecVI9eeemeXe7cX1-ZmfIKCCIJooonIIBnAAAA9mmgnIIBnBpKCBnCCCKKKMSKJoonIBohBmnABnCABfA9gd9mhBopCIJonABgmnJopCCKJpBnBnBnCJnCCCJnKBoggpIKCKJ-UMSGxrMMKKIIISrKpSKKKKJopCIIKKKCCCBnIBjSrSSpKppqUI9cpKIKrrrKSzyUpKpMxS5UKxMSrSxxxpSrSKpIrHxrSMSzHfrxxzUUUSxrSrSxxxrSrrSrSrrrrrrUUxryOtttzbttyUzzbtzzUzzxzzUxzrTTTTUbyTTTTTUbbxy0byUtzyUzyUzzzzxzrrSrSSSppSSMrRN-OxpSMztzbzzzVUrLUSpprUtxKbxBfrSKJpKKJonICppKHnKKJoopKISppSrMKrSrrUSSpxxMSxprUSMMSSpKMSttzzI9f9hMMMSrKSMKpprKKHnCSSKpMMSSrKKKKKCIIC9gnJonBpKAKJpJpBpKBnCpMKKCKCKpKSSSrSrMMMMKrMSSMKSSSprMMMpUKppSJpKKKKMKSSppIMIpKKMSKSpKMSSSprMrSrMMSSrKppMMKSSMSSSSSprSMKKSKBmgprSSppSIMzxCUzprMUyTObbyUzzzaOaUzzzUtzzzUUqOaUxy0bzzzbbtaTOaTOaOaObaOa5OWbaOtWaOWa555555NNOWaOaObaOa57-6WV0WWV--O97VWWWaObbbtyTUttyTOaNNNHV0V-N---9-V-777579775-0taTOaOaObyNOa5OaOWbbaTTTTTUztWbbbaOVOWaOa5-5N-7X--V-517T7---7-Wa0V-X7ccX7-7-77VV-5-7-5N17X7XV-0VN5-N5TNNNNN50aN-5Oza5OaOtsOWWaOWaOWaOaOaOaOaObaOaObaTTTOtbaTOtaOaOWaOaOaNOaOWWWaNOa5NNNN5-Oa5NN0WaT550WaNNN--N0aN7--0WcefIBf9en9geecmmf9eAAABgee9egfBgmeee7cX7X777cce5TTT-VVX1cX1c7197X977X7Xe79eX15hHX11717-7-V-V71177VXX7X7ce-V-1-1-----117--cXX77ce1-VVV-0u7X777117771177V771-717VV-977X77VVV-7X-OWxpSSMSrMKMSSrSrSy5150WV0V5OzJpKCKCCUzSrSSSrKrSprMKprpMUMMMpKKSpzSxxrUMSSMKpppSCKKSMISMSrMMUUrrSrUKSSpppMpSSSpxrrSKrSpSMKKJhSMKppKKppSKKSSprxtzaUTObbaObzzzbyUby5OtzrtzWsObbbtzttbtztzaTTUs-o-9SuvkpF---4GN0--Akuevkk-0Z-5DzUUzzUMMSrUUrrxzzV0k24nbEF-72uPs-31lfR-X0zvBgpOsN---Fjh-1VahUR-033plvivC44-bVp12CUzzrxpztzzzy2A979eeXd9eXXVGkPch_OLJKKa_OLujjznwwkzo-Eno-q32WRrMKpkV7-V--7jXk2-IvW9e-7xySpV2kZ-vaazk0-HWAOjKHprsWxta7ccV2FavYivl3F2cIsAppKMwN117X-81g-ifoF-L4N9UrkcVDFfPz___bjvjjEB3ByvEGJKK--WQlvV0kn8QjoF0NPnGrScX-E2V6yPuEF3-D6-ISGX-42b3rh-0NYH_ooy-3P8eEOJFGGIB-B-0-2043LaPdaeeiZ30003G002j-03-JGFGJ-4K-03G-3303330NBzB-UzzB3DvzuzByyfiivieivifevefjzyw-D9vlxqX-A58vaOYw-07nF-rFPV4lbM4aaabBn3B-mC6fBmmjSOa5N-25o35o--CiYN-gQSZPTw0--2QiX--66YJ-9FT6CN-BHQ8jadHQyddcyvG2232-F-8Hr8k--dcfk6dIezn9YpIBhC5Oa6y5UrWZmX70C2JVtUzzp4J-mXEjworrq557e-6IQmyv4--dmmEV-JuCMk-9SVlk3KDxRuPiueObi_JGTyycnBk--4-BF-eicPos02KqRDLPefeTiuiviuk-K33F-----6f9qfBnUWV-jMD3iO_aOaPOiwBnBnn--0evOEn5U5c1_T5ktLKKGTvjzzYp-w0Rg9s6ABmeWBmghJonKxCIKIKKSKWa6zzro5Uxltbe9e5OtVOWaN-N6w6y2ABcX17cXV-SWU2PBo-alHDReopsOa-OOYdiPPPgnE00--BsPu--Oo5J-5oKjx-AxeUxtaeeTeeffeuePauuvivijfieiivePgyvvC000000-3-3G35JG-2BF0-30-2FFFF--3hlWISD1-ER5o5evV0-0eu7_RjSSprzrSrcX7X7X7X--6KDt-HirDjBnBnKMba5551-3rQbzaaEBnpFJAmhxnKSSSSKKKKonIKKpKpMKrSKIr5UrNV79V1----V55N-1V1-7-7-X79-IUBriLagwC2-3jm7YKkV7jUvJLaLMeudeP_LPK3PfeaLeaa_F8aaLLOaO__KHdOK8__KeePOdaaieeeiiefifeeddddaaPadOPePPeeiiveueaeeivfeiuyzjvvizEBwwwzzEE2-kkBB2-2-kB-2-B222-B-k22-BB2-B-BB222-k-kF-B22Bk0-F32nyevg220-FF-0--0-F003G-G0-Cl0ab9eefxzzba-AX5ODuklF2RKFUonyUUaPXeV9sgwrddaLaPNn2BnEE0F3RULpn9opxbbbtXVe-Y_1riO_LKfvEink--0BfCIpy1V" :
-		az.mJ === a9k + 4 ? v =
+		az.mJ === a9l + 4 ? v =
 		"EcA20EP9t--46idaPadePOddiaeuuuebieeiiivuO_aRnufezijzzvzjvfuuPKJFJGG3GPKGPOaTiiiedaduus2EYuiedn2nyffdv32--0202EzeRwoG--Ezzjevck20202zeufik43BFBFK0G4-0_J--nyioC03-0002-n22wyddyjfzven3Eyv3JJ20-zynnEyjnnvjizjjejzyy_wznnBn2zvnzyvzBl3GG3G--23FFo0-wzBB8m--ZISrMUUSpzrxxrKrrSKpppKKIACBnAA9mmgfBcee9cXef9geeeXVf9999199ge17V7Hgce7c15ABee99eeXegegegfBgfA9mgomeecXcXgeXceXnBrxSxxzHecefAUUJceccgce0AxBeXXXeceY9nTUJgoepCJnzzzxIBfrMpIJmnpHmc58EJmnrSbrMrUKJnIKxrHgrUzrxKCbtzprzxKISpxzU5Ulzq0a-NOzzxxzSxrprSSpxxrzrtztyUtaOaTObzxpxrUyObaOxMKBn9pMKICCKSKIKKCMKCACBpCACBonIJnKIHhKBpKBpBonCBmnHmgeme1ggeeeX17Xc7VY9e7emdBe97gfBfBfBfBf9e7X7cXeXc19eX-ecXceX9Vf9cee7V-P1e9cecX7e9X7X-0XcX7c97e9V0--O6glDk-BjnBnJpKKMSKrrMSSpSSrxMrSSrMKMprSKzUzzSI9cmgonCKIJppI9YKCKCKKSKKSMMrrUzzzUSMSrUUUSzrzUzryUaUyUyUbxlzzs7-V15X----V---NNccX-ccc0y10WeeeeV--70V6xUztWxMSzbbc6xta11cX9X7V7-X-eHeggnCISpKHX1V1X-7-Oa-N5Xe98HeVVVeeV0X9711-3--XjabvBG-0s7nSrxGc9-BFOunededziszBzG0-G-KF2NDz6rSzzu9d99-0FVIObk153LiReenAUbbxzxzrpxq--e9e9e-A1JTaukCF07J23pq7---cVM--WN3QV1khy_awxF-H4kIRjyV-oCGnvjx3J-16-Ny-U2iSDjyffv33G4F-CWtG2GxSUlV79e--2nbB--6j1s0REhiviizkJG4-4X-vYML77-ZHJ3Pv3-1cZeNponGtV-V4lDIreOiuBl-3-DAESjT9-r4cgTLLKKOaQjzyvgn3FBEB--1pnH-E4zQyafnG--5BKbgN-3Oxws0iCDazIKxKMMIr5OVX1V7759-05hoa-4YPwIzTXc0oS4-OaOaanwnB0-qYoDA9pIrzxzpzpKzzzzUzrWVf9cP1ceceVemcc7cV0H9uMvF-eGU9USSbuX975JYvsOLKOKKK4OaLJKPueTzjEzjzBn2zj3-Bnwn-B_HnzBpIzyNX7V1mi7bfz3J09L-pSKKCSrs5P7VX7-YBjWieueuusF-F03-0dhx_nILN-03vANuaQYl---6b56-jf6VcBknBBn-Bk2BnEBkBkn-BnBkBw-----n2Bk------kn04GKKKaOaO__KKKPLOKLKGKKLKaKKKKKLLKaOOLGKKK3KaKLKOaKaOKKKG3G43G3J33F3G4G4JGznnE2--G-G3334L33G43J-33JG3KG303F433GK3K3GKG3G3k3GKOffaF--GG-FG3---F-3I-3F0-0303F40GGG-G03GG4FF0--FF2-----0---k-G-F3--04343G-G3KG030-0-Gk-2DwkG43F3G0-30-F3F30-00-G30-0-F-3--G33I--03FG3303F3-I0--3F-nDtfefeuvfideeviivfiuviuzwn--B2BBB22--wn9PeLeeLeaPOfjzyvuiveuifhfifiivevefffjiafjiuifeypeeeiivejEivjiivijfiuieiiueuieeeeeafieeeujvifffiuzziviuzivieifiififPivfeifivPvyvijviefivevevafieeaOeueevfeeveeeuiufiaeefifivizizzwmznEzzBnEzBnBnznEzzzzwzwEzwnBnEnAyzzBzzBn-nEnBznEwzzwnBnzzEEzBznnnBznEk--22B2zkzwnnwnzznBnnEzzzmvwEEBkBk-B2znEzEznBn--kBnBEnzBzzw---4--2-n-RB2Dvfzn0n-kB2BnB2nBknBBB2-n-3-KK3JG0304-G43GLJJK_K4JJJKJG3F43G03F3-Fk3-3-k--FLOadeOaOaOOaPOada__aOe_LPaPOK_KOGGKKKKOaOKKJG-K3Gk--nB-FF-3Rk-JGGKaPPeaPPeuieW00-FF3G3FFF--2-J0-GJ43G3JG-0KK2-3G3G-3F0-3G00-F4N2znB-3jEzzBk-ivzzfjEBAzievivivieevivueiuiuufivzzzvivzuivivjvyvzejvjwzzvyvzwnnBzn_ejEBzzEB2-LOKOaMBBzzBnzwzizieveefifieizzzvyzzznyyvzznvjEzzwzBijzjyzznDzzwnnEyznzznEnEEw2yajzDjwBvnznEnzkzEznivvheejwzjefievveyzByvnmeziuvfiyvyzjnzjBwnkzaeO_PO_dLLG4PPvjivjivjiuviyviyzjwzwnE2zBnBnB2-k--4222BzEOOaeiejxPeeuuuuqeuaeeuuefifefefeeffeuuifeveffeueiieuvfiiveufiivvfeuuiuffieeuufuffieyvjiyfeveiuiffifefieevuiivfjivvjwwnBn2BB--BBnnBwn--2-k2BBwzE---0--0B3F-k2-kBB--k---JF-3B---3F03-k2--wkzEn2-B2wEEE2Bn0BB0-kknBkwE-kk22--eUSCSJrLT7V71K0YLtevvyl3KFzwGJ-DWcRRqP-hG7KyLafizivwwG03G0F-acjpSSKy-VX-IJltLePvV---PeSVrBgmoxprMRTTOa77X77-0N3vk7eoElnII93nzSKBooUSX0aNX0a5V-1pfNUugBJ-9iOdUNV-4v1z-Sfs-zBgmX8MKAxy5NOzKbse7V-0U-Fk-1y-lV-4x-6--g6bj-3L4kbaTYn2J-apmECIJlaN--MR8FTPQYEwpGF-2W9GV-62Hz-7i5cMKKGV---y2dwQvz4K-NgIMwmnUzJopKCCKKIJnKKpKSKKSKMKrMMbrWbWtaT6a550VN---X157cV-VX77VVX7ce7V-nZT45OKJLLPzjzzBz2wLJF0I80TwpCpzpOWa5P7eeV-9fnj-3pOZ6JOX-2f5dcs" :
-		az.mJ === a9k + 5 ? v =
+		az.mJ === a9l + 5 ? v =
 		"CoE-7lR-YWRa2AEJenMxJpbqTObaOBcX5NeW_xnVto5UUzzrzUrtxtxrMKMUSSyN1XXV5NNOtaUUxzztzUxxpUSIBpSSyNN1aUrSpCCIJpKs50WVNN--7N6bbzrzxzrrpSMMSSMSzs9X7-X-VVVX99ccVVDUV19D--998a6rztVXaOV1771-78VN0V0V-7V---YV7Xh17XOWWV0V6pTOs-8V7XXpCF5-N-N-N-N0VObSxrSrSUyN-aNOsObrxMABnKUaUs-V1-N5NUzrxUWbzUSxprzCKHenMtzKoopSSSzzxxrMCJmnABegmXOs1ABmnCSKCKIC77gcepzSKBe9XfKrHh9eprxmnKMKLmehKCUrSrII7XnMUSxrUSIMpIABpryURpMbtxrrSrMUWtbzSnKKABgnAAKUxztrMUxrsObWtWzzUttraOtbUtbbVefaOrxxpStySStzVXaNTNN5SJhSry1zzSgmpSM9mmgofKpxryU_rUSxrPXmhMQIKSxrUrrxSxrprKLpMa-2V7Va-OV1XXAI97ee9m8a6TNSxSzzrtyTStbtzyUbzzbtztzzzyObaNObaOyUtzzaOttyUMy-f_zztztztzzxxrSopKprKKMSzrzzxzztttyOtaOaOZnBnBmn9mmmpMzbbzWaTOta5UyObtV9eg7XnBNN-7-ObrTUzztaOaOaOaNOa555-4KCCCBnIBnBnBnBpzzSzzxzba-7--6WV-1--771-VV------71-----NN-5---OaTOaNN---0WWWaNN56bzzbbaTTTTUCKSSprrSrMrrSMKpKSUUrSxzzzttaTNOaOVN---VV--X--1N0WVN5-7-0aN79enKBmVX9e9177-X770Ws7VX-WbVccOa-7OtzaUzy1WbyObaMxyN6UV4rUUy4zzaOaMWxyOzrzxrrTOzUUUrztzUzzzzzaNN--770aSSSztV-6rxzbbs5-NOUzzyMxzUxzV-1X9777e9gf9ege997VX7X9X71MMrV-V75-gnAHommmgf9emem9eefBmenA1AHmmfCC9h9m91AIHegn9emnAABnIBmV1mmegon9f9mXenI9fbV1ge7tzV--cgoon99gc0s76tV99nCLo1977Ebs50Vf-AKJcc-1fMMKr9c7-Aa-1mpBme9c-5OWWV-XV-50a0VVUV---1N18xy11--V1717V-0a0VV117V7-0VcWaN7Oa6aNN--OVV0SrWyUxzVe8UxyNN7X2bVSMVN50bbzWVXhH7aNTSraTObbWV0Us0WVOaN55OaOaOV5-OsND0tbzaUrrtVXX6rrV-X91V0V-N-V7X17X99f17X1XXeemXcgeA9hBce17XpA17fKKCK9e97hSrSHpomf9ABpSxHpKIKHhHhIJhMUhKnKUrKKyICCBnABpAAJpKBnIICA9opBme9hC9nCKQ97-XhJmfIKBhJoXA9empmpHhMTehICIBehIKSRkgomfKQ1971hKxQBpprSghCCJonCKKqpMSpBX17XhSnBopKSgpKopnKpIJpKSppIJprSzzKMTTTUQKMrKrrps5-KpUKKSSpMppSSKrrKMI9fBnBpHnK779nAMrSxzwonBmXXppQAI9fCLmhBop-s1-WV1hKBAJpBofBegp9mefKrpqfABfKzbpIAKMKHpKKBpIBpqmpKKKRnABooppKpLmnKJpCBpKABoonIIJpBpBnIHVX9e9f7ceeceegpSRe7f9mmonCJpKSpSQIIHn99cXee9mgf9Xce97V-5OV511711-V--7X1--MrSTT--VcNUUWV-7971--X77c1-VV-V1---AJXN--N5-7eYWs17Wa---cXcWs2aOVgc1ca0tVVD---V0V--55-1eX7X511V-8V5-ge9pMKpKJoepIIBmegXc-fCBmgfCIABfIBogmnAC1gnBnBfAABgm99ggefBXXccXf7VXe9XX6ba-XXX7c91X7VV7X1VV1-D0s55--6USrMSMSrWWbzs1menB1N7VUsN----2bVemACUSKKBk-VVfICKSpg9777--7hCSJpC-----bsN-OaOa56rJnIKT0a5SrtaUs99150zy50ty-55ObaOzbopHpMWa555Uzs9ef79gf9eopBcgnKRkAJomVa0V1da5-gnIBmWVVVWWzV-VXAMLkVVXNOVza-1hRmVNEtSrrpMSy17VTN1mgX7X2yN56zrMTUtztzSxzMrStbtyMxSppKST-V-UTUraUy1Xe-OaN9nHpKLegA9a1ccX1nIBcXXXcXcefA9gX7VVzs9XVbzyUVef-Obzs91UV-e9WWaUWaUzrUSrUrpzzUUrsUrs7efB999e971ceXX9ec7c4rMyTN11X-SprMMMbVcYa4xzzrIMpry1X-V19ge-zza5OzMUUUKpKps1-1OyTSzKMKnIKKSy1V0WxzT19XX-V-Xcf7gekcaUby19f9mdtyMtbzxtzSrWUzrSyOzzbrtrV9gXf1me-eecaTMs7cX8aTTMxSrMtrxtzrKKs--VXDOxSSSSCMUy-XUs7gV97V6tV6xprV7tVA8ySrVEzzxRopzbVXOVaUzbtzKopxRpMrV5StxzrzUV7TOVgiOtbaUzba-emVOtbaTObtbzbztbs9emgf9fBggf9mnAKRpgmmn9mmn9egge1-0ttV9mmme6a-iUbbzaOV7NSs5O_s8baNUVaMT0brs54SMMUICMaNOzzMsD1eeccXUSs8WVObttVVgfAIV71g7XmkXtaT2rxrSryOyMsAxs8a5UKtWWxpKztyObWs1mmon9Yy-X7N9on8V5OWVaNMMSrStVXVcV0WaST-aN55OVfABda6bUthMSrT17XN1fVU_ttzyUwprs2zzbWa6s1eopAA99eef9ttbyN9gcX0y-VDMptzs9cdV6s8WvKy0zy171OsUxT0V2brBpMs8s51kTTUxzxzxxrV17es1mfA-egeiTTOtV55OtttppSzUMV199-8bbrUVcAtSrs7XX7gnBnA9eTOs1cT5T2WxRpzbtyN9bs9ABkYWbbaShMsOWt_QMIKKxzT18VXTTUT-1hPecVOUVbaUzUU_rSSUVVX8tzzUT-ce9f9VemeeABfB8a5UzbWWWzzbbs6tSrVVWxrV79f755OWtyUs1-0aN-OUKMpry-c17aOzWUIMKprUUIMa-1X918V770aTObyUxIKSIJpCUVNN5--sNOMVN56_pKCJpSJoonKMVNNOa---OVsOptaKMT55NNUrKxxrMMT11115N7s9kc9V9VttMT0UTNO_xU_nJpUs7NUSzzSKKUMUts1e1T-c5TOVNOaOaUy2V50_zSUVX119X7USxs7--OzSCUbbKSzsUxRnCBnCCBnKrCIKJnIKM_pUVN5NN-7T50a5OWV0aNNNOWWxKKMBnAMxpIKKIMaSxs1X6rV-D6V-sT-UUVX1e9Os7zy-5SMUTOtpKySqpCBoe9nCTURnBpyOt_oonBnKttU_zV7a-5-tWWWtxxrqpKTOttSMsOrSxhBpT6bxSxrtUUIKAA9nHpHnBgeecf1ee9XnMxzxrUzUQCUxSs6SompyMs-0rSTUxtTMzzrrrUV1-sSxs777UrrrUMUtzUpMJn9e9ee-VhKgnMzUrynKtWzrzzzUxJpSKJnACKKs0Wba0V--UTOxyUrxzxyUxs-xyUrxzrUzprzUrpzUrrUrSyMrUSrrSUUUSxUaSfMT6xrSzrUrUUby18SrSrxrUpMUTNSUUzSSKSMSrMKhSzTKSpMLpMCSCCJopCIJpJonBonIIHnABggnBnA9nBf9geeg9ecce9cf1e9mm9mecf1eeece9X7cXXfBn97V9eA9cX7XfMQB97cX9997VV7ceXXnKSxxpSKxSxzQMUtxxhUr9Xs1AJmhUzUUSzzKSz1hUU_Sz_xrrSzUMUKrSxprqnH19pSKSpBpQABhMrKSxrKSzMBpxrppIMygpSrBopryKpzKy0nMMzba0rrUMStUSpSrMryMrxzbyUUMUty5-Ortbs78V77X77--Xe79pHfBg997X7X7X77ce-X7-zTOa0VV75TUUzUrrxSrrUrzzwfACKrsObs6TSz_zxrzxrrrtVN5Sy-4W_BQCq0c--5XUc-X5rCBxMa7PVDNUK-nSJp971_ESHe-mocmeKzxIIOxttzsTT-Ota0ee-057TlBpMMMlsOV7Xe---Z41V6NZVgpBmXJgnKMpr6WaNT0c7--3XZyYK57-DXainASrrUs-cXc0D9q9BhrKpMy6e7VHVV-19qEB--1him-7XjEvIohy--0DA35ggnKEGzTOs90X7-DANdhT7-7Xt_vISba9c11AoEBnACBxrSxSa0Wbba7ZmcWXV0Nl-LpUX7--232P--Y4hn-1NmHcmmnUy5--yBtECSKpGaNP197-0YF0nN-QYKBvKofomhMUtzba-1WcBcV17r9ZnpzsX9-4YWUUKaNc-1DHqB03YaRQJjHc9K9Mp9XmrHhrJhromghUxoOVT5OzMxtV5VNT--7VBc--DVec-5DXQxV-9EWOSk-7cyKynBpBnABoopJ5OaTT5NOs-OcVH7zjtnSIAHcgnCBomn9gjzUxrxCBeo6yT5Uc5Wzxru-e-Wy0s0aPc-39Fz7gpKSBcCHgcWggnIpRObztbxHggpoehryP6tbaT-VN-17---ZFFrV-t3OTpa7--GJ2c--GJFN-5GL3xc-9GPigq-T84fLpBpAMHpSBfACoemeoefCACAJrzttaUM5TUa5TUIErr0WWxOtWaOzyNNNN77977KACKBnAC90aTN1VN-7c-eGPvhSrq0ceV-1GRaD-9ZO8jSpKF--7--ZPZE--O6VKyV1O6qJppObVXc-aHHGgonUbVV-1ZZurAs1XHQCRnMzMppopDOVNWbttbYBec3mgce---HWfN-LHY8SS5X--09ahV-tAuEpN--TI4hxDUT7c-PI_QzrqXX-3ZxNzHzV--ZyYEV0dEl0pKsV---J06s--J71N--J8is--JDws-5JFcRs--JKrN0iJQsgnonCCL6xba6yOWXe9e--_6BUV2dHDArSUrz1XXX9-E_ADrICMKoN176X--0I2AV58JkgmgfIIICCTOaT0wNN--PKIxzUTcc-3_KPjIqV-1_MDbCV0yKYtSHpIpCSKHZlzLNV-10V55--5Kcizc-9KeMwq--0MPIV-dMpxrc--_Ul6V0OMzAnSN7-O_Wd6ppSppKMwNP-7X97V7-F_Zn6CzUrMOX9Xc7--_a82V-0OcIV-8OxHk--LW2N-DLaXxTX--4fBH-2_fwzLPV-0QFUV3OQn6xKMSxy0X-ee7-F_tjEBemhT6zzP7N-1_yrzR71uMvlwxIBemeefSu6zp9zTOzq-5TUxxWc9A97-9N1TU5V-0Va0V-8W-ps--NFDs--NFLN0aNK0UKptxxxrUNXXX9997V-DOBAzTX-2aJfQBy--0a2hV-0a3SV08aU0zT9V-taUEntc-5OtESV-eP2MzUSk6e9c-XPIwxMSN7VV-ddFArc-7aafrpUq-e7-TPquRnTTNc-mPxXxrrKlcVV9-3amCbSkV--5oXa-Gat6zSSzrUR7X7ec7-HQgPwxu7-9R1zzP-1tkzEmgj6zzXc-2b3DrLP--Ol2rq-78lqzrHegrzzzKEUTN6seVNcgeX-kbAFvBghCIKIIBpBognIJpMKSSxUSrSSxUrpK--0ogPV0OpIUnBOs-SbSprpUSI9jxa6aPeWzz5XeeV-PSyVwpEsV-CbXszKCCGWbsV7-0bZmzN--bbTv--0uTlV08uUInDTV-OulbqV1tuqQnCMF-5Ue-2bh7jJP--0vJ6V-0vjlV-OwCMqV-OwVCw-0twdKojFTNV3dwdbnUSMzs-PCA91V-HUDFBraV-5UKsSc-DUR5ByP--6rqa-2bsubMc--tyOApa7-yUdojJmnIqOtWV9--bxunV-0zWdVAOzeUnxBmfrrICrUUUUrpHzWVcWX1175X-Xc--UzJs-9VELhk--e0DGpX-2c8yvE5V0P1YAmzTX-Fc9eEBhHgn5Uta5N-OcBY6pSrIAUJgTOa-09We7-GcENbMSppzye9777c-9VzggtV-94IUs-9WO6SNV-95_ss-DWdaSDP-mcR2MBoggxrpUzzKSEzxUqUyX9ecWaNVe79V79c--WkEs-9WoBzNV2u6I8rMJpGaOV7Xc-9WxeRyV197X5onrsN9-1cXrMEc-uXElzMKM575NHe-09AHrpNP--1AZrV-eBC4rX--7ndq-4coH6ETP70HYKWxSMOxxc9XWbkd9V-9Edzk-HZ0xhyPc09Z7pBmpSxpy5O9V79--82Ca--86Zu-2dAgzUcV-PI-Bq--eIQcrX-1dKuADN-H_k1UrXc-9_qWSsV8uMPGmzMTNUUUSEMSxxze7e71c-XHee7-Ha0vzScV--aLfs01aO1woxIC6a-0tuc-DaUtSq7-6dh56pM0X7-7dp2zMSR-X--abWegmjUOWc-EdszfAKSzV5UNe9V1PUQ2nABUzc7-5by5U---cAvN--cHps-5cLGhV-DcONzR7--98tL-4e9eMrR7V-HciUxpX7-udBoSJfErlbuVX-29aVfmxIpGa7P--DdjHRtu-6eW7EKSN11--9XeD-jeZFrBfCpCSxpSrzJ5TUcOzaOXfBh9X9X--1c-1eGYR-5efWrCracV-1fXrV-ufyWxkV-ufAyBoeezUrzV-V-ugwopa7--fJNN-LfPwSpkVV-9iyzs--fqes-ifsnRxzxyXecV0ejZ8nMbe7-9ftmzP-FujbporSIzSpMUISCxzx-VUzrrTc6zy7Xh9ecVWuXX-7mcVHe1--ejc_xc-3ezMzK51-4ezOMKGV7-1g-Dw-Rf-nQAA9gnpMtzzzbttXXX7e-1f-oITV-agD2xzola9X-Ff2bjASrxSr-97VV-4f47MJyP7-9gJYUP--9lWRs-qg_aBfJxrzs117--gavs-PghqUKGX---fCFz-09nVOpqV--9njxk--gyON-Dh4IxL7-2fGYEENV-1ob8V-upTOpa7--hVws-XhbrSpLOcXV1eqiCpKR0yX7--9qk6k-PhjSS9c6y-7fR-rUrR7Xc-ehsTBgrqUscc-PiJ1hASaV-bfaA6AI9MMMHhzpUbzOyOz1X97-1ge7V-1tzIV1uu69nCrtwP-e-9ffCUprUkVXc-5fgVYCM5-V-9vpss-5jH-E--HjT-wxu--XjYHx9xSVN-19yPqognyT--pfugbS9rSrSMSrzpaUpSUMSkVV-VVVPHgccX1XX1c-9jiyz5V0Pz_GnSN1-4g0rMKR-7-HkBVxlu7--kCK70LkGUSpMSrOzuXWse7X9-4g57jrTXV-DkQfwxX--B98T--g9En-1v1y0pKorN7-7--gDm6V-v2vCxNV--l12N-Pl34RxUcX-0gHXnD-7gHhbKrq7X7-TlB1xMxcVcJ1lBSSrSSppzUzxpzT6xSSrKrMJopBmcXcxrMRUSpMKBgc7N1cX97971AMHYSSrMHcce7eVVN77XVX7-Oc1dMSHooe-V-CMKSSKq1VUpkUSrUSCMMMUSzSprKKHexxrSSxSxxyUSzzSUUSpSpSxKKBhUpttx57OaP0WyOaP-9-0V7X5CHcV77X1VVXXV-97cV----0c-7VXcY97X7ece1XABcc9--23yxV3v42inCMKrbVBe-0xXV-A4Ugk-aliIwpIMs----BS4D-2gSBER5V1v6fGpCCptV-X--BTnq-7gVUzKKT-VV--m1DN-qm1FRfpppNVN7N-DmEsxT9-QgZUjCSKEKR6xGWe57N-ZmVV0A8RQxR7--A8TUk-imT5xSTTTd9cV4Q8thxpponSpTN7-X77V--mZcN1immTUMSKCKMR16VUSprGbxkXBcVcX77V7V-TmmkSpUVcV-un7nSrMSxkX797V1ABckpMba99-0go5MN-5gpKjMMX7V-QCSMnV-vCllpk7-Pn_7wppc--6gu_jIIqN7-3gwCEUP1-HgwGzMMMSxlu7X7X1V1vETrmxSrTVX1--C-0D-Eh0RESoxSRN-X09--AFrbk--oIos-aoMTSIKFN5--5h58vIRNNV-2GitV-vH2_psV--oc-s0aoc_xKMSJe9JUUqN5P17VV-XoimSI5OycV-fHxjnk--CB5q-0hHcbN-VhHl6KpASSSKIMxsVWyP77VXV-7-HpEKxUX7-mpKbRoeKSo-NN--CNDi-7hOczxzTcXc--pboN-DpiAwpV-5hTmMpR5X-0QMjrnMN7-1hUQAT7-HqBoxK---DqWZRr--IhdNrKrSzOV5QBeX3e-9hfVIBpUzX17--CfpD-phgbjBmccjMJrzke76zrrMMSrUrpSyc17VVX7X7X7-HqmXSSX---qmvs--qqEN0HqtqSrxKESrNN7Xc1XV-2R4lV-fTzpnk-1hwNUTV4Prr2xMJnIC9EIrJomnqUKKCJeIIMOxp9MKzKSr6XX7--V57OV70WXV-5-N6a--V5fUUEofHchpKMOba7X5UTP7-0hzqEP-2i1rMSX-2vVmOnHpplxk-WcV-9sS7x5-2fXLhnESoxu7T17-2iCDURP-3fYKfrK9fISr6s-57---sq1c-DsqBSTX--DFu5-1iHcjR7Bmt9wxogcf95IIESpAAJegxUJfxI9onJeCrrrUrSUSSrSpMKSpUSrMKrMMMSMSppSKCyUUz5N71-0aP5OzyOzUSrUN6aOX10ty-7-0s-7cV-7X1X1-VX9XX7e9cecge16yX-X7X7BmXXcV-2iHoMUcV4Q_4_nBrpyOzSq5cXX7c-HtGWSpX7--tUGs-5u0pzc-Tu6aUSS-17-Tu7VxACOa---u7iN-5uEYS--5uEcz--auFlSKqNO99-2i_aUGuV0QdwKony7-BicpMJrMSc1-5V0feEApSWcc-5uYrSV-1uf6R--igpMV9vfYUppKHexxMzxxrUROttX1e7cW97HX17--2fYfV-Qf_oq-0Afj_rL7V0vfwMpMaX5V3Ag7opBpKpT575-7--fgPSna-4iqejAoOV-avQIxxrycce-0isQUF-1is_AGc-LvkFzM5X--fjqbr1--Dz_T-6j-zjASq75-1j1jzlc-9wL5ww--2lNpV-flSUxX-3j5MbM5X-Hj6HUJm_prMSk--7X--vlsIpk7-HwadwjOV-1wepR-2jAT6Ia-1fnTTxHnEy0X--Anark-9wvRwtV5QospnoxMSOzr0aNn9X797V-Qp0rq--QpG4o-0QpR0mxlX-4jL0rSq-c0XxPBBfBnEMKKyNNTOVN1e-6jMXUJlz11-EEgqwecX-s5OaSs-AjV-jKppq-17c-9y-hSkV3fsD9ppKIKDNNOVV17-Ty3bxJp0V--9yERww-0Ax-_npV--Ax2Ik-9zfaxkV-vzr2xk7-A-1BRy--3-zvV-w0lpqTc-I-kixr-c-A0MPENV3R55SnBpKkWa0zGVX-nkNrfACJeonMrxSrrrSrT55-IC9e-0ztVNX7X99--35IBV-R5UCqV-35iqV-w6ltpWc-60xjx--A1PugyV-B95ws-E1cpgpV--ki4IV1wAqXpUTUa1ee-4kl7ACOa7-02LhN-02YwN-I2aoBjy7-f2fQUKrScVc--I2gExS-V-b2tvSppo-7X-0kyWUF-1kyZMq7-036Ns-M36nwhr---RFUnqV-BFvKk-03Kgs-A3kyxNV-wI34p57-644wwN-64BcS--04PSN064PVSKSTUF14HcWc--BL4Uk-64ckSV-04jBN7r4jQxHppKKpMJxHe7V1-ecnIIKABoopUSognBnIAUtbotyOyNOsNTUSJnKq0a6ztbttVOzOVOX-5c0a5OV1XX7Ze9jpI977AI97--lSWj-FgMRSmf9zbrpzMKc0bxrKESxrlVXHVUbbpSkV7XccomXX9ZcP7-E4xwwja--lXvjV-wQInrsc0Q5ozSpKEryObbuVgce1c-Q64OwhMWX-0lmZbk-0lpy6P--GtFD-2lu5jKVV0RUb6mp6V-0m9erN-5mBT2BjNOV0wZLzpUk5XVPBZWrmmmmnIJrMSrSSSSKSMUxKpKrSESpbxSSrMOts7-7Ve7cnA9119-Oa0Wba7V---V7---ece-cmKJQBmp9ggzzrSKMMy-OyTTOX7X997X06mLdEBgnABnIIIICCAJnJpCCJnKJ0a5OtWa55Oa0WbaTObcV0WWV--I8QGBxs7-U8RIgpzs7c-29W_w-3mdg6Ctc-0mguE5-ZmlOjKBmmonUUUUbw-OzwN-VHmc1eV-wgZprsc-rANbgnKrUtX17c4UAhBhBenHYBocVgprSCHZnrrUMSxHnIKLOa-0VObaUzxWza0bsNOy1X7Xe9n9cV-1n8XjDN-IBkvzxXc-2BlYi-RnBjzIEMMKppKKF51-1-0V-9--nBzMVXBp7smn9f9XehBnCAIBomnABmceXeZegccZmonAAIBnKSMSrMVc57OyOaVUzWzOzxxzzztxzxxrrSrtbVOWtVN-OVP7V-0aT--RstSq--gtJnqP-3nilrCq7-AniufCAM0bbcV4UEFHBomghIHoonBnCKpKICSKpMxIBnJOtV-OsTOtsN0aUX7VN---6zOa--7fJe1-7nuYnACrtVc0EFVzgfBofKUUaOV0a73zH2ShKICCCCICCIBgnBpBpCICKpKCKRN55N-5N5OV0a0aN5-NNNOWV-NP7-zHTMwnJhpJ5-OVP-5oiBECSkV-0hBVAn9M6V-IIDDgzZc-2IgAR-1pHnrR--2KH6w-4pLvUIOaV-0KUwN92LmEgfBfBgqUSCrKKKBeVUX5-X4JmoocX-57NNmconHdBpJce99pKppppKIKopMrtxxxprKrMUStaN7-6yUza-7X9775ObzzStV--51--N-PcXX7-ILxOwoOV-UMCUghM5N--AMQdSNV0STQGrScX-8ptlrCCCta1-0CTnYnqP-0SVFsrM-70Eq1sfHnA9XcYCppSKKSErrSSCzpUUzKTOWaN0V0WX7VXWa-2KBme0WX19c-4qODnHrVN-2OnhB-Cqb12CCKJ-UcWV-IqjjQSrKAMzTNV7VXc-Nqu9fBnACIHnSLNOWWaOV--hjnFrX--r-vI-1xkFZpprOu97V-zr6zAApICSUpzKUxlyUrwUxKV56a6a7VVXY9_HmmeXVX1X9V4CmRVp9mrMaTUxT-e7c-OrAdfJnKrrSrrsN0X979X9-0rFTQP--MKdX--M_8P-DreVnCCSrzVVNec-AVFgBTV-T02FyV0L0slMs1c-6VTDEc-6V_Ajc-AV_JBtV-D5hsk-b_7iwnSROX1--OPBa-1tQurDN-Ya80xERTNXV" :
-		az.mJ === a9k + 6 ? v =
+		az.mJ === a9l + 6 ? v =
 		"DwCd1sP0j--RaO__ddedddifv2EEznnnyfEeRwyzBBBB2Bn00-17-2fEMK9dCrtzUrrMMqN-X-789V----Sf-T--yfzIrzohrxy6kX6rSk16k7---11J7Z-35CISoOxsUKESpEP6qOV6pJp9mec17cmhpxUSogfBnMMGWxptyUUzc5UrtttzpoTOV6lVVZme-gcfBc5cUrztbV73cWztaEO-1I5dLOfvkygzEyaOdzjzsl2knvg2EW2zEznvzzyzyfyyzzvjuMyzdzjivvvyyinyaTVyydzufvevjgwBoG-znzdiEdbg2vkyjEyiazuK_4OGaJaPjzYnzzjBwnvyfiigEnuP_vjuiaOMdezeififiiEfgzfusnEeO_ivviEuvjzyzivivivg3EjuyjiezjjisnvvEffvznviyviYEYyzjygnBz1_Fl-zivjEzyuwnB2z0434-4G304-44-CGJFKJEK42Bo-38G-340403LK2kl44G_GFn-G402l2x2433432vuvfvY4-l-0-FkF3G-J43G3FJ3-G5J2---20L-Y-8CqLKOzvEjYn3GF5N0A3mrIprrIryT1Wace1XV0F2MKYo-H05ahSVV1R1RHOKefiznn0-z4KUy5MEe17X7Xa17X7X7X7X7e7X7-17Xe1XeX1VXT0aN7X7X9X7V19X7V17-Xec7X-7X77X7VfBctaT-17917-X--7V0V-9Xe19X1cX991hJpKJpKMSKMSKUIMUrMprSrMSrKMSKrKKrMSrSKrMprSrMpKMSMMpMSKrKKCKMUzrxrSUMUKIABceV17-XcX7X7917X9X7X7e--0aN-7V17XcX77eceVX7X17919X1EzyTN5T-c-7X77X7V197XcVXN-7V-17-X18VXD---X7a11--7a17-99177Vce91X7XX1cVXe9XV-N-7a11177VVX12V0V-VX9-N0VVVX1-1171777s0V5-N7V7Va0bVN0VUV-VN-2Vs--a-NTN0WbV50WsN5-N5-N5-N5-OrxzST-VXcc-VN-1N5-V51-15OxUSxUrxSxSJpMs0V-8V5Oa1D18V91191X11-VVX19nCSSKSSSrMrKQKpK7cXXX7Xcs-1X1VXVV7777719-csN7714yUSpUSSryN77c7X0V-16a0VenB5-D0WV9X-a0WWVN-gpC7X-gm10tV0yN7NNN1VV-N1mm-N--s-7WWyN--fLocccAAC9555NUsSpy-Wa555-c--hIJpCCBmg5NN-NNN8_y--N0VD-epnIKCCLVXYWV-919prKSC9cV77-V0Vc11111TTUVVgkf1991D-e1-ceXX7X-WWs9cXXgcUxy10Va1cXei1monICI7g9-XgegmVgem7X6xyUVc8bbta6bbtrzMST--15NAA9egemfABXnBm9n9XmfBpMI9mggfA1eceeegn9eeXe9AIBme7g7Vecg7dV9mgecVfWzzyUzxSvCMtbtbzxtUryOzzttbtaOaTOzs97ea0VenBmN5N-XN9X9XiOa5ObtaNNNNOttVgggnB7e17OVN0WbtT-tWV5MV0ztbaUzMy2aOyStI7fCMtxrzzbKrUyUa5Oa0bUsOa1me7f9cD-1997-VTOWaUV-WWrzzxprWzUrqnBnCKrSSzySSza19Es9aOs-c-WsOaN50V-NObttrSSxzzbtyUbzzUUzUtxrUUTUyULpf7hKyTSBpMzpompqpSxUrSSrKprUSMMUTMxSrKSKrrrppMKMSSprSy50byOSzaKgpxza6zUtbz_zUmgf9mA1egmgf9pMsOzbtzMyTOzzMbttWy2WrKKIKSKSUtVOsUCLnKUtza5SzUxSSrSSzUSrMrUzMttSxxMSSHemgnKzUSzrzxzyUrtbbpSrzKtKrSAMKSs-T---X55UbsN9eem7iObtztyU_rQMKrUSMzzSrxUzzbyUxxyUs18s1UaUprzxMKJhSrMxpps-V-798VUtaOVOVD-XhHDN-6V9XXm7ce7VVtV-951-Ors18Wa-7-177--1-UVcOyUbzMTUbURopIKCIA7f1hMShJonIMTUMUSUKKUMrSrRchMJpSryOxxhIMprSJpxrs---Wa4xxrSprKmpKKxUSrUT5OV7N2a--7-ztVYVXcVV2aOzrzzxrSrbrIMxJogAMSMSUUSrrKJgpQJnAJX97hMMU7fHeX-en99pSrxwopCICBmcXXccXehSrprUxzbztTpKJonKCBfHeXnCLpBmX9XpSzrpKpABeepS9nKnBofKwnBopRpBopCJpKpKKMKIKxzSzzzxKMSSSSKxKSIKtTUWyTObUrrxzrzrbrSzrMSrpzUxySrxxzrrrzzbtztzyMxrUKQKKSSppMKpSKpxprrSrUUSxxrMprrttVD5SrV-a-NN71-cX7791-77VVVVX71-TT6WWbWWWVN-NN8V711-V777X11XVcccceXVXXNNN8V-15-9-VV791dV1-VVX7X1-sNOtrtxtxtySyUVNStUrUrrbUMrppzzrbbry6pKKrMMMrMMCSUUKepKxs0aTTMUUU_rMT-OVN-6T-7-a-777V-5-XMxSSxxrxMU_pzhUxSmpra6QKUbSyOSSnMxSyUKSxCMKUtprySzrxxKttbzbSrbTN0xzUKBpyTSrrMtttzprrSSrMSpprKCILpJhBhIBonKMKLnKICJnBgmmpBm9mnAABgggmeommnAAAJghKKKhKgmpAAJpIJopCIMIMIJpCKJpKUa-s550V2VN50VNT0s5OWs6VT5NNTTTTTMyUSSxQJpJpAA7fBprxpttWbbSSQKSSSMMzSrt_rUUbUbaMyTOVzTOs7777N70V70_pzKKzbbSJpBp11hIKqnKUtIAJmnJnJmnIBnBnJnKKLpBnJhI7e9778V1N5-NT0VOtbaNN9gmmmkfICCACBgonCBpQICBnI1fJo9pSQJohBchKhCKJopSMKSSMrSMCIBomooenABfAIABgnIIMtsOaObbxI9mmon9gnKUwpMJpJpJpBmpSCShMKCMKCBpCK10V7-77X1-cVV-7hKKCMKrppMKSKpIAKtxzxSKpxnHghUySrvCICBfCJpMbnAIBhBgompIIMC9mgfCCKBoonIIICBfIIICBopIIIKKCKKSKMUKpKxpSSxxMUMKKSKxpUpKrSKSKSKnICCJnCA1999-1A9e-7-cXXX17V70a-f7VV-1--7XXm997cXX9AAC9mgoekccXg97XXABmkf9f9fA9emXn9emgmgonKtxgnBfI9nBemef1X9-9gn9meeXA9eemegoefBmgnBnC9gnC9eeggnCJhBpBnKJnKKKKxpIKrRhBhAKBhKSKKKIMKKKF7Z2MkT__44OOaO__O_LLTbYvkyffBkEcw2knyaaiBkyEC-x-nl3-3VQ3QMsc-O-txaOjzzk4K_-7VS-vCSzc7V0J2qEPevjFF3F--6mTV-FGRlV--92TV0kLotbx-a7AuPnIUUoxxzbzrKrpKKMSSSlWxrUsWtzKlzTUyOzbw516xSUzWbsX6wNgc55Xc7mcXmgmeJmofomXXIBcYHcVPXZcVTUceX1d9me17ee9-A0Y6qioC-asBoenIBjSUIBjUSJe9ceV7177eV7fC9gpzzHeeICyUxA9efIrzM0zKaP6kOxIMtxzbxBgef9gfMSxyU6ttaUttzGzryOa-OV1XCJc9VcN7---40ekqQ--NDEDyV--Red-6VumnMUacX--0pcZ3P2fIBnrozKocX7X7poxognBU6zbzojHxISryUWX-U0XV--V9YHX7--6M-k--Do0VDFSy8__bfuePPaEykFkk03C2-3VwCbAMV--0t6o-92oUS0V4FUCSaOQzBn4---ywe-Y13Y5KOjuRyaEBG2F--GW_V0FZtli---3co7-38GgR-93kCEP-1kaQpeNn--L4BWBn5T-BFdZS_ePOvjjjjwk3-FJGF0sL9epCyN9-mkhAhaefdPOOaOd_eO_dPLyiiveeeyEnnEiEwBk2nEnBnEEEnnwwznnF3333GGKJJG3G4KKGJ-94g9CkV--ipW-VWVbABxrMKz5OzJxsNNNVXmXe9c--B49F--PnOV-FqcSV7sQLqmeeppUUSSxtaTU6yT97997eeMC2a-LKOaOaOi_vdPiuzjd_dvijyu_KFJGF33303FC2-oBBB4KLOOaaOiaeduaeeffdiuzzzyyydKKJLfivjjjYBwyuyynzyEnznvszkxFzwzjvEBG0G2zjgyuyYvybvzjyieKbfYBkwzivYvyvyEiviyvfuuuPfePPaadvvvjjeOLP_MdOKKK_UeaPMefvjjYzYknkkzznFzyEjzjfyvvEzjeQfjYvzznzyiyEsywzwzYvEgkG43K4GJJKGJJK3-zjsEzjjvzwyyvvC3J2G3FJ2yjFG04FK4F4K-OKGJGJG0GK43EB4GG2EEzyvvn2yduyvjyinzx33G033Eiw-o-KF2k-GGJeKO_-0PL_JBFGKOF_KOHK4GFxOHKGGFwp08J-yEYnlKKFJBwFJK9eOFHLTdJ-kkn0KKdFPPe_3-B3HeOaJ_2-EeVC-3JKLdi_FHK20dPJFk0O_JBl3KT_3K5LLfjdJeu_Fo3_JiePJF30-l3FGJFoGF-X6dJBfEOtsV0FxOWbo-D6uCS6X1v2zp5_4fu_4ivEdiuPdKJF45aiivivyyiviiijsn-znBkBF235J-GG_-nBl-w44aKKG-KX2_nCErSSSkOWa11XeXLG1g8_OK_OOO_aPuKOdajsydQjznzydLKK_5KaiuyzyvzzzyzjvjidLK3KKGKKKKKaQfefjizjzyvdefiiznyzzyEwznBzwzkn2Eifzjufwyyzjwww--GPO_--zVBnvgEekk3K3GG3JGGFFG2B-333-0--03G3HK4ePeefeQiaOK--3-0-JFKiydeJHKJ2C40GG_ddKFnB2-JF0cWyMmmyTN-ZGfute2---ZAWV0G8Ihi3--8AO7--I0sk-7aWNk-RIFpuEF018vKgpKEM6tWV7XV--L5Mk-NgeYlV6GUzf_eczf24_-k-1C0lB-I5ZZqOynkqK-5YJBIArlX-1Gfu8_yC-6YOlnKIOV---5qJB-DCgdwja-C61_LTvoG-kYgE2KIJnAAMUxzUrOxzTOWaZcV9176qXeX7cVDlqEh_PPeffijjnEBC203FFGJ-mDm3BfEMtyP89-C6VITdTn---2mET-26bSqk--EMts2wUQzuiijiibfV-EYnn3G4LJJGF1szi7nJnr550e--78qw-1FShy-27J7aR-eFczBxKoT7-V-oWi1tLgwk-9FyXENV7H7Of_bisywyoGJG-GZSgYBepxxpyN5X97-gZ3Btfw30yZX6E9mY9eememXeefSzxzT6xzUrMommceKIABhBeMUSxyOWbbbxzHpATTTV5OzxzSy15Ua5O93eme9cXWWbbyVcmVAmK5MiyiajY2Eil3G445J--Hp-s--aMYk-0CdpV2HW8xuvoG-28GGLmemxr6tsV-oczDQis3F11JY8BgnBopr6ztzzNOWX7e7omX-0mZRx_UkRdHRBnKMKpMJppJxponBop6bbzxpxKlbWa0WWWX-UzUUrMzlxrWaWXVd9n9WVVc91e99X7eeVjHcccOe1V--dDLF0OOWLmpy1-6AISazG-5_hMYrq3e-2mvLGeyn04-Ca5w69nUrSq17--QBDVUivzzlJKJJ-qNYawozzyNn97c23mKCO_OLdiffgwnBBBl-J-5OPQhV0wnGIOeeyin0230F5uPAsSSUrHprMSI9BenCHoeXAIrrUUUzTUzyN56rzbV0bxbtcOyOttztcmefBgfBn9ef9X7VXX7X7X7V9IG_jaaeivzB-pFn2KJ09Pe2Rhbzzxxu7cemc-CCRoydz-p--5k5q-ICZKiPvjk34--5npT0dDEw5Oeuaufdeu_PeijB-BBFkoFG2EfswFk3-JLJ-9Ul6xk-7nzgraaOeQfVBB-n-1XVgnghCEpKSIIIMKxML5-0Wc0c5V71-7-C0ccQ-B92pWnABnIBgmxUa-UbtbrzzrtbbueXBee5Pec-C21Ktk6e6I4rJpIBrMM0c-0zzbae91c7Qh2tpO_ddeeTbeeiiduuffeeefydbefjiedeeaijY-nnBwnznEBnnEwk-nveefdbYw3B-2koFFnyjueuTw2FyvfiB-32G0-oGK3-OdveeJFFFo3BoLK0JF-40OOaOa_8KKFB3OKefddFF0--02F-00G2--5cWxzMSV1V0JNHMaB-uYI9RnKMGWWaNe-HJRYn_aayu_jjjeBC-FJFFEjiwC44F2uEcgpJxIIy5-NVV-07cwk-PGjhlV3oZcraOPzkC-5eHK_nABpKKrK55-575TT-e0fHO2qaaabeuauQeiffeQffF-33-kk-BB222n4J3K--9LCls-CAWRtk-1QXrVIK7Wd___4aLywyizYzYEyEBw0JOJOJJ-edEvRpK5Os1V1CKLfOdOyszywkGG4-5etPbKtae-jKWNneePfiuiifiijifiw2yfeii-zefeeeeefYBBn--0033F3F03-G-3F03-4-0GGGKJ-ufB4MHjSzSomcXfMpzS6xKKKKMSsV-10a7V-75Ouec17-6Lbx5JE-PfeifA9eme9AJzrzxztyN57-SVW5uU-0qkprRxMSKSpKSrtV7X7X17--V-58t6-LgVLbBpIKrWzSqV0V7Ve--O0SB8LoLpxJnBgmpICBomogn9oghBnIBpUbWxpMOzzVUsUbaTOa55ObxonKESyUSzrzRUtWztsTUzrMtcVV-V-eX-0Zegee977XX-cemcY9ecV8q__U_OdujEvnBmK30--hDurV-5vfz37hzjz9gemecf9genrI9ggn97gegegoenBgopCJonEJUzpCKKIKonKSKMKKKSMSpUKrbzV0V5NN-77VV-7X-WWVV-N-0aNOWWbsN-0yUUUxzrzSMKrSICpJnIIErL5NOaUSxpSUMSSkOWWaV1-1-55--Vc7X5UxrpUSUxty51-cVXX97VcXZecV9r1ep_LLasznvgyw343F-AZ4Kk6pnU1tLuaOG5K_a_OLLPKeOddYzwwwzEnzEnwzE2E2C-JF3-4id5YIMV7-Cs_ftkIvpQOmnA9nBgf9YBoooofICBeeCBoqUUUxtza6aNUWba6aOaOWba5T5THcV7NLKvdveejzG-33F-5q05bAzy9VCvXK8_eeiyvujin304_-3-0FZT-95mmcgfAACBn9ggeAA9mmnCUtzrprpUSAAIBggecmmggghM6tzNOtttyTTTUbbbxzKa5N0bbbbbbaNTTTTTTUy551ccfAA99XXcWnw5hG_OLKOLKaO_LKOK_POOKdaPOaPOaaUzBnEknwknzE2En2nzEnzeKazEyzzjnwzzznyszgzzzwziyzjvvzjEnueOOdawzEnnwzEEnwwzEEnknEnB0JLJJ__OJ0K_JLK4K4_G8K4445K_48LK_OK4G44K4OKGF1TETamnMTOVc" :
-		az.mJ === a9k + 7 ? v =
+		az.mJ === a9l + 7 ? v =
 		"9mDS-FP-F--0TedPPOXo0HCGSpxrMptUSrUztztbbsUtaTTOzzzzStzSzSrSrSrppT-0btaOaNNUttVOa---56y6aOSrUaN5OzztztaOtTObtaNNUzaOSrSvHogmgfKpKSrCJgnIICMKrSryUWs--17XD--OaUzaOzyObzzztzrrUxUKprrzyUzzzzzzrSrrbzUSzyOaOsOzzzztbzzrAMSKzrUzzUSrUrrMKKSzzxrrxrxrrSrSrUSpMJnCKUV6aSxxUSxrSSMzzzWzz_zzzzzzxrUzxUzzrSzpxpxUSUxrxxSrrMSrSKKMKMSKKxrSKxzxpJmegnKzWzzoeepBpABgohBnBpMSKyOsT5T---OWWt_onKzzS9ehSrUzzzzrzzKKAILmfHnBpUztWsT0WaOaUzzzUrUrSzpxzzrSMSrzzzSKKKKpyTUaOzxzxrxxrxrUzzxzzzzzzzSrxrUrSrSzMSrSSrSrUprMKzUUUrbrbrbrrSMKxKKKpIKKKMKKKIBpKBnJnBhBgnCAIBnBnBnBgonIJoonIJnBnKBen17AKICIKKJgpKKCSSKKCKJpBpKIKBnKKKCACBpKMIKponBgfBnCHoonBnAKCKKCI9nBenBnBgmepCBn9cecegX-9eenHmognBmegefBnBenBnBenBgmonAKICCKKCKKKIKKJnCJnBmfBnBmpBnICIBpIBmpBmnBnABn8aObbaOa0bVOV1n9fCBonIHmonCMpQ9hCAJnJgnCBnBmpBpBgfA9nBmX9eeeXeXcXX9eee77gpKrSrzSrSrJnKKrrrrKJnCBnCBhCIBgemggeggef9eemmeecceAKKrKICJproomgmgeee9X9eXfKMSMAKMzrMyOtxrKCBe7VcfBprrBAIHnKhSKIBp9emgfBnCBpSMSUSxrrzzrKKLmnBmmnABpIKIBmgmnKSpSKUSrPkf9en9nAIKpIBgmXEV9gpB7Ve9VX9XbrUV1cc9V7Ws11chBeaN7tV7AIC7XN1N1777c2V-a5USy117aNN-ceef97Oa-Wzy1N-17WbyMMKSCKrs10WV-Ws978V-5-D5-s-7VcgmfMopCSppIA7XV--1-2bs717V15--a52aN-X1-cVN-X-V-ts-0V0VOV1OaOa1-2WV-sOV--7OV-V--VX-7--7-0yN7--7-X1OWa--1-0WVT--9N7OV--1-NN---V-17V-15Us--V--15NN7----VX1N7---X71--17eX7X7XX1VcX9XXcX9999A77eVeX9A17X9cX7X7X9cX7V7VV---717cV1717X717X-X7X71177X-X71N19--97X-X7-X7c-91X-X-7X7g7XVeX7Ws-177-17-5Oa5NOsOa5OaOV1XmX7eVcOV-95--5-sUWVNT5N--0WWtztaTT6WaOV7-0aOaOzza0aN0a--7VOV7s-s--6V-X---17X1Vc118V5OV7eX7XcXemnCCBfBnBoprSp9gn9cV17ee-9eee7eV4kDJ_aeiwn-FJ-u28mgpMSzsN-XeV5Fop6aeecBBk-F1t5Zdn9xxrs-9-O9QZyeevz-G3G-YcmK6CIIrUrrSrrrqOa9-X9X7X9cV1_beTuOPOPfznwwC3-4-Jh78rBeejprrSrNN--7-T5ITPw30U8E3BgonBzrtWzzaNVeeV8t9XtaOdOyzBwnEBKK-AmPDvCxrr-7X7ByJT4OdKaTizEydLQi_G48_OUdOvEvyuv-zyevvnzyBFzjvyBnzzznE0KKJJJK43JJG3JF0GKK-2BiSRpxxpWX7Xc" :
-		az.mJ === a9k + 8 && (v =
+		az.mJ === a9l + 8 && (v =
 			"DgBy1vR-AV60YBnopk-O_9DCIs4rUUrSSMUrSrSSSMKzypKSSMRpKMSrUKMSpKSSrUrSKIKSueXgnCKBgme9XenIKKMBpSKpKMMxpLppKKpnBoopKMMMMKpMKKKKrSzzza55ObzzUUSxppppCCSSpSSrRopSrrSSSppMMSSrKSzUtpxrxxphSMUMUSrrUzzaOtbaOtbbbaOzWWaN5Os6yN-ee117eme97cX--1117XmmccVaN1-Xy-XD-NT-6sDOa0y-cWtzrrKrrSpptWSxs1W_rMUMMUTUUzrrrrSrSxKSrKKzKSrMSrxxprUUzUyTOa-N-1-X-7--1-VV1D-EUUaOtSs-SyMzy-Xe1XXe999XcefCIKKUUn7X7eXee8aOV11UUUa-X7X0Ss1N1mVcf9ecekgk1AJmnABgn99mn9hIJhKKMB7797ee17y17V79Ve79nFX8s19nAIKI1n9pMKKT5Jp-hFgV1goV1nIF-hB-1kOsN56rSpppMtVX-77c7a5N-D550V-ObbaTTN-OVa----N--7s50y0VTNN-9maOzV17cVeepABnBpKKCBnBoopIKMMS9pKKKKKKIBWV-D-XemgpKBe9gm9eOzbyOa5OWV15NN7-N--V5-OV55-50aOaOa----99e77X9e770V1OVX-ccefABn997Xc77VccgceXegfBnH7cegcVX9ecD-VV-7-XV7Xcs5OaUT155-51XD--UtyUy--zWzzUzrbzyMT5OtztyOaOzKpxxIKKKKpIKKSMIKSKKSzztzbyUxtaUaNN5OyKs-6V0WV0_y-SppSICMKMTTTOtQBpSCMSsSrMSzyTMSprSptSUbzzygfKxUaObrMJpTO_pmpUxraTTOtttVUtaSSptzIAK99eXegfKgpCLmpMrUSpz7fKBoohUttrSrUrrSrSAKKUUra4pSzbaNTObaUyUxopBpSrzbaOyN10baSrrpzKpSSUtSzpUs-75N7cc91cXoX7V7Ws1-5TUbaOaOaSySzzzrzzzUtaN0V971A9eenBeee7Xe9cgcfAA9gggnKJgpgeee9eA9mfBgf9geVVX9fB7X6baOTTNNOtaOty52tzVNN9m7Xcce9715N5ObKt_y-8rMbzs90My6_s4raOUxrrpUMrz_rCMUry-eXUzrpySrxyObrztrzUMUttpztrVMrzrMsURhUxpsOpCUbrzqmenMtzmpzb_mfKzpooXX1pBpxSSKpSMSMKKCMKQKnCBmmeXcc71171-V--XpIIKKnIAAIBnCMMCKprzWV7sObKKrKUMsNN5UyMzzrBpztttWVaTObW_xpI99ghKKMxztaUUbzzzMy6vBgnACUtz_yTMrUzbnIMUtttV-UrUSrSSprMSSMyOWVX-18a0a-0yTOa5NOzrrRoonBpSKBpCKCCKSnCCBhBmme7efMSUSzUUaOyT5OaN-0aUxpoopMSzTN99WbV2VVXX9eYV0WaN-V-OtvKKUSzMrs1797VtpzV6rrSSrzBhKCKMSrT-Wa-V0V-X77ca--UzzzyHpMT-yT-7-sOaObbyTTOzUtsUIMSpSRnMzMT0WsTOs97hIBeX-X7tVVtzVc8WWaUonMzbKUsTUbSxrnMUKBoonJnJgpBpBoptaNOttaT5NUxprCUT1-VObbzrUzzyTUzzzy2zSxxxzry-1-Wrbtbs9zbzV9UV19-fa-taTOpUWxMsN716aUKyUps0xzaNN0VOWbaUzSrzaMrzVcX155OVOV0ztby-199f1XOWa-N-TOWa5UaNUaOa5OaUtzxtaN7egYy-VTOaUrnMwnKtzxpzaICTmoomenCKS9e9hSKxzbrSrSKBgpMKrWs-_yTNMbMyTOzrJnHnKxrKpSMKMSpprKSSMU9fBopKKpcfKSMAIKSrUMMpSSrUzVbrMUUTMympKrSrUUzMBnKSKrSxpJpMrUSSpSKS97cXXXXcXXXX9997ccX7c7X7V11171N-V-VVX1-71117-7-X19997V1mopKrSxpMMKpPeVX7hJfKCCKMMMMMKKpprUa6BpepKAK8V1meommnKMPgpAACReonACBopKSIKMMCKKKKKRpKCKJoprUtbbSSUs4MtaT-78sUxzzwpxxpxrKKSSSUSpUSSSSSKKKSKKMKSKJpKKKIKKKJoopBn9mccgpKICAMIKKKrKCJnIIBopMMzxxrrSxxxrSpSMSpKABofBnBn97710VA112V1171mmgn9k7V51-7XecXpAHhAIBooo-X75NN-XeXnBnKIBnCCKBnB9gpKprryU_ppSzyOWVObrzyTShPfIBnCK9hKCCJpKzrzxprSrSSUrxxqeeehUxzUrrABnIBhMzsOxrxSmgpxnMHnHhMnMICHmpMnHhSyMBhLopC9fIMhBnBnCJommmfAA1nBo97c9nMMrFhBgnBehBgfABfIKSx9X17N1emXABf9gmnJepJmhRmopKCMSUSxrMSrrUSxrrxrSrSrMSSMKKppCKKRognBggogeefI9mpxrr9nBggoog7--N-e999fAa-XfJV17s7XA97XcgecWV7eeAJpKKJoopCKBpKKKrTTMMKSxRpKrSzrzxxrStSrUUUSSpLpCMSKMSzMSSRef7Xce7e9X997-cX9-c-777-11197VXX17X7cgc0V0VNN1VOV-1-WVV-77VcV71-V-71--AJVV7XhMCBmfBnC797g-ACI7-Oa--11-Vc-1XVX9979X17V1-VV7cec9oppnBn1gXo71oome-1nHmgfBpKIBgmmcenIBnBnBnAAAIA9mmonI9egoXmggopCMKKKLpQCIBoopKopJcgnIBp9fACJmge7X77VVa-11-V7-VVVX-V72V7-7-VVV11-V7----V---N78V5NN-V6s9XOy1cepgpQIA9f9e7X777VX7UTUbta1eekXX7X0VcX91c--g7-11emXceeXX9ee99ce9g7cX999XXXX99X7XV-5-V7ceeegeX7X977X77-X7XVV-5-1-7--ecD-9hBX99onAMSKIMJpKSpKrMKJhIMKopST-NOaOrRopIBfIMSSMzxzUpzUUaUaUbttyUaOhBpIJppMKprSxrUrrKMKprRnBn9ggnBms9gnICIK99efBomceXgnIBcXceeeXeefBp9emceececeegmeXXeekee9X9Xf9ecee7X7-5N-a-N--NOWVN--V-1-V1--5---711171--550aN5--0V1-V77-55---------N-7XOta6aN1ggnBmnI7VD-VNN--NN1ghKBpKIKKJpKIIKCKKKCKIKKRnBopKKrKSSIJpIIJoopCIJpKUKSMLpSKKIIJpKKMSnKrUSSppKpMSMKpSKrKp9eepUrpSSKpSprrrzzzSrrzzzrUrzxrUzUzUyTSxnICKCACCCBnABnBgnBmnABnCBnBgmnBgmmmgggggf9meemeXggf9mgemmmenAAABmmmmXhA7cgnIIAIBnBmhBnIBnKKSMSpgnCKRnKKMKKpKSprQMQCIKKCKMKCJpKKpMBohRmnABfB-1V9sQR73q09kCIBed989cCHZpMUMMSMSUOxbpy0bbxSraOaOc7TVP29C9Vc0VBecV--7NVV-N8H9w--c9BgrX-BVhQICKrSsV-1VkNB1Dn9choeAEHp9A9eAKKp9fCI9Xme118BgecX7IKKAKrJce70cXXXcXMSppCzSpJxSMKSKSSrk-0xpxxzba-17Oxta56paOsNNTOyTOa--USkWzMUUzs--VWbrxrrVV-d9e7VHsFGFpA9BnCzzII9X97pxS9XHVZoogqUtzqUyUxx50WsTOXmgcOuVOXc0T4CohpochopxzyN7X7NXV-cNWurX-AW_mQ9horyWa--D6JABqN-51WZ4aN79-1XOJ2Oc-58_IBN-i8hrCBfItza-V2Nd5onEIMLOs-X-0se3gprOX1V5NezHrS9eACprpxy0aN7cVV07h4Zpy1V3shEFnKMUrzcVN7I91V-chgRwP--Xvb6V37jO2mfSxrUba79cV3cjXTpJpJOyTOX7gc--1B70i-6Y102KttXe-4Y2-QBrWV-qBklBoptztf9-7-aBzewzzyPee--YGg2-DspvZoeeeXmeA9mgmogn9fSApra0tzWzy6tzzbzztza-e-1YR0fR--PDnihKtVX-SYi0nMS9VecnMSUzxc7UNN5eV4HE3LxHx9HfA9nBxpaX5TUbzUpKDNUKBh9e5BfCMSFT6zUbaOd9V0aP7OZecWV-dYlL2AAIBmcozMopohpzU---NOaOa6X97-LEHZBzbeV07yFszq9V-cz9FrX-4YxwbHc6s-9FJpByV0d0kXnUT7V--FTac-5FvBCV-XGFeBnEUa1-686HMnJmxCIATUpUzV5--57eV2t6dDnABplyUaN1c--GxMc-9HB5gtV38862nCBopa0taT7V0d8AyppN7-1THOURmocpAKpBc9zSMU0aN551-USL---WZbifBogn9ghCUrLTTTOyOWs7e7V08F5moo5-48NGSmzJmVCKK6ls-0V-1_meQFN19MIGBrKKKKopKzWaUbsX7X77-17c-1P80D09ablQKBxrSSMSxzUSpSrSrSprMMUSVVVVV0baXX997XX7ccXVX17X7c-DQ9vBxX-PblGIMMSrMMMkVVOte97eX7-DUDUCL1-0bwmfD-3c-SvC55-NcAPfppppSrSr1117X171-Ju42Zn9gmd9ceceAMSrSppKrSIBfrKCMUUKk-T9mcV5Ua5Ubz6tX--0aOa1X902cKbrCKKJpHpIJnIKBnCCBfBfEryOttVOu5OaTN5OX0a-7--1---cRyM--P9esnVneG9xnBmn9grKKJnIJpKSKMKJporUonHe2IBmmnCBpCKrSrKpppxrSzUzxxrV5-NNNOV-Ws-XV55UrSrxyOc775-7egoe50Wta7X777N--7VOxrSVWtbzUUSqV6bWaN19cVX99gecemd9ec1xdFn2SrJeCpKrMSrKpSKSKIKKIICCI9XKMKCMSII9comomnAABpCIJpBmrTObs0taT5OsNOzaUSKMUtV-0aXX0WxOzaOV0zr1750zrGWX--XVVV-77X7V0VV-117XXXcHX1V39Nu-nKrUUyP7X9XVFeTW0xrI997KBcXBgnCAJpta50aUpIIBnKSzba-0VVUzbqNX1c--dA_c19eGowgggnCSSGWWWbaUsUUUccee705ejHzrzUUyNA9eXeV19fFvonOaTX-Rf_UfKCBeISJxrT-0WbbVNXe--AcyX--Aenu-lfzAABeconJnUP5UrSpKIpxLV0zML5-V7--1X7-2gTJfAOV-AQx3k--sU3c1TvB1BnKCIKIKCpMSGzr-0VN--751-19-0iur2k0FkOrQBgceZgnKKMMKKSJmXxpSSprMs6rJnrUra5NX7-X10X0aOVN-1cV70c16258gfA9fJmnIMKxzyOaOs-NNNX-7lElAMryXe7-042oc-A4AKhN-7gKbcmpIrX6zrxrMzUVeVX-gocVXV-3MmVV-3NpHV4wNq3mmmrUUrMUTP77-X7--lazYV3RQ6imfrrSprs-1X9-7liMQEOxse70E6TIBmZxlxxKOa77VV0I6vXBefKMIM5Ota50cV-RW4Rw-0RW5cnK5--Om5EABpMKBhSxxs17-0V5X--H5H1-9mCaYBoxbaP70emCc2MSIBepJfIIBmVP7mnCIAACCKIlV50bxqUV6zxxpCKprzzaUKa577cWVNUrOtV17V17V7Xcc--HEP1-0mI5IF-0mLgQF-amT1YIBonIIICBgonGaOaNOWVNOWba-02AS3hKIKIJN0V-5--AByfCsV-BqE5k-6CtMgN-0D4wcDzDLQCCCBpIIAAUJmmfBnAAJonCBoomgggfABpAKCJeecme9IBnKKKrMJrSrzUSKpMKpzrtttbxpMbbqOaUwUxObzrrK6aTTTOa5550Vc155ObWaOs9--0WWbtzyNce9cc-Ne7Vcc90zbcV0ztte90byTOXeXeeeVNXeeV0RupTnClV-hngH2CCCCJpKKKppUUtzbta5-V777-X177XV1wx_ZnIKKaN-V-PnvrYCJooerSo-OzuXVTOV71MEjtggeeeggnIAACJoTUzrMUbbttyN-AEykhD--x0GZrsc-2FY2g-4o9gQCSX-CjFseBonHonBf9en9eegf9XfCIBfBpCKMMHhCCKpCKICIpOtzSMMKKIJxUbbs7VN1---VV5ObbxrKCESzUpISy0bbbse1cX5-XVcXeV6y6aTNNNfBmehCCBee19cVV-0a6bzttyUyTUtzwUtttaNNOWV-1oImQL--AGQ0CNV-x5IkxkV0IIIYXm2V7XXeyUta5UV-46fyV0C78BrT7V0S83qnAyP2IoidnCSprrSxrSzrUMSxpMxzUUSSMMMMSzSSrrSprMSpMSSxrSxxxprrrrrUrxrSUUbtaUUL----WX-5N97X9emVP97719ecX-0aNcgmme6a9eX7199e77gecVX7cXXXXXcXX77X7X9egeeXX9-2oitACsV0hAoJnEbsc1EIX0Bgeen9gf9rSaOzzWyUrzqNX9-0CE-XnxVV-4FqeV0SGIunObe-1p622T7-0JRDc-0JfGc-vK0CgggrUzaT19V-CLDDs-6Ku0CV-ALMbENV-COvBk-bLoRjSrR-cX-8pp72IJoOWV--4T3HV-STYBq--hTbPoN-6pzxnBpT0X-5q4TfCGaNV-xXFHpN7-6N_hh--2NfsB-NqBUQHeCCtzSSSzT1cX11-1CZ-NpprX17-7qMXnCMyN7c-IOb-BnaN-0Owzc2fPAlBgggf9fAHoonAABgnCKCbbaT5OWaOaTOtbaTTOaN-0PiN7-MPkJBf6tV-4fLuV-SgO9lV-phLT7tV-4gqNV-4hl5V3xiFwnA9nAROzqOaOXV-SifanVGKwWFOaOV6zzzzUUy6tztbKta56s-WrzzsN-5T4rKpppSKSKKKM-6Sk2RmmeXgeggnTUbxyTUbyOe-OMnm0a50aOV-NNOyNOxtyN-fRZugenzttuc6MRg2gooef9eemeX7XeeeA9Y9BehCIUzrMUzzbrxzttzztzUzrzqUzzbzzzbbzrzzV-9fA9eeX0XeBeeY9e7-DrA8vSzrOtaXeec-0S7u7-rS8wBhCUbttcec-bSGCgnCzaN9-BrL6QBezxyTPXV4hpYLmgfCtzxzSttX9ce-"
 			), (new le).lg(v)
 }
 
-function a8o() {
-	this.mI = null, this.a9l = null, this.b = function() {
-		var aE, a9m = [120, 105, 92],
+function a8p() {
+	this.mI = null, this.a9m = null, this.b = function() {
+		var aE, a9n = [120, 105, 92],
 			cos = [12, 12, 60],
-			a9n = [300, 300, 9827, 26, 18, 36, 36, 8, 32, 3, 9],
-			a9o = [140, 130, 120],
-			a9p = [12, 12, 76],
-			a9q = [240, 120, 1024, 30, 19, 30, 70, 8, 20, 3, 9],
-			a9r = [130, 117, 106],
-			a9s = [12, 12, 68],
-			a9t = [270, 210, 1024, 28, 19, 33, 50, 8, 26, 3, 9];
-		for (this.mI = new Array(az.a5z + 1), this.mI[0] = {
+			a9o = [300, 300, 9827, 26, 18, 36, 36, 8, 32, 3, 9],
+			a9p = [140, 130, 120],
+			a9q = [12, 12, 76],
+			a9r = [240, 120, 1024, 30, 19, 30, 70, 8, 20, 3, 9],
+			a9s = [130, 117, 106],
+			a9t = [12, 12, 68],
+			a9u = [270, 210, 1024, 28, 19, 33, 50, 8, 26, 3, 9];
+		for (this.mI = new Array(az.a60 + 1), this.mI[0] = {
 				name: "White Arena",
 				cu: 230,
 				ez: 230,
 				ha: 1e3,
 				hX: 2e3,
-				a88: 173
+				a89: 173
 			}, this.mI[1] = {
 				name: "Black Arena",
 				cu: 800,
 				ez: 800,
 				ha: 100,
 				hX: 50,
-				a88: 43
+				a89: 43
 			}, this.mI[2] = {
 				name: "Island",
 				cu: 512,
 				ez: 512,
 				ha: 128,
 				hX: 32,
-				a88: 0
+				a89: 0
 			}, this.mI[3] = {
 				name: "Mountains",
 				cu: 960,
 				ez: 960,
 				ha: 60,
 				hX: 8,
-				a88: 0
+				a89: 0
 			}, this.mI[4] = {
 				name: "Desert",
 				cu: 900,
 				ez: 900,
 				ha: 100,
 				hX: 5,
-				a88: 0
+				a89: 0
 			}, this.mI[5] = {
 				name: "Swamp",
 				cu: 1e3,
 				ez: 1e3,
 				ha: 100,
 				hX: 40,
-				a88: 0
+				a89: 0
 			}, this.mI[6] = {
 				name: "Snow",
 				cu: 1e3,
 				ez: 1e3,
 				ha: 100,
 				hX: 20,
-				a88: 0
+				a89: 0
 			}, this.mI[7] = {
 				name: "Cliffs",
 				cu: 1024,
 				ez: 1024,
 				ha: 128,
 				hX: 32,
-				a88: 0
+				a89: 0
 			}, this.mI[8] = {
 				name: "Pond",
 				cu: 820,
 				ez: 820,
 				ha: 200,
 				hX: 100,
-				a88: 0
+				a89: 0
 			}, this.mI[9] = {
 				name: "Halo",
 				cu: 1024,
 				ez: 1024,
 				ha: 128,
 				hX: 32,
-				a88: 0
+				a89: 0
 			}, this.mI[10] = {
 				name: "Europe",
-				mH: a9o,
-				mK: a9p,
-				a98: a9q
+				mH: a9p,
+				mK: a9q,
+				a99: a9r
 			}, this.mI[11] = {
 				name: "World",
-				mH: a9r,
-				mK: a9s,
-				a98: a9t
+				mH: a9s,
+				mK: a9t,
+				a99: a9u
 			}, this.mI[12] = {
 				name: "Caucasia",
-				mH: a9r,
-				mK: a9s,
-				a98: a9t
+				mH: a9s,
+				mK: a9t,
+				a99: a9u
 			}, this.mI[13] = {
 				name: "Africa",
-				mH: a9m,
+				mH: a9n,
 				mK: cos,
-				a98: a9n
+				a99: a9o
 			}, this.mI[14] = {
 				name: "Middle East",
-				mH: a9m,
+				mH: a9n,
 				mK: cos,
-				a98: a9n
+				a99: a9o
 			}, this.mI[15] = {
 				name: "Scandinavia",
-				mH: a9o,
-				mK: a9p,
-				a98: a9q
+				mH: a9p,
+				mK: a9q,
+				a99: a9r
 			}, this.mI[16] = {
 				name: "North America",
-				mH: a9o,
-				mK: a9p,
-				a98: a9q
+				mH: a9p,
+				mK: a9q,
+				a99: a9r
 			}, this.mI[17] = {
 				name: "South America",
-				mH: a9m,
+				mH: a9n,
 				mK: cos,
-				a98: a9n
+				a99: a9o
 			}, this.mI[18] = {
 				name: "Asia",
-				mH: a9r,
-				mK: a9s,
-				a98: a9t
-			}, this.mI[19] = {}, this.a9l = new Uint8Array(az.a5z), aE = 0; aE < az.a5z; aE++) this.a9l[aE] = aE
+				mH: a9s,
+				mK: a9t,
+				a99: a9u
+			}, this.mI[19] = {}, this.a9m = new Uint8Array(az.a60), aE = 0; aE < az.a60; aE++) this.a9m[aE] = aE
 	}
 }
 
@@ -5552,111 +5558,111 @@ function qg() {
 }
 
 function rh() {
-	var aR, cu, ez, max, a9u, hX, a9w, a9x, a9y, a9z, aA0, aA1, aA2, aA3, a9v = 1e4;
+	var aR, cu, ez, max, a9v, hX, a9x, a9y, a9z, aA0, aA1, aA2, aA3, aA4, a9w = 1e4;
 
-	function aAB(aAA, ha, bU) {
+	function aAC(aAB, ha, bU) {
 		var aE;
-		for (a9w[0] = aAA, aE = 1; aE < bU; aE++) a9w[aE] = a9w[aE - 1] + ha, ha = a9w[aE] >= a9v ? (a9w[aE] = a9v - 1, -ha) : a9w[aE] < 0 ? (a9w[aE] = 0, -ha) : (ha += 16384 <= em.random() ? hX : -hX) < -a9u ? -a9u : a9u < ha ? a9u : ha
+		for (a9x[0] = aAB, aE = 1; aE < bU; aE++) a9x[aE] = a9x[aE - 1] + ha, ha = a9x[aE] >= a9w ? (a9x[aE] = a9w - 1, -ha) : a9x[aE] < 0 ? (a9x[aE] = 0, -ha) : (ha += 16384 <= em.random() ? hX : -hX) < -a9v ? -a9v : a9v < ha ? a9v : ha
 	}
 
-	function aAD(hD, hE, aAE, bU) {
-		(aAE ? function(hD, hE, bU) {
+	function aAE(hD, hE, aAF, bU) {
+		(aAF ? function(hD, hE, bU) {
 			var aE;
-			for (aE = 0; aE < bU; aE++) aR[hE * cu + hD + aE] = a9w[aE]
+			for (aE = 0; aE < bU; aE++) aR[hE * cu + hD + aE] = a9x[aE]
 		} : function(hD, hE, bU) {
 			var aE;
-			for (aE = 0; aE < bU; aE++) aR[hE * cu + hD + aE * cu] = a9w[aE]
+			for (aE = 0; aE < bU; aE++) aR[hE * cu + hD + aE * cu] = a9x[aE]
 		})(hD, hE, bU)
 	}
 
-	function aAH(value, bU) {
-		var aE, a7h, dq, de = value - a9w[bU - 1];
+	function aAI(value, bU) {
+		var aE, a7i, dq, de = value - a9x[bU - 1];
 		if (0 != de) {
-			for (a7h = 1 + bJ(Math.abs(de), bU - 1), a7h = de < 0 ? -a7h : a7h, a9w[bU - 1] = value, dq = (dq = bU - 1 - bJ(Math.abs(de), Math.abs(a7h))) < 1 ? 1 : bU - 2 < dq ? bU - 2 : dq, aE = bU - 2; dq <= aE; aE--) a9w[aE] += de - (bU - 1 -
-				aE) * a7h;
+			for (a7i = 1 + bJ(Math.abs(de), bU - 1), a7i = de < 0 ? -a7i : a7i, a9x[bU - 1] = value, dq = (dq = bU - 1 - bJ(Math.abs(de), Math.abs(a7i))) < 1 ? 1 : bU - 2 < dq ? bU - 2 : dq, aE = bU - 2; dq <= aE; aE--) a9x[aE] += de - (bU - 1 -
+				aE) * a7i;
 			(de < 0 ? function(bU) {
 				var aE;
-				for (aE = bU - 2; 1 <= aE; aE--) a9w[aE] < 0 && (a9w[aE] = -a9w[aE] - 1)
+				for (aE = bU - 2; 1 <= aE; aE--) a9x[aE] < 0 && (a9x[aE] = -a9x[aE] - 1)
 			} : function(bU) {
 				var aE;
-				for (aE = bU - 2; 1 <= aE; aE--) a9w[aE] >= a9v && (a9w[aE] = 2 * a9v - a9w[aE] - 1)
+				for (aE = bU - 2; 1 <= aE; aE--) a9x[aE] >= a9w && (a9x[aE] = 2 * a9w - a9x[aE] - 1)
 			})(bU)
 		}
 	}
 
-	function aAK(aAL, aAM, bU) {
-		for (var aE = 0; aE < bU; aE++) aAL[aE] = aAM[aE]
+	function aAL(aAM, aAN, bU) {
+		for (var aE = 0; aE < bU; aE++) aAM[aE] = aAN[aE]
 	}
 
-	function aAN(ad) {
+	function aAO(ad) {
 		for (var aE = 0; aE < ad.length - 1; aE++) ad[aE] = ad[aE + 1] - ad[aE];
 		ad[ad.length - 1] = ad[ad.length - 3]
 	}
 
-	function aAO(sW, kt, dd) {
-		a9x.push(sW), a9y.push(kt), a9z.push(dd)
+	function aAP(sW, kt, dd) {
+		a9y.push(sW), a9z.push(kt), aA0.push(dd)
 	}
-	this.lc = function(aA4) {
-		! function(aA4) {
+	this.lc = function(aA5) {
+		! function(aA5) {
 			var aE;
-			for (cu = aA4[0], ez = aA4[1], a9u = aA4[2], hX = aA4[3], aR = new Int16Array(cu * ez), max = ez < cu ? cu : ez, a9w = new Int16Array(max), a9x = [], a9y = [], a9z = [], aA0 = new Array(cu), aA1 = new Array(ez), aE = cu - 1; 0 <=
-				aE; aE--) aA0[aE] = !1;
-			for (aE = ez - 1; 0 <= aE; aE--) aA1[aE] = !1;
-			aA2 = new Int16Array(cu), aA3 = new Int16Array(ez)
-		}(aA4),
+			for (cu = aA5[0], ez = aA5[1], a9v = aA5[2], hX = aA5[3], aR = new Int16Array(cu * ez), max = ez < cu ? cu : ez, a9x = new Int16Array(max), a9y = [], a9z = [], aA0 = [], aA1 = new Array(cu), aA2 = new Array(ez), aE = cu - 1; 0 <=
+				aE; aE--) aA1[aE] = !1;
+			for (aE = ez - 1; 0 <= aE; aE--) aA2[aE] = !1;
+			aA3 = new Int16Array(cu), aA4 = new Int16Array(ez)
+		}(aA5),
 		function(bU) {
-			var aAA = em.random() % a9v,
-				ha = em.random() % (2 * a9u + 1) - a9u;
-			aAB(aAA, ha, bU)
-		}(max), aAK(aA3, a9w, ez), aAD(0, 0, !0, cu);
-		var hD, hE, aA4 = aR[0],
+			var aAB = em.random() % a9w,
+				ha = em.random() % (2 * a9v + 1) - a9v;
+			aAC(aAB, ha, bU)
+		}(max), aAL(aA4, a9x, ez), aAE(0, 0, !0, cu);
+		var hD, hE, aA5 = aR[0],
 			bU = max,
-			ha = em.random() % (2 * a9u + 1) - a9u;
-		for (aAB(aA4, ha, bU), aAK(aA2, a9w, cu), aAD(0, 0, !1, ez), aAN(aA2), aAN(aA3), aAB(aR[cu - 1], aA2[cu - 1], ez), aAD(cu - 1, 0, !1, ez), aAB(aR[cu * (ez - 1)], aA3[ez - 1], cu), aAH(aR[cu * ez - 1], cu), aAD(0, ez - 1, !0, cu), aA0[cu -
-				1] = aA0[0] = !0, aA1[ez - 1] = aA1[0] = !0, aAO(0, cu, !0), aAO(0, ez, !1), ! function() {
-				var aAQ, sW;
+			ha = em.random() % (2 * a9v + 1) - a9v;
+		for (aAC(aA5, ha, bU), aAL(aA3, a9x, cu), aAE(0, 0, !1, ez), aAO(aA3), aAO(aA4), aAC(aR[cu - 1], aA3[cu - 1], ez), aAE(cu - 1, 0, !1, ez), aAC(aR[cu * (ez - 1)], aA4[ez - 1], cu), aAI(aR[cu * ez - 1], cu), aAE(0, ez - 1, !0, cu), aA1[cu -
+				1] = aA1[0] = !0, aA2[ez - 1] = aA2[0] = !0, aAP(0, cu, !0), aAP(0, ez, !1), ! function() {
+				var aAR, sW;
 				for (;;) {
-					if (aAQ = function() {
-							var aE, aAQ = a9x.length - 1;
-							for (aE = aAQ - 1; 0 <= aE; aE--) a9y[aE] > a9y[aAQ] && (aAQ = aE);
-							return aAQ
-						}(), a9y[aAQ] < 5) return;
-					sW = a9x[aAQ] + bJ(a9y[aAQ], 2), (a9z[aAQ] ? function(hD) {
-						var bU, aAT, aE, a1C = 0,
-							aAU = 0;
-						for (; aAU < ez - 1;) {
+					if (aAR = function() {
+							var aE, aAR = a9y.length - 1;
+							for (aE = aAR - 1; 0 <= aE; aE--) a9z[aE] > a9z[aAR] && (aAR = aE);
+							return aAR
+						}(), a9z[aAR] < 5) return;
+					sW = a9y[aAR] + bJ(a9z[aAR], 2), (aA0[aAR] ? function(hD) {
+						var bU, aAU, aE, a1C = 0,
+							aAV = 0;
+						for (; aAV < ez - 1;) {
 							for (aE = a1C + 1; aE < ez; aE++)
-								if (aA1[aE]) {
-									aAU = aE;
+								if (aA2[aE]) {
+									aAV = aE;
 									break
-								} bU = aAU - a1C + 1, aAB(aR[hD + cu * a1C], 0 === a1C ? aA2[hD] : a9w[aAT - 1] - a9w[aAT - 2], bU), aAH(aR[aAU * cu + hD], bU), aAD(hD, a1C, !1, bU), aAT = bU, a1C = aAU
+								} bU = aAV - a1C + 1, aAC(aR[hD + cu * a1C], 0 === a1C ? aA3[hD] : a9x[aAU - 1] - a9x[aAU - 2], bU), aAI(aR[aAV * cu + hD], bU), aAE(hD, a1C, !1, bU), aAU = bU, a1C = aAV
 						}
-						aA0[hD] = !0
+						aA1[hD] = !0
 					} : function(hE) {
-						var bU, aAT, aE, a1C = 0,
-							aAU = 0;
-						for (; aAU < cu - 1;) {
+						var bU, aAU, aE, a1C = 0,
+							aAV = 0;
+						for (; aAV < cu - 1;) {
 							for (aE = a1C + 1; aE < cu; aE++)
-								if (aA0[aE]) {
-									aAU = aE;
+								if (aA1[aE]) {
+									aAV = aE;
 									break
-								} bU = aAU - a1C + 1, aAB(aR[hE * cu + a1C], 0 === a1C ? aA3[hE] : a9w[aAT - 1] - a9w[aAT - 2], bU), aAH(aR[hE * cu + aAU], bU), aAD(a1C, hE, !0, bU), aAT = bU, a1C = aAU
+								} bU = aAV - a1C + 1, aAC(aR[hE * cu + a1C], 0 === a1C ? aA4[hE] : a9x[aAU - 1] - a9x[aAU - 2], bU), aAI(aR[hE * cu + aAV], bU), aAE(a1C, hE, !0, bU), aAU = bU, a1C = aAV
 						}
-						aA1[hE] = !0
-					})(sW), aAO(sW, a9x[aAQ] + a9y[aAQ] - sW, a9z[aAQ]), a9y[aAQ] = sW - a9x[aAQ] + 1
+						aA2[hE] = !0
+					})(sW), aAP(sW, a9y[aAR] + a9z[aAR] - sW, aA0[aAR]), a9z[aAR] = sW - a9y[aAR] + 1
 				}
 			}(), hD = 0; hD < cu; hD++)
-			if (!aA0[hD])
-				for (hE = 0; hE < ez; hE++) aA1[hE] || ! function(hD, hE) {
+			if (!aA1[hD])
+				for (hE = 0; hE < ez; hE++) aA2[hE] || ! function(hD, hE) {
 					var value = aR[hE * cu + hD - 1] + aR[(hE - 1) * cu + hD],
 						uq = 2;
-					aA0[hD + 1] && (uq++, value += aR[hE * cu + hD + 1]);
-					aA1[hE + 1] && (uq++, value += aR[(hE + 1) * cu + hD]);
+					aA1[hD + 1] && (uq++, value += aR[hE * cu + hD + 1]);
+					aA2[hE + 1] && (uq++, value += aR[(hE + 1) * cu + hD]);
 					aR[hE * cu + hD] = bJ(value, uq)
 				}(hD, hE)
-	}, this.a9A = function() {
+	}, this.a9B = function() {
 		return aR
-	}, this.a8v = function() {
+	}, this.a8w = function() {
 		aR = null
 	}
 }
@@ -5665,7 +5671,7 @@ function bJ(ej, cV) {
 	return Math.floor(ej / cV + 1 / (2 * cV))
 }
 
-function a4s(ej, cV) {
+function a4t(ej, cV) {
 	return 0 <= ej ? bJ(ej, cV) : -bJ(-ej, cV)
 }
 
@@ -5685,20 +5691,20 @@ function x4(ej, aR, cV) {
 	return aR < ej ? ej : cV < aR ? cV : aR
 }
 
-function aAW(aR, bU) {
+function aAX(aR, bU) {
 	for (var fV = bJ(aR + 1, 2), aE = 0; aE < bU; aE++) fV = bJ(fV + bJ(aR, fV), 2);
 	return fV
 }
 
 function cD(aR, bU) {
-	return aR < 1 ? 0 : aAW(aR, bU)
-}
-
-function aAX(hI, hJ, nD, ud, hK, hM, nE, ue) {
-	return !(hI + nD <= hK || hJ + ud <= hM || hK + nE <= hI || hM + ue <= hJ)
+	return aR < 1 ? 0 : aAX(aR, bU)
 }
 
 function aAY(hI, hJ, nD, ud, hK, hM, nE, ue) {
+	return !(hI + nD <= hK || hJ + ud <= hM || hK + nE <= hI || hM + ue <= hJ)
+}
+
+function aAZ(hI, hJ, nD, ud, hK, hM, nE, ue) {
 	return hI <= hK && hJ <= hM && hK + nE <= hI + nD && hM + ue <= hJ + ud
 }
 
@@ -5709,7 +5715,7 @@ function lo(aR) {
 function rB() {
 	this.cB = function(ej, cV) {
 		return Math.floor((ej + .5) / cV)
-	}, this.aAZ = function(ej, cV) {
+	}, this.aAa = function(ej, cV) {
 		return Math.floor(ej * (cV + .5))
 	}, this.sqrt = function(aR) {
 		return ~~Math.sqrt(aR + .5)
@@ -5717,27 +5723,27 @@ function rB() {
 		return Math.floor(Math.pow(2, oX) + .5)
 	}, this.pt = function(value, min, max) {
 		return Math.min(Math.max(value, min), max)
-	}, this.aAa = function(ae, ag, ai) {
+	}, this.aAb = function(ae, ag, ai) {
 		return Math.max(Math.min(ae, ag), ai)
-	}, this.aAb = function(aAc, aAd, hD, hE) {
-		hD -= aAc, aAc = hE - aAd, hE = 0;
-		return 0 == hD ? hE = 0 <= aAc ? Math.PI : 0 : (hE = Math.aAe(aAc / hD), hE += 0 < hD ? .5 * Math.PI : 1.5 * Math.PI), hE
+	}, this.aAc = function(aAd, aAe, hD, hE) {
+		hD -= aAd, aAd = hE - aAe, hE = 0;
+		return 0 == hD ? hE = 0 <= aAd ? Math.PI : 0 : (hE = Math.aAf(aAd / hD), hE += 0 < hD ? .5 * Math.PI : 1.5 * Math.PI), hE
 	}, this.log2 = function(aR) {
 		return Math.floor(!!aR * (1 + Math.log2(aR + .5)))
 	}
 }
 
 function sF() {
-	this.aAf = new aAg, this.b = function() {
-		this.aAf.b()
+	this.aAg = new aAh, this.b = function() {
+		this.aAg.b()
 	}, this.resize = function() {
-		this.aAf.resize()
+		this.aAg.resize()
 	}
 }
 
-function aAg() {
-	var aAh = new kz,
-		aAi = new ka("Close", aAh.lE, dB.iv),
+function aAh() {
+	var aAi = new kz,
+		aAj = new ka("Close", aAi.lE, dB.iv),
 		kr = new kq;
 	this.b = function() {
 		var aE;
@@ -5756,15 +5762,15 @@ function aAg() {
 		}));
 		kr.kx(new ka("Sample mmmmmmmmmmmmmmmm", () => {
 			console.log("Sample Button")
-		})), aAh.b("Menu", aAi, [kr]), aAi.kh(cM.aAj.q3())
+		})), aAi.b("Menu", aAj, [kr]), aAj.kh(cM.aAk.q3())
 	}, this.show = function() {
-		aAh.show()
+		aAi.show()
 	}, this.resize = function() {
-		aAh.resize(), kr.resize()
+		aAi.resize(), kr.resize()
 	}
 }
 
-function a8Y() {
+function a8Z() {
 	"function" != typeof Math.log2 && (Math.log2 = function(hD) {
 		return Math.log(hD) / Math.log(2)
 	}), "function" != typeof Math.log10 && (Math.log10 = function(hD) {
@@ -5777,15 +5783,15 @@ function a8Y() {
 function ry() {
 	this.a46 = 0;
 	var a07 = -1,
-		aAk = !1,
+		aAl = !1,
 		w4 = [],
-		aAl = 0;
+		aAm = 0;
 
-	function pP(hD, hE, aAu, aE) {
-		return 0 === aE ? hD >= aAu.hI && (0 === aE || hE >= aAu.hJ) && hE <= aAu.hJ + aAu.ud : (hE -= aE * (aAu.ud - pz), hD >= aAu.hK && hE >= aAu.hJ && hE <= aAu.hJ + aAu.ud)
+	function pP(hD, hE, aAv, aE) {
+		return 0 === aE ? hD >= aAv.hI && (0 === aE || hE >= aAv.hJ) && hE <= aAv.hJ + aAv.ud : (hE -= aE * (aAv.ud - pz), hD >= aAv.hK && hE >= aAv.hJ && hE <= aAv.hJ + aAv.ud)
 	}
 
-	function aAv() {
+	function aAw() {
 		var nD = Math.floor((a0 ? .145 : .09) * ck),
 			nE = Math.floor(2.25 * nD),
 			kt = Math.floor(.065 * (a0 ? .53 : .36) * ck),
@@ -5801,18 +5807,18 @@ function ry() {
 		}
 	}
 
-	function a1Q(hD, hE, cu, ez, dO, pv, cV, aB3, v) {
+	function a1Q(hD, hE, cu, ez, dO, pv, cV, aB4, v) {
 		var cs = (v === w4[0][0].name ? .65 : .5) * ez,
 			font = cM.iL.lL(cs, 1),
 			font = cv.measureText(v, font);
-		.92 * cu < font && (cs *= .92 * cu / font), d8.font = cM.iL.lL(cs, 1), aB3 && (dO += 80, pv += 80, cV += 80), d8.fillStyle = "rgba(" + dO + "," + pv + "," + cV + ",0.6)", d8.fillRect(hD, hE, cu, ez), d8.fillStyle = dB.dC, d8.fillRect(hD, hE,
+		.92 * cu < font && (cs *= .92 * cu / font), d8.font = cM.iL.lL(cs, 1), aB4 && (dO += 80, pv += 80, cV += 80), d8.fillStyle = "rgba(" + dO + "," + pv + "," + cV + ",0.6)", d8.fillRect(hD, hE, cu, ez), d8.fillStyle = dB.dC, d8.fillRect(hD, hE,
 			cu, pz), d8.fillRect(hD, hE + ez - pz, cu, pz), d8.fillRect(hD, hE, pz, ez), d8.fillRect(hD + cu - pz, hE, pz, ez), d8.fillText(v, Math.floor(hD + cu / 2), Math.floor(hE + ez / 2 + .1 * cs))
 	}
 	this.hS = null, this.z1 = new Uint8Array(4), this.tq = function() {
 		return m ? 4 : a0 ? 2 : 1
 	}, this.b = function() {
-		var aAn;
-		this.aAm(), w4 = [new Array(6), new Array(10), new Array(7)], this.z1[0] = 10, this.z1[1] = 5, this.z1[2] = 2, this.z1[3] = 1, w4[0][0] = {
+		var aAo;
+		this.aAn(), w4 = [new Array(6), new Array(10), new Array(7)], this.z1[0] = 10, this.z1[1] = 5, this.z1[2] = 2, this.z1[3] = 1, w4[0][0] = {
 			name: "More",
 			id: 0,
 			dO: 140,
@@ -5843,7 +5849,7 @@ function ry() {
 			pv: 0,
 			cV: 0
 		}, w4[0][5] = {
-			name: a8R,
+			name: a8S,
 			id: 5,
 			dO: 90,
 			pv: 0,
@@ -5956,7 +5962,7 @@ function ry() {
 			dO: 0,
 			pv: 0,
 			cV: 0
-		}) : "" !== (aAn = n.loadString(187)) && "1" !== aAn || w4[2].push({
+		}) : "" !== (aAo = n.loadString(187)) && "1" !== aAo || w4[2].push({
 			name: "Consent Form",
 			id: 7,
 			dO: 0,
@@ -5974,149 +5980,149 @@ function ry() {
 			dO: 0,
 			pv: 0,
 			cV: 0
-		}), this.aAo(), this.aAp()
-	}, this.aAm = function() {
+		}), this.aAp(), this.aAq()
+	}, this.aAn = function() {
 		this.hS = {
 			uZ: 0,
-			aAq: 0,
+			aAr: 0,
 			xW: 0,
 			hT: 1,
-			aAr: 2,
-			a78: 4,
+			aAs: 2,
+			a79: 4,
 			z2: 2,
-			a7H: 2
+			a7I: 2
 		}
-	}, this.aAp = function() {
-		if (settings.hideAllLinks) a26.ai[0] = a26.ai[1] = !this.hS.aAq;
+	}, this.aAq = function() {
+		if (settings.hideAllLinks) a26.ai[0] = a26.ai[1] = !this.hS.aAr;
 		else a26.ai[0] = a26.ai[1] = true;
-		a26.ai[2] = a26.ai[3] = a26.ai[4] = !this.hS.aAq, w4[1][1].pv = this.hS.uZ ? 130 : 0, w4[1][2].pv = this.hS.aAq ? 130 : 0, w4[1][3].pv = this.hS.xW ? 130 : 0, w4[1][4].pv = this.hS.hT ? 130 : 0, this.aAs(5), this.aAs(6), this.aAs(7)
-	}, this.aAo = function() {
+		a26.ai[2] = a26.ai[3] = a26.ai[4] = !this.hS.aAr, w4[1][1].pv = this.hS.uZ ? 130 : 0, w4[1][2].pv = this.hS.aAr ? 130 : 0, w4[1][3].pv = this.hS.xW ? 130 : 0, w4[1][4].pv = this.hS.hT ? 130 : 0, this.aAt(5), this.aAt(6), this.aAt(7)
+	}, this.aAp = function() {
 		var t5 = a5().split("");
-		t5.length < 14 ? this.aAm() : (this.hS.uZ = parseInt(t5[6]), this.hS.aAq = parseInt(t5[7]), this.hS.xW = parseInt(t5[8]), this.hS.hT = parseInt(t5[9]), this.hS.aAr = parseInt(t5[10]), this.hS.a78 = parseInt(t5[11]), this.hS.z2 = parseInt(
+		t5.length < 14 ? this.aAn() : (this.hS.uZ = parseInt(t5[6]), this.hS.aAr = parseInt(t5[7]), this.hS.xW = parseInt(t5[8]), this.hS.hT = parseInt(t5[9]), this.hS.aAs = parseInt(t5[10]), this.hS.a79 = parseInt(t5[11]), this.hS.z2 = parseInt(
 			t5[12]))
 	}, this.a1P = function() {
 		var v = d4.tP[2].nz.a1N();
-		aI((v += ~~this.hS.uZ) + ~~this.hS.aAq + ~~this.hS.xW + ~~this.hS.hT + ~~this.hS.aAr + ~~this.hS.a78 + ~~this.hS.z2 + "0")
-	}, this.aAs = function(aE) {
-		5 === aE ? w4[1][aE].name = "Resolution: " + g9.uQ(100 * ph.aAt(), 1) : 6 === aE ? w4[1][aE].name = "Country Minimum Font Size: " + (this.hS.a78 < 4 ? 1 + this.hS.a78 : 2 * (this.hS.a78 - 1)) : 7 === aE && (w4[1][aE].name =
+		aI((v += ~~this.hS.uZ) + ~~this.hS.aAr + ~~this.hS.xW + ~~this.hS.hT + ~~this.hS.aAs + ~~this.hS.a79 + ~~this.hS.z2 + "0")
+	}, this.aAt = function(aE) {
+		5 === aE ? w4[1][aE].name = "Resolution: " + g9.uQ(100 * ph.aAu(), 1) : 6 === aE ? w4[1][aE].name = "Country Minimum Font Size: " + (this.hS.a79 < 4 ? 1 + this.hS.a79 : 2 * (this.hS.a79 - 1)) : 7 === aE && (w4[1][aE].name =
 			"Leaderboard Refresh Rate: " + g9.uQ(100 / this.z1[this.hS.z2], 1))
 	}, this.cz = function(hD, hE) {
-		var aE, aAu, aAx;
+		var aE, aAv, aAy;
 		if (!(7 <= aT.pT())) {
-			aAu = aAv();
-			var gearIconX = aAu.hI - aAu.nD / 2;
-			if (hD > gearIconX && hD < (gearIconX + aAu.ud) && hE > aAu.hJ && hE < (aAu.hJ + aAu.ud)) return WindowManager.openWindow("settings");
-			if (aAk) {
-				for (aE = 1; aE < w4[aAl].length; aE++)
-					if (pP(hD, hE, aAu, aE)) return aAx = w4[aAl][aE], 0 === aAl ? 1 === aAx.id ? (hR.a46 = (hR.a46 + 1) % 4, aAx.name = (hR.a46 % 2 ? "Proxy " : "Lobby ") + (1 + (hR.a46 >> 1)), aL.cx = !0) : 2 === aAx.id ? (aAl = 1, aL.cx = !
-						0) : 3 === aAx.id ? (aAl = 2, aL.cx = !0) : 4 === aAx.id ? lJ.show() : 5 === aAx.id && (console.log("try showing ad:"), aO.i()) : 1 === aAl ? 1 === aAx.id ? (hR.hS.uZ = !hR.hS.uZ, aAx.pv = hR.hS.uZ ? 130 : 0, hR.a1P(),
-							aL.cx = !0) : 2 === aAx.id ? (hR.hS.aAq = !hR.hS.aAq, hR.aAp(), hR.a1P(), aL.cx = !0) : 3 === aAx.id ? (hR.hS.xW = !hR.hS.xW, aAx.pv = hR.hS.xW ? 130 : 0, hR.a1P(), aL.cx = !0) : 4 === aAx.id ? (hR.hS.hT = !hR.hS
-							.hT, aAx.pv = hR.hS.hT ? 130 : 0, hR.a1P(), aL.cx = !0) : 5 === aAx.id ? (hR.hS.aAr++, hR.hS.aAr %= 8, hR.aAs(aAx.id), hR.a1P(), ph.a3r(1), aL.cx = !0) : 6 === aAx.id ? (hR.hS.a78++, hR.hS.a78 %= 10, hR.aAs(aAx
-							.id), hR.a1P(), aL.cx = !0) : 7 === aAx.id ? (hR.hS.z2++, hR.hS.z2 %= 4, hR.aAs(aAx.id), hR.a1P(), aL.cx = !0) : 8 === aAx.id ? (hR.aAm(), hR.aAp(), hR.a1P(), ph.a3r(1), aL.cx = !0) : 9 === aAx.id && (aAl = 0, aL
-							.cx = !0) : 1 === aAx.id ? (pQ.b(r8.aAy, !0), pQ.b(r8.aAy, !1)) : 2 === aAx.id ? (pQ.b(r8.aAz, !0), pQ.b(r8.aAz, !1)) : 3 === aAx.id ? (pQ.b(r8.aB0, !0), pQ.b(r8.aB0, !1)) : 4 === aAx.id ? (pQ.b(r8.a8a, !0), pQ.b(
-							r8.a8a, !1)) : 5 === aAx.id ? (pQ.b(r8.uh, !0), pQ.b(r8.uh, !1)) : 13 === aAx.id ? (pQ.b(r8.aB1, !0), pQ.b(r8.aB1, !1)) : 14 === aAx.id ? (pQ.b(r8.aB2, !0), pQ.b(r8.aB2, !1)) : 6 === aAx.id ? (aAl = 0, aL.cx = !
-						0) : 7 === aAx.id ? m ? window.webkit.messageHandlers.iosCommandA.postMessage("showConsentForm") : n.setState(7) : 12 === aAx.id && n.setState(14), !0;
-				return aAk = !1, !(aL.cx = !0)
+			aAv = aAw();
+			var gearIconX = aAv.hI - aAv.nD / 2;
+			if (hD > gearIconX && hD < (gearIconX + aAv.ud) && hE > aAv.hJ && hE < (aAv.hJ + aAv.ud)) return WindowManager.openWindow("settings");
+			if (aAl) {
+				for (aE = 1; aE < w4[aAm].length; aE++)
+					if (pP(hD, hE, aAv, aE)) return aAy = w4[aAm][aE], 0 === aAm ? 1 === aAy.id ? (hR.a46 = (hR.a46 + 1) % 4, aAy.name = (hR.a46 % 2 ? "Proxy " : "Lobby ") + (1 + (hR.a46 >> 1)), aL.cx = !0) : 2 === aAy.id ? (aAm = 1, aL.cx = !
+						0) : 3 === aAy.id ? (aAm = 2, aL.cx = !0) : 4 === aAy.id ? lJ.show() : 5 === aAy.id && (console.log("try showing ad:"), aO.i()) : 1 === aAm ? 1 === aAy.id ? (hR.hS.uZ = !hR.hS.uZ, aAy.pv = hR.hS.uZ ? 130 : 0, hR.a1P(),
+							aL.cx = !0) : 2 === aAy.id ? (hR.hS.aAr = !hR.hS.aAr, hR.aAq(), hR.a1P(), aL.cx = !0) : 3 === aAy.id ? (hR.hS.xW = !hR.hS.xW, aAy.pv = hR.hS.xW ? 130 : 0, hR.a1P(), aL.cx = !0) : 4 === aAy.id ? (hR.hS.hT = !hR.hS
+							.hT, aAy.pv = hR.hS.hT ? 130 : 0, hR.a1P(), aL.cx = !0) : 5 === aAy.id ? (hR.hS.aAs++, hR.hS.aAs %= 8, hR.aAt(aAy.id), hR.a1P(), ph.a3r(1), aL.cx = !0) : 6 === aAy.id ? (hR.hS.a79++, hR.hS.a79 %= 10, hR.aAt(aAy
+							.id), hR.a1P(), aL.cx = !0) : 7 === aAy.id ? (hR.hS.z2++, hR.hS.z2 %= 4, hR.aAt(aAy.id), hR.a1P(), aL.cx = !0) : 8 === aAy.id ? (hR.aAn(), hR.aAq(), hR.a1P(), ph.a3r(1), aL.cx = !0) : 9 === aAy.id && (aAm = 0, aL
+							.cx = !0) : 1 === aAy.id ? (pQ.b(r8.aAz, !0), pQ.b(r8.aAz, !1)) : 2 === aAy.id ? (pQ.b(r8.aB0, !0), pQ.b(r8.aB0, !1)) : 3 === aAy.id ? (pQ.b(r8.aB1, !0), pQ.b(r8.aB1, !1)) : 4 === aAy.id ? (pQ.b(r8.a8b, !0), pQ.b(
+							r8.a8b, !1)) : 5 === aAy.id ? (pQ.b(r8.uh, !0), pQ.b(r8.uh, !1)) : 13 === aAy.id ? (pQ.b(r8.aB2, !0), pQ.b(r8.aB2, !1)) : 14 === aAy.id ? (pQ.b(r8.aB3, !0), pQ.b(r8.aB3, !1)) : 6 === aAy.id ? (aAm = 0, aL.cx = !
+						0) : 7 === aAy.id ? m ? window.webkit.messageHandlers.iosCommandA.postMessage("showConsentForm") : n.setState(7) : 12 === aAy.id && n.setState(14), !0;
+				return aAl = !1, !(aL.cx = !0)
 			}
-			return !!pP(hD, hE, aAu, 0) && (aAk = !(aAl = 0), aL.cx = !0)
+			return !!pP(hD, hE, aAv, 0) && (aAl = !(aAm = 0), aL.cx = !0)
 		}
 	}, this.om = function(hD, hE) {
-		var aE, aAu, pw, iA;
+		var aE, aAv, pw, iA;
 		if (!(7 <= aT.pT())) {
-			for (aAu = aAv(), pw = a07, iA = aAk ? 0 === aAl ? w4[aAl].length - 2 : w4[aAl].length : 1, a07 = -1, aE = 0; aE < iA; aE++)
-				if (pP(hD, hE, aAu, aE)) {
+			for (aAv = aAw(), pw = a07, iA = aAl ? 0 === aAm ? w4[aAm].length - 2 : w4[aAm].length : 1, a07 = -1, aE = 0; aE < iA; aE++)
+				if (pP(hD, hE, aAv, aE)) {
 					a07 = aE;
 					break
 				} pw !== a07 && (aL.cx = !0)
 		}
 	}, this.d7 = function() {
-		var aE, iA, aAu;
-		if (!(7 <= aT.pT()) && (aAu = aAv(), d8.textAlign = dA, d8.textBaseline = d9, a1Q(aAu.hI, aAu.hJ, aAu.nD, aAu.ud, w4[aAl][0].dO, w4[aAl][0].pv, w4[aAl][0].cV, 0 === a07, w4[aAl][0].name), d8.imageSmoothingEnabled = true, d8.drawImage(
-				settingsGearIcon, aAu.hI - aAu.nD / 2, aAu.hJ, aAu.ud, aAu.ud), d8.imageSmoothingEnabled = false, d8.font = "bold " + Math.floor(aAu.ud * 0.4) + "px " + settings.fontName, (!aAk && d8.fillText("Win count: " + wins_counter,
-				Math.floor(aAu.hI + aAu.nD / 2), Math.floor((aAu.hJ + aAu.ud / 2) * 2.1))), aAk))
-			for (iA = w4[aAl].length, aE = 1; aE < iA; aE++) a1Q(aAu.hK, aAu.hJ + aE * aAu.ud - aE * pz, aAu.nE, aAu.ud, w4[aAl][aE].dO, w4[aAl][aE].pv, w4[aAl][aE].cV, a07 === aE, w4[aAl][aE].name)
+		var aE, iA, aAv;
+		if (!(7 <= aT.pT()) && (aAv = aAw(), d8.textAlign = dA, d8.textBaseline = d9, a1Q(aAv.hI, aAv.hJ, aAv.nD, aAv.ud, w4[aAm][0].dO, w4[aAm][0].pv, w4[aAm][0].cV, 0 === a07, w4[aAm][0].name), d8.imageSmoothingEnabled = true, d8.drawImage(
+				settingsGearIcon, aAv.hI - aAv.nD / 2, aAv.hJ, aAv.ud, aAv.ud), d8.imageSmoothingEnabled = false, d8.font = "bold " + Math.floor(aAv.ud * 0.4) + "px " + settings.fontName, (!aAl && d8.fillText("Win count: " + wins_counter,
+				Math.floor(aAv.hI + aAv.nD / 2), Math.floor((aAv.hJ + aAv.ud / 2) * 2.1))), aAl))
+			for (iA = w4[aAm].length, aE = 1; aE < iA; aE++) a1Q(aAv.hK, aAv.hJ + aE * aAv.ud - aE * pz, aAv.nE, aAv.ud, w4[aAm][aE].dO, w4[aAm][aE].pv, w4[aAm][aE].cV, a07 === aE, w4[aAm][aE].name)
 	}
 }
 
 function ri() {
-	var xs, aB5, aB6, aB7, a89 = !1;
+	var xs, aB6, aB7, aB8, a8A = !1;
 
-	function aB8() {
-		a89 = !0, xs = -1, aB5 = new Array(4);
-		for (var aE = 3; 0 <= aE; aE--) aB5[aE] = !1;
-		var aB9 = Math.floor(1 + .02 * vW);
-		aB6 = new Array(4), (aB7 = new Array(4))[1] = aB7[3] = aB6[0] = aB6[2] = 0, aB7[0] = aB6[3] = -aB9, aB6[1] = aB7[2] = aB9
+	function aB9() {
+		a8A = !0, xs = -1, aB6 = new Array(4);
+		for (var aE = 3; 0 <= aE; aE--) aB6[aE] = !1;
+		var aBA = Math.floor(1 + .02 * vW);
+		aB7 = new Array(4), (aB8 = new Array(4))[1] = aB8[3] = aB7[0] = aB7[2] = 0, aB8[0] = aB7[3] = -aBA, aB7[1] = aB8[2] = aBA
 	}
 
-	function aBA() {
+	function aBB() {
 		if (-1 !== xs)
 			if (0 !== gg && gY.iA()) {
-				for (var aBB = !1, aE = 3; 0 <= aE; aE--) aB5[aE] && (aBB = !0, eB += aB6[aE], eD += aB7[aE], g8.om(aB6[aE], aB7[aE]), hv.xZ());
-				aBB ? aL.cx = !0 : hz.i0()
+				for (var aBC = !1, aE = 3; 0 <= aE; aE--) aB6[aE] && (aBC = !0, eB += aB7[aE], eD += aB8[aE], g8.om(aB7[aE], aB8[aE]), hv.xZ());
+				aBC ? aL.cx = !0 : hz.i0()
 			} else hz.i0()
 	}
 	this.pa = function(cm) {
-		0 !== gg && gY.iA() && (a89 || aB8(), aB5[cm] = !0, -1 === xs) && (xs = setInterval(aBA, 20), aBA())
+		0 !== gg && gY.iA() && (a8A || aB9(), aB6[cm] = !0, -1 === xs) && (xs = setInterval(aBB, 20), aBB())
 	}, this.pV = function(cm) {
-		if (0 !== gg && (a89 || aB8(), aB5[cm] = !1, -1 !== xs)) {
-			for (var aBB = !1, aE = 3; 0 <= aE; aE--) aBB = aBB || aB5[aE];
-			aBB || this.i0()
+		if (0 !== gg && (a8A || aB9(), aB6[cm] = !1, -1 !== xs)) {
+			for (var aBC = !1, aE = 3; 0 <= aE; aE--) aBC = aBC || aB6[aE];
+			aBC || this.i0()
 		}
 	}, this.i0 = function() {
-		if (a89 && -1 !== xs) {
-			for (var aE = 3; 0 <= aE; aE--) aB5[aE] = !1;
+		if (a8A && -1 !== xs) {
+			for (var aE = 3; 0 <= aE; aE--) aB6[aE] = !1;
 			clearInterval(xs), xs = -1
 		}
 	}
 }
 
 function rj() {
-	var aBD;
+	var aBE;
 
-	function aBJ(hI, hJ, hK, hM) {
+	function aBK(hI, hJ, hK, hM) {
 		return Math.abs(hK - hI) + Math.abs(hM - hJ)
 	}
-	this.aBE = function() {
-		return aBD
-	}, this.es = function(player, aBF) {
+	this.aBF = function() {
+		return aBE
+	}, this.es = function(player, aBG) {
 		var aE;
-		if (0 !== bo[player].length && bW.bX(aBF) && (bW.bh(aBF) || bW.bg(aBF) !== player))
+		if (0 !== bo[player].length && bW.bX(aBG) && (bW.bh(aBG) || bW.bg(aBG) !== player))
 			for (aE = 21; 0 <= aE; aE--)
-				if (function(aBD, aBF) {
-						var aBI, aE, mN = bW.hN(aBD),
-							mO = bW.d6(aBD),
-							mj = bW.hN(aBF),
-							mi = bW.d6(aBF),
-							aB9 = aBJ(mN, mO, mj, mi);
-						if (!(aB9 < 2))
-							for (aBI = aBD, aE = 0; aE < aB9; aE++)
-								if (Math.abs(mj - bW.hN(aBI)) >= Math.abs(mi - bW.d6(aBI)) ? aBI += av[mN < mj ? 1 : 3] : aBI += av[mO < mi ? 2 : 0], !bW.sm(aBI)) return !!bW.bX(aBI) && !(0 === aE || aE + 20 < aB9);
+				if (function(aBE, aBG) {
+						var aBJ, aE, mN = bW.hN(aBE),
+							mO = bW.d6(aBE),
+							mj = bW.hN(aBG),
+							mi = bW.d6(aBG),
+							aBA = aBK(mN, mO, mj, mi);
+						if (!(aBA < 2))
+							for (aBJ = aBE, aE = 0; aE < aBA; aE++)
+								if (Math.abs(mj - bW.hN(aBJ)) >= Math.abs(mi - bW.d6(aBJ)) ? aBJ += av[mN < mj ? 1 : 3] : aBJ += av[mO < mi ? 2 : 0], !bW.sm(aBJ)) return !!bW.bX(aBJ) && !(0 === aE || aE + 20 < aBA);
 						return
-					}(aBD = 21 === aE ? function(border, aBF) {
-						for (var aB9, mj = bW.hN(aBF), mi = bW.d6(aBF), cm = 0, min = aBJ(mj, mi, bW.hN(border[0]), bW.d6(border[0])), aE = border.length - 1; 1 <= aE; aE--)(aB9 = aBJ(mj, mi, bW.hN(border[aE]), bW.d6(border[aE]))) < min && (
-							min = aB9, cm = aE);
+					}(aBE = 21 === aE ? function(border, aBG) {
+						for (var aBA, mj = bW.hN(aBG), mi = bW.d6(aBG), cm = 0, min = aBK(mj, mi, bW.hN(border[0]), bW.d6(border[0])), aE = border.length - 1; 1 <= aE; aE--)(aBA = aBK(mj, mi, bW.hN(border[aE]), bW.d6(border[aE]))) < min && (
+							min = aBA, cm = aE);
 						return border[cm]
-					}(bo[player], aBF) : bo[player][bJ(aE * bo[player].length, 21)], aBF)) return !0;
+					}(bo[player], aBG) : bo[player][bJ(aE * bo[player].length, 21)], aBG)) return !0;
 		return !1
 	}
 }
 
-function a8i() {
-	var aBK = !1,
+function a8j() {
+	var aBL = !1,
 		uk = 0,
 		cu = 0,
 		nD = 0,
 		kt = 0,
 		dL = null,
 		n8 = null,
-		aBL = null;
+		aBM = null;
 
-	function aBN() {
-		for (var a2z, aBQ = 0, bU = 0, fV = Math.floor(cu / 2), dO = Math.floor(nD / 2), a2y = 1.5 * Math.PI, aE = qU; 0 <= aE; aE--) bU += aBL[aE], 0 === aBL[aE] && aBQ++;
-		if (aBK = !1, n8.clearRect(0, 0, cu, cu), n8.fillStyle = dB.iR, n8.fillRect(0, 0, cu, cu), n8.fillStyle = dB.dC, n8.fillRect(0, 0, cu, kt), n8.fillRect(0, 0, kt, cu), n8.fillRect(cu - kt, 0, kt, cu), n8.fillRect(0, cu - kt, cu, kt), 0 < bU)
-			if (aBQ === qU) {
+	function aBO() {
+		for (var a2z, aBR = 0, bU = 0, fV = Math.floor(cu / 2), dO = Math.floor(nD / 2), a2y = 1.5 * Math.PI, aE = qU; 0 <= aE; aE--) bU += aBM[aE], 0 === aBM[aE] && aBR++;
+		if (aBL = !1, n8.clearRect(0, 0, cu, cu), n8.fillStyle = dB.iR, n8.fillRect(0, 0, cu, cu), n8.fillStyle = dB.dC, n8.fillRect(0, 0, cu, kt), n8.fillRect(0, 0, kt, cu), n8.fillRect(cu - kt, 0, kt, cu), n8.fillRect(0, cu - kt, cu, kt), 0 < bU)
+			if (aBR === qU) {
 				for (aE = qU; 0 <= aE; aE--)
-					if (0 < aBL[aE]) {
+					if (0 < aBM[aE]) {
 						! function(aE, fV, dO) {
 							n8.fillStyle = fW.a33[fW.oE[aE]], n8.beginPath(), n8.arc(fV, fV, dO, 0, 2 * Math.PI), n8.fill()
 						}(aE, fV, dO);
@@ -6127,9 +6133,9 @@ function a8i() {
 					n8.font = cM.iL.lL(cs, 1), n8.fillStyle = dB.dC, n8.fillText("100%", fV, fV + .1 * cs)
 				}(fV)
 			} else {
-				for (aE = 0; aE <= qU; aE++) 0 < aBL[aE] && (! function(aE, fV, dO, a2y, a2z) {
+				for (aE = 0; aE <= qU; aE++) 0 < aBM[aE] && (! function(aE, fV, dO, a2y, a2z) {
 					n8.fillStyle = fW.a33[fW.oE[aE]], n8.beginPath(), n8.arc(fV, fV, dO, a2y, a2z), n8.lineTo(fV, fV), n8.fill()
-				}(aE, fV, dO, a2y, a2z = a2y + 2 * Math.PI * aBL[aE] / bU), function(fV, dO, a2y, a2z) {
+				}(aE, fV, dO, a2y, a2z = a2y + 2 * Math.PI * aBM[aE] / bU), function(fV, dO, a2y, a2z) {
 					var aR = (a2z - a2y) / (2 * Math.PI),
 						cs = +dO * Math.min(aR, .37);
 					cs < 8 || (a2y = (a2y + a2z) / 2, a2z = Math.floor(100 * aR + .5) + "%", dO *= .525 - Math.max(.6 * (aR - .7), 0), n8.font = cM.iL.lL(cs, 1), n8.fillStyle = dB.dC, n8.fillText(a2z, fV + Math.cos(a2y) * dO, fV + Math.cos(
@@ -6148,32 +6154,32 @@ function a8i() {
 	this.b = function() {
 		if (cS) {
 			var aE;
-			for (uk = 0, aBL = new Uint32Array(qU + 1), aE = qU; 0 <= aE; aE--) aBL[aE] = 0;
-			for (aE = fY - 1; 0 <= aE; aE--) aBL[fW.fX[fZ[aE]]] += 1;
+			for (uk = 0, aBM = new Uint32Array(qU + 1), aE = qU; 0 <= aE; aE--) aBM[aE] = 0;
+			for (aE = fY - 1; 0 <= aE; aE--) aBM[fW.fX[fZ[aE]]] += 1;
 			this.resize()
-		} else aBL = n8 = dL = null
+		} else aBM = n8 = dL = null
 	}, this.wL = function() {
 		return cu
 	}, this.resize = function() {
 		cS && (cu = Math.floor(a0 && !hu ? .18 * vW : .13 * ck), cu = (cu *= 1 + (.5 + .2 * a0) * hu) + cu % 2, nD = Math.floor(7 * cu / 8), (dL = dL || document.createElement("canvas")).width = cu, dL.height = cu, n8 = dL.getContext("2d", {
 			alpha: !0
-		}), kt = Math.max(1, .015 * cu), n8.lineWidth = kt, n8.strokeStyle = dB.dC, cM.iL.textAlign(n8, 1), cM.iL.textBaseline(n8, 1), aBN())
+		}), kt = Math.max(1, .015 * cu), n8.lineWidth = kt, n8.strokeStyle = dB.dC, cM.iL.textAlign(n8, 1), cM.iL.textBaseline(n8, 1), aBO())
 	}, this.oG = function() {
-		return aBL[this.oF()]
+		return aBM[this.oF()]
 	}, this.o1 = function() {
 		return uk = 31, this.fF(), this.oF()
 	}, this.oF = function() {
-		for (var aBO = 0, aE = qU; 0 < aE; aE--) aBL[aE] > aBL[aBO] && (aBO = aE);
-		return aBO
+		for (var aBP = 0, aE = qU; 0 < aE; aE--) aBM[aE] > aBM[aBP] && (aBP = aE);
+		return aBP
 	}, this.fF = function() {
 		if (cS && 32 <= ++uk) {
 			var aE;
-			for (uk = 0, aE = qU; 0 <= aE; aE--) aBL[aE] = 0;
-			for (aE = fY - 1; 0 <= aE; aE--) aBL[fW.fX[fZ[aE]]] += bv[fZ[aE]];
-			aBK = !0
+			for (uk = 0, aE = qU; 0 <= aE; aE--) aBM[aE] = 0;
+			for (aE = fY - 1; 0 <= aE; aE--) aBM[fW.fX[fZ[aE]]] += bv[fZ[aE]];
+			aBL = !0
 		}
 	}, this.cp = function() {
-		cS && aBK && aBN()
+		cS && aBL && aBO()
 	}, this.d7 = function() {
 		cS && (hu ? d8.drawImage(dL, ko, ko) : d8.drawImage(dL, ko, wM + 2 * ko))
 	}
@@ -6183,30 +6189,30 @@ function sA() {
 	this.a2T = function() {
 		n || m || function(key) {
 			if ("undefined" == typeof URLSearchParams) return null;
-			var aBV = window.location.search,
-				aBV = new URLSearchParams(aBV).get(key);
-			if ("string" != typeof aBV || aBV.length < 1) return null;
-			return aBV
+			var aBW = window.location.search,
+				aBW = new URLSearchParams(aBW).get(key);
+			if ("string" != typeof aBW || aBW.length < 1) return null;
+			return aBW
 		}("replay") && lJ.show()
 	}, this.lQ = function() {
-		var aBU;
-		n || m || ((aBU = new URL(window.location.href)).search = "", history.replaceState(null, "", aBU.toString()))
+		var aBV;
+		n || m || ((aBV = new URL(window.location.href)).search = "", history.replaceState(null, "", aBV.toString()))
 	}
 }
 
 function rk() {
-	var aBX, ad;
+	var aBY, ad;
 	this.b = function() {
 		for (var aE = (ad = new Uint16Array(101)).length - 1; 0 <= aE; aE--) ad[aE] = bJ(32768 * aE, 100);
 		this.qe(0)
 	}, this.value = function(bc) {
 		return ad[bc]
-	}, this.a7r = function() {
-		return bJ(aBX - 1, 2)
-	}, this.qe = function(a88) {
-		aBX = 2 * a88 % 32768 + 1
+	}, this.a7s = function() {
+		return bJ(aBY - 1, 2)
+	}, this.qe = function(a89) {
+		aBY = 2 * a89 % 32768 + 1
 	}, this.random = function() {
-		return aBX = 167 * aBX % 32768
+		return aBY = 167 * aBY % 32768
 	}, this.en = function(gu) {
 		return bJ(gu * this.random(), 32768)
 	}, this.fP = function(bc) {
@@ -6215,13 +6221,13 @@ function rk() {
 }
 
 function s6() {
-	this.kE = new aBY, this.xK = new aBZ, this.xJ = new aBa, this.b = function(qX, nH, qZ, qa) {
-		var aBb;
-		cJ || ((aBb = {}).qY = bN, aBb.qX = qX, aBb.nH = nH, aBb.qZ = qZ, aBb.qa = qa, aBb.a3C = az.mJ, aBb.a3D = az.a39, fy.a3b(aBb), this.kE.b(aBb))
+	this.kE = new aBZ, this.xK = new aBa, this.xJ = new aBb, this.b = function(qX, nH, qZ, qa) {
+		var aBc;
+		cJ || ((aBc = {}).qY = bN, aBc.qX = qX, aBc.nH = nH, aBc.qZ = qZ, aBc.qa = qa, aBc.a3C = az.mJ, aBc.a3D = az.a39, fy.a3b(aBc), this.kE.b(aBc))
 	}, this.fF = function() {
 		cJ || this.kE.fF()
 	}, this.xI = function() {
-		var pv = this.kE.aBb;
+		var pv = this.kE.aBc;
 		0 === gg && aT.a1x(), az.lc(pv.a3C, pv.a3D), 1 === pv.nH.length && (fy.a3W(pv.qZ), fy.a3Y(pv.a3Z, pv.a3a)), gB.close(gB.p4, 3246), fy.a3d(), qW(pv.qX, pv.qY, pv.nH, pv.qZ, pv.qa, !0)
 	}, this.xG = function(v) {
 		var aE = v.indexOf("=");
@@ -6231,269 +6237,269 @@ function s6() {
 	}
 }
 
-function aBY() {
-	this.aBc = null, this.aBd = null, this.aBe = null, this.aBf = null, this.aBg = null, this.aBh = null;
-	var aBi = 0;
-	this.aBb = null, this.xH = "", this.b = function(aBb) {
-		this.aBc = [], this.aBd = [], this.aBe = [], this.aBf = [], this.aBg = [0], this.aBh = [0], aBi = 0, this.aBb = aBb, this.xH = ""
+function aBZ() {
+	this.aBd = null, this.aBe = null, this.aBf = null, this.aBg = null, this.aBh = null, this.aBi = null;
+	var aBj = 0;
+	this.aBc = null, this.xH = "", this.b = function(aBc) {
+		this.aBd = [], this.aBe = [], this.aBf = [], this.aBg = [], this.aBh = [0], this.aBi = [0], aBj = 0, this.aBc = aBc, this.xH = ""
 	}, this.kF = function(id, ae, ag, ai) {
-		cJ || 2 === gg || (0 === this.aBg[aBi] && (this.aBh[aBi] ? (this.aBg.push(1), this.aBh.push(0), aBi++) : this.aBg[aBi] = 1), this.aBc.push(id), this.aBd.push(ae), this.aBe.push(void 0 === ag ? 0 : ag), this.aBf.push(void 0 === ai ? 0 :
-			ai), this.aBh[aBi]++)
+		cJ || 2 === gg || (0 === this.aBh[aBj] && (this.aBi[aBj] ? (this.aBh.push(1), this.aBi.push(0), aBj++) : this.aBh[aBj] = 1), this.aBd.push(id), this.aBe.push(ae), this.aBf.push(void 0 === ag ? 0 : ag), this.aBg.push(void 0 === ai ? 0 :
+			ai), this.aBi[aBj]++)
 	}, this.fF = function() {
-		0 === this.aBg[aBi] ? this.aBh[aBi]++ : (this.aBg.push(0), this.aBh.push(0), aBi++)
+		0 === this.aBh[aBj] ? this.aBi[aBj]++ : (this.aBh.push(0), this.aBi.push(0), aBj++)
 	}
 }
 
-function aBa() {
-	function aBo(v) {
+function aBb() {
+	function aBp(v) {
 		0 === gg ? qx.a1l(3605) : g7.u1(v)
 	}
 	this.lg = function(v) {
 		if (lm.lZ(lm.lW(lm.lV(v))), ! function() {
-				if (k9.dF < 10) aBo("File Too Small");
-				else if (k9.kA(9) !== a8S) aBo("Game Version Error");
-				else if (k9.kA(31) !== k9.dF) aBo("Size Error");
+				if (k9.dF < 10) aBp("File Too Small");
+				else if (k9.kA(9) !== a8T) aBp("Game Version Error");
+				else if (k9.kA(31) !== k9.dF) aBp("Size Error");
 				else {
 					if (function(ez) {
 							var aE, bc = k9.k8,
 								bU = k9.dF,
-								a5D = 0;
-							for (aE = 7; aE < bU; aE++) a5D = a5D + bc[aE] & 65535;
-							return a5D === ez
+								a5E = 0;
+							for (aE = 7; aE < bU; aE++) a5E = a5E + bc[aE] & 65535;
+							return a5E === ez
 						}(k9.kA(16))) return 1;
-					aBo("Hash Error")
+					aBp("Hash Error")
 				}
 				return
 			}()) return !1;
-		(aBb = {}).qY = k9.kA(9), aBb.qX = k9.kA(14), aBb.qZ = k9.kA(4), aBb.qa = 1 === k9.kA(1), aBb.a3C = k9.kA(6), aBb.a3D = k9.kA(14), aBb.aBq = k9.kA(10), gW.kE.aBb = aBb,
+		(aBc = {}).qY = k9.kA(9), aBc.qX = k9.kA(14), aBc.qZ = k9.kA(4), aBc.qa = 1 === k9.kA(1), aBc.a3C = k9.kA(6), aBc.a3D = k9.kA(14), aBc.aBr = k9.kA(10), gW.kE.aBc = aBc,
 			function() {
-				var aE, a3j, a3i, name, bU = gW.kE.aBb.aBq,
+				var aE, a3j, a3i, name, bU = gW.kE.aBc.aBr,
 					nH = [];
-				for (aE = 0; aE < bU; aE++) a3j = k9.kA(1), a3i = [k9.kA(6), k9.kA(6), k9.kA(6)], name = k9.aBr(k9.kA(5)), nH.push({
+				for (aE = 0; aE < bU; aE++) a3j = k9.kA(1), a3i = [k9.kA(6), k9.kA(6), k9.kA(6)], name = k9.aBs(k9.kA(5)), nH.push({
 					name: name,
 					a3i: a3i,
 					a3j: a3j
 				});
-				if (gW.kE.aBb.nH = nH, 8 === gW.kE.aBb.qZ)
+				if (gW.kE.aBc.nH = nH, 8 === gW.kE.aBc.qZ)
 					for (aE = 0; aE < bU; aE++) nH[aE].nL = k9.kA(14)
 			}(),
 			function() {
-				var aE, bU, aBs = gW.kE.aBb;
-				if (1 === aBs.nH.length)
-					for (bU = 6 < aBs.qZ ? 1 : aBs.qZ + 2, aBs.a3Z = new Array(bU), aBs.a3a = new Array(bU), aE = 0; aE < bU; aE++) aBs.a3Z[aE] = k9.kA(3), aBs.a3a[aE] = k9.kA(9) + 1
-			}(), aBb = k9.kA(5), aBt = k9.kA(30), aBu = k9.kA(30);
-		var aBb, aBt, aBu, aE, id, bU = aBt,
-			aBx = new Uint8Array(bU),
-			aBy = new Uint16Array(bU),
-			aBz = new Uint32Array(bU),
-			aC0 = new Uint32Array(bU);
-		for (gW.kE.aBc = aBx, gW.kE.aBd = aBy, gW.kE.aBe = aBz, gW.kE.aBf = aC0, aE = 0; aE < bU; aE++) aBx[aE] = id = k9.kA(4), aBy[aE] = k9.kA(9), 0 === id ? aBz[aE] = k9.kA(22) : 1 === id ? (aBz[aE] = k9.kA(10), aC0[aE] = k9.kA(10)) : 2 ===
-			id ? (aBz[aE] = k9.kA(10), aC0[aE] = k9.kA(9)) : 3 === id || 4 === id ? (aBz[aE] = k9.kA(10), aC0[aE] = k9.kA(22)) : 5 === id ? aBz[aE] = k9.kA(10) : 6 === id ? aBz[aE] = k9.kA(7) : 7 === id && (aBz[aE] = k9.kA(1));
+				var aE, bU, aBt = gW.kE.aBc;
+				if (1 === aBt.nH.length)
+					for (bU = 6 < aBt.qZ ? 1 : aBt.qZ + 2, aBt.a3Z = new Array(bU), aBt.a3a = new Array(bU), aE = 0; aE < bU; aE++) aBt.a3Z[aE] = k9.kA(3), aBt.a3a[aE] = k9.kA(9) + 1
+			}(), aBc = k9.kA(5), aBu = k9.kA(30), aBv = k9.kA(30);
+		var aBc, aBu, aBv, aE, id, bU = aBu,
+			aBy = new Uint8Array(bU),
+			aBz = new Uint16Array(bU),
+			aC0 = new Uint32Array(bU),
+			aC1 = new Uint32Array(bU);
+		for (gW.kE.aBd = aBy, gW.kE.aBe = aBz, gW.kE.aBf = aC0, gW.kE.aBg = aC1, aE = 0; aE < bU; aE++) aBy[aE] = id = k9.kA(4), aBz[aE] = k9.kA(9), 0 === id ? aC0[aE] = k9.kA(22) : 1 === id ? (aC0[aE] = k9.kA(10), aC1[aE] = k9.kA(10)) : 2 ===
+			id ? (aC0[aE] = k9.kA(10), aC1[aE] = k9.kA(9)) : 3 === id || 4 === id ? (aC0[aE] = k9.kA(10), aC1[aE] = k9.kA(22)) : 5 === id ? aC0[aE] = k9.kA(10) : 6 === id ? aC0[aE] = k9.kA(7) : 7 === id && (aC0[aE] = k9.kA(1));
 		return function(bU, lh) {
-			var aE, aBg = new Uint8Array(bU),
-				aBh = new Array(bU);
-			for (aBh.fill(0), gW.kE.aBg = aBg, gW.kE.aBh = aBh, aE = 0; aE < bU; aE++) aBg[aE] = k9.kA(1), aBh[aE] = k9.kA(lh)
-		}(aBu, aBb), k9.cm < 8 * k9.dF - 13 || k9.cm > 8 * k9.dF ? (aBo("Out Of Bounds Error: " + k9.cm + " " + 8 * k9.dF), !1) : (gW.kE.xH = v, !0)
+			var aE, aBh = new Uint8Array(bU),
+				aBi = new Array(bU);
+			for (aBi.fill(0), gW.kE.aBh = aBh, gW.kE.aBi = aBi, aE = 0; aE < bU; aE++) aBh[aE] = k9.kA(1), aBi[aE] = k9.kA(lh)
+		}(aBv, aBc), k9.cm < 8 * k9.dF - 13 || k9.cm > 8 * k9.dF ? (aBp("Out Of Bounds Error: " + k9.cm + " " + 8 * k9.dF), !1) : (gW.kE.xH = v, !0)
 	}
 }
 
-function aBZ() {
+function aBa() {
 	this.ni = function() {
-		var aBs, lh = function() {
-				var aE, aBh = gW.kE.aBh,
-					bU = aBh.length,
+		var aBt, lh = function() {
+				var aE, aBi = gW.kE.aBi,
+					bU = aBi.length,
 					max = 0;
-				for (aE = 0; aE < bU; aE++) max = Math.max(max, aBh[aE]);
+				for (aE = 0; aE < bU; aE++) max = Math.max(max, aBi[aE]);
 				return lo(Math.max(max, 1))
 			}(),
-			aC2 = function(lh) {
+			aC3 = function(lh) {
 				return 179 + function() {
-					var aE, nH = gW.kE.aBb.nH,
+					var aE, nH = gW.kE.aBc.nH,
 						bU = nH.length,
-						aC2 = 24 * bU;
-					for (aE = 0; aE < bU; aE++) aC2 += 10 * w.ni(nH[aE].name).length;
-					8 === gW.kE.aBb.qZ && (aC2 += 14 * bU);
-					return aC2
-				}() + (1 === gW.kE.aBb.nH.length ? 12 * gW.kE.aBb.a3Z.length : 0) + function() {
-					var aE, aBc = gW.kE.aBc,
-						bU = aBc.length,
-						aC2 = 13 * bU,
-						aCG = [22, 20, 19, 32, 32, 10, 7, 1, 0, 0];
-					for (aE = 0; aE < bU; aE++) aC2 += aCG[aBc[aE]];
-					return aC2
+						aC3 = 24 * bU;
+					for (aE = 0; aE < bU; aE++) aC3 += 10 * w.ni(nH[aE].name).length;
+					8 === gW.kE.aBc.qZ && (aC3 += 14 * bU);
+					return aC3
+				}() + (1 === gW.kE.aBc.nH.length ? 12 * gW.kE.aBc.a3Z.length : 0) + function() {
+					var aE, aBd = gW.kE.aBd,
+						bU = aBd.length,
+						aC3 = 13 * bU,
+						aCH = [22, 20, 19, 32, 32, 10, 7, 1, 0, 0];
+					for (aE = 0; aE < bU; aE++) aC3 += aCH[aBd[aE]];
+					return aC3
 				}() + function(lh) {
-					return gW.kE.aBh.length * (1 + lh)
+					return gW.kE.aBi.length * (1 + lh)
 				}(lh)
 			}(lh);
-		lb.lc(aC2 + (6 - aC2 % 6) % 6), aBs = gW.kE.aBb, lb.ld(9, a8S), lb.ld(31, lb.dF), lb.cm += 16, lb.ld(9, aBs.qY), lb.ld(14, aBs.qX), lb.ld(4, aBs.qZ), lb.ld(1, aBs.qa), lb.ld(6, aBs.a3C), lb.ld(14, aBs.a3D), lb.ld(10, aBs.nH.length);
-		var aE, cV, aCA, aCB, nH = gW.kE.aBb.nH,
+		lb.lc(aC3 + (6 - aC3 % 6) % 6), aBt = gW.kE.aBc, lb.ld(9, a8T), lb.ld(31, lb.dF), lb.cm += 16, lb.ld(9, aBt.qY), lb.ld(14, aBt.qX), lb.ld(4, aBt.qZ), lb.ld(1, aBt.qa), lb.ld(6, aBt.a3C), lb.ld(14, aBt.a3D), lb.ld(10, aBt.nH.length);
+		var aE, cV, aCB, aCC, nH = gW.kE.aBc.nH,
 			bU = nH.length;
 		for (aE = 0; aE < bU; aE++)
-			for (lb.ld(1, nH[aE].a3j), lb.ld(18, (nH[aE].a3i[0] << 12) + (nH[aE].a3i[1] << 6) + nH[aE].a3i[2]), aCA = w.ni(nH[aE].name), aCB = aCA.length, lb.ld(5, aCB), cV = 0; cV < aCB; cV++) lb.ld(10, aCA[cV]);
-		if (8 === gW.kE.aBb.qZ)
+			for (lb.ld(1, nH[aE].a3j), lb.ld(18, (nH[aE].a3i[0] << 12) + (nH[aE].a3i[1] << 6) + nH[aE].a3i[2]), aCB = w.ni(nH[aE].name), aCC = aCB.length, lb.ld(5, aCC), cV = 0; cV < aCC; cV++) lb.ld(10, aCB[cV]);
+		if (8 === gW.kE.aBc.qZ)
 			for (aE = 0; aE < bU; aE++) lb.ld(14, nH[aE].nL);
 		return function() {
-				var aE, aBs = gW.kE.aBb;
-				if (1 === aBs.nH.length)
-					for (aE = 0; aE < aBs.a3Z.length; aE++) lb.ld(3, aBs.a3Z[aE]), lb.ld(9, aBs.a3a[aE] - 1)
+				var aE, aBt = gW.kE.aBc;
+				if (1 === aBt.nH.length)
+					for (aE = 0; aE < aBt.a3Z.length; aE++) lb.ld(3, aBt.a3Z[aE]), lb.ld(9, aBt.a3a[aE] - 1)
 			}(),
 			function(lh) {
-				var aE, aBc = gW.kE.aBc,
-					ae = gW.kE.aBd,
-					ag = gW.kE.aBe,
-					ai = gW.kE.aBf,
-					bU = aBc.length;
-				for (lb.ld(5, lh), lb.ld(30, bU), lb.ld(30, gW.kE.aBh.length), aE = 0; aE < bU; aE++) lb.ld(4, aBc[aE]), lb.ld(9, ae[aE]), 0 === aBc[aE] ? lb.ld(22, ag[aE]) : 1 === aBc[aE] ? (lb.ld(10, ag[aE]), lb.ld(10, ai[aE])) : 2 === aBc[
-					aE] ? (lb.ld(10, ag[aE]), lb.ld(9, ai[aE])) : 3 === aBc[aE] || 4 === aBc[aE] ? (lb.ld(10, ag[aE]), lb.ld(22, ai[aE])) : 5 === aBc[aE] ? lb.ld(10, ag[aE]) : 6 === aBc[aE] ? lb.ld(7, ag[aE]) : 7 === aBc[aE] && lb.ld(1, ag[aE])
+				var aE, aBd = gW.kE.aBd,
+					ae = gW.kE.aBe,
+					ag = gW.kE.aBf,
+					ai = gW.kE.aBg,
+					bU = aBd.length;
+				for (lb.ld(5, lh), lb.ld(30, bU), lb.ld(30, gW.kE.aBi.length), aE = 0; aE < bU; aE++) lb.ld(4, aBd[aE]), lb.ld(9, ae[aE]), 0 === aBd[aE] ? lb.ld(22, ag[aE]) : 1 === aBd[aE] ? (lb.ld(10, ag[aE]), lb.ld(10, ai[aE])) : 2 === aBd[
+					aE] ? (lb.ld(10, ag[aE]), lb.ld(9, ai[aE])) : 3 === aBd[aE] || 4 === aBd[aE] ? (lb.ld(10, ag[aE]), lb.ld(22, ai[aE])) : 5 === aBd[aE] ? lb.ld(10, ag[aE]) : 6 === aBd[aE] ? lb.ld(7, ag[aE]) : 7 === aBd[aE] && lb.ld(1, ag[aE])
 			}(lh),
 			function(lh) {
-				var aE, aBg = gW.kE.aBg,
-					aBh = gW.kE.aBh,
-					bU = aBg.length;
-				for (aE = 0; aE < bU; aE++) lb.ld(1, aBg[aE]), lb.ld(lh, aBh[aE])
-			}(lh), lb.cm !== aC2 && g7.u1("Encoder Index Error: " + lb.cm + " " + aC2), lb.cm = 40, lb.ld(16, function() {
+				var aE, aBh = gW.kE.aBh,
+					aBi = gW.kE.aBi,
+					bU = aBh.length;
+				for (aE = 0; aE < bU; aE++) lb.ld(1, aBh[aE]), lb.ld(lh, aBi[aE])
+			}(lh), lb.cm !== aC3 && g7.u1("Encoder Index Error: " + lb.cm + " " + aC3), lb.cm = 40, lb.ld(16, function() {
 				var aE, bc = lb.k8,
 					bU = lb.dF,
-					a5D = 0;
-				for (aE = 7; aE < bU; aE++) a5D = a5D + bc[aE] & 65535;
-				return a5D
-			}()), k9.b(lb.k8), r6.nV(r6.nT(bJ(aC2 - 1, 6) + 1))
+					a5E = 0;
+				for (aE = 7; aE < bU; aE++) a5E = a5E + bc[aE] & 65535;
+				return a5E
+			}()), k9.b(lb.k8), r6.nV(r6.nT(bJ(aC3 - 1, 6) + 1))
 	}
 }
 
 function rr() {
 	var fV, uV = !1,
-		aCH = !1,
-		aCI = -1e4;
+		aCI = !1,
+		aCJ = -1e4;
 
 	function resize(de) {
-		fV = 0, cq.cr() && (aCJ(de) || uV) && (uV = !1, vU(), a0W.b(), qv.b(), pR.resize(), a26.b(), qw.resize(), pH.resize(), qu.resize(), a1v.resize(), d5.resize(), aF.b(), 1 <= gg ? (gN.resize(!1), gQ.resize(), g9.resize(), hv.resize(), cf
+		fV = 0, cq.cr() && (aCK(de) || uV) && (uV = !1, vU(), a0W.b(), qv.b(), pR.resize(), a26.b(), qw.resize(), pH.resize(), qu.resize(), a1v.resize(), d5.resize(), aF.b(), 1 <= gg ? (gN.resize(!1), gQ.resize(), g9.resize(), hv.resize(), cf
 		.resize(), g7.resize(), cK.resize(), lJ.resize(), gb.resize(), gT.resize(), gR.resize(), cv.resize(), n5.resize(), n6.resize(), g8.resize(), gZ.resize(), gU.resize(), hv.xZ()) : (2 === aT.pT() ? fy.resize() : 3 === aT.pT() && qx
 			.resize(), aT.a23(), aT.a27()), aL.cx = !0)
 	}
 
-	function aCK(aR) {
+	function aCL(aR) {
 		return aR && 128 < aR ? Math.floor(aR) : 128
 	}
 
-	function aCJ(de) {
+	function aCK(de) {
 		var nD, ud, ue;
-		return ph.aAt(), nD = aCK(document.documentElement.clientWidth), ud = window.visualViewport ? aCK(window.visualViewport.height) : aCK(document.documentElement.clientHeight), de && !aCH ? (aCH = !0, document.body.removeChild(ol)) : aCH && (
-			aCH = !1, document.body.appendChild(ol)), de = Math.floor(.5 + lM * nD), ue = Math.floor(.5 + lM * ud), !(de === hL && ue === d3 || pB.pg() && (pR.lI || lJ.lI)) && (hL = a1 = de, d3 = a2 = ue, vW = we(a1, a2), ck = bJ(a2 + a1, 2), ol
+		return ph.aAu(), nD = aCL(document.documentElement.clientWidth), ud = window.visualViewport ? aCL(window.visualViewport.height) : aCL(document.documentElement.clientHeight), de && !aCI ? (aCI = !0, document.body.removeChild(ol)) : aCI && (
+			aCI = !1, document.body.appendChild(ol)), de = Math.floor(.5 + lM * nD), ue = Math.floor(.5 + lM * ud), !(de === hL && ue === d3 || pB.pg() && (pR.lI || lJ.lI)) && (hL = a1 = de, d3 = a2 = ue, vW = we(a1, a2), ck = bJ(a2 + a1, 2), ol
 			.width = de, ol.height = ue, ol.style.width = nD + "px", ol.style.height = ud + "px", 1)
 	}
 	this.b = function() {
 		a1 = a2 = vW = hL = d3 = ck = 0, lM = fV = 1, ol = document.getElementById("canvasA"), (d8 = ol.getContext("2d", {
 			alpha: !1
-		})).imageSmoothingEnabled = !1, aCJ(0)
+		})).imageSmoothingEnabled = !1, aCK(0)
 	}, this.fF = function() {
 		r4.fF(), 50 <= ++fV && resize(0)
 	}, this.a3r = function(de) {
 		uV = !0, resize(de)
 	}, this.pi = function() {
-		aCI + 1e3 > aL.aM || (aCI = aL.aM, resize(0))
-	}, this.aAt = function() {
-		var aCL = window.devicePixelRatio || 1,
-			aE = hR.hS.aAr;
-		return (lM = aE < 3 ? .5 + .25 * aE : (.5 + .125 * (aE - 3)) * aCL) / aCL
+		aCJ + 1e3 > aL.aM || (aCJ = aL.aM, resize(0))
+	}, this.aAu = function() {
+		var aCM = window.devicePixelRatio || 1,
+			aE = hR.hS.aAs;
+		return (lM = aE < 3 ? .5 + .25 * aE : (.5 + .125 * (aE - 3)) * aCM) / aCM
 	}
 }
 
 function rl() {
-	var player, ee, m7, m1, hI, hJ, hK, hM, cm, aCM, id;
+	var player, ee, m7, m1, hI, hJ, hK, hM, cm, aCN, id;
 
-	function aCS() {
+	function aCT() {
 		var ed;
 		if (bW.bh(m7)) ed = bZ;
 		else {
-			if ((ed = bW.bg(m7)) === player) return void aCU(!0);
+			if ((ed = bW.bg(m7)) === player) return void aCV(!0);
 			if (!eo(player, ed)) return function(ed) {
 				var max = bv[ed] * q9 - bO[ed];
 				max <= 0 || (ee -= max = max < ee ? max : ee, player === bN && (g7.jp(max, 0, ed), bR.bS[16] += max), ed === bN && (g7.uN(max, player), bR.bS[10] += max), bO[ed] += max, g8.jq(ed, max))
-			}(ed), void aCU(!0)
+			}(ed), void aCV(!0)
 		}
-		player === bN && (bR.bS[13] += ee), gK.bM(player, id), b5.bT(player, aCM), bV[player].push(m1), b5.ea(player, ee, ed), bL.eb(player, !0)
+		player === bN && (bR.bS[13] += ee), gK.bM(player, id), b5.bT(player, aCN), bV[player].push(m1), b5.ea(player, ee, ed), bL.eb(player, !0)
 	}
 
-	function aCU(aCX) {
-		gK.bM(player, id), b5.bT(player, aCM), aCX && (bO[player] += ee)
+	function aCV(aCY) {
+		gK.bM(player, id), b5.bT(player, aCN), aCY && (bO[player] += ee)
 	}
 
-	function aCO() {
-		bW.a4x(m7, player) && bW.a4z(m7)
+	function aCP() {
+		bW.a4y(m7, player) && bW.a50(m7)
 	}
 
-	function aCN(aE, a6M, wH, el, iA) {
-		if (cm = aE, id = a6M, player = wH, hI = bW.hN(el), hJ = bW.d6(el), hK = bW.hN(iA), hM = bW.d6(iA), m1 = m7 = bW.md(hI, hJ), -1 !== (aCM = b5.hQ(player, id))) return ee = b5.bD(player, aCM), 1;
-		aCO(), gK.bM(player, id)
+	function aCO(aE, a6N, wH, el, iA) {
+		if (cm = aE, id = a6N, player = wH, hI = bW.hN(el), hJ = bW.d6(el), hK = bW.hN(iA), hM = bW.d6(iA), m1 = m7 = bW.md(hI, hJ), -1 !== (aCN = b5.hQ(player, id))) return ee = b5.bD(player, aCN), 1;
+		aCP(), gK.bM(player, id)
 	}
 	this.fF = function(aE, id, wH, el, iA) {
-		aCN(aE, id, wH, el, iA) && (aCO(), function() {
-			var aCY = bJ(ee, 128);
-			ee -= aCY = aCY < 1 ? 1 : aCY, player === bN && (bR.bS[15] += aCY);
-			if (ee <= bK) return player === bN && (bR.bS[15] += ee), void aCU(!1);
-			return b5.bu(player, aCM, ee), 1
+		aCO(aE, id, wH, el, iA) && (aCP(), function() {
+			var aCZ = bJ(ee, 128);
+			ee -= aCZ = aCZ < 1 ? 1 : aCZ, player === bN && (bR.bS[15] += aCZ);
+			if (ee <= bK) return player === bN && (bR.bS[15] += ee), void aCV(!1);
+			return b5.bu(player, aCN, ee), 1
 		}()) && (aE = bW.md(hI, hJ), m7 = Math.abs(hK - hI) >= Math.abs(hM - hJ) ? aE + av[hI < hK ? 1 : 3] : aE + av[hJ < hM ? 2 : 0], hI = bW.hN(m7), hJ = bW.d6(m7), gK.h5(cm, m7), ! function() {
 			if (bW.bX(m7)) return;
 			return 1
-		}() ? aCS() : bW.sm(m7) && bW.a52(m7, player))
+		}() ? aCT() : bW.sm(m7) && bW.a53(m7, player))
 	}, this.h9 = function(wH, el) {
-		player = wH, m7 = bW.md(bW.hN(el), bW.d6(el)), aCO()
+		player = wH, m7 = bW.md(bW.hN(el), bW.d6(el)), aCP()
 	}
 }
 
 function rm() {
-	var aCZ, aCa, sm, aCb;
+	var aCa, aCb, sm, aCc;
 	this.b = function() {
-		var aE, hD, hE, a3i, aCc, cu, ez, n8, dI, lz, aR, bc, f7, ej, aCf;
+		var aE, hD, hE, a3i, aCd, cu, ez, n8, dI, lz, aR, bc, f7, ej, aCg;
 		if (function() {
-				if (sm = !0, aCb = "rgb(" + az.lw[0] + "," + az.lw[1] + "," + az.lw[2] + ")", az.a8y(az.mJ)) return 1;
+				if (sm = !0, aCc = "rgb(" + az.lw[0] + "," + az.lw[1] + "," + az.lw[2] + ")", az.a8z(az.mJ)) return 1;
 				return sm = !1, 0
-			}()) aCa = null;
+			}()) aCb = null;
 		else {
-			for (aCZ = bJ(96, 4), aCc = 1 === az.mJ ? (a3i = 0, 160) : (a3i = 128, 32), aCb = "rgb(" + a3i + "," + a3i + "," + a3i + ")", aCa = new Array(4), aE = 3; 0 <= aE; aE--) {
-				if (aCa[aE] = document.createElement("canvas"), cu = aE % 2 == 0 ? az.b0 : aCZ, ez = aE % 2 == 0 ? aCZ : az.b1 + 2 * aCZ, aCa[aE].width = cu, aCa[aE].height = ez, lz = (dI = (n8 = aCa[aE].getContext("2d", {
+			for (aCa = bJ(96, 4), aCd = 1 === az.mJ ? (a3i = 0, 160) : (a3i = 128, 32), aCc = "rgb(" + a3i + "," + a3i + "," + a3i + ")", aCb = new Array(4), aE = 3; 0 <= aE; aE--) {
+				if (aCb[aE] = document.createElement("canvas"), cu = aE % 2 == 0 ? az.b0 : aCa, ez = aE % 2 == 0 ? aCa : az.b1 + 2 * aCa, aCb[aE].width = cu, aCb[aE].height = ez, lz = (dI = (n8 = aCb[aE].getContext("2d", {
 						alpha: !1
 					})).getImageData(0, 0, cu, ez)).data, aE % 2 == 0)
-					for (hE = aCZ - 1; 0 <= hE; hE--)
-						for (aR = aCc + Math.floor((hE + 1) * (a3i - aCc) / (aCZ + 1)), hD = cu - 1; 0 <= hD; hD--) lz[bc = 4 * ((0 === aE ? aCZ - hE - 1 : hE) * cu + hD)] = aR, lz[bc + 1] = aR, lz[bc + 2] = aR, lz[bc + 3] = 255;
+					for (hE = aCa - 1; 0 <= hE; hE--)
+						for (aR = aCd + Math.floor((hE + 1) * (a3i - aCd) / (aCa + 1)), hD = cu - 1; 0 <= hD; hD--) lz[bc = 4 * ((0 === aE ? aCa - hE - 1 : hE) * cu + hD)] = aR, lz[bc + 1] = aR, lz[bc + 2] = aR, lz[bc + 3] = 255;
 				else {
-					for (hD = aCZ - 1; 0 <= hD; hD--)
-						for (aR = aCc + Math.floor((hD + 1) * (a3i - aCc) / (aCZ + 1)), hE = ez - 1 - aCZ; aCZ <= hE; hE--) lz[bc = 4 * (hE * cu + (3 === aE ? aCZ - hD - 1 : hD))] = aR, lz[bc + 1] = aR, lz[bc + 2] = aR, lz[bc + 3] = 255;
+					for (hD = aCa - 1; 0 <= hD; hD--)
+						for (aR = aCd + Math.floor((hD + 1) * (a3i - aCd) / (aCa + 1)), hE = ez - 1 - aCa; aCa <= hE; hE--) lz[bc = 4 * (hE * cu + (3 === aE ? aCa - hD - 1 : hD))] = aR, lz[bc + 1] = aR, lz[bc + 2] = aR, lz[bc + 3] = 255;
 					for (ej = 1; 0 <= ej; ej--)
-						for (hD = aCZ - 1; 0 <= hD; hD--)
-							for (hE = aCZ - 1; 0 <= hE; hE--) f7 = (Math.pow(hD * hD + hE * hE, .5) + 1) / (aCZ + 1), aR = aCc + Math.floor((1 < f7 ? 1 : f7) * (a3i - aCc)), lz[bc = 4 * ((0 === ej ? aCZ - hE - 1 : hE + ej * (ez - aCZ)) * cu + (
-								1 === aE ? hD : aCZ - hD - 1))] = aR, lz[bc + 1] = aR, lz[bc + 2] = aR, lz[bc + 3] = 255
+						for (hD = aCa - 1; 0 <= hD; hD--)
+							for (hE = aCa - 1; 0 <= hE; hE--) f7 = (Math.pow(hD * hD + hE * hE, .5) + 1) / (aCa + 1), aR = aCd + Math.floor((1 < f7 ? 1 : f7) * (a3i - aCd)), lz[bc = 4 * ((0 === ej ? aCa - hE - 1 : hE + ej * (ez - aCa)) * cu + (
+								1 === aE ? hD : aCa - hD - 1))] = aR, lz[bc + 1] = aR, lz[bc + 2] = aR, lz[bc + 3] = 255
 				}
 				n8.putImageData(dI, 0, 0)
 			}
-			aCf = aCc, az.lr.fillStyle = "rgb(" + aCf + "," + aCf + "," + aCf + ")", az.lr.fillRect(0, 0, az.b0, 1), az.lr.fillRect(0, az.b1 - 1, az.b0, 1), az.lr.fillRect(0, 0, 1, az.b1), az.lr.fillRect(az.b0 - 1, 0, 1, az.b1)
+			aCg = aCd, az.lr.fillStyle = "rgb(" + aCg + "," + aCg + "," + aCg + ")", az.lr.fillRect(0, 0, az.b0, 1), az.lr.fillRect(0, az.b1 - 1, az.b0, 1), az.lr.fillRect(0, 0, 1, az.b1), az.lr.fillRect(az.b0 - 1, 0, 1, az.b1)
 		}
 	}, this.n2 = function() {
-		var ej = sm ? 0 : -aCZ;
-		aAY(ej, ej, az.b0 - 2 * ej, az.b1 - 2 * ej, i8.aCg, i8.aCh, i8.aCi, i8.aCj) || (d8.fillStyle = aCb, d8.fillRect(0, 0, hL, d3))
+		var ej = sm ? 0 : -aCa;
+		aAZ(ej, ej, az.b0 - 2 * ej, az.b1 - 2 * ej, i8.aCh, i8.aCi, i8.aCj, i8.aCk) || (d8.fillStyle = aCc, d8.fillRect(0, 0, hL, d3))
 	}, this.d7 = function() {
-		sm || (aAX(0, -aCZ, az.b0, aCZ, i8.aCg, i8.aCh, i8.aCi, i8.aCj) && d8.drawImage(aCa[0], i8.aCk, i8.aCl - aCZ), aAX(az.b0, -aCZ, aCZ, az.b1 + 2 * aCZ, i8.aCg, i8.aCh, i8.aCi, i8.aCj) && d8.drawImage(aCa[1], i8.aCk + az.b0, i8.aCl - aCZ),
-			aAX(0, az.b1, az.b0, aCZ, i8.aCg, i8.aCh, i8.aCi, i8.aCj) && d8.drawImage(aCa[2], i8.aCk, i8.aCl + az.b1), aAX(-aCZ, -aCZ, aCZ, az.b1 + 2 * aCZ, i8.aCg, i8.aCh, i8.aCi, i8.aCj) && d8.drawImage(aCa[3], i8.aCk - aCZ, i8.aCl - aCZ))
+		sm || (aAY(0, -aCa, az.b0, aCa, i8.aCh, i8.aCi, i8.aCj, i8.aCk) && d8.drawImage(aCb[0], i8.aCl, i8.aCm - aCa), aAY(az.b0, -aCa, aCa, az.b1 + 2 * aCa, i8.aCh, i8.aCi, i8.aCj, i8.aCk) && d8.drawImage(aCb[1], i8.aCl + az.b0, i8.aCm - aCa),
+			aAY(0, az.b1, az.b0, aCa, i8.aCh, i8.aCi, i8.aCj, i8.aCk) && d8.drawImage(aCb[2], i8.aCl, i8.aCm + az.b1), aAY(-aCa, -aCa, aCa, az.b1 + 2 * aCa, i8.aCh, i8.aCi, i8.aCj, i8.aCk) && d8.drawImage(aCb[3], i8.aCl - aCa, i8.aCm - aCa))
 	}
 }
 
 function sB() {
-	this.jT = new aCm, this.a5Q = new aCn, this.n3 = new aCo, this.gL = new aCp, this.eP = new aCq, this.aCf = new aCr, this.aCs = new aCt, this.fE = new aCu, this.kR = new aCv, this.b = function() {
-		this.n3.b(), this.gL.b(), this.eP.b(), this.aCf.b()
+	this.jT = new aCn, this.a5R = new aCo, this.n3 = new aCp, this.gL = new aCq, this.eP = new aCr, this.aCg = new aCs, this.aCt = new aCu, this.fE = new aCv, this.kR = new aCw, this.b = function() {
+		this.n3.b(), this.gL.b(), this.eP.b(), this.aCg.b()
 	}
 }
 
-function aCu() {
-	function aD1(player, el, aD3, aD4) {
-		for (var hI, hJ, cu, ez, dO, aD5, hK, hM, bU = el + aD4, aE = el; aE < bU; aE += aD3)
+function aCv() {
+	function aD2(player, el, aD4, aD5) {
+		for (var hI, hJ, cu, ez, dO, aD6, hK, hM, bU = el + aD5, aE = el; aE < bU; aE += aD4)
 			if (hI = (hI = f3[player] - aE) < 1 ? 1 : hI, hJ = f6[player] - aE, hK = (hK = f2[player] + aE) >= az.b0 - 1 ? az.b0 - 2 : hK, ez = (hM = (hM = f5[player] + aE) >= az.b1 - 1 ? az.b1 - 2 : hM) - (hJ = hJ < 1 ? 1 : hJ), hK = (dO = bJ(em
-					.random() * (2 * (hK - hI + hM - hJ)), em.value(100))) <= (cu = hK - hI) ? (aD5 = hI + dO, hJ) : dO <= cu + ez ? (aD5 = hK, hJ + dO - cu) : dO <= 2 * cu + ez ? (aD5 = hI + dO - cu - ez, hM) : (aD5 = hI, hJ + dO - 2 * cu - ez),
-				aD2(player, hM = bW.md(aD5, hK))) return hM;
+					.random() * (2 * (hK - hI + hM - hJ)), em.value(100))) <= (cu = hK - hI) ? (aD6 = hI + dO, hJ) : dO <= cu + ez ? (aD6 = hK, hJ + dO - cu) : dO <= 2 * cu + ez ? (aD6 = hI + dO - cu - ez, hM) : (aD6 = hI, hJ + dO - 2 * cu - ez),
+				aD3(player, hM = bW.md(aD6, hK))) return hM;
 		return -1
 	}
 
-	function aD2(q5, bd) {
+	function aD3(q5, bd) {
 		return bW.bX(bd) && (bW.bh(bd) || q5 !== (bd = bW.bg(bd)) && eo(q5, bd) && 0 < bo[bd].length)
 	}
 	this.fF = function(player) {
@@ -6505,159 +6511,159 @@ function aCu() {
 					e0 = f5[player] - hJ + 1,
 					aR = em.value(100);
 				for (aE = 0; aE < 32; aE++)
-					if (mh = hI + cA.cB(em.random() * dx, aR), mg = hJ + cA.cB(em.random() * e0, aR), mh = bW.md(mh, mg), aD2(player, mh)) return mh;
+					if (mh = hI + cA.cB(em.random() * dx, aR), mg = hJ + cA.cB(em.random() * e0, aR), mh = bW.md(mh, mg), aD3(player, mh)) return mh;
 				return -1
 			}(player);
 			if (0 <= bd) return eO.kR.kS(player, bd >> 2);
-			if (0 <= (bd = aD1(player, 1, 4, 40))) return eO.kR.kS(player, bd >> 2);
-			if (0 <= (bd = aD1(player, 40, 8, 200))) return eO.kR.kS(player, bd >> 2);
+			if (0 <= (bd = aD2(player, 1, 4, 40))) return eO.kR.kS(player, bd >> 2);
+			if (0 <= (bd = aD2(player, 40, 8, 200))) return eO.kR.kS(player, bd >> 2);
 			return
 		}(player) && !! function(q5) {
 			if (0 === eU.aa[2]) return void console.log("error 325234");
-			var aCz = eU.aa[1] + kD.dQ[eU.aa[2] - 1] << 2;
-			if (bW.bh(aCz)) return 1;
-			return aCz = bW.bg(aCz), q5 !== aCz && !!eo(q5, aCz)
+			var aD0 = eU.aa[1] + kD.dQ[eU.aa[2] - 1] << 2;
+			if (bW.bh(aD0)) return 1;
+			return aD0 = bW.bg(aD0), q5 !== aD0 && !!eo(q5, aD0)
 		}(player) && function(player) {
 			return cM.cN.kK(player), eO.gL.kT(player), !0
 		}(player) : void 0)
 	}
 }
 
-function aCm() {
-	function aD8(aD7) {
-		var aDL = 4 + .03 * (1 + 1.5 * a0) * ck / eC;
-		return kD.e3(aD7, eU.aa[1]) < aDL
+function aCn() {
+	function aD9(aD8) {
+		var aDM = 4 + .03 * (1 + 1.5 * a0) * ck / eC;
+		return kD.e3(aD8, eU.aa[1]) < aDM
 	}
-	this.jU = function(player, aD7) {
-		return !!kD.eI(aD7) && eO.gL.kN !== eO.gL.kO && eO.gL.kP[player] !== eO.gL.kQ && 0 !== bo[player].length && !!eO.kR.kS(player, aD7) && !!aD8(aD7)
-	}, this.jY = function(player, jX, aD7) {
-		return !!(kD.eI(aD7) && this.kU(player, jX) && eO.kR.kV(aD7) && aD8(aD7))
+	this.jU = function(player, aD8) {
+		return !!kD.eI(aD8) && eO.gL.kN !== eO.gL.kO && eO.gL.kP[player] !== eO.gL.kQ && 0 !== bo[player].length && !!eO.kR.kS(player, aD8) && !!aD9(aD8)
+	}, this.jY = function(player, jX, aD8) {
+		return !!(kD.eI(aD8) && this.kU(player, jX) && eO.kR.kV(aD8) && aD9(aD8))
 	}, this.kU = function(player, id) {
-		for (var aD9, aDA = player << 3, aDB = aDA + eO.gL.kP[player], aDC = eO.gL.aDC, aDD = eO.gL.aDD, aE = aDA; aE < aDB; aE++)
-			if (id === aDD[aD9 = aDC[aE]]) return eU.aa[3] = aD9, !0;
+		for (var aDA, aDB = player << 3, aDC = aDB + eO.gL.kP[player], aDD = eO.gL.aDD, aDE = eO.gL.aDE, aE = aDB; aE < aDC; aE++)
+			if (id === aDE[aDA = aDD[aE]]) return eU.aa[3] = aDA, !0;
 		return !1
 	}, this.jW = function(dg) {
-		var aDE = eO.aCf.aDE;
-		return eO.aCf.aDE = -1, !!this.kU(bN, aDE) && (cc.cd.jW(aDE, dg), !0)
+		var aDF = eO.aCg.aDF;
+		return eO.aCg.aDF = -1, !!this.kU(bN, aDF) && (cc.cd.jW(aDF, dg), !0)
 	}, this.si = function(d0, d1) {
-		var aE, aDB, aDF, aDC, aDG, aDH, aDI, f7, u6, aDJ, player = bN,
+		var aE, aDC, aDG, aDD, aDH, aDI, aDJ, f7, u6, aDK, player = bN,
 			bU = eO.gL.kP[player];
 		if (0 === bU) return !1;
-		for (aDC = eO.gL.aDC, aDH = eO.gL.aDH, u6 = eO.gL.u6, aDB = (player = player << 3) + bU, aDG = .4 * cM.iL.kn(.5) * ck / eC, aDF = -1, aE = player; aE < aDB; aE++) aDJ = aDC[aE], aDI = 16 * (.625 + .125 * Math.sqrt(Math.sqrt(u6[aDJ]))), (
-			f7 = kD.dt(d0, d1, aDH[aDJ])) - aDI < aDG && (aDG = f7, aDF = aDJ);
-		return !(aDF < 0 || (eO.aCf.aDE = eO.gL.aDD[aDF], 0))
+		for (aDD = eO.gL.aDD, aDI = eO.gL.aDI, u6 = eO.gL.u6, aDC = (player = player << 3) + bU, aDH = .4 * cM.iL.kn(.5) * ck / eC, aDG = -1, aE = player; aE < aDC; aE++) aDK = aDD[aE], aDJ = 16 * (.625 + .125 * Math.sqrt(Math.sqrt(u6[aDK]))), (
+			f7 = kD.dt(d0, d1, aDI[aDK])) - aDJ < aDH && (aDH = f7, aDG = aDK);
+		return !(aDG < 0 || (eO.aCg.aDF = eO.gL.aDE[aDG], 0))
 	}, this.sw = function(d0, d1) {
-		var aE, aDF, aDG, aDH, aDI, f7, u6, bU = eO.gL.kN;
+		var aE, aDG, aDH, aDI, aDJ, f7, u6, bU = eO.gL.kN;
 		if (bU < 1) return -1;
-		for (aDH = eO.gL.aDH, u6 = eO.gL.u6, aDG = 1e3, aDF = -1, aE = 0; aE < bU; aE++) aDI = 16 * cM.iL.kn(.5) * (.625 + .125 * Math.sqrt(Math.sqrt(u6[aE]))), (f7 = kD.dt(d0, d1, aDH[aE])) < aDG && f7 < aDI && (aDG = f7, aDF = aE);
-		return aDF
-	}, this.aDK = function(d0, d1) {
-		var aE, aDB, aDF, aDC, aDG, aDH, aDI, f7, u6, aDJ, player = bN,
+		for (aDI = eO.gL.aDI, u6 = eO.gL.u6, aDH = 1e3, aDG = -1, aE = 0; aE < bU; aE++) aDJ = 16 * cM.iL.kn(.5) * (.625 + .125 * Math.sqrt(Math.sqrt(u6[aE]))), (f7 = kD.dt(d0, d1, aDI[aE])) < aDH && f7 < aDJ && (aDH = f7, aDG = aE);
+		return aDG
+	}, this.aDL = function(d0, d1) {
+		var aE, aDC, aDG, aDD, aDH, aDI, aDJ, f7, u6, aDK, player = bN,
 			bU = eO.gL.kP[player];
 		if (0 === bU) return -1;
-		for (aDC = eO.gL.aDC, aDH = eO.gL.aDH, u6 = eO.gL.u6, aDB = (player = player << 3) + bU, aDG = .4 * cM.iL.kn(.5) * ck / eC, aDF = -1, aE = player; aE < aDB; aE++) aDJ = aDC[aE], aDI = 16 * (.625 + .125 * Math.sqrt(Math.sqrt(u6[aDJ]))), (
-			f7 = kD.dt(d0, d1, aDH[aDJ])) - aDI < aDG && (aDG = f7, aDF = aDJ);
-		return aDF < 0 ? -1 : eO.gL.aDD[aDF]
-	}
-}
-
-function aCn() {
-	this.a5R = function(player) {
-		for (var aDC = eO.gL.aDC, aDA = player << 3, aE = aDA + eO.gL.kP[player] - 1; aDA <= aE; aE--) this.aDM(aDC[aE])
-	}, this.aDM = function(aDN) {
-		var gL = eO.gL,
-			aDO = gL.kN - 1,
-			aDP = gL.u5[aDN],
-			aDQ = gL.aDR[aDN],
-			aDS = gL.aDH[aDN];
-		gL.kN = aDO, gL.u5[aDN] = gL.u5[aDO], gL.aDT[aDN] = gL.aDT[aDO], gL.aDU[aDN] = gL.aDU[aDO], gL.aDH[aDN] = gL.aDH[aDO], gL.aDV[aDN] = gL.aDV[aDO], gL.u6[aDN] = gL.u6[aDO], gL.aDR[aDN] = gL.aDR[aDO], gL.aDD[aDN] = gL.aDD[aDO], gL.aDW[aDN] =
-			gL.aDW[aDO], gL.aDC[gL.u5[aDN]] = aDN,
-			function(a34) {
-				var player = a34 >> 3,
-					gL = eO.gL,
-					bU = gL.kP[player] - 1,
-					aDZ = (player << 3) + bU;
-				gL.kP[player] = bU, aDZ !== a34 && (gL.aDC[a34] = gL.aDC[aDZ], gL.u5[gL.aDC[a34]] = a34)
-			}(aDP), eO.eP.eP[kD.eN(gL.aDH[aDN])][gL.aDR[aDN]] = aDN, aDO = kD.eN(aDS), aDP = aDQ, aDO = eO.eP.eP[aDO], gL = aDO.pop(), aDP !== aDO.length && (aDO[aDP] = gL, eO.gL.aDR[gL] = aDP)
+		for (aDD = eO.gL.aDD, aDI = eO.gL.aDI, u6 = eO.gL.u6, aDC = (player = player << 3) + bU, aDH = .4 * cM.iL.kn(.5) * ck / eC, aDG = -1, aE = player; aE < aDC; aE++) aDK = aDD[aE], aDJ = 16 * (.625 + .125 * Math.sqrt(Math.sqrt(u6[aDK]))), (
+			f7 = kD.dt(d0, d1, aDI[aDK])) - aDJ < aDH && (aDH = f7, aDG = aDK);
+		return aDG < 0 ? -1 : eO.gL.aDE[aDG]
 	}
 }
 
 function aCo() {
-	var aDc, aDd = 8,
-		aDe = new Array(2);
+	this.a5S = function(player) {
+		for (var aDD = eO.gL.aDD, aDB = player << 3, aE = aDB + eO.gL.kP[player] - 1; aDB <= aE; aE--) this.aDN(aDD[aE])
+	}, this.aDN = function(aDO) {
+		var gL = eO.gL,
+			aDP = gL.kN - 1,
+			aDQ = gL.u5[aDO],
+			aDR = gL.aDS[aDO],
+			aDT = gL.aDI[aDO];
+		gL.kN = aDP, gL.u5[aDO] = gL.u5[aDP], gL.aDU[aDO] = gL.aDU[aDP], gL.aDV[aDO] = gL.aDV[aDP], gL.aDI[aDO] = gL.aDI[aDP], gL.aDW[aDO] = gL.aDW[aDP], gL.u6[aDO] = gL.u6[aDP], gL.aDS[aDO] = gL.aDS[aDP], gL.aDE[aDO] = gL.aDE[aDP], gL.aDX[aDO] =
+			gL.aDX[aDP], gL.aDD[gL.u5[aDO]] = aDO,
+			function(a34) {
+				var player = a34 >> 3,
+					gL = eO.gL,
+					bU = gL.kP[player] - 1,
+					aDa = (player << 3) + bU;
+				gL.kP[player] = bU, aDa !== a34 && (gL.aDD[a34] = gL.aDD[aDa], gL.u5[gL.aDD[a34]] = a34)
+			}(aDQ), eO.eP.eP[kD.eN(gL.aDI[aDO])][gL.aDS[aDO]] = aDO, aDP = kD.eN(aDT), aDQ = aDR, aDP = eO.eP.eP[aDP], gL = aDP.pop(), aDQ !== aDP.length && (aDP[aDQ] = gL, eO.gL.aDS[gL] = aDQ)
+	}
+}
 
-	function aDf(cm) {
-		var dE = aDd + 4,
+function aCp() {
+	var aDd, aDe = 8,
+		aDf = new Array(2);
+
+	function aDg(cm) {
+		var dE = aDe + 4,
 			sS = cM.iL.ln(dE, dE),
 			dM = cM.iL.getContext(sS, !0),
 			dI = cM.iL.getImageData(dM, dE, dE),
 			lz = dI.data;
-		return aDg(lz, dE + 1, cm), aDg(lz, dE + 2, cm), aDg(lz, 2 * dE + 1, cm), aDg(lz, 2 * dE - 3, cm), aDg(lz, 2 * dE - 2, cm), aDg(lz, 3 * dE - 2, cm), aDg(lz, dE * (dE - 3) + 1, cm), aDg(lz, dE * (dE - 2) + 1, cm), aDg(lz, dE * (dE - 2) + 2,
-			cm), aDg(lz, dE * (dE - 2) - 2, cm), aDg(lz, dE * (dE - 1) - 3, cm), aDg(lz, dE * (dE - 1) - 2, cm), dM.putImageData(dI, 0, 0), sS
+		return aDh(lz, dE + 1, cm), aDh(lz, dE + 2, cm), aDh(lz, 2 * dE + 1, cm), aDh(lz, 2 * dE - 3, cm), aDh(lz, 2 * dE - 2, cm), aDh(lz, 3 * dE - 2, cm), aDh(lz, dE * (dE - 3) + 1, cm), aDh(lz, dE * (dE - 2) + 1, cm), aDh(lz, dE * (dE - 2) + 2,
+			cm), aDh(lz, dE * (dE - 2) - 2, cm), aDh(lz, dE * (dE - 1) - 3, cm), aDh(lz, dE * (dE - 1) - 2, cm), dM.putImageData(dI, 0, 0), sS
 	}
 
-	function aDg(lz, dg, cm) {
+	function aDh(lz, dg, cm) {
 		dg *= 4;
 		lz[dg] = 255, lz[1 + dg] = 255, lz[2 + dg] = cm, lz[3 + dg] = 255
 	}
 
 	function ln(player) {
-		var aDh = aDd >> 1,
-			sS = cM.iL.ln(aDd, aDd);
+		var aDi = aDe >> 1,
+			sS = cM.iL.ln(aDe, aDe);
 		return function(dM, player, hD, hE) {
-			var dx, dg, aDj, a35, dE = aDd,
+			var dx, dg, aDk, a35, dE = aDe,
 				dI = cM.iL.getImageData(dM, dE, dE),
 				lz = dI.data,
 				ca = (dE >> 1) - .5,
-				aCb = bW.a4r(player),
-				aDl = cM.lx.po(aCb, .5);
-			cM.lx.pp(aCb, aDl, 300) || cM.lx.pr(aCb, 100);
+				aCc = bW.a4s(player),
+				aDm = cM.lx.po(aCc, .5);
+			cM.lx.pp(aCc, aDm, 300) || cM.lx.pr(aCc, 100);
 			for (hE = 0; hE < dE; hE++)
-				for (hD = 0; hD < dE; hD++) a35 = (dE - 1.5) * (dE - 1.5) / 4, aDj = (dx = (dx = hD - ca) * dx + (dx = hE - ca) * dx) <= (dE - 4.5) * (dE - 4.5) / 4 ? aDl : aCb, lz[dg = 4 * (hE * dE + hD)] = aDj[0], lz[1 + dg] = aDj[1], lz[2 +
-					dg] = aDj[2], lz[3 + dg] = a35 < dx ? 0 : 255;
+				for (hD = 0; hD < dE; hD++) a35 = (dE - 1.5) * (dE - 1.5) / 4, aDk = (dx = (dx = hD - ca) * dx + (dx = hE - ca) * dx) <= (dE - 4.5) * (dE - 4.5) / 4 ? aDm : aCc, lz[dg = 4 * (hE * dE + hD)] = aDk[0], lz[1 + dg] = aDk[1], lz[2 +
+					dg] = aDk[2], lz[3 + dg] = a35 < dx ? 0 : 255;
 			dM.putImageData(dI, 0, 0)
-		}(cM.iL.getContext(sS, !0), player, aDh, aDh), sS
+		}(cM.iL.getContext(sS, !0), player, aDi, aDi), sS
 	}
 	this.b = function() {
-		aDc = new Array(bZ), aDe[0] = aDf(255), aDe[1] = aDf(0)
+		aDd = new Array(bZ), aDf[0] = aDg(255), aDf[1] = aDg(0)
 	}, this.d7 = function() {
-		var aE, player, aDm, ee, aDn, dw, aDr, aDt, aDu, aDH = eO.gL.aDH,
+		var aE, player, aDn, ee, aDo, dw, aDs, aDu, aDv, aDI = eO.gL.aDI,
 			u5 = eO.gL.u5,
 			u6 = eO.gL.u6,
-			aDv = aDc,
-			aDw = bN,
-			aDx = -1,
+			aDw = aDd,
+			aDx = bN,
+			aDy = -1,
 			bU = eO.gL.kN,
-			aDy = hL,
-			aDz = d3,
-			aE0 = az.b0 << 4,
-			aE1 = eC,
-			dq = aE1 / aDd,
-			hI = eB / aE1,
-			hJ = eD / aE1,
-			dx = (aDy + eB) / aE1 - hI,
-			e0 = (aDz + eD) / aE1 - hJ,
+			aDz = hL,
+			aE0 = d3,
+			aE1 = az.b0 << 4,
+			aE2 = eC,
+			dq = aE2 / aDe,
+			hI = eB / aE2,
+			hJ = eD / aE2,
+			dx = (aDz + eB) / aE2 - hI,
+			e0 = (aE0 + eD) / aE2 - hJ,
 			dM = d8;
-		for (eO.jT.kU(bN, eO.aCf.aDE) && (aDx = eU.aa[3]), dM.fillStyle = dB.dC, aE = 0; aE < bU; aE++) player = u5[aE] >> 3, ee = u6[aE], aDm = .625 + .125 * Math.sqrt(Math.sqrt(ee)), aDn = (dw = aDH[aE]) % aE0 / 16 - aDm, dw = aDz * (Math
-			.floor(dw / aE0) / 16 - aDm - hJ) / e0, aDr = -2 * (aDu = aE1 * aDm) * (1 + (aDt = +(player === aDw)) / 8), aDt = aDt * aDu / 4, (aDu = aDy * (aDn - hI) / dx) < aDr || dw < aDr || aDy + aDt < aDu || aDz + aDt < dw || (aDn = aDm *
-			aE1, dM.imageSmoothingEnabled = (aDr = 2 * aDm * dq) < 3, void 0 === (aDt = aDv[player]) && (aDv[player] = aDt = ln(player)), player === aDw && (dM.setTransform(aDr, 0, 0, aDr, aDu - 2 * aDr, dw - 2 * aDr), dM.drawImage(aDe[+(
-				aE === aDx)], 0, 0)), dM.setTransform(aDr, 0, 0, aDr, aDu, dw), dM.drawImage(aDt, 0, 0), (aDm = Math.floor(function(ee) {
+		for (eO.jT.kU(bN, eO.aCg.aDF) && (aDy = eU.aa[3]), dM.fillStyle = dB.dC, aE = 0; aE < bU; aE++) player = u5[aE] >> 3, ee = u6[aE], aDn = .625 + .125 * Math.sqrt(Math.sqrt(ee)), aDo = (dw = aDI[aE]) % aE1 / 16 - aDn, dw = aE0 * (Math
+			.floor(dw / aE1) / 16 - aDn - hJ) / e0, aDs = -2 * (aDv = aE2 * aDn) * (1 + (aDu = +(player === aDx)) / 8), aDu = aDu * aDv / 4, (aDv = aDz * (aDo - hI) / dx) < aDs || dw < aDs || aDz + aDu < aDv || aE0 + aDu < dw || (aDo = aDn *
+			aE2, dM.imageSmoothingEnabled = (aDs = 2 * aDn * dq) < 3, void 0 === (aDu = aDw[player]) && (aDw[player] = aDu = ln(player)), player === aDx && (dM.setTransform(aDs, 0, 0, aDs, aDv - 2 * aDs, dw - 2 * aDs), dM.drawImage(aDf[+(
+				aE === aDy)], 0, 0)), dM.setTransform(aDs, 0, 0, aDs, aDv, dw), dM.drawImage(aDu, 0, 0), (aDn = Math.floor(function(ee) {
 				if (ee < 1e3) return .42;
 				if (ee < 1e4) return .34;
 				if (ee < 1e6) return .26;
 				if (ee < 1e8) return .19;
 				return .15
-			}(ee) * aDn)) < 6) || (dM.setTransform(1, 0, 0, 1, 0, 0), 20 <= aDm ? (dM.font = cM.iL.lL(.85 * aDm, 1), dM.fillText(gR.hU(ee), aDu + aDn, dw + .93 * aDn + .085 * aDm), (aDm *= g8.a7I(player)) < 6 || (dM.font = cM.iL.lL(aDm, 1),
-			dM.fillText(hV[player], aDu + aDn, dw + 1.16 * aDn + .1 * aDm))) : (dM.font = cM.iL.lL(aDm, 1), dM.fillText(gR.hU(ee), aDu + aDn, dw + aDn + .1 * aDm)));
+			}(ee) * aDo)) < 6) || (dM.setTransform(1, 0, 0, 1, 0, 0), 20 <= aDn ? (dM.font = cM.iL.lL(.85 * aDn, 1), dM.fillText(gR.hU(ee), aDv + aDo, dw + .93 * aDo + .085 * aDn), (aDn *= g8.a7J(player)) < 6 || (dM.font = cM.iL.lL(aDn, 1),
+			dM.fillText(hV[player], aDv + aDo, dw + 1.16 * aDo + .1 * aDn))) : (dM.font = cM.iL.lL(aDn, 1), dM.fillText(gR.hU(ee), aDv + aDo, dw + aDo + .1 * aDn)));
 		dM.setTransform(1, 0, 0, 1, 0, 0)
 	}
 }
 
-function aCt() {
+function aCu() {
 	this.fF = function() {
-		for (var aE3, aCs, aDW = eO.gL.aDW, aDH = eO.gL.aDH, aDU = eO.gL.aDU, aE = eO.gL.kN - 1; 0 <= aE; aE--) aE3 = aDH[aE], 0 !== (aCs = aDW[aE]) && aE3 === aDU[aE] && (! function(aE, aE5, dd) {
+		for (var aE4, aCt, aDX = eO.gL.aDX, aDI = eO.gL.aDI, aDV = eO.gL.aDV, aE = eO.gL.kN - 1; 0 <= aE; aE--) aE4 = aDI[aE], 0 !== (aCt = aDX[aE]) && aE4 === aDV[aE] && (! function(aE, aE6, dd) {
 			var ed, player = eO.gL.u5[aE] >> 3,
-				dd = aE5 + kD.dQ[dd] << 2,
+				dd = aE6 + kD.dQ[dd] << 2,
 				aE = eO.gL.u6[aE];
 			if (bW.bh(dd)) ed = bZ;
 			else {
@@ -6665,201 +6671,201 @@ function aCt() {
 				if (!eo(player, ed)) return cc.fa.jm(player, ed, aE)
 			}
 			player === bN && (bR.bS[13] += aE);
-			bV[player].push(aE5 << 2), b5.ea(player, aE, ed), bL.eb(player, !0)
-		}(aE, kD.eM(aE3), aCs - 1), eO.a5Q.aDM(aE))
+			bV[player].push(aE6 << 2), b5.ea(player, aE, ed), bL.eb(player, !0)
+		}(aE, kD.eM(aE4), aCt - 1), eO.a5R.aDN(aE))
 	}
 }
 
-function aCp() {
-	this.aE6 = null, this.kO = 512, this.kQ = 8, this.kN = 0, this.h0 = 0, this.u5 = new Uint16Array(this.kO), this.aDT = new Uint32Array(this.kO), this.aDU = new Uint32Array(this.kO), this.aDH = new Uint32Array(this.kO), this.aDV = new Uint16Array(
-			this.kO), this.u6 = new Uint32Array(this.kO), this.aDR = new Uint16Array(this.kO), this.aDD = new Uint16Array(this.kO), this.aDW = new Uint8Array(this.kO), this.kP = new Uint8Array(bZ), this.aDC = new Uint16Array(this.kQ * bZ), this.b =
+function aCq() {
+	this.aE7 = null, this.kO = 512, this.kQ = 8, this.kN = 0, this.h0 = 0, this.u5 = new Uint16Array(this.kO), this.aDU = new Uint32Array(this.kO), this.aDV = new Uint32Array(this.kO), this.aDI = new Uint32Array(this.kO), this.aDW = new Uint16Array(
+			this.kO), this.u6 = new Uint32Array(this.kO), this.aDS = new Uint16Array(this.kO), this.aDE = new Uint16Array(this.kO), this.aDX = new Uint8Array(this.kO), this.kP = new Uint8Array(bZ), this.aDD = new Uint16Array(this.kQ * bZ), this.b =
 		function() {
-			this.h0 = 0, this.kN = 0, this.aE6 = new Uint8Array(az.b0 + az.b1), this.kP.fill(0)
+			this.h0 = 0, this.kN = 0, this.aE7 = new Uint8Array(az.b0 + az.b1), this.kP.fill(0)
 		}, this.kT = function(player) {
 			var bU = this.kN,
-				aE7 = kD.eL(eU.aa[0]),
-				aCB = this.kP[player],
-				aE8 = (player << 3) + aCB;
-			e6[player] = 2, this.u5[bU] = aE8, this.aDT[bU] = aE7, this.aDH[bU] = aE7, this.aDU[bU] = kD.eL(eU.aa[1]), this.aDV[bU] = 0, this.u6[bU] = eU.aX[0], this.aDR[bU] = eO.eP.kT(bU, kD.eN(aE7)), this.aDD[bU] = this.h0, this.aDW[bU] = eU.aa[2],
-				this.h0 = this.h0 + 1 & 1023, this.aDC[aE8] = bU, this.kP[player] = aCB + 1, this.kN++
+				aE8 = kD.eL(eU.aa[0]),
+				aCC = this.kP[player],
+				aE9 = (player << 3) + aCC;
+			e6[player] = 2, this.u5[bU] = aE9, this.aDU[bU] = aE8, this.aDI[bU] = aE8, this.aDV[bU] = kD.eL(eU.aa[1]), this.aDW[bU] = 0, this.u6[bU] = eU.aX[0], this.aDS[bU] = eO.eP.kT(bU, kD.eN(aE8)), this.aDE[bU] = this.h0, this.aDX[bU] = eU.aa[2],
+				this.h0 = this.h0 + 1 & 1023, this.aDD[aE9] = bU, this.kP[player] = aCC + 1, this.kN++
 		}, this.jW = function() {
-			var aD9 = eU.aa[3];
-			this.aDT[aD9] = this.aDH[aD9], this.aDU[aD9] = kD.eL(eU.aa[1]), this.aDV[aD9] = 0, this.aDW[aD9] = eU.aa[2]
+			var aDA = eU.aa[3];
+			this.aDU[aDA] = this.aDI[aDA], this.aDV[aDA] = kD.eL(eU.aa[1]), this.aDW[aDA] = 0, this.aDX[aDA] = eU.aa[2]
 		}, this.fF = function() {
 			if (aL.fU() % 5 == 3) {
-				eO.aCs.fF(), ! function(t2) {
-					var aE, aEC, aED, aEE, aEF, aE7, aEJ, aEK, be, bd, aDT = t2.aDT,
-						aDU = t2.aDU,
-						aDH = t2.aDH,
-						u6 = t2.u6,
+				eO.aCt.fF(), ! function(t2) {
+					var aE, aED, aEE, aEF, aEG, aE8, aEK, aEL, be, bd, aDU = t2.aDU,
 						aDV = t2.aDV,
-						aDR = t2.aDR,
+						aDI = t2.aDI,
+						u6 = t2.u6,
+						aDW = t2.aDW,
+						aDS = t2.aDS,
 						t2 = t2.kN,
-						aE0 = az.b0 << 4;
-					for (aE = t2 - 1; 0 <= aE; aE--) aED = aDH[aE], aEC = aDU[aE], aED !== aEC && (aE7 = aDT[aE], aEJ = aEC % aE0 - (aEF = aE7 % aE0), aEK = ~~((aEC + .5) / aE0) - (aE7 = ~~((aE7 + .5) / aE0)), be = ~~Math.sqrt(aEJ * aEJ + aEK *
-						aEK + .5), bd = 4e5 + 2e4 * ~~Math.sqrt(.5 + (Math.sqrt(u6[aE] + .5) << 4)), 65535 <= (bd = aDV[aE] + Math.max(~~((.5 + bd) / be), 1)) ? aDH[aE] = aEE = aEC : (aDV[aE] = bd, aDH[aE] = aEE = aEF + cA.cB(bd * aEJ,
-						65536) + aE0 * (aE7 + cA.cB(bd * aEK, 65536))), aDR[aE] = eO.eP.aEM(aDR[aE], aED, aEE))
+						aE1 = az.b0 << 4;
+					for (aE = t2 - 1; 0 <= aE; aE--) aEE = aDI[aE], aED = aDV[aE], aEE !== aED && (aE8 = aDU[aE], aEK = aED % aE1 - (aEG = aE8 % aE1), aEL = ~~((aED + .5) / aE1) - (aE8 = ~~((aE8 + .5) / aE1)), be = ~~Math.sqrt(aEK * aEK + aEL *
+						aEL + .5), bd = 4e5 + 2e4 * ~~Math.sqrt(.5 + (Math.sqrt(u6[aE] + .5) << 4)), 65535 <= (bd = aDW[aE] + Math.max(~~((.5 + bd) / be), 1)) ? aDI[aE] = aEF = aED : (aDW[aE] = bd, aDI[aE] = aEF = aEG + cA.cB(bd * aEK,
+						65536) + aE1 * (aE8 + cA.cB(bd * aEL, 65536))), aDS[aE] = eO.eP.aEN(aDS[aE], aEE, aEF))
 				}(this), ! function(t2) {
-					var aE, mC, ca, cV, fV, aEN, aEO, aEP, m7, dV, hI, hJ, aEQ, aDG, aER, m8, aE7, aEU, bU = t2.kN,
-						aDH = t2.aDH,
+					var aE, mC, ca, cV, fV, aEO, aEP, aEQ, m7, dV, hI, hJ, aER, aDH, aES, m8, aE8, aEV, bU = t2.kN,
+						aDI = t2.aDI,
 						u5 = t2.u5,
 						u6 = t2.u6,
 						eP = eO.eP.eP,
-						aEV = eP.length,
-						aEW = eO.eP.aEW,
-						aE0 = az.b0 << 4,
-						aEX = cS,
-						aEY = fW.fX,
+						aEW = eP.length,
+						aEX = eO.eP.aEX,
+						aE1 = az.b0 << 4,
+						aEY = cS,
+						aEZ = fW.fX,
 						bd = (bU - 1) * (aL.fU() % 2);
 					for (aE = 0; aE < bU; aE++) {
-						for (mC = Math.abs(aE - bd), aE7 = aDH[mC], ca = kD.eN(aE7), m7 = u5[mC] >> 3, hI = aE7 % aE0, hJ = ~~((aE7 + .5) / aE0), aE7 = u6[mC], aEU = 80 + ~~Math.sqrt(.5 + (Math.sqrt(aE7 + .5) << 8)), aDG = Math.min(aEU * aEU,
-								262144), aER = -1, cV = 0; cV < 9; cV++)
-							if (!((aEN = ca + aEW[cV]) < 0 || aEV <= aEN))
-								for (aEP = eP[aEN], aEO = aEP.length, fV = 0; fV < aEO; fV++) aEQ = aEP[fV], m8 = u5[aEQ] >> 3, m7 == m8 || aEX && aEY[m7] === aEY[m8] || (m8 = aDH[aEQ], (m8 = (dV = hI - m8 % aE0) * dV + (dV = hJ - ~~((m8 + .5) /
-									aE0)) * dV) < aDG && (aER = aEQ, aDG = m8)); - 1 !== aER && (aE7 = Math.min(Math.max(1, cA.cB(aE7 * (aEU - Math.floor(Math.sqrt(aDG + .5))), 5 * aEU)), u6[aER]), u6[mC] -= aE7 >> 4, u6[aER] -= aE7)
+						for (mC = Math.abs(aE - bd), aE8 = aDI[mC], ca = kD.eN(aE8), m7 = u5[mC] >> 3, hI = aE8 % aE1, hJ = ~~((aE8 + .5) / aE1), aE8 = u6[mC], aEV = 80 + ~~Math.sqrt(.5 + (Math.sqrt(aE8 + .5) << 8)), aDH = Math.min(aEV * aEV,
+								262144), aES = -1, cV = 0; cV < 9; cV++)
+							if (!((aEO = ca + aEX[cV]) < 0 || aEW <= aEO))
+								for (aEQ = eP[aEO], aEP = aEQ.length, fV = 0; fV < aEP; fV++) aER = aEQ[fV], m8 = u5[aER] >> 3, m7 == m8 || aEY && aEZ[m7] === aEZ[m8] || (m8 = aDI[aER], (m8 = (dV = hI - m8 % aE1) * dV + (dV = hJ - ~~((m8 + .5) /
+									aE1)) * dV) < aDH && (aES = aER, aDH = m8)); - 1 !== aES && (aE8 = Math.min(Math.max(1, cA.cB(aE8 * (aEV - Math.floor(Math.sqrt(aDH + .5))), 5 * aEV)), u6[aES]), u6[mC] -= aE8 >> 4, u6[aES] -= aE8)
 					}
 				}(this);
 				var aE, ee, u6 = (t2 = this).u6,
 					t2 = t2.kN;
-				for (aE = t2 - 1; 0 <= aE; aE--) ee = u6[aE], 0 < (ee -= Math.max(1, ee >> 7)) ? u6[aE] = ee : eO.a5Q.aDM(aE)
+				for (aE = t2 - 1; 0 <= aE; aE--) ee = u6[aE], 0 < (ee -= Math.max(1, ee >> 7)) ? u6[aE] = ee : eO.a5R.aDN(aE)
 			}
 		}
 }
 
-function aCq() {
-	this.aEZ = 32, this.hD = 0, this.hE = 0, this.eQ = 0, this.aEa = 0, this.aEb = 4, this.eP = null, this.aEW = new Int16Array(9), this.b = function() {
-		this.eQ = 1 + cA.cB(az.b0 - 1, this.aEZ), this.aEa = 1 + cA.cB(az.b1 - 1, this.aEZ), this.eP = new Array(this.eQ * this.aEa), cM.lx.pn(this.eP);
-		var hD, hE, aEW = this.aEW,
+function aCr() {
+	this.aEa = 32, this.hD = 0, this.hE = 0, this.eQ = 0, this.aEb = 0, this.aEc = 4, this.eP = null, this.aEX = new Int16Array(9), this.b = function() {
+		this.eQ = 1 + cA.cB(az.b0 - 1, this.aEa), this.aEb = 1 + cA.cB(az.b1 - 1, this.aEa), this.eP = new Array(this.eQ * this.aEb), cM.lx.pn(this.eP);
+		var hD, hE, aEX = this.aEX,
 			cu = this.eQ;
 		for (hD = -1; hD <= 1; hD++)
-			for (hE = -1; hE <= 1; hE++) aEW[3 * (1 + hE) + 1 + hD] = hE * cu + hD
-	}, this.kT = function(aEd, aE) {
-		return this.eP[aE].push(aEd), this.eP[aE].length - 1
-	}, this.aEM = function(aEe, aE7, aEC) {
-		var aEf, aEg, aE7 = kD.eN(aE7),
-			aEC = kD.eN(aEC);
-		return aE7 === aEC ? aEe : (aEf = this.eP[aE7].pop(), this.eP[aE7].length === aEe ? this.kT(aEf, aEC) : (aEg = this.eP[aE7][aEe], this.eP[aE7][aEe] = aEf, eO.gL.aDR[aEf] = aEe, this.kT(aEg, aEC)))
+			for (hE = -1; hE <= 1; hE++) aEX[3 * (1 + hE) + 1 + hD] = hE * cu + hD
+	}, this.kT = function(aEe, aE) {
+		return this.eP[aE].push(aEe), this.eP[aE].length - 1
+	}, this.aEN = function(aEf, aE8, aED) {
+		var aEg, aEh, aE8 = kD.eN(aE8),
+			aED = kD.eN(aED);
+		return aE8 === aED ? aEf : (aEg = this.eP[aE8].pop(), this.eP[aE8].length === aEf ? this.kT(aEg, aED) : (aEh = this.eP[aE8][aEf], this.eP[aE8][aEf] = aEg, eO.gL.aDS[aEg] = aEf, this.kT(aEh, aED)))
 	}
 }
 
-function aCv() {
-	function cU(aEC, aEh) {
-		if (! function(aEC, aD7) {
-				var dU = kD.eM(aEC),
-					aEk = Math.abs(kD.dW(aD7) - kD.dW(dU)),
-					dU = Math.abs(kD.dY(aD7) - kD.dY(dU));
-				0 !== Math.max(aEk, dU) && ! function(aE7, aEC, aEk, aEl) {
-					var aEn = kD.dz(aE7),
-						aE7 = kD.e2(aE7),
-						aEp = kD.dz(aEC),
-						aEC = kD.e2(aEC),
-						aEp = aEp - aEn,
-						aEC = aEC - aE7,
-						aEt = Math.abs(aEp),
-						aEu = Math.abs(aEC),
-						aEp = 0 < aEp ? 1 : 3,
-						aEC = 0 < aEC ? 2 : 0;
-					aEu < aEt ? aEx(aEn, aE7, aEn + aEt, aE7 + aEu, aEp, aEC, aEk) : aEx(aE7, aEn, aE7 + aEu, aEn + aEt, aEC, aEp, aEl)
-				}(aEC, kD.eL(aD7), aEk, dU)
-			}(aEC, aEh), 0 === eU.aW[0]) return !!bW.sm(aEh << 2);
-		if (function(aD7) {
-				if (bW.sm(aD7 << 2)) return 1;
-				return function(aD7) {
-					var aE, dd, aE6 = eO.gL.aE6,
-						aF1 = kD,
+function aCw() {
+	function cU(aED, aEi) {
+		if (! function(aED, aD8) {
+				var dU = kD.eM(aED),
+					aEl = Math.abs(kD.dW(aD8) - kD.dW(dU)),
+					dU = Math.abs(kD.dY(aD8) - kD.dY(dU));
+				0 !== Math.max(aEl, dU) && ! function(aE8, aED, aEl, aEm) {
+					var aEo = kD.dz(aE8),
+						aE8 = kD.e2(aE8),
+						aEq = kD.dz(aED),
+						aED = kD.e2(aED),
+						aEq = aEq - aEo,
+						aED = aED - aE8,
+						aEu = Math.abs(aEq),
+						aEv = Math.abs(aED),
+						aEq = 0 < aEq ? 1 : 3,
+						aED = 0 < aED ? 2 : 0;
+					aEv < aEu ? aEy(aEo, aE8, aEo + aEu, aE8 + aEv, aEq, aED, aEl) : aEy(aE8, aEo, aE8 + aEv, aEo + aEu, aED, aEq, aEm)
+				}(aED, kD.eL(aD8), aEl, dU)
+			}(aED, aEi), 0 === eU.aW[0]) return !!bW.sm(aEi << 2);
+		if (function(aD8) {
+				if (bW.sm(aD8 << 2)) return 1;
+				return function(aD8) {
+					var aE, dd, aE7 = eO.gL.aE7,
+						aF2 = kD,
 						bU = eU.aW[0],
-						aF2 = 4 * aD7;
+						aF3 = 4 * aD8;
 					for (aE = bU - 1; 0 <= aE; aE--)
-						if (dd = aE6[aE], aF2 = aF1.eS(aF2, dd + 2 & 3), bW.sm(aF2)) return eU.aW[0] = aE, eU.aa[1] = aF2 >> 2, eU.aa[2] = 1 + dd, 1;
+						if (dd = aE7[aE], aF3 = aF2.eS(aF3, dd + 2 & 3), bW.sm(aF3)) return eU.aW[0] = aE, eU.aa[1] = aF3 >> 2, eU.aa[2] = 1 + dd, 1;
 					return
-				}(aD7)
-			}(aEh)) {
-			var aE, aEh = kD.eM(aEC),
+				}(aD8)
+			}(aEi)) {
+			var aE, aEi = kD.eM(aED),
 				lz = a05,
-				aE6 = eO.gL.aE6,
+				aE7 = eO.gL.aE7,
 				bU = eU.aW[0] - 1,
-				aF2 = 4 * aEh,
+				aF3 = 4 * aEi,
 				dR = kD.dR;
 			for (aE = 0; aE < bU; aE++)
-				if (aF2 += dR[aE6[aE]], 0 !== lz[aF2 + 3] || 2 !== lz[aF2 + 2]) return !!void 0;
+				if (aF3 += dR[aE7[aE]], 0 !== lz[aF3 + 3] || 2 !== lz[aF3 + 2]) return !!void 0;
 			return !!1
 		}
 		return !1
 	}
 
-	function aEx(aEn, aEo, aEp, aEq, aEv, aEw, aEk) {
-		for (var hE, aE6 = eO.gL.aE6, bd = 0, aEy = 0, ez = aEq - aEo, cu = aEp - aEn, aEz = aEn % 16, aE = 1; aE <= aEk; aE++) aE6[bd++] = aEv, aE6[bd] = aEw, bd += (hE = (ez * (aEz + (aE << 4)) + .5) / cu >> 4) - aEy, aEy = hE;
+	function aEy(aEo, aEp, aEq, aEr, aEw, aEx, aEl) {
+		for (var hE, aE7 = eO.gL.aE7, bd = 0, aEz = 0, ez = aEr - aEp, cu = aEq - aEo, aF0 = aEo % 16, aE = 1; aE <= aEl; aE++) aE7[bd++] = aEw, aE7[bd] = aEx, bd += (hE = (ez * (aF0 + (aE << 4)) + .5) / cu >> 4) - aEz, aEz = hE;
 		eU.ac(eU.aW, bd)
 	}
-	this.kS = function(player, aEh) {
-		var dd, dU, dT = kD.df(player, aEh);
-		return dT !== aEh && (dd = kD.dS(dT, aEh), dU = kD.eR(dT, dd), !(!bW.sm(dU << 2) && (dd = kD.dc(dT, aEh, dd), dU = kD.eR(dT, dd), bW.m9(dU << 2) || !bW.sm(dU << 2)) || (eU.aa[0] = dU, eU.aa[1] = aEh, eU.aa[2] = 0, !cU(kD.eL(dU), aEh)) ||
+	this.kS = function(player, aEi) {
+		var dd, dU, dT = kD.df(player, aEi);
+		return dT !== aEi && (dd = kD.dS(dT, aEi), dU = kD.eR(dT, dd), !(!bW.sm(dU << 2) && (dd = kD.dc(dT, aEi, dd), dU = kD.eR(dT, dd), bW.m9(dU << 2) || !bW.sm(dU << 2)) || (eU.aa[0] = dU, eU.aa[1] = aEi, eU.aa[2] = 0, !cU(kD.eL(dU), aEi)) ||
 			0 !== eU.aa[2] && kD.dp(player, eU.aa[1] + kD.dQ[eU.aa[2] - 1] << 2)))
-	}, this.kV = function(aEh) {
-		var aE7 = eO.gL.aDH[eU.aa[3]];
-		return eU.aa[1] = aEh, eU.aa[2] = 0, cU(aE7, aEh)
+	}, this.kV = function(aEi) {
+		var aE8 = eO.gL.aDI[eU.aa[3]];
+		return eU.aa[1] = aEi, eU.aa[2] = 0, cU(aE8, aEi)
 	}
 }
 
-function aCr() {
-	var aDd = 32,
-		aF4 = new Array(2);
+function aCs() {
+	var aDe = 32,
+		aF5 = new Array(2);
 
 	function ln(fV) {
-		var hD, hE, dg, e0, dx, dE = aDd,
+		var hD, hE, dg, e0, dx, dE = aDe,
 			sS = cM.iL.ln(dE, dE),
 			dM = cM.iL.getContext(sS, !0),
 			dI = cM.iL.getImageData(dM, dE, dE),
 			lz = dI.data,
 			ca = (dE >> 1) - .5,
-			aF5 = Math.sqrt(ca * ca);
+			aF6 = Math.sqrt(ca * ca);
 		for (lz.fill(255), hE = 0; hE < dE; hE++)
-			for (hD = 0; hD < dE; hD++) dx = hD - ca, e0 = hE - ca, dg = 4 * (hE * dE + hD), dx = 714 * (aF5 - Math.sqrt(dx * dx + e0 * e0)) / aF5, lz[2 + dg] = fV, lz[3 + dg] = 255 < dx ? 0 : dx;
+			for (hD = 0; hD < dE; hD++) dx = hD - ca, e0 = hE - ca, dg = 4 * (hE * dE + hD), dx = 714 * (aF6 - Math.sqrt(dx * dx + e0 * e0)) / aF6, lz[2 + dg] = fV, lz[3 + dg] = 255 < dx ? 0 : dx;
 		return dM.putImageData(dI, 0, 0), sS
 	}
-	this.aDE = -1, this.b = function() {
-		this.aDE = -1, aF4[0] || (aF4[0] = ln(255), aF4[1] = ln(0))
-	}, this.aF6 = function(dM, dq, hD, hE, dO, aE) {
-		kD.e8() && (dM.setTransform(dq *= 4 / 3 * .625, 0, 0, dq, hD - (dO *= 4 / 3), hE - dO), dM.drawImage(aF4[+(eO.gL.aDD[aE] === this.aDE)], 0, 0))
+	this.aDF = -1, this.b = function() {
+		this.aDF = -1, aF5[0] || (aF5[0] = ln(255), aF5[1] = ln(0))
+	}, this.aF7 = function(dM, dq, hD, hE, dO, aE) {
+		kD.e8() && (dM.setTransform(dq *= 4 / 3 * .625, 0, 0, dq, hD - (dO *= 4 / 3), hE - dO), dM.drawImage(aF5[+(eO.gL.aDE[aE] === this.aDF)], 0, 0))
 	}
 }
 
-function a8H() {
-	var a1i, a8C, oW;
+function a8I() {
+	var a1i, a8D, oW;
 
-	function aFA() {}
+	function aFB() {}
 
-	function a8I() {
-		gB.a8I(a1i, a8C)
+	function a8J() {
+		gB.a8J(a1i, a8D)
 	}
 
-	function aFC(oX) {
-		r1.aFE(a1i, new Uint8Array(oX.data))
+	function aFD(oX) {
+		r1.aFF(a1i, new Uint8Array(oX.data))
 	}
 
-	function aFD() {}
+	function aFE() {}
 
-	function a8N(oX) {
-		gB.a8N(a1i, oX)
+	function a8O(oX) {
+		gB.a8O(a1i, oX)
 	}
-	this.b = function(cm, aF7) {
-		a1i = cm, a8C = aF7, 0;
+	this.b = function(cm, aF8) {
+		a1i = cm, a8D = aF8, 0;
 		cm = vS[0];
-		a1i < gB.a2V ? cm += gB.a85[a1i] + vS[1 + a8W] : cm += gB.a85[0] + "/i" + (1 + a8W) + (a1i - gB.a2W) + "/", (oW = new WebSocket(cm)).binaryType = "arraybuffer", oW.onopen = a8I, oW.onmessage = aFC, oW.onclose = a8N, oW.onerror = aFD
-	}, this.aF9 = function() {
+		a1i < gB.a2V ? cm += gB.a86[a1i] + vS[1 + a8X] : cm += gB.a86[0] + "/i" + (1 + a8X) + (a1i - gB.a2W) + "/", (oW = new WebSocket(cm)).binaryType = "arraybuffer", oW.onopen = a8J, oW.onmessage = aFD, oW.onclose = a8O, oW.onerror = aFE
+	}, this.aFA = function() {
 		return oW.readyState === oW.CONNECTING
 	}, this.a1a = function() {
 		return oW.readyState === oW.OPEN
-	}, this.a8E = function() {
-		return this.aF9() || this.a1a()
-	}, this.a8F = function(aF7) {
-		a8C = aF7
+	}, this.a8F = function() {
+		return this.aFA() || this.a1a()
+	}, this.a8G = function(aF8) {
+		a8D = aF8
 	}, this.send = function(k8) {
 		this.a1a() && oW.send(k8)
-	}, this.close = function(a8K) {
-		this.a8E() && (oW.close(a8K), this.lE())
+	}, this.close = function(a8L) {
+		this.a8F() && (oW.close(a8L), this.lE())
 	}, this.lE = function() {
-		oW.onopen = aFA, oW.onmessage = aFA, oW.onclose = aFA, oW.onerror = aFA
+		oW.onopen = aFB, oW.onmessage = aFB, oW.onclose = aFB, oW.onerror = aFB
 	}
 }
 
@@ -6876,85 +6882,85 @@ function wc() {
 	return !0
 }
 
-function a8e() {
-	this.dF = 501, this.oO = new Uint32Array(this.dF), this.q8 = new Uint32Array(this.dF), this.zj = new Uint16Array(this.dF), this.tL = 0, this.aFH = 1, this.fV = 0, this.max = [0, 0, 0], this.bS = 0, this.aFI = ["Avg. Attack Strength",
+function a8f() {
+	this.dF = 501, this.oO = new Uint32Array(this.dF), this.q8 = new Uint32Array(this.dF), this.zj = new Uint16Array(this.dF), this.tL = 0, this.aFI = 1, this.fV = 0, this.max = [0, 0, 0], this.bS = 0, this.aFJ = ["Avg. Attack Strength",
 		"Number Attacks", "Ships sent", "Bots conquered", "Humans conquered", "Attacked by Bots", "Attacked by Humans", "Territorial Loss", "Territorial Income", "Interest Income", "Received Support", "Overall Income", "Commanding Costs",
 		"Attack Losses", "Defense Losses", "Shipping Losses", "Transmitted Support", "Overall Expenses"
 	], this.b = function() {
-		this.tL = 0, this.aFH = 1, this.fV = 0, this.aFJ(), this.aFK()
+		this.tL = 0, this.aFI = 1, this.fV = 0, this.aFK(), this.aFL()
 	}, this.kL = function(player, eA) {
 		player === bN && (this.bS[0] += eA, this.bS[1]++, this.bS[12] += eU.aX[1], this.bS[13] += eU.aX[0])
 	}, this.jp = function(player, jP) {
 		donationsTracker.logDonation(player, jP, eU.aX[0]);
 		player === bN && (g7.jp(eU.aX[0], eU.aX[1], jP), this.bS[12] += eU.aX[1], this.bS[16] += eU.aX[0]), jP === bN && (g7.uN(eU.aX[0], player), this.bS[10] += eU.aX[0])
 	}, this.fF = function() {
-		0 < this.fV-- || this.aFL()
-	}, this.aFL = function() {
-		0 !== e6[bN] && (this.oO[this.tL] = bv[bN], this.q8[this.tL] = bO[bN], this.zj[this.tL] = bP.zk(bN), this.aFM(this.tL), this.tL++, this.tL === this.dF && this.aFN(), this.fV = this.aFH - 1, n6.cp())
-	}, this.aFN = function() {
-		this.aFJ(), this.aFM(0), this.tL = 1 + bJ(this.dF, 2);
-		for (var aE = 1; aE < this.tL; aE++) this.oO[aE] = this.oO[2 * aE], this.q8[aE] = this.q8[2 * aE], this.zj[aE] = this.zj[2 * aE], this.aFM(aE);
-		this.aFH *= 2
-	}, this.aFJ = function() {
-		this.max[0] = this.max[1] = this.max[2] = 0
+		0 < this.fV-- || this.aFM()
+	}, this.aFM = function() {
+		0 !== e6[bN] && (this.oO[this.tL] = bv[bN], this.q8[this.tL] = bO[bN], this.zj[this.tL] = bP.zk(bN), this.aFN(this.tL), this.tL++, this.tL === this.dF && this.aFO(), this.fV = this.aFI - 1, n6.cp())
+	}, this.aFO = function() {
+		this.aFK(), this.aFN(0), this.tL = 1 + bJ(this.dF, 2);
+		for (var aE = 1; aE < this.tL; aE++) this.oO[aE] = this.oO[2 * aE], this.q8[aE] = this.q8[2 * aE], this.zj[aE] = this.zj[2 * aE], this.aFN(aE);
+		this.aFI *= 2
 	}, this.aFK = function() {
+		this.max[0] = this.max[1] = this.max[2] = 0
+	}, this.aFL = function() {
 		this.bS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-	}, this.aFM = function(aE) {
+	}, this.aFN = function(aE) {
 		this.max[0] = this.oO[aE] > this.max[0] ? this.oO[aE] : this.max[0], this.max[1] = this.q8[aE] > this.max[1] ? this.q8[aE] : this.max[1], this.max[2] = this.zj[aE] > this.max[2] ? this.zj[aE] : this.max[2]
 	}
 }
 
-function a8f() {
-	this.cu = 0, this.ez = 0, this.nD = 0, this.nE = 0, this.a0a = 0, this.a0b = 0, this.ud = 0, this.ue = 0, this.a3U = 0, this.lD = 0, this.aFO = 0, this.aFP = 0, this.wB = 0, this.cm = 0, this.t5 = ["Territory", "Balance", "Interest", "Numbers"],
-		this.pF = !1, this.aFQ = -1, this.aFR = !1, this.aFS = [0, 0], this.b = function() {
-			this.pF = !1, this.aFQ = -1, this.aFR = !1, this.resize()
+function a8g() {
+	this.cu = 0, this.ez = 0, this.nD = 0, this.nE = 0, this.a0a = 0, this.a0b = 0, this.ud = 0, this.ue = 0, this.a3U = 0, this.lD = 0, this.aFP = 0, this.aFQ = 0, this.wB = 0, this.cm = 0, this.t5 = ["Territory", "Balance", "Interest", "Numbers"],
+		this.pF = !1, this.aFR = -1, this.aFS = !1, this.aFT = [0, 0], this.b = function() {
+			this.pF = !1, this.aFR = -1, this.aFS = !1, this.resize()
 		}, this.resize = function() {
 			this.cu = a1 < 1.369 * a2 ? a1 : 1.369 * a2;
 			var be = a0 && a1 < a2 ? 1 : a0 ? .8 : a1 < a2 ? .65 : .59;
 			this.cu = Math.floor(be * this.cu), this.cu -= a0 && a1 < a2 ? 2 * ko + 2 : 0, this.ez = Math.floor(this.cu / 1.369), this.wB = Math.floor(this.ez / 150), this.wB = Math.max(this.wB, 1.5), this.nD = Math.floor(1 + .02 * this.cu), this
-				.nE = Math.floor(1 + .04 * this.cu), this.ud = this.nE, this.ue = Math.floor(1 + .075 * this.cu), this.lD = Math.floor(1 + .1125 * this.cu), this.aFO = Math.floor(this.cu * (a0 ? .03 : .029)), this.aFO = Math.max(this.aFO, 4), this
-				.aFP = Math.floor(.035 * this.cu), this.aFP = Math.max(this.aFP, 4), this.a3U = this.ez - 2 * this.ud - this.ue - this.lD, this.pF && this.aFT()
+				.nE = Math.floor(1 + .04 * this.cu), this.ud = this.nE, this.ue = Math.floor(1 + .075 * this.cu), this.lD = Math.floor(1 + .1125 * this.cu), this.aFP = Math.floor(this.cu * (a0 ? .03 : .029)), this.aFP = Math.max(this.aFP, 4), this
+				.aFQ = Math.floor(.035 * this.cu), this.aFQ = Math.max(this.aFQ, 4), this.a3U = this.ez - 2 * this.ud - this.ue - this.lD, this.pF && this.aFU()
 		}, this.cz = function(d0, d1) {
 			var mV, mU;
 			return !!this.pF && (mU = d0, mV = d1, d0 -= bJ(hL - this.cu, 2), d1 -= bJ(d3 - this.ez, 2), d0 < 0 || d1 < 0 || d0 >= this.cu || d1 >= this.ez || d0 >= this.cu - this.lD && d1 < this.lD ? 1 < cK.cz(mU, mV) || this.lE() : d1 < this.lD ||
-				(d1 < this.ez - this.ue ? (this.aFR = !0, this.aFQ = (d0 - 2 * this.nD - this.a0a) / this.a0b, 3 !== this.cm && (aL.cx = !0)) : (mU = (mU = Math.floor(d0 / (this.cu / this.t5.length))) < 0 ? 0 : mU >= this.t5.length ? this.t5
-					.length - 1 : mU) !== this.cm && (this.cm = mU, this.aFT(), aL.cx = !0)), !0)
+				(d1 < this.ez - this.ue ? (this.aFS = !0, this.aFR = (d0 - 2 * this.nD - this.a0a) / this.a0b, 3 !== this.cm && (aL.cx = !0)) : (mU = (mU = Math.floor(d0 / (this.cu / this.t5.length))) < 0 ? 0 : mU >= this.t5.length ? this.t5
+					.length - 1 : mU) !== this.cm && (this.cm = mU, this.aFU(), aL.cx = !0)), !0)
 		}, this.pc = function() {
-			var aFU = Math.floor((this.aFS[0] + eB) / eC),
-				aFV = Math.floor((this.aFS[1] + eD) / eC);
-			aFU < 1 || aFV < 1 || aFU >= az.b0 - 1 || aFV >= az.b1 - 1 || console.log(aFU + " " + aFV)
+			var aFV = Math.floor((this.aFT[0] + eB) / eC),
+				aFW = Math.floor((this.aFT[1] + eD) / eC);
+			aFV < 1 || aFW < 1 || aFV >= az.b0 - 1 || aFW >= az.b1 - 1 || console.log(aFV + " " + aFW)
 		}, this.om = function(d0, d1) {
-			return this.aFS[0] = d0, this.aFS[1] = d1, !(!this.pF || !this.aFR || (d0 -= bJ(hL - this.cu, 2), d1 = this.aFQ, this.aFQ = (d0 - 2 * this.nD - this.a0a) / this.a0b, (0 <= this.aFQ && this.aFQ <= 1 || 0 <= d1 && d1 <= 1) && (aL.cx = !0),
+			return this.aFT[0] = d0, this.aFT[1] = d1, !(!this.pF || !this.aFS || (d0 -= bJ(hL - this.cu, 2), d1 = this.aFR, this.aFR = (d0 - 2 * this.nD - this.a0a) / this.a0b, (0 <= this.aFR && this.aFR <= 1 || 0 <= d1 && d1 <= 1) && (aL.cx = !0),
 				0))
 		}, this.pJ = function() {
-			this.aFR && (this.aFR = !1)
+			this.aFS && (this.aFS = !1)
 		}, this.pY = function() {
 			this.pF ? this.lE() : this.show()
 		}, this.show = function() {
-			bR.tL < 2 || (this.pF = !0, this.aFT())
+			bR.tL < 2 || (this.pF = !0, this.aFU())
 		}, this.lE = function() {
-			this.pF = !1, this.aFQ = -1, aL.cx = !0
-		}, this.aFT = function() {
-			this.cm < 2 ? this.a0a = cv.measureText(gR.hU(bR.max[this.cm]), this.aFO + co) : 2 === this.cm && (this.a0a = cv.measureText(g9.uQ(6, 2), this.aFO + co)), this.a0b = this.cu - 2 * this.nD - this.a0a - this.nE
+			this.pF = !1, this.aFR = -1, aL.cx = !0
+		}, this.aFU = function() {
+			this.cm < 2 ? this.a0a = cv.measureText(gR.hU(bR.max[this.cm]), this.aFP + co) : 2 === this.cm && (this.a0a = cv.measureText(g9.uQ(6, 2), this.aFP + co)), this.a0b = this.cu - 2 * this.nD - this.a0a - this.nE
 		}, this.cp = function() {
-			this.pF && this.aFT()
+			this.pF && this.aFU()
 		}, this.d7 = function() {
 			this.pF && this.ui()
 		}, this.ui = function() {
 			var hD = bJ(hL - this.cu, 2),
 				hE = bJ(d3 - this.ez, 2);
-			d8.setTransform(1, 0, 0, 1, hD, hE), d8.fillStyle = dB.iR, d8.fillRect(0, this.lD, this.cu, this.ez - this.lD), this.aFW(), this.aFX(), d8.strokeRect(0, 0, this.cu, this.ez), d8.textAlign = vN, d8.font = this.aFO + co, 0 === this.cm ?
-				this.aFY(bR.oO, hD, hE) : 1 === this.cm ? this.aFY(bR.q8, hD, hE) : 2 === this.cm ? this.aFZ(hD, hE) : 3 === this.cm && (this.aFa(hD, hE), this.aFb(hD, hE)), cK.tN(Math.floor(hD + this.cu - .725 * this.lD), Math.floor(hE + .275 * this
+			d8.setTransform(1, 0, 0, 1, hD, hE), d8.fillStyle = dB.iR, d8.fillRect(0, this.lD, this.cu, this.ez - this.lD), this.aFX(), this.aFY(), d8.strokeRect(0, 0, this.cu, this.ez), d8.textAlign = vN, d8.font = this.aFP + co, 0 === this.cm ?
+				this.aFZ(bR.oO, hD, hE) : 1 === this.cm ? this.aFZ(bR.q8, hD, hE) : 2 === this.cm ? this.aFa(hD, hE) : 3 === this.cm && (this.aFb(hD, hE), this.aFc(hD, hE)), cK.tN(Math.floor(hD + this.cu - .725 * this.lD), Math.floor(hE + .275 * this
 					.lD), Math.floor(.45 * this.lD)), d8.setTransform(1, 0, 0, 1, 0, 0)
-		}, this.aFW = function() {
+		}, this.aFX = function() {
 			var aE, a3;
-			for (d8.lineWidth = this.wB, d8.textBaseline = d9, d8.textAlign = dA, d8.strokeStyle = dB.dC, d8.font = cn + this.aFP + co, a3 = this.cu / this.t5.length, d8.fillStyle = dB.ij, d8.fillRect(this.cm * a3, this.ez - this.ue, a3, this.ue), d8
+			for (d8.lineWidth = this.wB, d8.textBaseline = d9, d8.textAlign = dA, d8.strokeStyle = dB.dC, d8.font = cn + this.aFQ + co, a3 = this.cu / this.t5.length, d8.fillStyle = dB.ij, d8.fillRect(this.cm * a3, this.ez - this.ue, a3, this.ue), d8
 				.fillStyle = dB.dC, d8.fillRect(0, this.ez - this.ue - .5 * this.wB, this.cu, this.wB), aE = 1; aE <= 3; aE++) d8.fillRect(aE * a3, this.ez - this.ue, this.wB, this.ue);
 			for (aE = this.t5.length - 1; 0 <= aE; aE--) d8.fillText(this.t5[aE], (aE + .5) * a3, this.ez - .46 * this.ue)
-		}, this.aFX = function() {
+		}, this.aFY = function() {
 			d8.fillStyle = dB.iz, d8.fillRect(0, 0, this.cu, this.lD), d8.fillStyle = dB.dC, d8.fillRect(0, this.lD - .5 * this.wB, this.cu, this.wB), d8.font = cn + Math.floor(.39 * this.lD) + co, d8.fillText("Statistics", Math.floor(this.cu / 2),
 				Math.floor(.55 * this.lD))
-		}, this.aFY = function(ad, hD, hE) {
+		}, this.aFZ = function(ad, hD, hE) {
 			var ca = bR.max[this.cm],
 				ci = (d8.setTransform(1, 0, 0, 1, hD + 2 * this.nD + this.a0a, hE + this.ud + this.lD), d8.lineWidth = 2, this.a3U / Math.sqrt(ca));
 			d8.beginPath(), d8.moveTo(this.a0b, this.a3U - ci * Math.sqrt(ad[bR.tL - 1]));
@@ -6962,7 +6968,7 @@ function a8f() {
 			d8.stroke();
 			hD = this.tN(ad, ci, .5);
 			hD < .95 && d8.fillText(gR.hU(ca), -this.nD, 0), .05 < Math.abs(hD - .5) && d8.fillText(gR.hU(Math.floor(ca / 4)), -this.nD, Math.floor(this.a3U / 2)), .05 < hD && d8.fillText("0", -this.nD, this.a3U)
-		}, this.aFZ = function(hD, hE) {
+		}, this.aFa = function(hD, hE) {
 			d8.setTransform(1, 0, 0, 1, hD + 2 * this.nD + this.a0a, hE + this.ud + this.lD), d8.lineWidth = 2;
 			var ci = this.a3U / Math.max(bR.max[this.cm], 1);
 			d8.beginPath(), d8.moveTo(this.a0b, this.a3U - ci * bR.zj[bR.tL - 1]);
@@ -6970,87 +6976,87 @@ function a8f() {
 			d8.stroke();
 			hD = this.tN(bR.zj, ci, 1), hE = bR.max[this.cm] / 100;
 			hD < .95 && d8.fillText(g9.uQ(hE, 2), -this.nD, 0), .05 < Math.abs(hD - .5) && d8.fillText(g9.uQ(hE / 2, 2), -this.nD, Math.floor(this.a3U / 2)), .05 < hD && d8.fillText(g9.uQ(0, 2), -this.nD, this.a3U)
-		}, this.aFa = function(hD, hE) {
+		}, this.aFb = function(hD, hE) {
 			d8.setTransform(1, 0, 0, 1, hD + .34 * this.cu, hE + 2 * this.ud + this.lD), d8.textAlign = vN;
-			for (var z9 = this.ez - 4 * this.ud - this.ue - this.lD, aE = 7; 0 <= aE; aE--) d8.fillText(bR.aFI[aE], 0, aE * z9 / 7);
+			for (var z9 = this.ez - 4 * this.ud - this.ue - this.lD, aE = 7; 0 <= aE; aE--) d8.fillText(bR.aFJ[aE], 0, aE * z9 / 7);
 			d8.setTransform(1, 0, 0, 1, hD + .39 * this.cu, hE + 2 * this.ud + this.lD), d8.textAlign = tv;
 			hD = bR.bS[1];
 			for (d8.fillText(g9.uQ(bR.bS[0] / (10 * (hD < 1 ? 1 : hD)), 1), 0, 0), aE = 6; 1 <= aE; aE--) d8.fillText(bR.bS[aE].toString(), 0, aE * z9 / 7);
 			d8.fillText(g9.uQ(100 * (1 - bv[bN] / bR.bS[7]), 0), 0, z9)
-		}, this.aFb = function(hD, hE) {
+		}, this.aFc = function(hD, hE) {
 			d8.setTransform(1, 0, 0, 1, hD + .79 * this.cu, hE + 2 * this.ud + this.lD), d8.textAlign = vN;
 			var aE, z9 = this.ez - 4 * this.ud - this.ue - this.lD;
-			for (d8.fillStyle = dB.id, aE = 2; 0 <= aE; aE--) d8.fillText(bR.aFI[aE + 8], 0, aE * z9 / 9);
-			for (d8.fillStyle = dB.ic, d8.fillText(bR.aFI[11], 0, 3 * z9 / 9), d8.fillStyle = dB.is, aE = 8; 4 <= aE; aE--) d8.fillText(bR.aFI[aE + 8], 0, aE * z9 / 9);
-			d8.fillStyle = dB.ir, d8.fillText(bR.aFI[17], 0, 9 * z9 / 9), d8.fillStyle = dB.id;
+			for (d8.fillStyle = dB.id, aE = 2; 0 <= aE; aE--) d8.fillText(bR.aFJ[aE + 8], 0, aE * z9 / 9);
+			for (d8.fillStyle = dB.ic, d8.fillText(bR.aFJ[11], 0, 3 * z9 / 9), d8.fillStyle = dB.is, aE = 8; 4 <= aE; aE--) d8.fillText(bR.aFJ[aE + 8], 0, aE * z9 / 9);
+			d8.fillStyle = dB.ir, d8.fillText(bR.aFJ[17], 0, 9 * z9 / 9), d8.fillStyle = dB.id;
 			var u3 = gR.hU(bR.bS[8] + bR.bS[9] + bR.bS[10] + bR.bS[11]),
-				aFc = d8.measureText(u3).width,
-				hD = (d8.setTransform(1, 0, 0, 1, hD + .83 * this.cu + aFc, hE + 2 * this.ud + this.lD), d8.fillText(gR.hU(bR.bS[8]), 0, 0), d8.fillText(gR.hU(bR.bS[9]), 0, z9 / 9), d8.fillText(gR.hU(bR.bS[10]), 0, 2 * z9 / 9), d8.fillStyle = dB.ic,
-					d8.fillText(u3, 0, 3 * z9 / 9), d8.fillStyle = dB.is, bR.bS[13] - b5.a6N(bN)),
-				aFc = (d8.fillText(gR.hU(bR.bS[12]), 0, 4 * z9 / 9), d8.fillText(gR.hU(hD), 0, 5 * z9 / 9), d8.fillText(gR.hU(bR.bS[14]), 0, 6 * z9 / 9), d8.fillText(gR.hU(bR.bS[15]), 0, 7 * z9 / 9), d8.fillText(gR.hU(bR.bS[16]), 0, 8 * z9 / 9), bR
+				aFd = d8.measureText(u3).width,
+				hD = (d8.setTransform(1, 0, 0, 1, hD + .83 * this.cu + aFd, hE + 2 * this.ud + this.lD), d8.fillText(gR.hU(bR.bS[8]), 0, 0), d8.fillText(gR.hU(bR.bS[9]), 0, z9 / 9), d8.fillText(gR.hU(bR.bS[10]), 0, 2 * z9 / 9), d8.fillStyle = dB.ic,
+					d8.fillText(u3, 0, 3 * z9 / 9), d8.fillStyle = dB.is, bR.bS[13] - b5.a6O(bN)),
+				aFd = (d8.fillText(gR.hU(bR.bS[12]), 0, 4 * z9 / 9), d8.fillText(gR.hU(hD), 0, 5 * z9 / 9), d8.fillText(gR.hU(bR.bS[14]), 0, 6 * z9 / 9), d8.fillText(gR.hU(bR.bS[15]), 0, 7 * z9 / 9), d8.fillText(gR.hU(bR.bS[16]), 0, 8 * z9 / 9), bR
 					.bS[12] + hD + bR.bS[14] + bR.bS[15] + bR.bS[16] + bR.bS[17]);
-			d8.fillStyle = dB.ir, d8.fillText(gR.hU(aFc), 0, z9), d8.fillStyle = dB.dC
+			d8.fillStyle = dB.ir, d8.fillText(gR.hU(aFd), 0, z9), d8.fillStyle = dB.dC
 		}, this.tN = function(ad, ci, xr) {
 			var aE, oX, ae;
-			return this.aFQ < 0 || 1 < this.aFQ ? .25 : (aE = this.aFQ * (bR.tL - 1), ae = ad[oX = Math.floor(aE)], ae += (aE - oX) * (ad[oX < bR.tL - 1 ? oX + 1 : oX] - ae), d8.strokeStyle = dB.iW, .04 < this.aFQ && this.aFf(0, this.a3U - ci * Math
-					.pow(ae, xr), aE * this.a0b / (bR.tL - 1), this.a3U - ci * Math.pow(ae, xr)), .04 < ae / bR.max[this.cm] && this.aFf(aE * this.a0b / (bR.tL - 1), this.a3U, aE * this.a0b / (bR.tL - 1), this.a3U - ci * Math.pow(ae, xr)), d8
-				.fillStyle = dB.iu, d8.beginPath(), d8.arc(aE * this.a0b / (bR.tL - 1), this.a3U - ci * Math.pow(ae, xr), Math.max(2, .014 * this.ez), 0, 2 * Math.PI), d8.fill(), ad = this.aFQ * aL.zl, ad = 0 === e6[bN] ? Math.floor(ad * gZ.zs) :
+			return this.aFR < 0 || 1 < this.aFR ? .25 : (aE = this.aFR * (bR.tL - 1), ae = ad[oX = Math.floor(aE)], ae += (aE - oX) * (ad[oX < bR.tL - 1 ? oX + 1 : oX] - ae), d8.strokeStyle = dB.iW, .04 < this.aFR && this.aFg(0, this.a3U - ci * Math
+					.pow(ae, xr), aE * this.a0b / (bR.tL - 1), this.a3U - ci * Math.pow(ae, xr)), .04 < ae / bR.max[this.cm] && this.aFg(aE * this.a0b / (bR.tL - 1), this.a3U, aE * this.a0b / (bR.tL - 1), this.a3U - ci * Math.pow(ae, xr)), d8
+				.fillStyle = dB.iu, d8.beginPath(), d8.arc(aE * this.a0b / (bR.tL - 1), this.a3U - ci * Math.pow(ae, xr), Math.max(2, .014 * this.ez), 0, 2 * Math.PI), d8.fill(), ad = this.aFR * aL.zl, ad = 0 === e6[bN] ? Math.floor(ad * gZ.zs) :
 				Math.floor(ad * aL.fU()), d8.fillStyle = dB.dC, d8.fillText(1 === xr ? g9.uQ(ae / 100, 2) : gR.hU(Math.floor(ae)), -this.nD, this.a3U - ci * Math.pow(ae, xr)), d8.textAlign = dA, d8.fillText(g9.yT(ad), aE * this.a0b / (bR.tL - 1),
-					this.a3U + this.aFO - (a0 ? 2 : 0) - this.wB), d8.textAlign = vN, ci * Math.pow(ae, xr) / this.a3U)
-		}, this.aFf = function(hI, hJ, hK, hM) {
+					this.a3U + this.aFP - (a0 ? 2 : 0) - this.wB), d8.textAlign = vN, ci * Math.pow(ae, xr) / this.a3U)
+		}, this.aFg = function(hI, hJ, hK, hM) {
 			d8.beginPath(), d8.moveTo(hI, hJ), d8.lineTo(hK, hM), d8.stroke()
 		}
 }
 
 function rC() {
-	this.aFg = "https://", this.aFh = this.aFg + "territorial.io/", this.aB1 = this.aFh + "changelog", this.aB2 = this.aFh + "terms", this.uh = this.aFh + "cookie_policy", this.a8a = this.aFh + "privacy_policy", this.aAy = this.aFh + "tutorial", this
-		.aAz = this.aFh + "players", this.aB0 = this.aFh + "clans", this.a0s = this.aFg + "play.google.com/store/apps/details?id=territorial.io", this.a0t = this.aFg + "apps.apple.com/app/id1581110913", this.a0u = this.aFg +
-		"www.youtube.com/watch?v=toZTQ8aRdFc", this.a0v = this.aFg + "discord.gg/pthqvpTXmh", this.a0w = this.aFg + "www.instagram.com/davidtschacher/"
+	this.aFh = "https://", this.aFi = this.aFh + "territorial.io/", this.aB2 = this.aFi + "changelog", this.aB3 = this.aFi + "terms", this.uh = this.aFi + "cookie_policy", this.a8b = this.aFi + "privacy_policy", this.aAz = this.aFi + "tutorial", this
+		.aB0 = this.aFi + "players", this.aB1 = this.aFi + "clans", this.a0s = this.aFh + "play.google.com/store/apps/details?id=territorial.io", this.a0t = this.aFh + "apps.apple.com/app/id1581110913", this.a0u = this.aFh +
+		"www.youtube.com/watch?v=toZTQ8aRdFc", this.a0v = this.aFh + "discord.gg/pthqvpTXmh", this.a0w = this.aFh + "www.instagram.com/davidtschacher/"
 }
 
 function sC() {
-	this.gL = new aFi, this.n3 = new aFj, this.b = function() {
+	this.gL = new aFj, this.n3 = new aFk, this.b = function() {
 		this.gL.b()
 	}, this.fF = function() {
 		0 !== this.gL.uk && this.gL.uk--
 	}
 }
 
-function aFj() {
+function aFk() {
 	this.d7 = function() {
-		if (0 !== gP.gL.uk && (d8.globalAlpha = Math.min(gP.gL.uk / 580, 1), d8.drawImage(gP.gL.aFm, 1 + hv.hN(), 1 + hv.d6()), d8.globalAlpha = 1, hr)) {
+		if (0 !== gP.gL.uk && (d8.globalAlpha = Math.min(gP.gL.uk / 580, 1), d8.drawImage(gP.gL.aFn, 1 + hv.hN(), 1 + hv.d6()), d8.globalAlpha = 1, hr)) {
 			var aE, hI = eB / eC,
 				hJ = eD / eC,
 				hK = (hL + eB) / eC,
 				hM = (d3 + eD) / eC,
-				bd = gP.gL.aFn * eC,
-				aFo = gP.gL.aFo;
-			for (aE = e5 - 1; 0 <= aE; aE--) ! function(aE, bd, hI, hJ, hK, hM, aFo) {
+				bd = gP.gL.aFo * eC,
+				aFp = gP.gL.aFp;
+			for (aE = e5 - 1; 0 <= aE; aE--) ! function(aE, bd, hI, hJ, hK, hM, aFp) {
 				0 === e6[aE] || 0 === bv[aE] || (hK = hL * ((f3[aE] + f2[aE] + 1) / 2 - hI) / (hK - hI) - .5 * bd, hI = d3 * ((f6[aE] + f5[aE] + 1) / 2 - hJ) / (hM - hJ) - .5 * bd, hL < hK) || d3 < hI || hK < -bd || hI < -bd || (d8
-					.setTransform(eC, 0, 0, eC, hK, hI), d8.drawImage(aFo[cS ? fW.fX[aE] : 1], 0, 0))
-			}(aE, bd, hI, hJ, hK, hM, aFo);
+					.setTransform(eC, 0, 0, eC, hK, hI), d8.drawImage(aFp[cS ? fW.fX[aE] : 1], 0, 0))
+			}(aE, bd, hI, hJ, hK, hM, aFp);
 			d8.setTransform(eC, 0, 0, eC, 0, 0)
 		}
 	}
 }
 
-function aFi() {
-	this.aFn = 28, this.uk = 0, this.aFm = null;
-	var aFq = this.aFo = null;
+function aFj() {
+	this.aFo = 28, this.uk = 0, this.aFn = null;
+	var aFr = this.aFp = null;
 
-	function aFt(dE, aFv) {
+	function aFu(dE, aFw) {
 		var hD, hE, dg, dx, sS = cM.iL.ln(dE, dE),
 			dM = cM.iL.getContext(sS, !0),
 			dI = cM.iL.getImageData(dM, dE, dE),
 			lz = dI.data,
 			ca = (dE >> 1) - .5,
-			aFw = .5 + ca;
-		for (aFw *= aFw, hE = 0; hE < dE; hE++)
-			for (hD = 0; hD < dE; hD++) dx = (dx = hD - ca) * dx + (dx = hE - ca) * dx, lz[dg = 4 * (hE * dE + hD)] = aFv[0], lz[1 + dg] = aFv[1], lz[2 + dg] = aFv[2], lz[3 + dg] = (aFw - dx) * aFv[3] / aFw;
+			aFx = .5 + ca;
+		for (aFx *= aFx, hE = 0; hE < dE; hE++)
+			for (hD = 0; hD < dE; hD++) dx = (dx = hD - ca) * dx + (dx = hE - ca) * dx, lz[dg = 4 * (hE * dE + hD)] = aFw[0], lz[1 + dg] = aFw[1], lz[2 + dg] = aFw[2], lz[3 + dg] = (aFx - dx) * aFw[3] / aFx;
 		return dM.putImageData(dI, 0, 0), sS
 	}
 
-	function aF6(aE, dM, sS, dE) {
+	function aF7(aE, dM, sS, dE) {
 		var hD;
 		0 !== e6[aE] && 0 !== bv[aE] && (hD = f3[aE] + f2[aE] + 1 - dE - 2 >> 1, dE = f6[aE] + f5[aE] + 1 - dE - 2 >> 1, dM.drawImage(sS[cS ? fW.fX[aE] : aE < e5 ? 1 : 0], hD, dE))
 	}
@@ -7058,48 +7064,48 @@ function aFi() {
 		var t2;
 		this.uk = 700,
 			function(t2) {
-				var aE, dE = t2.aFn;
-				if (t2.aFo = [], aFq = [], cS)
-					for (aE = 0; aE <= qU; aE++) t2.aFo.push(aFt(dE, fW.aFu[fW.oE[aE]])), aFq.push(aFt(dE >> 1, fW.aFu[fW.oE[aE]]));
-				else t2.aFo.push(aFt(dE, fW.aFu[0])), t2.aFo.push(aFt(dE, fW.aFu[4])), aFq.push(aFt(dE >> 1, fW.aFu[0]))
+				var aE, dE = t2.aFo;
+				if (t2.aFp = [], aFr = [], cS)
+					for (aE = 0; aE <= qU; aE++) t2.aFp.push(aFu(dE, fW.aFv[fW.oE[aE]])), aFr.push(aFu(dE >> 1, fW.aFv[fW.oE[aE]]));
+				else t2.aFp.push(aFu(dE, fW.aFv[0])), t2.aFp.push(aFu(dE, fW.aFv[4])), aFr.push(aFu(dE >> 1, fW.aFv[0]))
 			}(this),
-			function(t2, aFx) {
-				var aE, aFm = t2.aFm,
-					dM = cM.iL.getContext(aFm, !0),
+			function(t2, aFy) {
+				var aE, aFn = t2.aFn,
+					dM = cM.iL.getContext(aFn, !0),
 					bU = bZ,
-					dE = t2.aFn >> 1;
-				dM.imageSmoothingEnabled = !1, dM.setTransform(1, 0, 0, 1, 0, 0), aFx && dM.clearRect(0, 0, aFm.width, aFm.height);
-				for (aE = e5; aE < bU; aE++) aF6(aE, dM, aFq, dE)
-			}(this, null !== (t2 = this).aFm && t2.aFm.width === az.b0 - 2 && t2.aFm.height === az.b1 - 2 || (t2.aFm = cM.iL.ln(az.b0 - 2, az.b1 - 2), !1))
+					dE = t2.aFo >> 1;
+				dM.imageSmoothingEnabled = !1, dM.setTransform(1, 0, 0, 1, 0, 0), aFy && dM.clearRect(0, 0, aFn.width, aFn.height);
+				for (aE = e5; aE < bU; aE++) aF7(aE, dM, aFr, dE)
+			}(this, null !== (t2 = this).aFn && t2.aFn.width === az.b0 - 2 && t2.aFn.height === az.b1 - 2 || (t2.aFn = cM.iL.ln(az.b0 - 2, az.b1 - 2), !1))
 	}, this.qO = function() {
-		for (var bU = e5, dE = this.aFn, aFo = this.aFo, dM = cM.iL.getContext(this.aFm, !0), aE = 0; aE < bU; aE++) aF6(aE, dM, aFo, dE)
+		for (var bU = e5, dE = this.aFo, aFp = this.aFp, dM = cM.iL.getContext(this.aFn, !0), aE = 0; aE < bU; aE++) aF7(aE, dM, aFp, dE)
 	}
 }
 
 function sD() {
-	this.aFy = -1, this.b = function() {
-		this.aFy = -1
+	this.aFz = -1, this.b = function() {
+		this.aFz = -1
 	}, this.fF = function() {
-		-1 !== this.aFy && gC.np.nx(this.aFy)
+		-1 !== this.aFz && gC.np.nx(this.aFz)
 	}, this.jj = function(player) {
-		return !!cK.tK(player) && (1 === fY ? (this.aFy = player, fx && hr && kG.fF()) : (g7.nv(player, player === bN ? 21 : 22), 8 === fv ? this.aFy = 1 - player : fx ? (a5M(player), a8P(), hr && kG.fF()) : this.aFz(player)), !0)
+		return !!cK.tK(player) && (1 === fY ? (this.aFz = player, fx && hr && kG.fF()) : (g7.nv(player, player === bN ? 21 : 22), 8 === fv ? this.aFz = 1 - player : fx ? (a5N(player), a8Q(), hr && kG.fF()) : this.aG0(player)), !0)
 	}, this.kC = function(player) {
-		1 === gg && 0 !== e6[player] && 2 !== e7[player] && (8 === fv ? this.aFy = 1 - player : this.aFz(player)), g7.nv(player, 4)
-	}, this.aFz = function(player) {
-		hr ? (a5M(player), a8P()) : gI.a81(player)
+		1 === gg && 0 !== e6[player] && 2 !== e7[player] && (8 === fv ? this.aFz = 1 - player : this.aG0(player)), g7.nv(player, 4)
+	}, this.aG0 = function(player) {
+		hr ? (a5N(player), a8Q()) : gJ.a82(player)
 	}
 }
 
-function a8h() {
+function a8i() {
 	this.a33 = ["rgba(130,130,130,0.88)", "rgba(130,12,12,0.88)", "rgba(12,130,12,0.88)", "rgba(12,12,130,0.88)", "rgba(130,130,12,0.88)", "rgba(130,12,130,0.88)", "rgba(12,130,130,0.88)", "rgba(130,130,130,0.88)", "rgba(0,0,0,0.88)"], this.z8 = [dB
 		.dC, "rgb(255,120,120)", "rgb(0,230,0)", "rgb(150,150,255)", "rgb(240,240,25)", "rgb(255,70,255)", "rgb(25,240,240)", dB.dC, "rgb(170,170,170)"
-	], this.aG0 = [dB.dC, "rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,255)", "rgb(255,255,0)", "rgb(255,0,255)", "rgb(0,255,255)", dB.dC, dB.hP], this.aG1 = [dB.hP, dB.dC, dB.dC, dB.dC, dB.hP, dB.hP, dB.hP, dB.hP, dB.dC];
-	var aG2 = ["255,255,255", "0,0,0", "255,4,4", "200,4,4", "4,255,4", "4,180,4", "255,195,195", "90,3,3", "200,255,200", "3,84,3"],
-		aG3 = (this.a7W = ["rgba(" + aG2[0] + ",", "rgba(" + aG2[1] + ",", "rgba(" + aG2[2] + ",", "rgba(" + aG2[3] + ",", "rgba(" + aG2[4] + ",", "rgba(" + aG2[5] + ",", "rgba(" + aG2[6] + ",", "rgba(" + aG2[7] + ",", "rgba(" + aG2[8] + ",",
-			"rgba(" + aG2[9] + ","
-		], this.a7X = ["rgb(" + aG2[0] + ")", "rgb(" + aG2[1] + ")", "rgb(" + aG2[2] + ")", "rgb(" + aG2[3] + ")", "rgb(" + aG2[4] + ")", "rgb(" + aG2[5] + ")", "rgb(" + aG2[6] + ")", "rgb(" + aG2[7] + ")", "rgb(" + aG2[8] + ")", "rgb(" + aG2[
+	], this.aG1 = [dB.dC, "rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,255)", "rgb(255,255,0)", "rgb(255,0,255)", "rgb(0,255,255)", dB.dC, dB.hP], this.aG2 = [dB.hP, dB.dC, dB.dC, dB.dC, dB.hP, dB.hP, dB.hP, dB.hP, dB.dC];
+	var aG3 = ["255,255,255", "0,0,0", "255,4,4", "200,4,4", "4,255,4", "4,180,4", "255,195,195", "90,3,3", "200,255,200", "3,84,3"],
+		aG4 = (this.a7X = ["rgba(" + aG3[0] + ",", "rgba(" + aG3[1] + ",", "rgba(" + aG3[2] + ",", "rgba(" + aG3[3] + ",", "rgba(" + aG3[4] + ",", "rgba(" + aG3[5] + ",", "rgba(" + aG3[6] + ",", "rgba(" + aG3[7] + ",", "rgba(" + aG3[8] + ",",
+			"rgba(" + aG3[9] + ","
+		], this.a7Y = ["rgb(" + aG3[0] + ")", "rgb(" + aG3[1] + ")", "rgb(" + aG3[2] + ")", "rgb(" + aG3[3] + ")", "rgb(" + aG3[4] + ")", "rgb(" + aG3[5] + ")", "rgb(" + aG3[6] + ")", "rgb(" + aG3[7] + ")", "rgb(" + aG3[8] + ")", "rgb(" + aG3[
 			9] + ")"
-		], this.cj = ["White", "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "White", "Black"], this.aFu = [
+		], this.cj = ["White", "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "White", "Black"], this.aFv = [
 			[255, 255, 255, 180],
 			[255, 0, 0, 180],
 			[0, 255, 0, 180],
@@ -7120,87 +7126,87 @@ function a8h() {
 			[255, 255, 255],
 			[0, 0, 0]
 		]),
-		aG4 = (this.oE = [0, 1, 2, 3, 4, 5, 6, 7, 8], 7),
+		aG5 = (this.oE = [0, 1, 2, 3, 4, 5, 6, 7, 8], 7),
 		lh = "[",
 		li = "]";
 	this.fX = new Uint8Array(bZ), this.oM = null, this.oN = null, this.b = function(nH) {
-		this.fX.fill(0), this.aG5(), cS && (fr.fs && fr.ft.a65 ? this.a4j() : 9 === fv ? this.aG6() : this.fF(nH))
-	}, this.a4j = function() {
+		this.fX.fill(0), this.aG6(), cS && (fr.fs && fr.ft.a66 ? this.a4k() : 9 === fv ? this.aG7() : this.fF(nH))
+	}, this.a4k = function() {
 		var aE, bU = mW;
-		for (this.oE = [0, 1, 2, 3, 4, 5, 6, 7, 8], aE = 0; aE < bU; aE++) this.fX[aE] = fr.ft.a65[aE]
-	}, this.aG5 = function() {
+		for (this.oE = [0, 1, 2, 3, 4, 5, 6, 7, 8], aE = 0; aE < bU; aE++) this.fX[aE] = fr.ft.a66[aE]
+	}, this.aG6 = function() {
 		for (var aE = this.oE.length - 1; 0 <= aE; aE--) this.oE[aE] = aE;
 		this.oM = [], this.oN = []
-	}, this.aG6 = function() {
-		for (var aE = e5 + g1.a7s - 1; 0 <= aE; aE--) this.fX[aE] = 1;
-		for (aE = e5 + g1.a7s; aE < bZ; aE++) this.fX[aE] = 2;
+	}, this.aG7 = function() {
+		for (var aE = e5 + g1.a7t - 1; 0 <= aE; aE--) this.fX[aE] = 1;
+		for (aE = e5 + g1.a7t; aE < bZ; aE++) this.fX[aE] = 2;
 		this.oE[1] = 7, this.oE[2] = 8
 	}, this.fF = function(nH) {
 		var dZ = new Uint8Array(e5),
 			da = new Uint8Array(e5),
-			aG7 = new Uint16Array(8),
-			aG8 = new Uint16Array(this.oE.length);
-		this.aG9(nH, dZ, da, aG7), this.a4h(aG7), fx || this.aGA(aG8, dZ, da), this.aGB(dZ, da, aG8), fx ? this.aGC() : this.aGD()
-	}, this.aG9 = function(nH, dZ, da, aGE) {
-		for (var cV, oX, aGF, bU = this.oE.length - 1, ad = new Uint16Array(bU), aE = e5 - 1; 0 <= aE; aE--) {
-			for (cV = bU; 1 <= cV; cV--) ad[cV - 1] = Math.abs(4 * nH[aE].a3i[0] - aG3[cV][0]) + Math.abs(4 * nH[aE].a3i[1] - aG3[cV][1]) + Math.abs(4 * nH[aE].a3i[2] - aG3[cV][2]);
-			for (aGF = 768, cV = bU - 1; 0 <= cV; cV--) ad[oX = (cV + aE) % bU] < aGF && (aGF = ad[oX], dZ[aE] = oX);
-			for (aGE[dZ[aE]] += 4, aGF = 768, cV = bU - 1; 0 <= cV; cV--) ad[oX = (cV + aE) % bU] < aGF && oX !== dZ[aE] && (aGF = ad[oX], da[aE] = oX);
-			aGE[da[aE]]++
+			aG8 = new Uint16Array(8),
+			aG9 = new Uint16Array(this.oE.length);
+		this.aGA(nH, dZ, da, aG8), this.a4i(aG8), fx || this.aGB(aG9, dZ, da), this.aGC(dZ, da, aG9), fx ? this.aGD() : this.aGE()
+	}, this.aGA = function(nH, dZ, da, aGF) {
+		for (var cV, oX, aGG, bU = this.oE.length - 1, ad = new Uint16Array(bU), aE = e5 - 1; 0 <= aE; aE--) {
+			for (cV = bU; 1 <= cV; cV--) ad[cV - 1] = Math.abs(4 * nH[aE].a3i[0] - aG4[cV][0]) + Math.abs(4 * nH[aE].a3i[1] - aG4[cV][1]) + Math.abs(4 * nH[aE].a3i[2] - aG4[cV][2]);
+			for (aGG = 768, cV = bU - 1; 0 <= cV; cV--) ad[oX = (cV + aE) % bU] < aGG && (aGG = ad[oX], dZ[aE] = oX);
+			for (aGF[dZ[aE]] += 4, aGG = 768, cV = bU - 1; 0 <= cV; cV--) ad[oX = (cV + aE) % bU] < aGG && oX !== dZ[aE] && (aGG = ad[oX], da[aE] = oX);
+			aGF[da[aE]]++
 		}
-	}, this.a4h = function(aGE) {
+	}, this.a4i = function(aGF) {
 		for (var cV, sQ, bU = this.oE.length - 1, aE = bU; 0 <= aE; aE--) this.oE[aE] = aE;
-		for (aE = bU - 1; 0 <= aE; aE--) aGE[aE]++;
+		for (aE = bU - 1; 0 <= aE; aE--) aGF[aE]++;
 		for (aE = 1; aE <= bU; aE++) {
-			for (sQ = 0, cV = 1; cV < bU; cV++) aGE[cV] > aGE[sQ] && (sQ = cV);
-			aGE[sQ] = 0, this.oE[aE] = sQ + 1
+			for (sQ = 0, cV = 1; cV < bU; cV++) aGF[cV] > aGF[sQ] && (sQ = cV);
+			aGF[sQ] = 0, this.oE[aE] = sQ + 1
 		}
-	}, this.aGA = function(aG8, dZ, da) {
-		var aE, cV, aGG, fV, be, oX, i4, pv, aGH = this.oE.length - 1,
-			aGI = new Uint16Array(aGH),
-			aGJ = [];
+	}, this.aGB = function(aG9, dZ, da) {
+		var aE, cV, aGH, fV, be, oX, i4, pv, aGI = this.oE.length - 1,
+			aGJ = new Uint16Array(aGI),
+			aGK = [];
 		loop: for (aE = e5 - 1; 0 <= aE; aE--)
-			if (null !== (aGG = function(aE) {
-					var aE1, aDp;
-					return (aE1 = ua[aE].indexOf(lh)) < 0 || !(1 < (aDp = ua[aE].indexOf(li)) - aE1 && aDp - aE1 <= aG4 + 1) ? null : ua[aE].substring(aE1 + 1, aDp).toUpperCase().trim()
+			if (null !== (aGH = function(aE) {
+					var aE2, aDq;
+					return (aE2 = ua[aE].indexOf(lh)) < 0 || !(1 < (aDq = ua[aE].indexOf(li)) - aE2 && aDq - aE2 <= aG5 + 1) ? null : ua[aE].substring(aE2 + 1, aDq).toUpperCase().trim()
 				}(aE))) {
 				for (cV = this.oM.length - 1; 0 <= cV; cV--)
-					if (aGG === this.oM[cV]) {
+					if (aGH === this.oM[cV]) {
 						this.oN[cV].push(aE);
 						continue loop
-					} this.oM.push(aGG), aGJ.push(!1), this.oN.push([]), this.oN[this.oM.length - 1].push(aE)
+					} this.oM.push(aGH), aGK.push(!1), this.oN.push([]), this.oN[this.oM.length - 1].push(aE)
 			}
 		for (cV = this.oM.length - 1; 0 <= cV; cV--) {
-			for (be = -1, fV = this.oM.length - 1; 0 <= fV; fV--) !aGJ[fV] && (-1 === be || this.oN[fV].length > this.oN[be].length) && (be = fV);
-			for (fV = aGH - 1; 0 <= fV; fV--) aGI[fV] = 1;
-			for (fV = this.oN[be].length - 1; 0 <= fV; fV--) aGI[dZ[this.oN[be][fV]]] += 3, aGI[da[this.oN[be][fV]]]++;
-			for (aE = aGH - 1; 0 <= aE; aE--) {
-				for (oX = be % aGH, fV = aGH - 1; 0 <= fV; fV--) aGI[fV] > aGI[oX] && (oX = fV);
+			for (be = -1, fV = this.oM.length - 1; 0 <= fV; fV--) !aGK[fV] && (-1 === be || this.oN[fV].length > this.oN[be].length) && (be = fV);
+			for (fV = aGI - 1; 0 <= fV; fV--) aGJ[fV] = 1;
+			for (fV = this.oN[be].length - 1; 0 <= fV; fV--) aGJ[dZ[this.oN[be][fV]]] += 3, aGJ[da[this.oN[be][fV]]]++;
+			for (aE = aGI - 1; 0 <= aE; aE--) {
+				for (oX = be % aGI, fV = aGI - 1; 0 <= fV; fV--) aGJ[fV] > aGJ[oX] && (oX = fV);
 				for (i4 = -1, fV = qU; 0 < fV; fV--)
 					if (this.oE[fV] === oX + 1) {
 						i4 = fV;
 						break
-					} if (aGI[oX] = 0, -1 !== i4) {
-					for (pv = 0, fV = qU; 0 < fV; fV--) aG8[i4] > aG8[fV] && pv++;
+					} if (aGJ[oX] = 0, -1 !== i4) {
+					for (pv = 0, fV = qU; 0 < fV; fV--) aG9[i4] > aG9[fV] && pv++;
 					if (pv !== qU - 1) {
-						for (fV = this.oN[be].length - 1; 0 <= fV; fV--) aG8[i4]++, this.fX[this.oN[be][fV]] = i4;
+						for (fV = this.oN[be].length - 1; 0 <= fV; fV--) aG9[i4]++, this.fX[this.oN[be][fV]] = i4;
 						break
 					}
 				}
 			}
-			aGJ[be] = !0
+			aGK[be] = !0
 		}
-	}, this.aGB = function(dZ, da, aG8) {
-		for (var aE, dw, bU = this.oE.length - 1, border = bJ(e5, qU), aGL = (0 < e5 % qU && border++, new Uint8Array(1 + bU)), cV = bU; 1 <= cV; cV--) aGL[this.oE[cV]] = cV;
-		for (aE = 0; aE < e5; aE++) dw = aGL[dZ[aE] + 1], 0 === this.fX[aE] && dw <= qU && aG8[dw] < border && (aG8[dw]++, this.fX[aE] = dw);
-		for (aE = 0; aE < e5; aE++) dw = aGL[da[aE] + 1], 0 === this.fX[aE] && dw <= qU && aG8[dw] < border && (aG8[dw]++, this.fX[aE] = dw);
+	}, this.aGC = function(dZ, da, aG9) {
+		for (var aE, dw, bU = this.oE.length - 1, border = bJ(e5, qU), aGM = (0 < e5 % qU && border++, new Uint8Array(1 + bU)), cV = bU; 1 <= cV; cV--) aGM[this.oE[cV]] = cV;
+		for (aE = 0; aE < e5; aE++) dw = aGM[dZ[aE] + 1], 0 === this.fX[aE] && dw <= qU && aG9[dw] < border && (aG9[dw]++, this.fX[aE] = dw);
+		for (aE = 0; aE < e5; aE++) dw = aGM[da[aE] + 1], 0 === this.fX[aE] && dw <= qU && aG9[dw] < border && (aG9[dw]++, this.fX[aE] = dw);
 		for (cV = qU; 1 <= cV; cV--)
-			for (aE = e5 - 1; 0 <= aE && !(aG8[cV] >= border); aE--) 0 === this.fX[aE] && (aG8[cV]++, this.fX[aE] = cV)
-	}, this.aGC = function() {
-		var aE, ej, aGE = new Uint16Array(qU);
-		for (aGE[qU - 1] = bZ, aE = qU - 2; 0 <= aE; aE--) aGE[aE] = fy.fz[aE].uH;
-		for (aGE[0]--, ej = 0 === aGE[0] ? 1 : 0, aE = e5; aE < bZ; aE++) this.fX[aE] = ej + 1, aGE[ej]--, aGE[ej] <= 0 && ej++
+			for (aE = e5 - 1; 0 <= aE && !(aG9[cV] >= border); aE--) 0 === this.fX[aE] && (aG9[cV]++, this.fX[aE] = cV)
 	}, this.aGD = function() {
+		var aE, ej, aGF = new Uint16Array(qU);
+		for (aGF[qU - 1] = bZ, aE = qU - 2; 0 <= aE; aE--) aGF[aE] = fy.fz[aE].uH;
+		for (aGF[0]--, ej = 0 === aGF[0] ? 1 : 0, aE = e5; aE < bZ; aE++) this.fX[aE] = ej + 1, aGF[ej]--, aGF[ej] <= 0 && ej++
+	}, this.aGE = function() {
 		for (var aE = e5; aE < bZ; aE++) this.fX[aE] = 1 + aE % qU
 	}
 }
@@ -7221,13 +7227,13 @@ function bA() {
 }
 
 function bB() {
-	var be, bc, aGM, aGN, bU = bn[am].length;
+	var be, bc, aGN, aGO, bU = bn[am].length;
 	loop: for (var aE = bU - 1; 0 <= aE; aE--) {
-		for (aGM = aGN = !1, be = 3; 0 <= be; be--) {
-			if (bc = bn[am][aE] + av[be], bW.a4t(bc, am)) continue loop;
-			aGM = aGM || bW.sm(bc), aGN = aGN || bW.m9(bc)
+		for (aGN = aGO = !1, be = 3; 0 <= be; be--) {
+			if (bc = bn[am][aE] + av[be], bW.a4u(bc, am)) continue loop;
+			aGN = aGN || bW.sm(bc), aGO = aGO || bW.m9(bc)
 		}
-		aGM ? bo[am].push(bn[am][aE]) : aGN ? br[am].push(bn[am][aE]) : bW.mp(bn[am][aE], am), bn[am][aE] = bn[am][bU - 1], bn[am].pop(), bU--
+		aGN ? bo[am].push(bn[am][aE]) : aGO ? br[am].push(bn[am][aE]) : bW.mp(bn[am][aE], am), bn[am][aE] = bn[am][bU - 1], bn[am].pop(), bU--
 	}
 }
 
@@ -7246,7 +7252,7 @@ function bp(border) {
 function bq(border) {
 	for (var be, bc, bU = border.length, aE = bU - 1; 0 <= aE; aE--)
 		for (be = 3; 0 <= be; be--)
-			if (bc = border[aE] + av[be], bW.a4t(bc, ap)) {
+			if (bc = border[aE] + av[be], bW.a4u(bc, ap)) {
 				bn[ap].push(border[aE]), border[aE] = border[bU - 1], border.pop(), bU--;
 				break
 			}
@@ -7254,7 +7260,7 @@ function bq(border) {
 
 function bs() {
 	for (var be, bc, aE = aq - 1; 0 <= aE; aE--)
-		for (be = 3; 0 <= be; be--) bc = as[aE] + av[be], bW.a4u(ap, bc) && bW.a4v(bc) && (bn[ap].push(bc), bW.bY(bc, ap))
+		for (be = 3; 0 <= be; be--) bc = as[aE] + av[be], bW.a4v(ap, bc) && bW.a4w(bc) && (bn[ap].push(bc), bW.bY(bc, ap))
 }
 
 function bt() {
@@ -7286,7 +7292,7 @@ function eo(player, ed) {
 }
 
 function so(player, ed) {
-	for (var oX, aGO = b5.b6(player), aE = 0; aE < aGO; aE++)
+	for (var oX, aGP = b5.b6(player), aE = 0; aE < aGP; aE++)
 		if (0 === b5.b7(player, aE))
 			if ((oX = b5.bC(player, aE)) === bZ) {
 				if (ed === bZ) return !1;
@@ -7305,253 +7311,253 @@ function sn(player) {
 }
 
 function ss(q5, q6) {
-	var aE, a3, be, bd, bc, aCB = bn[q5].length,
-		aE8 = bn[q6].length;
-	for (aE8 < aCB && (a3 = q5, q5 = q6, q6 = a3, a3 = aCB, aCB = aE8, 0), be = 3; 0 <= be; be--)
-		for (bd = av[be], aE = 0; aE < aCB; aE++)
+	var aE, a3, be, bd, bc, aCC = bn[q5].length,
+		aE9 = bn[q6].length;
+	for (aE9 < aCC && (a3 = q5, q5 = q6, q6 = a3, a3 = aCC, aCC = aE9, 0), be = 3; 0 <= be; be--)
+		for (bd = av[be], aE = 0; aE < aCC; aE++)
 			if (bc = bn[q5][aE] + bd, bW.bf(bc) && bW.bg(bc) === q6) return !0;
 	return !1
 }
 
-function aGP() {
+function aGQ() {
 	this.fF = function() {
 		qu.fF(), qw.fF(), ph.fF(), gB.fF(), gc.a2X(), d5.fF(), aL.cx && (aL.cx = !1, aT.d7())
 	}
 }
 
-function aGQ() {
-	this.aM = aL.aM, this.cm = 0, this.aGR = 0, this.a2U = 0, this.aGS = null, this.aGT = 7, this.ul = 0, this.b = function() {
-		this.a2U = 0, this.aGS = [], this.cm = 0, this.aGR = 0
-	}, this.aGU = function(k8) {
+function aGR() {
+	this.aM = aL.aM, this.cm = 0, this.aGS = 0, this.a2U = 0, this.aGT = null, this.aGU = 7, this.ul = 0, this.b = function() {
+		this.a2U = 0, this.aGT = [], this.cm = 0, this.aGS = 0
+	}, this.aGV = function(k8) {
 		var aE;
 		if (hr) this.zm(k8);
-		else if (this.aGS.push(k8), 2 === gg) {
-			for (aE = 0; aE < this.aGS.length; aE++) cc.jG.fF(this.aGS[aE]);
-			this.aGS = []
+		else if (this.aGT.push(k8), 2 === gg) {
+			for (aE = 0; aE < this.aGT.length; aE++) cc.jG.fF(this.aGT[aE]);
+			this.aGT = []
 		}
 	}, this.zm = function(k8) {
-		cc.jG.fF(k8), gW.fF(), g9.zm(this.a2U), this.a2U === qV ? (kG.fF(), this.a2U = 0, this.cm = 0, this.aGR = 0, this.aM = aL.aM) : (this.a2U++, g8.qN(), g8.gf(!0), iI.a03())
+		cc.jG.fF(k8), gW.fF(), g9.zm(this.a2U), this.a2U === qV ? (kG.fF(), this.a2U = 0, this.cm = 0, this.aGS = 0, this.aM = aL.aM) : (this.a2U++, g8.qN(), g8.gf(!0), iI.a03())
 	}, this.fF = function() {
-		ph.fF(), hr ? (aL.cx = g9.zm(-1) || aL.cx, gh()) : (0 !== this.cm || aL.aM >= this.aM && (this.aM += aL.zl * Math.floor(1 + (aL.aM - this.aM) / aL.zl), 2 === gg ? g6() : this.aGV(), this.cm++, 27 < aL.aM - this.ul)) && this.aGW(), gX(),
+		ph.fF(), hr ? (aL.cx = g9.zm(-1) || aL.cx, gh()) : (0 !== this.cm || aL.aM >= this.aM && (this.aM += aL.zl * Math.floor(1 + (aL.aM - this.aM) / aL.zl), 2 === gg ? g6() : this.aGW(), this.cm++, 27 < aL.aM - this.ul)) && this.aGX(), gX(),
 			aL.cx && (aL.cx = !1, n0()), this.ul = aL.aM
-	}, this.aGW = function() {
+	}, this.aGX = function() {
 		aL.cx = !0, ge(), this.cm = 0
-	}, this.aGV = function() {
-		var aGX, aE;
-		if (this.aGR !== 7 * this.a2U) gF(), iI.a03();
+	}, this.aGW = function() {
+		var aGY, aE;
+		if (this.aGS !== 7 * this.a2U) gF(), iI.a03();
 		else {
-			for (aGX = !1; this.aGY() && (aGX = !0, gF(), 0 < this.aGS.length);)
-				for (aE = this.aGT - 2; 0 <= aE; aE--) gF();
-			aGX ? iI.a03() : (g6(), iI.qQ())
+			for (aGY = !1; this.aGZ() && (aGY = !0, gF(), 0 < this.aGT.length);)
+				for (aE = this.aGU - 2; 0 <= aE; aE--) gF();
+			aGY ? iI.a03() : (g6(), iI.qQ())
 		}
-	}, this.aGY = function() {
-		return 0 < this.aGS.length && (this.a2U++, cc.jG.fF(this.aGS[0]), this.aGS.shift(), !0)
+	}, this.aGZ = function() {
+		return 0 < this.aGT.length && (this.a2U++, cc.jG.fF(this.aGT[0]), this.aGT.shift(), !0)
 	}
 }
 
-function aGZ() {
-	var aGa, aGb, aGc, a2U, aGd, cm = 0,
+function aGa() {
+	var aGb, aGc, aGd, a2U, aGe, cm = 0,
 		aM = aL.aM;
 
-	function aGg() {
+	function aGh() {
 		! function() {
 			if (!hr) return;
 			if (fx) return;
-			return aGd % 7 != 0 ? aGd++ : a2U === qV ? (aGj(), g9.zm(a2U), kG.fF()) : (aGj(), aGd++, a2U++, g8.qN(), g8.gf(!0)), 1
-		}() && (aGj(), gF())
+			return aGe % 7 != 0 ? aGe++ : a2U === qV ? (aGk(), g9.zm(a2U), kG.fF()) : (aGk(), aGe++, a2U++, g8.qN(), g8.gf(!0)), 1
+		}() && (aGk(), gF())
 	}
 
-	function aGh() {
-		cm = 0, (hr ? (aL.cx = g9.zm(a2U - (aGd % 7 == 0 ? 0 : 1) + aGd % 7 / 7) || aL.cx, gh) : cK.cL || !gb.tA ? gh : (aL.cx = !0, ge))()
+	function aGi() {
+		cm = 0, (hr ? (aL.cx = g9.zm(a2U - (aGe % 7 == 0 ? 0 : 1) + aGe % 7 / 7) || aL.cx, gh) : cK.cL || !gb.tA ? gh : (aL.cx = !0, ge))()
 	}
 
-	function aGj() {
-		var aE, bU, aGk = gW.kE.aBc,
-			ae = gW.kE.aBd,
-			ag = gW.kE.aBe,
-			ai = gW.kE.aBf,
-			aGl = gW.kE.aBg,
-			aGm = gW.kE.aBh;
-		if (aGa >= aGm.length) g7.u1("Replay Error"), gC.np.nx(-1);
-		else if (aGm = aGm[aGa], aGl[aGa]) {
-			for (bU = aGb + aGm, aE = aGb; aE < bU; aE++) cc.jG.kB(aGk[aE], ae[aE], ag[aE], ai[aE]);
-			aGb += aGm, aGa++
-		} else ++aGc >= aGm && (aGa++, aGc = 0)
+	function aGk() {
+		var aE, bU, aGl = gW.kE.aBd,
+			ae = gW.kE.aBe,
+			ag = gW.kE.aBf,
+			ai = gW.kE.aBg,
+			aGm = gW.kE.aBh,
+			aGn = gW.kE.aBi;
+		if (aGb >= aGn.length) g7.u1("Replay Error"), gC.np.nx(-1);
+		else if (aGn = aGn[aGb], aGm[aGb]) {
+			for (bU = aGc + aGn, aE = aGc; aE < bU; aE++) cc.jG.kB(aGl[aE], ae[aE], ag[aE], ai[aE]);
+			aGc += aGn, aGb++
+		} else ++aGd >= aGn && (aGb++, aGd = 0)
 	}
-	this.aGR = 0, this.b = function() {
-		aGd = a2U = aGc = aGb = aGa = 0
+	this.aGS = 0, this.b = function() {
+		aGe = a2U = aGd = aGc = aGb = 0
 	}, this.fF = function() {
-		var aEV;
-		ph.fF(), gb.x0() < 1.7 ? 0 === cm ? aL.aM >= aM && (aEV = aL.zl / gb.x0(), aM += aEV * Math.floor(1 + (aL.aM - aM) / aEV), 2 === gg || cK.cL || !gb.tA ? g6() : (aGg(), iI.a03()), cm++) : aGh() : function() {
-			var aEV;
+		var aEW;
+		ph.fF(), gb.x0() < 1.7 ? 0 === cm ? aL.aM >= aM && (aEW = aL.zl / gb.x0(), aM += aEW * Math.floor(1 + (aL.aM - aM) / aEW), 2 === gg || cK.cL || !gb.tA ? g6() : (aGh(), iI.a03()), cm++) : aGi() : function() {
+			var aEW;
 			if (aL.aM >= aM)
 				if (2 === gg || cK.cL || !gb.tA) g6(), aM = aL.aM;
 				else {
-					for (aEV = aL.zl / gb.x0(), 16 < (aL.aM - aM) / aEV && (aM = aL.aM - 16 * aEV); aL.aM >= aM && 2 !== gg;) aM += aEV, aGg();
+					for (aEW = aL.zl / gb.x0(), 16 < (aL.aM - aM) / aEW && (aM = aL.aM - 16 * aEW); aL.aM >= aM && 2 !== gg;) aM += aEW, aGh();
 					iI.a03()
-				} aGh()
+				} aGi()
 		}(), gX(), aL.cx && (aL.cx = !1, n0())
 	}
 }
 
-function aGn() {
+function aGo() {
 	var cm = 0,
 		aM = aL.aM;
-	this.aGR = 0, this.fF = function() {
+	this.aGS = 0, this.fF = function() {
 		ph.fF(), hr ? gh() : 0 === cm ? aL.aM >= aM && (aM += aL.zl * Math.floor(1 + (aL.aM - aM) / aL.zl), 2 === gg || cK.cL ? g6() : (gF(), iI.a03()), cm++) : ((cK.cL ? gh : (aL.cx = !0, ge))(), cm = 0), gX(), aL.cx && (aL.cx = !1, n0())
 	}
 }
 
-function a8g() {
-	function aGq() {
-		aL.aM = performance.now(), aL.aGo.fF(), window.requestAnimationFrame(aGq)
+function a8h() {
+	function aGr() {
+		aL.aM = performance.now(), aL.aGp.fF(), window.requestAnimationFrame(aGr)
 	}
 
-	function aGr() {
+	function aGs() {
 		var a3 = performance.now();
-		aL.aM + 1500 < a3 && (aL.aM = a3, aL.aGo.fF())
+		aL.aM + 1500 < a3 && (aL.aM = a3, aL.aGp.fF())
 	}
-	this.aGo = null, this.cx = !1, this.aM = 0, this.aGp = -1, this.zl = 56, this.b = function() {
-		this.qs(), window.requestAnimationFrame(aGq), this.aM = performance.now()
+	this.aGp = null, this.cx = !1, this.aM = 0, this.aGq = -1, this.zl = 56, this.b = function() {
+		this.qs(), window.requestAnimationFrame(aGr), this.aM = performance.now()
 	}, this.qo = function() {
-		cJ ? (this.aGo = new aGZ, this.aGo.b()) : fx ? this.aGo = new aGn : (this.aGo = new aGQ, this.aGo.b())
+		cJ ? (this.aGp = new aGa, this.aGp.b()) : fx ? this.aGp = new aGo : (this.aGp = new aGR, this.aGp.b())
 	}, this.qs = function() {
-		this.aGo = new aGP, this.cx = !0
+		this.aGp = new aGQ, this.cx = !0
 	}, this.pd = function() {
-		1 !== gg || !fx || cK.cL || hr || cK.pY(), -1 === this.aGp && (this.aGp = setInterval(aGr, 2e3))
+		1 !== gg || !fx || cK.cL || hr || cK.pY(), -1 === this.aGq && (this.aGq = setInterval(aGs, 2e3))
 	}, this.pe = function() {
-		this.cx = !0, -1 !== this.aGp && (clearInterval(this.aGp), this.aGp = -1)
+		this.cx = !0, -1 !== this.aGq && (clearInterval(this.aGq), this.aGq = -1)
 	}, this.fF = function() {
-		this.aGo.aGR++
+		this.aGp.aGS++
 	}, this.fU = function() {
-		return this.aGo.aGR
+		return this.aGp.aGS
 	}
 }
 
 function rz() {
 	var hi = 0,
-		aGs = !0;
+		aGt = !0;
 
-	function aGu(v) {
+	function aGv(v) {
 		8 !== aT.pT() || 2 !== e7[bN] && (0 !== e6[bN] || hr) || g7.uB(v)
 	}
 	this.fF = function() {
 		var a3, uo;
-		aL.aM > hi && (hi = aL.aM + 2500, a3 = new Date, uo = a3.getUTCSeconds(), aGs ? uo < 45 && (aGs = !1) : uo < 45 || -1 !== aL.aGp || (aGs = !0, (uo = a3.getUTCMinutes() + 1) % 15 == 0 && aGu(30 === uo ? "Upcoming Battle Royale Contest!" :
+		aL.aM > hi && (hi = aL.aM + 2500, a3 = new Date, uo = a3.getUTCSeconds(), aGt ? uo < 45 && (aGt = !1) : uo < 45 || -1 !== aL.aGq || (aGt = !0, (uo = a3.getUTCMinutes() + 1) % 15 == 0 && aGv(30 === uo ? "Upcoming Battle Royale Contest!" :
 			"Upcoming Alliance Contest!")))
 	}
 }
 
 function rn() {
-	var hI, hJ, hK, hM, aGv = 0,
-		aGw = 0;
+	var hI, hJ, hK, hM, aGw = 0,
+		aGx = 0;
 
-	function aGy() {
+	function aGz() {
 		return Math.pow(Math.pow(hK - hI, 2) + Math.pow(hM - hJ, 2), .5)
 	}
 
-	function aGx(oX) {
+	function aGy(oX) {
 		hI = lM * oX.touches[0].clientX, hJ = lM * oX.touches[0].clientY, hK = lM * oX.touches[1].clientX, hM = lM * oX.touches[1].clientY
 	}
 	this.oq = function(oX) {
-		return 1 < oX.touches.length ? (aGw = aL.aM, aGv = 3, aGx(oX), n5.lE(), !0) : (aGv = 0, !1)
+		return 1 < oX.touches.length ? (aGx = aL.aM, aGw = 3, aGy(oX), n5.lE(), !0) : (aGw = 0, !1)
 	}, this.or = function(oX) {
-		var a9O, du, dv;
-		return 0 !== gg && 1 < oX.touches.length && (aGv = Math.max(aGv - 1, 0), gY.iA() && (a9O = aGy(), aGx(oX), oX = aGy(), du = Math.floor((hI + hK) / 2), dv = Math.floor((hJ + hM) / 2), hv.xa(du, dv, Math.max(.125, oX) / Math.max(.125,
-			a9O)), aL.cx = !0), !0)
+		var a9P, du, dv;
+		return 0 !== gg && 1 < oX.touches.length && (aGw = Math.max(aGw - 1, 0), gY.iA() && (a9P = aGz(), aGy(oX), oX = aGz(), du = Math.floor((hI + hK) / 2), dv = Math.floor((hJ + hM) / 2), hv.xa(du, dv, Math.max(.125, oX) / Math.max(.125,
+			a9P)), aL.cx = !0), !0)
 	}, this.pM = function() {
 		var hD, hE;
-		return !!(aGv && (aGv = 0, aL.aM < aGw + 500)) && (hD = (hI + hK) / 2, hE = (hJ + hM) / 2, n5.pD(hD, hE), n5.click(hD, hE, !0) && (aL.cx = !0), !0)
+		return !!(aGw && (aGw = 0, aL.aM < aGx + 500)) && (hD = (hI + hK) / 2, hE = (hJ + hM) / 2, n5.pD(hD, hE), n5.click(hD, hE, !0) && (aL.cx = !0), !0)
 	}
 }
 
 function ro() {
 	var dF, el;
 
-	function aH7(aHP, k8) {
-		for (var ad = new Array(aHP), aE = 0; aE < aHP; aE++) ad[aE] = aH0(k8, 10);
+	function aH8(aHQ, k8) {
+		for (var ad = new Array(aHQ), aE = 0; aE < aHQ; aE++) ad[aE] = aH1(k8, 10);
 		return w.lg(ad)
 	}
 
-	function aH0(lx, bU) {
+	function aH1(lx, bU) {
 		for (var uq = 0, aE = el; aE < el + bU; aE++) uq |= (lx[bJ(aE, 8)] >> 7 - aE % 8 & 1) << el + bU - aE - 1;
 		return el += bU, uq
 	}
-	this.aFE = function(a1i, k8) {
-		var aGz;
-		(el = 0) === (dF = k8.length) ? gB.a8L(a1i, 3205): 0 === (aGz = aH0(k8, 1)) ? function(a1i, k8) {
-			var aH3 = aH0(k8, 2);
-			0 === aH3 ? (0 === aH0(k8, 1) ? function(a1i, k8) {
+	this.aFF = function(a1i, k8) {
+		var aH0;
+		(el = 0) === (dF = k8.length) ? gB.a8M(a1i, 3205): 0 === (aH0 = aH1(k8, 1)) ? function(a1i, k8) {
+			var aH4 = aH1(k8, 2);
+			0 === aH4 ? (0 === aH1(k8, 1) ? function(a1i, k8) {
 				var aE;
 				if (0 === a1i && 8 !== aT.pT() && !(dF < 4)) {
-					a0W.cl(0, aH7(aH0(k8, 5), k8)), a0W.cl(1, "[" + aH7(aH0(k8, 3), k8) + "]");
-					var aH8 = aH0(k8, 12),
-						aH9 = aH0(k8, 6),
-						ad = new Array(aH8);
-					for (aE = 0; aE < aH8; aE++) ad[aE] = aH0(k8, aH9);
+					a0W.cl(0, aH8(aH1(k8, 5), k8)), a0W.cl(1, "[" + aH8(aH1(k8, 3), k8) + "]");
+					var aH9 = aH1(k8, 12),
+						aHA = aH1(k8, 6),
+						ad = new Array(aH9);
+					for (aE = 0; aE < aH9; aE++) ad[aE] = aH1(k8, aHA);
 					pH.y1(ad)
 				}
 			} : function(a1i, k8) {
 				var aE;
 				if (8 !== aT.pT())
-					if (dF < 3) gB.a8L(a1i, 3208);
+					if (dF < 3) gB.a8M(a1i, 3208);
 					else {
-						var aHA, nL, a1i = aH0(k8, 1),
-							position = aH0(k8, 16),
-							uq = aH0(k8, 4),
+						var aHB, nL, a1i = aH1(k8, 1),
+							position = aH1(k8, 16),
+							uq = aH1(k8, 4),
 							ad = [];
-						for (aE = 0; aE < uq; aE++) nL = aH0(k8, 14), aHA = aH0(k8, 5), aHA = aH7(aHA, k8), ad.push({
-							name: aHA,
+						for (aE = 0; aE < uq; aE++) nL = aH1(k8, 14), aHB = aH1(k8, 5), aHB = aH8(aHB, k8), ad.push({
+							name: aHB,
 							nL: nL
 						});
 						0 === a1i ? d5.a0P(0, ad, 10, 1, .36, .55, position) : d5.a0P(1, ad, 100, 2, .47, .5, position)
 					}
-			})(a1i, k8) : 1 === aH3 ? function(a1i, k8) {
-				var aE, ej, a3G, oM, aHB, aHC;
+			})(a1i, k8) : 1 === aH4 ? function(a1i, k8) {
+				var aE, ej, a3G, oM, aHC, aHD;
 				if (a1i !== gB.a2H) gB.close(a1i, 3239);
 				else if (6 === aT.pT() && r2.b(), 7 !== aT.pT()) gB.close(a1i, 3251);
 				else {
 					var a2p = [0, 0, 0, 0],
-						aHD = aH0(k8, 6);
-					for (aE = 0; aE < 4; aE++) a2p[aE] = aH0(k8, aHD);
-					var aHE = aH0(k8, 4),
-						aHF = [];
-					for (aE = 0; aE < aHE; aE++) {
-						for (aHF.push({
-								id: aH0(k8, 5),
-								qZ: aH0(k8, 4),
-								a3B: 1 === aH0(k8, 1),
-								mJ: aH0(k8, 6),
-								a39: aH0(k8, 14),
-								a3E: aH0(k8, aHD),
-								a3F: aH0(k8, 9) + 1,
-								a1r: aH0(k8, 10)
-							}), a3G = aH0(k8, 3), oM = new Array(a3G), ej = 0; ej < a3G; ej++) aHB = aH0(k8, 9) + 1, aHC = aH7(aH0(k8, 3), k8), oM[ej] = ("" === aHC ? "other: " : "[" + aHC + "]: ") + aHB;
-						aHF[aE].a3G = a3G, aHF[aE].oM = oM
+						aHE = aH1(k8, 6);
+					for (aE = 0; aE < 4; aE++) a2p[aE] = aH1(k8, aHE);
+					var aHF = aH1(k8, 4),
+						aHG = [];
+					for (aE = 0; aE < aHF; aE++) {
+						for (aHG.push({
+								id: aH1(k8, 5),
+								qZ: aH1(k8, 4),
+								a3B: 1 === aH1(k8, 1),
+								mJ: aH1(k8, 6),
+								a39: aH1(k8, 14),
+								a3E: aH1(k8, aHE),
+								a3F: aH1(k8, 9) + 1,
+								a1r: aH1(k8, 10)
+							}), a3G = aH1(k8, 3), oM = new Array(a3G), ej = 0; ej < a3G; ej++) aHC = aH1(k8, 9) + 1, aHD = aH8(aH1(k8, 3), k8), oM[ej] = ("" === aHD ? "other: " : "[" + aHD + "]: ") + aHC;
+						aHG[aE].a3G = a3G, aHG[aE].oM = oM
 					}
-					r2.a0X(a2p, aHF)
+					r2.a0X(a2p, aHG)
 				}
-			}(a1i, k8) : 2 !== aH3 && 3 !== aH3 || gc.b(k8)
-		}(a1i, k8) : 1 === aGz && function(a1i, k8) {
+			}(a1i, k8) : 2 !== aH4 && 3 !== aH4 || gc.b(k8)
+		}(a1i, k8) : 1 === aH0 && function(a1i, k8) {
 			var pw = aT.pT();
-			8 !== pw ? 10 === pw && gB.a8L(a1i, 3243) : a1i !== gB.p4 ? gB.a8L(a1i, 3244) : 0 === aH0(k8, 1) ? aL.aGo.aGU(k8) : function(k8) {
-				var aHL = aH0(k8, 2);
-				(0 === aHL ? function(k8) {
+			8 !== pw ? 10 === pw && gB.a8M(a1i, 3243) : a1i !== gB.p4 ? gB.a8M(a1i, 3244) : 0 === aH1(k8, 1) ? aL.aGp.aGV(k8) : function(k8) {
+				var aHM = aH1(k8, 2);
+				(0 === aHM ? function(k8) {
 					var u7;
-					3 !== dF ? gB.a8L(gB.p4, 3230) : (u7 = aH0(k8, 9), k8 = aH0(k8, 7), 0 !== e6[u7] && 0 !== e6[bN] && (k8 %= aF.aG, g7.jc(u7, bN, k8), g8.kY(u7, 1, k8)))
-				} : 1 === aHL ? function(k8) {
-					2 !== dF ? gB.a8L(gB.p4, 3235) : (k8 = aH0(k8, 9), 0 !== e6[k8] && 0 !== e6[bN] && gS.a7y(0, [k8], !0) && g7.ju(k8, 1))
+					3 !== dF ? gB.a8M(gB.p4, 3230) : (u7 = aH1(k8, 9), k8 = aH1(k8, 7), 0 !== e6[u7] && 0 !== e6[bN] && (k8 %= aF.aG, g7.jc(u7, bN, k8), g8.kY(u7, 1, k8)))
+				} : 1 === aHM ? function(k8) {
+					2 !== dF ? gB.a8M(gB.p4, 3235) : (k8 = aH1(k8, 9), 0 !== e6[k8] && 0 !== e6[bN] && gS.a7z(0, [k8], !0) && g7.ju(k8, 1))
 				} : function(k8) {
 					var u7;
-					3 !== dF ? gB.a8L(gB.p4, 3236) : (u7 = aH0(k8, 9), k8 = aH0(k8, 9), 0 !== e6[u7] && 0 !== e6[k8] && 0 !== e6[bN] && gS.a7y(1, [u7], !0) && (g8.kY(u7, 3, 96), g8.kY(k8, 4, 96), g7.uG(u7, k8)))
+					3 !== dF ? gB.a8M(gB.p4, 3236) : (u7 = aH1(k8, 9), k8 = aH1(k8, 9), 0 !== e6[u7] && 0 !== e6[k8] && 0 !== e6[bN] && gS.a7z(1, [u7], !0) && (g8.kY(u7, 3, 96), g8.kY(k8, 4, 96), g7.uG(u7, k8)))
 				})(k8)
 			}(k8)
 		}(a1i, k8)
 	}, this.a2Y = function(k8) {
-		el = 1, dF = k8.length, (2 === aH0(k8, 2) ? function(k8) {
+		el = 1, dF = k8.length, (2 === aH1(k8, 2) ? function(k8) {
 			el += 20;
-			for (var a3j, a3i, name, a2O = aH0(k8, 9), qX = aH0(k8, 14), qZ = aH0(k8, 4), a3B = 1 === aH0(k8, 1), a3C = aH0(k8, 6), a3D = aH0(k8, 14), aHJ = aH0(k8, 9) + 1, nH = [], aE = 0; aE < aHJ; aE++) a3j = aH0(k8, 1), a3i = [aH0(k8,
-				6), aH0(k8, 6), aH0(k8, 6)], name = aH7(aH0(k8, 5), k8), nH.push({
+			for (var a3j, a3i, name, a2O = aH1(k8, 9), qX = aH1(k8, 14), qZ = aH1(k8, 4), a3B = 1 === aH1(k8, 1), a3C = aH1(k8, 6), a3D = aH1(k8, 14), aHK = aH1(k8, 9) + 1, nH = [], aE = 0; aE < aHK; aE++) a3j = aH1(k8, 1), a3i = [aH1(k8,
+				6), aH1(k8, 6), aH1(k8, 6)], name = aH8(aH1(k8, 5), k8), nH.push({
 				name: name,
 				a3i: a3i,
 				a3j: a3j
@@ -7560,9 +7566,9 @@ function ro() {
 			qW(qX, a2O, nH, qZ, a3B, !1)
 		} : function(k8) {
 			el += 20;
-			for (var a3j, a3i, nL, name, a2O = aH0(k8, 1), qX = aH0(k8, 14), qZ = aH0(k8, 4), a3B = 1 === aH0(k8, 1), a3C = aH0(k8, 6), a3D = aH0(k8, 14), nH = [], aE = 0; aE < 2; aE++) a3j = aH0(k8, 1), a3i = [aH0(k8, 6), aH0(k8, 6),
-				aH0(k8, 6)
-			], nL = aH0(k8, 14), name = aH7(aH0(k8, 5), k8), nH.push({
+			for (var a3j, a3i, nL, name, a2O = aH1(k8, 1), qX = aH1(k8, 14), qZ = aH1(k8, 4), a3B = 1 === aH1(k8, 1), a3C = aH1(k8, 6), a3D = aH1(k8, 14), nH = [], aE = 0; aE < 2; aE++) a3j = aH1(k8, 1), a3i = [aH1(k8, 6), aH1(k8, 6),
+				aH1(k8, 6)
+			], nL = aH1(k8, 14), name = aH8(aH1(k8, 5), k8), nH.push({
 				name: name,
 				a3i: a3i,
 				nL: nL,
@@ -7572,9 +7578,9 @@ function ro() {
 		})(k8)
 	}, this.a2S = function(k8) {
 		el = 1, dF = k8.length;
-		var aH3 = aH0(k8, 2),
-			aHI = aH0(k8, 10);
-		return gB.a2H > gB.a2W && (aHI += gB.a2W), gB.a2H === aHI ? (gB.p4 = aHI, !1) : (gB.close(gB.a2H, 3247), gB.p4 = aHI, gc.a2N = aH0(k8, 10), gc.a2O = aH0(k8, 2 === aH3 ? 9 : 1), gB.xx(aHI, 5) && jK.a8J(), !0)
+		var aH4 = aH1(k8, 2),
+			aHJ = aH1(k8, 10);
+		return gB.a2H > gB.a2W && (aHJ += gB.a2W), gB.a2H === aHJ ? (gB.p4 = aHJ, !1) : (gB.close(gB.a2H, 3247), gB.p4 = aHJ, gc.a2N = aH1(k8, 10), gc.a2O = aH1(k8, 2 === aH4 ? 9 : 1), gB.xx(aHJ, 5) && jK.a8K(), !0)
 	}
 }
 
@@ -7586,18 +7592,18 @@ function s9() {
 	}, this.kA = function(dF) {
 		for (var aR = 0, k8 = this.k8, iA = this.cm + dF - 1, aE = this.cm; aE <= iA; aE++) aR |= (k8[aE >> 3] >> 7 - (7 & aE) & 1) << iA - aE;
 		return this.cm += dF, this.cm > 8 * this.dF && console.log("error unwrapper"), aR
-	}, this.aBr = function(dF) {
+	}, this.aBs = function(dF) {
 		for (var ad = new Array(dF), aE = 0; aE < dF; aE++) ad[aE] = this.kA(10);
 		return w.lg(ad)
-	}, this.aHQ = function(aC2) {
-		return this.dF === lb.aHR(aC2)
+	}, this.aHR = function(aC3) {
+		return this.dF === lb.aHS(aC3)
 	}
 }
 
-function a8d() {
-	this.aCk = 0, this.aCl = 0, this.aCg = 0, this.aCh = 0, this.aCi = 0, this.aCj = 0, this.a04 = [0, 0, 0, 0], this.i9 = function() {
-		this.aCk = hv.hN(), this.aCl = hv.d6(), this.aCg = -this.aCk, this.aCh = -this.aCl, this.aCi = hL / eC, this.aCj = d3 / eC, this.a04[0] = Math.floor(this.aCg), this.a04[1] = Math.floor(this.aCh), this.a04[2] = Math.floor(this.a04[0] +
-			this.aCi + 1), this.a04[3] = Math.floor(this.a04[1] + this.aCj + 1), iI.a01 = !0
+function a8e() {
+	this.aCl = 0, this.aCm = 0, this.aCh = 0, this.aCi = 0, this.aCj = 0, this.aCk = 0, this.a04 = [0, 0, 0, 0], this.i9 = function() {
+		this.aCl = hv.hN(), this.aCm = hv.d6(), this.aCh = -this.aCl, this.aCi = -this.aCm, this.aCj = hL / eC, this.aCk = d3 / eC, this.a04[0] = Math.floor(this.aCh), this.a04[1] = Math.floor(this.aCi), this.a04[2] = Math.floor(this.a04[0] +
+			this.aCj + 1), this.a04[3] = Math.floor(this.a04[1] + this.aCk + 1), iI.a01 = !0
 	}
 }
 
@@ -7613,33 +7619,33 @@ function rp() {
 }
 
 function rt() {
-	function aHV(a8p, hD, hE, cu, ez) {
-		a8p >= az.a5z || (az.mJ === a8p && (d8.fillStyle = dB.j0, d8.fillRect(hD, hE, cu, ez), d8.fillStyle = dB.dC), d8.strokeRect(hD, hE, cu, ez), d8.fillText(az.ft.mI[a8p].name, Math.floor(hD + .5 * cu), Math.floor(hE + .55 * ez)))
+	function aHW(a8q, hD, hE, cu, ez) {
+		a8q >= az.a60 || (az.mJ === a8q && (d8.fillStyle = dB.j0, d8.fillRect(hD, hE, cu, ez), d8.fillStyle = dB.dC), d8.strokeRect(hD, hE, cu, ez), d8.fillText(az.ft.mI[a8q].name, Math.floor(hD + .5 * cu), Math.floor(hE + .55 * ez)))
 	}
 	this.pF = !1, this.a3V = [0, 0, 0, 0], this.show = function() {
 		this.pF = !0, this.resize(), aL.cx = !0
 	}, this.resize = function() {
-		var aCB = bJ(az.a5z + az.a5z % 2, 2),
-			aCB = a2 - aCB * d2;
-		this.a3V[2] = a0 ? Math.floor(.75 * vW) : Math.floor(.5 * vW), this.a3V[3] = Math.floor(1.25 * this.a3V[2]), this.a3V[3] > aCB && (this.a3V[3] = aCB, this.a3V[2] = Math.floor(aCB / 1.2)), this.a3V[0] = Math.floor((a1 - this.a3V[2]) / 2),
+		var aCC = bJ(az.a60 + az.a60 % 2, 2),
+			aCC = a2 - aCC * d2;
+		this.a3V[2] = a0 ? Math.floor(.75 * vW) : Math.floor(.5 * vW), this.a3V[3] = Math.floor(1.25 * this.a3V[2]), this.a3V[3] > aCC && (this.a3V[3] = aCC, this.a3V[2] = Math.floor(aCC / 1.2)), this.a3V[0] = Math.floor((a1 - this.a3V[2]) / 2),
 			this.a3V[1] = Math.floor((a2 - this.a3V[3]) / 2)
 	}, this.om = function(hD, hE) {
 		return !(hD < this.a3V[0] || hE < this.a3V[1] || hD > this.a3V[0] + this.a3V[2] || hE > this.a3V[1] + this.a3V[3])
 	}, this.cz = function(hD, hE) {
-		var ud, aCB = bJ(az.a5z + az.a5z % 2, 2);
+		var ud, aCC = bJ(az.a60 + az.a60 % 2, 2);
 		return aL.cx = !0, hD < this.a3V[0] || hE < this.a3V[1] || hD > this.a3V[0] + this.a3V[2] || hE > this.a3V[1] + this.a3V[3] ? !(this.pF = !1) : (ud = Math.floor(.17 * this.a3V[3]), hE < this.a3V[1] + ud ? hD > this.a3V[0] + this.a3V[2] -
-			ud && (this.pF = !1) : (hE = (hE = Math.floor(aCB * (hE - this.a3V[1] - ud - .00576 * ck) / (this.a3V[3] - ud - .01152 * ck))) < 0 ? 0 : aCB - 1 < hE ? aCB - 1 : hE, hD > this.a3V[0] + this.a3V[2] / 2 && (hE += aCB), hE >= az
-				.a5z || az.lc(hE, Math.floor(16384 * Math.random()))), !0)
+			ud && (this.pF = !1) : (hE = (hE = Math.floor(aCC * (hE - this.a3V[1] - ud - .00576 * ck) / (this.a3V[3] - ud - .01152 * ck))) < 0 ? 0 : aCC - 1 < hE ? aCC - 1 : hE, hD > this.a3V[0] + this.a3V[2] / 2 && (hE += aCC), hE >= az
+				.a60 || az.lc(hE, Math.floor(16384 * Math.random()))), !0)
 	}, this.d7 = function() {
 		var aE, hJ, ud = Math.floor(.17 * this.a3V[3]),
-			aCB = bJ(az.a5z + az.a5z % 2, 2),
+			aCC = bJ(az.a60 + az.a60 % 2, 2),
 			kt = .6 * .01152 * ck,
-			ue = (this.a3V[3] - ud - (aCB + 1) * kt) / aCB,
+			ue = (this.a3V[3] - ud - (aCC + 1) * kt) / aCC,
 			nD = Math.floor((this.a3V[2] - 3 * kt) / 2);
 		for (d8.lineWidth = pz, d8.textAlign = dA, d8.textBaseline = d9, d8.fillStyle = dB.iR, d8.fillRect(this.a3V[0], this.a3V[1] + ud, this.a3V[2], this.a3V[3] - ud), d8.fillStyle = dB.j0, d8.fillRect(this.a3V[0], this.a3V[1], this.a3V[2],
 			ud), d8.strokeStyle = dB.dC, d8.strokeRect(this.a3V[0], this.a3V[1], this.a3V[2], this.a3V[3]), d8.fillStyle = dB.dC, d8.fillRect(this.a3V[0], this.a3V[1] + ud, this.a3V[2], 2), d8.font = cn + Math.floor(.48 * ud) + co, d8.fillText(
-				"Maps", Math.floor(this.a3V[0] + this.a3V[2] / 2), Math.floor(this.a3V[1] + .55 * ud)), d8.font = cn + Math.floor(.48 * ue) + co, aE = aCB - 1; 0 <= aE; aE--) hJ = Math.floor(this.a3V[1] + ud + kt + aE * (ue + kt)), aHV(aE, this
-			.a3V[0] + kt, hJ, nD, ue), aHV(aE + aCB, this.a3V[0] + nD + 2 * kt, hJ, nD, ue);
+				"Maps", Math.floor(this.a3V[0] + this.a3V[2] / 2), Math.floor(this.a3V[1] + .55 * ud)), d8.font = cn + Math.floor(.48 * ue) + co, aE = aCC - 1; 0 <= aE; aE--) hJ = Math.floor(this.a3V[1] + ud + kt + aE * (ue + kt)), aHW(aE, this
+			.a3V[0] + kt, hJ, nD, ue), aHW(aE + aCC, this.a3V[0] + nD + 2 * kt, hJ, nD, ue);
 		cK.tN(Math.floor(this.a3V[0] + this.a3V[2] - .7 * ud), Math.floor(this.a3V[1] + .3 * ud), Math.floor(.4 * ud)), d8.setTransform(1, 0, 0, 1, 0, 0)
 	}
 }
@@ -7647,51 +7653,51 @@ function rt() {
 function rq() {
 	var el;
 
-	function aHY(k8) {
-		var u = t(),
-			aHa = Math.floor(u / 16777216);
-		aHW(k8, 24, aHa), aHW(k8, 24, u - 16777216 * aHa)
-	}
-
 	function aHZ(k8) {
-		aHW(k8, 14, a8T), aHW(k8, 4, m ? 2 : 12 <= q ? 1 : 0 < q ? 3 : 0), aHW(k8, 1, oc ? 1 : 0), aHW(k8, 1, od ? 1 : 0), aHW(k8, 5, (new Date).getHours() % 24)
+		var u = t(),
+			aHb = Math.floor(u / 16777216);
+		aHX(k8, 24, aHb), aHX(k8, 24, u - 16777216 * aHb)
 	}
 
-	function aHW(lx, bU, uq) {
+	function aHa(k8) {
+		aHX(k8, 14, a8U), aHX(k8, 4, m ? 2 : 12 <= q ? 1 : 0 < q ? 3 : 0), aHX(k8, 1, oc ? 1 : 0), aHX(k8, 1, od ? 1 : 0), aHX(k8, 5, (new Date).getHours() % 24)
+	}
+
+	function aHX(lx, bU, uq) {
 		for (var cV, aE = el; aE < el + bU; aE++) lx[cV = bJ(aE, 8)] = (uq >> bU - (aE - el + 1) & 1) << 7 - aE % 8 | lx[cV];
 		el += bU
 	}
 	this.y0 = function() {
 		var k8 = new Uint8Array(3);
-		aHW(k8, 1, el = 0), aHW(k8, 3, 0), aHW(k8, 14, a8T), gB.send(0, k8)
+		aHX(k8, 1, el = 0), aHX(k8, 3, 0), aHX(k8, 14, a8U), gB.send(0, k8)
 	}, this.a1g = function(a1i) {
 		var ad = w.ni(qt.a3h()),
 			uH = ad.length,
-			k8 = new Uint8Array(bJ(aC2 = 135 + 10 * uH, 8) + (0 < aC2 % 8 ? 1 : 0)),
-			aC2 = (aHW(k8, 1, el = 0), aHW(k8, 3, 1), aHW(k8, 10, a8V), aHW(k8, 20, r5.id), aHW(k8, 10, Math.min(r5.un, 1023)), d4.tP[2].nz.a1M());
-		aHW(k8, 6, aC2[0]), aHW(k8, 6, aC2[1]), aHW(k8, 6, aC2[2]), aHY(k8), aHZ(k8);
-		for (var aE = 0; aE < uH; aE++) aHW(k8, 10, ad[aE]);
+			k8 = new Uint8Array(bJ(aC3 = 135 + 10 * uH, 8) + (0 < aC3 % 8 ? 1 : 0)),
+			aC3 = (aHX(k8, 1, el = 0), aHX(k8, 3, 1), aHX(k8, 10, a8W), aHX(k8, 20, r5.id), aHX(k8, 10, Math.min(r5.un, 1023)), d4.tP[2].nz.a1M());
+		aHX(k8, 6, aC3[0]), aHX(k8, 6, aC3[1]), aHX(k8, 6, aC3[2]), aHZ(k8), aHa(k8);
+		for (var aE = 0; aE < uH; aE++) aHX(k8, 10, ad[aE]);
 		gB.a2H = a1i, gB.send(a1i, k8)
 	}, this.a0N = function(a1i, id) {
 		var k8 = new Uint8Array(5);
-		aHW(k8, 1, el = 0), aHW(k8, 3, 7), aHW(k8, 3, 0), aHW(k8, 14, a8T), aHW(k8, 1, id), aHW(k8, 16, Math.abs(4096 + d5.position[id] + d5.a0M[id]) % 65536), gB.send(a1i, k8)
+		aHX(k8, 1, el = 0), aHX(k8, 3, 7), aHX(k8, 3, 0), aHX(k8, 14, a8U), aHX(k8, 1, id), aHX(k8, 16, Math.abs(4096 + d5.position[id] + d5.a0M[id]) % 65536), gB.send(a1i, k8)
 	}, this.a48 = function(a1i) {
 		var aE, oX;
 		if (!(qt.a3x + 7e3 > aL.aM)) {
 			qt.a3x = aL.aM;
 			var k8 = new Uint8Array(17);
-			for (aHW(k8, 1, el = 0), aHW(k8, 3, 7), aHW(k8, 3, 2), aHY(k8), oX = tn(qt.a3w.length - 20, 0), aE = qt.a3w.length - 1; oX <= aE; aE--) aHW(k8, 4, Math.abs(qt.a3w.charCodeAt(aE) - 48) % 10);
+			for (aHX(k8, 1, el = 0), aHX(k8, 3, 7), aHX(k8, 3, 2), aHZ(k8), oX = tn(qt.a3w.length - 20, 0), aE = qt.a3w.length - 1; oX <= aE; aE--) aHX(k8, 4, Math.abs(qt.a3w.charCodeAt(aE) - 48) % 10);
 			gB.send(a1i, k8)
 		}
-	}, this.a8B = function(a1i, a8A) {
+	}, this.a8C = function(a1i, a8B) {
 		var k8 = new Uint8Array(1);
-		aHW(k8, 1, el = 0), aHW(k8, 3, 5), aHW(k8, 1, a8A ? 1 : 0), gB.send(a1i, k8)
+		aHX(k8, 1, el = 0), aHX(k8, 3, 5), aHX(k8, 1, a8B ? 1 : 0), gB.send(a1i, k8)
 	}, this.a3L = function(a3A) {
 		var k8 = new Uint8Array(1);
-		aHW(k8, 1, el = 0), aHW(k8, 3, 2), aHW(k8, 4, a3A), gB.send(gB.a2H, k8)
-	}, this.a8J = function() {
+		aHX(k8, 1, el = 0), aHX(k8, 3, 2), aHX(k8, 4, a3A), gB.send(gB.a2H, k8)
+	}, this.a8K = function() {
 		var k8 = new Uint8Array(7);
-		aHW(k8, 1, el = 0), aHW(k8, 3, 6), aHW(k8, 8, gB.uE()), aHW(k8, 10, gc.a2N), aHW(k8, 9, gc.a2O), aHW(k8, 10, a8V), aHW(k8, 14, a8T), gB.send(gB.p4, k8)
+		aHX(k8, 1, el = 0), aHX(k8, 3, 6), aHX(k8, 8, gB.uE()), aHX(k8, 10, gc.a2N), aHX(k8, 9, gc.a2O), aHX(k8, 10, a8W), aHX(k8, 14, a8U), gB.send(gB.p4, k8)
 	}, this.jL = function(dg) {
 		lb.lc(27), lb.ld(1, 1), lb.ld(4, 0), lb.ld(22, dg), gB.send(gB.p4, lb.k8)
 	}, this.jN = function(eA, ed) {
@@ -7710,44 +7716,44 @@ function rq() {
 		lb.lc(6), lb.ld(1, 1), lb.ld(4, 7), lb.ld(1, jh), gB.send(gB.p4, lb.k8)
 	}, this.jk = function() {
 		lb.lc(5), lb.ld(1, 1), lb.ld(4, 8), gB.send(gB.p4, lb.k8)
-	}, this.k2 = function(a5D, k1) {
-		lb.lc(29), lb.ld(1, 1), lb.ld(4, 10), lb.ld(12, a5D), lb.ld(2, 0), lb.ld(10, k1), gB.send(gB.p4, lb.k8)
-	}, this.k5 = function(a5D, m7, m8, aHb) {
-		lb.lc(46), lb.ld(1, 1), lb.ld(4, 10), lb.ld(12, a5D), lb.ld(2, 1), lb.ld(9, m7), lb.ld(9, m8), lb.ld(9, aHb), gB.send(gB.p4, lb.k8)
-	}, this.k7 = function(a5D) {
+	}, this.k2 = function(a5E, k1) {
+		lb.lc(29), lb.ld(1, 1), lb.ld(4, 10), lb.ld(12, a5E), lb.ld(2, 0), lb.ld(10, k1), gB.send(gB.p4, lb.k8)
+	}, this.k5 = function(a5E, m7, m8, aHc) {
+		lb.lc(46), lb.ld(1, 1), lb.ld(4, 10), lb.ld(12, a5E), lb.ld(2, 1), lb.ld(9, m7), lb.ld(9, m8), lb.ld(9, aHc), gB.send(gB.p4, lb.k8)
+	}, this.k7 = function(a5E) {
 		var aE, oC = gC.gD.oC;
-		for (lb.lc(47 + 33 * oC.length), lb.ld(1, 1), lb.ld(4, 10), lb.ld(12, a5D), lb.ld(2, 2), lb.ld(24, gC.gD.oB), lb.ld(4, oC.length), aE = 0; aE < oC.length; aE++) lb.ld(9, oC[aE].player), lb.ld(24, oC[aE].oO);
+		for (lb.lc(47 + 33 * oC.length), lb.ld(1, 1), lb.ld(4, 10), lb.ld(12, a5E), lb.ld(2, 2), lb.ld(24, gC.gD.oB), lb.ld(4, oC.length), aE = 0; aE < oC.length; aE++) lb.ld(9, oC[aE].player), lb.ld(24, oC[aE].oO);
 		gB.send(gB.p4, lb.k8)
-	}, this.js = function(aHc, aHd) {
-		lb.lc(21), lb.ld(1, 1), lb.ld(4, 15), lb.ld(9, aHd), lb.ld(7, aHc), gB.send(gB.p4, lb.k8)
+	}, this.js = function(aHd, aHe) {
+		lb.lc(21), lb.ld(1, 1), lb.ld(4, 15), lb.ld(9, aHe), lb.ld(7, aHd), gB.send(gB.p4, lb.k8)
 	}, this.jv = function(u8) {
 		lb.lc(14), lb.ld(1, 1), lb.ld(4, 14), lb.ld(9, u8), gB.send(gB.p4, lb.k8)
-	}, this.jz = function(aHe, target) {
-		var aE, bU = aHe.length;
-		for (lb.lc(14 + 9 * bU), lb.ld(1, 1), lb.ld(4, 13), lb.ld(9, target), aE = 0; aE < bU; aE++) lb.ld(9, aHe[aE]);
+	}, this.jz = function(aHf, target) {
+		var aE, bU = aHf.length;
+		for (lb.lc(14 + 9 * bU), lb.ld(1, 1), lb.ld(4, 13), lb.ld(9, target), aE = 0; aE < bU; aE++) lb.ld(9, aHf[aE]);
 		gB.send(gB.p4, lb.k8)
 	}, this.a3e = function(a1i) {
 		var k8 = new Uint8Array(4);
-		aHW(k8, 1, el = 0), aHW(k8, 3, 3), aHZ(k8), gB.send(a1i, k8)
+		aHX(k8, 1, el = 0), aHX(k8, 3, 3), aHa(k8), gB.send(a1i, k8)
 	}
 }
 
 function ob() {
 	this.dF = 0, this.cm = 0, this.k8 = null, this.b = function(k8) {
 		this.cm = 0, this.k8 = k8, this.dF = k8.length
-	}, this.lc = function(aC2) {
-		return this.b(new Uint8Array(this.aHR(aC2))), this.k8
+	}, this.lc = function(aC3) {
+		return this.b(new Uint8Array(this.aHS(aC3))), this.k8
 	}, this.a1y = function() {
 		this.k8 = null
 	}, this.ld = function(dF, uq) {
 		for (var k8 = this.k8, iA = this.cm + dF - 1, aE = this.cm; aE <= iA; aE++) k8[aE >> 3] |= (uq >> iA - aE & 1) << 7 - (7 & aE);
 		this.cm += dF, this.cm > 8 * this.dF && console.log("error wrapper")
-	}, this.aHf = function(dF) {
+	}, this.aHg = function(dF) {
 		for (var k8 = this.k8, iA = this.cm + dF, aE = this.cm; aE < iA; aE++) k8[aE >> 3] &= 255 ^ 128 >>> (7 & aE)
-	}, this.aHR = function(aC2) {
-		return aC2 + 7 >> 3
-	}, this.aHg = function(ad, el, iA, aHh) {
-		for (var aE = el; aE < iA; aE++) this.ld(aHh, ad[aE])
+	}, this.aHS = function(aC3) {
+		return aC3 + 7 >> 3
+	}, this.aHh = function(ad, el, iA, aHi) {
+		for (var aE = el; aE < iA; aE++) this.ld(aHi, ad[aE])
 	}
 }
 setTimeout(aS, 25);
