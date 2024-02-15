@@ -17,17 +17,19 @@ const replaceOne = (expression, replaceValue) => {
 //const dictionary = { __dictionaryVersion: '1.90.0   4 Feb 2024', playerId: 'bB', playerNames: 'hA', playerBalances: 'bC', playerTerritories: 'bj', gIsSingleplayer: 'fc', gIsTeamGame: 'cH' };
 //if (!script.includes(`"${dictionary.__dictionaryVersion}"`)) throw new Error("Dictionary is outdated.");
 let dictionary = {};
-[/,\w+="Player: "\+(?<playerNames>\w+)\[\w+\],\w+=\(\w\+="   Balance: "\+\w+\.\w+\((?<playerBalances>\w+)\[\w+\]\)\)\+\("   Territory: "\+\w+\.\w+\((?<playerTerritories>\w+)\[\w+\]\)\)\+\("   Coords: "/g,
-/{\w+===(?<playerId>\w+)\?\w+\(175," Message to "/g,
-/=(?<gIsSingleplayer>\w+)\?"Players":"Bots"/g,
-/,(?<gIsTeamGame>\w+)=\(\w+=\w+\)<7\|\|9===\w+,/g,
-]
-	.forEach(expression => {
-		result = expression.exec(script);
-		if (result === null) throw new Error("no match for ") + expression;
-		if (expression.exec(script) !== null) throw new Error("more than one match for: ") + expression;
-		for (let [key, value] of Object.entries(result.groups)) dictionary[key] = value;
-	});
+[
+	/=(?<gIsSingleplayer>\w+)\?"Players":"Bots"/g,
+	/,(?<gIsTeamGame>\w+)=\(\w+=\w+\)<7\|\|9===\w+,/g,
+	/=function\((\w+),(\w+),\w+\){\1===(?<playerId>\w+)\?\w+\(175,\w+\.\w+\(18,\[(?<playerNames>\w+)\[\2\]\]\),1001,\2,\w+\(/g,
+	// this one broke in 1.91.3 /{\w+===(?<playerId>\w+)\?\w+\(175," Message to "/g,
+	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+\.\w+)\(13,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(14,\[(?<playerNames>\w+)\[(\w+)\],(\w+\.\w+\.\w+\()(?<playerBalances>\w+)\[\5\]\),\6(?<playerTerritories>\w+)\[\5\]\),\2\]\),\w+=!0\):\2=/g,
+	// this one also broke in 1.91.3 /,\w+="Player: "\+(?<playerNames>\w+)\[\w+\],\w+=\(\w\+="   Balance: "\+\w+\.\w+\((?<playerBalances>\w+)\[\w+\]\)\)\+\("   Territory: "\+\w+\.\w+\((?<playerTerritories>\w+)\[\w+\]\)\)\+\("   Coords: "/g,
+].forEach(expression => {
+	result = expression.exec(script);
+	if (result === null) throw new Error("no match for ") + expression;
+	if (expression.exec(script) !== null) throw new Error("more than one match for: ") + expression;
+	for (let [key, value] of Object.entries(result.groups)) dictionary[key] = value;
+});
 
 // Replace assets
 const assets = require('./assets.js');
@@ -48,7 +50,7 @@ replaceOne(/(0===(\w+)\?(\w+)\[\2\]\.length)-1:(\3\[\2\]\.length:1,)/g, "$1 - 2 
 { // Add Troop Density and Maximum Troops in side panel -- todo
 	const { groups: { valuesArray } } = replaceOne(/(,(?<labelsArray>\w+)\[\d\]="Interest",\2\[\d\]="Income",\2\[\d\]="Time"),(\w+=\w+-\w+\(\w+,100\),\((?<valuesArray>\w+)=new Array\(\2\.length\)\)\[0\]=\w+)/g,
 		'$1, $<labelsArray>.push("Max Troops", "Density"), $3'); // add labels
-	replaceOne(new RegExp(/(:(?<valueIndex>\w+)<7\?\w+\.\w+\(valuesArray\[\2\]\)):(\w+\.\w+\(valuesArray\[7\]\))}/
+	replaceOne(new RegExp(/(:(?<valueIndex>\w+)<7\?\w+\.\w+\.\w+\(valuesArray\[\2\]\)):(\w+\.\w+\(valuesArray\[7\]\))}/
 		.source.replace(/valuesArray/g, valuesArray), "g"),
 		'$1 : $<valueIndex> === 7 ? $3 '
 		+ `: $<valueIndex> === 8 ? utils.getMaxTroops(${dictionary.playerTerritories}, ${dictionary.playerId}) `
@@ -59,9 +61,9 @@ replaceOne(/(0===(\w+)\?(\w+)\[\2\]\.length)-1:(\3\[\2\]\.length:1,)/g, "$1 - 2 
 }
 
 // Increment win counter on wins
-replaceOne(/(=function\((\w+)\){)([^}]+),((\w+\(0),\w+<100\?\w+\[\w+\]\+" won the game."[^,]+,([^()]+?\))),(?<end>[^}]+},)/g,
+replaceOne(/(=function\((\w+)\){)([^}]+),((\w+\(0),\w+<100\?(\w+\.\w+)\(11,(\[\w+\[\w+\]\])\):\6\(12,\7\),(3,\2,[^()]+?\))),(?<end>[^}]+},)/g,
 `$1 if (${dictionary.playerId} === $2) wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter); ` +
-`$3, $4, $5, "Your Current Win Count is Now " + wins_counter, $6, $<end>`);
+`$3, $4, $5, "Your Current Win Count is Now " + wins_counter, $8, $<end>`);
 
 
 { // Add settings button and win count
