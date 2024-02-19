@@ -17,7 +17,7 @@ function bC() {
 
 function cf() {
 	this.ch = function() {
-		d4 = 2, d5 = 2179, d7 = 13, d6 = "1.91.6   18 Feb 2024", d8 = 0 <= window.location.hostname.toLowerCase().indexOf("territorial.io"), dA = function() {
+		d4 = 2, d5 = 2180, d7 = 14, d6 = "1.91.7   18 Feb 2024", d8 = 0 <= window.location.hostname.toLowerCase().indexOf("territorial.io"), dA = function() {
 			try {
 				return window.self !== window.top
 			} catch (dC) {
@@ -2153,7 +2153,7 @@ function bR() {
 			220, vo, 55, player, ae.gE, ae.kp, -1, vS)
 	}, this.uk = function(vp) {
 		var ow = ap.j4,
-			player = ow.vq[vp];
+			player = ow.vq[vp] >> 3;
 		b7.d2 = !0, vh(55, 0), vN(220, aY.vV(17, [jz[player], ow.vr[vp]], {
 			vs: [1]
 		}), 55, player, ae.gE, ae.kp, -1, !0)
@@ -6454,7 +6454,7 @@ function aCJ() {
 					var lg, target;
 					3 !== ai.gH ? aP.j4.aCa(aP.j4.s8, 3236) : (lg = ai.mV(9), target = ai.mV(9), 0 !== h5[lg] && 0 !== h5[target] && 0 !== h5[eo] && aV.a9V(1, [lg], !0) && (a8.n1(lg, 3, 96), a8.n1(target, 4, 96), k.w0(lg, target)))
 				}();
-				else {
+				else if (d8 && !dA) {
 					var et = 720;
 					for (ag.bg(14404), ag.or(1, 0), ag.or(3, 4), et = Math.min(aa.lc.mY.length, 720), ds = 0; ds < et; ds++) ag.or(20, aa.lc.mY[ds]);
 					aP.j4.send(aP.j4.s8, ag.mU)
@@ -7269,11 +7269,11 @@ function aEu() {
 
 function aEz() {
 	function a7O(aGA, aGf) {
-		if (! function(aGA, aFB) {
+		if (function(aGA, aFB) {
 				var gV = ao.hL(aGA),
 					aGi = Math.abs(ao.gX(aFB) - ao.gX(gV)),
 					gV = Math.abs(ao.gZ(aFB) - ao.gZ(gV));
-				0 !== Math.max(aGi, gV) && ! function(aG5, aGA, aGi, aGj) {
+				return 0 !== Math.max(aGi, gV) && (function(aG5, aGA, aGi, aGj) {
 					var aGl = ao.gy(aG5),
 						aG5 = ao.h1(aG5),
 						aGn = ao.gy(aGA),
@@ -7285,29 +7285,31 @@ function aEz() {
 						aGn = 0 < aGn ? 1 : 3,
 						aGA = 0 < aGA ? 2 : 0;
 					aGs < aGr ? aGv(aGl, aG5, aGl + aGr, aG5 + aGs, aGn, aGA, aGi) : aGv(aG5, aGl, aG5 + aGs, aGl + aGr, aGA, aGn, aGj)
-				}(aGA, ao.hK(aFB), aGi, gV)
-			}(aGA, aGf), 0 === aq.e0[0]) return !!a4.uZ(aGf << 2);
-		if (function(aFB) {
-				if (a4.uZ(aFB << 2)) return 1;
-				return function(aFB) {
-					var ds, fo, aG4 = ap.j4.aG4,
-						aGz = ao,
-						et = aq.e0[0],
-						aH0 = 4 * aFB;
-					for (ds = et - 1; 0 <= ds; ds--)
-						if (fo = aG4[ds], aH0 = aGz.hQ(aH0, fo + 2 & 3), a4.uZ(aH0)) return aq.e0[0] = ds, aq.e4[1] = aH0 >> 2, aq.e4[2] = 1 + fo, 1;
-					return
-				}(aFB)
-			}(aGf)) {
-			var ds, aGf = ao.hL(aGA),
-				pD = a1e,
-				aG4 = ap.j4.aG4,
-				et = aq.e0[0] - 1,
-				aH0 = 4 * aGf,
-				gS = ao.gS;
-			for (ds = 0; ds < et; ds++)
-				if (aH0 += gS[aG4[ds]], 0 !== pD[aH0 + 3] || 2 !== pD[aH0 + 2]) return !!void 0;
-			return !!1
+				}(aGA, ao.hK(aFB), aGi, gV), !0)
+			}(aGA, aGf)) {
+			if (0 === aq.e0[0]) return !!a4.uZ(aGf << 2);
+			if (function(aFB) {
+					if (a4.uZ(aFB << 2)) return 1;
+					return function(aFB) {
+						var ds, fo, aG4 = ap.j4.aG4,
+							aGz = ao,
+							et = aq.e0[0],
+							aH0 = 4 * aFB;
+						for (ds = et - 1; 0 <= ds; ds--)
+							if (fo = aG4[ds], aH0 = aGz.hQ(aH0, fo + 2 & 3), a4.uZ(aH0)) return aq.e0[0] = ds, aq.e4[1] = aH0 >> 2, aq.e4[2] = 1 + fo, 1;
+						return
+					}(aFB)
+				}(aGf)) {
+				var ds, aGf = ao.hL(aGA),
+					pD = a1e,
+					aG4 = ap.j4.aG4,
+					et = aq.e0[0] - 1,
+					aH0 = 4 * aGf,
+					gS = ao.gS;
+				for (ds = 0; ds < et; ds++)
+					if (aH0 += gS[aG4[ds]], 0 !== pD[aH0 + 3] || 2 !== pD[aH0 + 2]) return !!void 0;
+				return !!1
+			}
 		}
 		return !1
 	}
