@@ -36,7 +36,8 @@ hr {
 }
 
 .window button,
-.window input {
+.window input,
+.window select {
 	background-color: rgba(0, 0, 0, 0.7);
 	color           : white;
 	font-size       : 20px;

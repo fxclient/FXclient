@@ -13,6 +13,14 @@ const replaceOne = (expression, replaceValue) => {
     script = script.replace(expression, replaceValue);
     return result;
 }
+const matchOne = (expression) => {
+	const result = expression.exec(script);
+    if (result === null) throw new Error("no match for: ") + expression;
+	if (expression.exec(script) !== null) throw new Error("more than one match for: " + expression);
+	return result;
+}
+// https://stackoverflow.com/a/63838890
+const escapeRegExp = (string) => string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
 
 //const dictionary = { __dictionaryVersion: '1.90.0   4 Feb 2024', playerId: 'bB', playerNames: 'hA', playerBalances: 'bC', playerTerritories: 'bj', gIsSingleplayer: 'fc', gIsTeamGame: 'cH' };
 //if (!script.includes(`"${dictionary.__dictionaryVersion}"`)) throw new Error("Dictionary is outdated.");
@@ -87,6 +95,20 @@ replaceOne(/(this\.\w+=function\((?<mouseX>\w+),(?<mouseY>\w+)\){[^}]+?)if\((?<c
 // if (y > (C.f3-C.hw/2) && y < ((C.f3-C.hw/2)+C.nI) && A > C.f4 && A < (C.f4 + C.nI)) WindowManager.openWindow("settings");
 `if ($<mouseX> > gearIconX && $<mouseX> < (gearIconX+${groups.h}) && $<mouseY> > ${groups.y} && $<mouseY> < (${groups.y}+${groups.h})) return WindowManager.openWindow("settings"); ` +
 'if ($<isMenuOpened>) $<end>');
+}
+
+{ // Keybinds
+	// match required variables
+	const { 0: match, groups: { attackBarObject, setRelative } } = matchOne(/:"."===(\w+\.key)\?(?<attackBarObject>\w+)\.(?<setRelative>\w+)\(31\/32\):"."===\1\?\2\.\3\(32\/31\):/g,);
+	// create a setAbsolutePercentage function on the attack percentage bar object,
+	// and also register the keybind handler functions
+	replaceOne(/}(function \w+\((\w+)\){return!\(1<\2&&1===(?<attackPercentage>\w+)\|\|\(1<\2&&\2\*\3-\3<1\/1024\?\2=\(\3\+1\/1024\)\/\3:\2<1)/g,
+	"} this.setAbsolutePercentage = function(newPercentage) { $<attackPercentage> = newPercentage; }; "
+		+ "keybindFunctions.setAbsolute = this.setAbsolutePercentage; "
+		+ `keybindFunctions.setRelative = (arg1) => ${attackBarObject}.${setRelative}(arg1); $1`);
+	// insert keybind handling code into the keyDown handler function
+	replaceOne(new RegExp(/(function \w+\((?<event>\w+)\){)([^}]+matched)/g.source.replace(/matched/g, escapeRegExp(match)), "g"),
+	"$1 if (keybindHandler($<event>.key)) return; $3");
 }
 
 // Enforce custom font name
