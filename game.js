@@ -529,6 +529,7 @@ function f0() {
 	}
 
 	function fH(cE) {
+		if (keybindHandler(cE.key)) return;
 		fJ() || ("ArrowLeft" === cE.key || "a" === cE.key ? fs.g1(3) : "ArrowUp" === cE.key || "w" === cE.key ? fs.g1(0) : "ArrowRight" === cE.key || "d" === cE.key ? fs.g1(1) : "ArrowDown" === cE.key || "s" === cE.key ? fs.g1(2) : "1" === cE.key ?
 			ck.g2(.75) : "2" === cE.key ? ck.g2(7 / 8) : "3" === cE.key ? ck.g2(.9375) : "4" === cE.key ? ck.g2(31 / 32) : "5" === cE.key ? ck.g2(32 / 31) : "6" === cE.key ? ck.g2(16 / 15) : "7" === cE.key ? ck.g2(8 / 7) : "8" === cE.key ? ck.g2(
 				4 / 3) : "+" === cE.key ? 0 !== aY && cY.eF(Math.floor(eG / 2), Math.floor(eH / 2), -200) : "-" === cE.key ? 0 !== aY && cY.eF(Math.floor(eG / 2), Math.floor(eH / 2), 200) : "c" === cE.key && 0 !== aY && cs.g3())
@@ -5414,6 +5415,11 @@ function a85() {
 				2), ck.aC - 2 * a8C, a8B), aK.fillRect(Math.floor(aQ - 1.25 * ck.aC) + a8C, Math.floor((ck.aC - a8B) / 2), ck.aC - 2 * a8C - a8C % 2, a8B), aK.fillRect(Math.floor(aQ - 1.25 * ck.aC) + Math.floor((ck.aC - a8B) / 2), a8C, a8B, ck.aC -
 				2 * a8C - a8C % 2), a87 = bG.kI.a2n(kY, ck.pc()), aK.fillText(bG.hZ.ha(a87) + " (" + bG.hZ.i5(100 * sr, 0) + ")", Math.floor(.5 * aQ), rG)
 	}
+	this.setAbsolutePercentage = function(newPercentage) {
+		sr = newPercentage;
+	};
+	keybindFunctions.setAbsolute = this.setAbsolutePercentage;
+	keybindFunctions.setRelative = (arg1) => ck.g2(arg1);
 
 	function a8G(ee) {
 		return !(1 < ee && 1 === sr || (1 < ee && ee * sr - sr < 1 / 1024 ? ee = (sr + 1 / 1024) / sr : ee < 1 && sr - ee * sr < 1 / 1024 && (ee = (sr - 1 / 1024) / sr), sr = yP.hr(sr * ee, 1 / 1024, 1), a89(), 0))

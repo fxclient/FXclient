@@ -1,5 +1,5 @@
-const fx_version = '0.6.0.3'; // FX Client Version
-const fx_update = 'Feb 15'; // FX Client Last Updated
+const fx_version = '0.6.1'; // FX Client Version
+const fx_update = 'Feb 21'; // FX Client Last Updated
 
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
@@ -9,12 +9,79 @@ if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx
     var wins_counter = localStorage.getItem("fx_winCount");
 }
 
+function KeybindsInput(containerElement) {
+    this.container = containerElement;
+    this.keys = [ "key", "type", "value" ];
+    this.objectArray = [];
+    this.addObject = function () {
+        this.objectArray.push({ key: "", type: "absolute", value: 1 });
+        this.displayObjects();
+    };
+    document.getElementById("keybindAddButton").addEventListener("click", this.addObject.bind(this));
+    this.displayObjects = function () {
+        // Clear the content of the container
+        this.container.innerHTML = "";
+        if (this.objectArray.length === 0) return this.container.innerText = "No custom keybinds added";
+        // Loop through the array and display input fields for each object
+        for (var i = 0; i < this.objectArray.length; i++) {
+            var objectDiv = document.createElement("div");
+            // Create input fields for each key
+            this.keys.forEach(function (key) {
+                if (key === "type") {
+                    var selectMenu = document.createElement("select");
+                    selectMenu.innerHTML = '<option value="absolute">Absolute</option><option value="relative">Relative</option>';
+                    selectMenu.value = this.objectArray[i][key];
+                    selectMenu.addEventListener("change", this.updateObject.bind(this, i, key));
+                    objectDiv.appendChild(selectMenu);
+                    return;
+                }
+                var inputField = document.createElement("input");
+                inputField.type = key === "value" ? "number" : "text";
+                if (key === "value") inputField.setAttribute("step", "0.1");
+                if (key === "key") inputField.setAttribute("readonly", "");
+                inputField.value = this.objectArray[i][key];
+                if (key === "key") inputField.addEventListener("click", this.startKeyInput.bind(this, i, key));
+                else inputField.addEventListener("input", this.updateObject.bind(this, i, key));
+                // Append input field to the object div
+                objectDiv.appendChild(inputField);
+            }, this);
+            // Button to delete the object
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", this.deleteObject.bind(this, i));
+            // Append delete button to the object div
+            objectDiv.appendChild(deleteButton);
+            // Append the object div to the container
+            this.container.appendChild(objectDiv);
+        }
+    };
+    this.startKeyInput = function (index, property, event) {
+        event.target.value = "Press any key";
+        document.addEventListener('keydown', this.updateObject.bind(this, index, property), { once: true });
+    };
+    this.updateObject = function (index, property, event) {
+        if (index >= this.objectArray.length) return;
+        // Update the corresponding property of the object in the array
+        const value = property === "value" ? parseFloat(event.target.value) : property === "key" ? event.key : event.target.value;
+        this.objectArray[index][property] = value;
+        if (property === "key") this.displayObjects();
+    };
+    this.deleteObject = function (index) {
+        // Remove the object from the array
+        this.objectArray.splice(index, 1);
+        // Display the updated input fields for objects
+        this.displayObjects();
+    };
+    return this;
+}
+
 var settings = {
     "fontName": "Trebuchet MS",
     "showBotDonations": false,
     "hideAllLinks": false,
     "realisticNames": false,
     //"customMapFileBtn": true
+    "attackPercentageKeybinds": [],
 };
 var settingsManager = new (function() {
     var inputFields = {
@@ -35,9 +102,12 @@ var settingsManager = new (function() {
         // should probably firgure out a way to do this without reloading - // You can't do it, localstorages REQUIRE you to reload
         window.location.reload();
     };
+    let keybindsInput = new KeybindsInput(document.getElementById("keybinds"));
     this.syncFields = function() {
         Object.keys(inputFields).forEach(function(key) { inputFields[key].value = settings[key]; });
         Object.keys(checkboxFields).forEach(function(key) { checkboxFields[key].checked = settings[key]; });
+        keybindsInput.objectArray = settings.attackPercentageKeybinds;
+        keybindsInput.displayObjects();
     };
     this.resetAll = function() {
         if (!confirm("Are you Really SURE you want to RESET ALL SETTINGS back to the default?")) return;
@@ -137,6 +207,15 @@ var utils = new (function() {
         return (Math.floor((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100) + "%");
     };
 });
+
+const keybindFunctions = { setAbsolute: () => {}, setRelative: () => {} };
+const keybindHandler = key => {
+    const keybindData = settings.attackPercentageKeybinds.find(keybind => keybind.key === key);
+    if (keybindData === undefined) return false;
+    if (keybindData.type === "absolute") keybindFunctions.setAbsolute(keybindData.value);
+    else keybindFunctions.setRelative(keybindData.value);
+    return true;
+};
 
 if (localStorage.getItem("fx_settings") !== null) {
     settings = {...settings, ...JSON.parse(localStorage.getItem("fx_settings"))};
