@@ -17,7 +17,7 @@ function bD() {
 
 function cg() {
 	this.cj = function() {
-		d6 = 2, d7 = 1025, d9 = 14, d8 = "1.92.1   22 Feb 2024", dA = 0 <= window.location.hostname.toLowerCase().indexOf("territorial.io"), dC = function() {
+		d6 = 2, d7 = 1025, d9 = 14, d8 = "1.92.2   23 Feb 2024", dA = 0 <= window.location.hostname.toLowerCase().indexOf("territorial.io"), dC = function() {
 			try {
 				return window.self !== window.top
 			} catch (dE) {
@@ -6364,7 +6364,7 @@ function aCa() {
 	this.aCc = function(a3V) {
 		var du, hk, a53, rl, aCd, aCe, a4a, aCf, aCg, aCh, aCl, aCm;
 		if (a3V !== aP.j7.a43) aP.j7.close(a3V, 3239);
-		else if (6 === x.sg() && (aCb = [], aL.cj()), 7 !== x.sg()) aP.j7.close(a3V, 3251);
+		else if (6 === x.sg() && (bC.a4h.a4i(), aCb = [], aL.cj()), 7 !== x.sg()) aP.j7.close(a3V, 3251);
 		else {
 			for (a4a = [0, 0, 0, 0], aCf = ai.mY(6), du = 0; du < 4; du++) a4a[du] = ai.mY(aCf);
 			for (aCg = ai.mY(4), aCh = [], du = 0; du < aCg; du++) {
