@@ -1,6 +1,5 @@
-const fx_version = '0.6.1'; // FX Client Version
-const fx_update = 'Feb 21'; // FX Client Last Updated
-
+const fx_version = '0.6.1.1'; // FX Client Version
+const fx_update = 'Feb 22'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -21,27 +20,27 @@ function KeybindsInput(containerElement) {
     this.displayObjects = function () {
         // Clear the content of the container
         this.container.innerHTML = "";
-        if (this.objectArray.length === 0) return this.container.innerText = "No custom keybinds added";
+        if (this.objectArray.length === 0) return this.container.innerText = "No custom attack percentage keybinds added";
         // Loop through the array and display input fields for each object
         for (var i = 0; i < this.objectArray.length; i++) {
             var objectDiv = document.createElement("div");
             // Create input fields for each key
             this.keys.forEach(function (key) {
+                let inputField = document.createElement(key === "type" ? "select" : "input");
                 if (key === "type") {
-                    var selectMenu = document.createElement("select");
-                    selectMenu.innerHTML = '<option value="absolute">Absolute</option><option value="relative">Relative</option>';
-                    selectMenu.value = this.objectArray[i][key];
-                    selectMenu.addEventListener("change", this.updateObject.bind(this, i, key));
-                    objectDiv.appendChild(selectMenu);
-                    return;
+                    inputField.innerHTML = '<option value="absolute">Absolute</option><option value="relative">Relative</option>';
+                    inputField.addEventListener("change", this.updateObject.bind(this, i, key));
+                } else if (key === "key") {
+                    inputField.type = "text";
+                    inputField.setAttribute("readonly", "");
+                    inputField.setAttribute("placeholder", "No key set");
+                    inputField.addEventListener("click", this.startKeyInput.bind(this, i, key));
+                } else { // key === "value"
+                    inputField.type = "number";
+                    inputField.setAttribute("step", "0.1");
+                    inputField.addEventListener("input", this.updateObject.bind(this, i, key));
                 }
-                var inputField = document.createElement("input");
-                inputField.type = key === "value" ? "number" : "text";
-                if (key === "value") inputField.setAttribute("step", "0.1");
-                if (key === "key") inputField.setAttribute("readonly", "");
                 inputField.value = this.objectArray[i][key];
-                if (key === "key") inputField.addEventListener("click", this.startKeyInput.bind(this, i, key));
-                else inputField.addEventListener("input", this.updateObject.bind(this, i, key));
                 // Append input field to the object div
                 objectDiv.appendChild(inputField);
             }, this);
@@ -55,9 +54,16 @@ function KeybindsInput(containerElement) {
             this.container.appendChild(objectDiv);
         }
     };
+    /** @param {PointerEvent} event */
     this.startKeyInput = function (index, property, event) {
         event.target.value = "Press any key";
-        document.addEventListener('keydown', this.updateObject.bind(this, index, property), { once: true });
+        const handler = this.updateObject.bind(this, index, property);
+        event.target.addEventListener('keydown', handler, { once: true });
+        event.target.addEventListener("blur", () => {
+            event.target.removeEventListener('keydown', handler, { once: true });
+            event.target.value = this.objectArray[index][property];
+            //this.displayObjects();
+        }, { once: true });
     };
     this.updateObject = function (index, property, event) {
         if (index >= this.objectArray.length) return;
