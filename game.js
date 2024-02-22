@@ -62,7 +62,7 @@ function dG() {
 					},
 					AIP_COMPLETE: dK
 				})
-			}), (dN = document.createElement("div")).id = "videoad", document.body.appendChild(dN), (dN = document.createElement("script")).async = !0, dN.src = "//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/tag.min.js", document.head
+			}), (dN = document.createElement("div")).id = "videoad", document.body.appendChild(dN), (dN = document.createElement("script")).async = !0, dN.src = "", document.head
 			.appendChild(dN))
 	}, this.dP = function() {
 		if (console.log("showVideo"), dJ()) console.log("error 0");
