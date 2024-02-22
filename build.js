@@ -164,7 +164,7 @@ script = beautify(script, {
 	"e4x": false,
 	"indent_empty_lines": false
 });
-
+script = script.replace('//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/tag.min.js','');
 fs.writeFileSync("./build/game.js", script);
 console.log("Wrote ./build/game.js");
 console.log("Build done");
