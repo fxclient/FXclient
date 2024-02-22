@@ -2,6 +2,14 @@
 	overflow-y: auto;
 }
 
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #aaaaaa;
+}
+
 .window {
 	position        : fixed;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -55,7 +63,9 @@ h1 {
 	transition        : 0.2s;
 }
 
-canvas, input, textarea {
+canvas,
+input,
+textarea {
 	transition: 0.2s;
 }
 
@@ -74,11 +84,21 @@ input#inputfilebtn {
 	transition: 0.2s
 }
 
-.window#donationhistory { user-select: text; }
+.window#donationhistory {
+	user-select: text;
+}
 
-.color-red { color: #dc143c; }
-.color-green { color: #32cd32; }
-.color-light-gray { color: #aaaaaa; }
+.color-red {
+	color: #dc143c;
+}
+
+.color-green {
+	color: #32cd32;
+}
+
+.color-light-gray {
+	color: #aaaaaa;
+}
 
 /* Checkbox */
 label.checkbox {

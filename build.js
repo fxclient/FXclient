@@ -3,6 +3,7 @@ const fs = require('fs');
 
 if (!fs.existsSync("./build")) fs.mkdirSync("./build");
 fs.cpSync("./static/", "./build/", { recursive: true });
+fs.writeFileSync("./build/index.html", fs.readFileSync("./build/index.html").toString().replace(/buildTimestamp/g, Date.now()));
 let script = fs.readFileSync('./game/latest.js', { encoding: 'utf8' }).replace("\n", "").trim();
 
 const replaceOne = (expression, replaceValue) => {
