@@ -1,5 +1,5 @@
-const fx_version = '0.6.1.1'; // FX Client Version
-const fx_update = 'Feb 22'; // FX Client Last Updated
+const fx_version = '0.6.1.3'; // FX Client Version
+const fx_update = 'Feb 23'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -84,6 +84,8 @@ function KeybindsInput(containerElement) {
 var settings = {
     "fontName": "Trebuchet MS",
     "showBotDonations": false,
+    "displayWinCounter": true,
+    "useFullscreenMode": false,
     "hideAllLinks": false,
     "realisticNames": false,
     //"customMapFileBtn": true
@@ -97,6 +99,8 @@ var settingsManager = new (function() {
         //showBotDonations: document.getElementById("settings_donations_bots"),
         hideAllLinks: document.getElementById("settings_hidealllinks"),
         realisticNames: document.getElementById("settings_realisticnames"),
+        displayWinCounter: document.getElementById("settings_displaywincounter"),
+        useFullscreenMode: document.getElementById("settings_usefullscreenmode"),
         //customMapFileBtn: document.getElementById("settings_custommapfileinput")
     };
     this.save = function() {
@@ -122,6 +126,16 @@ var settingsManager = new (function() {
     };
     this.applySettings = function() {
         //setVarByName("bu", "px " + settings.fontName);
+        if (settings.useFullscreenMode && document.fullscreenEnabled) {
+            function tryEnterFullscreen() {
+                if (document.fullscreenElement !== null) return;
+                document.documentElement.requestFullscreen({ navigationUI: "hide" })
+                    .then(() => { console.log('Fullscreen mode activated'); })
+                    .catch((error) => { console.warn('Could not enter fullscreen mode:', error); });
+            }
+            document.addEventListener('mousedown', tryEnterFullscreen, { once: true });
+            document.addEventListener('click', tryEnterFullscreen, { once: true });
+        }
     };
 });
 function removeWins() {
@@ -226,6 +240,6 @@ const keybindHandler = key => {
 if (localStorage.getItem("fx_settings") !== null) {
     settings = {...settings, ...JSON.parse(localStorage.getItem("fx_settings"))};
 }
-//settingsManager.applySettings();
+settingsManager.applySettings();
 
 console.log('Successfully loaded FX Client');
