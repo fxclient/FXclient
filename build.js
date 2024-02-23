@@ -135,6 +135,8 @@ replaceOne(/,(0!==\w+\[(\w+)\]\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
 // Reset donation history when a new game is started
 replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), ");
 
+// remove the ads
+script = script.replace('//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/tag.min.js','');
 console.log("Formatting code...");
 
 exposeVarsToGlobalScope = true;
@@ -164,7 +166,7 @@ script = beautify(script, {
 	"e4x": false,
 	"indent_empty_lines": false
 });
-script = script.replace('//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/tag.min.js','');
+
 fs.writeFileSync("./build/game.js", script);
 console.log("Wrote ./build/game.js");
 console.log("Build done");
