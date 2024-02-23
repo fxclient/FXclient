@@ -44,26 +44,25 @@ function dG() {
 	this.cj = function() {
 		var dN;
 		dJ() || (window.aiptag = window.aiptag || {
-				cmd: []
-			}, aiptag.cmd.display = aiptag.cmd.display || [], aiptag.cmd.player = aiptag.cmd.player || [], aiptag.cmp = {
-				show: !0,
-				position: "centered",
-				button: !0,
-				buttonText: "Privacy Settings",
-				buttonPosition: "bottom-center"
-			}, aiptag.cmd.player.push(function() {
-				aiptag.adplayer = new aipPlayer({
-					AD_WIDTH: 960,
-					AD_HEIGHT: 540,
-					AD_DISPLAY: "fullscreen",
-					LOADING_TEXT: "loading advertisement",
-					PREROLL_ELEM: function() {
-						return document.getElementById("videoad")
-					},
-					AIP_COMPLETE: dK
-				})
-			}), (dN = document.createElement("div")).id = "videoad", document.body.appendChild(dN), (dN = document.createElement("script")).async = !0, dN.src = "", document.head
-			.appendChild(dN))
+			cmd: []
+		}, aiptag.cmd.display = aiptag.cmd.display || [], aiptag.cmd.player = aiptag.cmd.player || [], aiptag.cmp = {
+			show: !0,
+			position: "centered",
+			button: !0,
+			buttonText: "Privacy Settings",
+			buttonPosition: "bottom-center"
+		}, aiptag.cmd.player.push(function() {
+			aiptag.adplayer = new aipPlayer({
+				AD_WIDTH: 960,
+				AD_HEIGHT: 540,
+				AD_DISPLAY: "fullscreen",
+				LOADING_TEXT: "loading advertisement",
+				PREROLL_ELEM: function() {
+					return document.getElementById("videoad")
+				},
+				AIP_COMPLETE: dK
+			})
+		}), (dN = document.createElement("div")).id = "videoad", document.body.appendChild(dN), (dN = document.createElement("script")).async = !0, dN.src = "", document.head.appendChild(dN))
 	}, this.dP = function() {
 		if (console.log("showVideo"), dJ()) console.log("error 0");
 		else {
