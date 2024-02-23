@@ -24,8 +24,13 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 5. Adds a text to display "Troop Density"
 6. Adds a text to display "Maximum Troops"
 7. Adds a win counter
-8. Adds a settings menu which has various options like changing the font name
-9. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard
+8. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard
+
+The client has a settings menu, from which you can:
+
+9. Change the game font
+10. Make fullscreen mode trigger automatically
+11. Create custom attack percentage keybinds
 
 ### Contact Us
 Our Website: https://mohsenemx.github.io/FXclient/
