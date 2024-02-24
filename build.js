@@ -123,6 +123,12 @@ replaceOne(/(((\w+)\[\w+\])=\2\.replace\(\w+(\[\w+\]),\w+\4\))/g, "$1; if (setti
 replaceOne(/(this\.\w+=function\(\){)((\w+\.\w+)\[2\]=\3\[3\]=\3\[4\]=(?<linksHidden>!this\.\w+\.\w+),)/g,
 "$1 if (settings.hideAllLinks) $3[0] = $3[1] = $<linksHidden>; else $3[0] = $3[1] = true; $2")
 
+// Make the main canvas context have an alpha channel if a custom background is being used
+replaceOne(/(document\.getElementById\("canvasA"\),\(\w+=\w+\.getContext\("2d",){alpha:!1}/g, "$1 {alpha: makeMainMenuTransparent}")
+// Clear canvas background if a custom background is being used
+replaceOne(/(this\.\w+=function\(\){var (\w+),(\w+);)(\w+\.\w+\?\([^()]+setTransform\(\3=\2<\3\?\3:\2,0,0,\3,(?:Math\.floor\(\([^)]+\)\/2\)[,)]){2},(?:[^)]+\),){2}[^)]+\):(?<canvas>\w+)\.fillStyle=\w+\.\w+,\5\.fillRect\((?<wholeCanvas>0,0,\w+,\w+)\)}})/g,
+	'$1 if (makeMainMenuTransparent) $<canvas>.clearRect($<wholeCanvas>); else $4')
+
 // Track donations
 replaceOne(/(this\.\w+=function\((\w+),(\w+)\)\{)(\2===\w+&&\(\w+\.\w+\((\w+\.\w+)\[0\],\5\[1\],\3\),this\.(\w+)\[12\]\+=\5\[1\],this\.\6\[16\]\+=\5\[0\]\),\3===\w+&&\()/g,
 "$1 donationsTracker.logDonation($2, $3, $5[0]); $4")
@@ -135,8 +141,13 @@ replaceOne(/,(0!==\w+\[(\w+)\]\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
 // Reset donation history when a new game is started
 replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), ");
 
-// remove the ads
+// Disable built-in Territorial.io error reporting
+replaceOne(/window\.addEventListener\("error",function (\w+)\((\w+)\){/g,
+	'$& window.removeEventListener("error", $1); return alert("Error:\\n" + $2.filename + " " + $2.lineno + " " + $2.colno + " " + $2.message);');
+
+// Remove ads
 script = script.replace('//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/tag.min.js','');
+
 console.log("Formatting code...");
 
 exposeVarsToGlobalScope = true;

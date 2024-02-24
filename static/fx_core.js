@@ -1,5 +1,5 @@
-const fx_version = '0.6.1.3'; // FX Client Version
-const fx_update = 'Feb 23'; // FX Client Last Updated
+const fx_version = '0.6.1.4'; // FX Client Version
+const fx_update = 'Feb 24'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -89,11 +89,14 @@ var settings = {
     "hideAllLinks": false,
     "realisticNames": false,
     //"customMapFileBtn": true
+    "customBackgroundUrl": "",
     "attackPercentageKeybinds": [],
 };
+let makeMainMenuTransparent = false;
 var settingsManager = new (function() {
     var inputFields = {
-        fontName: document.getElementById("settings_fontname")
+        fontName: document.getElementById("settings_fontname"),
+        customBackgroundUrl: document.getElementById("settings_custombackgroundurl")
     };
     var checkboxFields = {
         //showBotDonations: document.getElementById("settings_donations_bots"),
@@ -136,6 +139,12 @@ var settingsManager = new (function() {
             document.addEventListener('mousedown', tryEnterFullscreen, { once: true });
             document.addEventListener('click', tryEnterFullscreen, { once: true });
         }
+        if (settings.customBackgroundUrl !== "") {
+            document.body.style.backgroundImage = "url(" + settings.customBackgroundUrl + ")";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+        }
+        makeMainMenuTransparent = settings.customBackgroundUrl !== "";
     };
 });
 function removeWins() {
@@ -146,6 +155,24 @@ function removeWins() {
         alert("Successfully reset wins");
     }
 }
+const openCustomBackgroundFilePicker = () => {
+    const fileInput = document.getElementById("customBackgroundFileInput");
+    fileInput.click();
+    fileInput.addEventListener('change', handleFileSelect);
+}
+function handleFileSelect(event) {
+    const fileInput = event.target;
+    const selectedFile = fileInput.files[0];
+    console.log(fileInput.files);
+    console.log(fileInput.files[0]);
+    if (selectedFile) {
+        const fileUrl = URL.createObjectURL(selectedFile);
+        console.log("File URL:", fileUrl);
+        fileInput.value = "";
+        fileInput.removeEventListener("change", handleFileSelect);
+    }
+}
+
 var WindowManager = new (function() {
     var windows = {};
     this.add = function(newWindow) {
