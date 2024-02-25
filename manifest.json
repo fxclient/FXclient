@@ -1,0 +1,19 @@
+{
+    "name": "FX Client",
+    "short_name": "FXclient",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#000000",
+    "description": "Client for Territorial.io",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64"
+        },
+        {
+            "src": "assets/logo.png",
+            "sizes": "any",
+            "type": "image/png"
+        }
+    ]
+}
