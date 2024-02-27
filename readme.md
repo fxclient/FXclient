@@ -16,7 +16,7 @@
 ## What is FX Client?
 FX Client is the first Territorial.io client, targeting better User Interface and better User Experience, It's basically Territorial.io but better.
 
-### Features:
+## Features:
 1. It's 100% free and open source on Github
 2. It's Ad free and removes game's default ads.
 3. It makes game look cooler, by replacing default assets with new ones.
@@ -25,14 +25,14 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 6. Adds a win counter
 7. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard
 
-The client has a settings menu, from which you can:
+### The client has a settings menu, from which you can:
 
-8. Change the game font
-9. Make fullscreen mode trigger automatically
-10. Set a custom main menu background
-11. Create custom attack percentage keybinds
-
-### Contact Us
+  8. Change the game font
+  9. Make fullscreen mode trigger automatically
+  10. Set a custom main menu background
+  11. Create custom attack percentage keybinds
+12. It also allows you to install the game via your browser's PWA API, ensuring maximum enjoyment on consoles, phones and even desktop devices
+## Contact Us
 Our Website: https://mohsenemx.github.io/FXclient/
 
 Our Discord: https://discord.gg/JEwYWGraj7
