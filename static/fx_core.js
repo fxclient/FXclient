@@ -1,5 +1,5 @@
-const fx_version = '0.6.1.5'; // FX Client Version
-const fx_update = 'Feb 25'; // FX Client Last Updated
+const fx_version = '0.6.1.6'; // FX Client Version
+const fx_update = 'Feb 28'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -88,15 +88,17 @@ var settings = {
     "useFullscreenMode": false,
     "hideAllLinks": false,
     "realisticNames": false,
+    "densityDisplayStyle": "percentage",
     //"customMapFileBtn": true
     "customBackgroundUrl": "",
     "attackPercentageKeybinds": [],
 };
 let makeMainMenuTransparent = false;
 var settingsManager = new (function() {
-    var inputFields = {
+    var inputFields = { // (includes select menus)
         fontName: document.getElementById("settings_fontname"),
-        customBackgroundUrl: document.getElementById("settings_custombackgroundurl")
+        customBackgroundUrl: document.getElementById("settings_custombackgroundurl"),
+        densityDisplayStyle: document.getElementById("settings_densityDisplayStyle")
     };
     var checkboxFields = {
         //showBotDonations: document.getElementById("settings_donations_bots"),
@@ -251,7 +253,8 @@ function displayDonationsHistory(playerID, playerNames, isSingleplayer) {
 var utils = new (function() {
     this.getMaxTroops = function(playerTerritories, playerID) { return (playerTerritories[playerID]*150).toString(); };
     this.getDensity = function(playerBalances, playerTerritories, playerID) {
-        return (Math.floor((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100) + "%");
+        if (settings.densityDisplayStyle === "percentage") return (Math.floor((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100) + "%");
+        else return (playerBalances[playerID] / (playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID])).toFixed(0);
     };
 });
 
