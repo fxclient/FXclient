@@ -1,5 +1,5 @@
-const fx_version = '0.6.1.6'; // FX Client Version
-const fx_update = 'Feb 28'; // FX Client Last Updated
+const fx_version = '0.6.1.7'; // FX Client Version
+const fx_update = 'Mar 1'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -212,6 +212,7 @@ WindowManager.add({
 });
 document.getElementById("canvasA").addEventListener("mousedown", WindowManager.closeAll);
 document.getElementById("canvasA").addEventListener("touchstart", WindowManager.closeAll);
+document.addEventListener("keydown", event => { if (event.key === "Escape") WindowManager.closeAll(); });
 var settingsGearIcon = document.createElement('img');
 settingsGearIcon.setAttribute('src', 'geari_white.png');
 
@@ -253,8 +254,8 @@ function displayDonationsHistory(playerID, playerNames, isSingleplayer) {
 var utils = new (function() {
     this.getMaxTroops = function(playerTerritories, playerID) { return (playerTerritories[playerID]*150).toString(); };
     this.getDensity = function(playerBalances, playerTerritories, playerID) {
-        if (settings.densityDisplayStyle === "percentage") return (Math.floor((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100) + "%");
-        else return (playerBalances[playerID] / (playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID])).toFixed(0);
+        if (settings.densityDisplayStyle === "percentage") return (((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100).toFixed(1) + "%");
+        else return (playerBalances[playerID] / (playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID])).toFixed(1);
     };
 });
 
