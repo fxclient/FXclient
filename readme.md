@@ -16,6 +16,8 @@
 ## What is FX Client?
 FX Client is the first Territorial.io client, targeting better User Interface and better User Experience, It's basically Territorial.io but better.
 
+**You can use the latest version of the client here: https://mohsenemx.github.io/FXclient/**
+
 ## Features:
 1. It's 100% free and open source on Github
 2. It's Ad free and removes game's default ads.
@@ -24,15 +26,31 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 5. Adds a text to display "Maximum Troops"
 6. Adds a win counter
 7. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard
+8. Adds a player list
+9. Can be installed as a PWA (progressive web app) ensuring maximum enjoyment on consoles, phones and even desktop devices
 
-### The client has a settings menu, from which you can:
+#### The client has a settings menu, from which you can:
 
-  8. Change the game font
-  9. Make fullscreen mode trigger automatically
-  10. Set a custom main menu background
-  11. Create custom attack percentage keybinds
-12. It also allows you to install the game via your browser's PWA API, ensuring maximum enjoyment on consoles, phones and even desktop devices
+10. Change the game font
+11. Make fullscreen mode trigger automatically
+12. Set a custom main menu background
+13. Create custom attack percentage keybinds
+
+## Building Locally
+
+To build the client locally, install Node.js if you haven't already, clone the repo, then run:
+
+```
+npm install
+npm run build
+```
+
+This will install the dependencies, download the game and build the client.
+
+To build from an already downloaded copy of the game, use `npm run build-only`.
+
 ## Contact Us
-Our Website: https://mohsenemx.github.io/FXclient/
 
-Our Discord: https://discord.gg/JEwYWGraj7
+Join the FX Client Discord server: https://discord.gg/JEwYWGraj7
+
+Our Website: https://mohsenemx.github.io/FXclient/
