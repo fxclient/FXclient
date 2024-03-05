@@ -1,5 +1,5 @@
-const fx_version = '0.6.1.7'; // FX Client Version
-const fx_update = 'Mar 1'; // FX Client Last Updated
+const fx_version = '0.6.1.8'; // FX Client Version
+const fx_update = 'Mar 5'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -210,12 +210,40 @@ WindowManager.add({
         document.getElementById("donationhistory_note").style.display = ((true || settings.showBotDonations || /*getVarByName("dt")*/ isSingleplayer) ? "none" : "block");
     }
 });
+WindowManager.add({
+    name: "playerList",
+    element: document.getElementById("playerlist"),
+    beforeOpen: function() {}
+});
 document.getElementById("canvasA").addEventListener("mousedown", WindowManager.closeAll);
 document.getElementById("canvasA").addEventListener("touchstart", WindowManager.closeAll);
 document.addEventListener("keydown", event => { if (event.key === "Escape") WindowManager.closeAll(); });
 var settingsGearIcon = document.createElement('img');
-settingsGearIcon.setAttribute('src', 'geari_white.png');
+settingsGearIcon.setAttribute('src', 'assets/geari_white.png');
 
+const playerList = new (function () {
+    const playersIcon = document.createElement('img');
+    playersIcon.setAttribute('src', 'assets/players_icon.png');
+    this.display = function displayPlayerList(playerNames) {
+        let listContent = "";
+        for (let i = 0; i < playerNames.length; i++) {
+            listContent += `<span class="color-light-gray">${i}.</span> ${playerNames[i]}<br>`
+        }
+        document.getElementById("playerlist_text").innerHTML = listContent;
+        WindowManager.openWindow("playerList");
+    }
+    this.hoveringOverButton = false;
+    this.drawButton = (canvas, x, y, size) => {
+        canvas.fillRect(x, y, size, size);
+        canvas.fillStyle = this.hoveringOverButton ? "#aaaaaaaa" : "#000000aa";
+        canvas.clearRect(x + 1, y + 1, size - 2, size - 2);
+        canvas.fillRect(x + 1, y + 1, size - 2, size - 2);
+        canvas.fillStyle = "#ffffff";
+        canvas.imageSmoothingEnabled = true;
+        canvas.drawImage(playersIcon, x + 2, y + 2, size - 4, size - 4);
+        canvas.imageSmoothingEnabled = false;
+    }
+});
 var donationsTracker = new (function(){
     this.donationHistory = Array(512);
     // fill the array with empty arrays with length of 3
@@ -257,6 +285,9 @@ var utils = new (function() {
         if (settings.densityDisplayStyle === "percentage") return (((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100).toFixed(1) + "%");
         else return (playerBalances[playerID] / (playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID])).toFixed(1);
     };
+    this.isPointInRectangle = function(x, y, rectangleStartX, rectangleStartY, width, height) {
+        return x >= rectangleStartX && x <= rectangleStartX + width && y >= rectangleStartY && y <= rectangleStartY + height;
+    }
 });
 
 const keybindFunctions = { setAbsolute: () => {}, setRelative: () => {} };

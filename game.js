@@ -3153,7 +3153,8 @@ function bb() {
 	function a0j() {
 		a0L.clearRect(0, 0, a0F, y5), a0L.fillStyle = ae.lV, a0L.fillRect(0, 0, a0F, a0Q), a0L.fillStyle = ae.ku, a0L.fillRect(0, a0Q, a0F, y5 - a0Q), a0E[eu] >= position && a0m(a0E[eu] - position, ae.lG), 0 !== a0E[eu] && 0 === position && a0m(0, ae
 				.lZ), -1 !== a0c && a0m(a0c, ae.ky), a0L.fillStyle = ae.gK, a0L.fillRect(0, a0Q, a0F, 1), a0L.fillRect(0, 0, a0F, xF), a0L.fillRect(0, 0, xF, y5), a0L.fillRect(a0F - xF, 0, xF, y5), a0L.fillRect(0, y5 - xF, a0F, xF), a0L.font = a0G,
-			a0L.textBaseline = gI, a0L.textAlign = gJ, a0L.fillText(title, Math.floor(a0F / 2), Math.floor(a0O + a0H / 2));
+			a0L.textBaseline = gI, a0L.textAlign = gJ, a0L.fillText(title, Math.floor((a0F + a0Q - 22) / 2), Math.floor(a0O + a0H / 2));
+		playerList.drawButton(a0L, 12, 12, a0Q - 22);
 		var hn, f7 = a0E[eu] < position + a0J - 1 ? 1 : 2;
 		for (a0L.font = a0I, a0L.textAlign = vo, hn = a0J - f7; 0 <= hn; hn--) a0n(jU[hn + position]), a0o(hn, hn + position, jU[hn + position]);
 		for (a0L.textAlign = xB, hn = a0J - f7; 0 <= hn; hn--) a0n(jU[hn + position]), a0p(hn, jU[hn + position]);
@@ -3232,8 +3233,14 @@ function bb() {
 		for (var dw = a0J - 1; 0 <= dw; dw--) a0Z[dw] = jU[dw], a0a[dw] = fP[jU[dw]];
 		a0Z[a0J] = a0E[eu], a0a[a0J] = fP[eu]
 	}, this.g9 = function(jn, jo) {
-		return !!uu(jn, jo) && (a0d = b7.dX, a0e = !0, a0f = a0g = a13(jo), al.sk() && (jn = yn(-1, a0g, a0J), a0c !== (jn = jn === a0J ? -1 : jn)) && (a0c = jn, a0j(), b7.d6 = !0), !0)
+		return !!uu(jn, jo) && (utils.isPointInRectangle(jn, jo, nf + 12, nf + 12, a0Q - 22, a0Q - 22) && playerList.display(k5), true) && (a0d = b7.dX, a0e = !0, a0f = a0g = a13(jo), al.sk() && (jn = yn(-1, a0g, a0J), a0c !== (jn = jn === a0J ?
+			-1 : jn)) && (a0c = jn, a0j(), b7.d6 = !0), !0)
 	}, this.s1 = function(jn, jo) {
+		if (utils.isPointInRectangle(jn, jo, nf + 12, nf + 12, a0Q - 22, a0Q - 22)) {
+			playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, a0j(), b7.d6 = !0);
+		} else {
+			playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, a0j(), b7.d6 = !0);
+		}
 		var dY, a12 = a13(jo);
 		return a0e ? (dY = position, (position = yn(0, position += a0f - a12, f3 - a0J)) !== dY && (a12 = (a12 = yn(-1, a0f = a12, a0J)) !== a0J && uu(jn, jo) ? a12 : -1, a0c = a12, a0j(), b7.d6 = !0), !0) : (a12 = (a12 = yn(-1, a12, a0J)) ===
 			a0J || !uu(jn, jo) || al.sk() ? -1 : a12, a0c !== a12 && (a0c = a12, a0j(), b7.d6 = !0))
