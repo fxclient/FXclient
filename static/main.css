@@ -84,7 +84,7 @@ input#inputfilebtn {
 	transition: 0.2s
 }
 
-.window#donationhistory {
+.selectable {
 	user-select: text;
 }
 

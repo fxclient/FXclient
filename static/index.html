@@ -106,7 +106,11 @@
             <button onclick="settingsManager.save()">Save Settings</button>
         </footer>
     </div>
-    <div class="window scrollable" id="donationhistory" style="display:none">
+    <div class="window scrollable selectable" id="playerlist" style="display: none;">
+        <h1>Player List</h1>
+        <p id="playerlist_text"></p>
+    </div>
+    <div class="window scrollable selectable" id="donationhistory" style="display:none">
         <h1>Donation history for </h1>
         <p id="donationhistory_note">Note: donations from bots are not shown here</p>
         <p id="donationhistory_text"></p>

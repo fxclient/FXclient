@@ -34,6 +34,7 @@ let dictionary = {};
 	// this one broke in 1.91.3 /{\w+===(?<playerId>\w+)\?\w+\(175," Message to "/g,
 	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+\.\w+)\(13,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(14,\[(?<playerNames>\w+)\[(\w+)\],(\w+\.\w+\.\w+\()(?<playerBalances>\w+)\[\5\]\),\6(?<playerTerritories>\w+)\[\5\]\),\2\]\),\w+=!0\):\2=/g,
 	// this one also broke in 1.91.3 /,\w+="Player: "\+(?<playerNames>\w+)\[\w+\],\w+=\(\w\+="   Balance: "\+\w+\.\w+\((?<playerBalances>\w+)\[\w+\]\)\)\+\("   Territory: "\+\w+\.\w+\((?<playerTerritories>\w+)\[\w+\]\)\)\+\("   Coords: "/g,
+	/\((?<uiOffset>\w+)=Math\.floor\(\(\w+\?\.0114:\.01296\)\*\w+\)\)/g,
 ].forEach(expression => {
 	result = expression.exec(script);
 	if (result === null) throw new Error("no match for ") + expression;
@@ -141,6 +142,20 @@ replaceOne(/,(0!==\w+\[(\w+)\]\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
 
 // Reset donation history when a new game is started
 replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), ");
+
+{ // Player list
+	// Draw player list button
+	const { groups: { drawFunction, topBarHeight } } = replaceOne(/(=1;function (?<drawFunction>\w+)\(\){[^}]+?(?<canvas>\w+)\.fillRect\(0,(?<topBarHeight>\w+),\w+,1\),(?:\3\.fillRect\([^()]+\),)+\3\.font=\w+,\3\.textBaseline=\w+,\3\.textAlign=\w+,\3\.fillText\(\w+,Math\.floor\()(\w+)\/2\),(Math\.floor\(\w+\+\w+\/2\)\));/g,
+	"$1($5 + $<topBarHeight> - 22) / 2), $6; playerList.drawButton($<canvas>, 12, 12, $<topBarHeight> - 22);");
+	const buttonBoundsCheck = `utils.isPointInRectangle($<x>, $<y>, ${dictionary.uiOffset} + 12, ${dictionary.uiOffset} + 12, ${topBarHeight} - 22, ${topBarHeight} - 22)`
+	// Handle player list button mouseDown
+	replaceOne(/(this\.\w+=function\((?<x>\w+),(?<y>\w+)\){return!!\w+\(\2,\3\))&&(\(\w+=\w+\.\w+,)/g,
+	`$1 && (${buttonBoundsCheck} && playerList.display(${dictionary.playerNames}), true) && $4`);
+	// Handle player list button hover
+	replaceOne(/(this\.\w+=function\((?<x>\w+),(?<y>\w+)\){)(var \w+,\w+=\w+\(\3\);return \w+\?\(\w+=(\w+),\(\5=\w+\(0,\5\+=(?:[^}]+,(?<setRepaintNeeded>\w+\.\w+=!0)){2})/g,
+	`$1 if (${buttonBoundsCheck}) { playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, ${drawFunction}(), $<setRepaintNeeded>); } `
+	+ ` else { playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, ${drawFunction}(), $<setRepaintNeeded>); } $4`);
+}
 
 // Disable built-in Territorial.io error reporting
 replaceOne(/window\.addEventListener\("error",function (\w+)\((\w+)\){/g,
