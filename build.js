@@ -41,6 +41,7 @@ let dictionary = {};
 	if (expression.exec(script) !== null) throw new Error("more than one match for: ") + expression;
 	for (let [key, value] of Object.entries(result.groups)) dictionary[key] = value;
 });
+fs.writeFileSync("./build/fx_core.js", `const dictionary = ${JSON.stringify(dictionary)};\n` + fs.readFileSync("./build/fx_core.js").toString());
 
 // Replace assets
 const assets = require('./assets.js');

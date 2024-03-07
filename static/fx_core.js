@@ -1,11 +1,18 @@
-const fx_version = '0.6.1.8'; // FX Client Version
-const fx_update = 'Mar 5'; // FX Client Last Updated
+const fx_version = '0.6.1.9'; // FX Client Version
+const fx_update = 'Mar 7'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
     console.log('Couldn\'t find a saved win data. creating one...');
 } else if (localStorage.getItem("fx_winCount") != undefined || localStorage.getItem("fx_winCount") != null) {
     var wins_counter = localStorage.getItem("fx_winCount");
+}
+
+const getVar = varName => window[dictionary[varName]];
+
+// https://stackoverflow.com/a/6234804
+function escapeHtml(unsafe) {
+    return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 
 function KeybindsInput(containerElement) {
@@ -216,7 +223,7 @@ WindowManager.add({
     beforeOpen: function() {}
 });
 document.getElementById("canvasA").addEventListener("mousedown", WindowManager.closeAll);
-document.getElementById("canvasA").addEventListener("touchstart", WindowManager.closeAll);
+document.getElementById("canvasA").addEventListener("touchstart", WindowManager.closeAll, { passive: true });
 document.addEventListener("keydown", event => { if (event.key === "Escape") WindowManager.closeAll(); });
 var settingsGearIcon = document.createElement('img');
 settingsGearIcon.setAttribute('src', 'assets/geari_white.png');
@@ -224,12 +231,18 @@ settingsGearIcon.setAttribute('src', 'assets/geari_white.png');
 const playerList = new (function () {
     const playersIcon = document.createElement('img');
     playersIcon.setAttribute('src', 'assets/players_icon.png');
+    document.getElementById("playerlist_content").addEventListener("click", event => {
+        const playerId = event.target.closest("tr[data-player-id]")?.getAttribute("data-player-id");
+        if (!playerId) return;
+        if (getVar("gIsTeamGame")) WindowManager.closeWindow("playerList"), displayDonationsHistory(playerId);
+    });
     this.display = function displayPlayerList(playerNames) {
         let listContent = "";
         for (let i = 0; i < playerNames.length; i++) {
-            listContent += `<span class="color-light-gray">${i}.</span> ${playerNames[i]}<br>`
+            listContent += `<tr data-player-id="${i}"><td><span class="color-light-gray">${i}.</span> ${escapeHtml(playerNames[i])}</td></tr>`
         }
-        document.getElementById("playerlist_text").innerHTML = listContent;
+        document.getElementById("playerlist_content").innerHTML = listContent;
+        document.getElementById("playerlist_content").setAttribute("class", getVar("gIsTeamGame") ? "clickable" : "");
         WindowManager.openWindow("playerList");
     }
     this.hoveringOverButton = false;
@@ -260,19 +273,18 @@ var donationsTracker = new (function(){
     };
     this.reset = function() { for (var i = 0; i < 512; i++) this.donationHistory[i] = []; };
 });
-// usage from inside: displayDonationsHistory(Y, gE);
-function displayDonationsHistory(playerID, playerNames, isSingleplayer) {
+function displayDonationsHistory(playerID, playerNames = getVar("playerNames"), isSingleplayer = getVar("gIsSingleplayer")) {
     var history = donationsTracker.getRecipientHistoryOf(playerID);
     console.log("History for " + playerNames[playerID] + ":");
     console.log(history);
-    document.querySelector("#donationhistory h1").innerHTML = "Donation history for " + playerNames[playerID];
+    document.querySelector("#donationhistory h1").innerHTML = "Donation history for " + escapeHtml(playerNames[playerID]);
     var historyText = "";
     history.reverse();
     if (history.length > 0) history.forEach(function(historyItem, index) {
         historyText += `<span class="color-light-gray">${(history.length - index)}.</span> `;
         if (playerID === historyItem[1])
-            historyText += `Received <span class="color-green">${historyItem[2]}</span> resources from ${playerNames[historyItem[0]]}<br>`;
-        else historyText += `Sent <span class="color-red">${historyItem[2]}</span> resources to ${playerNames[historyItem[1]]}<br>`;
+            historyText += `Received <span class="color-green">${historyItem[2]}</span> resources from ${escapeHtml(playerNames[historyItem[0]])}<br>`;
+        else historyText += `Sent <span class="color-red">${historyItem[2]}</span> resources to ${escapeHtml(playerNames[historyItem[1]])}<br>`;
     });
     else historyText = "Nothing to display";
     document.querySelector("#donationhistory p#donationhistory_text").innerHTML = historyText;

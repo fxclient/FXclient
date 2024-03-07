@@ -25,8 +25,8 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 4. Adds a text to display "Troop Density"
 5. Adds a text to display "Maximum Troops"
 6. Adds a win counter
-7. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard
-8. Adds a player list
+7. Adds a player list
+8. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard or the player list
 9. Can be installed as a PWA (progressive web app) ensuring maximum enjoyment on consoles, phones and even desktop devices
 
 #### The client has a settings menu, from which you can:
