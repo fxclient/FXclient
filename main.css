@@ -79,6 +79,17 @@ button:hover {
 	border-radius   : 8px;
 }
 
+td {
+	padding: 0px;
+}
+
+#playerlist_content.clickable td { cursor: pointer; }
+#playerlist_content.clickable td:hover { background-color: #00ff0040; }
+
+table {
+	border-spacing: 0px;
+}
+
 input#userna,
 input#inputfilebtn {
 	transition: 0.2s
