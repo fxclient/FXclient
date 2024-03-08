@@ -59,14 +59,14 @@ replaceOne(/(0===(\w+)\?(\w+)\[\2\]\.length)-1:(\3\[\2\]\.length:1,)/g, "$1 - 2 
 // Max size for custom maps: from 4096x4096 to 8192x8192
 // TODO: test this; it might cause issues with new boat mechanics?
 
-{ // Add Troop Density and Maximum Troops in side panel -- todo
+{ // Add Troop Density and Maximum Troops in side panel
 	const { groups: { valuesArray } } = replaceOne(/(,(?<labelsArray>\w+)\[\d\]="Interest",\2\[\d\]="Income",\2\[\d\]="Time"),(\w+=\w+-\w+\(\w+,100\),\((?<valuesArray>\w+)=new Array\(\2\.length\)\)\[0\]=\w+)/g,
 		'$1, $<labelsArray>.push("Max Troops", "Density"), $3'); // add labels
 	replaceOne(new RegExp(/(:(?<valueIndex>\w+)<7\?\w+\.\w+\.\w+\(valuesArray\[\2\]\)):(\w+\.\w+\(valuesArray\[7\]\))}/
 		.source.replace(/valuesArray/g, valuesArray), "g"),
 		'$1 : $<valueIndex> === 7 ? $3 '
 		+ `: $<valueIndex> === 8 ? utils.getMaxTroops(${dictionary.playerTerritories}, ${dictionary.playerId}) `
-		+ `: utils.getDensity(${dictionary.playerBalances}, ${dictionary.playerTerritories}, ${dictionary.playerId}) }`);
+		+ `: utils.getDensity(${dictionary.playerId}) }`);
 	// increase the size of the side panel by 25% to make the text easier to read
 	// match this.w = Math.floor((o ? .1646 : .126) * cZ),
 	replaceOne(/(this\.\w+=Math\.floor\(\(\w+\?\.1646:\.126\))\*(\w+\),)/g, "$1 * 1.25 * $2");
@@ -156,6 +156,15 @@ replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`
 	replaceOne(/(this\.\w+=function\((?<x>\w+),(?<y>\w+)\){)(var \w+,\w+=\w+\(\3\);return \w+\?\(\w+=(\w+),\(\5=\w+\(0,\5\+=(?:[^}]+,(?<setRepaintNeeded>\w+\.\w+=!0)){2})/g,
 	`$1 if (${buttonBoundsCheck}) { playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, ${drawFunction}(), $<setRepaintNeeded>); } `
 	+ ` else { playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, ${drawFunction}(), $<setRepaintNeeded>); } $4`);
+}
+
+{ // Display density of other players
+	// Applies when the "Reverse Name/Balance" setting is off
+	const { groups: { settingsSwitchNameAndBalance } } = replaceOne(/(,(?<settingsSwitchNameAndBalance>\w+\.\w+\.\w+)\?(?<nameDrawingFunction>\w+)\(\w+,\w+,(?<x>\w+),(?<y>\w+)\+\.78\*(?<fontSize>\w+),(?<canvas>\w+)\)):(\7\.fillText\(\w+\.\w+\.\w+\(\w+\[(\w+)\]\),\4,\5\+\.78\*\6\))\)\)/g,
+	`$1 : ($8, settings.showPlayerDensity && $<canvas>.fillText(utils.getDensity($9), $<x>, $<y> + $<fontSize> * 1.5)) ))`);
+	// Applies when the "Reverse Name/Balance" setting is on (default)
+	replaceOne(/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){\6\.fillText\((?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<gHumans>\w+)&&2!==(?<playerStates>\w+)\[)/g,
+	`$1, ${settingsSwitchNameAndBalance} && settings.showPlayerDensity && $<canvas>.fillText(utils.getDensity($2), $<x>, $<y> + $<fontSize>), $8`);
 }
 
 // Disable built-in Territorial.io error reporting
