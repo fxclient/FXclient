@@ -1,6 +1,6 @@
 const dictionary = {"gIsSingleplayer":"j1","gIsTeamGame":"ha","playerId":"eu","playerNames":"k5","playerBalances":"ev","playerTerritories":"fP","uiOffset":"nf"};
-const fx_version = '0.6.1.9'; // FX Client Version
-const fx_update = 'Mar 7'; // FX Client Last Updated
+const fx_version = '0.6.2'; // FX Client Version
+const fx_update = 'Mar 8'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -96,6 +96,7 @@ var settings = {
     "useFullscreenMode": false,
     "hideAllLinks": false,
     "realisticNames": false,
+    "showPlayerDensity": true,
     "densityDisplayStyle": "percentage",
     //"customMapFileBtn": true
     "customBackgroundUrl": "",
@@ -114,6 +115,7 @@ var settingsManager = new (function() {
         realisticNames: document.getElementById("settings_realisticnames"),
         displayWinCounter: document.getElementById("settings_displaywincounter"),
         useFullscreenMode: document.getElementById("settings_usefullscreenmode"),
+        showPlayerDensity: document.getElementById("settings_showPlayerDensity"),
         //customMapFileBtn: document.getElementById("settings_custommapfileinput")
     };
     this.save = function() {
@@ -294,12 +296,17 @@ function displayDonationsHistory(playerID, playerNames = getVar("playerNames"), 
 
 var utils = new (function() {
     this.getMaxTroops = function(playerTerritories, playerID) { return (playerTerritories[playerID]*150).toString(); };
-    this.getDensity = function(playerBalances, playerTerritories, playerID) {
+    this.getDensity = function(playerID, playerBalances = getVar("playerBalances"), playerTerritories = getVar("playerTerritories")) {
         if (settings.densityDisplayStyle === "percentage") return (((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100).toFixed(1) + "%");
         else return (playerBalances[playerID] / (playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID])).toFixed(1);
     };
     this.isPointInRectangle = function(x, y, rectangleStartX, rectangleStartY, width, height) {
         return x >= rectangleStartX && x <= rectangleStartX + width && y >= rectangleStartY && y <= rectangleStartY + height;
+    };
+    /** @param {CanvasRenderingContext2D} canvas @param {string} text */
+    this.fillTextMultiline = function(canvas, text, x, y, maxWidth) {
+        const lineHeight = parseInt(canvas.font.split(" ").find(part => part.endsWith("px")).slice(0, -2));
+        text.split("\n").forEach((line, index) => canvas.fillText(line, x, y + index * lineHeight, maxWidth));
     }
 });
 

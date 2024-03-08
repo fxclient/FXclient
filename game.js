@@ -3270,7 +3270,7 @@ function bc() {
 	}
 
 	function a1F(dw) {
-		return dw < 3 ? ex[dw].toString() : 3 === dw || 4 === dw || 5 === dw ? ad.k3.tZ(ex[dw] / 100, 2) : dw < 7 ? ad.k3.k4(ex[dw]) : dw === 7 ? t.a0D(ex[7]) : dw === 8 ? utils.getMaxTroops(fP, eu) : utils.getDensity(ev, fP, eu)
+		return dw < 3 ? ex[dw].toString() : 3 === dw || 4 === dw || 5 === dw ? ad.k3.tZ(ex[dw] / 100, 2) : dw < 7 ? ad.k3.k4(ex[dw]) : dw === 7 ? t.a0D(ex[7]) : dw === 8 ? utils.getMaxTroops(fP, eu) : utils.getDensity(eu)
 	}
 
 	function a1E() {
@@ -5139,12 +5139,14 @@ function bs() {
 				gT.setTransform(v4, 0, 0, v4, jp, a99), gT.globalAlpha = a9B(fontSize), jq = 1 === iZ ? b3.uN[a8g[dw + f3]] : 2 === iZ ? i.uJ()[4].gS[dY < 255 ? 1 : 0] : (3 === iZ ? i.uJ()[5] : i.uJ()[6]).gS[0];
 				gT.drawImage(jq, 0, 0), gT.globalAlpha = 1, gT.setTransform(1, 0, 0, 1, 0, 0)
 			}(jp, jq, fontSize, iZ, dw, w9, a8h[dw + iZ * f3], gT), w9 -= 2)
-		}(jp, jq, fontSize, dw, gT), (jr = a8W * fontSize) < a8Y || (gT.font = g1 + jr + g2, aR.k1.k2 ? a94(dw, jr, jp, jq + .78 * fontSize, gT) : gT.fillText(ad.k3.k4(ev[dw]), jp, jq + .78 * fontSize)));
+		}(jp, jq, fontSize, dw, gT), (jr = a8W * fontSize) < a8Y || (gT.font = g1 + jr + g2, aR.k1.k2 ? a94(dw, jr, jp, jq + .78 * fontSize, gT) : (gT.fillText(ad.k3.k4(ev[dw]), jp, jq + .78 * fontSize), settings.showPlayerDensity && gT
+			.fillText(utils.getDensity(dw), jp, jq + fontSize * 1.5))));
 		gT.imageSmoothingEnabled = !1
 	}
 
 	function a94(dw, fontSize, jn, jo, gT) {
-		gT.fillText(k5[dw], jn, jo), dw < h9 && 2 !== hB[dw] || (dw = fontSize / a8T[dw], gT.fillRect(jn - .5 * dw, jo + ad.kp.t6 * fontSize, dw, Math.max(1, .1 * fontSize)))
+		gT.fillText(k5[dw], jn, jo), aR.k1.k2 && settings.showPlayerDensity && gT.fillText(utils.getDensity(dw), jn, jo + fontSize), dw < h9 && 2 !== hB[dw] || (dw = fontSize / a8T[dw], gT.fillRect(jn - .5 * dw, jo + ad.kp.t6 * fontSize, dw, Math
+			.max(1, .1 * fontSize)))
 	}
 
 	function a96(jp, jq, fontSize, a99, a9A, gT) {
