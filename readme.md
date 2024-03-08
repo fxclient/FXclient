@@ -22,8 +22,8 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 1. It's 100% free and open source on Github
 2. It's Ad free and removes game's default ads.
 3. It makes game look cooler, by replacing default assets with new ones.
-4. Adds a text to display "Troop Density"
-5. Adds a text to display "Maximum Troops"
+4. Displays your troop density and maximum troops
+5. Displays the density of players and bots
 6. Adds a win counter
 7. Adds a player list
 8. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard or the player list
