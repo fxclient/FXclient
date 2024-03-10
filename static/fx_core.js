@@ -1,5 +1,5 @@
-const fx_version = '0.6.2'; // FX Client Version
-const fx_update = 'Mar 8'; // FX Client Last Updated
+const fx_version = '0.6.2.1'; // FX Client Version
+const fx_update = 'Mar 10'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -200,6 +200,7 @@ var WindowManager = new (function() {
         if (windows[windowName].isOpen === false) return;
         windows[windowName].isOpen = false;
         windows[windowName].element.style.display = "none";
+        if (windows[windowName].onClose !== undefined) windows[windowName].onClose();
     };
     this.closeAll = function() {
         Object.values(windows).forEach(function(windowObj) {
@@ -217,7 +218,8 @@ WindowManager.add({
     element: document.querySelector("#donationhistory"),
     beforeOpen: function(isSingleplayer) {
         document.getElementById("donationhistory_note").style.display = ((true || settings.showBotDonations || /*getVarByName("dt")*/ isSingleplayer) ? "none" : "block");
-    }
+    },
+    onClose: function() { donationsTracker.openedWindowPlayerID = null; }
 });
 WindowManager.add({
     name: "playerList",
@@ -236,11 +238,14 @@ const playerList = new (function () {
     document.getElementById("playerlist_content").addEventListener("click", event => {
         const playerId = event.target.closest("tr[data-player-id]")?.getAttribute("data-player-id");
         if (!playerId) return;
-        if (getVar("gIsTeamGame")) WindowManager.closeWindow("playerList"), displayDonationsHistory(playerId);
+        if (getVar("gIsTeamGame")) WindowManager.closeWindow("playerList"), donationsTracker.displayHistory(playerId);
     });
     this.display = function displayPlayerList(playerNames) {
-        let listContent = "";
-        for (let i = 0; i < playerNames.length; i++) {
+        const gHumans = getVar("gHumans");
+        const gLobbyMaxJoin = getVar("gLobbyMaxJoin");
+        let listContent = `<h3>Players (${gHumans})</h3>`;
+        for (let i = 0; i < gLobbyMaxJoin; i++) {
+            if (i === gHumans) listContent += `<h3>Bots (${gLobbyMaxJoin - gHumans})</h3>`;
             listContent += `<tr data-player-id="${i}"><td><span class="color-light-gray">${i}.</span> ${escapeHtml(playerNames[i])}</td></tr>`
         }
         document.getElementById("playerlist_content").innerHTML = listContent;
@@ -260,38 +265,50 @@ const playerList = new (function () {
     }
 });
 var donationsTracker = new (function(){
+    this.openedWindowPlayerID = null;
+    this.contentElement = document.querySelector("#donationhistory_content");
     this.donationHistory = Array(512);
     // fill the array with empty arrays with length of 3
     //for (var i = 0; i < 512; i++) this.donationHistory.push([]); // not needed as .reset is called on game start
-    // from inside of game:
-    // ((!gE[g].startsWith("[Bot] ") || settings.showBotDonations) && donationsTracker.logDonation(g,k,x))
+    this.getHistoryOf = function(playerID) {
+        return this.donationHistory[playerID].toReversed();
+    }
+    this.reset = function() { for (var i = 0; i < 512; i++) this.donationHistory[i] = []; };
     this.logDonation = function(senderID, receiverID, amount) {
         const donationInfo = [senderID, receiverID, amount];
         this.donationHistory[receiverID].push(donationInfo);
         this.donationHistory[senderID].push(donationInfo);
+        if (this.openedWindowPlayerID === senderID || this.openedWindowPlayerID === receiverID) {
+            const indexOfNewItem = this.donationHistory[this.openedWindowPlayerID === senderID ? senderID : receiverID].length;
+            this.contentElement.prepend(generateTableRowItem(donationInfo, indexOfNewItem, this.openedWindowPlayerID, true));
+        }
     };
-    this.getRecipientHistoryOf = function(playerID) {
-        return this.donationHistory[playerID];
-    };
-    this.reset = function() { for (var i = 0; i < 512; i++) this.donationHistory[i] = []; };
-});
-function displayDonationsHistory(playerID, playerNames = getVar("playerNames"), isSingleplayer = getVar("gIsSingleplayer")) {
-    var history = donationsTracker.getRecipientHistoryOf(playerID);
-    console.log("History for " + playerNames[playerID] + ":");
-    console.log(history);
-    document.querySelector("#donationhistory h1").innerHTML = "Donation history for " + escapeHtml(playerNames[playerID]);
-    var historyText = "";
-    history.reverse();
-    if (history.length > 0) history.forEach(function(historyItem, index) {
-        historyText += `<span class="color-light-gray">${(history.length - index)}.</span> `;
+    function generateTableRowItem(historyItem, index, playerID, isNew) {
+        const playerNames = getVar("playerNames");
+        const row = document.createElement("tr");
+        if (isNew) row.setAttribute("class", "new");
+        let content = `<td><span class="color-light-gray">${index}.</span> `;
         if (playerID === historyItem[1])
-            historyText += `Received <span class="color-green">${historyItem[2]}</span> resources from ${escapeHtml(playerNames[historyItem[0]])}<br>`;
-        else historyText += `Sent <span class="color-red">${historyItem[2]}</span> resources to ${escapeHtml(playerNames[historyItem[1]])}<br>`;
-    });
-    else historyText = "Nothing to display";
-    document.querySelector("#donationhistory p#donationhistory_text").innerHTML = historyText;
-    WindowManager.openWindow("donationHistory", isSingleplayer);
-}
+            content += `Received <span class="color-green">${historyItem[2]}</span> resources from ${escapeHtml(playerNames[historyItem[0]])}`;
+        else content += `Sent <span class="color-red">${historyItem[2]}</span> resources to ${escapeHtml(playerNames[historyItem[1]])}`;
+        content += "</td>";
+        row.innerHTML = content;
+        return row;
+    }
+    this.displayHistory = function displayDonationsHistory(playerID, playerNames = getVar("playerNames"), isSingleplayer = getVar("gIsSingleplayer")) {
+        var history = donationsTracker.getHistoryOf(playerID);
+        console.log("History for " + playerNames[playerID] + ":");
+        console.log(history);
+        document.querySelector("#donationhistory h1").innerHTML = "Donation history for " + escapeHtml(playerNames[playerID]);
+        this.contentElement.innerHTML = "";
+        if (history.length > 0) history.forEach((historyItem, index) => {
+            this.contentElement.appendChild(generateTableRowItem(historyItem, history.length - index, playerID));
+        });
+        else this.contentElement.innerText = "Nothing to display";
+        this.openedWindowPlayerID = playerID;
+        WindowManager.openWindow("donationHistory", isSingleplayer);
+    }
+});
 
 var utils = new (function() {
     this.getMaxTroops = function(playerTerritories, playerID) { return (playerTerritories[playerID]*150).toString(); };

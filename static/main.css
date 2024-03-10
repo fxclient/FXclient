@@ -16,7 +16,7 @@
 	width           : 90%;
 	top             : 0;
 	color           : white;
-	font-family     : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family     : 'Franklin Gothic Medium', 'Trebuchet MS', Arial, sans-serif;
 	margin          : auto;
 	margin-top      : 20px;
 	right           : 0;
@@ -62,6 +62,15 @@ h1 {
 	margin-block-end  : 0.5em;
 	transition        : 0.2s;
 }
+#playerlist h1 {
+	margin-block-start: 0.3em;
+	margin-block-end  : 0.3em;
+}
+h3 {
+	font-weight       : normal;
+	margin-block-start: 0.6em;
+	margin-block-end  : 0.6em;
+}
 
 canvas,
 input,
@@ -85,6 +94,19 @@ td {
 
 #playerlist_content.clickable td { cursor: pointer; }
 #playerlist_content.clickable td:hover { background-color: #00ff0040; }
+
+tr.new {
+    animation: flashAnimation 0.4s ease-out;
+}
+
+@keyframes flashAnimation {
+    0% {
+        background-color: #ffffffaa;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
 
 table {
 	border-spacing: 0px;

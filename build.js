@@ -35,6 +35,8 @@ let dictionary = {};
 	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+\.\w+)\(13,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(14,\[(?<playerNames>\w+)\[(\w+)\],(\w+\.\w+\.\w+\()(?<playerBalances>\w+)\[\5\]\),\6(?<playerTerritories>\w+)\[\5\]\),\2\]\),\w+=!0\):\2=/g,
 	// this one also broke in 1.91.3 /,\w+="Player: "\+(?<playerNames>\w+)\[\w+\],\w+=\(\w\+="   Balance: "\+\w+\.\w+\((?<playerBalances>\w+)\[\w+\]\)\)\+\("   Territory: "\+\w+\.\w+\((?<playerTerritories>\w+)\[\w+\]\)\)\+\("   Coords: "/g,
 	/\((?<uiOffset>\w+)=Math\.floor\(\(\w+\?\.0114:\.01296\)\*\w+\)\)/g,
+	/(function \w+\((\w+),(\w+),(\w+),(\w+),(\w+)\){\6\.fillText\((?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<gHumans>\w+)&&2!==(?<playerStates>\w+)\[)/g,
+	/,\w+=512,(?<gLobbyMaxJoin>\w+)=\w+,(?<gIsSingleplayer>\w+)&&\(\1=\w+\.\w+\(\)\),\w+=\1-\w+,\w+=0,/g
 ].forEach(expression => {
 	result = expression.exec(script);
 	if (result === null) throw new Error("no match for ") + expression;
@@ -139,7 +141,7 @@ replaceOne(/(this\.\w+=function\((\w+),(\w+)\)\{)(\2===\w+&&\(\w+\.\w+\((\w+\.\w
 // Display donations for a player when clicking on them in the leaderboard
 // match , 0 !== dG[x]) && fq.hB(x, 800, false, 0),
 replaceOne(/,(0!==\w+\[(\w+)\]\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
-	`, ${dictionary.gIsTeamGame} && displayDonationsHistory($2, ${dictionary.playerNames}, ${dictionary.gIsSingleplayer}), $1`);
+	`, ${dictionary.gIsTeamGame} && donationsTracker.displayHistory($2, ${dictionary.playerNames}, ${dictionary.gIsSingleplayer}), $1`);
 
 // Reset donation history when a new game is started
 replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), ");
