@@ -3249,7 +3249,7 @@ function bb() {
 		a0e = !1;
 		var a12 = a13(jo);
 		return al.sk() && -1 !== a0c && (a0c = -1, a0j(), b7.d6 = !0), b7.dX - a0d < 350 && a0g === a12 && -1 !== (a12 = (a12 = yn(-1, a12, a0J)) !== a0J && uu(jn, jo) ? a12 : -1) && (jn = jU[a12 + position], a12 === a0J - 1 && a0E[eu] >=
-			position + a0J - 1 && (jn = eu), ha && displayDonationsHistory(jn, k5, j1), 0 !== hA[jn]) && f.kR(jn, 800, !1, 0), !0
+			position + a0J - 1 && (jn = eu), ha && donationsTracker.displayHistory(jn, k5, j1), 0 !== hA[jn]) && f.kR(jn, 800, !1, 0), !0
 	}, this.s4 = function(jn, jo, deltaY) {
 		var a14;
 		return !(a0e || kT || (a14 = Math.max(Math.floor(Math.abs(deltaY) / 40), 1), !uu(jn, jo)) || (jn = (jn = yn(-1, a13(jo), a0J)) === a0J || al.sk() ? -1 : jn, 0 < deltaY ? position < f3 - a0J && (position += Math.min(f3 - a0J - position,
