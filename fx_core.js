@@ -247,7 +247,7 @@ const playerList = new (function () {
         let listContent = `<h3>Players (${gHumans})</h3>`;
         for (let i = 0; i < gLobbyMaxJoin; i++) {
             if (i === gHumans) listContent += `<h3>Bots (${gLobbyMaxJoin - gHumans})</h3>`;
-            listContent += `<tr data-player-id="${i}"><td><span class="color-light-gray">${i}.</span> ${escapeHtml(playerNames[i])}</td></tr>`
+            listContent += `<tr data-player-id="${i}"><td><span class="color-light-gray">${i + 1}.</span> ${escapeHtml(playerNames[i])}</td></tr>`
         }
         document.getElementById("playerlist_content").innerHTML = listContent;
         document.getElementById("playerlist_content").setAttribute("class", getVar("gIsTeamGame") ? "clickable" : "");
