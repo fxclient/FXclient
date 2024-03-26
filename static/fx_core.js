@@ -1,5 +1,5 @@
-const fx_version = '0.6.2.1'; // FX Client Version
-const fx_update = 'Mar 10'; // FX Client Last Updated
+const fx_version = '0.6.3'; // FX Client Version
+const fx_update = 'Mar 26'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -16,14 +16,25 @@ function escapeHtml(unsafe) {
 }
 
 function KeybindsInput(containerElement) {
-    this.container = containerElement;
+    const header = document.createElement("p");
+    header.innerText = "Attack Percentage Keybinds";
+    const keybindContainer = document.createElement("div");
+    keybindContainer.className = "arrayinput";
+    const keybindAddButton = document.createElement("button");
+    keybindAddButton.innerText = "Add";
+    containerElement.append(header, keybindContainer, keybindAddButton);
+    this.container = keybindContainer;
     this.keys = [ "key", "type", "value" ];
     this.objectArray = [];
     this.addObject = function () {
         this.objectArray.push({ key: "", type: "absolute", value: 1 });
         this.displayObjects();
     };
-    document.getElementById("keybindAddButton").addEventListener("click", this.addObject.bind(this));
+    this.update = function () {
+        this.objectArray = settings.attackPercentageKeybinds;
+        this.displayObjects();
+    }
+    keybindAddButton.addEventListener("click", this.addObject.bind(this));
     this.displayObjects = function () {
         // Clear the content of the container
         this.container.innerHTML = "";
@@ -89,11 +100,11 @@ function KeybindsInput(containerElement) {
 }
 
 var settings = {
-    "fontName": "Trebuchet MS",
-    "showBotDonations": false,
+    //"fontName": "Trebuchet MS",
+    //"showBotDonations": false,
     "displayWinCounter": true,
     "useFullscreenMode": false,
-    "hideAllLinks": false,
+    //"hideAllLinks": false,
     "realisticNames": false,
     "showPlayerDensity": true,
     "densityDisplayStyle": "percentage",
@@ -101,37 +112,80 @@ var settings = {
     "customBackgroundUrl": "",
     "attackPercentageKeybinds": [],
 };
+const discontinuedSettings = [ "hideAllLinks", "fontName" ];
 let makeMainMenuTransparent = false;
 var settingsManager = new (function() {
-    var inputFields = { // (includes select menus)
-        fontName: document.getElementById("settings_fontname"),
-        customBackgroundUrl: document.getElementById("settings_custombackgroundurl"),
-        densityDisplayStyle: document.getElementById("settings_densityDisplayStyle")
-    };
-    var checkboxFields = {
-        //showBotDonations: document.getElementById("settings_donations_bots"),
-        hideAllLinks: document.getElementById("settings_hidealllinks"),
-        realisticNames: document.getElementById("settings_realisticnames"),
-        displayWinCounter: document.getElementById("settings_displaywincounter"),
-        useFullscreenMode: document.getElementById("settings_usefullscreenmode"),
-        showPlayerDensity: document.getElementById("settings_showPlayerDensity"),
-        //customMapFileBtn: document.getElementById("settings_custommapfileinput")
-    };
+    const settingsStructure = [
+        //{ for: "fontName", type: "textInput", label: "Font name:", placeholder: "Enter font name", tooltip: "Name of the font to be used for rendering. For example: Arial, Georgia, sans-serif, serif, Comic Sans MS, ..."},
+        { type: "button", text: "Reset Wins Counter", action: removeWins },
+        { for: "displayWinCounter", type: "checkbox", label: "Display win counter" },
+        { for: "useFullscreenMode", type: "checkbox", label: "Use fullscreen mode", note: "Note: fullscreen mode will trigger after you click anywhere on the page due to browser policy restrictions." },
+        //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
+        { for: "realisticNames", type: "checkbox", label: "Realistic Bot Names" },
+        { for: "showPlayerDensity", type: "checkbox", label: "Show player density" },
+        { for: "densityDisplayStyle", type: "selectMenu", label: "Density value display style:", tooltip: "Controls how the territorial density value should be rendered", options: [
+            { value: "percentage", label: "Percentage" },
+            { value: "absoluteQuotient", label: "Value from 0 to 150 (BetterTT style)" }
+        ]},
+        { for: "customBackgroundUrl", type: "textInput", label: "Custom main menu background:", placeholder: "Enter an image URL here", tooltip: "A custom image to be shown as the main menu background instead of the currently selected map." },
+        KeybindsInput
+    ];
+    const settingsContainer = document.querySelector(".settings .scrollable");
+    var inputFields = {}; // (includes select menus)
+    var checkboxFields = {};
+    var customElements = [];
+    settingsStructure.forEach(item => {
+        if (typeof item === "function") {
+            const container = document.createElement("div");
+            customElements.push(new item(container));
+            return settingsContainer.append(container);
+        }
+        const label = document.createElement("label");
+        if (item.tooltip) label.title = item.tooltip;
+        const isValueInput = item.type.endsWith("Input");
+        const element = document.createElement(isValueInput || item.type === "checkbox" ? "input" : item.type === "selectMenu" ? "select" : "button");
+        if (item.type === "textInput") element.type = "text";
+        if (item.placeholder) element.placeholder = item.placeholder;
+        if (isValueInput || item.type === "selectMenu") inputFields[item.for] = element;
+        if (item.text) element.innerText = item.text;
+        if (item.action) element.addEventListener("click", item.action);
+        if (item.label) label.append(item.label + " ");
+        if (item.note) {
+            const note = document.createElement("small");
+            note.innerText = item.note;
+            label.append(document.createElement("br"), note)
+        }
+        if (item.options) item.options.forEach(option => {
+            const optionElement = document.createElement("option");
+            optionElement.setAttribute("value", option.value);
+            optionElement.innerText = option.label;
+            element.append(optionElement);
+        });
+        label.append(element);
+        if (item.type === "checkbox") {
+            element.type = "checkbox";
+            const checkmark = document.createElement("span");
+            checkmark.className = "checkmark";
+            label.className = "checkbox";
+            label.append(checkmark);
+            checkboxFields[item.for] = element;
+        } else label.append(document.createElement("br"));
+        settingsContainer.append(label, document.createElement("br"));
+    });
     this.save = function() {
         Object.keys(inputFields).forEach(function(key) { settings[key] = inputFields[key].value.trim(); });
         Object.keys(checkboxFields).forEach(function(key) { settings[key] = checkboxFields[key].checked; });
         this.applySettings();
         WindowManager.closeWindow("settings");
+        discontinuedSettings.forEach(settingName => delete settings[settingName]);
         localStorage.setItem("fx_settings", JSON.stringify(settings));
         // should probably firgure out a way to do this without reloading - // You can't do it, localstorages REQUIRE you to reload
         window.location.reload();
     };
-    let keybindsInput = new KeybindsInput(document.getElementById("keybinds"));
     this.syncFields = function() {
         Object.keys(inputFields).forEach(function(key) { inputFields[key].value = settings[key]; });
         Object.keys(checkboxFields).forEach(function(key) { checkboxFields[key].checked = settings[key]; });
-        keybindsInput.objectArray = settings.attackPercentageKeybinds;
-        keybindsInput.displayObjects();
+        customElements.forEach(element => element.update());
     };
     this.resetAll = function() {
         if (!confirm("Are you Really SURE you want to RESET ALL SETTINGS back to the default?")) return;
