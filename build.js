@@ -8,10 +8,8 @@ fs.writeFileSync("./build/index.html", fs.readFileSync("./build/index.html").toS
 let script = fs.readFileSync('./game/latest.js', { encoding: 'utf8' }).replace("\n", "").trim();
 
 const replaceOne = (expression, replaceValue) => {
-    const result = expression.exec(script);
-    if (result === null) throw new Error("no match for: ") + expression;
-	if (expression.exec(script) !== null) throw new Error("more than one match for: " + expression);
-    // this (below) works correctly because expression.lastIndex gets reset in the line above when there is no match
+    const result = matchOne(expression);
+    // this (below) works correctly because expression.lastIndex gets reset above in matchOne when there is no match
     script = script.replace(expression, replaceValue);
     return result;
 }
@@ -36,7 +34,7 @@ const matchDictionaryExpression = expression => {
 }
 
 // Return value example:
-// When this function is called with "var1=var2+1;" as the code
+// When replaceRawCode or matchRawCode are called with "var1=var2+1;" as the code
 // and this matches "a=b+1;", the returned value will be the object: { var1: "a", var2: "b" }
 const replaceRawCode = (/** @type {string} */ raw, /** @type {string} */ result, nameMappings) => {
 	const { expression, groups } = generateRegularExpression(raw, false, nameMappings);
@@ -45,6 +43,11 @@ const replaceRawCode = (/** @type {string} */ raw, /** @type {string} */ result,
 	});
 	//console.log(replacementString);
 	const expressionMatchResult = replaceOne(expression, replacementString);
+	return Object.fromEntries(Object.entries(groups).map(([identifier, groupNumber]) => [identifier, expressionMatchResult[groupNumber]]));
+}
+const matchRawCode = (/** @type {string} */ raw, nameMappings) => {
+	const { expression, groups } = generateRegularExpression(raw, false, nameMappings);
+	const expressionMatchResult = matchOne(expression);
 	return Object.fromEntries(Object.entries(groups).map(([identifier, groupNumber]) => [identifier, expressionMatchResult[groupNumber]]));
 }
 const generateRegularExpression = (/** @type {string} */ code, /** @type {boolean} */ isForDictionary, nameMappings) => {
