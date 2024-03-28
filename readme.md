@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://mohsenemx.github.io/FXclient/">
+  <a href="https://fxclient.github.io/FXclient/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="/assets/logo_text_dark.png">
       <source media="(prefers-color-scheme: light)" srcset="/assets/logo_text_light.png">
