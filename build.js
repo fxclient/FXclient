@@ -4,6 +4,7 @@ const fs = require('fs');
 if (!fs.existsSync("./build")) fs.mkdirSync("./build");
 fs.cpSync("./static/", "./build/", { recursive: true });
 fs.cpSync("./assets/", "./build/assets/", { recursive: true });
+fs.cpSync("./src/fx_core.js", "./build/fx_core.js");
 fs.writeFileSync("./build/index.html", fs.readFileSync("./build/index.html").toString().replace(/buildTimestamp/g, Date.now()));
 let script = fs.readFileSync('./game/latest.js', { encoding: 'utf8' }).replace("\n", "").trim();
 
@@ -55,10 +56,10 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 	let groupNumberCounter = 1;
 	let raw = escapeRegExp(code).replace(isForDictionary ? /(?:@@)*(@?)(\w+)/g : /()(\w+)/g, (_match, modifier, word) => {
 		// if a substitution string for the "word" is specified in the nameMappings, use it
-		if (nameMappings && nameMappings[word] !== undefined) return nameMappings[word];
+		if (nameMappings && nameMappings.hasOwnProperty(word)) return nameMappings[word];
 		// if the "word" is a number or is one of these specific words, ingore it
 		if (/^\d/.test(word) || ["return", "this", "var", "function", "Math"].includes(word)) return word;
-		else if (groups[word] !== undefined) return "\\" + groups[word]; // regex numeric reference to the group
+		else if (groups.hasOwnProperty(word)) return "\\" + groups[word]; // regex numeric reference to the group
 		else {
 			groups[word] = groupNumberCounter++;
 			return modifier === "@" ? `(?<${word}>\\w+)` : "(\\w+)";
