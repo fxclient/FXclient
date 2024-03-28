@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mohsenemx/FXclient.git"
+    "url": "git+https://github.com/fxclient/FXclient.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mohsenemx/FXclient/issues"
+    "url": "https://github.com/fxclient/FXclient/issues"
   },
-  "homepage": "https://github.com/mohsenemx/FXclient#readme",
+  "homepage": "https://github.com/fxclient/FXclient#readme",
   "dependencies": {
     "js-beautify": "^1.14.11"
   }
