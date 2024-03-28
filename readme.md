@@ -52,5 +52,3 @@ To build from an already downloaded copy of the game, use `npm run build-only`.
 ## Contact Us
 
 Join the FX Client Discord server: https://discord.gg/JEwYWGraj7
-
-Our Website: https://mohsenemx.github.io/FXclient/
