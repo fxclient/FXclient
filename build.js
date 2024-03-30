@@ -231,16 +231,17 @@ replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`
 { // Display density of other players
 	// Applies when the "Reverse Name/Balance" setting is off
 	const { groups: { settingsSwitchNameAndBalance } } = replaceOne(/(,(?<settingsSwitchNameAndBalance>\w+\.\w+\.\w+\[7\]\.\w+)\?(?<nameDrawingFunction>\w+)\(\w+,\w+,(?<x>\w+),(?<y>\w+)\+\.78\*(?<fontSize>\w+),(?<canvas>\w+)\)):(\7\.fillText\(\w+\.\w+\.\w+\(\w+\[(\w+)\]\),\4,\5\+\.78\*\6\))\)\)/g,
-	`$1 : ($8, settings.showPlayerDensity && $<canvas>.fillText(utils.getDensity($9), $<x>, $<y> + $<fontSize> * 1.5)) ))`);
+	`$1 : ($8, settings.showPlayerDensity && ($<canvas>.fillStyle = utils.textStyleBasedOnDensity(utils.getDensity($9)), $<canvas>.fillText(utils.getDensity($9), $<x>, $<y> + $<fontSize> * 1.5) ) ) )`);
 	// Applies when the "Reverse Name/Balance" setting is on (default)
 	replaceOne(/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){\6\.fillText\((?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<gHumans>\w+)&&2!==(?<playerStates>\w+)\[)/g,
-	`$1, ${settingsSwitchNameAndBalance} && settings.showPlayerDensity && $<canvas>.fillText(utils.getDensity($2), $<x>, $<y> + $<fontSize>), $8`);
+	`$1, ${settingsSwitchNameAndBalance} && settings.showPlayerDensity && $<canvas>.fillText(utils.getDensity($2)), $<x>, $<y> + $<fontSize>), $8`);
 }
 
 // Disable built-in Territorial.io error reporting
 replaceOne(/window\.addEventListener\("error",function (\w+)\((\w+)\){/g,
 	'$& window.removeEventListener("error", $1); return alert("Error:\\n" + $2.filename + " " + $2.lineno + " " + $2.colno + " " + $2.message);');
 
+console.log('Removing ads...');
 // Remove ads
 script = script.replace('//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/tag.min.js','');
 

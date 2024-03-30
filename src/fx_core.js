@@ -378,6 +378,9 @@ var utils = new (function() {
         const lineHeight = parseInt(canvas.font.split(" ").find(part => part.endsWith("px")).slice(0, -2));
         text.split("\n").forEach((line, index) => canvas.fillText(line, x, y + index * lineHeight, maxWidth));
     }
+    this.textStyleBasedOnDensity = function(density) {
+        retrun `hsl(${Math.floor(density.substr(0,3)).toFixed(0)}, 100%, 50%, 1)`;
+    }
 });
 
 const keybindFunctions = { setAbsolute: () => {}, setRelative: () => {} };
