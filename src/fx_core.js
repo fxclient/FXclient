@@ -1,5 +1,5 @@
-const fx_version = '0.6.3'; // FX Client Version
-const fx_update = 'Mar 26'; // FX Client Last Updated
+const fx_version = '0.6.3.1'; // FX Client Version
+const fx_update = 'Mar 30'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -107,6 +107,7 @@ var settings = {
     //"hideAllLinks": false,
     "realisticNames": false,
     "showPlayerDensity": true,
+    "coloredDensity": true,
     "densityDisplayStyle": "percentage",
     //"customMapFileBtn": true
     "customBackgroundUrl": "",
@@ -123,6 +124,7 @@ var settingsManager = new (function() {
         //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
         { for: "realisticNames", type: "checkbox", label: "Realistic Bot Names" },
         { for: "showPlayerDensity", type: "checkbox", label: "Show player density" },
+        { for: "coloredDensity", type: "checkbox", label: "Colored density", note: "Display the density with a color between red and green depending on the density value" },
         { for: "densityDisplayStyle", type: "selectMenu", label: "Density value display style:", tooltip: "Controls how the territorial density value should be rendered", options: [
             { value: "percentage", label: "Percentage" },
             { value: "absoluteQuotient", label: "Value from 0 to 150 (BetterTT style)" }
@@ -378,8 +380,9 @@ var utils = new (function() {
         const lineHeight = parseInt(canvas.font.split(" ").find(part => part.endsWith("px")).slice(0, -2));
         text.split("\n").forEach((line, index) => canvas.fillText(line, x, y + index * lineHeight, maxWidth));
     }
-    this.textStyleBasedOnDensity = function(density) {
-        retrun `hsl(${Math.floor(density.substr(0,3)).toFixed(0)}, 100%, 50%, 1)`;
+    this.textStyleBasedOnDensity = function(playerID) {
+        const playerBalances = getVar("playerBalances"), playerTerritories = getVar("playerTerritories");
+        return `hsl(${playerBalances[playerID] / (playerTerritories[playerID] * 1.5)}, 100%, 50%, 1)`;
     }
 });
 
