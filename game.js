@@ -5014,12 +5014,13 @@ function bo() {
 						gP.drawImage(ja, 0, 0), gP.globalAlpha = 1, gP.setTransform(1, 0, 0, 1, 0, 0)
 					}(jZ, ja, fontSize, iM, eF, vw, a7t[eF + iM * ef], gP), vw -= 2)
 				}(jZ, ja, fontSize, eF, gP), (jb = a7i * fontSize) < a7k || (gP.font = aY.g0.g1(1, jb), b9.dF.data[7].value ? a8G(eF, jb, jZ, ja + .78 * fontSize, gP) : (gP.fillText(aY.jk.jl(eX[eF]), jZ, ja + .78 * fontSize), settings
-					.showPlayerDensity && gP.fillText(utils.getDensity(eF), jZ, ja + fontSize * 1.5))))
+					.showPlayerDensity && (settings.coloredDensity && (gP.fillStyle = utils.textStyleBasedOnDensity(eF)), gP.fillText(utils.getDensity(eF), jZ, ja + fontSize * 1.5)))))
 	}
 
 	function a8G(eF, fontSize, fK, fL, gP) {
-		gP.fillText(jm[eF], fK, fL), b9.dF.data[7].value && settings.showPlayerDensity && gP.fillText(utils.getDensity(eF), fK, fL + fontSize), eF < h2 && 2 !== h4[eF] || (eF = fontSize / a7f[eF], gP.fillRect(fK - .5 * eF, fL + aY.g0.tC * fontSize,
-			eF, Math.max(1, .1 * fontSize)))
+		var ___id = eF;
+		gP.fillText(jm[eF], fK, fL), eF < h2 && 2 !== h4[eF] || (eF = fontSize / a7f[eF], gP.fillRect(fK - .5 * eF, fL + aY.g0.tC * fontSize, eF, Math.max(1, .1 * fontSize)));
+		b9.dF.data[7].value && settings.showPlayerDensity && (settings.coloredDensity && (gP.fillStyle = utils.textStyleBasedOnDensity(___id)), gP.fillText(utils.getDensity(___id), fK, fL + fontSize));
 	}
 
 	function a8I(jZ, ja, fontSize, a8L, a8M, gP) {
