@@ -31,13 +31,13 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
     - name: Deploy to mirror repo
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.EXTERNAL_REPOSITORY_PERSONAL_ACCESS_TOKEN }}
-        with:
-          source-directory: public/
-          destination-github-username: fxclient
-          destination-repository-name: fxclient.github.io
-          user-email: mohsenemx@gmail.com
-          # It defaults to `main`
-          target-branch: "gh-pages"
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.EXTERNAL_REPOSITORY_PERSONAL_ACCESS_TOKEN }}
+      with:
+        source-directory: public/
+        destination-github-username: fxclient
+        destination-repository-name: fxclient.github.io
+        user-email: mohsenemx@gmail.com
+        # It defaults to `main`
+        target-branch: "gh-pages"
