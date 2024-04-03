@@ -107,8 +107,11 @@ replaceOne(/(},(\w+\[0\])\[\d+\]={(\w+):\w+,(\w+):\d+,(\w+):90,(\w+):0,(\w+):0},
 // match 0 === a9P ? ug[a9P].length - 1 : ug[a9P].length : 1,
 replaceOne(/(0===(\w+)\?(\w+)\[\2\]\.length)-1:(\3\[\2\]\.length:1,)/g, "$1 - 2 : $4");*/
 // Add FX Client version info to the game version window
-replaceRawCode(`ar.aAx("MenuGameVersion")||ar.aAz(new aB3("ℹ️ "+aV.nU[84],gameVersion+"<br><a href='"`,
-`ar.aAx("MenuGameVersion")||ar.aAz(new aB3("ℹ️ "+aV.nU[84],gameVersion + "<br><b>" + "FX Client v" + fx_version + " " + fx_update + "</b><br><a href='"`);
+//replaceRawCode(`ar.aAx("MenuGameVersion")||ar.aAz(new aB3("ℹ️ "+aV.nU[84],gameVersion+"<br><a href='"`,
+replaceRawCode(`ar.oa(4,1,new s8("ℹ️ "+Translations.txt[84],gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>",`,
+`ar.oa(4,1,new s8("ℹ️ "+Translations.txt[84],gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>"
++ "<br><br><b>" + "FX Client v" + fx_version + " " + fx_update + "<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a>"
++ "<br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></b>",`);
 
 // Max size for custom maps: from 4096x4096 to 8192x8192
 // TODO: test this; it might cause issues with new boat mechanics?
@@ -130,9 +133,13 @@ replaceRawCode(`ar.aAx("MenuGameVersion")||ar.aAz(new aB3("ℹ️ "+aV.nU[84],ga
 }
 
 // Increment win counter on wins
-replaceOne(/(=function\((\w+)\){)([^}]+),((\w+\(0),\w+<100\?(\w+\.\w+)\(11,(\[\w+\[\w+\]\])\):\6\(12,\7\),(3,\2,[^()]+?\))),(?<end>[^}]+},)/g,
+/*replaceOne(/(=function\((\w+)\){)([^}]+),((\w+\(0),\w+<100\?(\w+\.\w+)\(11,(\[\w+\[\w+\]\])\):\6\(12,\7\),(3,\2,[^()]+?\))),(?<end>[^}]+},)/g,
 `$1 if (${dictionary.playerId} === $2) wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter); ` +
-`$3, $4, $5, "Your Current Win Count is Now " + wins_counter, $8, $<end>`);
+`$3, $4, $5, "Your Current Win Count is Now " + wins_counter, $8, $<end>`);*/
+replaceRawCode(`=function(rC){n.hQ(rC,2),vm(0,h2<100?aV.s9(4,[jm[rC]]):aV.s9(12,[jm[rC]]),3,rC,aZ.gG,aZ.ka,-1,!0),`,
+	`=function(rC){ if (${dictionary.playerId} === $2) wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter),
+		vm(0,"Your Current Win Count is Now " + wins_counter,3,rC,aZ.gG,aZ.ka,-1,!0);
+	n.hQ(rC,2),vm(0,h2<100?aV.s9(4,[jm[rC]]):aV.s9(12,[jm[rC]]),3,rC,aZ.gG,aZ.ka,-1,!0),`);
 
 
 { // Add settings button and win count
@@ -164,9 +171,9 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 // if (y > (C.f3-C.hw/2) && y < ((C.f3-C.hw/2)+C.nI) && A > C.f4 && A < (C.f4 + C.nI)) WindowManager.openWindow("settings");
 `if ($<mouseX> > gearIconX && $<mouseX> < (gearIconX+${groups.h}) && $<mouseY> > ${groups.y} && $<mouseY> < (${groups.y}+${groups.h})) return WindowManager.openWindow("settings"); ` +
 'if ($<isMenuOpened>) $<end>');*/
-replaceRawCode(`(q6=Math.floor((b7.cv.fv()?.145:.09)*aK.fw),gap=Math.floor(.065*(b7.cv.fv()?.53:.36)*aK.fw),gap=aK.g5-q6-gap,jd=b0.gap,q6=Math.floor(.35*q6),gap<=mouseX&&mouseY<jd+q6&&ar.v2())`,
+replaceRawCode(`(q6=Math.floor((b7.cv.fv()?.145:.09)*aK.fw),gap=Math.floor(.065*(b7.cv.fv()?.53:.36)*aK.fw),gap=aK.g5-q6-gap,jd=b0.gap,q6=Math.floor(.35*q6),gap<=mouseX&&mouseY<jd+q6&&ar.v2(1))`,
 `(q6=Math.floor((b7.cv.fv()?.145:.09)*aK.fw),gap=Math.floor(.065*(b7.cv.fv()?.53:.36)*aK.fw),gap=aK.g5-q6-gap,jd=b0.gap,q6=Math.floor(.35*q6),
-(gap <= mouseX && mouseY < jd + q6 && (ar.v2(), true)) || (mouseX >= gap - q6 / 0.7 && mouseY < jd + q6 && WindowManager.openWindow("settings"))
+(gap <= mouseX && mouseY < jd + q6 && (ar.v2(1), true)) || (mouseX >= gap - q6 / 0.7 && mouseY < jd + q6 && WindowManager.openWindow("settings"))
 )`);
 }
 

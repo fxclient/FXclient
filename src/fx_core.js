@@ -1,5 +1,5 @@
-const fx_version = '0.6.3.1'; // FX Client Version
-const fx_update = 'Mar 30'; // FX Client Last Updated
+const fx_version = '0.6.3.2'; // FX Client Version
+const fx_update = 'Apr 3'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
