@@ -1,6 +1,6 @@
-const dictionary = {"gIsTeamGame":"hN","playerId":"eW","playerNames":"jm","playerBalances":"eX","playerTerritories":"f1","gHumans":"h2","playerStates":"h4","gLobbyMaxJoin":"pS","gIsSingleplayer":"io","uiSizes":"b0","gap":"gap"};
-const fx_version = '0.6.3.1'; // FX Client Version
-const fx_update = 'Mar 30'; // FX Client Last Updated
+const dictionary = {"gIsTeamGame":"hO","playerId":"eX","playerNames":"jn","playerBalances":"eY","playerTerritories":"f2","gHumans":"h3","playerStates":"h5","gLobbyMaxJoin":"po","gIsSingleplayer":"ip","uiSizes":"b0","gap":"gap"};
+const fx_version = '0.6.3.2'; // FX Client Version
+const fx_update = 'Apr 3'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
