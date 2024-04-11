@@ -1,5 +1,5 @@
-const fx_version = '0.6.3.2'; // FX Client Version
-const fx_update = 'Apr 3'; // FX Client Last Updated
+const fx_version = '0.6.3.3'; // FX Client Version
+const fx_update = 'Apr 11'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -119,8 +119,10 @@ var settingsManager = new (function() {
     const settingsStructure = [
         //{ for: "fontName", type: "textInput", label: "Font name:", placeholder: "Enter font name", tooltip: "Name of the font to be used for rendering. For example: Arial, Georgia, sans-serif, serif, Comic Sans MS, ..."},
         { type: "button", text: "Reset Wins Counter", action: removeWins },
-        { for: "displayWinCounter", type: "checkbox", label: "Display win counter" },
-        { for: "useFullscreenMode", type: "checkbox", label: "Use fullscreen mode", note: "Note: fullscreen mode will trigger after you click anywhere on the page due to browser policy restrictions." },
+        { for: "displayWinCounter", type: "checkbox", label: "Display win counter",
+        note: "The win counter tracks multiplayer solo wins (not in team games)" },
+        { for: "useFullscreenMode", type: "checkbox", label: "Use fullscreen mode",
+        note: "Note: fullscreen mode will trigger after you click anywhere on the page due to browser policy restrictions." },
         //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
         { for: "realisticNames", type: "checkbox", label: "Realistic Bot Names" },
         { for: "showPlayerDensity", type: "checkbox", label: "Show player density" },

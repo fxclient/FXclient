@@ -137,8 +137,10 @@ replaceRawCode(`ar.oa(4,1,new s8("ℹ️ "+Translations.txt[84],gameVersion+"<br
 `$1 if (${dictionary.playerId} === $2) wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter); ` +
 `$3, $4, $5, "Your Current Win Count is Now " + wins_counter, $8, $<end>`);*/
 replaceRawCode(`=function(rC){n.hQ(rC,2),vm(0,h2<100?aV.s9(4,[jm[rC]]):aV.s9(12,[jm[rC]]),3,rC,aZ.gG,aZ.ka,-1,!0),`,
-	`=function(rC){ if (${dictionary.playerId} === $2) wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter),
-		vm(0,"Your Current Win Count is Now " + wins_counter,3,rC,aZ.gG,aZ.ka,-1,!0);
+	`=function(rC){
+		if (${dictionary.playerId} === rC && !${dictionary.gIsSingleplayer})
+			wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter),
+			vm(0,"Your Win Count is now " + wins_counter,3,rC,aZ.gG,aZ.ka,-1,!0);
 	n.hQ(rC,2),vm(0,h2<100?aV.s9(4,[jm[rC]]):aV.s9(12,[jm[rC]]),3,rC,aZ.gG,aZ.ka,-1,!0),`);
 
 
@@ -161,7 +163,11 @@ replaceRawCode(`,fy=aV.nU[80],fontSize=.65*height,canvas.font=aY.g0.g1(1,fontSiz
 canvas.imageSmoothingEnabled = true,
 canvas.drawImage(settingsGearIcon, x - width / 2, y, height, height),
 canvas.imageSmoothingEnabled = false,
-(settings.displayWinCounter && ( canvas.font = aY.g0.g1(1, Math.floor(height * 0.4)), canvas.fillText("Win count: " + wins_counter, Math.floor(x + width / 2), Math.floor((y + height / 2) * 2)) ) ),
+(settings.displayWinCounter && (
+	canvas.font = aY.g0.g1(1, Math.floor(height * 0.4)),
+	canvas.fillStyle = "#ffffff",
+	canvas.fillText("Win count: " + wins_counter, Math.floor(x + width / 2), Math.floor((y + height / 2) * 2))
+)),
 canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6)",canvas.fillRect(x,y,width,height),`);
 
 // handle settings button click
