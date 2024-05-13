@@ -1,4 +1,4 @@
-const dictionary = {"gIsTeamGame":"hL","playerId":"eU","playerNames":"jl","playerBalances":"eV","playerTerritories":"ez","gHumans":"h0","playerStates":"h2","gLobbyMaxJoin":"pu","gIsSingleplayer":"il","uiSizes":"b0","gap":"gap"};
+const dictionary = {"gIsTeamGame":"hM","playerId":"eU","playerNames":"jm","playerBalances":"eV","playerTerritories":"ez","gHumans":"h1","playerStates":"h3","gLobbyMaxJoin":"px","gIsSingleplayer":"im","uiSizes":"b0","gap":"gap"};
 const fx_version = '0.6.3.3'; // FX Client Version
 const fx_update = 'Apr 11'; // FX Client Last Updated
 
