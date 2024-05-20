@@ -1,4 +1,4 @@
-const fx_version = '0.6.4'; // FX Client Version
+const fx_version = '0.6.4.1'; // FX Client Version
 const fx_update = 'May 20'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
@@ -433,10 +433,11 @@ const leaderboardFilter = new (function() {
 
 const hoveringTooltip = new (function() {
     this.display = () => {}; // this gets populated by the modified game script
+    this.canvasPixelScale = 1;
     document.getElementById("canvasA").addEventListener("mousemove", e => {
         if (!settings.hoveringTooltip || !getVar("gameState")) return;
         try {
-            this.display(e.clientX, e.clientY);
+            this.display(this.canvasPixelScale * e.clientX, this.canvasPixelScale * e.clientY);
         } catch (e) { console.error(e) }
     });
 });

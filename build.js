@@ -336,6 +336,7 @@ replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`
 		`hoveringTooltip.display = function(mouseX, mouseY) {
 			var coordX = aj.fU(mouseX), coordY = aj.fW(mouseY),
 				coord = aj.fY(coordX, coordY), point = aj.fa(coord);
+			if (coordX < 0 || coordY < 0) return;
 			k.vQ(point);
 		}
 		this.click = function(g8, g9, tE) {
@@ -346,6 +347,8 @@ replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`
 			return !(!aj.fb(fT, fV) || (fT = (b7.cv.fv() ? .025 : .0144) * aK.fw, fV = performance.now(), Math.abs(g8 - uu) > fT) || Math.abs(g9 - uv) > fT || dY + 500 < fV) && (dY = fV, tE ? (function(g8, g9, fZ) {
 				a2.eb(fZ) || -1 === (g8 = ak.ff.vR(g8, g9)) ? k.vQ(fZ) : k.vS(g8)
 			}(g8, g9, fZ), false)`)
+	replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr,",
+		`aK.nH = (window.devicePixelRatio || 1) * aEr, hoveringTooltip.canvasPixelScale = aK.nH,`)
 }
 
 // Disable built-in Territorial.io error reporting
