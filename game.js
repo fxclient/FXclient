@@ -2010,6 +2010,7 @@ function bU() {
 			coordY = aj.fW(mouseY),
 			coord = aj.fY(coordX, coordY),
 			point = aj.fa(coord);
+		if (coordX < 0 || coordY < 0) return;
 		k.vQ(point);
 	}
 	this.click = function(g8, g9, tE) {
@@ -6993,8 +6994,9 @@ function c4() {
 		var g5, gA, aEr, qb = aEo(document.documentElement.clientWidth),
 			xM = aEo(window.visualViewport && 2 !== b7.id ? window.visualViewport.height : document.documentElement.clientHeight);
 		return g5 = qb, gA = xM, aEr = 0 !== b7.id || g5 < gA ? 700 : 1200, aEr = Math.min(aEr / ((g5 + gA) / 2), 1), aEr = 0 === b9.dG.data[1].value ? 2 * aEr / 3 : Math.min(aEr + (b9.dG.data[1].value - 1) * (1 - aEr) / 2, 1), aK.nH = (window
-			.devicePixelRatio || 1) * aEr, gf && !aEm ? (aEm = !0, document.body.removeChild(sj)) : aEm && (aEm = !1, document.body.appendChild(sj)), g5 = Math.floor(.5 + qb * aK.nH), gA = Math.floor(.5 + xM * aK.nH), !(g5 === aK.g5 && gA === aK
-			.gA || ag.tR() && y.tG) && (aK.g5 = g5, aK.gA = gA, aK.min = yR(g5, gA), aK.max = wC(g5, gA), aK.fw = eR(g5 + gA, 2), aK.o6 = g5 / gA, sj.width = g5, sj.height = gA, sj.style.width = qb + "px", sj.style.height = xM + "px", 1)
+			.devicePixelRatio || 1) * aEr, hoveringTooltip.canvasPixelScale = aK.nH, gf && !aEm ? (aEm = !0, document.body.removeChild(sj)) : aEm && (aEm = !1, document.body.appendChild(sj)), g5 = Math.floor(.5 + qb * aK.nH), gA = Math.floor(.5 +
+			xM * aK.nH), !(g5 === aK.g5 && gA === aK.gA || ag.tR() && y.tG) && (aK.g5 = g5, aK.gA = gA, aK.min = yR(g5, gA), aK.max = wC(g5, gA), aK.fw = eR(g5 + gA, 2), aK.o6 = g5 / gA, sj.width = g5, sj.height = gA, sj.style.width = qb + "px",
+			sj.style.height = xM + "px", 1)
 	}
 	this.g5 = 0, this.gA = 0, this.min = 0, this.max = 0, this.fw = 0, this.o6 = 1, this.nH = 1, this.cr = function() {
 		this.g5 = aEo(document.documentElement.clientWidth) + 2, this.gA = aEo(document.documentElement.clientHeight) + 2
