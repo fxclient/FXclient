@@ -78,7 +78,8 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 	// this one also broke in 1.91.3 /,\w+="Player: "\+(?<playerNames>\w+)\[\w+\],\w+=\(\w\+="   Balance: "\+\w+\.\w+\((?<playerBalances>\w+)\[\w+\]\)\)\+\("   Territory: "\+\w+\.\w+\((?<playerTerritories>\w+)\[\w+\]\)\)\+\("   Coords: "/g,
 	///\((?<uiOffset>\w+)=Math\.floor\(\(\w+\?\.0114:\.01296\)\*\w+\)\)/g,
 	/(function \w+\((\w+),(\w+),(\w+),(\w+),(\w+)\){\6\.fillText\((?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<gHumans>\w+)&&2!==(?<playerStates>\w+)\[)/g,
-	/,\w+=512,(?<gLobbyMaxJoin>\w+)=\w+,(?<gIsSingleplayer>\w+)&&\(\1=\w+\.\w+\(\)\),\w+=\1-\w+,\w+=0,/g
+	/,\w+=512,(?<gLobbyMaxJoin>\w+)=\w+,(?<gIsSingleplayer>\w+)&&\(\1=\w+\.\w+\(\)\),\w+=\1-\w+,\w+=0,/g,
+	/function \w+\(\)\{if\(2===(?<gameState>\w+)\)return 1;\w+\.\w+\(\),\1=2,\w+=\w+\}/g
 ].forEach(matchDictionaryExpression);
 
 const rawCodeSegments = [
@@ -219,26 +220,35 @@ replaceOne(/(this\.\w+=function\((\w+),(\w+)\)\{)(\2===\w+&&\(\w+\.\w+\((\w+\.\w
 "$1 donationsTracker.logDonation($2, $3, $5[0]); $4")
 
 // Display donations for a player when clicking on them in the leaderboard
+// and skip handling clicks when clicking on an empty space (see the isEmptySpace
+// variable in the modified leaderboard click handler from the leaderboard filter)
 // match , 0 !== dG[x]) && fq.hB(x, 800, false, 0),
-replaceOne(/,(0!==\w+\[(\w+)\]\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
-	`, ${dictionary.gIsTeamGame} && donationsTracker.displayHistory($2, ${dictionary.playerNames}, ${dictionary.gIsSingleplayer}), $1`);
+replaceOne(/,(0!==\w+\[(\w+)\])(\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
+	`, ${dictionary.gIsTeamGame} && donationsTracker.displayHistory($2, ${dictionary.playerNames}, ${dictionary.gIsSingleplayer}), $1 && !isEmptySpace $3`);
 
-// Reset donation history when a new game is started
-replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), ");
+// Reset donation history and leaderboard filter when a new game is started
+replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), leaderboardFilter.reset(), ");
 
-{ // Player list
+{ // Player list and leaderboard filter tabs
 	// Draw player list button
 	const uiOffset = dictionary.uiSizes + "." + dictionary.gap;
 	const { groups: { drawFunction, topBarHeight } } = replaceOne(/(=1;function (?<drawFunction>\w+)\(\){[^}]+?(?<canvas>\w+)\.fillRect\(0,(?<topBarHeight>\w+),\w+,1\),(?:\3\.fillRect\([^()]+\),)+\3\.font=\w+,(\w+\.\w+)\.textBaseline\(\3,1\),\5\.textAlign\(\3,1\),\3\.fillText\(\w+\.\w+\[65\],Math\.floor\()(\w+)\/2\),(Math\.floor\(\w+\+\w+\/2\)\));/g,
 	"$1($6 + $<topBarHeight> - 22) / 2), $7; playerList.drawButton($<canvas>, 12, 12, $<topBarHeight> - 22);");
 	const buttonBoundsCheck = `utils.isPointInRectangle($<x>, $<y>, ${uiOffset} + 12, ${uiOffset} + 12, ${topBarHeight} - 22, ${topBarHeight} - 22)`
-	// Handle player list button mouseDown
-	replaceOne(/(this\.\w+=function\((?<x>\w+),(?<y>\w+)\){return!!\w+\(\2,\3\))&&(\(\w+=\w+\.\w+,)/g,
-	`$1 && (${buttonBoundsCheck} && playerList.display(${dictionary.playerNames}), true) && $4`);
-	// Handle player list button hover
+	// Handle player list button and leaderboard tabs mouseDown
+	// and create a function for scrolling the leaderboard to the top
+	replaceOne(/(this\.\w+=function\((?<x>\w+),(?<y>\w+)\){return!!\w+\(\2,\3\))&&(\(\w+=\w+\.\w+,[^}]+),!0\)/g,
+	`leaderboardFilter.scrollToTop = function(){position = 0;}, $1 && ((${buttonBoundsCheck} && playerList.display(${dictionary.playerNames}), true)
+		&& !($<y> - ${uiOffset} > leaderboardFilter.verticalClickThreshold && leaderboardFilter.handleMouseDown($<x> - ${uiOffset})) && $4),!0)`);
+	// Handle player list button and leaderboard tabs hover
+	// and create a function for repainting the leaderboard
 	replaceOne(/(this\.\w+=function\((?<x>\w+),(?<y>\w+)\){)(var \w+,\w+=\w+\(\3\);return \w+\?\(\w+=(\w+),\(\5=\w+\(0,\5\+=(?:[^}]+,(?<setRepaintNeeded>\w+\.\w+=!0)){2})/g,
-	`$1 if (${buttonBoundsCheck}) { playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, ${drawFunction}(), $<setRepaintNeeded>); } `
-	+ ` else { playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, ${drawFunction}(), $<setRepaintNeeded>); } $4`);
+	`leaderboardFilter.repaintLeaderboard = function() { ${drawFunction}(), $<setRepaintNeeded>; },
+	$1 if (${buttonBoundsCheck}) { playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, ${drawFunction}(), $<setRepaintNeeded>); }
+	else { playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, ${drawFunction}(), $<setRepaintNeeded>); }
+	if (leaderboardFilter.setHovering(
+		utils.isPointInRectangle($<x>, $<y>, ${uiOffset}, ${uiOffset} + leaderboardFilter.verticalClickThreshold, leaderboardFilter.windowWidth, leaderboardFilter.tabBarOffset), $<x> - ${uiOffset}
+	)) return; $4`);
 }
 
 { // Display density of other players
@@ -248,6 +258,94 @@ replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`
 	// Applies when the "Reverse Name/Balance" setting is on (default)
 	replaceOne(/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<gHumans>\w+)&&2!==(?<playerStates>\w+)\[[^}]+)}/g,
 	`$1 var ___id = $2; $7, $9; ${settingsSwitchNameAndBalance} && settings.showPlayerDensity && (settings.coloredDensity && ($<canvas>.fillStyle = utils.textStyleBasedOnDensity(___id)), $<canvas>.fillText(utils.getDensity(___id), $<x>, $<y> + $<fontSize>)); }`);
+}
+
+{ // Leaderboard filter
+	// for the leaderboard draw function:
+	replaceRawCode("a0A.clearRect(0,0,a04,y9),a0A.fillStyle=aZ.lE,a0A.fillRect(0,0,a04,a0F),a0A.fillStyle=aZ.kZ,a0A.fillRect(0,a0F,a04,y9-a0F),leaderboardPositionsById[playerId]>=position&&a0Z(leaderboardPositionsById[playerId]-position,aZ.kw),0!==leaderboardPositionsById[playerId]&&0===position&&a0Z(0,aZ.lJ),-1!==a0P&&a0Z(a0P,aZ.kd),a0A.fillStyle=aZ.gF,a0A.fillRect(0,a0F,a04,1),a0A.fillRect(0,0,a04,b0.ur),a0A.fillRect(0,0,b0.ur,y9),a0A.fillRect(a04-b0.ur,0,b0.ur,y9),a0A.fillRect(0,y9-b0.ur,a04,b0.ur),",
+		`a0A.clearRect(0, 0, a04, y9),
+		a0A.fillStyle = aZ.lE,
+		a0A.fillRect(0, 0, a04, a0F),
+		a0A.fillStyle = aZ.kZ,
+		a0A.fillRect(0, a0F, a04, y9 - a0F);
+		if (leaderboardFilter.enabled) {
+			leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
+				.map(id => leaderboardPositionsById[id]).sort((a, b) => a - b);
+		}
+		var playerPos = (leaderboardFilter.enabled
+			? leaderboardFilter.filteredLeaderboard.indexOf(leaderboardPositionsById[playerId])
+			: leaderboardPositionsById[playerId]
+		);
+		this.playerPos = playerPos;
+		if (leaderboardFilter.hoveringOverTabs) a0P = -1;
+		if (leaderboardFilter.enabled && a0P >= leaderboardFilter.filteredLeaderboard.length) a0P = -1;
+		playerPos >= position && a0Z(playerPos - position, aZ.kw),
+		0 !== leaderboardPositionsById[playerId] && 0 === position && a0Z(0, aZ.lJ),
+		-1 !== a0P && a0Z(a0P, aZ.kd),
+		a0A.fillStyle = aZ.kZ,
+		//console.log("drawing", a0P),
+		a0A.clearRect(0, y9 - leaderboardFilter.tabBarOffset, a04, leaderboardFilter.tabBarOffset);
+		a0A.fillRect(0, y9 - leaderboardFilter.tabBarOffset, a04, leaderboardFilter.tabBarOffset);
+		a0A.fillStyle = aZ.gF,
+		a0A.fillRect(0, a0F, a04, 1),
+		a0A.fillRect(0, y9 - leaderboardFilter.tabBarOffset, a04, 1),
+		leaderboardFilter.drawTabs(a0A, a04, y9 - leaderboardFilter.tabBarOffset, aZ.kw),
+		a0A.fillRect(0, 0, a04, b0.ur),
+		a0A.fillRect(0, 0, b0.ur, y9),
+		a0A.fillRect(a04 - b0.ur, 0, b0.ur, y9),
+		a0A.fillRect(0, y9 - b0.ur, a04, b0.ur),`)
+	replaceRawCode("var hZ,eh=leaderboardPositionsById[playerId]<position+windowHeight-1?1:2;for(a0A.font=a07,aY.g0.textAlign(a0A,0),hZ=windowHeight-eh;0<=hZ;hZ--)a0a(leaderboardArray[hZ+position]),a0b(hZ,hZ+position,leaderboardArray[hZ+position]);for(aY.g0.textAlign(a0A,2),hZ=windowHeight-eh;0<=hZ;hZ--)a0a(leaderboardArray[hZ+position]),a0c(hZ,leaderboardArray[hZ+position]);",
+		`var hZ, eh = playerPos < position + windowHeight - 1 ? 1 : 2;
+		
+		if (leaderboardFilter.enabled) {
+			let result = leaderboardFilter.filteredLeaderboard;
+			if (position !== 0 && position >= result.length - windowHeight)
+				position = (result.length > windowHeight ? result.length : windowHeight) - windowHeight;
+			//if (position >= result.length) position = result.length - 1;
+			for (a0A.font = a07, aY.g0.textAlign(a0A, 0), hZ = windowHeight - eh; 0 <= hZ; hZ--) {
+				const pos = result[hZ + position];
+				if (pos !== undefined)
+					a0a(leaderboardArray[pos]), a0b(hZ, pos, leaderboardArray[pos]);
+			}
+			for (aY.g0.textAlign(a0A, 2), hZ = windowHeight - eh; 0 <= hZ; hZ--) {
+				const pos = result[hZ + position];
+				if (pos !== undefined)
+					a0a(leaderboardArray[pos]), a0c(hZ, leaderboardArray[pos]);
+			}
+		} else {
+			for (a0A.font = a07, aY.g0.textAlign(a0A, 0), hZ = windowHeight - eh; 0 <= hZ; hZ--)
+				a0a(leaderboardArray[hZ + position]), a0b(hZ, hZ + position, leaderboardArray[hZ + position]);
+			for (aY.g0.textAlign(a0A, 2), hZ = windowHeight - eh; 0 <= hZ; hZ--)
+				a0a(leaderboardArray[hZ + position]), a0c(hZ, leaderboardArray[hZ + position]);
+		}`)
+	// in the leaderboard resize handler: make space for the tab buttons at the bottom of the leaderboard
+	replaceRawCode(",a0D=.025*a04,a06=.16*a04,a0E=0*a04,a0F=Math.floor(.45*a0D+a06),a0G=(y9-a06-2*a0D-a0E)/a08,a05=aY.g0.g1(1,Math.floor(.55*a06)),",
+		`,a0D=.025*a04,a06=.16*a04,a0E=0*a04,a0F=Math.floor(.45*a0D+a06),a0G=(y9-a06-2*a0D-a0E)/a08,
+		a09.height = y9 += a0G, leaderboardFilter.tabBarOffset = Math.floor(a0G * 1.3), leaderboardFilter.verticalClickThreshold = y9 - leaderboardFilter.tabBarOffset, leaderboardFilter.windowWidth = a04,
+		a05=aY.g0.g1(1,Math.floor(.55*a06)),`)
+	// handle clicking on a player in the leaderboard
+	replaceRawCode("var a0p=a0q(fJ);return ag.tQ()&&-1!==a0P&&(a0P=-1,a0Y(),b3.d1=!0),b3.dY-a0Q<350&&a0T===a0p&&-1!==(a0p=(a0p=yr(-1,a0p,windowHeight))!==windowHeight&&vU(x,y)?a0p:-1)&&(x=leaderboardArray[a0p+position],a0p===windowHeight-1&&leaderboardPositionsById[playerId]>=position+windowHeight-1&&(x=playerId),",
+		`var a0p = a0q(fJ);
+		var isEmptySpace = false;
+		return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, windowHeight)) !== windowHeight && vU(x, y) ? a0p : -1) && (x = (leaderboardFilter.enabled ? leaderboardArray[leaderboardFilter.filteredLeaderboard[a0p + position] ?? (isEmptySpace = true, leaderboardPositionsById[playerId])] : leaderboardArray[a0p + position]), a0p === windowHeight - 1 && (leaderboardFilter.enabled ? this.playerPos : leaderboardPositionsById[playerId]) >=
+			position + windowHeight - 1 && (x = playerId), !isEmptySpace && `);
+}
+
+{ // Hovering tooltip
+	replaceRawCode("this.click=function(g8,g9,tE){var fT=aj.fU(g8),fV=aj.fW(g9),fX=aj.fY(fT,fV),fZ=aj.fa(fX);return!(!aj.fb(fT,fV)||(fT=(b7.cv.fv()?.025:.0144)*aK.fw,fV=performance.now(),Math.abs(g8-uu)>fT)||Math.abs(g9-uv)>fT||dY+500<fV)&&(dY=fV,tE?(function(g8,g9,fZ){a2.eb(fZ)||-1===(g8=ak.ff.vR(g8,g9))?k.vQ(fZ):k.vS(g8)}(g8,g9,fZ),!1)",
+		`hoveringTooltip.display = function(mouseX, mouseY) {
+			var coordX = aj.fU(mouseX), coordY = aj.fW(mouseY),
+				coord = aj.fY(coordX, coordY), point = aj.fa(coord);
+			k.vQ(point);
+		}
+		this.click = function(g8, g9, tE) {
+			var fT = aj.fU(g8),
+				fV = aj.fW(g9),
+				fX = aj.fY(fT, fV),
+				fZ = aj.fa(fX);
+			return !(!aj.fb(fT, fV) || (fT = (b7.cv.fv() ? .025 : .0144) * aK.fw, fV = performance.now(), Math.abs(g8 - uu) > fT) || Math.abs(g9 - uv) > fT || dY + 500 < fV) && (dY = fV, tE ? (function(g8, g9, fZ) {
+				a2.eb(fZ) || -1 === (g8 = ak.ff.vR(g8, g9)) ? k.vQ(fZ) : k.vS(g8)
+			}(g8, g9, fZ), false)`)
 }
 
 // Disable built-in Territorial.io error reporting

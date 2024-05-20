@@ -1,5 +1,5 @@
-const fx_version = '0.6.3.3'; // FX Client Version
-const fx_update = 'Apr 11'; // FX Client Last Updated
+const fx_version = '0.6.4'; // FX Client Version
+const fx_update = 'May 20'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -27,8 +27,9 @@ function KeybindsInput(containerElement) {
     this.keys = [ "key", "type", "value" ];
     this.objectArray = [];
     this.addObject = function () {
-        this.objectArray.push({ key: "", type: "absolute", value: 1 });
+        this.objectArray.push({ key: "", type: "absolute", value: 0.8 });
         this.displayObjects();
+        keybindAddButton.scrollIntoView(false);
     };
     this.update = function () {
         this.objectArray = settings.attackPercentageKeybinds;
@@ -54,11 +55,15 @@ function KeybindsInput(containerElement) {
                     inputField.setAttribute("placeholder", "No key set");
                     inputField.addEventListener("click", this.startKeyInput.bind(this, i, key));
                 } else { // key === "value"
-                    inputField.type = "number";
-                    inputField.setAttribute("step", "0.1");
+                    const isAbsolute = this.objectArray[i].type === "absolute";
+                    inputField.type = isAbsolute ? "text" : "number";
+                    if (isAbsolute) inputField.addEventListener("click", this.convertIntoNumberInput.bind(this, i, key), { once: true });
+                    else inputField.setAttribute("step", "0.1");
                     inputField.addEventListener("input", this.updateObject.bind(this, i, key));
                 }
-                inputField.value = this.objectArray[i][key];
+                if (key === "value" && this.objectArray[i].type === "absolute")
+                    inputField.value = this.objectArray[i][key] * 100 + "%";
+                else inputField.value = this.objectArray[i][key];
                 // Append input field to the object div
                 objectDiv.appendChild(inputField);
             }, this);
@@ -83,10 +88,21 @@ function KeybindsInput(containerElement) {
             //this.displayObjects();
         }, { once: true });
     };
+    /** @param {PointerEvent} event */
+    this.convertIntoNumberInput = function (index, property, event) {
+        event.target.value = event.target.value.slice(0, -1);
+        event.target.type = "number";
+        event.target.addEventListener("blur", () => {
+            //event.target.value = this.objectArray[index][property];
+            this.displayObjects();
+        }, { once: true });
+    };
     this.updateObject = function (index, property, event) {
         if (index >= this.objectArray.length) return;
         // Update the corresponding property of the object in the array
-        const value = property === "value" ? parseFloat(event.target.value) : property === "key" ? event.key : event.target.value;
+        const value = property === "value" ? (
+            this.objectArray[index].type === "absolute" ? parseFloat(event.target.value) / 100 : parseFloat(event.target.value)
+        ) : property === "key" ? event.key : event.target.value;
         this.objectArray[index][property] = value;
         if (property === "key") this.displayObjects();
     };
@@ -104,6 +120,7 @@ var settings = {
     //"showBotDonations": false,
     "displayWinCounter": true,
     "useFullscreenMode": false,
+    "hoveringTooltip": true,
     //"hideAllLinks": false,
     "realisticNames": false,
     "showPlayerDensity": true,
@@ -123,6 +140,8 @@ var settingsManager = new (function() {
         note: "The win counter tracks multiplayer solo wins (not in team games)" },
         { for: "useFullscreenMode", type: "checkbox", label: "Use fullscreen mode",
         note: "Note: fullscreen mode will trigger after you click anywhere on the page due to browser policy restrictions." },
+        { for: "hoveringTooltip", type: "checkbox", label: "Hovering tooltip",
+        note: "Display map territory info constantly (on mouse hover) instead of only when right clicking on the map" },
         //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
         { for: "realisticNames", type: "checkbox", label: "Realistic Bot Names" },
         { for: "showPlayerDensity", type: "checkbox", label: "Show player density" },
@@ -322,6 +341,106 @@ const playerList = new (function () {
         canvas.imageSmoothingEnabled = false;
     }
 });
+
+/** @param {string} name */
+function parseClanFromPlayerName(name) {
+    const startIndex = name.indexOf("[");
+    // this is probably how the algorithm works, since a player with
+    // the name "][a]" will count as not being in a clan in the base game
+    return startIndex === -1 ? "" : name.slice(startIndex + 1, name.indexOf("]")).toUpperCase();
+}
+
+const leaderboardFilter = new (function() {
+    this.playersToInclude = [0,1,8,20,24,30,32,42,50,69,200,400,500,510,511]; // for testing
+    //this.playersToInclude = [];
+    this.tabLabels = ["ALL", "CLAN"];
+    // these get populated by the modified game code
+    this.filteredLeaderboard = [];
+    this.tabBarOffset = 0;
+    this.windowWidth = 0;
+    this.verticalClickThreshold = 1000;
+    this.hoveringOverTabs = false;
+    this.scrollToTop = () => {};
+    this.repaintLeaderboard = () => {};
+    
+    this.selectedTab = 0;
+    this.tabHovering = -1;
+    //this.enabled = false;
+    this.enabled = true;
+    this.drawTabs = function(canvas, totalWidth, verticalOffset, colorForSelectedTab) {
+        canvas.textBaseline = "middle";
+        canvas.textAlign = "center";
+        const tabWidth = totalWidth / this.tabLabels.length;
+        const textOffsetY = verticalOffset + this.tabBarOffset / 2;
+        //console.log(verticalOffset, this.tabBarOffset, textOffsetY);
+        this.tabLabels.forEach((label, index) => {
+            if (index !== 0) canvas.fillRect(tabWidth * index, verticalOffset, 1, this.tabBarOffset);
+            if (this.selectedTab === index) {
+                canvas.fillStyle = colorForSelectedTab;
+                canvas.fillRect(tabWidth * index, verticalOffset, tabWidth, this.tabBarOffset);
+                canvas.fillStyle = "rgb(255,255,255)";
+            }
+            if (this.tabHovering === index) {
+                canvas.fillStyle = "rgba(255,255,255,0.3)";
+                canvas.fillRect(tabWidth * index, verticalOffset, tabWidth, this.tabBarOffset);
+                canvas.fillStyle = "rgb(255,255,255)";
+            }
+            canvas.fillText(label, tabWidth * index + tabWidth / 2, textOffsetY);
+        });
+    }
+    this.setHovering = (isHovering, xRelative) => {
+        let repaintNeeded = false;
+        if (isHovering) {
+            const tab = Math.floor(xRelative / (this.windowWidth / this.tabLabels.length));
+            if (this.tabHovering !== tab) {
+                this.tabHovering = tab;
+                repaintNeeded = true;
+            }
+        }
+        if (isHovering !== this.hoveringOverTabs) {
+            this.hoveringOverTabs = isHovering;
+            if (isHovering === false) this.tabHovering = -1;
+            if (!isHovering) repaintNeeded = true;
+        }
+        if (repaintNeeded) this.repaintLeaderboard();
+        return isHovering;
+    }
+    this.handleMouseDown = (xRelative) => {
+        //console.log("click; x: ", xRelative);
+        if (this.tabHovering !== this.selectedTab) {
+            this.selectedTab = this.tabHovering;
+            if (this.selectedTab === 0) this.clearFilter();
+            else if (this.selectedTab === 1) this.filterByOwnClan();
+            this.repaintLeaderboard();
+        }
+        return true;
+    };
+    this.filterByOwnClan = () => {
+        this.playersToInclude = [];
+        const ownClan = parseClanFromPlayerName(getVar("playerNames")[getVar("playerId")]);
+        getVar("playerNames").forEach((name, id) => {
+            if (parseClanFromPlayerName(name) === ownClan) this.playersToInclude.push(id);
+        });
+        this.enabled = true;
+        this.scrollToTop();
+    };
+    this.clearFilter = () => { this.enabled = false; }
+    this.reset = () => {
+        this.enabled = false;
+        this.selectedTab = 0;
+    }
+});
+
+const hoveringTooltip = new (function() {
+    this.display = () => {}; // this gets populated by the modified game script
+    document.getElementById("canvasA").addEventListener("mousemove", e => {
+        if (!settings.hoveringTooltip || !getVar("gameState")) return;
+        try {
+            this.display(e.clientX, e.clientY);
+        } catch (e) { console.error(e) }
+    });
+});
+
 var donationsTracker = new (function(){
     this.openedWindowPlayerID = null;
     this.contentElement = document.querySelector("#donationhistory_content");
