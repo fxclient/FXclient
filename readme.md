@@ -20,21 +20,22 @@ FX Client is the first Territorial.io client, targeting better User Interface an
 
 ## Features:
 1. It's 100% free and open source on Github
-2. It's Ad free and removes game's default ads.
+2. It's ad-free and removes game's default ads.
 3. It makes game look cooler, by replacing default assets with new ones.
 4. Displays your troop density and maximum troops
 5. Displays the density of players and bots
-6. Adds a win counter
-7. Adds a player list
-8. Adds the ability to view the history of who donated to a player during the game by clicking on their name in the leaderboard or the player list
-9. Can be installed as a PWA (progressive web app) ensuring maximum enjoyment on consoles, phones and even desktop devices
+6. Adds a "Clan" tab on the leaderboard, allowing you to easily see your clanmates
+7. Hovering tooltip: makes the territory map information (normally visible on right click) be visible constantly (on hover)
+8. Adds a player list
+9. Adds the ability to view the history of who donated to a player during a team game by clicking on their name in the leaderboard or the player list
+10. Adds a win counter
+11. Can be installed as a PWA (progressive web app) ensuring maximum enjoyment on consoles, phones and even desktop devices
 
 #### The client has a settings menu, from which you can:
 
-10. Change the game font
-11. Make fullscreen mode trigger automatically
-12. Set a custom main menu background
-13. Create custom attack percentage keybinds
+12. Make fullscreen mode trigger automatically
+13. Set a custom main menu background
+14. Create custom attack percentage keybinds
 
 ## Building Locally
 
