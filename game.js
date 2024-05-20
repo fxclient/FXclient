@@ -2005,17 +2005,24 @@ function bU() {
 		}(g8, g9), this.o3(), 2 === g8 && (az.t8 = !0), 0 < g8))
 	}, this.t6 = function(g8, g9) {
 		this.t8() || (uu = g8, uv = g9, dY = performance.now())
-	}, this.click = function(g8, g9, tE) {
+	}, hoveringTooltip.display = function(mouseX, mouseY) {
+		var coordX = aj.fU(mouseX),
+			coordY = aj.fW(mouseY),
+			coord = aj.fY(coordX, coordY),
+			point = aj.fa(coord);
+		k.vQ(point);
+	}
+	this.click = function(g8, g9, tE) {
 		var fT = aj.fU(g8),
 			fV = aj.fW(g9),
 			fX = aj.fY(fT, fV),
 			fZ = aj.fa(fX);
 		return !(!aj.fb(fT, fV) || (fT = (b7.cv.fv() ? .025 : .0144) * aK.fw, fV = performance.now(), Math.abs(g8 - uu) > fT) || Math.abs(g9 - uv) > fT || dY + 500 < fV) && (dY = fV, tE ? (function(g8, g9, fZ) {
 			a2.eb(fZ) || -1 === (g8 = ak.ff.vR(g8, g9)) ? k.vQ(fZ) : k.vS(g8)
-		}(g8, g9, fZ), !1) : j.fM || this.t8() || !aY.fN.fP(eU) || fL ? (this.o3(), !1) : fc ? !!a2.eb(fZ) && (uw = fX, nU[3].t8 = !0, this.vI(g8, g9)) : (ak.ff.fg(fX) || ak.ff.fh(g8, g9) || (2 === rS ? a2.ej(fZ) && 0 < az.vJ && (player =
-			a2.ek(fZ), a2.vK(player)) && (nU[0].t8 = !0, nU[0].v2 = 1, nU[7].t8 = !0) : a2.fi(fZ) || (uw = fX, ak.ff.fk(eU, fX) && (nU[0].t8 = !0, nU[0].v2 = 1, nU[1].t8 = !0, nU[1].v2 = al.di[2] ? 0 : 2), a2.fj(fZ)) || (a2.el(
-			fZ) ? (player = ed, fn(eU) ? (nU[0].t8 = !0, nU[0].v2 = 0) : fp(eU, player) && (nU[0].t8 = !0, nU[0].v2 = 3)) : (player = a2.ek(fZ)) === eU ? 0 !== az.vJ && (nU[0].t8 = !0, nU[0].v2 = 1, nU[7].t8 = !0) : (nU[0].v2 = 1,
-				nU[5].t8 = function(player) {
+		}(g8, g9, fZ), false) : j.fM || this.t8() || !aY.fN.fP(eU) || fL ? (this.o3(), !1) : fc ? !!a2.eb(fZ) && (uw = fX, nU[3].t8 = !0, this.vI(g8, g9)) : (ak.ff.fg(fX) || ak.ff.fh(g8, g9) || (2 === rS ? a2.ej(fZ) && 0 < az.vJ && (
+			player = a2.ek(fZ), a2.vK(player)) && (nU[0].t8 = !0, nU[0].v2 = 1, nU[7].t8 = !0) : a2.fi(fZ) || (uw = fX, ak.ff.fk(eU, fX) && (nU[0].t8 = !0, nU[0].v2 = 1, nU[1].t8 = !0, nU[1].v2 = al.di[2] ? 0 : 2), a2.fj(fZ)) || (
+			a2.el(fZ) ? (player = ed, fn(eU) ? (nU[0].t8 = !0, nU[0].v2 = 0) : fp(eU, player) && (nU[0].t8 = !0, nU[0].v2 = 3)) : (player = a2.ek(fZ)) === eU ? 0 !== az.vJ && (nU[0].t8 = !0, nU[0].v2 = 1, nU[7].t8 = !0) : (nU[0]
+				.v2 = 1, nU[5].t8 = function(player) {
 					return a2.vK(player) && !vD(player) && aS.vE(1, [player], !1)
 				}(player), nU[7].t8 = 1 <= az.vJ && a2.vK(player), fr(player, eU) ? (nU[4].t8 = a2.vK(player) && !a6.vM(player) && aS.vE(0, [player], !1), nU[6].t8 = function(player) {
 					if (0 === m9.length) return !1;
@@ -3121,13 +3128,61 @@ function be() {
 		a0V = 1;
 
 	function a0Y() {
-		a0A.clearRect(0, 0, a04, y9), a0A.fillStyle = aZ.lE, a0A.fillRect(0, 0, a04, a0F), a0A.fillStyle = aZ.kZ, a0A.fillRect(0, a0F, a04, y9 - a0F), a03[eU] >= position && a0Z(a03[eU] - position, aZ.kw), 0 !== a03[eU] && 0 === position && a0Z(0, aZ
-				.lJ), -1 !== a0P && a0Z(a0P, aZ.kd), a0A.fillStyle = aZ.gF, a0A.fillRect(0, a0F, a04, 1), a0A.fillRect(0, 0, a04, b0.ur), a0A.fillRect(0, 0, b0.ur, y9), a0A.fillRect(a04 - b0.ur, 0, b0.ur, y9), a0A.fillRect(0, y9 - b0.ur, a04, b0.ur),
-			a0A.font = a05, aY.g0.textBaseline(a0A, 1), aY.g0.textAlign(a0A, 1), a0A.fillText(aV.nc[65], Math.floor((a04 + a0F - 22) / 2), Math.floor(a0D + a06 / 2));
+		a0A.clearRect(0, 0, a04, y9),
+			a0A.fillStyle = aZ.lE,
+			a0A.fillRect(0, 0, a04, a0F),
+			a0A.fillStyle = aZ.kZ,
+			a0A.fillRect(0, a0F, a04, y9 - a0F);
+		if (leaderboardFilter.enabled) {
+			leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
+				.map(id => a03[id]).sort((a, b) => a - b);
+		}
+		var playerPos = (leaderboardFilter.enabled ?
+			leaderboardFilter.filteredLeaderboard.indexOf(a03[eU]) :
+			a03[eU]
+		);
+		this.playerPos = playerPos;
+		if (leaderboardFilter.hoveringOverTabs) a0P = -1;
+		if (leaderboardFilter.enabled && a0P >= leaderboardFilter.filteredLeaderboard.length) a0P = -1;
+		playerPos >= position && a0Z(playerPos - position, aZ.kw),
+			0 !== a03[eU] && 0 === position && a0Z(0, aZ.lJ),
+			-1 !== a0P && a0Z(a0P, aZ.kd),
+			a0A.fillStyle = aZ.kZ,
+			//console.log("drawing", a0P),
+			a0A.clearRect(0, y9 - leaderboardFilter.tabBarOffset, a04, leaderboardFilter.tabBarOffset);
+		a0A.fillRect(0, y9 - leaderboardFilter.tabBarOffset, a04, leaderboardFilter.tabBarOffset);
+		a0A.fillStyle = aZ.gF,
+			a0A.fillRect(0, a0F, a04, 1),
+			a0A.fillRect(0, y9 - leaderboardFilter.tabBarOffset, a04, 1),
+			leaderboardFilter.drawTabs(a0A, a04, y9 - leaderboardFilter.tabBarOffset, aZ.kw),
+			a0A.fillRect(0, 0, a04, b0.ur),
+			a0A.fillRect(0, 0, b0.ur, y9),
+			a0A.fillRect(a04 - b0.ur, 0, b0.ur, y9),
+			a0A.fillRect(0, y9 - b0.ur, a04, b0.ur), a0A.font = a05, aY.g0.textBaseline(a0A, 1), aY.g0.textAlign(a0A, 1), a0A.fillText(aV.nc[65], Math.floor((a04 + a0F - 22) / 2), Math.floor(a0D + a06 / 2));
 		playerList.drawButton(a0A, 12, 12, a0F - 22);
-		var hZ, eh = a03[eU] < position + a08 - 1 ? 1 : 2;
-		for (a0A.font = a07, aY.g0.textAlign(a0A, 0), hZ = a08 - eh; 0 <= hZ; hZ--) a0a(jG[hZ + position]), a0b(hZ, hZ + position, jG[hZ + position]);
-		for (aY.g0.textAlign(a0A, 2), hZ = a08 - eh; 0 <= hZ; hZ--) a0a(jG[hZ + position]), a0c(hZ, jG[hZ + position]);
+		var hZ, eh = playerPos < position + a08 - 1 ? 1 : 2;
+
+		if (leaderboardFilter.enabled) {
+			let result = leaderboardFilter.filteredLeaderboard;
+			if (position !== 0 && position >= result.length - a08)
+				position = (result.length > a08 ? result.length : a08) - a08;
+			//if (position >= result.length) position = result.length - 1;
+			for (a0A.font = a07, aY.g0.textAlign(a0A, 0), hZ = a08 - eh; 0 <= hZ; hZ--) {
+				const pos = result[hZ + position];
+				if (pos !== undefined)
+					a0a(jG[pos]), a0b(hZ, pos, jG[pos]);
+			}
+			for (aY.g0.textAlign(a0A, 2), hZ = a08 - eh; 0 <= hZ; hZ--) {
+				const pos = result[hZ + position];
+				if (pos !== undefined)
+					a0a(jG[pos]), a0c(hZ, jG[pos]);
+			}
+		} else {
+			for (a0A.font = a07, aY.g0.textAlign(a0A, 0), hZ = a08 - eh; 0 <= hZ; hZ--)
+				a0a(jG[hZ + position]), a0b(hZ, hZ + position, jG[hZ + position]);
+			for (aY.g0.textAlign(a0A, 2), hZ = a08 - eh; 0 <= hZ; hZ--)
+				a0a(jG[hZ + position]), a0c(hZ, jG[hZ + position]);
+		}
 		2 == eh && (a0a(eU), aY.g0.textAlign(a0A, 0), a0b(a08 - 1, a03[eU], eU), aY.g0.textAlign(a0A, 2), a0c(a08 - 1, eU)), 0 === position && (eh = .7 * a0G / a1.get(4).height, a0A.setTransform(eh, 0, 0, eh, Math.floor(a0H + .58 * a0G + .5 * eh * a1
 			.get(4).width), Math.floor(a0D + a06 + .4 * a0G)), a0A.imageSmoothingEnabled = !0, a0A.drawImage(a1.get(4), -Math.floor(a1.get(4).width / 2), -Math.floor(a1.get(4).height / 2)), a0A.setTransform(1, 0, 0, 1, 0, 0))
 	}
@@ -3160,69 +3215,82 @@ function be() {
 		return fI >= b0.gap && fI < b0.gap + a04 && fJ >= b0.gap && fJ < b0.gap + y9
 	}
 	this.cq = function() {
-		var eD;
-		for (a0R = !1, a0T = a0S = a0Q = 0, a0P = -1, a08 = b7.cv.fv() ? 6 : 10, a0V = (position = 0) === (a0V = b9.dG.data[11].value) ? 10 : 1 === a0V ? 5 : 1, a0O = !1, a0M = new Uint16Array(a08 + 1), a0N = new Uint32Array(a08 + 1), a0C = ed,
-			jG = new Uint16Array(a0C), a03 = new Uint16Array(a0C), eD = a0C - 1; 0 <= eD; eD--) jG[eD] = eD, a03[eD] = eD;
-		this.resize(!0), a0K = new Uint16Array(ed);
-		var a0W = Math.floor(a04 - a0I - a0H - a0B);
-		for (a0L = new Array(ed), a0A.font = a07, eD = ed - 1; 0 <= eD; eD--) a0L[eD] = eD + 1 + ".", jm[eD] = aY.qW.tm(a0X[eD], a07, a0W), a0K[eD] = Math.floor(a0A.measureText(jm[eD]).width);
-		a0Y()
-	}, this.resize = function(cq) {
-		if (y9 = b7.cv.fv() ? (a04 = Math.floor(.335 * aK.fw), Math.floor(a08 * a04 / 8)) : (a04 = Math.floor(.27 * aK.fw), Math.floor(a08 * a04 / 10)), a04 = Math.floor(.97 * a04), (a09 = document.createElement("canvas")).width = a04, a09
-			.height = y9, a0A = a09.getContext("2d", {
-				alpha: !0
-			}), a0D = .025 * a04, a06 = .16 * a04, a0E = 0 * a04, a0F = Math.floor(.45 * a0D + a06), a0G = (y9 - a06 - 2 * a0D - a0E) / a08, a05 = aY.g0.g1(1, Math.floor(.55 * a06)), a0U = Math.floor((b7.cv.fv() ? .67 : .72) * a0G), a07 = aY.g0
-			.g1(0, a0U), a0A.font = a07, a0H = Math.floor(.04 * a04), a0I = Math.floor((b7.cv.fv() ? .195 : .18) * a04), a0B = Math.floor(a0A.measureText("00920600").width), a0A.font = a05, a0J = a04 - a0H, !cq) {
-			a0A.font = a07;
-			for (var eD = ed - 1; 0 <= eD; eD--) a0K[eD] = Math.floor(a0A.measureText(jm[eD]).width);
+			var eD;
+			for (a0R = !1, a0T = a0S = a0Q = 0, a0P = -1, a08 = b7.cv.fv() ? 6 : 10, a0V = (position = 0) === (a0V = b9.dG.data[11].value) ? 10 : 1 === a0V ? 5 : 1, a0O = !1, a0M = new Uint16Array(a08 + 1), a0N = new Uint32Array(a08 + 1), a0C = ed,
+				jG = new Uint16Array(a0C), a03 = new Uint16Array(a0C), eD = a0C - 1; 0 <= eD; eD--) jG[eD] = eD, a03[eD] = eD;
+			this.resize(!0), a0K = new Uint16Array(ed);
+			var a0W = Math.floor(a04 - a0I - a0H - a0B);
+			for (a0L = new Array(ed), a0A.font = a07, eD = ed - 1; 0 <= eD; eD--) a0L[eD] = eD + 1 + ".", jm[eD] = aY.qW.tm(a0X[eD], a07, a0W), a0K[eD] = Math.floor(a0A.measureText(jm[eD]).width);
 			a0Y()
+		}, this.resize = function(cq) {
+			if (y9 = b7.cv.fv() ? (a04 = Math.floor(.335 * aK.fw), Math.floor(a08 * a04 / 8)) : (a04 = Math.floor(.27 * aK.fw), Math.floor(a08 * a04 / 10)), a04 = Math.floor(.97 * a04), (a09 = document.createElement("canvas")).width = a04, a09
+				.height = y9, a0A = a09.getContext("2d", {
+					alpha: !0
+				}), a0D = .025 * a04, a06 = .16 * a04, a0E = 0 * a04, a0F = Math.floor(.45 * a0D + a06), a0G = (y9 - a06 - 2 * a0D - a0E) / a08,
+				a09.height = y9 += a0G, leaderboardFilter.tabBarOffset = Math.floor(a0G * 1.3), leaderboardFilter.verticalClickThreshold = y9 - leaderboardFilter.tabBarOffset, leaderboardFilter.windowWidth = a04,
+				a05 = aY.g0.g1(1, Math.floor(.55 * a06)), a0U = Math.floor((b7.cv.fv() ? .67 : .72) * a0G), a07 = aY.g0.g1(0, a0U), a0A.font = a07, a0H = Math.floor(.04 * a04), a0I = Math.floor((b7.cv.fv() ? .195 : .18) * a04), a0B = Math.floor(a0A
+					.measureText("00920600").width), a0A.font = a05, a0J = a04 - a0H, !cq) {
+				a0A.font = a07;
+				for (var eD = ed - 1; 0 <= eD; eD--) a0K[eD] = Math.floor(a0A.measureText(jm[eD]).width);
+				a0Y()
+			}
+		}, this.zz = function() {
+			return a04
+		}, this.j6 = function(wm) {
+			a0O && (wm || b3.iK() % a0V == 0) && (a0O = !1, a0Y())
+		}, this.i6 = function() {
+			! function() {
+				for (var hZ = a0C - 1; 0 <= hZ; hZ--) 0 === h2[jG[hZ]] && ! function(hZ) {
+					var a0o = jG[hZ];
+					a0C--;
+					for (var eD = hZ; eD < a0C; eD++) jG[eD] = jG[eD + 1], a03[jG[eD]] = eD;
+					jG[a0C] = a0o, a03[jG[a0C]] = a0C
+				}(hZ)
+			}();
+			for (var a0m, kM = a0C - 1, hZ = 0; hZ < kM; hZ++) ez[jG[hZ]] < ez[jG[hZ + 1]] && (a0m = jG[hZ], jG[hZ] = jG[hZ + 1], jG[hZ + 1] = a0m, a03[jG[hZ]] = hZ, a03[jG[hZ + 1]] = hZ + 1);
+			! function() {
+				for (var dZ = a0O, eh = (a0O = !0, a03[eU] >= a08 - 1 ? a08 - 2 : a08 - 1), eD = eh; 0 <= eD; eD--)
+					if (a0M[eD] !== jG[eD] || a0N[eD] !== ez[jG[eD]]) return;
+				(eh != a08 - 2 || a0M[a08] === a03[eU] && a0N[a08] === ez[eU]) && (a0O = dZ)
+			}();
+			for (var eD = a08 - 1; 0 <= eD; eD--) a0M[eD] = jG[eD], a0N[eD] = ez[jG[eD]];
+			a0M[a08] = a03[eU], a0N[a08] = ez[eU]
+		}, leaderboardFilter.scrollToTop = function() {
+			position = 0;
+		}, this.fQ = function(fI, fJ) {
+			return !!vU(fI, fJ) && ((utils.isPointInRectangle(fI, fJ, b0.gap + 12, b0.gap + 12, a0F - 22, a0F - 22) && playerList.display(jm), true) &&
+				!(fJ - b0.gap > leaderboardFilter.verticalClickThreshold && leaderboardFilter.handleMouseDown(fI - b0.gap)) && (a0Q = b3.dY, a0R = !0, a0S = a0T = a0q(fJ), ag.tQ() && (fI = yr(-1, a0T, a08), a0P !== (fI = fI === a08 ? -1 : fI)) &&
+					(a0P = fI, a0Y(), b3.d1 = !0)), !0)
+		}, leaderboardFilter.repaintLeaderboard = function() {
+			a0Y(), b3.d1 = !0;
+		},
+		this.sk = function(fI, fJ) {
+			if (utils.isPointInRectangle(fI, fJ, b0.gap + 12, b0.gap + 12, a0F - 22, a0F - 22)) {
+				playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, a0Y(), b3.d1 = !0);
+			} else {
+				playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, a0Y(), b3.d1 = !0);
+			}
+			if (leaderboardFilter.setHovering(
+					utils.isPointInRectangle(fI, fJ, b0.gap, b0.gap + leaderboardFilter.verticalClickThreshold, leaderboardFilter.windowWidth, leaderboardFilter.tabBarOffset), fI - b0.gap
+				)) return;
+			var dZ, a0p = a0q(fJ);
+			return a0R ? (dZ = position, (position = yr(0, position += a0S - a0p, ed - a08)) !== dZ && (a0p = (a0p = yr(-1, a0S = a0p, a08)) !== a08 && vU(fI, fJ) ? a0p : -1, a0P = a0p, a0Y(), b3.d1 = !0), !0) : (a0p = (a0p = yr(-1, a0p, a08)) ===
+				a08 || !vU(fI, fJ) || ag.tQ() ? -1 : a0p, a0P !== a0p && (a0P = a0p, a0Y(), b3.d1 = !0))
+		}, this.tA = function(fI, fJ) {
+			if (!a0R) return !1;
+			a0R = !1;
+			var a0p = a0q(fJ);
+			var isEmptySpace = false;
+			return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, a08)) !== a08 && vU(fI, fJ) ? a0p : -1) && (fI = (leaderboardFilter.enabled ? jG[leaderboardFilter
+					.filteredLeaderboard[a0p + position] ?? (isEmptySpace = true, a03[eU])] : jG[a0p + position]), a0p === a08 - 1 && (leaderboardFilter.enabled ? this.playerPos : a03[eU]) >=
+				position + a08 - 1 && (fI = eU), !isEmptySpace && hM && donationsTracker.displayHistory(fI, jm, im), 0 !== h2[fI] && !isEmptySpace) && f.k7(fI, 800, !1, 0), !0
+		}, this.sn = function(fI, fJ, deltaY) {
+			var a0r;
+			return !(a0R || k9 || (a0r = Math.max(Math.floor(Math.abs(deltaY) / 40), 1), !vU(fI, fJ)) || (fI = (fI = yr(-1, a0q(fJ), a08)) === a08 || ag.tQ() ? -1 : fI, 0 < deltaY ? position < ed - a08 && (position += Math.min(ed - a08 - position,
+				a0r), a0P = fI, a0Y(), b3.d1 = !0) : 0 < position && (position -= Math.min(position, a0r), a0P = fI, a0Y(), b3.d1 = !0), 0))
+		}, this.gD = function() {
+			gE.drawImage(a09, b0.gap, b0.gap)
 		}
-	}, this.zz = function() {
-		return a04
-	}, this.j6 = function(wm) {
-		a0O && (wm || b3.iK() % a0V == 0) && (a0O = !1, a0Y())
-	}, this.i6 = function() {
-		! function() {
-			for (var hZ = a0C - 1; 0 <= hZ; hZ--) 0 === h2[jG[hZ]] && ! function(hZ) {
-				var a0o = jG[hZ];
-				a0C--;
-				for (var eD = hZ; eD < a0C; eD++) jG[eD] = jG[eD + 1], a03[jG[eD]] = eD;
-				jG[a0C] = a0o, a03[jG[a0C]] = a0C
-			}(hZ)
-		}();
-		for (var a0m, kM = a0C - 1, hZ = 0; hZ < kM; hZ++) ez[jG[hZ]] < ez[jG[hZ + 1]] && (a0m = jG[hZ], jG[hZ] = jG[hZ + 1], jG[hZ + 1] = a0m, a03[jG[hZ]] = hZ, a03[jG[hZ + 1]] = hZ + 1);
-		! function() {
-			for (var dZ = a0O, eh = (a0O = !0, a03[eU] >= a08 - 1 ? a08 - 2 : a08 - 1), eD = eh; 0 <= eD; eD--)
-				if (a0M[eD] !== jG[eD] || a0N[eD] !== ez[jG[eD]]) return;
-			(eh != a08 - 2 || a0M[a08] === a03[eU] && a0N[a08] === ez[eU]) && (a0O = dZ)
-		}();
-		for (var eD = a08 - 1; 0 <= eD; eD--) a0M[eD] = jG[eD], a0N[eD] = ez[jG[eD]];
-		a0M[a08] = a03[eU], a0N[a08] = ez[eU]
-	}, this.fQ = function(fI, fJ) {
-		return !!vU(fI, fJ) && (utils.isPointInRectangle(fI, fJ, b0.gap + 12, b0.gap + 12, a0F - 22, a0F - 22) && playerList.display(jm), true) && (a0Q = b3.dY, a0R = !0, a0S = a0T = a0q(fJ), ag.tQ() && (fI = yr(-1, a0T, a08), a0P !== (fI =
-			fI === a08 ? -1 : fI)) && (a0P = fI, a0Y(), b3.d1 = !0), !0)
-	}, this.sk = function(fI, fJ) {
-		if (utils.isPointInRectangle(fI, fJ, b0.gap + 12, b0.gap + 12, a0F - 22, a0F - 22)) {
-			playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, a0Y(), b3.d1 = !0);
-		} else {
-			playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, a0Y(), b3.d1 = !0);
-		}
-		var dZ, a0p = a0q(fJ);
-		return a0R ? (dZ = position, (position = yr(0, position += a0S - a0p, ed - a08)) !== dZ && (a0p = (a0p = yr(-1, a0S = a0p, a08)) !== a08 && vU(fI, fJ) ? a0p : -1, a0P = a0p, a0Y(), b3.d1 = !0), !0) : (a0p = (a0p = yr(-1, a0p, a08)) ===
-			a08 || !vU(fI, fJ) || ag.tQ() ? -1 : a0p, a0P !== a0p && (a0P = a0p, a0Y(), b3.d1 = !0))
-	}, this.tA = function(fI, fJ) {
-		if (!a0R) return !1;
-		a0R = !1;
-		var a0p = a0q(fJ);
-		return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, a08)) !== a08 && vU(fI, fJ) ? a0p : -1) && (fI = jG[a0p + position], a0p === a08 - 1 && a03[eU] >=
-			position + a08 - 1 && (fI = eU), hM && donationsTracker.displayHistory(fI, jm, im), 0 !== h2[fI]) && f.k7(fI, 800, !1, 0), !0
-	}, this.sn = function(fI, fJ, deltaY) {
-		var a0r;
-		return !(a0R || k9 || (a0r = Math.max(Math.floor(Math.abs(deltaY) / 40), 1), !vU(fI, fJ)) || (fI = (fI = yr(-1, a0q(fJ), a08)) === a08 || ag.tQ() ? -1 : fI, 0 < deltaY ? position < ed - a08 && (position += Math.min(ed - a08 - position,
-			a0r), a0P = fI, a0Y(), b3.d1 = !0) : 0 < position && (position -= Math.min(position, a0r), a0P = fI, a0Y(), b3.d1 = !0), 0))
-	}, this.gD = function() {
-		gE.drawImage(a09, b0.gap, b0.gap)
-	}
 }
 
 function bf() {
@@ -5341,7 +5409,7 @@ function cD() {
 
 function ug(qf) {
 	jm = new Array(ed), a0X = new Array(ed), h2 = new Uint8Array(ed), hu = new Uint16Array(ed), hx = new Uint16Array(ed), ht = new Uint16Array(ed), hw = new Uint16Array(ed), ez = new Uint32Array(ed), qC = new Uint32Array(ed), eV = new Uint32Array(
-		ed), donationsTracker.reset(), ea = new Array(ed), er = new Array(ed), es = new Array(ed), ev = new Array(ed), h3 = new Uint8Array(ed);
+		ed), donationsTracker.reset(), leaderboardFilter.reset(), ea = new Array(ed), er = new Array(ed), es = new Array(ed), ev = new Array(ed), h3 = new Uint8Array(ed);
 	for (let eD = qf.length - 1; 0 <= eD; eD--) jm[eD] = a0X[eD] = qf[eD].name, h3[eD] = qf[eD].a53
 }
 
