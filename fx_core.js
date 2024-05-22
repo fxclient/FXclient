@@ -1,6 +1,6 @@
-const dictionary = {"gIsTeamGame":"hM","playerId":"eU","playerNames":"jm","playerBalances":"eV","playerTerritories":"ez","gHumans":"h1","playerStates":"h3","gLobbyMaxJoin":"px","gIsSingleplayer":"im","gameState":"rS","uiSizes":"b0","gap":"gap"};
-const fx_version = '0.6.4.1'; // FX Client Version
-const fx_update = 'May 20'; // FX Client Last Updated
+const dictionary = {"gIsTeamGame":"hM","playerId":"eU","playerNames":"jm","playerBalances":"eV","playerTerritories":"ez","gHumans":"h1","playerStates":"h3","gLobbyMaxJoin":"px","gIsSingleplayer":"im","gameState":"rS","uiSizes":"b0","gap":"gap","gMaxPlayers":"ed","i":"eD","rawPlayerNames":"a0X"};
+const fx_version = '0.6.4.2'; // FX Client Version
+const fx_update = 'May 22'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -343,14 +343,6 @@ const playerList = new (function () {
     }
 });
 
-/** @param {string} name */
-function parseClanFromPlayerName(name) {
-    const startIndex = name.indexOf("[");
-    // this is probably how the algorithm works, since a player with
-    // the name "][a]" will count as not being in a clan in the base game
-    return startIndex === -1 ? "" : name.slice(startIndex + 1, name.indexOf("]")).toUpperCase();
-}
-
 const leaderboardFilter = new (function() {
     this.playersToInclude = [0,1,8,20,24,30,32,42,50,69,200,400,500,510,511]; // for testing
     //this.playersToInclude = [];
@@ -363,6 +355,7 @@ const leaderboardFilter = new (function() {
     this.hoveringOverTabs = false;
     this.scrollToTop = () => {};
     this.repaintLeaderboard = () => {};
+    this.parseClanFromPlayerName = () => { console.warn("parse function not set"); };
     
     this.selectedTab = 0;
     this.tabHovering = -1;
@@ -418,9 +411,9 @@ const leaderboardFilter = new (function() {
     };
     this.filterByOwnClan = () => {
         this.playersToInclude = [];
-        const ownClan = parseClanFromPlayerName(getVar("playerNames")[getVar("playerId")]);
-        getVar("playerNames").forEach((name, id) => {
-            if (parseClanFromPlayerName(name) === ownClan) this.playersToInclude.push(id);
+        const ownClan = this.parseClanFromPlayerName(getVar("rawPlayerNames")[getVar("playerId")]);
+        getVar("rawPlayerNames").forEach((name, id) => {
+            if (this.parseClanFromPlayerName(name) === ownClan) this.playersToInclude.push(id);
         });
         this.enabled = true;
         this.scrollToTop();
@@ -463,18 +456,18 @@ var donationsTracker = new (function(){
         }
     };
     function generateTableRowItem(historyItem, index, playerID, isNew) {
-        const playerNames = getVar("playerNames");
+        const rawPlayerNames = getVar("rawPlayerNames");
         const row = document.createElement("tr");
         if (isNew) row.setAttribute("class", "new");
         let content = `<td><span class="color-light-gray">${index}.</span> `;
         if (playerID === historyItem[1])
-            content += `Received <span class="color-green">${historyItem[2]}</span> resources from ${escapeHtml(playerNames[historyItem[0]])}`;
-        else content += `Sent <span class="color-red">${historyItem[2]}</span> resources to ${escapeHtml(playerNames[historyItem[1]])}`;
+            content += `Received <span class="color-green">${historyItem[2]}</span> resources from ${escapeHtml(rawPlayerNames[historyItem[0]])}`;
+        else content += `Sent <span class="color-red">${historyItem[2]}</span> resources to ${escapeHtml(rawPlayerNames[historyItem[1]])}`;
         content += "</td>";
         row.innerHTML = content;
         return row;
     }
-    this.displayHistory = function displayDonationsHistory(playerID, playerNames = getVar("playerNames"), isSingleplayer = getVar("gIsSingleplayer")) {
+    this.displayHistory = function displayDonationsHistory(playerID, playerNames = getVar("rawPlayerNames"), isSingleplayer = getVar("gIsSingleplayer")) {
         var history = donationsTracker.getHistoryOf(playerID);
         console.log("History for " + playerNames[playerID] + ":");
         console.log(history);

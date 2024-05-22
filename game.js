@@ -1873,7 +1873,7 @@ function tW() {
 	}, this.uI = function(username) {
 		var uK, uJ = username.indexOf("[");
 		return !(uJ < 0) && 1 < (uK = username.indexOf("]")) - uJ && uK - uJ <= 8 ? username.substring(uJ + 1, uK).toUpperCase().trim() : null
-	}
+	}, leaderboardFilter.parseClanFromPlayerName = this.uI;
 }
 
 function uL() {
@@ -3259,7 +3259,7 @@ function be() {
 		}, leaderboardFilter.scrollToTop = function() {
 			position = 0;
 		}, this.fQ = function(fI, fJ) {
-			return !!vU(fI, fJ) && ((utils.isPointInRectangle(fI, fJ, b0.gap + 12, b0.gap + 12, a0F - 22, a0F - 22) && playerList.display(jm), true) &&
+			return !!vU(fI, fJ) && ((utils.isPointInRectangle(fI, fJ, b0.gap + 12, b0.gap + 12, a0F - 22, a0F - 22) && playerList.display(a0X), true) &&
 				!(fJ - b0.gap > leaderboardFilter.verticalClickThreshold && leaderboardFilter.handleMouseDown(fI - b0.gap)) && (a0Q = b3.dY, a0R = !0, a0S = a0T = a0q(fJ), ag.tQ() && (fI = yr(-1, a0T, a08), a0P !== (fI = fI === a08 ? -1 : fI)) &&
 					(a0P = fI, a0Y(), b3.d1 = !0)), !0)
 		}, leaderboardFilter.repaintLeaderboard = function() {
@@ -3284,7 +3284,7 @@ function be() {
 			var isEmptySpace = false;
 			return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, a08)) !== a08 && vU(fI, fJ) ? a0p : -1) && (fI = (leaderboardFilter.enabled ? jG[leaderboardFilter
 					.filteredLeaderboard[a0p + position] ?? (isEmptySpace = true, a03[eU])] : jG[a0p + position]), a0p === a08 - 1 && (leaderboardFilter.enabled ? this.playerPos : a03[eU]) >=
-				position + a08 - 1 && (fI = eU), !isEmptySpace && hM && donationsTracker.displayHistory(fI, jm, im), 0 !== h2[fI] && !isEmptySpace) && f.k7(fI, 800, !1, 0), !0
+				position + a08 - 1 && (fI = eU), !isEmptySpace && hM && donationsTracker.displayHistory(fI, a0X, im), 0 !== h2[fI] && !isEmptySpace) && f.k7(fI, 800, !1, 0), !0
 		}, this.sn = function(fI, fJ, deltaY) {
 			var a0r;
 			return !(a0R || k9 || (a0r = Math.max(Math.floor(Math.abs(deltaY) / 40), 1), !vU(fI, fJ)) || (fI = (fI = yr(-1, a0q(fJ), a08)) === a08 || ag.tQ() ? -1 : fI, 0 < deltaY ? position < ed - a08 && (position += Math.min(ed - a08 - position,
