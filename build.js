@@ -84,7 +84,8 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 
 const rawCodeSegments = [
 	"[0]=aV.nU[70],a0T[1]=@gIsSingleplayer?aV.nU[71]:aV.nU[72],",
-	"?(this.gB=Math.floor(.0536*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):"
+	"?(this.gB=Math.floor(.0536*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
+	`for(a0L=new Array(@gMaxPlayers),a0A.font=a07,@i=gMaxPlayers-1;0<=i;i--)a0L[i]=i+1+".",@playerNames[i]=aY.qW.tm(@rawPlayerNames[i],a07,a0W),a0K[i]=Math.floor(a0A.measureText(playerNames[i]).width);`
 ]
 
 rawCodeSegments.forEach(code => {
@@ -224,7 +225,7 @@ replaceOne(/(this\.\w+=function\((\w+),(\w+)\)\{)(\2===\w+&&\(\w+\.\w+\((\w+\.\w
 // variable in the modified leaderboard click handler from the leaderboard filter)
 // match , 0 !== dG[x]) && fq.hB(x, 800, false, 0),
 replaceOne(/,(0!==\w+\[(\w+)\])(\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
-	`, ${dictionary.gIsTeamGame} && donationsTracker.displayHistory($2, ${dictionary.playerNames}, ${dictionary.gIsSingleplayer}), $1 && !isEmptySpace $3`);
+	`, ${dictionary.gIsTeamGame} && donationsTracker.displayHistory($2, ${dictionary.rawPlayerNames}, ${dictionary.gIsSingleplayer}), $1 && !isEmptySpace $3`);
 
 // Reset donation history and leaderboard filter when a new game is started
 replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`, "g"), "$& donationsTracker.reset(), leaderboardFilter.reset(), ");
@@ -238,7 +239,7 @@ replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`
 	// Handle player list button and leaderboard tabs mouseDown
 	// and create a function for scrolling the leaderboard to the top
 	replaceOne(/(this\.\w+=function\((?<x>\w+),(?<y>\w+)\){return!!\w+\(\2,\3\))&&(\(\w+=\w+\.\w+,[^}]+),!0\)/g,
-	`leaderboardFilter.scrollToTop = function(){position = 0;}, $1 && ((${buttonBoundsCheck} && playerList.display(${dictionary.playerNames}), true)
+	`leaderboardFilter.scrollToTop = function(){position = 0;}, $1 && ((${buttonBoundsCheck} && playerList.display(${dictionary.rawPlayerNames}), true)
 		&& !($<y> - ${uiOffset} > leaderboardFilter.verticalClickThreshold && leaderboardFilter.handleMouseDown($<x> - ${uiOffset})) && $4),!0)`);
 	// Handle player list button and leaderboard tabs hover
 	// and create a function for repainting the leaderboard
@@ -329,6 +330,9 @@ replaceOne(new RegExp(`,${dictionary.playerBalances}=new Uint32Array\\(\\w+\\),`
 		var isEmptySpace = false;
 		return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, windowHeight)) !== windowHeight && vU(x, y) ? a0p : -1) && (x = (leaderboardFilter.enabled ? leaderboardArray[leaderboardFilter.filteredLeaderboard[a0p + position] ?? (isEmptySpace = true, leaderboardPositionsById[playerId])] : leaderboardArray[a0p + position]), a0p === windowHeight - 1 && (leaderboardFilter.enabled ? this.playerPos : leaderboardPositionsById[playerId]) >=
 			position + windowHeight - 1 && (x = playerId), !isEmptySpace && `);
+	// Get clan parsing function
+	replaceRawCode(`this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null}`,
+		`this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null}, leaderboardFilter.parseClanFromPlayerName = this.uI;`);
 }
 
 { // Hovering tooltip
