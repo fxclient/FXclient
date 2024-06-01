@@ -1,5 +1,5 @@
-const fx_version = '0.6.4.2'; // FX Client Version
-const fx_update = 'May 22'; // FX Client Last Updated
+const fx_version = '0.6.4.3'; // FX Client Version
+const fx_update = 'Jun 1'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -8,7 +8,13 @@ if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx
     var wins_counter = localStorage.getItem("fx_winCount");
 }
 
-const getVar = varName => window[dictionary[varName]];
+const playerDataProperties = ["playerTerritories", "playerBalances", "rawPlayerNames"];
+const gameObjectProperties = ["playerId", "gIsTeamGame", "gHumans", "gLobbyMaxJoin", "gameState", "gIsSingleplayer"];
+const getVar = varName => {
+    if (playerDataProperties.includes(varName)) return window[dictionary.playerData][dictionary[varName]];
+    if (gameObjectProperties.includes(varName)) return window[dictionary.game][dictionary[varName]];
+    return window[dictionary[varName]]
+};
 
 // https://stackoverflow.com/a/6234804
 function escapeHtml(unsafe) {
