@@ -238,22 +238,28 @@ replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"),
 
 { // Leaderboard filter
 	// for the leaderboard draw function:
-	replaceRawCode("a0A.clearRect(0,0,a04,y9),a0A.fillStyle=aZ.lE,a0A.fillRect(0,0,a04,a0F),a0A.fillStyle=aZ.kZ,a0A.fillRect(0,a0F,a04,y9-a0F),leaderboardPositionsById[game.playerId]>=position&&a0Z(leaderboardPositionsById[game.playerId]-position,aZ.kw),0!==leaderboardPositionsById[game.playerId]&&0===position&&a0Z(0,aZ.lJ),-1!==a0P&&a0Z(a0P,aZ.kd),a0A.fillStyle=aZ.gF,a0A.fillRect(0,a0F,a04,1),a0A.fillRect(0,0,a04,b0.ur),a0A.fillRect(0,0,b0.ur,y9),a0A.fillRect(a04-b0.ur,0,b0.ur,y9),a0A.fillRect(0,y9-b0.ur,a04,b0.ur),",
+	replaceRawCode("function drawFunction(){a0A.clearRect(0,0,a04,y9),a0A.fillStyle=aZ.lE,a0A.fillRect(0,0,a04,a0F),a0A.fillStyle=aZ.kZ,a0A.fillRect(0,a0F,a04,y9-a0F),leaderboardPositionsById[game.playerId]>=position&&a0Z(leaderboardPositionsById[game.playerId]-position,aZ.kw),0!==leaderboardPositionsById[game.playerId]&&0===position&&a0Z(0,aZ.lJ),-1!==a0P&&a0Z(a0P,aZ.kd),a0A.fillStyle=aZ.gF,a0A.fillRect(0,a0F,a04,1),a0A.fillRect(0,0,a04,b0.ur),a0A.fillRect(0,0,b0.ur,y9),a0A.fillRect(a04-b0.ur,0,b0.ur,y9),a0A.fillRect(0,y9-b0.ur,a04,b0.ur),",
 
-		`a0A.clearRect(0, 0, a04, y9),
+		`var leaderboardHasChanged = true;
+		this.playerPos = game.playerId;
+		function updateFilteredLb() {
+			if (!leaderboardHasChanged) return;
+			leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
+				.map(id => leaderboardPositionsById[id]).sort((a, b) => a - b);
+			leaderboardHasChanged = false;
+			this.playerPos = leaderboardFilter.filteredLeaderboard.indexOf(leaderboardPositionsById[game.playerId]);
+		}
+		function drawFunction() {
+		a0A.clearRect(0, 0, a04, y9),
 		a0A.fillStyle = aZ.lE,
 		a0A.fillRect(0, 0, a04, a0F),
 		a0A.fillStyle = aZ.kZ,
 		a0A.fillRect(0, a0F, a04, y9 - a0F);
-		if (leaderboardFilter.enabled) {
-			leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
-				.map(id => leaderboardPositionsById[id]).sort((a, b) => a - b);
-		}
+		if (leaderboardFilter.enabled) updateFilteredLb();
 		var playerPos = (leaderboardFilter.enabled
-			? leaderboardFilter.filteredLeaderboard.indexOf(leaderboardPositionsById[game.playerId])
+			? this.playerPos
 			: leaderboardPositionsById[game.playerId]
 		);
-		this.playerPos = playerPos;
 		if (leaderboardFilter.hoveringOverTabs) a0P = -1;
 		if (leaderboardFilter.enabled && a0P >= leaderboardFilter.filteredLeaderboard.length) a0P = -1;
 		playerPos >= position && a0Z(playerPos - position, aZ.kw),
@@ -300,11 +306,14 @@ replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"),
 		`,a09.height=y9,a09_ctx=a09.getContext("2d",{alpha:!0}),a0D=.025*a04,a06=.16*a04,a0E=0*a04,a0F=Math.floor(.45*a0D+a06),a0G=(y9-a06-2*a0D-a0E)/a08,
 		a09.height = y9 += a0G, leaderboardFilter.tabBarOffset = Math.floor(a0G * 1.3), leaderboardFilter.verticalClickThreshold = y9 - leaderboardFilter.tabBarOffset, leaderboardFilter.windowWidth = a04,
 		a05=aY.g0.g1(1,Math.floor(.55*a06)),`)
+	// Set the leaderboardHasChanged flag on leaderboard updates
+	replaceRawCode("for(var eM=a0q-1;0<=eM;eM--)a14[eM]=jR[eM],a15[eM]=a8.f8[jR[eM]];a14[a0q]=a0l[b.ed],a15[a0q]=a8.f8[b.ed]",
+	`for(var eM=a0q-1;0<=eM;eM--)a14[eM]=jR[eM],a15[eM]=a8.f8[jR[eM]];a14[a0q]=a0l[b.ed],a15[a0q]=a8.f8[b.ed]; leaderboardHasChanged = true;`);
 	// handle clicking on a player in the leaderboard
 	replaceRawCode("var a0p=a0q(fJ);return ag.tQ()&&-1!==a0P&&(a0P=-1,a0Y(),b3.d1=!0),b3.dY-a0Q<350&&a0T===a0p&&-1!==(a0p=(a0p=yr(-1,a0p,windowHeight))!==windowHeight&&vU(x,y)?a0p:-1)&&(x=leaderboardArray[a0p+position],a0p===windowHeight-1&&leaderboardPositionsById[game.playerId]>=position+windowHeight-1&&(x=game.playerId),",
 		`var a0p = a0q(fJ);
 		var isEmptySpace = false;
-		return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, windowHeight)) !== windowHeight && vU(x, y) ? a0p : -1) && (x = (leaderboardFilter.enabled ? leaderboardArray[leaderboardFilter.filteredLeaderboard[a0p + position] ?? (isEmptySpace = true, leaderboardPositionsById[game.playerId])] : leaderboardArray[a0p + position]), a0p === windowHeight - 1 && (leaderboardFilter.enabled ? this.playerPos : leaderboardPositionsById[game.playerId]) >=
+		return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, windowHeight)) !== windowHeight && vU(x, y) ? a0p : -1) && (x = (leaderboardFilter.enabled ? (updateFilteredLb(), leaderboardArray[leaderboardFilter.filteredLeaderboard[a0p + position] ?? (isEmptySpace = true, leaderboardPositionsById[game.playerId])]) : leaderboardArray[a0p + position]), a0p === windowHeight - 1 && (leaderboardFilter.enabled ? this.playerPos : leaderboardPositionsById[game.playerId]) >=
 			position + windowHeight - 1 && (x = game.playerId), !isEmptySpace && `);
 	// Get clan parsing function
 	replaceRawCode(`this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null}`,

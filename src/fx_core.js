@@ -1,4 +1,4 @@
-const fx_version = '0.6.4.4'; // FX Client Version
+const fx_version = '0.6.4.5'; // FX Client Version
 const fx_update = 'Jun 3'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
@@ -349,8 +349,8 @@ const playerList = new (function () {
 });
 
 const leaderboardFilter = new (function() {
-    this.playersToInclude = [0,1,8,20,24,30,32,42,50,69,200,400,500,510,511]; // for testing
-    //this.playersToInclude = [];
+    //this.playersToInclude = [0,1,8,20,24,30,32,42,50,69,200,400,500,510,511]; // for testing
+    this.playersToInclude = [];
     this.tabLabels = ["ALL", "CLAN"];
     // these get populated by the modified game code
     this.filteredLeaderboard = [];
@@ -364,8 +364,8 @@ const leaderboardFilter = new (function() {
     
     this.selectedTab = 0;
     this.tabHovering = -1;
-    //this.enabled = false;
-    this.enabled = true;
+    this.enabled = false;
+    //this.enabled = true;
     this.drawTabs = function(canvas, totalWidth, verticalOffset, colorForSelectedTab) {
         canvas.textBaseline = "middle";
         canvas.textAlign = "center";
