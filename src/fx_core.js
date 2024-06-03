@@ -1,5 +1,5 @@
-const fx_version = '0.6.4.3'; // FX Client Version
-const fx_update = 'Jun 1'; // FX Client Last Updated
+const fx_version = '0.6.4.4'; // FX Client Version
+const fx_update = 'Jun 3'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -405,9 +405,9 @@ const leaderboardFilter = new (function() {
         return isHovering;
     }
     this.handleMouseDown = (xRelative) => {
-        //console.log("click; x: ", xRelative);
-        if (this.tabHovering !== this.selectedTab) {
-            this.selectedTab = this.tabHovering;
+        const tab = Math.floor(xRelative / (this.windowWidth / this.tabLabels.length));
+        if (this.selectedTab !== tab) {
+            this.selectedTab = tab;
             if (this.selectedTab === 0) this.clearFilter();
             else if (this.selectedTab === 1) this.filterByOwnClan();
             this.repaintLeaderboard();

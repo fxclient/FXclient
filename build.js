@@ -203,7 +203,7 @@ replaceOne(/,(0!==\w+\.\w+\[(\w+)\])(\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
 	`, ${dict.game}.${dict.gIsTeamGame} && donationsTracker.displayHistory($2, ${rawPlayerNames}, ${gIsSingleplayer}), $1 && !isEmptySpace $3`);
 
 // Reset donation history and leaderboard filter when a new game is started
-replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}=new Uint32Array\\(\\w+\\.\\w+\\),`, "g"), "$& donationsTracker.reset(), leaderboardFilter.reset(), ");
+replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"), "$& donationsTracker.reset(), leaderboardFilter.reset(), ");
 
 { // Player list and leaderboard filter tabs
 	// Draw player list button
