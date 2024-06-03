@@ -3236,6 +3236,16 @@ function bi() {
 function bj() {
 	var a0m, a0n, a0o, a0p, a0q, a0r, a0s, a0t, a0u, a0v, a0w, a0x, a0y, a0z, a10, a11, a12, a13, a14, a15, a16, a17, position, a18, a19, a1A, a1B, a1C = 1,
 		a1D = 1;
+	var leaderboardHasChanged = true;
+	this.playerPos = b.ed;
+
+	function updateFilteredLb() {
+		if (!leaderboardHasChanged) return;
+		leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
+			.map(id => a0l[id]).sort((a, b) => a - b);
+		leaderboardHasChanged = false;
+		this.playerPos = leaderboardFilter.filteredLeaderboard.indexOf(a0l[b.ed]);
+	}
 
 	function a1F() {
 		a0s.clearRect(0, 0, a0m, yt),
@@ -3243,15 +3253,11 @@ function bj() {
 			a0s.fillRect(0, 0, a0m, a0x),
 			a0s.fillStyle = ad.kk,
 			a0s.fillRect(0, a0x, a0m, yt - a0x);
-		if (leaderboardFilter.enabled) {
-			leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
-				.map(id => a0l[id]).sort((a, b) => a - b);
-		}
+		if (leaderboardFilter.enabled) updateFilteredLb();
 		var playerPos = (leaderboardFilter.enabled ?
-			leaderboardFilter.filteredLeaderboard.indexOf(a0l[b.ed]) :
+			this.playerPos :
 			a0l[b.ed]
 		);
-		this.playerPos = playerPos;
 		if (leaderboardFilter.hoveringOverTabs) a17 = -1;
 		if (leaderboardFilter.enabled && a17 >= leaderboardFilter.filteredLeaderboard.length) a17 = -1;
 		playerPos >= position && a1G(playerPos - position, ad.l7),
@@ -3364,7 +3370,8 @@ function bj() {
 				(eq != a0q - 2 || a14[a0q] === a0l[b.ed] && a15[a0q] === a8.f8[b.ed]) && (a16 = dh)
 			}();
 			for (var eM = a0q - 1; 0 <= eM; eM--) a14[eM] = jR[eM], a15[eM] = a8.f8[jR[eM]];
-			a14[a0q] = a0l[b.ed], a15[a0q] = a8.f8[b.ed]
+			a14[a0q] = a0l[b.ed], a15[a0q] = a8.f8[b.ed];
+			leaderboardHasChanged = true;
 		}, leaderboardFilter.scrollToTop = function() {
 			position = 0;
 		}, this.fa = function(fR, fS) {
@@ -3391,8 +3398,8 @@ function bj() {
 			a19 = !1;
 			var a1X = a1Y(fS);
 			var isEmptySpace = false;
-			return ak.uK() && -1 !== a17 && (a17 = -1, a1F(), b7.d9 = !0), b7.dg - a18 < 350 && a1B === a1X && -1 !== (a1X = (a1X = zY(-1, a1X, a0q)) !== a0q && rT(fR, fS) ? a1X : -1) && (fR = (leaderboardFilter.enabled ? jR[leaderboardFilter
-					.filteredLeaderboard[a1X + position] ?? (isEmptySpace = true, a0l[b.ed])] : jR[a1X + position]), a1X === a0q - 1 && (leaderboardFilter.enabled ? this.playerPos : a0l[b.ed]) >=
+			return ak.uK() && -1 !== a17 && (a17 = -1, a1F(), b7.d9 = !0), b7.dg - a18 < 350 && a1B === a1X && -1 !== (a1X = (a1X = zY(-1, a1X, a0q)) !== a0q && rT(fR, fS) ? a1X : -1) && (fR = (leaderboardFilter.enabled ? (updateFilteredLb(), jR[
+					leaderboardFilter.filteredLeaderboard[a1X + position] ?? (isEmptySpace = true, a0l[b.ed])]) : jR[a1X + position]), a1X === a0q - 1 && (leaderboardFilter.enabled ? this.playerPos : a0l[b.ed]) >=
 				position + a0q - 1 && (fR = b.ed), !isEmptySpace && b.hX && donationsTracker.displayHistory(fR, a8.xb, b.iy), 0 !== a8.hA[fR] && !isEmptySpace) && g.kI(fR, 800, !1, 0), !0
 		}, this.ti = function(fR, fS, deltaY) {
 			var a1Z;
