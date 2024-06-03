@@ -5522,11 +5522,11 @@ function cL() {
 
 function bz() {
 	this.xb = new Array(b.em), this.jx = new Array(b.em), this.hB = new Uint8Array(b.em), this.hA = new Uint8Array(b.em), this.i5 = new Uint16Array(b.em), this.i8 = new Uint16Array(b.em), this.i4 = new Uint16Array(b.em), this.i7 = new Uint16Array(b
-			.em), this.f8 = new Uint32Array(b.em), this.qS = new Uint32Array(b.em), this.ee = new Uint32Array(b.em), donationsTracker.reset(), leaderboardFilter.reset(), this.ej = null, this.f0 = null, this.f1 = null, this.f4 = null, this.mr =
-		new Uint16Array(b.em), this.hU = new Uint16Array(b.em), this.hV = new Uint16Array(b.em), this.sW = new Uint16Array(b.em), this.aA0 = new Uint8Array(b.em), this.cy = function(qv) {
+			.em), this.f8 = new Uint32Array(b.em), this.qS = new Uint32Array(b.em), this.ee = new Uint32Array(b.em), this.ej = null, this.f0 = null, this.f1 = null, this.f4 = null, this.mr = new Uint16Array(b.em), this.hU = new Uint16Array(b.em),
+		this.hV = new Uint16Array(b.em), this.sW = new Uint16Array(b.em), this.aA0 = new Uint8Array(b.em), this.cy = function(qv) {
 			for (let eM = qv.length - 1; 0 <= eM; eM--) this.jx[eM] = this.xb[eM] = qv[eM].name, this.hB[eM] = qv[eM].a5k;
-			this.hA.fill(0), this.i5.fill(0), this.i8.fill(0), this.i4.fill(0), this.i7.fill(0), this.f8.fill(0), this.qS.fill(0), this.ee.fill(0), this.ej = new Array(b.em), this.f0 = new Array(b.em), this.f1 = new Array(b.em), this.f4 = new Array(b
-				.em), this.mr.fill(0), this.hU.fill(0), this.hV.fill(0), this.sW.fill(0), this.aA0.fill(0)
+			this.hA.fill(0), this.i5.fill(0), this.i8.fill(0), this.i4.fill(0), this.i7.fill(0), this.f8.fill(0), this.qS.fill(0), this.ee.fill(0), donationsTracker.reset(), leaderboardFilter.reset(), this.ej = new Array(b.em), this.f0 = new Array(b
+				.em), this.f1 = new Array(b.em), this.f4 = new Array(b.em), this.mr.fill(0), this.hU.fill(0), this.hV.fill(0), this.sW.fill(0), this.aA0.fill(0)
 		}
 }
 
