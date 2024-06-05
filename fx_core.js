@@ -1,6 +1,6 @@
-const dictionary = {"gIsTeamGame":"hX","game":"b","playerId":"ed","playerData":"a8","playerNames":"jx","rawPlayerNames":"xb","playerBalances":"ee","playerTerritories":"f8","gLobbyMaxJoin":"qD","gMaxPlayers":"em","gIsSingleplayer":"iy","gameState":"sK","fontSize":"fontSize","x":"fR","y":"fS","canvas":"gW","gHumans":"h9","playerStates":"hB","Translations":"aZ","txt":"nr","strs":"a1d","uiSizes":"b4","gap":"gap","i":"eM"};
-const fx_version = '0.6.4.5'; // FX Client Version
-const fx_update = 'Jun 3'; // FX Client Last Updated
+const dictionary = {"gIsTeamGame":"hX","game":"b","playerId":"ed","playerData":"a8","playerNames":"jx","rawPlayerNames":"xl","playerBalances":"ee","playerTerritories":"f8","gLobbyMaxJoin":"qD","gMaxPlayers":"em","gIsSingleplayer":"iy","gameState":"sT","fontSize":"fontSize","x":"fR","y":"fS","canvas":"gW","gHumans":"h9","playerStates":"hB","Translations":"aZ","txt":"nr","strs":"a1n","uiSizes":"b4","gap":"gap","i":"eM"};
+const fx_version = '0.6.4.6'; // FX Client Version
+const fx_update = 'Jun 5'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -361,6 +361,7 @@ const leaderboardFilter = new (function() {
     this.hoveringOverTabs = false;
     this.scrollToTop = () => {};
     this.repaintLeaderboard = () => {};
+    this.setUpdateFlag = () => {};
     this.parseClanFromPlayerName = () => { console.warn("parse function not set"); };
     
     this.selectedTab = 0;
@@ -410,7 +411,10 @@ const leaderboardFilter = new (function() {
         if (this.selectedTab !== tab) {
             this.selectedTab = tab;
             if (this.selectedTab === 0) this.clearFilter();
-            else if (this.selectedTab === 1) this.filterByOwnClan();
+            else if (this.selectedTab === 1) {
+                this.filterByOwnClan();
+                this.setUpdateFlag();
+            }
             this.repaintLeaderboard();
         }
         return true;
