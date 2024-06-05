@@ -228,9 +228,15 @@ replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"),
 }
 
 { // Display density of other players
+	const r = matchRawCode(`bD.dO.data[7].value?a9W(i,jm,jk,jl,ctx):a9V(ctx,i,jm,jk,jl,a9S)))`);
+	const settingsSwitchNameAndBalance = `${r.bD}.${r.dO}.${r.data}[7].${r.value}`;
+	//console.log(settingsSwitchNameAndBalance);
 	// Applies when the "Reverse Name/Balance" setting is off
-	const { groups: { settingsSwitchNameAndBalance } } = replaceOne(/(,(?<settingsSwitchNameAndBalance>\w+\.\w+\.\w+\[7\]\.\w+)\?(?<nameDrawingFunction>\w+)\(\w+,\w+,(?<x>\w+),(?<y>\w+)\+\.78\*(?<fontSize>\w+),(?<canvas>\w+)\)):(\7\.fillText\(\w+\.\w+\.\w+\(\w+\.\w+\[(\w+)\]\),\4,\5\+\.78\*\6\))\)\)/g,
-	`$1 : ($8, settings.showPlayerDensity && (settings.coloredDensity && ($<canvas>.fillStyle = utils.textStyleBasedOnDensity($9)), $<canvas>.fillText(utils.getDensity($9), $<x>, $<y> + $<fontSize> * 1.5)) ) ) )`);
+	replaceRawCode("function a9V(ctx,i,fontSize,x,y,a9S){i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y))}",
+	`function a9V(ctx,i,fontSize,x,y,a9S){
+		var ___id = i;
+		i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y));
+		${settingsSwitchNameAndBalance} || settings.showPlayerDensity && (settings.coloredDensity && (ctx.fillStyle = utils.textStyleBasedOnDensity(___id)), ctx.fillText(utils.getDensity(___id), x, y + fontSize))}`)
 	// Applies when the "Reverse Name/Balance" setting is on (default)
 	replaceOne(/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerData>\w+)\.(?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<game>\w+)\.(?<gHumans>\w+)&&2!==\8\.(?<playerStates>\w+)\[[^}]+)}/g,
 	`$1 var ___id = $2; $7, $10; ${settingsSwitchNameAndBalance} && settings.showPlayerDensity && (settings.coloredDensity && ($<canvas>.fillStyle = utils.textStyleBasedOnDensity(___id)), $<canvas>.fillText(utils.getDensity(___id), $<x>, $<y> + $<fontSize>)); }`);
@@ -242,6 +248,7 @@ replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"),
 
 		`var leaderboardHasChanged = true;
 		this.playerPos = game.playerId;
+		leaderboardFilter.setUpdateFlag = () => leaderboardHasChanged = true;
 		function updateFilteredLb() {
 			if (!leaderboardHasChanged) return;
 			leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
@@ -316,26 +323,28 @@ replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"),
 		return ag.tQ() && -1 !== a0P && (a0P = -1, a0Y(), b3.d1 = !0), b3.dY - a0Q < 350 && a0T === a0p && -1 !== (a0p = (a0p = yr(-1, a0p, windowHeight)) !== windowHeight && vU(x, y) ? a0p : -1) && (x = (leaderboardFilter.enabled ? (updateFilteredLb(), leaderboardArray[leaderboardFilter.filteredLeaderboard[a0p + position] ?? (isEmptySpace = true, leaderboardPositionsById[game.playerId])]) : leaderboardArray[a0p + position]), a0p === windowHeight - 1 && (leaderboardFilter.enabled ? this.playerPos : leaderboardPositionsById[game.playerId]) >=
 			position + windowHeight - 1 && (x = game.playerId), !isEmptySpace && `);
 	// Get clan parsing function
-	replaceRawCode(`this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null}`,
+	replaceRawCode(`this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null},`,
 		`this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null}, leaderboardFilter.parseClanFromPlayerName = this.uI;`);
 }
 
 { // Hovering tooltip
-	replaceRawCode("this.click=function(g8,g9,tE){var fT=aj.fU(g8),fV=aj.fW(g9),fX=aj.fY(fT,fV),fZ=aj.fa(fX);return!(!aj.fb(fT,fV)||(fT=(b7.cv.fv()?.025:.0144)*aK.fw,fV=performance.now(),Math.abs(g8-uu)>fT)||Math.abs(g9-uv)>fT||dY+500<fV)&&(dY=fV,tE&&function(g8,g9,fZ){a2.eb(fZ)||-1===(g8=ak.ff.vR(g8,g9))?k.vQ(fZ):k.vS(g8)}(g8,g9,fZ),",
+	replaceRawCode("this.click=function(gG,gH,uH){var fd=an.fe(gG),ff=an.fg(gH),fh=an.fi(fd,ff),fj=an.fk(fh);return!(!an.fl(fd,ff)||(fd=(bB.d3.isUIZoomEnabled()?.025:.0144)*aO.g4,ff=performance.now(),Math.abs(gG-wK)>fd)||Math.abs(gH-wL)>fd||dg+500<ff)&&(dg=ff,uH?(function(gG,gH,fj){a3.ek(fj)||-1===(gG=ao.fr.wq(gG,gH))?l.wp(fj):l.wr(gG)}(gG,gH,fj),",
 		`hoveringTooltip.display = function(mouseX, mouseY) {
-			var coordX = aj.fU(mouseX), coordY = aj.fW(mouseY),
-				coord = aj.fY(coordX, coordY), point = aj.fa(coord);
+			var coordX = an.fe(mouseX), coordY = an.fg(mouseY),
+				coord = an.fi(coordX, coordY), point = an.fk(coord);
 			if (coordX < 0 || coordY < 0) return;
-			k.vQ(point);
+			(function(gG, gH, fj) {
+				a3.ek(fj) || -1 === (gG = ao.fr.wq(gG, gH)) ? l.wp(fj) : l.wr(gG)
+			}(mouseX, mouseY, point))
 		}
-		this.click = function(g8, g9, tE) {
-			var fT = aj.fU(g8),
-				fV = aj.fW(g9),
-				fX = aj.fY(fT, fV),
-				fZ = aj.fa(fX);
-			return !(!aj.fb(fT, fV) || (fT = (b7.cv.fv() ? .025 : .0144) * aK.fw, fV = performance.now(), Math.abs(g8 - uu) > fT) || Math.abs(g9 - uv) > fT || dY + 500 < fV) && (dY = fV, tE && function(g8, g9, fZ) {
-				a2.eb(fZ) || -1 === (g8 = ak.ff.vR(g8, g9)) ? k.vQ(fZ) : k.vS(g8)
-			}(g8, g9, fZ),`)
+		this.click = function(gG, gH, uH) {
+			var fd = an.fe(gG),
+				ff = an.fg(gH),
+				fh = an.fi(fd, ff),
+				fj = an.fk(fh);
+			return !(!an.fl(fd, ff) || (fd = (bB.d3.isUIZoomEnabled() ? .025 : .0144) * aO.g4, ff = performance.now(), Math.abs(gG - wK) > fd) || Math.abs(gH - wL) > fd || dg + 500 < ff) && (dg = ff, uH ? (function(gG, gH, fj) {
+				a3.ek(fj) || -1 === (gG = ao.fr.wq(gG, gH)) ? l.wp(fj) : l.wr(gG)
+			}(gG, gH, fj),`)
 	replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr,",
 		`aK.nH = (window.devicePixelRatio || 1) * aEr, hoveringTooltip.canvasPixelScale = aK.nH,`)
 }
