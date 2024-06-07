@@ -1,9 +1,9 @@
-const downloadGame = () => new Promise(resolve => {
 // Download game
 // https://stackoverflow.com/a/11944984
-const https = require('https'); // or 'https' for https:// URLs
-const fs = require('fs');
+import https from 'https'; // or 'https' for https:// URLs
+import fs from 'fs';
 
+const downloadGame = () => new Promise(resolve => {
 if (!fs.existsSync("./game")) fs.mkdirSync("./game");
 const file = fs.createWriteStream("./game/latest.html");
 // Download the game's code from the website
@@ -32,4 +32,4 @@ const request = https.get("https://territorial.io", function (response) {
 	});
 });
 });
-module.exports = downloadGame;
+export default downloadGame;

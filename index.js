@@ -1,2 +1,4 @@
-console.log("Building FXClient");
-require("./download.js")().then(() => require("./build.js"));
+import downloadGame from "./download.js";
+console.log("Building FX Client");
+await downloadGame();
+import("./build.js");

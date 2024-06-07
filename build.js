@@ -1,5 +1,6 @@
-const beautify = require('js-beautify').js;
-const fs = require('fs');
+import beautifier from 'js-beautify';
+const { js: beautify } = beautifier;
+import fs from 'fs';
 
 if (!fs.existsSync("./build")) fs.mkdirSync("./build");
 fs.cpSync("./static/", "./build/", { recursive: true });
@@ -28,7 +29,7 @@ const escapeRegExp = (string) => string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&')
 const dictionary = {};
 
 const matchDictionaryExpression = expression => {
-	result = expression.exec(script);
+	const result = expression.exec(script);
 	if (result === null) throw new Error("no match for ") + expression;
 	if (expression.exec(script) !== null) throw new Error("more than one match for: ") + expression;
 	for (let [key, value] of Object.entries(result.groups)) dictionary[key] = value;
@@ -103,7 +104,7 @@ const rawPlayerNames = `${dict.playerData}.${dict.rawPlayerNames}`;
 const gIsSingleplayer = `${dict.game}.${dict.gIsSingleplayer}`;
 
 // Replace assets
-const assets = require('./assets.js');
+import assets from './assets.js';
 replaceOne(/(\(4,"crown",4,")[^"]+"\),/g, "$1" + assets.crownIcon + "\"),");
 replaceOne(/(\(6,"territorial\.io",6,")[^"]+"\),/g, "$1" + assets.fxClientLogo + "\"),");
 
@@ -359,7 +360,7 @@ script = script.replace('//api.adinplay.com/libs/aiptag/pub/TRT/territorial.io/t
 
 console.log("Formatting code...");
 
-exposeVarsToGlobalScope = true;
+const exposeVarsToGlobalScope = true;
 
 if (exposeVarsToGlobalScope && script.startsWith("\"use strict\";    (function () {") && script.endsWith("})();"))
 	script = script.slice("\"use strict\";    (function () {".length, -"})();".length);
