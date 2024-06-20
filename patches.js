@@ -44,7 +44,28 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
 
 
     { // Add settings button and win count
-        // render gear icon and win count
+        // add settings button
+        replaceRawCode(`,new nQ("⚙️<br>Menu",function(){aD6(3)},aa.ks)]`,
+            `,new nQ("⚙️<br>Menu",function(){aD6(3)},aa.ks),
+            new nQ("FX Client settings", function() { WindowManager.openWindow("settings"); }, "rgba(0, 0, 20, 0.5")]`)
+        // set settings button position
+        replaceRawCode(`aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h);`,
+            `aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h); aZ.g5.vO(aD3[4].button, x, a3X + h * 2 + gap * 2, a0S * 2 + gap, h / 3);`);
+        // render win count
+        replaceRawCode(`if(y.a4l(),r.gI(),m.gI(),aw.gI(),ay.gI(),a0.g8()){ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=aD4.gA/iQ.width;`,
+            `if(y.a4l(),r.gI(),m.gI(),aw.gI(),ay.gI(),a0.g8()){
+            if (settings.displayWinCounter) {
+                const size = Math.floor(aD4.gA * 0.03);
+                ctx.font = ${dict.fontGeneratorFunction}(1, size);
+                ctx.fillStyle = "#ffffff";
+                const text = "Win count: " + wins_counter;
+                const textLength = ctx.measureText(text).width;
+                ctx.textAlign = "left";
+                ctx.textBaseline = "middle";
+                ctx.fillText(text, ctx.canvas.width - textLength - size / 2, size);
+            };
+            ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=aD4.gA/iQ.width;`)
+        /*// render gear icon and win count
         replaceRawCode(`,fy=aV.nU[80],fontSize=.65*height,canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6)",canvas.fillRect(x,y,width,height),`,
             `,fy=aV.nU[80],fontSize=.65*height,
 canvas.imageSmoothingEnabled = true,
@@ -61,7 +82,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         replaceRawCode(`(q6=Math.floor((b7.cv.fv()?.145:.09)*aK.fw),gap=Math.floor(.065*(b7.cv.fv()?.53:.36)*aK.fw),gap=aK.g5-q6-gap,jd=b0.gap,q6=Math.floor(.35*q6),gap<=mouseX&&mouseY<jd+q6&&ar.v2(1))`,
             `(q6=Math.floor((b7.cv.fv()?.145:.09)*aK.fw),gap=Math.floor(.065*(b7.cv.fv()?.53:.36)*aK.fw),gap=aK.g5-q6-gap,jd=b0.gap,q6=Math.floor(.35*q6),
 (gap <= mouseX && mouseY < jd + q6 && (ar.v2(1), true)) || (mouseX >= gap - q6 / 0.7 && mouseY < jd + q6 && WindowManager.openWindow("settings"))
-)`);
+)`);*/
     }
 
     { // Keybinds
@@ -92,8 +113,10 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
     // Make the main canvas context have an alpha channel if a custom background is being used
     replaceOne(/(document\.getElementById\("canvasA"\),\(\w+=\w+\.getContext\("2d",){alpha:!1}/g, "$1 {alpha: makeMainMenuTransparent}")
     // Clear canvas background if a custom background is being used
-    replaceOne(/(this\.\w+=function\(\){var (\w+),(\w+);)(\w+\.\w+\?\([^()]+setTransform\(\3=\2<\3\?\3:\2,0,0,\3,(?:Math\.floor\(\([^)]+\)\/2\)[,)]){2},(?:[^)]+\),){2}[^)]+\):(?<canvas>\w+)\.fillStyle=\w+\.\w+,\5\.fillRect\((?<wholeCanvas>0,0,\w+\.\w+,\w+\.\w+)\)}})/g,
-        '$1 if (makeMainMenuTransparent) $<canvas>.clearRect($<wholeCanvas>); else $4')
+    replaceRawCode(`,this.qk=function(){var a4n,a4m;aq.pd?(a4m=aL.gA/aq.eE,a4n=aL.gF/aq.eF,canvas.setTransform(a4m=a4n<a4m?a4m:a4n,0,0,a4m,`,
+        `,this.qk=function(){var a4n,a4m;
+        if (makeMainMenuTransparent) canvas.clearRect(0,0,aL.gA,aL.gF);
+        else aq.pd?(a4m=aL.gA/aq.eE,a4n=aL.gF/aq.eF,canvas.setTransform(a4m=a4n<a4m?a4m:a4n,0,0,a4m,`);
 
     // Track donations
     replaceOne(/(this\.\w+=function\((\w+),(\w+)\)\{)(\2===\w+\.\w+&&\(\w+\.\w+\((\w+\.\w+)\[0\],\5\[1\],\3\),this\.(\w+)\[12\]\+=\5\[1\],this\.\6\[16\]\+=\5\[0\]\),\3===\w+\.\w+&&\()/g,
