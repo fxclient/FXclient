@@ -1,6 +1,6 @@
-const dictionary = {"gIsTeamGame":"hX","game":"b","playerId":"ed","playerData":"a8","playerNames":"jx","rawPlayerNames":"xl","playerBalances":"ee","playerTerritories":"f8","gLobbyMaxJoin":"qD","gMaxPlayers":"em","gIsSingleplayer":"iy","gameState":"sT","fontSize":"fontSize","x":"fR","y":"fS","canvas":"gW","gHumans":"h9","playerStates":"hB","Translations":"aZ","txt":"nr","strs":"a1n","uiSizes":"b4","gap":"gap","i":"eM"};
+const dictionary = {"gIsTeamGame":"hQ","game":"b","playerId":"ea","playerData":"a6","playerNames":"jq","rawPlayerNames":"tI","playerBalances":"eb","playerTerritories":"f5","gameState":"se","fontSize":"fontSize","x":"fO","y":"fP","canvas":"gT","gHumans":"hq","playerStates":"vY","fontGeneratorFunction":"aZ.g5.g6","gIsSingleplayer":"is","gLobbyMaxJoin":"qF","SingleplayerMenu":"z","getSingleplayerPlayerCount":"wS","gMaxPlayers":"ej","gBots":"il","Translations":"aW","txt":"nl","strs":"a28","uiSizes":"b1","gap":"gap","i":"eJ"};
 const fx_version = '0.6.4.6'; // FX Client Version
-const fx_update = 'Jun 5'; // FX Client Last Updated
+const fx_update = 'Jun 20'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;

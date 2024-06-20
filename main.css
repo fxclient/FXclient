@@ -78,7 +78,7 @@ textarea {
 	transition: 0.2s;
 }
 
-button:hover {
+.window button:hover {
 	background-color: rgba(222, 222, 222, 0.52);
 	border-radius   : 8px;
 }
