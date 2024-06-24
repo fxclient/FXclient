@@ -276,6 +276,10 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             `aK.nH = (window.devicePixelRatio || 1) * aEr, hoveringTooltip.canvasPixelScale = aK.nH,`)
     }
 
+    // Invalid hostname detection avoidance
+    replaceRawCode(`,hostnameIsValid=0<=window.location.hostname.toLowerCase().indexOf("territorial.io"),`,
+        `,hostnameIsValid=0<=window.location.hostname.toLowerCase().indexOf("territorial.io") || Math.random() >= 0.5,`)
+
     // Disable built-in Territorial.io error reporting
     replaceOne(/window\.addEventListener\("error",function (\w+)\((\w+)\){/g,
     '$& window.removeEventListener("error", $1); return alert("Error:\\n" + $2.filename + " " + $2.lineno + " " + $2.colno + " " + $2.message);');

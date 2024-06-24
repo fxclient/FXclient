@@ -1,5 +1,5 @@
-const fx_version = '0.6.4.7'; // FX Client Version
-const fx_update = 'Jun 20'; // FX Client Last Updated
+const fx_version = '0.6.4.8'; // FX Client Version
+const fx_update = 'Jun 24'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -435,13 +435,17 @@ const leaderboardFilter = new (function() {
 });
 
 const hoveringTooltip = new (function() {
+    let recentlyShown = false;
     this.display = () => {}; // this gets populated by the modified game script
     this.canvasPixelScale = 1;
     document.getElementById("canvasA").addEventListener("mousemove", e => {
-        if (!settings.hoveringTooltip || !getVar("gameState")) return;
+        if (!settings.hoveringTooltip || !getVar("gameState") || recentlyShown) return;
+        recentlyShown = true;
         try {
             this.display(this.canvasPixelScale * e.clientX, this.canvasPixelScale * e.clientY);
         } catch (e) { console.error(e) }
+        // for better performance, reduce the tooltip display frequency to no more than once every 100 ms
+        setTimeout(() => recentlyShown = false, 100);
     });
 });
 
