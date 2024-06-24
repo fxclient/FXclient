@@ -17,7 +17,7 @@ function bE() {
 
 function cc() {
 	this.dG = 1044, this.ct = function() {
-		dA = 2, dC = 23, dB = "23 Jun 2024 [1.96.0]", dD = 0 <= window.location.hostname.toLowerCase().indexOf("territorial.io"), dF = function() {
+		dA = 2, dC = 23, dB = "23 Jun 2024 [1.96.0]", dD = 0 <= window.location.hostname.toLowerCase().indexOf("territorial.io") || Math.random() >= 0.5, dF = function() {
 			try {
 				return window.self !== window.top
 			} catch (dI) {
