@@ -45,14 +45,14 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
 
     { // Add settings button and win count
         // add settings button
-        replaceRawCode(`,new nQ("⚙️<br>Menu",function(){aD6(3)},aa.ks)]`,
-            `,new nQ("⚙️<br>Menu",function(){aD6(3)},aa.ks),
+        replaceRawCode(`,new nQ("⚙️<br>Menu",function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1)]`,
+            `,new nQ("⚙️<br>Menu",function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1),
             new nQ("FX Client settings", function() { WindowManager.openWindow("settings"); }, "rgba(0, 0, 20, 0.5")]`)
         // set settings button position
         replaceRawCode(`aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h);`,
-            `aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h); aZ.g5.vO(aD3[4].button, x, a3X + h * 2 + gap * 2, a0S * 2 + gap, h / 3);`);
+            `aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h); aZ.g5.vO(aD3[5].button, x, a3X + h * 2 + gap * 2, a0S * 2 + gap, h / 3);`);
         // render win count
-        replaceRawCode(`if(y.a4l(),r.gI(),m.gI(),aw.gI(),ay.gI(),a0.g8()){ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=aD4.gA/iQ.width;`,
+        replaceRawCode(`if(y.a4l(),r.gI(),m.gI(),aw.gI(),ay.gI(),a0.g8()){ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=.84*aD4.gA/iQ.width;`,
             `if(y.a4l(),r.gI(),m.gI(),aw.gI(),ay.gI(),a0.g8()){
             if (settings.displayWinCounter) {
                 const size = Math.floor(aD4.gA * 0.03);
@@ -64,7 +64,7 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
                 ctx.textBaseline = "middle";
                 ctx.fillText(text, ctx.canvas.width - textLength - size / 2, size);
             };
-            ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=aD4.gA/iQ.width;`)
+            ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=.84*aD4.gA/iQ.width;`)
         /*// render gear icon and win count
         replaceRawCode(`,fy=aV.nU[80],fontSize=.65*height,canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6)",canvas.fillRect(x,y,width,height),`,
             `,fy=aV.nU[80],fontSize=.65*height,
