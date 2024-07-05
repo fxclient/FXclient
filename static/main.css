@@ -28,7 +28,7 @@
 	border-width    : 2px;
 	border-width    : calc(0.15 * (1vw + 1vh));
 	font-size       : 20px;
-	font-size       : calc(14px + ((0.4 * (0.8vw + 1vh)) + 0.15rem));
+	font-size       : calc(14px + ((0.5 * (1.1vw - 0.1vh)) + 0.14rem));
 	max-height      : 90%;
 	transition      : 0.2s;
 	z-index         : 10;
