@@ -1,5 +1,5 @@
-const fx_version = '0.6.4.9'; // FX Client Version
-const fx_update = 'Jun 26'; // FX Client Last Updated
+const fx_version = '0.6.5'; // FX Client Version
+const fx_update = 'Jul 5'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -211,6 +211,49 @@ var settingsManager = new (function() {
         // should probably firgure out a way to do this without reloading - // You can't do it, localstorages REQUIRE you to reload
         window.location.reload();
     };
+
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    function handleFileSelect(event) {
+        const input = event.target;
+        /** @type {File} */
+        const selectedFile = input.files[0];
+        if (!selectedFile) return;
+
+        input.removeEventListener("change", handleFileSelect);
+        input.value = "";
+        if (!selectedFile.name.endsWith(".json")) return alert("Invalid file format");
+        const fileReader = new FileReader();
+        fileReader.onload = function() {
+            let result;
+            try {    
+                result = JSON.parse(fileReader.result);
+                if (confirm("Warning: This will override all current settings, click \"OK\" to confirm")) settings = result;
+                localStorage.setItem("fx_settings", JSON.stringify(settings));
+                window.location.reload();
+            } catch (error) {
+                alert("Error\n" + error)
+            }
+        }
+        fileReader.readAsText(selectedFile);
+    }
+    this.importFromFile = function() {
+        fileInput.click();
+        fileInput.addEventListener('change', handleFileSelect);
+    };
+    // https://stackoverflow.com/a/34156339
+    function saveFile(content, fileName, contentType) {
+        var a = document.createElement("a");
+        var file = new Blob([content], {type: contentType});
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+        URL.revokeObjectURL(a.href);
+    }
+    this.exportToFile = function() {
+        saveFile(JSON.stringify(settings), 'FX_client_settings.json', 'application/json');
+    };
+
     this.syncFields = function() {
         Object.keys(inputFields).forEach(function(key) { inputFields[key].value = settings[key]; });
         Object.keys(checkboxFields).forEach(function(key) { checkboxFields[key].checked = settings[key]; });
