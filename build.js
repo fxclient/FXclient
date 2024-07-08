@@ -85,7 +85,7 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 ].forEach(matchDictionaryExpression);
 
 const rawCodeSegments = [
-	",this.@gIsSingleplayer?this.@gLobbyMaxJoin=@SingleplayerMenu.@getSingleplayerPlayerCount():this.gLobbyMaxJoin=this.@gMaxPlayers,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
+	"this.@gIsSingleplayer?this.@gLobbyMaxJoin=@SingleplayerMenu.@getSingleplayerPlayerCount():this.gLobbyMaxJoin=this.@gMaxPlayers,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
 	"[0]=@Translations.@txt[70],@strs[1]=@game.@gIsSingleplayer?@Translations.txt[71]:@Translations.txt[72],",
 	"?(this.gB=Math.floor(.0536*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
 	`for(a0L=new Array(@game.@gMaxPlayers),a0A.font=a07,@i=game.gMaxPlayers-1;0<=i;i--)a0L[i]=i+1+".",@playerData.@playerNames[i]=aY.qW.tm(playerData.@rawPlayerNames[i],a07,a0W),a0K[i]=Math.floor(a0A.measureText(playerData.playerNames[i]).width);`,
