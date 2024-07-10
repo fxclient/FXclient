@@ -1,4 +1,4 @@
-const dictionary = {"gIsTeamGame":"bz","game":"aM","playerId":"gb","playerData":"aW","playerNames":"aX","rawPlayerNames":"aY","playerBalances":"dt","playerTerritories":"gC","gameState":"gj","fontSize":"fontSize","x":"cS","y":"cT","canvas":"kB","gHumans":"aU","playerStates":"cZ","fontGeneratorFunction":"dW.dX.hn","gIsSingleplayer":"aP","gLobbyMaxJoin":"ac","SingleplayerMenu":"ge","getSingleplayerPlayerCount":"v7","gMaxPlayers":"aV","gBots":"hA","Translations":"fI","txt":"dq","strs":"eh","uiSizes":"dZ","gap":"gap","i":"u"};
+const dictionary = {"gIsTeamGame":"iA","game":"df","playerId":"du","playerData":"dV","playerNames":"hY","rawPlayerNames":"ih","playerBalances":"l5","playerTerritories":"ev","gameState":"gP","fontSize":"fontSize","x":"a7","y":"a8","canvas":"ko","gHumans":"dg","playerStates":"qh","fontGeneratorFunction":"q.r.ft","gIsSingleplayer":"iP","gLobbyMaxJoin":"iG","SingleplayerMenu":"gM","getSingleplayerPlayerCount":"a6E","gMaxPlayers":"eM","gBots":"nX","Translations":"e","txt":"f","strs":"a05","uiSizes":"b2","gap":"gap","i":"a6"};
 const fx_version = '0.6.5'; // FX Client Version
 const fx_update = 'Jul 5'; // FX Client Last Updated
 
