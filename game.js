@@ -2614,7 +2614,7 @@ function wK() {
 		if (cM.wf(), kG.bH(), qL.bH(), wg.bH(), wh.bH(), bN.fv()) {
 			if (settings.displayWinCounter) {
 				const size = Math.floor(wN.ak * 0.03);
-				bI.font = q.kG.ft(1, size);
+				bI.font = q.r.ft(1, size);
 				bI.fillStyle = "#ffffff";
 				const text = "Win count: " + wins_counter;
 				const textLength = bI.measureText(text).width;
