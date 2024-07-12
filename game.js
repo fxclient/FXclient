@@ -1422,8 +1422,11 @@ function io() {
 	}
 
 	function p7(a6, ko, km, gv) {
-		var a7;
-		0 !== dV.eg[a6] && 0 !== dV.ev[a6] && (a7 = dV.nu[a6] + dV.nw[a6] + 1 - gv - 2 >> 1, gv = dV.nv[a6] + dV.nx[a6] + 1 - gv - 2 >> 1, ko.drawImage(km[df.iA ? lV.i6[a6] : a6 < df.dg ? 1 : 0], a7, gv))
+		var a7, y, highlight = settings.highlightClanSpawns && clanFilter.inOwnClan[a6];
+		if (highlight) gv *= 2;
+		0 !== dV.eg[a6] && 0 !== dV.ev[a6] && (a7 = dV.nu[a6] + dV.nw[a6] + 1 - gv - 2 >> 1, y = dV.nv[a6] + dV.nx[a6] + 1 - gv - 2 >> 1,
+			highlight ? ko.drawImage(km[df.iA ? lV.i6[a6] : a6 < df.dg ? 1 : 0], a7, y, gv, gv) :
+			ko.drawImage(km[df.iA ? lV.i6[a6] : a6 < df.dg ? 1 : 0], a7, y))
 	}
 	this.m = function() {
 		var oZ;
@@ -5880,8 +5883,10 @@ function ip() {
 				es = gf.d4.ot * cz,
 				ov = gf.d4.ov;
 			for (let a6 = df.dg - 1; 0 <= a6; a6--) ! function(a6, es, bK, hP, hQ, hR, ov) {
+				var highlight = settings.highlightClanSpawns && clanFilter.inOwnClan[a6];
+				if (highlight) es *= 2;
 				0 === dV.eg[a6] || 0 === dV.ev[a6] || (hQ = ay.ak * ((dV.nu[a6] + dV.nw[a6] + 1) / 2 - bK) / (hQ - bK) - .5 * es, bK = ay.al * ((dV.nv[a6] + dV.nx[a6] + 1) / 2 - hP) / (hR - hP) - .5 * es, hQ > ay.ak) || bK > ay.al || hQ < -
-					es || bK < -es || (bI.setTransform(cz, 0, 0, cz, hQ, bK), bI.drawImage(ov[df.iA ? lV.i6[a6] : 1], 0, 0))
+					es || bK < -es || (bI.setTransform(highlight ? cz * 2 : cz, 0, 0, highlight ? cz * 2 : cz, hQ, bK), bI.drawImage(ov[df.iA ? lV.i6[a6] : 1], 0, 0))
 			}(a6, es, bK, hP, hQ, hR, ov);
 			bI.setTransform(cz, 0, 0, cz, 0, 0)
 		}
