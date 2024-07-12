@@ -1,5 +1,5 @@
-const fx_version = '0.6.5'; // FX Client Version
-const fx_update = 'Jul 5'; // FX Client Last Updated
+const fx_version = '0.6.5.1'; // FX Client Version
+const fx_update = 'Jul 12'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -132,6 +132,7 @@ var settings = {
     "showPlayerDensity": true,
     "coloredDensity": true,
     "densityDisplayStyle": "percentage",
+    "highlightClanSpawns": false,
     //"customMapFileBtn": true
     "customBackgroundUrl": "",
     "attackPercentageKeybinds": [],
@@ -140,10 +141,9 @@ const discontinuedSettings = [ "hideAllLinks", "fontName" ];
 let makeMainMenuTransparent = false;
 var settingsManager = new (function() {
     const settingsStructure = [
-        //{ for: "fontName", type: "textInput", label: "Font name:", placeholder: "Enter font name", tooltip: "Name of the font to be used for rendering. For example: Arial, Georgia, sans-serif, serif, Comic Sans MS, ..."},
-        { type: "button", text: "Reset Wins Counter", action: removeWins },
         { for: "displayWinCounter", type: "checkbox", label: "Display win counter",
-        note: "The win counter tracks multiplayer solo wins (not in team games)" },
+            note: "The win counter tracks multiplayer solo wins (not in team games)" },
+        { type: "button", text: "Reset win counter", action: removeWins },
         { for: "useFullscreenMode", type: "checkbox", label: "Use fullscreen mode",
         note: "Note: fullscreen mode will trigger after you click anywhere on the page due to browser policy restrictions." },
         { for: "hoveringTooltip", type: "checkbox", label: "Hovering tooltip",
@@ -156,6 +156,8 @@ var settingsManager = new (function() {
             { value: "percentage", label: "Percentage" },
             { value: "absoluteQuotient", label: "Value from 0 to 150 (BetterTT style)" }
         ]},
+        { for: "highlightClanSpawns", type: "checkbox", label: "Highlight clan spawnpoints",
+            note: "Increases the spawnpoint glow size for members of your clan" },
         { for: "customBackgroundUrl", type: "textInput", label: "Custom main menu background:", placeholder: "Enter an image URL here", tooltip: "A custom image to be shown as the main menu background instead of the currently selected map." },
         KeybindsInput
     ];
@@ -463,9 +465,10 @@ const leaderboardFilter = new (function() {
     };
     this.filterByOwnClan = () => {
         this.playersToInclude = [];
-        const ownClan = this.parseClanFromPlayerName(getVar("rawPlayerNames")[getVar("playerId")]);
+        const playerId = getVar("playerId");
+        const ownClan = this.parseClanFromPlayerName(getVar("rawPlayerNames")[playerId]);
         getVar("rawPlayerNames").forEach((name, id) => {
-            if (this.parseClanFromPlayerName(name) === ownClan) this.playersToInclude.push(id);
+            if (id === playerId || this.parseClanFromPlayerName(name) === ownClan) this.playersToInclude.push(id);
         });
         this.enabled = true;
         this.scrollToTop();
@@ -474,6 +477,20 @@ const leaderboardFilter = new (function() {
     this.reset = () => {
         this.enabled = false;
         this.selectedTab = 0;
+        clanFilter.refresh();
+    }
+});
+
+const clanFilter = new (function() {
+    this.inOwnClan = new Array(512);
+    this.inOwnClan.fill(false);
+    this.refresh = () => {
+        const gHumans = getVar("gHumans");
+        const ownClan = leaderboardFilter.parseClanFromPlayerName(getVar("rawPlayerNames")[getVar("playerId")]);
+        if (ownClan === null) this.inOwnClan.fill(false);
+        else getVar("rawPlayerNames").forEach((name, id) => {
+            this.inOwnClan[id] = id < gHumans && leaderboardFilter.parseClanFromPlayerName(name) === ownClan;
+        });
     }
 });
 
