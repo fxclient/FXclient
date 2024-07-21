@@ -242,7 +242,7 @@ var d2, d3, d4, d5, d6, d7, jA, jB, xj, xk, xl;
 
 function d8() {
 	this.d9 = 1048, this.d = function() {
-		d2 = 2, d4 = 23, d3 = "19 Jul 2024 [1.97.1]", d5 = 0 <= window.location.hostname.toLowerCase().indexOf("territorial.io") || Math.random() >= 0.8, d7 = function() {
+		d2 = 2, d4 = 23, d3 = "19 Jul 2024 [1.97.1]", d5 = true, d7 = function() {
 			try {
 				return window.self !== window.top
 			} catch (a6) {
