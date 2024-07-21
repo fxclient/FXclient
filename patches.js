@@ -273,8 +273,8 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 			return !(!an.fl(fd, ff) || (fd = (bB.d3.isUIZoomEnabled() ? .025 : .0144) * aO.g4, ff = performance.now(), Math.abs(gG - wK) > fd) || Math.abs(gH - wL) > fd || dg + 500 < ff) && (dg = ff, uH ? (function(gG, gH, fj) {
 				a3.ek(fj) || -1 === (gG = ao.fr.wq(gG, gH)) ? l.wp(fj) : l.wr(gG)
 			}(gG, gH, fj),`)
-        replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr}",
-            `aK.nH = (window.devicePixelRatio || 1) * aEr, hoveringTooltip.canvasPixelScale = aK.nH}`)
+        replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr,",
+            `aK.nH = (window.devicePixelRatio || 1) * aEr, hoveringTooltip.canvasPixelScale = aK.nH,`)
     }
 
     { // Highlight clan spawnpoints
