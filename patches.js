@@ -296,7 +296,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 
     // Invalid hostname detection avoidance
     replaceRawCode(`,hostnameIsValid=0<=window.location.hostname.toLowerCase().indexOf("territorial.io"),`,
-        `,hostnameIsValid=0<=window.location.hostname.toLowerCase().indexOf("territorial.io") || Math.random() >= 0.8,`)
+        `,hostnameIsValid=true,`)
 
     // Disable built-in Territorial.io error reporting
     replaceOne(/window\.addEventListener\("error",function (\w+)\((\w+)\){/g,
