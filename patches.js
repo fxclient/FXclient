@@ -53,8 +53,8 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
         replaceRawCode(`aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h);`,
             `aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h); aZ.g5.vO(aD3[5].button, x, a3X + h * 2 + gap * 2, a0S * 2 + gap, h / 3);`);
         // render win count
-        replaceRawCode(`if(_y.a4l(),_r.gI(),_m.gI(),aw.gI(),ay.gI()){ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=.84*aD4.gA/iQ.width;`,
-            `if(_y.a4l(),_r.gI(),_m.gI(),aw.gI(),ay.gI()){
+        replaceRawCode(`if(_y.a4l(),_r.gI(),_m.gI(),aw.gI(),a0.g8()){ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=.84*aD4.gA/iQ.width;`,
+            `if(_y.a4l(),_r.gI(),_m.gI(),aw.gI(),a0.g8()){
             if (settings.displayWinCounter) {
                 const size = Math.floor(aD4.gA * 0.03);
                 ctx.font = ${dict.fontGeneratorFunction}(1, size);
