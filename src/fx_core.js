@@ -1,5 +1,5 @@
-const fx_version = '0.6.5.2'; // FX Client Version
-const fx_update = 'Jul 21'; // FX Client Last Updated
+const fx_version = '0.6.5.3'; // FX Client Version
+const fx_update = 'Aug 3'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -498,7 +498,7 @@ const hoveringTooltip = new (function() {
     let recentlyShown = false;
     this.display = () => {}; // this gets populated by the modified game script
     this.canvasPixelScale = 1;
-    document.getElementById("canvasA").addEventListener("mousemove", e => {
+    function handler(e) {
         if (!settings.hoveringTooltip || !getVar("gameState") || recentlyShown) return;
         recentlyShown = true;
         try {
@@ -506,7 +506,9 @@ const hoveringTooltip = new (function() {
         } catch (e) { console.error(e) }
         // for better performance, reduce the tooltip display frequency to no more than once every 100 ms
         setTimeout(() => recentlyShown = false, 100);
-    });
+    }
+    document.getElementById("canvasA").addEventListener("mousemove", handler);
+    document.getElementById("canvasA").addEventListener("touchmove", handler);
 });
 
 var donationsTracker = new (function(){
