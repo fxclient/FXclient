@@ -501,15 +501,27 @@ const hoveringTooltip = new (function() {
     this.canvasPixelScale = 1;
     function handler(e) {
         if (!settings.hoveringTooltip || !getVar("gameState") || recentlyShown) return;
+        let x, y;
+        // https://stackoverflow.com/a/61732450
+        if (e.type.includes(`touch`)) {
+            const { touches, changedTouches } = e.originalEvent ?? e;
+            const touch = touches[0] ?? changedTouches[0];
+            x = touch.pageX;
+            y = touch.pageY;
+        } else if (e.type.includes(`mouse`)) {
+            x = e.clientX;
+            y = e.clientY;
+        }
+
         recentlyShown = true;
         try {
-            this.display(this.canvasPixelScale * e.clientX, this.canvasPixelScale * e.clientY);
+            this.display(this.canvasPixelScale * x, this.canvasPixelScale * y);
         } catch (e) { console.error(e) }
         // for better performance, reduce the tooltip display frequency to no more than once every 100 ms
         setTimeout(() => recentlyShown = false, 100);
     }
     document.getElementById("canvasA").addEventListener("mousemove", handler.bind(this));
-    document.getElementById("canvasA").addEventListener("touchmove", handler.bind(this));
+    document.getElementById("canvasA").addEventListener("touchstart", handler.bind(this));
 });
 
 var donationsTracker = new (function(){
