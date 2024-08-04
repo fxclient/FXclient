@@ -1,6 +1,6 @@
-const dictionary = {"gIsTeamGame":"fC","game":"ao","playerId":"bW","playerData":"bU","playerNames":"l6","rawPlayerNames":"l7","playerBalances":"f8","playerTerritories":"bp","gameState":"aq","fontSize":"fontSize","x":"eB","y":"eC","canvas":"dF","gHumans":"cW","playerStates":"ev","fontGeneratorFunction":"n.o.dc","gIsSingleplayer":"ap","gLobbyMaxJoin":"ok","SingleplayerMenu":"jO","getSingleplayerPlayerCount":"ov","gMaxPlayers":"l4","gBots":"md","Translations":"aS","txt":"aZ","strs":"mT","uiSizes":"dY","gap":"gap","i":"l"};
-const fx_version = '0.6.5.2'; // FX Client Version
-const fx_update = 'Jul 21'; // FX Client Last Updated
+const dictionary = {"gIsTeamGame":"dT","game":"ay","playerId":"az","playerData":"bV","playerNames":"mU","rawPlayerNames":"mV","playerBalances":"bY","playerTerritories":"bX","gameState":"di","fontSize":"fontSize","x":"k","y":"l","canvas":"k7","gHumans":"dc","playerStates":"ly","fontGeneratorFunction":"aL.ab.bz","gIsSingleplayer":"bB","gLobbyMaxJoin":"dg","SingleplayerMenu":"eA","getSingleplayerPlayerCount":"eB","gMaxPlayers":"cU","gBots":"de","Translations":"aP","txt":"aQ","strs":"fP","uiSizes":"af","gap":"gap","i":"j"};
+const fx_version = '0.6.5.3'; // FX Client Version
+const fx_update = 'Aug 3'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;
@@ -499,7 +499,7 @@ const hoveringTooltip = new (function() {
     let recentlyShown = false;
     this.display = () => {}; // this gets populated by the modified game script
     this.canvasPixelScale = 1;
-    document.getElementById("canvasA").addEventListener("mousemove", e => {
+    function handler(e) {
         if (!settings.hoveringTooltip || !getVar("gameState") || recentlyShown) return;
         recentlyShown = true;
         try {
@@ -507,7 +507,9 @@ const hoveringTooltip = new (function() {
         } catch (e) { console.error(e) }
         // for better performance, reduce the tooltip display frequency to no more than once every 100 ms
         setTimeout(() => recentlyShown = false, 100);
-    });
+    }
+    document.getElementById("canvasA").addEventListener("mousemove", handler.bind(this));
+    document.getElementById("canvasA").addEventListener("touchmove", handler.bind(this));
 });
 
 var donationsTracker = new (function(){
