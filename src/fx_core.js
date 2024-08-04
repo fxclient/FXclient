@@ -507,8 +507,8 @@ const hoveringTooltip = new (function() {
         // for better performance, reduce the tooltip display frequency to no more than once every 100 ms
         setTimeout(() => recentlyShown = false, 100);
     }
-    document.getElementById("canvasA").addEventListener("mousemove", handler);
-    document.getElementById("canvasA").addEventListener("touchmove", handler);
+    document.getElementById("canvasA").addEventListener("mousemove", handler.bind(this));
+    document.getElementById("canvasA").addEventListener("touchmove", handler.bind(this));
 });
 
 var donationsTracker = new (function(){
