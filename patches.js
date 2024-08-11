@@ -22,7 +22,7 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     // TODO: test this; it might cause issues with new boat mechanics?
 
     { // Add Troop Density and Maximum Troops in side panel
-        const { valuesArray } = replaceRawCode(`,labels[5]=aV.nU[76],labels[6]=aV.nU[77],labels[7]=aV.nU[78],a0Z=game.tn-eT(game.tn,100),(valuesArray=new Array(labels.length))[0]=game.io?`,
+        const { valuesArray } = replaceRawCode(`,labels[5]=aV.nU[76],labels[6]=aV.nU[77],labels[7]=aV.nU[78],game.tn,eT(game.tn,100),(valuesArray=new Array(labels.length))[0]=game.io?`,
             `,labels[5]=aV.nU[76],labels[6]=aV.nU[77],labels[7]=aV.nU[78],
 		labels.push("Max Troops", "Density"), // add labels
 		a0Z=game.tn-eT(game.tn,100),(valuesArray=new Array(labels.length))[0]=game.io?`);
