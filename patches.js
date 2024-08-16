@@ -256,7 +256,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
     }
 
     { // Hovering tooltip
-        replaceRawCode("this.click=function(gG,gH,uH){var fd=an.fe(gG),ff=an.fg(gH),fh=an.fi(fd,ff),fj=an.fk(fh);if(!an.fl(fd,ff))return!1;fd=(bB.d3.isUIZoomEnabled()?.025:.0144)*aO.g4,ff=performance.now();if(Math.abs(gG-wK)>fd)||Math.abs(gH-wL)>fd||dg+500<ff)return!1;if(dg=ff,uH&&!function(gG,gH,fj){a3.ek(fj)||-1===(gG=ao.fr.wq(gG,gH))?l.wp(fj):l.wr(gG)}(gG,gH,fj),",
+        replaceRawCode("this.click=function(gG,gH,uH){var fd=an.fe(gG),ff=an.fg(gH),fh=an.fi(fd,ff),fj=an.fk(fh);if(!an.fl(fd,ff))return!1;fd=(bB.d3.isUIZoomEnabled()?.025:.0144)*aO.g4,ff=performance.now();if(Math.abs(gG-wK)>fd||Math.abs(gH-wL)>fd||dg+500<ff)return!1;if(dg=ff,uH&&!function(gG,gH,fj){a3.ek(fj)||-1===(gG=ao.fr.wq(gG,gH))?l.wp(fj):l.wr(gG)}(gG,gH,fj),",
             `hoveringTooltip.display = function(mouseX, mouseY) {
 			var coordX = an.fe(mouseX), coordY = an.fg(mouseY),
 				coord = an.fi(coordX, coordY), point = an.fk(coord);
@@ -265,7 +265,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 				a3.ek(fj) || -1 === (gG = ao.fr.wq(gG, gH)) ? l.wp(fj) : l.wr(gG)
 			}(mouseX, mouseY, point))
 		}
-		this.click=function(gG,gH,uH){var fd=an.fe(gG),ff=an.fg(gH),fh=an.fi(fd,ff),fj=an.fk(fh);if(!an.fl(fd,ff))return!1;fd=(bB.d3.isUIZoomEnabled()?.025:.0144)*aO.g4,ff=performance.now();if(Math.abs(gG-wK)>fd)||Math.abs(gH-wL)>fd||dg+500<ff)return!1;if(dg=ff,uH&&!function(gG,gH,fj){a3.ek(fj)||-1===(gG=ao.fr.wq(gG,gH))?l.wp(fj):l.wr(gG)}(gG,gH,fj),`)
+		this.click=function(gG,gH,uH){var fd=an.fe(gG),ff=an.fg(gH),fh=an.fi(fd,ff),fj=an.fk(fh);if(!an.fl(fd,ff))return!1;fd=(bB.d3.isUIZoomEnabled()?.025:.0144)*aO.g4,ff=performance.now();if(Math.abs(gG-wK)>fd||Math.abs(gH-wL)>fd||dg+500<ff)return!1;if(dg=ff,uH&&!function(gG,gH,fj){a3.ek(fj)||-1===(gG=ao.fr.wq(gG,gH))?l.wp(fj):l.wr(gG)}(gG,gH,fj),`)
         replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr,",
             `aK.nH = (window.devicePixelRatio || 1) * aEr, hoveringTooltip.canvasPixelScale = aK.nH,`)
     }
