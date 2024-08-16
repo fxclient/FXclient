@@ -36,12 +36,12 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     }
 
     // Increment win counter on wins
-    replaceRawCode(`=function(sE){o.ha(sE,2),b.h9<100?xD(0,aZ.tG(4,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,aZ.tG(12,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0),`,
+    replaceRawCode(`=function(sE){o.ha(sE,2),b.h9<100?xD(0,aZ.tG(4,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,aZ.tG(12,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`,
         `=function(sE){
 		if (${playerId} === sE && !${gIsSingleplayer})
 			wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter),
 			xD(0,"Your Win Count is now " + wins_counter,3,sE,ad.gN,ad.kl,-1,!0);
-		o.ha(sE,2),b.h9<100?xD(0,aZ.tG(4,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,aZ.tG(12,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0),`);
+		o.ha(sE,2),b.h9<100?xD(0,aZ.tG(4,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,aZ.tG(12,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`);
 
 
     { // Add settings button and win count
