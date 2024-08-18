@@ -39,7 +39,7 @@ function bb() {
 
 function cy() {
 	this.dT = 1059, this.dE = function() {
-		dP = 2, dR = 29, dQ = "18 Aug 2024 [1.99.5.2]", a0 = true, a1 = function() {
+		dP = 2, dR = 29, dQ = "18 Aug 2024 [1.99.5.3]", a0 = true, a1 = function() {
 			try {
 				return window.self !== window.top
 			} catch (d) {
@@ -3901,8 +3901,9 @@ function c3() {
 		var a4y, per;
 		a4g[0] && a4.uX - a4.uW !== eu[0] && (eu[0] = a4.uX - a4.uW, a4e++), il - eu[0] !== eu[1] && (eu[1] = il - eu[0], a4e++), this.k6(), (a4y = aX.a4z(a4.er)) !== eu[5] && (eu[5] = a4y, a4e++), a4l(), eu[7] += bU.a50, a4y = a4m(7), a4h !==
 			a4y && (a4h = a4y, a4e += 100), a4y = a4.hd ? bW.v5() : aZ.fN[jv[0]], per = em(1e4 * a4y, a4.iO), eu[3] = a4y, eu[4] !== per && (a4e++, eu[4] = per), 8 === a4.jA && function() {
-				if (1 === aZ.kW[0] && 1 === aZ.kW[1]) return;
-				return bI.u9.uT(), 1
+				for (var a2 = 0; a2 < 2; a2++)
+					if (!b3.eo.fn(a2)) return bI.u9.uT(), 1;
+				return
 			}() || eu[3] < a4.iO || ! function() {
 				for (var a2 = il - 1; 0 <= a2; a2--)
 					if (0 < aZ.ex[io[a2]].length) return;
