@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/fxclient/FXclient#readme",
   "dependencies": {
-    "js-beautify": "^1.14.11"
+    "js-beautify": "^1.14.11",
+    "uglify-js": "^3.19.2"
   }
 }

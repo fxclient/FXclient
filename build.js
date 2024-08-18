@@ -1,5 +1,6 @@
 import beautifier from 'js-beautify';
 const { js: beautify } = beautifier;
+import UglifyJS from 'uglify-js';
 import fs from 'fs';
 
 if (!fs.existsSync("./build")) fs.mkdirSync("./build");
@@ -8,6 +9,22 @@ fs.cpSync("./assets/", "./build/assets/", { recursive: true });
 fs.cpSync("./src/fx_core.js", "./build/fx_core.js");
 fs.writeFileSync("./build/index.html", fs.readFileSync("./build/index.html").toString().replace(/buildTimestamp/g, Date.now()));
 let script = fs.readFileSync('./game/latest.js', { encoding: 'utf8' }).replace("\n", "").trim();
+
+const exposeVarsToGlobalScope = true;
+// need to first remove the iife wrapper so the top-level functions aren't inlined
+if (exposeVarsToGlobalScope && script.startsWith("\"use strict\";    (function () {") && script.endsWith("})();"))
+	script = script.slice("\"use strict\";    (function () {".length, -"})();".length);
+if (exposeVarsToGlobalScope && script.startsWith("(function () {") && script.endsWith("})();"))
+	script = script.slice("(function () {".length, -"})();".length);
+
+// for versions ^1.99.5.2
+const minificationResult = UglifyJS.minify(script, {
+	"compress": { "arrows": false },
+	"mangle": false
+});
+if (minificationResult.error) console.log(minificationResult.error);
+if (minificationResult.warnings) console.log(minificationResult.warnings);
+script = minificationResult.code;
 
 const replaceOne = (expression, replaceValue) => {
     const result = matchOne(expression);
@@ -103,13 +120,6 @@ import applyPatches from './patches.js';
 applyPatches({ replace, replaceOne, replaceRawCode, dictionary, matchOne, matchRawCode, escapeRegExp });
 
 console.log("Formatting code...");
-
-const exposeVarsToGlobalScope = true;
-
-if (exposeVarsToGlobalScope && script.startsWith("\"use strict\";    (function () {") && script.endsWith("})();"))
-	script = script.slice("\"use strict\";    (function () {".length, -"})();".length);
-if (exposeVarsToGlobalScope && script.startsWith("(function () {") && script.endsWith("})();"))
-	script = script.slice("(function () {".length, -"})();".length);
 
 script = beautify(script, {
 	"indent_size": "1",
