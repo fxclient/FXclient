@@ -94,8 +94,8 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 
 [
 	/,this\.(?<gIsTeamGame>\w+)=this\.\w+<7\|\|9===this\.\w+,/g,
-	/=function\((\w+),(\w+),\w+\){\1===(?<game>\w+)\.(?<playerId>\w+)\?\w+\(175,\w+\.\w+\(18,\[(?<playerData>\w+)\.(?<playerNames>\w+)\[\2\]\]\),1001,\2,\w+\(/g,
-	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+\.\w+)\(13,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(14,\[\w+\.\w+\.\w+\((?<playerData>\w+)\.(?<rawPlayerNames>\w+)\[(\w+)\],\w+\.\w+\.\w+\(0,10\),150\),(\w+\.\w+\.\w+\()\4\.(?<playerBalances>\w+)\[\6\]\),\7\4\.(?<playerTerritories>\w+)\[\6\]\),\2\]\),\w+=!0\):\2=/g,
+	/=function\((\w+),(\w+),\w+\){\1===(?<game>\w+)\.(?<playerId>\w+)\?\w+\(175," "\+\w+\(34,\[(?<playerData>\w+)\.(?<playerNames>\w+)\[\2\]\]\),1001,\2,\w+\(/g,
+	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+)\(29,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(30,\[\w+\.\w+\.\w+\((?<playerData>\w+)\.(?<rawPlayerNames>\w+)\[(\w+)\],\w+\.\w+\.\w+\(0,10\),150\),(\w+\.\w+\.\w+\()\4\.(?<playerBalances>\w+)\[\6\]\),\7\4\.(?<playerTerritories>\w+)\[\6\]\),\2\]\),\w+=!0\):\2=/g,
 	/function \w+\(\)\{if\(2===(?<game>\w+)\.(?<gameState>\w+)\)return 1;\w+\.\w+\(\),\1\.\2=2,\1\.\w+=\1.\w+\}/g,
 	/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerData>\w+)\.(?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<game>\w+)\.(?<gHumans>\w+)&&2!==\8\.(?<playerStates>\w+)\[[^}]+)}/g,
 	/\w+\.font=(?<fontGeneratorFunction>\w+\.\w+\.\w+)\(1,\.39\*this\.\w+\),/g
@@ -103,7 +103,7 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 
 const rawCodeSegments = [
 	"this.@gIsSingleplayer?this.@gLobbyMaxJoin=@SingleplayerMenu.@getSingleplayerPlayerCount():this.gLobbyMaxJoin=this.@gMaxPlayers,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
-	"[0]=@Translations.@txt[70],@strs[1]=@game.@gIsSingleplayer?@Translations.txt[71]:@Translations.txt[72],",
+	"[0]=@L(80),@strs[1]=@game.@gIsSingleplayer?@L(81):@L(82),",
 	"?(this.gB=Math.floor(.0536*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
 	`for(a0L=new Array(@game.@gMaxPlayers),a0A.font=a07,@i=game.gMaxPlayers-1;0<=i;i--)a0L[i]=i+1+".",@playerData.@playerNames[i]=aY.qW.tm(playerData.@rawPlayerNames[i],a07,a0W),a0K[i]=Math.floor(a0A.measureText(playerData.playerNames[i]).width);`,
 ]
