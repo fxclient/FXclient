@@ -1,6 +1,6 @@
 const dictionary = {"gIsTeamGame":"hl","game":"a2","playerId":"es","playerData":"aX","playerNames":"l3","rawPlayerNames":"vM","playerBalances":"et","playerTerritories":"ep","gameState":"uU","fontSize":"fontSize","x":"ff","y":"fg","canvas":"gM","gHumans":"ip","playerStates":"xu","fontGeneratorFunction":"b2.kt.ky","gIsSingleplayer":"jD","gLobbyMaxJoin":"sE","SingleplayerMenu":"aQ","getSingleplayerPlayerCount":"yw","gMaxPlayers":"f1","gBots":"jA","L":"L","strs":"a4g","uiSizes":"bQ","gap":"gap","i":"a0"};
-const fx_version = '0.6.5.3'; // FX Client Version
-const fx_update = 'Aug 3'; // FX Client Last Updated
+const fx_version = '0.6.5.4'; // FX Client Version
+const fx_update = 'Aug 24'; // FX Client Last Updated
 
 if (localStorage.getItem("fx_winCount") == undefined || localStorage.getItem("fx_winCount") == null) {
     var wins_counter = 0;

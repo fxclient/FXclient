@@ -1958,11 +1958,13 @@ function vW() {
 
 function dA() {
 	function vm(d) {
-		vt(d), i.j(4, 5, new k("🚀 New Game Update", "The game has been updated! Please reload the game.", !0, [new l(L(13), function() {
-			i.vu()
-		}, p.mT), new l("🔄 Reload", function() {
-			m.n.o()
-		}, p.q)]))
+		vt(d), i.j(4, 5, new k("🚀 New Game Update", "The game has been updated! Please reload the game." +
+			"<div style='border: white; border-width: 1px; border-style: solid; margin: 10px; padding: 5px;'><h2>FX Client is not yet compatible with the latest version of the game.</h2><p>Updates should normally be available within a few hours.<br>You can still use FX to play in singleplayer mode.</p></div>",
+			!0, [new l(L(13), function() {
+				i.vu()
+			}, p.mT), new l("🔄 Reload", function() {
+				m.n.o()
+			}, p.q)]))
 	}
 
 	function vs(title, vN, d) {
