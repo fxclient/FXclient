@@ -13,8 +13,8 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     replaceOne(/(\(22,"logo",8,")[^"]+"\)/g, "$1" + assets.smallLogo + "\")");
 
     // Add FX Client version info to the game version window
-    replaceRawCode(`ar.oa(4,1,new s8(L(252),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>",`,
-        `ar.oa(4,1,new s8(L(252),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>"
+    replaceRawCode(`ar.oa(4,1,new s8(L(254),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>",`,
+        `ar.oa(4,1,new s8(L(254),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>"
 + "<br><br><b>" + "FX Client v" + fx_version + " " + fx_update + "<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a>"
 + "<br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></b>",`);
 
