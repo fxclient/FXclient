@@ -58,7 +58,11 @@ const matchDictionaryExpression = expression => {
 // and this matches "a=b+1;", the returned value will be the object: { var1: "a", var2: "b" }
 const replaceRawCode = (/** @type {string} */ raw, /** @type {string} */ result, nameMappings) => {
 	const { expression, groups } = generateRegularExpression(raw, false, nameMappings);
-	let replacementString = result.replaceAll("$", "$$").replace(/\w+/g, match => {
+	let localizerCount = 0;
+	let replacementString = result.replaceAll("$", "$$").replaceAll("__L()", "__L)").replaceAll("__L(", "__L,")
+	.replace(/\w+/g, match => {
+		// these would get stored as "___localizer1", "___localizer2", ...
+		if (match === "__L") match = "___localizer" + (++localizerCount);
 		return groups.hasOwnProperty(match) ? "$" + groups[match] : match;
 	});
 	//console.log(replacementString);
@@ -77,11 +81,20 @@ const matchRawCode = (/** @type {string} */ raw, nameMappings) => {
 const generateRegularExpression = (/** @type {string} */ code, /** @type {boolean} */ isForDictionary, nameMappings) => {
 	const groups = {};
 	let groupNumberCounter = 1;
-	let raw = escapeRegExp(code).replace(isForDictionary ? /(?:@@)*(@?)(\w+)/g : /()(\w+)/g, (_match, modifier, word) => {
+	let localizerCount = 0;
+	let raw = escapeRegExp(code).replaceAll("__L\\(\\)", "___localizer\\)")
+		// when there is a parameter, add a comma to separate it from the added number
+		.replaceAll("__L\\(", "___localizer,");
+	raw = raw.replace(isForDictionary ? /(?:@@)*(@?)(\w+)/g : /()(\w+)/g, (_match, modifier, word) => {
 		// if a substitution string for the "word" is specified in the nameMappings, use it
 		if (nameMappings && nameMappings.hasOwnProperty(word)) return nameMappings[word];
 		// if the "word" is a number or is one of these specific words, ingore it
 		if (/^\d/.test(word) || ["return", "this", "var", "function", "Math"].includes(word)) return word;
+		// for easy localizer function matching
+		else if (word === "___localizer") {
+			groups[word + (++localizerCount)] = groupNumberCounter++;
+			return "\\b(L\\(\\d+)"; // would match "L(123", "L(50" and etc. when using "__L("
+		}
 		else if (groups.hasOwnProperty(word)) return "\\" + groups[word]; // regex numeric reference to the group
 		else {
 			groups[word] = groupNumberCounter++;
@@ -94,8 +107,8 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 
 [
 	/,this\.(?<gIsTeamGame>\w+)=this\.\w+<7\|\|9===this\.\w+,/g,
-	/=function\((\w+),(\w+),\w+\){\1===(?<game>\w+)\.(?<playerId>\w+)\?\w+\(175," "\+\w+\(34,\[(?<playerData>\w+)\.(?<playerNames>\w+)\[\2\]\]\),1001,\2,\w+\(/g,
-	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+)\(29,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(30,\[\w+\.\w+\.\w+\((?<playerData>\w+)\.(?<rawPlayerNames>\w+)\[(\w+)\],\w+\.\w+\.\w+\(0,10\),150\),(\w+\.\w+\.\w+\()\4\.(?<playerBalances>\w+)\[\6\]\),\7\4\.(?<playerTerritories>\w+)\[\6\]\),\2\]\),\w+=!0\):\2=/g,
+	/=function\((\w+),(\w+),\w+\){\1===(?<game>\w+)\.(?<playerId>\w+)\?\w+\(175," "\+\w+\(\d+,\[(?<playerData>\w+)\.(?<playerNames>\w+)\[\2\]\]\),1001,\2,\w+\(/g,
+	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+)\(\d+,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(\d+,\[\w+\.\w+\.\w+\((?<playerData>\w+)\.(?<rawPlayerNames>\w+)\[(\w+)\],\w+\.\w+\.\w+\(0,10\),150\),(\w+\.\w+\.\w+\()\4\.(?<playerBalances>\w+)\[\6\]\),\7\4\.(?<playerTerritories>\w+)\[\6\]\),\2\]\),\w+=!0\):\2=/g,
 	/function \w+\(\)\{if\(2===(?<game>\w+)\.(?<gameState>\w+)\)return 1;\w+\.\w+\(\),\1\.\2=2,\1\.\w+=\1.\w+\}/g,
 	/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerData>\w+)\.(?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<game>\w+)\.(?<gHumans>\w+)&&2!==\8\.(?<playerStates>\w+)\[[^}]+)}/g,
 	/\w+\.font=(?<fontGeneratorFunction>\w+\.\w+\.\w+)\(1,\.39\*this\.\w+\),/g
@@ -103,7 +116,7 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 
 const rawCodeSegments = [
 	"this.@gIsSingleplayer?this.@gLobbyMaxJoin=@SingleplayerMenu.@getSingleplayerPlayerCount():this.gLobbyMaxJoin=this.@gMaxPlayers,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
-	"[0]=@L(80),@strs[1]=@game.@gIsSingleplayer?@L(81):@L(82),",
+	"[0]=__L(),@strs[1]=@game.@gIsSingleplayer?__L():__L(),",
 	"?(this.gB=Math.floor(.0536*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
 	`for(a0L=new Array(@game.@gMaxPlayers),a0A.font=a07,@i=game.gMaxPlayers-1;0<=i;i--)a0L[i]=i+1+".",@playerData.@playerNames[i]=aY.qW.tm(playerData.@rawPlayerNames[i],a07,a0W),a0K[i]=Math.floor(a0A.measureText(playerData.playerNames[i]).width);`,
 ]

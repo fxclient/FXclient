@@ -13,8 +13,8 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     replaceOne(/(\(22,"logo",8,")[^"]+"\)/g, "$1" + assets.smallLogo + "\")");
 
     // Add FX Client version info to the game version window
-    replaceRawCode(`ar.oa(4,1,new s8(L(254),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>",`,
-        `ar.oa(4,1,new s8(L(254),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>"
+    replaceRawCode(`ar.oa(4,1,new s8(__L(),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>",`,
+        `ar.oa(4,1,new s8(__L(),gameVersion+"<br><a href='"+ah.aC5+"' target='_blank'>"+ah.aC5+"</a>"
 + "<br><br><b>" + "FX Client v" + fx_version + " " + fx_update + "<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a>"
 + "<br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></b>",`);
 
@@ -28,8 +28,8 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     // TODO: test this; it might cause issues with new boat mechanics?
 
     { // Add Troop Density and Maximum Troops in side panel
-        const { valuesArray } = replaceRawCode(`,labels[5]=L(86),labels[6]=L(87),labels[7]=L(88),(valuesArray=new Array(labels.length))[0]=game.io?`,
-            `,labels[5]=L(86),labels[6]=L(87),labels[7]=L(88),
+        const { valuesArray } = replaceRawCode(`,labels[5]=__L(),labels[6]=__L(),labels[7]=__L(),(valuesArray=new Array(labels.length))[0]=game.io?`,
+            `,labels[5]=__L(),labels[6]=__L(),labels[7]=__L(),
 		labels.push("Max Troops", "Density"), // add labels
 		(valuesArray=new Array(labels.length))[0]=game.io?`);
         replaceOne(new RegExp(/(:(?<valueIndex>\w+)<7\?\w+\.\w+\.\w+\(valuesArray\[\2\]\)):(\w+\.\w+\(valuesArray\[7\]\))}/
@@ -42,18 +42,18 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     }
 
     // Increment win counter on wins
-    replaceRawCode(`=function(sE){o.ha(sE,2),b.h9<100?xD(0,L(21,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,L(28,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`,
+    replaceRawCode(`=function(sE){o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`,
         `=function(sE){
 		if (${playerId} === sE && !${gIsSingleplayer})
 			wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter),
 			xD(0,"Your Win Count is now " + wins_counter,3,sE,ad.gN,ad.kl,-1,!0);
-		o.ha(sE,2),b.h9<100?xD(0,L(21,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,L(28,[a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`);
+		o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`);
 
 
     { // Add settings button and win count
         // add settings button
-        replaceRawCode(`,new nQ("☰<br>"+L(193),function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1)]`,
-            `,new nQ("☰<br>"+L(193),function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1),
+        replaceRawCode(`,new nQ("☰<br>"+__L(),function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1)]`,
+            `,new nQ("☰<br>"+__L(),function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1),
             new nQ("FX Client settings", function() { WindowManager.openWindow("settings"); }, "rgba(0, 0, 20, 0.5")]`)
         // set settings button position
         replaceRawCode(`aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h);`,
@@ -142,7 +142,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
     { // Player list and leaderboard filter tabs
         // Draw player list button
         const uiOffset = dictionary.uiSizes + "." + dictionary.gap;
-        const { groups: { drawFunction, topBarHeight } } = replaceOne(/(=1;function (?<drawFunction>\w+)\(\){[^}]+?(?<canvas>\w+)\.fillRect\(0,(?<topBarHeight>\w+),\w+,1\),(?:\3\.fillRect\([^()]+\),)+\3\.font=\w+,(\w+\.\w+)\.textBaseline\(\3,1\),\5\.textAlign\(\3,1\),\3\.fillText\(\w+\(79\),Math\.floor\()(\w+)\/2\),(Math\.floor\(\w+\+\w+\/2\)\));/g,
+        const { groups: { drawFunction, topBarHeight } } = replaceOne(/(=1;function (?<drawFunction>\w+)\(\){[^}]+?(?<canvas>\w+)\.fillRect\(0,(?<topBarHeight>\w+),\w+,1\),(?:\3\.fillRect\([^()]+\),)+\3\.font=\w+,(\w+\.\w+)\.textBaseline\(\3,1\),\5\.textAlign\(\3,1\),\3\.fillText\(\w+\(\d+\),Math\.floor\()(\w+)\/2\),(Math\.floor\(\w+\+\w+\/2\)\));/g,
             "$1($6 + $<topBarHeight> - 22) / 2), $7; playerList.drawButton($<canvas>, 12, 12, $<topBarHeight> - 22);");
         const buttonBoundsCheck = `utils.isPointInRectangle($<x>, $<y>, ${uiOffset} + 12, ${uiOffset} + 12, ${topBarHeight} - 22, ${topBarHeight} - 22)`
         // Handle player list button and leaderboard tabs mouseDown
