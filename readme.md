@@ -14,7 +14,7 @@
 </p>
 
 ## What is FX Client?
-FX Client is the first Territorial.io client, targeting better User Interface and better User Experience, It's basically Territorial.io but better.
+FX Client is the first Territorial.io client, offering a better User Interface and better User Experience. It's basically Territorial.io but better.
 
 **You can use the latest version of the client here: https://fxclient.github.io/FXclient/**
 
