@@ -117,7 +117,7 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 const rawCodeSegments = [
 	"this.@gIsSingleplayer?this.@gLobbyMaxJoin=@SingleplayerMenu.@getSingleplayerPlayerCount():this.gLobbyMaxJoin=this.@gMaxPlayers,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
 	"[0]=__L(),@strs[1]=@game.@gIsSingleplayer?__L():__L(),",
-	"?(this.gB=Math.floor(.0536*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
+	"?(this.gB=Math.floor(.066*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
 	`for(a0L=new Array(@game.@gMaxPlayers),a0A.font=a07,@i=game.gMaxPlayers-1;0<=i;i--)a0L[i]=i+1+".",@playerData.@playerNames[i]=aY.qW.tm(playerData.@rawPlayerNames[i],a07,a0W),a0K[i]=Math.floor(a0A.measureText(playerData.playerNames[i]).width);`,
 ]
 
