@@ -107,14 +107,14 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 
 [
 	/,this\.(?<gIsTeamGame>\w+)=this\.\w+<7\|\|9===this\.\w+,/g,
-	/=function\((\w+),(\w+),\w+\){\1===(?<game>\w+)\.(?<playerId>\w+)\?\w+\(175," "\+\w+\(\d+,\[(?<playerData>\w+)\.(?<playerNames>\w+)\[\2\]\]\),1001,\2,\w+\(/g,
-	/\w+\.\w+\((\w+)\)\?\w+\.\w+\(\1\)\?(\w+)=(\w+)\(\d+,\[\2\]\):\(\w+=\w+\.\w+\(\1\),\2=\3\(\d+,\[\w+\.\w+\.\w+\((?<playerData>\w+)\.(?<rawPlayerNames>\w+)\[(\w+)\],\w+\.\w+\.\w+\(0,10\),150\),(\w+\.\w+\.\w+\()\4\.(?<playerBalances>\w+)\[\6\]\),\7\4\.(?<playerTerritories>\w+)\[\6\]\),\2\]\),\w+=!0\):\2=/g,
+	/=function\((\w+),(\w+),\w+\){\1===(?<game>\w+)\.(?<playerId>\w+)\?\w+\(175," "\+\w+\(\d+,\[(?<playerData>\w+)\.(?<playerNames>\w+)\[\2\]\]\)\+": ",1001,\2,\w+\(/g,
 	/function \w+\(\)\{if\(2===(?<game>\w+)\.(?<gameState>\w+)\)return 1;\w+\.\w+\(\),\1\.\2=2,\1\.\w+=\1.\w+\}/g,
 	/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerData>\w+)\.(?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<game>\w+)\.(?<gHumans>\w+)&&2!==\8\.(?<playerStates>\w+)\[[^}]+)}/g,
 	/\w+\.font=(?<fontGeneratorFunction>\w+\.\w+\.\w+)\(1,\.39\*this\.\w+\),/g
 ].forEach(matchDictionaryExpression);
 
 const rawCodeSegments = [
+	`aR.f1(fy)?aR.fB(fy)?a0z=__L([a0z]):(player=aR.fA(fy),oM=__L([b1.t9.xw(@playerData.@rawPlayerNames[player],b1.kx.l2(0,10),150)])+"   ",a0z=(oM+=__L([b1.l5.l6(playerData.@playerBalances[player])])+"   ")+(__L([b1.l5.l6(playerData.@playerTerritories[player])])+"   ")+`,
 	"this.@gIsSingleplayer?this.@gLobbyMaxJoin=@SingleplayerMenu.@getSingleplayerPlayerCount():this.gLobbyMaxJoin=this.@gMaxPlayers,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
 	"[0]=__L(),@strs[1]=@game.@gIsSingleplayer?__L():__L(),",
 	"?(this.gB=Math.floor(.066*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
