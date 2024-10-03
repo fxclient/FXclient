@@ -21,5 +21,8 @@
   "dependencies": {
     "js-beautify": "^1.14.11",
     "uglify-js": "^3.19.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.95.0"
   }
 }

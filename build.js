@@ -2,12 +2,38 @@ import beautifier from 'js-beautify';
 const { js: beautify } = beautifier;
 import UglifyJS from 'uglify-js';
 import fs from 'fs';
+import webpack from 'webpack';
+import path from 'path';
+import applyPatches from './patches.js';
 
 if (!fs.existsSync("./build")) fs.mkdirSync("./build");
 fs.cpSync("./static/", "./build/", { recursive: true });
 fs.cpSync("./assets/", "./build/assets/", { recursive: true });
-fs.cpSync("./src/fx_core.js", "./build/fx_core.js");
 fs.writeFileSync("./build/index.html", fs.readFileSync("./build/index.html").toString().replace(/buildTimestamp/g, Date.now()));
+
+const buildClientCode = () => new Promise((resolve, reject) => {
+	webpack({
+		mode: 'production',
+		entry: { fxClient: "./src/main.js" },
+		output: {
+		  path: path.resolve(import.meta.dirname, 'build'),
+		  filename: 'fx.bundle.js',
+		},
+	}, (err, stats) => {
+		if (err) {
+			if (err.details) console.error(err.details);
+			return reject(err);
+		}
+		const info = stats.toJson();
+    	if (stats.hasWarnings()) console.warn(info.warnings);
+    	if (stats.hasErrors()) {
+			console.error(info.errors);
+			reject("Webpack compilation error");
+		}
+		else resolve();
+	});
+});
+
 let script = fs.readFileSync('./game/latest.js', { encoding: 'utf8' }).replace("\n", "").trim();
 
 const exposeVarsToGlobalScope = true;
@@ -127,10 +153,11 @@ rawCodeSegments.forEach(code => {
 	matchDictionaryExpression(expression);
 });
 
-fs.writeFileSync("./build/fx_core.js", `const dictionary = ${JSON.stringify(dictionary)};\n` + fs.readFileSync("./build/fx_core.js").toString());
-
-import applyPatches from './patches.js';
 applyPatches({ replace, replaceOne, replaceRawCode, dictionary, matchOne, matchRawCode, escapeRegExp });
+
+await buildClientCode();
+// the dictionary should maybe get embedded into one of the files in the bundle
+fs.writeFileSync("./build/fx.bundle.js", `const dictionary = ${JSON.stringify(dictionary)};\n` + fs.readFileSync("./build/fx.bundle.js").toString());
 
 console.log("Formatting code...");
 
