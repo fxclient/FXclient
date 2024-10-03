@@ -2234,7 +2234,7 @@ function co() {
 	}
 
 	function x3(d) {
-		if (keybindHandler(d.key)) return;
+		if (__fx.keybindHandler(d.key)) return;
 		x5() || ("ArrowLeft" === d.key ? af.xN(3) : "ArrowUp" === d.key ? af.xN(0) : "ArrowRight" === d.key ? af.xN(1) : "ArrowDown" === d.key ? af.xN(2) : "a" === d.key ? aE.xO(.9375) : "d" === d.key ? aE.xO(16 / 15) : "s" === d.key ? aE.xO(7 / 8) :
 			"w" === d.key ? aE.xO(8 / 7) : "1" === d.key ? aE.xO(.75) : "2" === d.key ? aE.xO(7 / 8) : "3" === d.key ? aE.xO(.9375) : "4" === d.key ? aE.xO(31 / 32) : "5" === d.key ? aE.xO(32 / 31) : "6" === d.key ? aE.xO(16 / 15) : "7" === d
 			.key ? aE.xO(8 / 7) : "8" === d.key ? aE.xO(4 / 3) : "+" === d.key ? 0 !== a1.v9 && aF.wt(Math.floor(an.t / 2), Math.floor(an.ir / 2), -200) : "-" === d.key ? 0 !== a1.v9 && aF.wt(Math.floor(an.t / 2), Math.floor(an.ir / 2), 200) :
@@ -2597,7 +2597,7 @@ function xe() {
 	}, this.w1 = function(username) {
 		var eM, e7 = username.indexOf("[");
 		return !(e7 < 0) && 1 < (eM = username.indexOf("]")) - e7 && eM - e7 <= 8 ? username.substring(e7 + 1, eM).toUpperCase().trim() : null
-	}, leaderboardFilter.parseClanFromPlayerName = this.w1;
+	}, __fx.leaderboardFilter.parseClanFromPlayerName = this.w1;
 	this.zE = function(od) {
 		for (var eb = Math.floor(.5 * od.length + .5), m3 = Math.floor(.5 * (eb - 1)), z = 0; z < m3; z++)
 			for (var ec = -1; ec < 2; ec += 2) {
@@ -2750,7 +2750,7 @@ function bt() {
 		}(kU, kV), this.qK(), 2 === kU && (aY.sQ.to = !0), 0 < kU))
 	}, this.xC = function(kU, kV) {
 		this.to() || (zu = kU, zv = kV, ds = performance.now())
-	}, hoveringTooltip.display = function(mouseX, mouseY) {
+	}, __fx.hoveringTooltip.display = function(mouseX, mouseY) {
 		var coordX = bC.gZ(mouseX),
 			coordY = bC.gb(mouseY),
 			coord = bC.eg(coordX, coordY),
@@ -2993,8 +2993,8 @@ function bv() {
 		a0v(200, L(30, [w3]), 94, 0, p.mL, p.mr, -1, !1)
 	}, this.vS = function(a1L) {
 		if (a1.e2 === a1L && !a1.jn)
-			wins_counter++, window.localStorage.setItem("fx_winCount", wins_counter),
-			a0v(0, "Your Win Count is now " + wins_counter, 3, a1L, p.mL, p.mI, -1, !0);
+			__fx.wins.count++, window.localStorage.setItem("fx_winCount", __fx.wins.count),
+			a0v(0, "Your Win Count is now " + __fx.wins.count, 3, a1L, p.mL, p.mI, -1, !0);
 		aD.iQ(a1L, 2), a1.jN < 100 ? a0v(0, L(24, [aV.a1G[a1L]]), 3, a1L, p.mL, p.mI, -1, !0) : a0v(0, L(31, [aV.a1G[a1L]]), 3, a1L, p.mL, p.mI, -1, !0)
 	}, this.a0N = function(dy) {
 		var od, a1M = "(" + bC.eQ(dy >> 2) + ", " + bC.eS(dy >> 2) + ")",
@@ -3333,8 +3333,8 @@ function bz() {
 	this.setAbsolutePercentage = function(newPercentage) {
 		hf = newPercentage;
 	};
-	keybindFunctions.setAbsolute = this.setAbsolutePercentage;
-	keybindFunctions.setRelative = (arg1) => aE.xO(arg1);
+	__fx.keybindFunctions.setAbsolute = this.setAbsolutePercentage;
+	__fx.keybindFunctions.setRelative = (arg1) => aE.xO(arg1);
 
 	function a37(xo) {
 		return !(1 < xo && 1 === hf || (1 < xo && xo * hf - hf < 1 / 1024 ? xo = (hf + 1 / 1024) / hf : xo < 1 && hf - xo * hf < 1 / 1024 && (xo = (hf - 1 / 1024) / hf), hf = bB.oV(hf * xo, 1 / 1024, 1), a2x(), 0))
@@ -3804,14 +3804,14 @@ function c3() {
 		a4w = 1;
 	var leaderboardHasChanged = true;
 	this.playerPos = a1.e2;
-	leaderboardFilter.setUpdateFlag = () => leaderboardHasChanged = true;
+	__fx.leaderboardFilter.setUpdateFlag = () => leaderboardHasChanged = true;
 
 	function updateFilteredLb() {
 		if (!leaderboardHasChanged) return;
-		leaderboardFilter.filteredLeaderboard = leaderboardFilter.playersToInclude
+		__fx.leaderboardFilter.filteredLeaderboard = __fx.leaderboardFilter.playersToInclude
 			.map(id => j8[id]).sort((a, b) => a - b);
 		leaderboardHasChanged = false;
-		this.playerPos = leaderboardFilter.filteredLeaderboard.indexOf(j8[a1.e2]);
+		this.playerPos = __fx.leaderboardFilter.filteredLeaderboard.indexOf(j8[a1.e2]);
 	}
 
 	function a4y() {
@@ -3820,33 +3820,33 @@ function c3() {
 			a4b.fillRect(0, 0, a4V, a4g),
 			a4b.fillStyle = p.mH,
 			a4b.fillRect(0, a4g, a4V, a2c - a4g);
-		if (leaderboardFilter.enabled) updateFilteredLb();
-		var playerPos = (leaderboardFilter.enabled ?
+		if (__fx.leaderboardFilter.enabled) updateFilteredLb();
+		var playerPos = (__fx.leaderboardFilter.enabled ?
 			this.playerPos :
 			j8[a1.e2]
 		);
-		if (leaderboardFilter.hoveringOverTabs) a4q = -1;
-		if (leaderboardFilter.enabled && a4q >= leaderboardFilter.filteredLeaderboard.length) a4q = -1;
+		if (__fx.leaderboardFilter.hoveringOverTabs) a4q = -1;
+		if (__fx.leaderboardFilter.enabled && a4q >= __fx.leaderboardFilter.filteredLeaderboard.length) a4q = -1;
 		playerPos >= position && a50(playerPos - position, p.mg),
 			0 !== j8[a1.e2] && 0 === position && a50(0, p.n5),
 			-1 !== a4q && a50(a4q, p.mM),
 			a4b.fillStyle = p.mH,
 			//console.log("drawing", a4q),
-			a4b.clearRect(0, a2c - leaderboardFilter.tabBarOffset, a4V, leaderboardFilter.tabBarOffset);
-		a4b.fillRect(0, a2c - leaderboardFilter.tabBarOffset, a4V, leaderboardFilter.tabBarOffset);
+			a4b.clearRect(0, a2c - __fx.leaderboardFilter.tabBarOffset, a4V, __fx.leaderboardFilter.tabBarOffset);
+		a4b.fillRect(0, a2c - __fx.leaderboardFilter.tabBarOffset, a4V, __fx.leaderboardFilter.tabBarOffset);
 		a4b.fillStyle = p.mL,
 			a4b.fillRect(0, a4g, a4V, 1),
-			a4b.fillRect(0, a2c - leaderboardFilter.tabBarOffset, a4V, 1),
-			leaderboardFilter.drawTabs(a4b, a4V, a2c - leaderboardFilter.tabBarOffset, p.mg),
+			a4b.fillRect(0, a2c - __fx.leaderboardFilter.tabBarOffset, a4V, 1),
+			__fx.leaderboardFilter.drawTabs(a4b, a4V, a2c - __fx.leaderboardFilter.tabBarOffset, p.mg),
 			a4b.fillRect(0, 0, a4V, bR.uH),
 			a4b.fillRect(0, 0, bR.uH, a2c),
 			a4b.fillRect(a4V - bR.uH, 0, bR.uH, a2c),
 			a4b.fillRect(0, a2c - bR.uH, a4V, bR.uH), a4b.font = a4W, b2.ow.textBaseline(a4b, 1), b2.ow.textAlign(a4b, 1), a4b.fillText(L(86), Math.floor((a4V + a4g - 22) / 2), Math.floor(a4e + a4X / 2));
-		playerList.drawButton(a4b, 12, 12, a4g - 22);
+		__fx.playerList.drawButton(a4b, 12, 12, a4g - 22);
 		var eb, fp = playerPos < position + a4Z - 1 ? 1 : 2;
 
-		if (leaderboardFilter.enabled) {
-			let result = leaderboardFilter.filteredLeaderboard;
+		if (__fx.leaderboardFilter.enabled) {
+			let result = __fx.leaderboardFilter.filteredLeaderboard;
 			if (position !== 0 && position >= result.length - a4Z)
 				position = (result.length > a4Z ? result.length : a4Z) - a4Z;
 			//if (position >= result.length) position = result.length - 1;
@@ -3910,7 +3910,7 @@ function c3() {
 				.height = a2c, a4b = a4a.getContext("2d", {
 					alpha: !0
 				}), a4e = .025 * a4V, a4X = .16 * a4V, a4f = 0 * a4V, a4g = Math.floor(.45 * a4e + a4X), a4h = (a2c - a4X - 2 * a4e - a4f) / a4Z,
-				a4a.height = a2c += a4h, leaderboardFilter.tabBarOffset = Math.floor(a4h * 1.3), leaderboardFilter.verticalClickThreshold = a2c - leaderboardFilter.tabBarOffset, leaderboardFilter.windowWidth = a4V,
+				a4a.height = a2c += a4h, __fx.leaderboardFilter.tabBarOffset = Math.floor(a4h * 1.3), __fx.leaderboardFilter.verticalClickThreshold = a2c - __fx.leaderboardFilter.tabBarOffset, __fx.leaderboardFilter.windowWidth = a4V,
 				a4W = b2.ow.q5(1, Math.floor(.55 * a4X)), a4v = Math.floor((m.n.uE() ? .67 : .72) * a4h), a4Y = b2.ow.q5(0, a4v), a4b.font = a4Y, a4i = Math.floor(.04 * a4V), a4j = Math.floor((m.n.uE() ? .195 : .18) * a4V), a4c = Math.floor(a4b
 					.measureText("00920600").width), a4b.font = a4W, a4k = a4V - a4i, !dH) {
 				a4b.font = a4Y;
@@ -3939,23 +3939,23 @@ function c3() {
 			for (var z = a4Z - 1; 0 <= z; z--) a4n[z] = kf[z], a4o[z] = aV.g6[kf[z]];
 			a4n[a4Z] = j8[a1.e2], a4o[a4Z] = aV.g6[a1.e2];
 			leaderboardHasChanged = true;
-		}, leaderboardFilter.scrollToTop = function() {
+		}, __fx.leaderboardFilter.scrollToTop = function() {
 			position = 0;
 		}, this.gV = function(eP, eR) {
-			return !!uG(eP, eR) && ((utils.isPointInRectangle(eP, eR, bR.gap + 12, bR.gap + 12, a4g - 22, a4g - 22) && playerList.display(aV.w2), true) &&
-				!(eR - bR.gap > leaderboardFilter.verticalClickThreshold && leaderboardFilter.handleMouseDown(eP - bR.gap)) && (a4r = bU.ds, a4s = !0, a4t = a4u = a5H(eR), b9.xW() && (eP = a3I(-1, a4u, a4Z), a4q !== (eP = eP === a4Z ? -1 :
-					eP)) && (a4q = eP, a4y(), bU.dO = !0)), !0)
-		}, leaderboardFilter.repaintLeaderboard = function() {
+			return !!uG(eP, eR) && ((__fx.utils.isPointInRectangle(eP, eR, bR.gap + 12, bR.gap + 12, a4g - 22, a4g - 22) && __fx.playerList.display(aV.w2), true) &&
+				!(eR - bR.gap > __fx.leaderboardFilter.verticalClickThreshold && __fx.leaderboardFilter.handleMouseDown(eP - bR.gap)) && (a4r = bU.ds, a4s = !0, a4t = a4u = a5H(eR), b9.xW() && (eP = a3I(-1, a4u, a4Z), a4q !== (eP = eP === a4Z ? -
+					1 : eP)) && (a4q = eP, a4y(), bU.dO = !0)), !0)
+		}, __fx.leaderboardFilter.repaintLeaderboard = function() {
 			a4y(), bU.dO = !0;
 		},
 		this.wq = function(eP, eR) {
-			if (utils.isPointInRectangle(eP, eR, bR.gap + 12, bR.gap + 12, a4g - 22, a4g - 22)) {
-				playerList.hoveringOverButton === false && (playerList.hoveringOverButton = true, a4y(), bU.dO = !0);
+			if (__fx.utils.isPointInRectangle(eP, eR, bR.gap + 12, bR.gap + 12, a4g - 22, a4g - 22)) {
+				__fx.playerList.hoveringOverButton === false && (__fx.playerList.hoveringOverButton = true, a4y(), bU.dO = !0);
 			} else {
-				playerList.hoveringOverButton === true && (playerList.hoveringOverButton = false, a4y(), bU.dO = !0);
+				__fx.playerList.hoveringOverButton === true && (__fx.playerList.hoveringOverButton = false, a4y(), bU.dO = !0);
 			}
-			if (leaderboardFilter.setHovering(
-					utils.isPointInRectangle(eP, eR, bR.gap, bR.gap + leaderboardFilter.verticalClickThreshold, leaderboardFilter.windowWidth, leaderboardFilter.tabBarOffset), eP - bR.gap
+			if (__fx.leaderboardFilter.setHovering(
+					__fx.utils.isPointInRectangle(eP, eR, bR.gap, bR.gap + __fx.leaderboardFilter.verticalClickThreshold, __fx.leaderboardFilter.windowWidth, __fx.leaderboardFilter.tabBarOffset), eP - bR.gap
 				)) return;
 			var dt, a5G = a5H(eR);
 			return a4s ? (dt = position, (position = a3I(0, position += a4t - a5G, a1.eF - a4Z)) !== dt && (a5G = (a5G = a3I(-1, a4t = a5G, a4Z)) !== a4Z && uG(eP, eR) ? a5G : -1, a4q = a5G, a4y(), bU.dO = !0), !0) : (a5G = (a5G = a3I(-1, a5G,
@@ -3965,9 +3965,9 @@ function c3() {
 			a4s = !1;
 			var a5G = a5H(eR);
 			var isEmptySpace = false;
-			return b9.xW() && -1 !== a4q && (a4q = -1, a4y(), bU.dO = !0), bU.ds - a4r < 350 && a4u === a5G && -1 !== (a5G = (a5G = a3I(-1, a5G, a4Z)) !== a4Z && uG(eP, eR) ? a5G : -1) && (eP = (leaderboardFilter.enabled ? (updateFilteredLb(), kf[
-					leaderboardFilter.filteredLeaderboard[a5G + position] ?? (isEmptySpace = true, j8[a1.e2])]) : kf[a5G + position]), a5G === a4Z - 1 && (leaderboardFilter.enabled ? this.playerPos : j8[a1.e2]) >=
-				position + a4Z - 1 && (eP = a1.e2), !isEmptySpace && a1.iN && donationsTracker.displayHistory(eP, aV.w2, a1.jn), 0 !== aV.lI[eP] && !isEmptySpace) && a5.le(eP, 800, !1, 0), !0
+			return b9.xW() && -1 !== a4q && (a4q = -1, a4y(), bU.dO = !0), bU.ds - a4r < 350 && a4u === a5G && -1 !== (a5G = (a5G = a3I(-1, a5G, a4Z)) !== a4Z && uG(eP, eR) ? a5G : -1) && (eP = (__fx.leaderboardFilter.enabled ? (updateFilteredLb(),
+					kf[__fx.leaderboardFilter.filteredLeaderboard[a5G + position] ?? (isEmptySpace = true, j8[a1.e2])]) : kf[a5G + position]), a5G === a4Z - 1 && (__fx.leaderboardFilter.enabled ? this.playerPos : j8[a1.e2]) >=
+				position + a4Z - 1 && (eP = a1.e2), !isEmptySpace && a1.iN && __fx.donationsTracker.displayHistory(eP, aV.w2, a1.jn), 0 !== aV.lI[eP] && !isEmptySpace) && a5.le(eP, 800, !1, 0), !0
 		}, this.wt = function(eP, eR, deltaY) {
 			var a5I;
 			return !(a4s || a1.ln || (a5I = Math.max(Math.floor(Math.abs(deltaY) / 40), 1), !uG(eP, eR)) || (eP = (eP = a3I(-1, a5H(eR), a4Z)) === a4Z || b9.xW() ? -1 : eP, 0 < deltaY ? position < a1.eF - a4Z && (position += Math.min(a1.eF - a4Z -
@@ -3988,7 +3988,7 @@ function c4() {
 	}
 
 	function a5T(z) {
-		return z < 3 ? lE[z].toString() : 3 === z || 4 === z || 5 === z ? b2.w0.zB(lE[z] / 100, 2) : z < 7 ? b2.w0.z6(lE[z]) : z === 7 ? aJ.a4T(lE[7]) : z === 8 ? utils.getMaxTroops(aV.g6, a1.e2) : utils.getDensity(a1.e2)
+		return z < 3 ? lE[z].toString() : 3 === z || 4 === z || 5 === z ? b2.w0.zB(lE[z] / 100, 2) : z < 7 ? b2.w0.z6(lE[z]) : z === 7 ? aJ.a4T(lE[7]) : z === 8 ? __fx.utils.getMaxTroops(aV.g6, a1.e2) : __fx.utils.getDensity(a1.e2)
 	}
 
 	function a5S() {
@@ -4655,7 +4655,7 @@ function c8() {
 		8 !== dr && 10 !== dr && (qo.imageSmoothingEnabled = !0, this.tO(), 0 !== dr && (aG.qn(), aB.qn(), this.a7q(), bN.qn()), 0 !== dr && (2 === dr ? aO.qn() : 6 === dr ? aM.qn() : 7 === dr && aj.qn()), bO.qn(), i.qn())
 	}, this.tO = function() {
 		var a7s, a7r;
-		if (makeMainMenuTransparent) qo.clearRect(0, 0, an.t, an.ir);
+		if (__fx.makeMainMenuTransparent) qo.clearRect(0, 0, an.t, an.ir);
 		else bI.sL ? (a7r = an.t / bI.eT, a7s = an.ir / bI.eU, qo.setTransform(a7r = a7s < a7r ? a7r : a7s, 0, 0, a7r, Math.floor((an.t - a7r * bI.eT) / 2), Math.floor((an.ir - a7r * bI.eU) / 2)), qo.drawImage(bI.sN, 0, 0), qo.setTransform(1, 0,
 			0, 1, 0, 0), qo.fillStyle = p.mG) : qo.fillStyle = p.mC, qo.fillRect(0, 0, an.t, an.ir)
 	}, this.a7q = function() {
@@ -5654,7 +5654,7 @@ function cJ() {
 	function aCm(z, fontSize, eP, eR, h1) {
 		var ___id = z;
 		h1.fillText(aV.a1G[z], eP, eR), z < a1.jN && 2 !== aV.yb[z] || (z = fontSize / aC5[z], h1.fillRect(eP - .5 * z, eR + b2.ow.uK * fontSize, z, Math.max(1, .1 * fontSize)));
-		bY.dZ.data[7].value && settings.showPlayerDensity && (settings.coloredDensity && (h1.fillStyle = utils.textStyleBasedOnDensity(___id)), h1.fillText(utils.getDensity(___id), eP, eR + fontSize));
+		bY.dZ.data[7].value && __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (h1.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)), h1.fillText(__fx.utils.getDensity(___id), eP, eR + fontSize));
 	}
 
 	function aCl(h1, z, fontSize, aCf, aCg, aCh) {
@@ -5662,7 +5662,7 @@ function cJ() {
 		z = b2.w0.z6(aV.gK[z]);
 		aCh >> 1 & 1 ? (h1.lineWidth = .05 * fontSize, h1.strokeStyle = aCk(fontSize, aCh % 2), h1.strokeText(z, aCf, aCg)) : (1 < aCh && (h1.lineWidth = .12 * fontSize, h1.strokeStyle = aCk(fontSize, aCh), h1.strokeText(z, aCf, aCg)), h1.fillText(z,
 			aCf, aCg));
-		bY.dZ.data[7].value || settings.showPlayerDensity && (settings.coloredDensity && (h1.fillStyle = utils.textStyleBasedOnDensity(___id)), h1.fillText(utils.getDensity(___id), aCf, aCg + fontSize))
+		bY.dZ.data[7].value || __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (h1.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)), h1.fillText(__fx.utils.getDensity(___id), aCf, aCg + fontSize))
 	}
 
 	function aCo(aCf, aCg, fontSize, aCs, aCt, h1) {
@@ -5849,7 +5849,7 @@ function cL() {
 			"Pestilent Dominion;Wretched Realm;Damned Province;Corrupt Zone;Cursed Territory;Blight Nation;Haunted Expanse;Malevolent State;Ruined Empire;Contaminated Land;Epidemic Domain;Forsaken District;Abandoned Wasteland;Necrotic Enclave;Tainted Domain;Decayed Principality;Infested Region;Malignant Territory;Toxic Dominion;Ravaged Sector;Ghostly Realm;Plagued Commonwealth;Afflicted State;Desolate Nation;Apocalyptic Zone;Radiated Province;Deathly District;Pestilence Haven;Doom Territory;Malefic Expanse;Abandoned State;Cursed Haven;Corroded Zone;Hauntland;Noxious Nation;Infected Enclave;Ruinous Domain;Wasteland Woe;Rotten Principality;Voided Land;Vile Dominion;Catastrophic Region;Eerie Expanse;Desolation State;Forsaken Outpost;Contagion District;Damaged Province;Abhorrent Sector;Accursed Nation;Doomstruck Land;Radiant Ruin;Deathly Enclave;Malefic Dominion;Plague District;Infected Haven;Corrupt State;Pestilent Territory;Razed Realm;Haunted Wasteland;Toxic Sector;Cursed Dominion;Decaying Province;Forsaken Enclave;Ruinous Region;Malignant Haven;Infested State;Ghostly Nation;Tainted Territory;Damned District;Radiated Dominion;Desolate Expanse;Apocalyptic Land;Death Zone;Wretched State;Malevolent Haven;Plagued Nation;Noxious Domain;Voided Territory;Eerie Sector;Accursed Province;Necrotic District;Doom Haven;Haunt Realm;Rotten Nation;Forsaken Territory;Infected State;Abhorrent Expanse;Malignant Land;Toxic Dominion;Ruined District;Ghostland;Cursed Sector;Radiant Nation"
 			.split(";"), z = vW.length - 1; 0 <= z; z--)
 			for (eb = a1c.length - 1; 0 <= eb; eb--) vW[z] = vW[z].replace(a1c[eb], aDD[eb]);
-		if (settings.realisticNames) vW = realisticNames;
+		if (__fx.settings.realisticNames) vW = realisticNames;
 	}, this.v = function() {
 		var z;
 		if (ay.jh && ay.ji.aBC)
@@ -5909,8 +5909,8 @@ function cK() {
 		new Uint16Array(a1.eF), this.g6 = new Uint32Array(a1.eF), this.t8 = new Uint32Array(a1.eF), this.gK = new Uint32Array(a1.eF), this.fi = null, this.fw = null, this.fx = null, this.ei = null, this.oL = new Uint16Array(a1.eF), this.iK =
 		new Uint16Array(a1.eF), this.iL = new Uint16Array(a1.eF), this.vo = new Uint16Array(a1.eF), this.vu = new Uint8Array(a1.eF), this.yg = new Uint16Array(a1.eF), this.dH = function(tb) {
 			for (var z = tb.length - 1; 0 <= z; z--) this.a1G[z] = this.w2[z] = tb[z].name, this.yb[z] = tb[z].a9H;
-			this.lI.fill(0), this.ht.fill(0), this.hv.fill(0), this.hu.fill(0), this.hw.fill(0), this.g6.fill(0), this.t8.fill(0), this.gK.fill(0), donationsTracker.reset(), leaderboardFilter.reset(), this.fi = new Array(a1.eF), this.fw = new Array(
-				a1.eF), this.fx = new Array(a1.eF), this.ei = new Array(a1.eF), this.oL.fill(0), this.iK.fill(0), this.iL.fill(0), this.vo.fill(0), this.vu.fill(0), this.yg.fill(0)
+			this.lI.fill(0), this.ht.fill(0), this.hv.fill(0), this.hu.fill(0), this.hw.fill(0), this.g6.fill(0), this.t8.fill(0), this.gK.fill(0), __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), this.fi = new Array(a1.eF), this.fw =
+				new Array(a1.eF), this.fx = new Array(a1.eF), this.ei = new Array(a1.eF), this.oL.fill(0), this.iK.fill(0), this.iL.fill(0), this.vo.fill(0), this.vu.fill(0), this.yg.fill(0)
 		}
 }
 
@@ -7043,7 +7043,7 @@ function aFc() {
 			i.j(12)
 		}, p.mH, !1),
 		new l("FX Client settings", function() {
-			WindowManager.openWindow("settings");
+			__fx.WindowManager.openWindow("settings");
 		}, "rgba(0, 0, 20, 0.5")
 	], aG6 = new pg(bY.dZ.data[122]);
 	for (var z = 0; z < aHj.length; z++) aHj[z].button.style.position = "absolute";
@@ -7075,11 +7075,11 @@ function aFc() {
 		aG6.d.style.font = b2.ow.q5(0, b2.ow.yT(.08 * aHH.ir)), b2.ow.p8(aG6.d, 5)
 	}, this.qn = function() {
 		if (aN.a7q(), aG.qn(), aB.qn(), bN.qn(), aP.qP()) {
-			if (settings.displayWinCounter) {
+			if (__fx.settings.displayWinCounter) {
 				const size = Math.floor(aHH.t * 0.03);
 				qo.font = b2.ow.q5(1, size);
 				qo.fillStyle = "#ffffff";
-				const text = "Win count: " + wins_counter;
+				const text = "Win count: " + __fx.wins.count;
 				const textLength = qo.measureText(text).width;
 				qo.textAlign = "left";
 				qo.textBaseline = "middle";
@@ -7577,7 +7577,7 @@ function aFZ() {
 		}, p.mu)]))
 	}), new l(L(301), function() {
 		i.j(4, 1, new k(L(301), dT + "<br><a href='" + bA.aIV + "' target='_blank'>" + bA.aIV + "</a>" +
-			"<br><br><b>" + "FX Client v" + fx_version + " " + fx_update + "<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a>" +
+			"<br><br><b>" + "FX Client v" + __fx.version + "<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a>" +
 			"<br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></b>", !0, [new l(L(13), function() {
 				i.j(1)
 			}, p.mu)]))
@@ -8442,7 +8442,7 @@ function cX() {
 	function aLU(aLW) {
 		var t, ir, aLY, q7, a32;
 		if (!(0 < an.pj)) return q7 = aLT(document.documentElement.clientWidth), a32 = aLT(window.visualViewport && 2 !== m.id ? window.visualViewport.height : document.documentElement.clientHeight), t = q7, ir = a32, aLY = 0 !== m.id || t < ir ?
-			700 : 1200, aLY = Math.min(aLY / ((t + ir) / 2), 1), aLY = 0 === bY.dZ.data[1].value ? 2 * aLY / 3 : Math.min(aLY + (bY.dZ.data[1].value - 1) * (1 - aLY) / 2, 1), an.p2 = (window.devicePixelRatio || 1) * aLY, hoveringTooltip
+			700 : 1200, aLY = Math.min(aLY / ((t + ir) / 2), 1), aLY = 0 === bY.dZ.data[1].value ? 2 * aLY / 3 : Math.min(aLY + (bY.dZ.data[1].value - 1) * (1 - aLY) / 2, 1), an.p2 = (window.devicePixelRatio || 1) * aLY, __fx.hoveringTooltip
 			.canvasPixelScale = an.p2, aLW && !aLP ? (aLP = !0, document.body.removeChild(wp)) : aLP && (aLP = !1, document.body.appendChild(wp)), t = Math.floor(.5 + q7 * an.p2), ir = Math.floor(.5 + a32 * an.p2), t !== an.t || ir !== an.ir ? (
 				an.t = t, an.ir = ir, an.min = a4U(t, ir), an.max = a17(t, ir), an.oy = bB.ek(t + ir, 2), an.qi = t / ir, wp.width = t, wp.height = ir, wp.style.width = q7 + "px", wp.style.height = a32 + "px", aLR = bU.ds + 1e3, 1) : void 0
 	}
@@ -8450,7 +8450,7 @@ function cX() {
 		this.t = aLT(document.documentElement.clientWidth) + 2, this.ir = aLT(document.documentElement.clientHeight) + 2
 	}, this.dH = function() {
 		ed = 1, wp = document.getElementById("canvasA"), (qo = wp.getContext("2d", {
-			alpha: makeMainMenuTransparent
+			alpha: __fx.makeMainMenuTransparent
 		})).imageSmoothingEnabled = !1, aLU(0)
 	}, this.iC = function() {
 		at.iC(), 50 <= ++ed && resize(0), -1 === aLR || bU.ds < aLR || (aLR = -1, 2e3 * ++aLS >= bU.ds + 8e3 ? console.log("error 3748") : m.n.setState(15))
@@ -8966,7 +8966,7 @@ function() {
 	}, this.oN = function(player, hf) {
 		player === a1.e2 && (this.lE[0] += hf, this.lE[1]++, this.lE[12] += bE.eq[1], this.lE[13] += bE.eq[0])
 	}, this.nn = function(player, nQ) {
-		donationsTracker.logDonation(player, nQ, bE.eq[0]);
+		__fx.donationsTracker.logDonation(player, nQ, bE.eq[0]);
 		player === a1.e2 && (aA.nn(bE.eq[0], bE.eq[1], nQ), this.lE[12] += bE.eq[1], this.lE[16] += bE.eq[0]), nQ === a1.e2 && (aA.a1d(bE.eq[0], player), this.lE[10] += bE.eq[0])
 	}, this.iC = function() {
 		0 < this.ed-- || this.aON()
@@ -9104,7 +9104,7 @@ function aOo() {
 	this.qn = function() {
 		if (0 !== bF.kt.a1m && (qo.globalAlpha = Math.min(bF.kt.a1m / 580, 1), qo.drawImage(bF.kt.aOr, 1 + aF.tP(), 1 + aF.tQ()), qo.globalAlpha = 1, a1.gd)) {
 			for (var lk = hg / hh, ll = hi / hh, ly = (an.t + hg) / hh, lz = (an.ir + hi) / hh, fp = bF.kt.aOs * hh, aOt = bF.kt.aOt, z = a1.jN - 1; 0 <= z; z--) ! function(z, fp, lk, ll, ly, lz, aOt) {
-				var highlight = settings.highlightClanSpawns && clanFilter.inOwnClan[z];
+				var highlight = __fx.settings.highlightClanSpawns && __fx.clanFilter.inOwnClan[z];
 				if (highlight) fp *= 2;
 				0 === aV.lI[z] || 0 === aV.g6[z] || (ly = an.t * ((aV.ht[z] + aV.hu[z] + 1) / 2 - lk) / (ly - lk) - .5 * fp, lk = an.ir * ((aV.hv[z] + aV.hw[z] + 1) / 2 - ll) / (lz - ll) - .5 * fp, ly > an.t) || lk > an.ir || ly < -fp || lk <
 					-fp || (qo.setTransform(highlight ? hh * 2 : hh, 0, 0, highlight ? hh * 2 : hh, ly, lk), qo.drawImage(aOt[a1.iN ? bV.eG[z] : 1], 0, 0))
@@ -9131,7 +9131,7 @@ function aOn() {
 	}
 
 	function aOE(z, h1, y6, gu) {
-		var eP, y, highlight = settings.highlightClanSpawns && clanFilter.inOwnClan[z];
+		var eP, y, highlight = __fx.settings.highlightClanSpawns && __fx.clanFilter.inOwnClan[z];
 		if (highlight) gu *= 2;
 		0 !== aV.lI[z] && 0 !== aV.g6[z] && (eP = aV.ht[z] + aV.hu[z] + 1 - gu - 2 >> 1, y = aV.hv[z] + aV.hw[z] + 1 - gu - 2 >> 1,
 			highlight ? h1.drawImage(y6[a1.iN ? bV.eG[z] : z < a1.jN ? 1 : 0], eP, y, gu, gu) :
