@@ -46,7 +46,7 @@ function bb(bc) {
 
 function d0() {
 	this.dW = 1068, this.dH = function() {
-		dS = 2, dU = 33, dT = "15 Sep 2024 [1.99.7.8]", x = true, y = function() {
+		dS = 2, dU = 33, dT = "9 Oct 2024 [1.99.7.9]", x = true, y = function() {
 			try {
 				return window.self !== window.top
 			} catch (d) {
@@ -1023,9 +1023,9 @@ function oZ() {
 	this.oa = [], this.ob = document.createElement("div"), this.oc = function(od, marginTop) {
 		var title = document.createElement("h2");
 		title.textContent = od, title.style.margin = "0", title.style.marginBottom = "0.6em", marginTop && (title.style.marginTop = marginTop), title.style.fontSize = "1.4em", title.style.overflowWrap = "break-word", this.ob.appendChild(title)
-	}, this.oe = function(od) {
+	}, this.oe = function(od, marginBottom) {
 		var og = document.createElement("p");
-		return og.textContent = od, og.style.fontSize = "0.75em", og.style.lineHeight = "1.2em", og.style.marginBottom = "0", this.ob.appendChild(og), og
+		return og.textContent = od, og.style.fontSize = "0.75em", og.style.lineHeight = "1.2em", og.style.marginBottom = marginBottom || "0", this.ob.appendChild(og), og
 	}, this.oh = function(od) {
 		var oi = document.createElement("p");
 		return oi.textContent = od, oi.style.fontSize = "1em", oi.style.marginBottom = "0", oi.style.whiteSpace = "pre-wrap", oi.style.overflowWrap = "break-word", this.ob.appendChild(oi), oi
@@ -1120,7 +1120,7 @@ function pR(pS, pT, pU) {
 function pW(pX, title, pD) {
 	function click() {
 		var value = 1 - pX.value;
-		this.textContent = (value ? "🟢 " : "⚪ ") + title, bY.pY.pZ(pX.o0, value), pD(value)
+		this.textContent = (value ? "🟢 " : "⚪ ") + title, void 0 !== pX.o0 && bY.pY.pZ(pX.o0, value), pD(value)
 	}
 	var d;
 	title = title || L(6), pD = pD || function() {}, this.d = document.createElement("p"), (d = this.d).textContent = (pX.value ? "🟢 " : "⚪ ") + title, d.style.margin = "0", d.style.marginBottom = "0.5em", d.style.cursor = "pointer", d
@@ -1147,13 +1147,13 @@ function pd(pe) {
 function pg(pX, type, ph, pi) {
 	var d;
 	this.d = document.createElement("input"), (d = this.d).type = type ? "number" : "text", d.id = "input" + (pX.title || pX.o0), d.value = pX.value, d.style.width = "100%", d.style.userSelect = "none", d.style.outline = "none", d.style.resize =
-		"none", d.style.border = "inherit", d.style.font = "inherit", d.style.color = p.mL, d.style.backgroundColor = p.mE, d.style.fontSize = "1em", d.style.padding = "0.1em 0.2em", -1 !== pX.o0 && (d.addEventListener("focus", function() {
-			an.pj++
+		"none", d.style.border = "inherit", d.style.font = "inherit", d.style.color = p.mL, d.style.backgroundColor = p.mE, d.style.fontSize = "1em", d.style.padding = "0.1em 0.2em", d.addEventListener("focus", function() {
+			an.pj++, console.log("focus " + an.pj)
 		}), d.addEventListener("blur", function() {
-			an.pj--, bY.pY.pZ(pX.o0, d.value)
+			an.pj--, console.log("blur " + an.pj), -1 !== pX.o0 && bY.pY.pZ(pX.o0, d.value)
 		}), d.addEventListener("keypress", function(event) {
-			"Enter" === event.key && (event.preventDefault(), bY.pY.pZ(pX.o0, d.value), ph ? ph() : d.blur())
-		}), pi) && d.addEventListener("input", function(d) {
+			"Enter" === event.key && (event.preventDefault(), -1 !== pX.o0 && bY.pY.pZ(pX.o0, d.value), ph ? ph() : d.blur())
+		}), pi && d.addEventListener("input", function(d) {
 			pi(d)
 		})
 }
@@ -1389,7 +1389,7 @@ function r0() {
 		r4(0, 1, 0, 5), r4(1, 1, 1), r4(2, 0), r5(3, 2), r4(4, 1), r5(5, 2, "Trebuchet MS", 1), r4(6, 0), r4(7, 0, 0), r4(8, 0), r4(9, 1, 1), r4(10, 1), r4(11, 1, 1), r5(12, 2, navigator.language), r6(100), r5(100, 2), r5(101, 2), r5(102, 2), r5(
 			103, 2), r5(104, 2), r5(105, 2), r5(106, 2), r4(107), r4(108), r4(109), r5(110, 2), r4(111), r4(112), r4(113), r5(114, 2), r4(115), r5(116, 2), r4(117, 1), r5(118, 2, "", 2), r4(119, 1, 0, 1), r5(120, 2), r4(121, 1, ~~(262144 *
 			Math.random())), r5(122, 2, "Player " + Math.floor(1e3 * Math.random())), r4(123), r5(124), r4(125, 1), r5(126, 2), r4(127, 0, 1), r4(128), r4(129), r4(130), r4(131), r4(132), r5(133, 2), r4(134, 0, 5), r5(135, 2), r5(136, 2), r4(
-			137), r4(138), r4(139), r4(140), r4(141), r4(142), r4(143), r4(144), r5(145, 2), r4(146), r4(147), r5(148, 2), r4(149), r4(150, 0, 1), r5(151, 2), r4(152, 0, 5), r6(180), r4(180, 0), r4(181, 0)
+			137), r4(138), r4(139), r4(140), r4(141), r4(142), r4(143), r4(144), r5(145, 2), r4(146), r4(147), r5(148, 2), r4(149), r4(150, 0, 1), r5(151, 2), r4(152, 0, 5), r4(153, 1), r4(154, 1), r6(180), r4(180, 0), r4(181, 0)
 	}, this.pZ = function(o0, value) {
 		this.data[o0].value = value
 	}, this.da = function(o0, value) {
@@ -2630,7 +2630,7 @@ function zK() {
 		a1.gd = !1;
 		for (var z = 0; z < a1.jN; z++) 0 !== aV.lI[z] && 0 === aV.g6[z] && a6.tM(z);
 		0 !== aV.lI[a1.e2] ? (bS.lE[7] = aV.g6[a1.e2], bS.lE[8] = aV.gK[a1.e2], aE.zL(), aJ.zM(), a1.gR || a5.ld(aV.ht[a1.e2] - 5, aV.hv[a1.e2] - 5, aV.hu[a1.e2] + 5, aV.hw[a1.e2] + 5), ai.dH()) : aK.show(!1, !1, !1, !0), aA.zN(18), aU.zO(), aU
-			.l1(!0), bF.kt.zP(), a1.oH = null, bQ.zQ = !0, bQ.zR(), a1.jn && m.n.setState(1)
+			.l1(!0), bF.kt.zP(), a8.qK(), a1.oH = null, bQ.zQ = !0, bQ.zR(), a1.jn && m.n.setState(1)
 	}
 }
 
@@ -4297,7 +4297,7 @@ function a6M() {
 		"{0} has been conquered by {1}.", "{0} has left the game.", "{0} has surrendered.", "{0} has joined the game.", "{10} players have been conquered.", "{10} players have left the game.", "{10} players have surrendered.", "Next Contest: ",
 		"YOU HAVE CONQUERED", "YOU HAVE BEEN CONQUERED BY", "THE GAME HAS BEEN WON BY", "MAP:", "{0} has called the peace vote.", "{0} has voted for peace.", "{0} has rejected peace.", "second played", "seconds played", "LEADERBOARD", "Humans",
 		"Players", "Bots", "Spectators", "Threshold", "Percentage", "Growth", "Income", "Time", "Hint: Click on a boat to send it to a new location.", "Hint: The top 9 emojis are ordered by usage.", "{0} still needs to be conquered!",
-		"A neutral pixel at position ({10}, {11}) still needs to be conquered!", "Loading", "Back", "Joined", "Skipped", "Multiplayer", "Single Player", "other: ", "Custom Map", "Reset", "Maps", "Start", "You", "1 Player", "{10} Players",
+		"A neutral pixel at position ({10}, {11}) still needs to be conquered!", "Loading", "Back", "Joined", "Skipped", "Multiplayer", "Single Player", "other: ", "File", "Reset", "Maps", "Start", "You", "1 Player", "{10} Players",
 		"White Arena", "Black Arena", "Island", "Mountains", "Desert", "Swamp", "Snow", "Cliffs", "Pond", "Halo", "Europe", "World", "Caucasia", "Africa", "Middle East", "Scandinavia", "North America", "South America", "Asia", "Australia",
 		"Island Kingdom", "Refresh", "Public Profile", "🧈 Gold", "Account Balance: ",
 		"Play more multiplayer games to earn gold. Accounts without gold will be deleted after some days of grace. Each day, you will lose 0.50 gold or 0.01% of your balance, whichever amount is higher.",
@@ -4973,7 +4973,7 @@ function c9() {
 		qo.lineWidth = bR.uH, b2.ow.textAlign(qo, 1), b2.ow.textBaseline(qo, 1);
 		var q7 = (a96[2] - 3 * bR.gap) / 4,
 			a32 = a96[2] / 6;
-		if (a7g(a96[0], a96[1], q7, a32, "rgba(128,0,0,0.75)", .25, L(101), -1, -1), a7g(a96[0] + q7 + bR.gap, a96[1], q7, a32, "rgba(128,0,128,0.75)", .16, L(107), -1, -1), a7g(a96[0] + 2 * (q7 + bR.gap), a96[1], q7, a32, "rgba(" + (ay.jh ?
+		if (a7g(a96[0], a96[1], q7, a32, "rgba(128,0,0,0.75)", .25, L(101), -1, -1), a7g(a96[0] + q7 + bR.gap, a96[1], q7, a32, "rgba(128,0,128,0.75)", .25, L(107), -1, -1), a7g(a96[0] + 2 * (q7 + bR.gap), a96[1], q7, a32, "rgba(" + (ay.jh ?
 				128 : 0) + ",128,128,0.75)", .25, ay.jh ? L(108) : L(109), -1, -1), a7g(a96[0] + a96[2] - q7, a96[1], q7, a32, "rgba(0,128,0,0.75)", .25, L(110), -1, -1), !ay.jh) {
 			for (var ll, a9K = a96[2] / 10, q7 = (a96[2] - a9K - 2 * bR.gap) / 2, z = 0; z < this.jp.length; z++) ll = a96[1] + a32 + bR.gap + z * (a9K + bR.gap), a7g(a96[0], ll, a9K, a9K, 1 < this.jp.length ? "rgba(128,0,0,0.75)" :
 				"rgba(90,90,90,0.75)", 0, null, -1), 1 < this.jp.length && a9L(a96[0], ll, a9K, !1), a7g(a96[0] + a9K + bR.gap, ll, q7, a9K, p.mI, .4, this.a9M(z), this.jp[z].eL, -1), a7g(a96[0] + a96[2] - q7, ll, q7, a9K, p.mI, .4, this.a9N(
@@ -7157,9 +7157,9 @@ function aHg(data) {
 			for (var qH, max = min = parseInt(data.data[0][0]), z = 1; z < eI; z++) var aI6 = parseInt(data.data[z][0]),
 				min = Math.min(aI6, min),
 				max = Math.max(aI6, max);
-			i.j(8, 0, new q0(21, {
+			qH = hF < 0 ? min + hF : max + 1, console.log(i.a9d().aFX), i.j(8, i.a9d().aFX, new q0(21, {
 				qG: data.qG,
-				qH: qH = hF < 0 ? min + hF : max + 1,
+				qH: qH,
 				qI: qH + Math.abs(hF)
 			}))
 		}
@@ -9639,7 +9639,7 @@ function cZ() {
 			q7 = Math.floor((this.a96[2] - 3 * gap) / 2);
 		for (qo.lineWidth = bR.uH, b2.ow.textAlign(qo, 1), b2.ow.textBaseline(qo, 1), qo.fillStyle = p.mI, qo.fillRect(this.a96[0], this.a96[1] + a32, this.a96[2], this.a96[3] - a32), qo.fillStyle = p.my, qo.fillRect(this.a96[0], this.a96[1],
 				this.a96[2], a32), qo.strokeStyle = p.mL, qo.strokeRect(this.a96[0], this.a96[1], this.a96[2], this.a96[3]), qo.fillStyle = p.mL, qo.fillRect(this.a96[0], this.a96[1] + a32, this.a96[2], 2), qo.font = b2.ow.q5(1, .48 * a32), qo
-			.fillText("Maps", Math.floor(this.a96[0] + this.a96[2] / 2), Math.floor(this.a96[1] + .55 * a32)), qo.font = b2.ow.q5(1, .48 * a9K), z = aNJ - 1; 0 <= z; z--) ll = Math.floor(this.a96[1] + a32 + gap + z * (a9K + gap)), aPy(z, this
+			.fillText(L(109), Math.floor(this.a96[0] + this.a96[2] / 2), Math.floor(this.a96[1] + .55 * a32)), qo.font = b2.ow.q5(1, .48 * a9K), z = aNJ - 1; 0 <= z; z--) ll = Math.floor(this.a96[1] + a32 + gap + z * (a9K + gap)), aPy(z, this
 			.a96[0] + gap, ll, q7, a9K), aPy(z + aNJ, this.a96[0] + q7 + 2 * gap, ll, q7, a9K);
 		a9.a0g(Math.floor(this.a96[0] + this.a96[2] - .7 * a32), Math.floor(this.a96[1] + .3 * a32), Math.floor(.4 * a32)), qo.setTransform(1, 0, 0, 1, 0, 0)
 	}
