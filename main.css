@@ -34,9 +34,29 @@
 	z-index         : 10;
 }
 
-.window.flex {
+.flex {
+	display: flex;
+}
+
+.flex-column {
 	display       : flex;
 	flex-direction: column;
+}
+
+.customlobby-main {
+	display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+	gap: 10px;
+}
+
+.lobby-player {
+	margin: 5px;
+	width: 15rem;
+}
+
+.text-align-center {
+	text-align: center;
 }
 
 hr {
@@ -54,6 +74,13 @@ hr {
 	transition      : 0.2s;
 	border          : 1px solid #fff;
 	border-radius   : 5px;
+	margin          : 5px;
+}
+
+.window.settings button,
+.window.settings input,
+.window.settings select {
+	margin: 0px;
 }
 
 h1 {
@@ -96,16 +123,16 @@ td {
 #playerlist_content.clickable td:hover { background-color: #00ff0040; }
 
 tr.new {
-    animation: flashAnimation 0.4s ease-out;
+	animation: flashAnimation 0.4s ease-out;
 }
 
 @keyframes flashAnimation {
-    0% {
-        background-color: #ffffffaa;
-    }
-    100% {
-        background-color: transparent;
-    }
+	0% {
+		background-color: #ffffffaa;
+	}
+	100% {
+		background-color: transparent;
+	}
 }
 
 table {

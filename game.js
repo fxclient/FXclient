@@ -2117,7 +2117,10 @@ function dE() {
 	}
 
 	function wZ(title, w3, d) {
-		wa(d), i.j(4, 5, new k("⚠️ " + title, w3, !0))
+		wa(d), i.j(4, 5, new k("⚠️ " + title, {
+			"3249": "No servers found",
+			"4705": "Lobby not found"
+		} [w3] || w3, !0))
 	}
 
 	function wa(d) {
@@ -4569,7 +4572,7 @@ function c7() {
 	}
 
 	function a7b() {
-		0 === a7Q ? g.wc(3249) : (a7Q === aq.kt.a7X - 1 && (a7Q = -1), a7T())
+		0 === a7Q ? g.wc(3249) : 1 === a7Q && __fx.customLobby.isActive() ? (g.wc(3249), __fx.customLobby.setActive(false)) : (a7Q === aq.kt.a7X - 1 && (a7Q = -1), a7T())
 	}
 
 	function a7i(eR, a3m, a7h) {
@@ -4592,7 +4595,7 @@ function c7() {
 			ll = Math.floor(.5 * (an.ir - bR.gap - a1v - a7M)) + a1v + bR.gap;
 		return lk < eP && eP < lk + a2u && ll < eR && eR < ll + a7M && (this.xZ(), aL.wq(eP, eR, !1), !0)
 	}, this.xZ = function() {
-		aq.kt.wf(3260), i.kt.we()
+		aq.kt.wf(3260), __fx.customLobby.setActive(false), i.kt.we()
 	}, this.iC = function() {
 		6 === aN.wU() && (a7S ? bU.ds > lV + 12e3 && g.wc(3250) : bU.ds > lV + 12e3 && a7b(), 100 < (a7K += .07 * a7L * (a7K < 16 ? 5 + a7K : 84 < a7K ? 105 - a7K : 17)) ? (a7K = 100, a7L = -1) : a7K < 0 && (a7K = 0, a7L = 1), a7O = "rgba(0," +
 			Math.floor(190 - 1.9 * a7K) + "," + Math.floor(120 - 1.2 * a7K) + "," + (.4 + .004 * a7K) + ")", a7P = "rgba(0," + Math.floor(1.9 * a7K) + "," + Math.floor(1.2 * a7K) + "," + (.8 - .004 * a7K) + ")", bU.dO = !0)
@@ -4739,132 +4742,133 @@ function cY() {
 		return null
 	}
 	this.dI = function() {
-		a8K = [L(102), L(103), L(104), L(105)]
-	}, this.dH = function() {
-		var z;
-		for (a8Q = 0, a8H = -1, aN.setState(7), os = [], this.resize(), a8D = new Array(13), z = a8D.length; 0 <= z; z--) a8D[z] = document.createElement("canvas"), a8D[z].width = a8E, a8D[z].height = a8E;
-		for (z = 0; z < 7; z++) ! function(fj) {
-			var a8W, h1 = a8D[fj - 2].getContext("2d", {
-					alpha: !0
-				}),
-				a8V = 1.5 * Math.PI,
-				ed = Math.floor(.5 * a8E),
-				h3 = Math.floor(.48 * a8E);
-			h1.lineWidth = 2, h1.strokeStyle = p.mL, h1.clearRect(0, 0, a8E, a8E);
-			for (var z = 0; z < fj; z++) a8W = a8V + 2 * Math.PI / fj,
-				function(z, ed, h3, a8V, a8W, h1) {
-					h1.fillStyle = bV.a8a[z], h1.beginPath(), h1.arc(ed, ed, h3, a8V, a8W), h1.lineTo(ed, ed), h1.fill()
-				}(z + 1, ed, h3, a8V, a8W, h1), 0 !== z && a8Y(ed, h3, a8V, h1), a8V = a8W;
-			a8Y(ed, h3, 1.5 * Math.PI, h1),
-				function(ed, h3, h1) {
-					h1.beginPath(), h1.arc(ed, ed, h3, 0, 2 * Math.PI), h1.stroke()
-				}(ed, h3, h1)
-		}(z + 2);
-		a8T(7, aP.get(4)), a8U(8, aY.tl.u6 + aY.tl.uN), a8U(9, aY.tl.u6 + aY.tl.uL), a8U(10, 1024 - aY.tl.u3), a8T(11, aP.get(19)), a8T(12, aP.get(20)), bU.dO = !0
-	}, this.xY = function() {
-		this.wg(), aq.kt.wf(3240), aN.setState(0), i.j(5, 5)
-	}, this.wg = function() {
-		os = [], a8D = []
-	}, this.a1t = function() {
-		return a8J
-	}, this.resize = function() {
-		var a8c, sB, a3A, a8d;
-		for (a89 = [0, 0], a8F = [0, 0, 0, 0], a8P = m.n.uE() ? (a8I = Math.floor(.8 * .4 * an.oy), a8J = Math.floor(.56 * a8I), a8F[0] = bR.gap, an.t < an.ir ? (a8F[1] = a8J + 2 * bR.gap, a8F[2] = an.t - 3 * a8F[0], a8F[3] = an.ir - 3 * bR.gap -
-				a8J, a8N = Math.floor(.95 * a8J), a8O = Math.floor((an.t - a8I - bR.gap) / 2), Math.floor(bR.gap + a8J / 2)) : (a8F[1] = bR.gap, a8F[2] = an.t - 3 * bR.gap - a8I, a8F[3] = an.ir - 2 * bR.gap, a8N = Math.floor(.8 * a8I), a8F[
-				3] - a8J < a8I && (a8N = Math.floor(.8 * (a8F[3] - a8J)), a8N = a17(a8J, a8N)), a8O = Math.floor(an.t - a8I / 2 - bR.gap), a17(a8P = Math.floor(bR.gap + a8J + (a8F[3] - a8J) / 2), Math.floor(a8J + 2 * bR.gap + a8N / 2)))) : (a8I =
-				Math.floor(.2016 * an.oy), a8J = Math.floor(.56 * a8I), a8F[2] = Math.floor(.5 * an.t), a8F[3] = Math.floor(.5 * an.ir), a8F[1] = Math.floor(.45 * (an.ir - a8F[3])), a8F[0] = Math.floor((an.t - a8F[2]) / 2), a8N = Math.floor(.75 *
-					a8J), a8O = Math.floor(an.t / 2), Math.floor(a8F[1] + a8F[3] + (an.ir - a8F[3] - a8F[1]) / 2)), a8M = b2.ow.q5(1, .65 * a8J / 4), a8c = sB = 1; a8c * sB < os.length;) a8F[3] / (sB + 1) < a8F[2] / (a8c + 1) ? a8c++ : sB++;
-		a3A = (a8F[2] - (a8c - 1) * bR.gap) / a8c, a8d = (a8F[3] - (sB - 1) * bR.gap) / sB, a87 = a3A < a8d ? a3A : a8d, a88 = Math.floor(a87), a8C = b2.ow.q5(1, .5 * a87 / 5), a89[0] = a8c, a89[1] = sB, a8A = a8F[0] + Math.floor((a8F[2] - a89[
-			0] * a87 - (a89[0] - 1) * bR.gap) / 2), a8B = a8F[1] + Math.floor((a8F[3] - a89[1] * a87 - (a89[1] - 1) * bR.gap) / 2)
-	}, this.pZ = function(a8e, fo) {
-		var z, dt, h0, eI = os.length;
-		for (a8L = a8e, z = 0; z < fo.length; z++) h0 = a8f(fo[z].fz, fo[z].a8g), os.push({
-			a8h: fo[z].id,
-			zZ: fo[z].zZ,
-			za: fo[z].a8i,
-			a8j: fo[z].fz,
-			a8k: fo[z].a8g,
-			joined: fo[z].a8l,
-			a1q: fo[z].a7h,
-			a8m: fo[z].a8m,
-			h0: h0,
-			a8n: fo[z].a8n,
-			a8o: fo[z].a8o,
-			a8p: fo[z].a8p
-		});
-		for (z = eI - 1; 0 <= z; z--) os.shift();
-		if (-1 !== a8H)
-			for (dt = a8H, a8H = -1, z = os.length - 1; 0 <= z; z--)
-				if (os[z].a8h === dt) {
-					a8H = dt;
-					break
-				}(os.length > a8Q || os.length < a8Q) && (a8Q = os.length, this.resize()), this.a8q(), bU.dO = !0
-	}, this.a8q = function() {
-		for (var z = os.length - 1; 0 <= z; z--) null === os[z].h0 && setTimeout(a8r, 0)
-	}, this.gV = function(eP, eR) {
-		return 4 * ((eP - a8O) * (eP - a8O) + (eR - a8P) * (eR - a8P)) <= a8N * a8N ? (this.xY(), aL.wq(eP, eR, !1), !0) : function(eP, eR) {
-			var eb, ec, lk, ll;
-			if (0 !== os.length) {
-				var z = 0;
-				for (ll = a8B, ec = 0; ec < a89[1]; ec++) {
-					for (lk = a8A, eb = 0; eb < a89[0]; eb++) {
-						if (lk < eP && eP < lk + a87 && ll < eR && eR < ll + a87) return aq.a7Z.a8u(os[z].a8h), a8H = os[z].a8h !== a8H ? os[z].a8h : -1, bU.dO = !0;
-						if (++z >= os.length) return !1;
-						lk += a87 + bR.gap
+			a8K = [L(102), L(103), L(104), L(105)]
+		}, this.dH = function() {
+			var z;
+			for (a8Q = 0, a8H = -1, aN.setState(7), os = [], this.resize(), a8D = new Array(13), z = a8D.length; 0 <= z; z--) a8D[z] = document.createElement("canvas"), a8D[z].width = a8E, a8D[z].height = a8E;
+			for (z = 0; z < 7; z++) ! function(fj) {
+				var a8W, h1 = a8D[fj - 2].getContext("2d", {
+						alpha: !0
+					}),
+					a8V = 1.5 * Math.PI,
+					ed = Math.floor(.5 * a8E),
+					h3 = Math.floor(.48 * a8E);
+				h1.lineWidth = 2, h1.strokeStyle = p.mL, h1.clearRect(0, 0, a8E, a8E);
+				for (var z = 0; z < fj; z++) a8W = a8V + 2 * Math.PI / fj,
+					function(z, ed, h3, a8V, a8W, h1) {
+						h1.fillStyle = bV.a8a[z], h1.beginPath(), h1.arc(ed, ed, h3, a8V, a8W), h1.lineTo(ed, ed), h1.fill()
+					}(z + 1, ed, h3, a8V, a8W, h1), 0 !== z && a8Y(ed, h3, a8V, h1), a8V = a8W;
+				a8Y(ed, h3, 1.5 * Math.PI, h1),
+					function(ed, h3, h1) {
+						h1.beginPath(), h1.arc(ed, ed, h3, 0, 2 * Math.PI), h1.stroke()
+					}(ed, h3, h1)
+			}(z + 2);
+			a8T(7, aP.get(4)), a8U(8, aY.tl.u6 + aY.tl.uN), a8U(9, aY.tl.u6 + aY.tl.uL), a8U(10, 1024 - aY.tl.u3), a8T(11, aP.get(19)), a8T(12, aP.get(20)), bU.dO = !0
+		}, this.xY = function() {
+			this.wg(), aq.kt.wf(3240), __fx.customLobby.setActive(false), aN.setState(0), i.j(5, 5)
+		},
+		__fx.customLobby.setLeaveFunction(() => this.xY()), this.wg = function() {
+			os = [], a8D = []
+		}, this.a1t = function() {
+			return a8J
+		}, this.resize = function() {
+			var a8c, sB, a3A, a8d;
+			for (a89 = [0, 0], a8F = [0, 0, 0, 0], a8P = m.n.uE() ? (a8I = Math.floor(.8 * .4 * an.oy), a8J = Math.floor(.56 * a8I), a8F[0] = bR.gap, an.t < an.ir ? (a8F[1] = a8J + 2 * bR.gap, a8F[2] = an.t - 3 * a8F[0], a8F[3] = an.ir - 3 * bR.gap -
+					a8J, a8N = Math.floor(.95 * a8J), a8O = Math.floor((an.t - a8I - bR.gap) / 2), Math.floor(bR.gap + a8J / 2)) : (a8F[1] = bR.gap, a8F[2] = an.t - 3 * bR.gap - a8I, a8F[3] = an.ir - 2 * bR.gap, a8N = Math.floor(.8 * a8I), a8F[
+					3] - a8J < a8I && (a8N = Math.floor(.8 * (a8F[3] - a8J)), a8N = a17(a8J, a8N)), a8O = Math.floor(an.t - a8I / 2 - bR.gap), a17(a8P = Math.floor(bR.gap + a8J + (a8F[3] - a8J) / 2), Math.floor(a8J + 2 * bR.gap + a8N / 2)))) : (a8I =
+					Math.floor(.2016 * an.oy), a8J = Math.floor(.56 * a8I), a8F[2] = Math.floor(.5 * an.t), a8F[3] = Math.floor(.5 * an.ir), a8F[1] = Math.floor(.45 * (an.ir - a8F[3])), a8F[0] = Math.floor((an.t - a8F[2]) / 2), a8N = Math.floor(.75 *
+						a8J), a8O = Math.floor(an.t / 2), Math.floor(a8F[1] + a8F[3] + (an.ir - a8F[3] - a8F[1]) / 2)), a8M = b2.ow.q5(1, .65 * a8J / 4), a8c = sB = 1; a8c * sB < os.length;) a8F[3] / (sB + 1) < a8F[2] / (a8c + 1) ? a8c++ : sB++;
+			a3A = (a8F[2] - (a8c - 1) * bR.gap) / a8c, a8d = (a8F[3] - (sB - 1) * bR.gap) / sB, a87 = a3A < a8d ? a3A : a8d, a88 = Math.floor(a87), a8C = b2.ow.q5(1, .5 * a87 / 5), a89[0] = a8c, a89[1] = sB, a8A = a8F[0] + Math.floor((a8F[2] - a89[
+				0] * a87 - (a89[0] - 1) * bR.gap) / 2), a8B = a8F[1] + Math.floor((a8F[3] - a89[1] * a87 - (a89[1] - 1) * bR.gap) / 2)
+		}, this.pZ = function(a8e, fo) {
+			var z, dt, h0, eI = os.length;
+			for (a8L = a8e, z = 0; z < fo.length; z++) h0 = a8f(fo[z].fz, fo[z].a8g), os.push({
+				a8h: fo[z].id,
+				zZ: fo[z].zZ,
+				za: fo[z].a8i,
+				a8j: fo[z].fz,
+				a8k: fo[z].a8g,
+				joined: fo[z].a8l,
+				a1q: fo[z].a7h,
+				a8m: fo[z].a8m,
+				h0: h0,
+				a8n: fo[z].a8n,
+				a8o: fo[z].a8o,
+				a8p: fo[z].a8p
+			});
+			for (z = eI - 1; 0 <= z; z--) os.shift();
+			if (-1 !== a8H)
+				for (dt = a8H, a8H = -1, z = os.length - 1; 0 <= z; z--)
+					if (os[z].a8h === dt) {
+						a8H = dt;
+						break
+					}(os.length > a8Q || os.length < a8Q) && (a8Q = os.length, this.resize()), this.a8q(), bU.dO = !0
+		}, this.a8q = function() {
+			for (var z = os.length - 1; 0 <= z; z--) null === os[z].h0 && setTimeout(a8r, 0)
+		}, this.gV = function(eP, eR) {
+			return 4 * ((eP - a8O) * (eP - a8O) + (eR - a8P) * (eR - a8P)) <= a8N * a8N ? (this.xY(), aL.wq(eP, eR, !1), !0) : function(eP, eR) {
+				var eb, ec, lk, ll;
+				if (0 !== os.length) {
+					var z = 0;
+					for (ll = a8B, ec = 0; ec < a89[1]; ec++) {
+						for (lk = a8A, eb = 0; eb < a89[0]; eb++) {
+							if (lk < eP && eP < lk + a87 && ll < eR && eR < ll + a87) return aq.a7Z.a8u(os[z].a8h), a8H = os[z].a8h !== a8H ? os[z].a8h : -1, bU.dO = !0;
+							if (++z >= os.length) return !1;
+							lk += a87 + bR.gap
+						}
+						ll += a87 + bR.gap
 					}
-					ll += a87 + bR.gap
 				}
-			}
-			return !1
-		}(eP, eR)
-	}, this.qn = function() {
-		var eb, ec, eP, h3, zoom, z = 0,
-			eR = a8B;
-		if (qo.imageSmoothingEnabled = !0, qo.lineWidth = 3, h3 = Math.floor(.5 * a8N), qo.fillStyle = p.mG, qo.beginPath(), qo.arc(a8O, a8P, h3, 0, 2 * Math.PI), qo.fill(), qo.strokeStyle = p.mL, qo.beginPath(), qo.arc(a8O, a8P, h3, 0, 2 * Math
-				.PI), qo.stroke(), h3 = aP.get(0).height, zoom = .6 * a8N / h3, qo.setTransform(zoom, 0, 0, zoom, Math.floor(a8O - .56 * zoom * aP.get(0).width), Math.floor(a8P - .5 * zoom * h3)), qo.drawImage(aP.get(0), 0, 0), qo.setTransform(1,
-				0, 0, 1, 0, 0), function() {
-				qo.fillStyle = p.mG, qo.fillRect(an.t - a8I - bR.gap, bR.gap, a8I, a8J), 0 <= a8H ? (qo.fillStyle = p.md, qo.fillRect(an.t - a8I - bR.gap, bR.gap, a8I, Math.floor(.25 * a8J))) : (qo.fillStyle = p.n4, qo.fillRect(an.t - a8I - bR
-					.gap, bR.gap + Math.floor(.25 * a8J), a8I, Math.floor(.25 * a8J)));
-				qo.strokeStyle = p.mL, qo.strokeRect(an.t - a8I - bR.gap, bR.gap, a8I, a8J), qo.fillStyle = p.mL, qo.font = a8M, b2.ow.textBaseline(qo, 1);
-				for (var eR, a8y = Math.floor(.04 * a8I), a0j = Math.floor(.08 * a8J), z = 3; 0 <= z; z--) eR = Math.floor(bR.gap + (z + 1) * (a8J + 2 * a0j) / 5 - a0j), b2.ow.textAlign(qo, 0), qo.fillText(a8K[z], an.t - a8I - bR.gap + a8y, eR),
-					b2.ow.textAlign(qo, 2), qo.fillText(b2.w0.z6(a8L[z]), an.t - bR.gap - a8y, eR)
-			}(), 0 !== os.length)
-			for (ec = 0; ec < a89[1]; ec++) {
-				for (eP = a8A, eb = 0; eb < a89[0]; eb++) {
-					if (! function(z, eP, eR) {
-							var zoom, ec, a8z, a91, a92;
-							null === os[z].h0 ? (qo.fillStyle = p.mG, qo.fillRect(eP, eR, a88, a88)) : (zoom = a88 / 128, qo.setTransform(zoom, 0, 0, zoom, eP, eR), qo.drawImage(os[z].h0, 0, 0), qo.setTransform(1, 0, 0, 1, 0, 0));
-							a8H === os[z].a8h ? (function(eP, eR) {
-								var q7 = Math.floor(.2 * a88),
-									q8 = Math.floor(.3 * q7);
-								qo.fillStyle = p.mf, qo.fillRect(eP + a88 - q7, eR, q7, q7), qo.fillStyle = p.mC, qo.fillRect(eP + a88 - q7, eR, 2, q7), qo.fillRect(eP + a88 - q7, eR + q7 - 2, q7, 2), a9.a0g(eP + a88 - q7 + q8, eR + q8,
-									q7 - 2 * q8), qo.setTransform(1, 0, 0, 1, 0, 0)
-							}(eP, eR), qo.lineWidth = 3, qo.fillStyle = p.mf) : qo.fillStyle = p.mE;
-							a91 = Math.floor(a87 / 4), qo.fillRect(eP, eR, a91, a91), a92 = Math.floor(eR + .8 * a87), qo.fillRect(eP, a92, a88, Math.floor(a87 / 5)),
-								function(z, eP, eR) {
-									var zoom;
-									os[z].za && (z = aP.get(4), zoom = .5 * a87 / z.width, qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + (a87 - zoom * z.width) / 2), Math.floor(eR + (a87 - zoom * z.height) / 2)), qo.globalAlpha = .6, qo
-										.drawImage(z, 0, 0), qo.globalAlpha = 1, qo.setTransform(1, 0, 0, 1, 0, 0))
-								}(z, eP, eR);
-							var a94 = new Array(os[z].a8n);
-							if (os[z].a8n) {
-								for (ec = a8z = 0; ec < os[z].a8n; ec++) os[z].a8o[ec] = b2.tU.yI(os[z].a8o[ec], a8C, .4 * a87), a94[ec] = ("" === os[z].a8o[ec] ? L(106) : "[" + os[z].a8o[ec] + "]: ") + os[z].a8p[ec];
-								for (ec = 0; ec < os[z].a8n; ec++) a8z = Math.max(a8z, aD.measureText(a94[ec], a8C));
-								a8z += .05 * a87, ec = 5 === os[z].a8n, a91 = ec ? eR + a91 : Math.max(eR + .8 * a87 - .11 * os[z].a8n * a87, eR + a91), a92 = ec ? a92 : Math.min(a91 + .11 * os[z].a8n * a87 + .05 * a87, a92), qo.fillRect(eP, a91,
-									a8z, a92 - a91)
-							}
-							for (qo.font = a8C, b2.ow.textBaseline(qo, 1), b2.ow.textAlign(qo, 0), qo.fillStyle = p.mz, qo.fillText(os[z].joined.toString(), Math.floor(eP + .22 * a87), Math.floor(eR + .9 * a87)), qo.fillStyle = p.mL, ec = 0; ec <
-								os[z].a8n; ec++) qo.fillText(a94[os[z].a8n - ec - 1], Math.floor(eP + .03 * a87), Math.floor(eR + .77 * a87 - .11 * ec * a87));
-							b2.ow.textAlign(qo, 2), qo.fillStyle = p.ml, qo.fillText(os[z].a1q.toString(), Math.floor(eP + .81 * a87), Math.floor(eR + .9 * a87)), qo.strokeStyle = a8H === os[z].a8h ? p.me : p.mN, qo.strokeRect(eP, eR, a88, a88),
-								a92 = Math.floor(.16 * a87), zoom = a92 / a8E, qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + .33 * a92), Math.floor(eR + .33 * a92)), a8D.length > os[z].zZ && qo.drawImage(a8D[os[z].zZ], 0, 0);
-							qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + .15 * a92), Math.floor(eR + a87 - 1.08 * a92)), qo.drawImage(a8D[11], 0, 0), qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + a87 - 1.05 * a92), Math.floor(eR + a87 -
-								1.15 * a92)), qo.drawImage(a8D[12], 0, 0), qo.setTransform(1, 0, 0, 1, 0, 0)
-						}(z, Math.floor(eP), Math.floor(eR)), ++z >= os.length) return;
-					eP += a87 + bR.gap
+				return !1
+			}(eP, eR)
+		}, this.qn = function() {
+			var eb, ec, eP, h3, zoom, z = 0,
+				eR = a8B;
+			if (qo.imageSmoothingEnabled = !0, qo.lineWidth = 3, h3 = Math.floor(.5 * a8N), qo.fillStyle = p.mG, qo.beginPath(), qo.arc(a8O, a8P, h3, 0, 2 * Math.PI), qo.fill(), qo.strokeStyle = p.mL, qo.beginPath(), qo.arc(a8O, a8P, h3, 0, 2 * Math
+					.PI), qo.stroke(), h3 = aP.get(0).height, zoom = .6 * a8N / h3, qo.setTransform(zoom, 0, 0, zoom, Math.floor(a8O - .56 * zoom * aP.get(0).width), Math.floor(a8P - .5 * zoom * h3)), qo.drawImage(aP.get(0), 0, 0), qo.setTransform(1,
+					0, 0, 1, 0, 0), function() {
+					qo.fillStyle = p.mG, qo.fillRect(an.t - a8I - bR.gap, bR.gap, a8I, a8J), 0 <= a8H ? (qo.fillStyle = p.md, qo.fillRect(an.t - a8I - bR.gap, bR.gap, a8I, Math.floor(.25 * a8J))) : (qo.fillStyle = p.n4, qo.fillRect(an.t - a8I - bR
+						.gap, bR.gap + Math.floor(.25 * a8J), a8I, Math.floor(.25 * a8J)));
+					qo.strokeStyle = p.mL, qo.strokeRect(an.t - a8I - bR.gap, bR.gap, a8I, a8J), qo.fillStyle = p.mL, qo.font = a8M, b2.ow.textBaseline(qo, 1);
+					for (var eR, a8y = Math.floor(.04 * a8I), a0j = Math.floor(.08 * a8J), z = 3; 0 <= z; z--) eR = Math.floor(bR.gap + (z + 1) * (a8J + 2 * a0j) / 5 - a0j), b2.ow.textAlign(qo, 0), qo.fillText(a8K[z], an.t - a8I - bR.gap + a8y, eR),
+						b2.ow.textAlign(qo, 2), qo.fillText(b2.w0.z6(a8L[z]), an.t - bR.gap - a8y, eR)
+				}(), 0 !== os.length)
+				for (ec = 0; ec < a89[1]; ec++) {
+					for (eP = a8A, eb = 0; eb < a89[0]; eb++) {
+						if (! function(z, eP, eR) {
+								var zoom, ec, a8z, a91, a92;
+								null === os[z].h0 ? (qo.fillStyle = p.mG, qo.fillRect(eP, eR, a88, a88)) : (zoom = a88 / 128, qo.setTransform(zoom, 0, 0, zoom, eP, eR), qo.drawImage(os[z].h0, 0, 0), qo.setTransform(1, 0, 0, 1, 0, 0));
+								a8H === os[z].a8h ? (function(eP, eR) {
+									var q7 = Math.floor(.2 * a88),
+										q8 = Math.floor(.3 * q7);
+									qo.fillStyle = p.mf, qo.fillRect(eP + a88 - q7, eR, q7, q7), qo.fillStyle = p.mC, qo.fillRect(eP + a88 - q7, eR, 2, q7), qo.fillRect(eP + a88 - q7, eR + q7 - 2, q7, 2), a9.a0g(eP + a88 - q7 + q8, eR + q8,
+										q7 - 2 * q8), qo.setTransform(1, 0, 0, 1, 0, 0)
+								}(eP, eR), qo.lineWidth = 3, qo.fillStyle = p.mf) : qo.fillStyle = p.mE;
+								a91 = Math.floor(a87 / 4), qo.fillRect(eP, eR, a91, a91), a92 = Math.floor(eR + .8 * a87), qo.fillRect(eP, a92, a88, Math.floor(a87 / 5)),
+									function(z, eP, eR) {
+										var zoom;
+										os[z].za && (z = aP.get(4), zoom = .5 * a87 / z.width, qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + (a87 - zoom * z.width) / 2), Math.floor(eR + (a87 - zoom * z.height) / 2)), qo.globalAlpha = .6, qo
+											.drawImage(z, 0, 0), qo.globalAlpha = 1, qo.setTransform(1, 0, 0, 1, 0, 0))
+									}(z, eP, eR);
+								var a94 = new Array(os[z].a8n);
+								if (os[z].a8n) {
+									for (ec = a8z = 0; ec < os[z].a8n; ec++) os[z].a8o[ec] = b2.tU.yI(os[z].a8o[ec], a8C, .4 * a87), a94[ec] = ("" === os[z].a8o[ec] ? L(106) : "[" + os[z].a8o[ec] + "]: ") + os[z].a8p[ec];
+									for (ec = 0; ec < os[z].a8n; ec++) a8z = Math.max(a8z, aD.measureText(a94[ec], a8C));
+									a8z += .05 * a87, ec = 5 === os[z].a8n, a91 = ec ? eR + a91 : Math.max(eR + .8 * a87 - .11 * os[z].a8n * a87, eR + a91), a92 = ec ? a92 : Math.min(a91 + .11 * os[z].a8n * a87 + .05 * a87, a92), qo.fillRect(eP, a91,
+										a8z, a92 - a91)
+								}
+								for (qo.font = a8C, b2.ow.textBaseline(qo, 1), b2.ow.textAlign(qo, 0), qo.fillStyle = p.mz, qo.fillText(os[z].joined.toString(), Math.floor(eP + .22 * a87), Math.floor(eR + .9 * a87)), qo.fillStyle = p.mL, ec = 0; ec <
+									os[z].a8n; ec++) qo.fillText(a94[os[z].a8n - ec - 1], Math.floor(eP + .03 * a87), Math.floor(eR + .77 * a87 - .11 * ec * a87));
+								b2.ow.textAlign(qo, 2), qo.fillStyle = p.ml, qo.fillText(os[z].a1q.toString(), Math.floor(eP + .81 * a87), Math.floor(eR + .9 * a87)), qo.strokeStyle = a8H === os[z].a8h ? p.me : p.mN, qo.strokeRect(eP, eR, a88, a88),
+									a92 = Math.floor(.16 * a87), zoom = a92 / a8E, qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + .33 * a92), Math.floor(eR + .33 * a92)), a8D.length > os[z].zZ && qo.drawImage(a8D[os[z].zZ], 0, 0);
+								qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + .15 * a92), Math.floor(eR + a87 - 1.08 * a92)), qo.drawImage(a8D[11], 0, 0), qo.setTransform(zoom, 0, 0, zoom, Math.floor(eP + a87 - 1.05 * a92), Math.floor(eR + a87 -
+									1.15 * a92)), qo.drawImage(a8D[12], 0, 0), qo.setTransform(1, 0, 0, 1, 0, 0)
+							}(z, Math.floor(eP), Math.floor(eR)), ++z >= os.length) return;
+						eP += a87 + bR.gap
+					}
+					eR += a87 + bR.gap
 				}
-				eR += a87 + bR.gap
-			}
-	}
+		}
 }
 
 function c9() {
@@ -5909,8 +5913,9 @@ function cK() {
 		new Uint16Array(a1.eF), this.g6 = new Uint32Array(a1.eF), this.t8 = new Uint32Array(a1.eF), this.gK = new Uint32Array(a1.eF), this.fi = null, this.fw = null, this.fx = null, this.ei = null, this.oL = new Uint16Array(a1.eF), this.iK =
 		new Uint16Array(a1.eF), this.iL = new Uint16Array(a1.eF), this.vo = new Uint16Array(a1.eF), this.vu = new Uint8Array(a1.eF), this.yg = new Uint16Array(a1.eF), this.dH = function(tb) {
 			for (var z = tb.length - 1; 0 <= z; z--) this.a1G[z] = this.w2[z] = tb[z].name, this.yb[z] = tb[z].a9H;
-			this.lI.fill(0), this.ht.fill(0), this.hv.fill(0), this.hu.fill(0), this.hw.fill(0), this.g6.fill(0), this.t8.fill(0), this.gK.fill(0), __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), this.fi = new Array(a1.eF), this.fw =
-				new Array(a1.eF), this.fx = new Array(a1.eF), this.ei = new Array(a1.eF), this.oL.fill(0), this.iK.fill(0), this.iL.fill(0), this.vo.fill(0), this.vu.fill(0), this.yg.fill(0)
+			this.lI.fill(0), this.ht.fill(0), this.hv.fill(0), this.hu.fill(0), this.hw.fill(0), this.g6.fill(0), this.t8.fill(0), this.gK.fill(0), __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx
+				.customLobby.setActive(false), this.fi = new Array(a1.eF), this.fw = new Array(a1.eF), this.fx = new Array(a1.eF), this.ei = new Array(a1.eF), this.oL.fill(0), this.iK.fill(0), this.iL.fill(0), this.vo.fill(0), this.vu.fill(0), this
+				.yg.fill(0)
 		}
 }
 
@@ -6194,7 +6199,7 @@ function aDY() {
 			aEb = [130, 117, 106],
 			aEc = [12, 12, 68],
 			aEd = [270, 210, 1024, 28, 19, 33, 50, 8, 26, 3, 9];
-		this.sh = new Array(bI.aBG + 1), this.sh[0] = {
+		this.sh = new Array(bI.aBG + 1), __fx.customLobby.setMapInfo(this.sh), this.sh[0] = {
 			name: L(114),
 			t: 230,
 			ir: 230,
@@ -7044,7 +7049,10 @@ function aFc() {
 		}, p.mH, !1),
 		new l("FX Client settings", function() {
 			__fx.WindowManager.openWindow("settings");
-		}, "rgba(0, 0, 20, 0.5")
+		}, "rgba(0, 0, 20, 0.5)"),
+		new l("Join/Create custom lobby", function() {
+			__fx.customLobby.showJoinPrompt();
+		}, "rgba(20, 9, 77, 0.5)")
 	], aG6 = new pg(bY.dZ.data[122]);
 	for (var z = 0; z < aHj.length; z++) aHj[z].button.style.position = "absolute";
 
@@ -7071,6 +7079,7 @@ function aFc() {
 			a3h = (b2.ow.qN(aG6.d, eP, a6g, a3h, aHr), b2.ow.qN(aHj[4].button, eP + a3h + gap, a6g, aHr, aHr), .5 * (aHH.eR + aHH.ir - (a6g += aHr + gap) - gap));
 		b2.ow.qN(aHj[0].button, eP, a6g, t, a3h), b2.ow.qN(aHj[1].button, eP + t + gap, a6g, t, a3h), b2.ow.qN(aHj[2].button, eP, a6g + a3h + gap, t, a3h), b2.ow.qN(aHj[3].button, eP + t + gap, a6g + a3h + gap, t, a3h);
 		b2.ow.qN(aHj[5].button, eP, a6g + a3h * 2 + gap * 2, t * 2 + gap, a3h / 3);
+		b2.ow.qN(aHj[6].button, eP, a6g + a3h * 2.33 + gap * 3, t * 2 + gap, a3h / 3);
 		for (var z = 0; z < aHj.length; z++) aHj[z].button.style.font = b2.ow.q5(0, b2.ow.yT(.065 * aHH.ir)), b2.ow.p8(aHj[z].button, 5);
 		aG6.d.style.font = b2.ow.q5(0, b2.ow.yT(.08 * aHH.ir)), b2.ow.p8(aG6.d, 5)
 	}, this.qn = function() {
@@ -7423,38 +7432,43 @@ function aFk() {
 
 function aFT() {
 	this.dZ = {}, this.qJ = ["", "", ""], this.aFi = null, this.aFf = null, this.we = function() {
-		i.j(5, 5)
-	}, this.aHn = function() {
-		i.rX(), aO.dH()
-	}, this.aHm = function() {
-		i.rX(), aM.a7U(bY.dZ.data[10].value), aM.dH()
-	}, this.a6a = function() {
-		i.j(0 === aN.wU() ? 5 : 0)
-	}, this.aHE = function() {
-		if (1 === bY.dZ.data[130].value) i.j(8, i.a9d().aFX, new q0(24, {
-			aGn: bY.dZ.data[125].value,
-			qH: bY.dZ.data[128].value,
-			qI: bY.dZ.data[129].value
-		}));
-		else {
-			for (var ey = (ey = bY.dZ.data[126].value.split(",")).slice(0, 10), z = 0; z < ey.length; z++) ey[z] = ey[z].trim().slice(0, 7).toUpperCase();
-			1 === ey.length && 0 === ey[0].length && (ey = []), i.j(8, i.a9d().aFX, new q0(23, {
+			i.j(5, 5)
+		}, this.aHn = function() {
+			i.rX(), aO.dH()
+		}, this.aHm = function() {
+			i.rX(), aM.a7U(bY.dZ.data[10].value), aM.dH()
+		},
+		__fx.customLobby.setJoinFunction(() => {
+			i.rX();
+			aM.a7U(0);
+			aM.dH();
+		}), this.a6a = function() {
+			i.j(0 === aN.wU() ? 5 : 0)
+		}, this.aHE = function() {
+			if (1 === bY.dZ.data[130].value) i.j(8, i.a9d().aFX, new q0(24, {
 				aGn: bY.dZ.data[125].value,
-				vw: ey
-			}))
+				qH: bY.dZ.data[128].value,
+				qI: bY.dZ.data[129].value
+			}));
+			else {
+				for (var ey = (ey = bY.dZ.data[126].value.split(",")).slice(0, 10), z = 0; z < ey.length; z++) ey[z] = ey[z].trim().slice(0, 7).toUpperCase();
+				1 === ey.length && 0 === ey[0].length && (ey = []), i.j(8, i.a9d().aFX, new q0(23, {
+					aGn: bY.dZ.data[125].value,
+					vw: ey
+				}))
+			}
+		}, this.aHo = function(aFX, target) {
+			i.j(4, aFX, new k("Data Usage Information",
+				"Do you want your username and other data to be remembered for the next session?<br>The app might not function correctly if you decline data usage.<br>Please read our privacy policy for more information: <a href='" + bA.aIB +
+				"' target='_blank'>" + bA.aIB + "</a>", !1, [new l(L(13), function() {
+					i.j(aFX)
+				}), new l("✅ Accept", function() {
+					bY.pY.pZ(140, 1), 0 === target ? i.j(2, aFX) : i.j(8, aFX, new q0(target))
+				})]))
+		}, this.aIC = function() {
+			for (var z = 0; z < 3; z++) this.qJ[z] = b6.rs.ru(b7.o1(5));
+			this.qJ[1] = "[" + this.qJ[1] + "]", 5 === i.pz && i.a9d().a9e.pZ(this.qJ)
 		}
-	}, this.aHo = function(aFX, target) {
-		i.j(4, aFX, new k("Data Usage Information",
-			"Do you want your username and other data to be remembered for the next session?<br>The app might not function correctly if you decline data usage.<br>Please read our privacy policy for more information: <a href='" + bA.aIB +
-			"' target='_blank'>" + bA.aIB + "</a>", !1, [new l(L(13), function() {
-				i.j(aFX)
-			}), new l("✅ Accept", function() {
-				bY.pY.pZ(140, 1), 0 === target ? i.j(2, aFX) : i.j(8, aFX, new q0(target))
-			})]))
-	}, this.aIC = function() {
-		for (var z = 0; z < 3; z++) this.qJ[z] = b6.rs.ru(b7.o1(5));
-		this.qJ[1] = "[" + this.qJ[1] + "]", 5 === i.pz && i.a9d().a9e.pZ(this.qJ)
-	}
 }
 
 function k(title, ok, aID, aHx) {
@@ -7750,7 +7764,7 @@ function aIn() {
 		return aJ6[z].aIf && aJ4[z].a7S()
 	}, this.send = function(wR, a0) {
 		aJE(wR), aJ4[wR].send(a0)
-	}, this.x7 = function(wR) {
+	}, __fx.customLobby.setSendFunction(this.send), this.x7 = function(wR) {
 		8 === aN.wU() && (aJ6[wR].aJ8 = !0, aq.kx.jh = !0)
 	}, this.close = function(wR, aJI) {
 		di(wR) && aJ4[wR].close(aJI)
@@ -7775,7 +7789,7 @@ function aIo() {
 
 function aIv() {
 	this.aJO = function(wR, a0) {
-		b7.dH(a0), 0 === b7.size ? aq.kt.aJJ(wR, 3205) : ((0 === b7.o1(1) ? function(wR) {
+		b7.dH(a0), 0 === b7.size ? aq.kt.aJJ(wR, 3205) : __fx.customLobby.isCustomMessage(a0) || ((0 === b7.o1(1) ? function(wR) {
 			var aJS = b7.o1(6);
 			0 === aJS ? function(wR) {
 					if (0 === wR && 8 !== aN.wU()) {
@@ -8099,7 +8113,8 @@ function aJF() {
 	this.dH = function(o0, aKN) {
 		wR = o0, aFX = aKN;
 		o0 = aKM[0];
-		wR < aq.kt.a81 ? o0 += aq.kt.aJ5[wR] + aKM[1 + dS] : o0 += aq.kt.aJ5[0] + "/i" + (1 + dS) + (wR - aq.kt.a82) + "/", (b = new WebSocket(o0)).binaryType = "arraybuffer", b.onopen = aJG, b.onmessage = aKR, b.onclose = aJL, b.onerror = aKS
+		wR < aq.kt.a81 ? o0 += aq.kt.aJ5[wR] + aKM[1 + dS] : o0 += aq.kt.aJ5[0] + "/i" + (1 + dS) + (wR - aq.kt.a82) + "/", (b = new WebSocket(__fx.customLobby.isActive() && wR === 1 ? __fx.customLobby.getSocketURL() : o0)).binaryType =
+			"arraybuffer", b.onopen = aJG, b.onmessage = aKR, b.onclose = aJL, b.onerror = aKS
 	}, this.aKP = function() {
 		return b.readyState === b.CONNECTING
 	}, this.a7S = function() {
