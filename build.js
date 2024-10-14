@@ -115,7 +115,7 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 		// if a substitution string for the "word" is specified in the nameMappings, use it
 		if (nameMappings && nameMappings.hasOwnProperty(word)) return nameMappings[word];
 		// if the "word" is a number or is one of these specific words, ingore it
-		if (/^\d/.test(word) || ["return", "this", "var", "function", "Math"].includes(word)) return word;
+		if (/^\d/.test(word) || ["return", "this", "var", "function", "new", "Math", "WebSocket"].includes(word)) return word;
 		// for easy localizer function matching
 		else if (word === "___localizer") {
 			groups[word + (++localizerCount)] = groupNumberCounter++;

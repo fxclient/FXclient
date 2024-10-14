@@ -1,4 +1,14 @@
 var windows = {};
+const container = document.getElementById("windowContainer");
+function create(info) {
+    const window = document.createElement("div");
+    info.element = window;
+    window.className = "window" + (info.classes !== undefined ? " " + info.classes : " scrollable selectable");
+    window.style.display = "none";
+    container.appendChild(window);
+    add(info);
+    return window;
+}
 function add(newWindow) {
     windows[newWindow.name] = newWindow;
     windows[newWindow.name].isOpen = false;
@@ -17,11 +27,11 @@ function closeWindow(windowName) {
 };
 function closeAll() {
     Object.values(windows).forEach(function (windowObj) {
-        closeWindow(windowObj.name);
+        if (windowObj.closable !== false) closeWindow(windowObj.name);
     });
 };
 document.getElementById("canvasA").addEventListener("mousedown", closeAll);
 document.getElementById("canvasA").addEventListener("touchstart", closeAll, { passive: true });
 document.addEventListener("keydown", event => { if (event.key === "Escape") closeAll(); });
 
-export default { add, openWindow, closeWindow, closeAll }
+export default { create, add, openWindow, closeWindow, closeAll }

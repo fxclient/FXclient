@@ -50,14 +50,17 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
 		o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`);
 
 
-    { // Add settings button and win count
-        // add settings button
+    { // Add settings button, custom lobby button and win count
+        // add buttons
         replaceRawCode(`,new nQ("☰<br>"+__L(),function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1)]`,
             `,new nQ("☰<br>"+__L(),function(){aD6(3)},aa.ks),new nQ("",function(){at.d5(12)},aa.kg,!1),
-            new nQ("FX Client settings", function() { __fx.WindowManager.openWindow("settings"); }, "rgba(0, 0, 20, 0.5")]`)
-        // set settings button position
+            new nQ("FX Client settings", function() { __fx.WindowManager.openWindow("settings"); }, "rgba(0, 0, 20, 0.5)"),
+            new nQ("Join/Create custom lobby", function() { __fx.customLobby.showJoinPrompt(); }, "rgba(20, 9, 77, 0.5)")]`)
+        // set position
         replaceRawCode(`aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h);`,
-            `aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h); aZ.g5.vO(aD3[5].button, x, a3X + h * 2 + gap * 2, a0S * 2 + gap, h / 3);`);
+            `aZ.g5.vO(aD3[3].button,x+a0S+gap,a3X+h+gap,a0S,h);
+            aZ.g5.vO(aD3[5].button, x, a3X + h * 2 + gap * 2, a0S * 2 + gap, h / 3);
+            aZ.g5.vO(aD3[6].button, x, a3X + h * 2.33 + gap * 3, a0S * 2 + gap, h / 3);`);
         // render win count
         replaceRawCode(`if(_y.a4l(),_r.gI(),_m.gI(),aw.gI(),a0.g8()){ctx.imageSmoothingEnabled=!1;var iQ=a0.a4o("territorial.io"),kL=.84*aD4.gA/iQ.width;`,
             `if(_y.a4l(),_r.gI(),_m.gI(),aw.gI(),a0.g8()){
@@ -137,7 +140,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         `, ${dict.game}.${dict.gIsTeamGame} && __fx.donationsTracker.displayHistory($2, ${rawPlayerNames}, ${gIsSingleplayer}), $1 && !isEmptySpace $3`);
 
     // Reset donation history and leaderboard filter when a new game is started
-    replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"), "$& __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), ");
+    replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"), "$& __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.setActive(false), ");
 
     { // Player list and leaderboard filter tabs
         // Draw player list button
@@ -291,6 +294,37 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             if (highlight) es *= 2;
             0===dV.eg[a6]||0===dV.ev[a6]||(hQ=ay.ak*((dV.nu[a6]+dV.nw[a6]+1)/2-bK)/(hQ-bK)-.5*es,bK=ay.al*((dV.nv[a6]+dV.nx[a6]+1)/2-hP)/(hR-hP)-.5*es,hQ>ay.ak)||bK>ay.al||hQ<-es||bK<-es||(bI.setTransform(highlight?cz*2:cz,0,0,highlight?cz*2:cz,hQ,bK),`
         )
+    }
+
+    { // Custom lobbies
+        replaceRawCode("this.aHm=function(){i___.rX(),aM.a7U(bY.dZ.data[10].value),aM.init()}",
+            `this.aHm=function(){i___.rX(),aM.a7U(bY.dZ.data[10].value),aM.init()},
+            __fx.customLobby.setJoinFunction(() => { i___.rX(); aM.a7U(0); aM.init(); })`
+        )
+        replaceRawCode(`(socketId-aq.kt.a82)+"/",(socket=new WebSocket(url)`,
+            `(socketId-aq.kt.a82)+"/",(socket=new WebSocket(__fx.customLobby.isActive() && socketId === 1 ? __fx.customLobby.getSocketURL() : url)`)
+        replaceRawCode("this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)}",
+            "this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)},__fx.customLobby.setSendFunction(this.send)")
+        replaceRawCode("b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):",
+            "b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):__fx.customLobby.isCustomMessage(a0)||")
+        // set the custom lobby to inactive when clicking the "Back" button on the connection screen or leaving the lobby
+        replaceRawCode("this.xZ=function(){Sockets.kt.wf(3260),i___.kt.we()}",
+            "this.xZ=function(){Sockets.kt.wf(3260),__fx.customLobby.setActive(false),i___.kt.we()}")
+        replaceRawCode("this.xY=function(){this.wg(),Sockets.kt.wf(3240),aN.setState(0),i___.j(5,5)}",
+            `this.xY=function(){this.wg(),Sockets.kt.wf(3240),__fx.customLobby.setActive(false),aN.setState(0),i___.j(5,5)},
+            __fx.customLobby.setLeaveFunction(() => this.xY())`)
+        /* // if this is needed again, include a check for menu state === 6
+        replaceRawCode("this.wQ=function(wR,d){if(8===i.pz&&0===wR)if(4211===d)wS(d);",
+            "this.wQ=function(wR,d){ wR===1&&__fx.customLobby.isActive()&&__fx.customLobby.setActive(false); if(8===i.pz&&0===wR)if(4211===d)wS(d);")*/
+        // if the server is unreachable
+        replaceRawCode("0===a7Q?g.wc(3249):", "0===a7Q?g.wc(3249):1===a7Q&&__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):")
+        // error descriptions
+        const errors = { 3249: "No servers found", 4705: "Lobby not found" };
+        replaceRawCode(`i___.j(4,5,new k("⚠️ "+title,w3__,!0))`,
+            `i___.j(4,5,new k("⚠️ "+title, ${JSON.stringify(errors)}[w3__] || w3__,!0))`)
+        // map info (for the map selection menu)
+        replaceRawCode("this.info=new Array(Maps.totalMapCount+1),this.info[0]={name:__L(),",
+            "this.info=new Array(Maps.totalMapCount+1),__fx.customLobby.setMapInfo(this.info),this.info[0]={name:__L(),")
     }
 
     // Invalid hostname detection avoidance
