@@ -35,7 +35,7 @@
     <meta itemprop="image" content="https://fxclient.github.io/FXclient/assets/logo.png">
     
     <!-- FX Client CSS -->
-    <link rel="stylesheet" href="main.css?1728927690438">
+    <link rel="stylesheet" href="main.css?1728983851621">
     <!-- Game CSS -->
     <style>
         html,
@@ -70,6 +70,11 @@
             <button onclick="__fx.settingsManager.exportToFile()">Export</button>
         </footer>
     </div>
+    <div class="window flex-column" id="customLobbyJoinMenu" style="display: none">
+      <input type="text" id="lobbyCode" placeholder="Enter lobby code">
+      or
+      <button id="createLobbyButton">Create new lobby</button>
+    </div>
     <div class="window scrollable selectable" id="playerlist" style="display: none;">
         <h1>Player List</h1>
         <table><tbody id="playerlist_content"></tbody></table>
@@ -79,8 +84,8 @@
         <p id="donationhistory_note">Note: donations from bots are not shown here</p>
         <table><tbody id="donationhistory_content"></tbody></table>
     </div></span>
-    <script src="variables.js?1728927690438"></script>
-    <script src="fx.bundle.js?1728927690438"></script>
-    <script src="game.js?1728927690438"></script>
+    <script src="variables.js?1728983851621"></script>
+    <script src="fx.bundle.js?1728983851621"></script>
+    <script src="game.js?1728983851621"></script>
 </body>
 </html>
