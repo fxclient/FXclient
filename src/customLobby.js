@@ -14,6 +14,10 @@ const textDecoder = new TextDecoder();
     botCount: 512
 }*/
 
+WindowManager.add({
+    name: "lobbyJoinMenu",
+    element: document.getElementById("customLobbyJoinMenu")
+})
 const windowElement = WindowManager.create({
     name: "customLobby",
     classes: "scrollable selectable flex-column text-align-center",
@@ -90,14 +94,23 @@ function setSelectMenuOptions(options, element) {
 }
 
 function showJoinPrompt() {
-    const code = prompt("Enter a lobby code or leave blank to create a new lobby");
-    if (code === null) return;
-    currentCode = code;
-
-    //WindowManager.openWindow("customLobby");
+    WindowManager.openWindow("lobbyJoinMenu");
+}
+document.getElementById("lobbyCode").addEventListener("input", ({ target: input }) => {
+    if (input.value.length !== 5) return;
+    currentCode = input.value;
+    input.value = "";
+    WindowManager.closeWindow("lobbyJoinMenu");
     isActive = true;
     joinLobby();
-}
+});
+document.getElementById("createLobbyButton").addEventListener("click", () => {
+    currentCode = "";
+    WindowManager.closeWindow("lobbyJoinMenu");
+    isActive = true;
+    joinLobby();
+});
+
 function sendMessage(type, data) {
     const message = data !== undefined ? { t: type, d: data } : { t: type }
     const originalArray = textEncoder.encode(JSON.stringify(message));
@@ -120,6 +133,7 @@ function isCustomMessage(raw) {
     if (type === "lobby") {
         WindowManager.openWindow("customLobby");
         header.textContent = "Custom Lobby " + data.code;
+        currentCode = data.code;
         gameModeSelectMenu.value = data.options.mode.toString();
         mapSelectMenu.value = data.options.map.toString();
         displayPlayers(data.players);

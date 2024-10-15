@@ -43,6 +43,10 @@
 	flex-direction: column;
 }
 
+#customLobbyJoinMenu {
+	align-items: center;
+}
+
 .customlobby-main {
 	display: flex;
     justify-content: space-evenly;

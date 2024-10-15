@@ -30,7 +30,10 @@ function closeAll() {
         if (windowObj.closable !== false) closeWindow(windowObj.name);
     });
 };
-document.getElementById("canvasA").addEventListener("mousedown", closeAll);
+document.addEventListener("mousedown", (e) => {
+    // when clicking outside a window
+    if (!container.contains(e.target)) closeAll();
+}, { passive: true, capture: true })
 document.getElementById("canvasA").addEventListener("touchstart", closeAll, { passive: true });
 document.addEventListener("keydown", event => { if (event.key === "Escape") closeAll(); });
 

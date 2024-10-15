@@ -70,6 +70,11 @@
             <button onclick="__fx.settingsManager.exportToFile()">Export</button>
         </footer>
     </div>
+    <div class="window flex-column" id="customLobbyJoinMenu" style="display: none">
+      <input type="text" id="lobbyCode" placeholder="Enter lobby code">
+      or
+      <button id="createLobbyButton">Create new lobby</button>
+    </div>
     <div class="window scrollable selectable" id="playerlist" style="display: none;">
         <h1>Player List</h1>
         <table><tbody id="playerlist_content"></tbody></table>
