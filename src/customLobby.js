@@ -98,7 +98,7 @@ function showJoinPrompt() {
 }
 document.getElementById("lobbyCode").addEventListener("input", ({ target: input }) => {
     if (input.value.length !== 5) return;
-    currentCode = input.value;
+    currentCode = input.value.toLowerCase();
     input.value = "";
     WindowManager.closeWindow("lobbyJoinMenu");
     isActive = true;
