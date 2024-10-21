@@ -79,7 +79,7 @@ startButton.textContent = "Start game";
 leaveButton.textContent = "Leave lobby";
 startButton.addEventListener("click", startGame);
 leaveButton.addEventListener("click", () => leaveLobby());
-footer.append(leaveButton, startButton);
+footer.append(startButton, leaveButton);
 
 windowElement.append(header, main, footer);
 
@@ -134,13 +134,15 @@ function isCustomMessage(raw) {
         WindowManager.openWindow("customLobby");
         header.textContent = "Custom Lobby " + data.code;
         currentCode = data.code;
+        startButton.disabled = !data.isHost;
+        optionsContainer.className = data.isHost ? "" : "disabled";
         gameModeSelectMenu.value = data.options.mode.toString();
         mapSelectMenu.value = data.options.map.toString();
         displayPlayers(data.players);
     } else if (type === "addPlayer") addPlayer(data);
     else if (type === "removePlayer") {
         const index = data;
-        playerElements[index].remove();
+        playerElements[index].element.remove();
         playerElements.splice(index, 1);
         updatePlayerCount();
     } else if (type === "options") {
@@ -148,21 +150,31 @@ function isCustomMessage(raw) {
         const [option, value] = data;
         if (option === "mode") gameModeSelectMenu.value = value.toString();
         else if (option === "map") mapSelectMenu.value = value.toString();
+    } else if (type === "setHost") {
+        const index = data;
+        playerElements[index].hostBadge.className = "";
+    } else if (type === "host") {
+        startButton.disabled = false;
+        optionsContainer.className = "";
     }
     return true;
 }
-/** @type {HTMLDivElement[]} */
+/** @type {{ element: HTMLDivElement, hostBadge: HTMLSpanElement }[]} */
 let playerElements = [];
-/** @param {{ name: string }} player */
+/** @param {{ name: string, isHost: boolean }} player */
 function addPlayer(player) {
     const div = document.createElement("div");
     div.className = "lobby-player";
     div.textContent = player.name;
+    const badge = document.createElement("span");
+    badge.textContent = "Host";
+    badge.className = player.isHost ? "" : "d-none";
+    div.append(badge);
     playerList.append(div);
-    playerElements.push(div);
+    playerElements.push({ element: div, hostBadge: badge });
     updatePlayerCount();
 }
-/** @param {{ name: string }[]} players */
+/** @param {{ name: string, isHost: boolean }[]} players */
 function displayPlayers(players) {
     playerElements = [];
     playerList.innerHTML = "";
