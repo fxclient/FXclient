@@ -243,13 +243,11 @@ const settingsManager = new (function () {
     __fx.makeMainMenuTransparent = settings.customBackgroundUrl !== "";
   };
 
-  if (settings.useFullscreenMode && document.fullscreenEnabled) {
-    tryEnterFullscreen();
-  }
+  if (settings.useFullscreenMode) tryEnterFullscreen();
 })();
 
 export function tryEnterFullscreen() {
-  if (document.fullscreenElement !== null) return;
+  if (document.fullscreenElement !== null || !document.fullscreenEnabled) return;
   document.documentElement
     .requestFullscreen({ navigationUI: "hide" })
     .then(() => {
