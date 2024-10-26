@@ -34,8 +34,9 @@ FX Client is the first Territorial.io client, offering a better User Interface a
 
 #### The client has a settings menu, from which you can:
 
-13. Set a custom main menu background
-14. Create custom attack percentage keybinds
+13. Make fullscreen mode trigger automatically
+14. Set a custom main menu background
+15. Create custom attack percentage keybinds
 
 ## Building Locally
 
