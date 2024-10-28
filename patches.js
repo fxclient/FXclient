@@ -313,13 +313,12 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         replaceRawCode("this.xY=function(){this.wg(),Sockets.kt.wf(3240),aN.setState(0),i___.j(5,5)}",
             `this.xY=function(){this.wg(),Sockets.kt.wf(3240),__fx.customLobby.setActive(false),aN.setState(0),i___.j(5,5)},
             __fx.customLobby.setLeaveFunction(() => this.xY())`)
-        /* // if this is needed again, include a check for menu state === 6
         replaceRawCode("this.wQ=function(wR,d){if(8===i.pz&&0===wR)if(4211===d)wS(d);",
-            "this.wQ=function(wR,d){ wR===1&&__fx.customLobby.isActive()&&__fx.customLobby.setActive(false); if(8===i.pz&&0===wR)if(4211===d)wS(d);")*/
+            "this.wQ=function(wR,d){ wR===1&&__fx.customLobby.isActive()&&__fx.customLobby.setActive(false); if(8===i.pz&&0===wR)if(4211===d)wS(d);")
         // if the server is unreachable
         replaceRawCode("0===a7Q?g.wc(3249):", "0===a7Q?g.wc(3249):1===a7Q&&__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):")
         // error descriptions
-        const errors = { 3249: "No servers found", 4705: "Lobby not found" };
+        const errors = { 3249: "No servers found", 4705: "Lobby not found", 4730: "Kicked from lobby" };
         replaceRawCode(`i___.j(4,5,new k("⚠️ "+title,w3__,!0))`,
             `i___.j(4,5,new k("⚠️ "+title, ${JSON.stringify(errors)}[w3__] || w3__,!0))`)
         // map info (for the map selection menu)

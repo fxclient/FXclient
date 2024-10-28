@@ -34,6 +34,31 @@
 	z-index         : 10;
 }
 
+.window button,
+.window input,
+.window select {
+	background-color: rgba(0, 0, 0, 0.7);
+	color           : white;
+	font-size       : 20px;
+	font-size       : 0.9em;
+	padding         : 0.4rem;
+	transition      : 0.2s;
+	border          : 1px solid #fff;
+	border-radius   : 5px;
+	margin          : 5px;
+}
+
+.window :disabled, .window .disabled {
+	pointer-events: none;
+	opacity: 0.65;
+}
+
+.window.settings button,
+.window.settings input,
+.window.settings select {
+	margin: 0px;
+}
+
 .flex {
 	display: flex;
 }
@@ -72,6 +97,12 @@
     border-radius: 5px;
 }
 
+.lobby-player button {
+	font-size: 0.7em;
+	margin: 0px 5px;
+	padding: 3px 5px;
+}
+
 .d-none {
 	display: none;
 }
@@ -82,31 +113,6 @@
 
 hr {
 	width: 100%;
-}
-
-.window button,
-.window input,
-.window select {
-	background-color: rgba(0, 0, 0, 0.7);
-	color           : white;
-	font-size       : 20px;
-	font-size       : 0.9em;
-	padding         : 0.4rem;
-	transition      : 0.2s;
-	border          : 1px solid #fff;
-	border-radius   : 5px;
-	margin          : 5px;
-}
-
-.window :disabled, .window .disabled {
-	pointer-events: none;
-	opacity: 0.65;
-}
-
-.window.settings button,
-.window.settings input,
-.window.settings select {
-	margin: 0px;
 }
 
 h1 {

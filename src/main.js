@@ -1,5 +1,5 @@
-const fx_version = '0.6.6.4'; // FX Client Version
-const fx_update = 'Oct 26'; // FX Client Last Updated
+const fx_version = '0.6.6.5'; // FX Client Version
+const fx_update = 'Oct 28'; // FX Client Last Updated
 
 import settingsManager from './settings.js';
 import { clanFilter, leaderboardFilter } from "./clanFilters.js";

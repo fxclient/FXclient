@@ -123,6 +123,7 @@ function sendMessage(type, data) {
     uint8ArrayView.set(originalArray);
     sendRaw(1, buffer);
 }
+let playerIsHost = false;
 /** @param {Uint8Array} raw */
 function isCustomMessage(raw) {
     if (raw[0] !== customMessageMarker) return false;
@@ -134,13 +135,16 @@ function isCustomMessage(raw) {
         WindowManager.openWindow("customLobby");
         header.textContent = "Custom Lobby " + data.code;
         currentCode = data.code;
-        startButton.disabled = !data.isHost;
-        optionsContainer.className = data.isHost ? "" : "disabled";
+        playerIsHost = data.isHost;
+        startButton.disabled = !playerIsHost;
+        optionsContainer.className = playerIsHost ? "" : "disabled";
         gameModeSelectMenu.value = data.options.mode.toString();
         mapSelectMenu.value = data.options.map.toString();
         displayPlayers(data.players);
-    } else if (type === "addPlayer") addPlayer(data);
-    else if (type === "removePlayer") {
+    } else if (type === "addPlayer") {
+        addPlayer(data);
+        updatePlayerCount();
+    } else if (type === "removePlayer") {
         const index = data;
         playerElements[index].element.remove();
         playerElements.splice(index, 1);
@@ -152,27 +156,39 @@ function isCustomMessage(raw) {
         else if (option === "map") mapSelectMenu.value = value.toString();
     } else if (type === "setHost") {
         const index = data;
+        playerElements[index].isHost = true;
         playerElements[index].hostBadge.className = "";
     } else if (type === "host") {
+        playerIsHost = true;
         startButton.disabled = false;
         optionsContainer.className = "";
+        playerElements.forEach(p => { if (!p.isHost) p.kickButton.className = "" });
     }
     return true;
 }
-/** @type {{ element: HTMLDivElement, hostBadge: HTMLSpanElement }[]} */
+/** @type {{ element: HTMLDivElement, hostBadge: HTMLSpanElement, kickButton: HTMLButtonElement, isHost: boolean }[]} */
 let playerElements = [];
 /** @param {{ name: string, isHost: boolean }} player */
 function addPlayer(player) {
     const div = document.createElement("div");
     div.className = "lobby-player";
     div.textContent = player.name;
+    const kickButton = document.createElement("button");
+    kickButton.textContent = "Kick";
+    kickButton.className = playerIsHost && !player.isHost ? "" : "d-none";
+    kickButton.addEventListener("click", kickButtonHandler);
     const badge = document.createElement("span");
     badge.textContent = "Host";
     badge.className = player.isHost ? "" : "d-none";
-    div.append(badge);
+    div.append(badge, kickButton);
     playerList.append(div);
-    playerElements.push({ element: div, hostBadge: badge });
-    updatePlayerCount();
+    playerElements.push({ element: div, hostBadge: badge, kickButton, isHost: player.isHost });
+}
+function kickButtonHandler(event) {
+    const button = event.target;
+    for (let index = 0; index < playerElements.length; index++) {
+        if (playerElements[index].kickButton === button) sendMessage("kick", index);
+    }
 }
 /** @param {{ name: string, isHost: boolean }[]} players */
 function displayPlayers(players) {
