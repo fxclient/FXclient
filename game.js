@@ -2119,7 +2119,8 @@ function dE() {
 	function wZ(title, w3, d) {
 		wa(d), i.j(4, 5, new k("⚠️ " + title, {
 			"3249": "No servers found",
-			"4705": "Lobby not found"
+			"4705": "Lobby not found",
+			"4730": "Kicked from lobby"
 		} [w3] || w3, !0))
 	}
 
@@ -2130,6 +2131,7 @@ function dE() {
 		}(d), i.kt.we()
 	}
 	this.wQ = function(wR, d) {
+		wR === 1 && __fx.customLobby.isActive() && __fx.customLobby.setActive(false);
 		if (8 === i.pz && 0 === wR)
 			if (4211 === d) wS(d);
 			else {
