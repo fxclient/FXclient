@@ -28,10 +28,10 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     // TODO: test this; it might cause issues with new boat mechanics?
 
     { // Add Troop Density and Maximum Troops in side panel
-        const { valuesArray } = replaceRawCode(`,labels[5]=__L(),labels[6]=__L(),labels[7]=__L(),(valuesArray=new Array(labels.length))[0]=game.io?`,
-            `,labels[5]=__L(),labels[6]=__L(),labels[7]=__L(),
+        const { valuesArray } = replaceRawCode(`,labels[5]=__L(0,"Interest"),labels[6]=__L(),labels[7]=__L(),(truncatedLabels=new Array(labels.length)).fill(""),(valuesArray=new Array(labels.length))[0]=game.io?`,
+            `,labels[5]=__L(0,"Interest"),labels[6]=__L(),labels[7]=__L(),
 		labels.push("Max Troops", "Density"), // add labels
-		(valuesArray=new Array(labels.length))[0]=game.io?`);
+		(truncatedLabels=new Array(labels.length)).fill(""),(valuesArray=new Array(labels.length))[0]=game.io?`);
         replaceOne(new RegExp(/(:(?<valueIndex>\w+)<7\?\w+\.\w+\.\w+\(valuesArray\[\2\]\)):(\w+\.\w+\(valuesArray\[7\]\))}/
             .source.replace(/valuesArray/g, valuesArray), "g"),
             '$1 : $<valueIndex> === 7 ? $3 '
@@ -97,7 +97,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 
     { // Keybinds
         // match required variables
-        const { 0: match, groups: { attackBarObject, setRelative } } = matchOne(/:"."===(\w+\.key)\?(?<attackBarObject>\w+)\.(?<setRelative>\w+)\(31\/32\):"."===\1\?\2\.\3\(32\/31\):/g,);
+        const { 0: match, groups: { attackBarObject, setRelative } } = matchOne(/:\w+\.\w+\(\w+,8\)\?(?<attackBarObject>\w+)\.(?<setRelative>\w+)\(16\/15\):/g);
         // create a setAbsolutePercentage function on the attack percentage bar object,
         // and also register the keybind handler functions
         replaceOne(/}(function \w+\((\w+)\){return!\(1<\2&&1===(?<attackPercentage>\w+)\|\|\(1<\2&&\2\*\3-\3<1\/1024\?\2=\(\3\+1\/1024\)\/\3:\2<1)/g,
@@ -145,7 +145,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
     { // Player list and leaderboard filter tabs
         // Draw player list button
         const uiOffset = dictionary.uiSizes + "." + dictionary.gap;
-        const { groups: { drawFunction, topBarHeight } } = replaceOne(/(=1;function (?<drawFunction>\w+)\(\){[^}]+?(?<canvas>\w+)\.fillRect\(0,(?<topBarHeight>\w+),\w+,1\),(?:\3\.fillRect\([^()]+\),)+\3\.font=\w+,(\w+\.\w+)\.textBaseline\(\3,1\),\5\.textAlign\(\3,1\),\3\.fillText\(\w+\(\d+\),Math\.floor\()(\w+)\/2\),(Math\.floor\(\w+\+\w+\/2\)\));/g,
+        const { groups: { drawFunction, topBarHeight } } = replaceOne(/(="";function (?<drawFunction>\w+)\(\){[^}]+?(?<canvas>\w+)\.fillRect\(0,(?<topBarHeight>\w+),\w+,1\),(?:\3\.fillRect\([^()]+\),)+\3\.font=\w+,(\w+\.\w+)\.textBaseline\(\3,1\),\5\.textAlign\(\3,1\),\3\.fillText\(\w+,Math\.floor\()(\w+)\/2\),(Math\.floor\(\w+\+\w+\/2\)\));/g,
             "$1($6 + $<topBarHeight> - 22) / 2), $7; __fx.playerList.drawButton($<canvas>, 12, 12, $<topBarHeight> - 22);");
         const buttonBoundsCheck = `__fx.utils.isPointInRectangle($<x>, $<y>, ${uiOffset} + 12, ${uiOffset} + 12, ${topBarHeight} - 22, ${topBarHeight} - 22)`
         // Handle player list button and leaderboard tabs mouseDown
