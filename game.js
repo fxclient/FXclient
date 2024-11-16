@@ -46,7 +46,7 @@ function bc(bd) {
 
 function d0() {
 	this.dY = 1068, this.dI = function() {
-		dU = 2, dW = 34, dV = "14 Nov 2024 [1.99.8.1]", x = true, y = function() {
+		dU = 2, dW = 34, dV = "15 Nov 2024 [1.99.8.2]", x = true, y = function() {
 			try {
 				return window.self !== window.top
 			} catch (d) {
@@ -2234,15 +2234,15 @@ function co() {
 
 	function x6(d) {
 		if (__fx.keybindHandler(d.key)) return;
-		x9() || (d = d.code).length && (bM.ef(d, 18) ? ae.xR(3) : bM.ef(d, 22) ? ae.xR(0) : bM.ef(d, 20) ? ae.xR(1) : bM.ef(d, 24) ? ae.xR(2) : bM.ef(d, 10) ? aE.xS(.9375) : bM.ef(d, 8) ? aE.xS(16 / 15) : bM.ef(d, 6) ? aE.xS(7 / 8) : bM.ef(d, 4) ? aE
-			.xS(8 / 7) : bM.ef(d, 14) ? 0 !== a1.vH && aF.wx(Math.floor(am.t / 2), Math.floor(am.iw / 2), -200) : bM.ef(d, 16) ? 0 !== a1.vH && aF.wx(Math.floor(am.t / 2), Math.floor(am.iw / 2), 200) : bM.ef(d, 0) ? a1.vH && bI.gT(!1) : bM.ef(d,
-				2) && a1.vH && bI.gT(!0))
+		x9() || (d = d.code) && d.length && (bM.ef(d, 18) ? ae.xR(3) : bM.ef(d, 22) ? ae.xR(0) : bM.ef(d, 20) ? ae.xR(1) : bM.ef(d, 24) ? ae.xR(2) : bM.ef(d, 10) ? aE.xS(.9375) : bM.ef(d, 8) ? aE.xS(16 / 15) : bM.ef(d, 6) ? aE.xS(7 / 8) : bM.ef(d,
+			4) ? aE.xS(8 / 7) : bM.ef(d, 14) ? 0 !== a1.vH && aF.wx(Math.floor(am.t / 2), Math.floor(am.iw / 2), -200) : bM.ef(d, 16) ? 0 !== a1.vH && aF.wx(Math.floor(am.t / 2), Math.floor(am.iw / 2), 200) : bM.ef(d, 0) ? a1.vH && bI.gT(!1) : bM
+			.ef(d, 2) && a1.vH && bI.gT(!0))
 	}
 
 	function x7(d) {
 		var code;
-		x9() || bU.du < 400 || !(code = d.code).length || "Enter" === code && i.xT(1) || (8 !== aN.wY() && aN.xT(d) ? bU.dQ = !0 : "Escape" === code ? b8.ep() : bM.ef(code, 18) ? ae.xU(3) : bM.ef(code, 22) ? ae.xU(0) : bM.ef(code, 20) ? ae.xU(1) : bM
-			.ef(code, 24) ? ae.xU(2) : bM.ef(code, 12) ? b2.xV(!a1.lp) : "Space" === code && a1.vH && (a9.gW && a9.xW(), a1.gV) && b2.xX(!1))
+		x9() || bU.du < 400 || (code = d.code) && code.length && ("Enter" === code && i.xT(1) || (8 !== aN.wY() && aN.xT(d) ? bU.dQ = !0 : "Escape" === code ? b8.ep() : bM.ef(code, 18) ? ae.xU(3) : bM.ef(code, 22) ? ae.xU(0) : bM.ef(code, 20) ? ae
+			.xU(1) : bM.ef(code, 24) ? ae.xU(2) : bM.ef(code, 12) ? b2.xV(!a1.lp) : "Space" === code && a1.vH && (a9.gW && a9.xW(), a1.gV) && b2.xX(!1)))
 	}
 
 	function x8() {
