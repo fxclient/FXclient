@@ -46,7 +46,7 @@ function bc(bd) {
 
 function d0() {
 	this.dY = 1068, this.dI = function() {
-		dU = 2, dW = 34, dV = "15 Nov 2024 [1.99.8.2]", x = true, y = function() {
+		dU = 2, dW = 35, dV = "17 Nov 2024 [1.99.8.3]", x = true, y = function() {
 			try {
 				return window.self !== window.top
 			} catch (d) {
@@ -8801,7 +8801,7 @@ function aLv() {
 						aNP + bA.em(fs * aNT, 65536) + aN1 * (aNF + bA.em(fs * aNU, 65536))), aMW[z] = bC.ht.aNW(aMW[z], aNN, aNO))
 				}(this), ! function(vp) {
 					if (bU.jP() % 2 == 1) {
-						var z, kG, kD, ee, ef, aNX, uL, aNY, gl, lm, ln, aNF, aNZ, hC, aNb, sg, eK = vp.oF,
+						var z, kG, kD, ee, ef, aNX, uL, aNY, gl, hC, lm, ln, aNF, aNZ, aNa, aNb, sg, eK = vp.oF,
 							ll = vp.ll,
 							a1V = vp.a1V,
 							a1W = vp.a1W,
@@ -8818,8 +8818,8 @@ function aLv() {
 							for (kG = Math.abs(z - fs), aNF = ll[kG], kD = bB.hs(aNF), gl = a1V[kG] >> 3, lm = aNF % aN1, ln = ~~((aNF + .5) / aN1), aNb = a1W[kG], ee = 0; ee < 9; ee++)
 								if (!((aNX = kD + aNe[ee]) < 0 || aNd <= aNX))
 									for (aNY = ht[aNX], uL = aNY.length, ef = 0; ef < uL; ef++) aNZ = aNY[ef], sg = a1V[aNZ] >> 3, gl == sg || aNf && aKT[gl] === aKT[sg] || (sg = ll[aNZ], (hC = lm - sg % aN1) * hC + (hC = ln - ~~((sg + .5) /
-										aN1)) * hC < 14400 && (sg = a1W[aNZ], hC = sg < aNb ? bA.em(sg + bA.em(aNb - sg, 10), 10) : bA.em(aNb, 10), hC = Math.max(1, hC), a1W[aNZ] = Math.max(sg - hC, 0), aMc[aNZ] = 4, aMd[aNZ] = Math.min(
-										aMd[aNZ] + hC, 4294967295)))
+										aN1)) * hC < 14400 && ((sg = a1W[aNZ]) <= aNb ? aNa = Math.max(1, bA.em(sg + bA.em(aNb - sg, 10), 10)) : (aNa = Math.max(1, bA.em(aNb, 10)), aMd[aNZ] = Math.min(aMd[aNZ] + aNa, 4294967295)), a1W[
+										aNZ] = Math.max(sg - aNa, 0), aMc[aNZ] = 4))
 					}
 				}(this), ! function(vp) {
 					if (bU.jP() % 5 == 3) {
