@@ -583,6 +583,8 @@ function bo() {
 			if (ax.jn.jo)
 				for (z = a1.jp - 1; 0 <= z; z--) this.iZ[z + jl] = ax.jn.jo[z + 1]
 		} else if (9 === a1.jq) this.jr();
+		else if (__fx.customLobby.isActive())
+			for (z = a1.jp - 1; 0 <= z; z--) this.iZ[z + jl] = __fx.customLobby.gameInfo.difficulty;
 		else if (a1.js)
 			if (a1.iS)
 				for (z = a1.jp - 1; 0 <= z; z--) this.iZ[z + jl] = aO.ju[bV.eI[z + jl] - 1].eN;
@@ -2647,6 +2649,7 @@ function bk() {
 				aE.dI(), b2.dI(), ak.dI(), aH.dI(), aJ.dI(), a9.dI(), aD.dI(), aA.dI(), aC.dI(), a8.dI(), aK.dI(), a3.dI(), a4.dI(), fL(), aR.dI(), aT.dI(), au.dI(), av.dI(), aq.dI(), 8 === this.jq ? (this.vZ = new ti, this.vZ.dI(tj)) : this.vZ =
 				null, bU.zn(), a5.le(), 0 === aU.lK[a1.e4] && aK.show(!1, !0), aT.l6(!0), ah.dI(), bU.dQ = !0, this.gV || this.js && this.gh || m.n.setState(1)
 		}, this.wl = function(zs) {
+			__fx.customLobby.setActive(false);
 			ap.ky.zt(), this.vH = 0, bU.zu(), m.n.setState(0), zs || bJ.df.show(), aN.setState(0), i.j(5, 5)
 		}, this.zv = function() {
 			return this.gV ? a9.gW || !b2.zw : this.js && (a9.gW || this.gh)
@@ -5606,8 +5609,12 @@ function cJ() {
 
 	function aCa(z, fontSize, eR, eT, h5) {
 		var ___id = z;
-		h5.fillText(aU.a1N[z], eR, eT), z < a1.jS && 2 !== aU.yf[z] || (z = fontSize / aBt[z], h5.fillRect(eR - .5 * z, eT + b1.p1.uS * fontSize, z, Math.max(1, .1 * fontSize)));
-		bY.db.data[7].value && __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (h5.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)), h5.fillText(__fx.utils.getDensity(___id), eR, eT + fontSize));
+		var showName = z < a1.jS || !__fx.settings.hideBotNames;
+		if (showName) h5.fillText(aU.a1N[z], eR, eT), z < a1.jS && 2 !== aU.yf[z] || (z = fontSize / aBt[z], h5.fillRect(eR - .5 * z, eT + b1.p1.uS * fontSize, z, Math.max(1, .1 * fontSize)));
+		bY.db.data[7].value && __fx.settings.showPlayerDensity && (
+			__fx.settings.coloredDensity && (h5.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)),
+			h5.fillText(__fx.utils.getDensity(___id), eR, showName ? eT + fontSize : eT)
+		);
 	}
 
 	function aCZ(h5, z, fontSize, aCT, aCU, aCV) {
@@ -5863,8 +5870,8 @@ function cK() {
 		new Uint16Array(a1.eH), this.iQ = new Uint16Array(a1.eH), this.vw = new Uint16Array(a1.eH), this.w2 = new Uint8Array(a1.eH), this.yl = new Uint16Array(a1.eH), this.dI = function(tj) {
 			for (var z = tj.length - 1; 0 <= z; z--) this.a1N[z] = this.wA[z] = tj[z].name, this.yf[z] = tj[z].a9R;
 			this.lK.fill(0), this.hy.fill(0), this.i0.fill(0), this.hz.fill(0), this.i1.fill(0), this.g9.fill(0), this.tG.fill(0), this.gN.fill(0), __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx
-				.customLobby.setActive(false), this.fl = new Array(a1.eH), this.fz = new Array(a1.eH), this.g0 = new Array(a1.eH), this.ek = new Array(a1.eH), this.oN.fill(0), this.iP.fill(0), this.iQ.fill(0), this.vw.fill(0), this.w2.fill(0), this
-				.yl.fill(0)
+				.customLobby.hideWindow(), this.fl = new Array(a1.eH), this.fz = new Array(a1.eH), this.g0 = new Array(a1.eH), this.ek = new Array(a1.eH), this.oN.fill(0), this.iP.fill(0), this.iQ.fill(0), this.vw.fill(0), this.w2.fill(0), this.yl
+				.fill(0)
 		}
 }
 
