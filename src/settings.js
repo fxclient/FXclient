@@ -16,6 +16,7 @@ var settings = {
   showPlayerDensity: true,
   coloredDensity: true,
   densityDisplayStyle: "percentage",
+  hideBotNames: false,
   highlightClanSpawns: false,
   //"customMapFileBtn": true
   customBackgroundUrl: "",
@@ -79,6 +80,7 @@ const settingsManager = new (function () {
         },
       ],
     },
+    { for: "hideBotNames", type: "checkbox", label: "Hide bot names" },
     {
       for: "highlightClanSpawns",
       type: "checkbox",

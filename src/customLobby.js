@@ -10,9 +10,6 @@ let leaveLobby = () => { };
 let sendRaw = (socketId, data) => { };
 const textEncoder = new TextEncoder();
 const textDecoder = new TextDecoder();
-/*const gameInfo = {
-    botCount: 512
-}*/
 
 WindowManager.add({
     name: "lobbyJoinMenu",
@@ -36,38 +33,87 @@ playerCount.textContent = "0 Players";
 const playerList = document.createElement("div");
 playerListContainer.append(playerCount, playerList);
 
-// todo: convert the options into something similar to the automatic settings generator
 const optionsContainer = document.createElement("div");
-const gameModeSelectMenu = document.createElement("select");
-setSelectMenuOptions([
-    { value: 0, label: "2 Teams" },
-    { value: 1, label: "3 Teams" },
-    { value: 2, label: "4 Teams" },
-    { value: 3, label: "5 Teams" },
-    { value: 4, label: "6 Teams" },
-    { value: 5, label: "7 Teams" },
-    { value: 6, label: "8 Teams" },
-    { value: 7, label: "Battle Royale" },
-    { value: 10, label: "No Fullsend Battle Royale" },
-    { value: 9, label: "Zombie mode" }
-], gameModeSelectMenu);
-gameModeSelectMenu.value = "7";
-const mapSelectMenu = document.createElement("select");
-function setMapInfo(maps) {
-    setTimeout(() => setSelectMenuOptions(maps.map((info, index) => ({ value: index.toString(), label: info.name })), mapSelectMenu), 0);
+
+const optionsStructure = {
+    mode: {
+        label: "Mode:", type: "selectMenu", options: [
+            { value: 0, label: "2 Teams" },
+            { value: 1, label: "3 Teams" },
+            { value: 2, label: "4 Teams" },
+            { value: 3, label: "5 Teams" },
+            { value: 4, label: "6 Teams" },
+            { value: 5, label: "7 Teams" },
+            { value: 6, label: "8 Teams" },
+            { value: 7, label: "Battle Royale" },
+            { value: 10, label: "No Fullsend Battle Royale" },
+            { value: 9, label: "Zombie mode" }
+        ]
+    },
+    map: { label: "Map:", type: "selectMenu" },
+    difficulty: { label: "Difficulty", type: "selectMenu", options: [
+        { value: 0, label: "Very Easy (Default)" },
+        { value: 1, label: "Easy (1v1)" },
+        { value: 2, label: "Normal" },
+        { value: 3, label: "Hard" },
+        { value: 4, label: "Very Hard" },
+        { value: 5, label: "Impossible" }
+    ]}
 }
-gameModeSelectMenu.addEventListener("change", e => sendMessage("options", ["mode", parseInt(e.target.value)]));
-mapSelectMenu.addEventListener("change", e => sendMessage("options", ["map", parseInt(e.target.value)]));
+const optionsElements = {};
+const optionsValues = {};
+
+function updateOption(option, value) {
+    value = value.toString();
+    optionsElements[option].value = value.toString();
+    optionsValues[option] = value;
+}
+function inputUpdateHandler(key, e) {
+    sendMessage("options", [key, parseInt(e.target.value)])
+}
+Object.entries(optionsStructure).forEach(([key, item]) => {
+    const label = document.createElement("label");
+    if (item.tooltip) label.title = item.tooltip;
+    const isValueInput = item.type.endsWith("Input");
+    const element = document.createElement(
+        isValueInput || item.type === "checkbox" ? "input"
+            : item.type === "selectMenu" ? "select"
+                : "button"
+    );
+    optionsElements[key] = element;
+    if (item.type === "textInput") element.type = "text";
+    if (item.placeholder) element.placeholder = item.placeholder;
+    if (isValueInput || item.type === "selectMenu")
+        element.addEventListener("change", inputUpdateHandler.bind(undefined, key))
+    if (item.text) element.innerText = item.text;
+    if (item.action) element.addEventListener("click", item.action);
+    if (item.label) label.append(item.label + " ");
+    if (item.note) {
+        const note = document.createElement("small");
+        note.innerText = item.note;
+        label.append(document.createElement("br"), note);
+    }
+    if (item.options) setSelectMenuOptions(item.options, element);
+    label.append(element);
+    if (item.type === "checkbox") {
+        element.type = "checkbox";
+        const checkmark = document.createElement("span");
+        checkmark.className = "checkmark";
+        label.className = "checkbox";
+        label.append(checkmark);
+        //checkboxFields[item.for] = element;
+    }// else label.append(document.createElement("br"));
+    optionsContainer.append(label, document.createElement("br"));
+});
+
+function setMapInfo(maps) {
+    setTimeout(() => setSelectMenuOptions(maps.map((info, index) => ({ value: index.toString(), label: info.name })), optionsElements["map"]), 0);
+}
 /*const botCountInput = document.createElement("input");
 botCountInput.setAttribute("type", "number");
 botCountInput.setAttribute("min", "0");
 botCountInput.setAttribute("max", "512");
 botCountInput.value = "512";*/
-optionsContainer.append(
-    "Mode: ", gameModeSelectMenu, document.createElement("br"),
-    "Map: ", mapSelectMenu, document.createElement("br"),
-    //"Bot count: "
-);
 
 main.append(playerListContainer, optionsContainer);
 
@@ -138,8 +184,7 @@ function isCustomMessage(raw) {
         playerIsHost = data.isHost;
         startButton.disabled = !playerIsHost;
         optionsContainer.className = playerIsHost ? "" : "disabled";
-        gameModeSelectMenu.value = data.options.mode.toString();
-        mapSelectMenu.value = data.options.map.toString();
+        Object.entries(data.options).forEach(([option, value]) => updateOption(option, value));
         displayPlayers(data.players);
     } else if (type === "addPlayer") {
         addPlayer(data);
@@ -152,8 +197,7 @@ function isCustomMessage(raw) {
     } else if (type === "options") {
         console.log(data);
         const [option, value] = data;
-        if (option === "mode") gameModeSelectMenu.value = value.toString();
-        else if (option === "map") mapSelectMenu.value = value.toString();
+        updateOption(option, value);
     } else if (type === "setHost") {
         const index = data;
         playerElements[index].isHost = true;
@@ -163,7 +207,7 @@ function isCustomMessage(raw) {
         startButton.disabled = false;
         optionsContainer.className = "";
         playerElements.forEach(p => { if (!p.isHost) p.kickButton.className = "" });
-    }
+    } else if (type === "serverMessage") alert(data);
     return true;
 }
 /** @type {{ element: HTMLDivElement, hostBadge: HTMLSpanElement, kickButton: HTMLButtonElement, isHost: boolean }[]} */
@@ -187,7 +231,10 @@ function addPlayer(player) {
 function kickButtonHandler(event) {
     const button = event.target;
     for (let index = 0; index < playerElements.length; index++) {
-        if (playerElements[index].kickButton === button) sendMessage("kick", index);
+        if (playerElements[index].kickButton === button) {
+            sendMessage("kick", index);
+            break;
+        }
     }
 }
 /** @param {{ name: string, isHost: boolean }[]} players */
@@ -206,7 +253,7 @@ function getSocketURL() {
 }
 function startGame() {
     WindowManager.closeWindow("customLobby");
-    sendMessage("startGame" /*{ mode: gameModeSelectMenu.value, map: mapSelectMenu.value }*/);
+    sendMessage("startGame");
 }
 
 
@@ -217,7 +264,10 @@ function setActive(active) {
     isActive = active;
     if (active === false) WindowManager.closeWindow("customLobby");
 }
-const gameInterface = { showJoinPrompt, isCustomMessage, getSocketURL, setJoinFunction, setLeaveFunction, setSendFunction, setMapInfo, isActive: () => isActive, setActive }
+function hideWindow() {
+    WindowManager.closeWindow("customLobby");
+}
+const gameInterface = { gameInfo: optionsValues, showJoinPrompt, isCustomMessage, getSocketURL, setJoinFunction, setLeaveFunction, setSendFunction, setMapInfo, hideWindow, isActive: () => isActive, setActive }
 
 const customLobby = gameInterface
 export default customLobby

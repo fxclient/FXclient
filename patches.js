@@ -140,7 +140,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         `, ${dict.game}.${dict.gIsTeamGame} && __fx.donationsTracker.displayHistory($2, ${rawPlayerNames}, ${gIsSingleplayer}), $1 && !isEmptySpace $3`);
 
     // Reset donation history and leaderboard filter when a new game is started
-    replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"), "$& __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.setActive(false), ");
+    replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"), "$& __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow(), ");
 
     { // Player list and leaderboard filter tabs
         // Draw player list button
@@ -164,19 +164,24 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 	)) return; $4`);
     }
 
-    { // Display density of other players
+    { // Name rendering patches - Display density of other players & Hide bot names features
         const r = matchRawCode(`bD.dO.data[7].value?a9W(i,jm,jk,jl,ctx):a9V(ctx,i,jm,jk,jl,a9S)))`);
         const settingsSwitchNameAndBalance = `${r.bD}.${r.dO}.${r.data}[7].${r.value}`;
-        //console.log(settingsSwitchNameAndBalance);
-        // Applies when the "Reverse Name/Balance" setting is off
+        // Balance rendering; Renders density when the "Reverse Name/Balance" setting is off
         replaceRawCode("function a9V(ctx,i,fontSize,x,y,a9S){i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y))}",
             `function a9V(ctx,i,fontSize,x,y,a9S){
 		var ___id = i;
 		i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y));
 		${settingsSwitchNameAndBalance} || __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (ctx.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)), ctx.fillText(__fx.utils.getDensity(___id), x, y + fontSize))}`)
-        // Applies when the "Reverse Name/Balance" setting is on (default)
-        replaceOne(/(function \w+\((\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerData>\w+)\.(?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<game>\w+)\.(?<gHumans>\w+)&&2!==\8\.(?<playerStates>\w+)\[[^}]+)}/g,
-            `$1 var ___id = $2; $7, $10; ${settingsSwitchNameAndBalance} && __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && ($<canvas>.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)), $<canvas>.fillText(__fx.utils.getDensity(___id), $<x>, $<y> + $<fontSize>)); }`);
+        // Name rendering; Renders density when the "Reverse Name/Balance" setting is on (default)
+        replaceOne(/(function \w+\((?<i>\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerData>\w+)\.(?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<game>\w+)\.(?<gHumans>\w+)&&2!==\8\.(?<playerStates>\w+)\[[^}]+)}/g,
+            `$1 var ___id = $2;
+            var showName = $<i> < $<game>.$<gHumans> || !__fx.settings.hideBotNames;
+            if (showName) $7, $10;
+            ${settingsSwitchNameAndBalance} && __fx.settings.showPlayerDensity && (
+                __fx.settings.coloredDensity && ($<canvas>.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)),
+                $<canvas>.fillText(__fx.utils.getDensity(___id), $<x>, showName ? $<y> + $<fontSize> : $<y>)
+            ); }`);
     }
 
     { // Leaderboard filter
@@ -315,6 +320,9 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             __fx.customLobby.setLeaveFunction(() => this.xY())`)
         replaceRawCode("this.wQ=function(wR,d){if(8===i.pz&&0===wR)if(4211===d)wS(d);",
             "this.wQ=function(wR,d){ wR===1&&__fx.customLobby.isActive()&&__fx.customLobby.setActive(false); if(8===i.pz&&0===wR)if(4211===d)wS(d);")
+        // when leaving a game
+        replaceRawCode("this.wl=function(zs){ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),i.j(5,5)}",
+            "this.wl=function(zs){__fx.customLobby.setActive(false); ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),i.j(5,5)}")
         // if the server is unreachable
         replaceRawCode("0===a7Q?g.wc(3249):", "0===a7Q?g.wc(3249):1===a7Q&&__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):")
         // error descriptions
@@ -324,6 +332,11 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         // map info (for the map selection menu)
         replaceRawCode("this.info=new Array(Maps.totalMapCount+1),this.info[0]={name:__L(),",
             "this.info=new Array(Maps.totalMapCount+1),__fx.customLobby.setMapInfo(this.info),this.info[0]={name:__L(),")
+        // custom difficulty
+        replaceRawCode("if(ax.jm){if(ax.jn.jo)for(i=game.jp-1;0<=i;i--)this.strength[i+jl]=ax.jn.jo[i+1]}else if(9===game.jq)this.jr();",
+            `if(ax.jm){if(ax.jn.jo)for(i=game.jp-1;0<=i;i--)this.strength[i+jl]=ax.jn.jo[i+1]}else if(9===game.jq)this.jr();
+            else if (__fx.customLobby.isActive()) for(i=game.jp-1;0<=i;i--) this.strength[i+jl] = __fx.customLobby.gameInfo.difficulty;`
+        )
     }
 
     // Invalid hostname detection avoidance
