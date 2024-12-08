@@ -2127,7 +2127,7 @@ function dE() {
 		}(d), i.ky.wi()
 	}
 	this.wU = function(wV, d) {
-		wV === 1 && __fx.customLobby.isActive() && __fx.customLobby.setActive(false);
+		wV === 1 && __fx.customLobby.isActive() && aN.wY() !== 6 && __fx.customLobby.setActive(false);
 		if (8 === i.q7 && 0 === wV)
 			if (4211 === d) wW(d);
 			else {
@@ -2642,15 +2642,19 @@ function zQ() {
 function bk() {
 	this.eH = 512, this.yn = 15e8, this.zY = 1e9, this.yx = 5e4, this.tH = 512, this.fd = 2, this.e4 = 0, this.jS = 0, this.vK = 0, this.jp = 0, this.vJ = 0, this.t1 = 512, this.jZ = 150, this.js = !0, this.gV = !1, this.vH = 0, this.jC = 0, this
 		.lp = !1, this.gh = !1, this.zZ = !1, this.iS = !1, this.za = 0, this.jq = 0, this.vz = !1, this.oJ = null, this.vZ = null, this.zb = 30, this.vE = 0, this.vM = 0, this.vY = 0, this.zc = function(zd, ze, tj, zf, zg, zh) {
-			this.lp = !1, this.gV = zh, this.jq = zf, this.vz = zg, this.iS = this.jq < 7 || 9 === this.jq, this.vK = this.jS = tj.length, this.js = 1 === this.vK, this.jq = 10 === this.jq && this.js ? 7 : this.jq, this.jq = 8 === this.jq && 2 !==
-				this.jS ? 7 : this.jq, this.za = 9 === this.jq ? 2 : this.jq + 2, this.zb = this.jS <= 2 ? 30 : this.jS <= 50 ? 40 : 50, ax.jm && !ax.jn.zi ? this.zZ = this.gh = !1 : this.zZ = this.gh = this.iS || this.jS < 100, this.oJ = this.gh ?
-				new zQ : null, this.js ? this.t1 = aO.zj() : this.t1 = this.eH, this.jp = this.t1 - this.jS, this.vJ = 0, this.e4 = ze, this.vE = 0, this.vM = 0, this.vY = 0, an.zk(zd), ao.dI(), aU.dI(tj), az.nL.o5 = [], bV.dI(tj), this.vH = 1, bS
-				.dI(), zl(), aQ.dJ(), ac.zm(), bQ.dI(), aQ.dI(tj), af.dI(), bB.dI(), bC.dI(), ab.dI(), bG.dI(), bK.zn(), a2.dI(), aW.v(), a6.dI(), aZ.zo(), b0.dI(zd, tj, zf, zg), bW.dI(), bE.dI(), bT.dI(), zp.putImageData(zq, 0, 0), aI.dI(), aF.dI(),
-				aE.dI(), b2.dI(), ak.dI(), aH.dI(), aJ.dI(), a9.dI(), aD.dI(), aA.dI(), aC.dI(), a8.dI(), aK.dI(), a3.dI(), a4.dI(), fL(), aR.dI(), aT.dI(), au.dI(), av.dI(), aq.dI(), 8 === this.jq ? (this.vZ = new ti, this.vZ.dI(tj)) : this.vZ =
-				null, bU.zn(), a5.le(), 0 === aU.lK[a1.e4] && aK.show(!1, !0), aT.l6(!0), ah.dI(), bU.dQ = !0, this.gV || this.js && this.gh || m.n.setState(1)
+			this.lp = !1, this.gV = zh, this.jq = zf, this.vz = zg, this.iS = this.jq < 7 || 9 === this.jq, this.vK = this.jS = tj.length, this.js = 1 === this.vK && !__fx.customLobby.isActive(), this.jq = 10 === this.jq && this.js ? 7 : this.jq,
+				this.jq = 8 === this.jq && 2 !== this.jS ? 7 : this.jq, this.za = 9 === this.jq ? 2 : this.jq + 2, this.zb = this.jS <= 2 ? 30 : this.jS <= 50 ? 40 : 50, ax.jm && !ax.jn.zi ? this.zZ = this.gh = !1 : __fx.customLobby.isActive() ? this
+				.zZ = this.gh = __fx.customLobby.gameInfo.spawnSelection : this.zZ = this.gh = this.iS || this.jS < 100, this.oJ = this.gh ? new zQ : null, __fx.customLobby.isActive() ? this.t1 = Math.max(Math.min(__fx.customLobby.gameInfo.botCount,
+					this.eH), this.jS) :
+				this.js ? this.t1 = aO.zj() : this.t1 = this.eH, this.jp = this.t1 - this.jS, this.vJ = 0, this.e4 = ze, this.vE = 0, this.vM = 0, this.vY = 0, an.zk(zd), ao.dI(), aU.dI(tj), az.nL.o5 = [], bV.dI(tj), this.vH = 1, bS.dI(), zl(), aQ
+				.dJ(), ac.zm(), bQ.dI(), aQ.dI(tj), af.dI(), bB.dI(), bC.dI(), ab.dI(), bG.dI(), bK.zn(), a2.dI(), aW.v(), a6.dI(), aZ.zo(), b0.dI(zd, tj, zf, zg), bW.dI(), bE.dI(), bT.dI(), zp.putImageData(zq, 0, 0), aI.dI(), aF.dI(), aE.dI(), b2
+				.dI(), ak.dI(), aH.dI(), aJ.dI(), a9.dI(), aD.dI(), aA.dI(), aC.dI(), a8.dI(), aK.dI(), a3.dI(), a4.dI(), fL(), aR.dI(), aT.dI(), au.dI(), av.dI(), aq.dI(), 8 === this.jq ? (this.vZ = new ti, this.vZ.dI(tj)) : this.vZ = null, bU.zn(),
+				a5.le(), 0 === aU.lK[a1.e4] && aK.show(!1, !0), aT.l6(!0), ah.dI(), bU.dQ = !0, this.gV || this.js && this.gh || m.n.setState(1)
 		}, this.wl = function(zs) {
-			__fx.customLobby.setActive(false);
-			ap.ky.zt(), this.vH = 0, bU.zu(), m.n.setState(0), zs || bJ.df.show(), aN.setState(0), i.j(5, 5)
+			__fx.customLobby.isActive() === false && ap.ky.zt(),
+				this.vH = 0, bU.zu(), m.n.setState(0), zs || bJ.df.show(), aN.setState(0);
+			if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby();
+			else i.j(5, 5)
 		}, this.zv = function() {
 			return this.gV ? a9.gW || !b2.zw : this.js && (a9.gW || this.gh)
 		}, this.zx = function() {
@@ -7815,7 +7819,7 @@ function aIq() {
 					a9Q: a9Q,
 					a9R: a9R
 				});
-			aN.a7w(), bH.v(a8t, a8u), 1 === tj.length && aO.a9H(zf), a1.zc(zd, a0, tj, zf, a8s, !1)
+			aN.a7w(), bH.v(a8t, a8u), 1 === tj.length && !__fx.customLobby.isActive() && aO.a9H(zf), a1.zc(zd, a0, tj, zf, a8s, !1)
 		} else ! function() {
 			b6.o2 += 20;
 			for (var a9R, a9Q, tn, name, a85 = b6.o3(1), zd = b6.o3(14), zf = b6.o3(4), a8s = 1 === b6.o3(1), a8t = b6.o3(6), a8u = b6.o3(14), tj = [], z = 0; z < 2; z++) a9R = b6.o3(1), a9Q = [b6.o3(6), b6.o3(6), b6.o3(6)], tn = b6.o3(14),
