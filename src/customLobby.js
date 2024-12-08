@@ -34,6 +34,7 @@ const playerList = document.createElement("div");
 playerListContainer.append(playerCount, playerList);
 
 const optionsContainer = document.createElement("div");
+optionsContainer.className = "text-align-left";
 
 const optionsStructure = {
     mode: {
@@ -51,25 +52,31 @@ const optionsStructure = {
         ]
     },
     map: { label: "Map:", type: "selectMenu" },
-    difficulty: { label: "Difficulty", type: "selectMenu", options: [
+    difficulty: { label: "Difficulty:", type: "selectMenu", options: [
         { value: 0, label: "Very Easy (Default)" },
         { value: 1, label: "Easy (1v1)" },
         { value: 2, label: "Normal" },
         { value: 3, label: "Hard" },
         { value: 4, label: "Very Hard" },
         { value: 5, label: "Impossible" }
-    ]}
+    ]},
+    spawnSelection: { label: "Spawn selection", type: "checkbox" },
+    botCount: { label: "Bot & player count:", type: "numberInput", attributes: { min: "1", max: "512" } }
 }
 const optionsElements = {};
 const optionsValues = {};
 
 function updateOption(option, value) {
-    value = value.toString();
-    optionsElements[option].value = value.toString();
+    if (optionsStructure[option].type === "checkbox")
+        optionsElements[option].checked = (value === 0 ? false : true);
+    else optionsElements[option].value = value.toString();
     optionsValues[option] = value;
 }
 function inputUpdateHandler(key, e) {
     sendMessage("options", [key, parseInt(e.target.value)])
+}
+function checkboxUpdateHandler(key, e) {
+    sendMessage("options", [key, e.target.checked ? 1 : 0])
 }
 Object.entries(optionsStructure).forEach(([key, item]) => {
     const label = document.createElement("label");
@@ -82,6 +89,7 @@ Object.entries(optionsStructure).forEach(([key, item]) => {
     );
     optionsElements[key] = element;
     if (item.type === "textInput") element.type = "text";
+    if (item.type === "numberInput") element.type = "number";
     if (item.placeholder) element.placeholder = item.placeholder;
     if (isValueInput || item.type === "selectMenu")
         element.addEventListener("change", inputUpdateHandler.bind(undefined, key))
@@ -94,6 +102,9 @@ Object.entries(optionsStructure).forEach(([key, item]) => {
         label.append(document.createElement("br"), note);
     }
     if (item.options) setSelectMenuOptions(item.options, element);
+    if (item.attributes) Object.entries(item.attributes).forEach(
+        ([name, value]) => element.setAttribute(name, value)
+    );
     label.append(element);
     if (item.type === "checkbox") {
         element.type = "checkbox";
@@ -102,18 +113,14 @@ Object.entries(optionsStructure).forEach(([key, item]) => {
         label.className = "checkbox";
         label.append(checkmark);
         //checkboxFields[item.for] = element;
-    }// else label.append(document.createElement("br"));
-    optionsContainer.append(label, document.createElement("br"));
+        element.addEventListener("change", checkboxUpdateHandler.bind(undefined, key))
+    } else label.append(document.createElement("br"));
+    optionsContainer.append(label/*, document.createElement("br")*/);
 });
 
 function setMapInfo(maps) {
     setTimeout(() => setSelectMenuOptions(maps.map((info, index) => ({ value: index.toString(), label: info.name })), optionsElements["map"]), 0);
 }
-/*const botCountInput = document.createElement("input");
-botCountInput.setAttribute("type", "number");
-botCountInput.setAttribute("min", "0");
-botCountInput.setAttribute("max", "512");
-botCountInput.value = "512";*/
 
 main.append(playerListContainer, optionsContainer);
 
@@ -183,7 +190,8 @@ function isCustomMessage(raw) {
         currentCode = data.code;
         playerIsHost = data.isHost;
         startButton.disabled = !playerIsHost;
-        optionsContainer.className = playerIsHost ? "" : "disabled";
+        if (playerIsHost) optionsContainer.classList.remove("disabled");
+        else optionsContainer.classList.add("disabled");
         Object.entries(data.options).forEach(([option, value]) => updateOption(option, value));
         displayPlayers(data.players);
     } else if (type === "addPlayer") {
@@ -194,8 +202,10 @@ function isCustomMessage(raw) {
         playerElements[index].element.remove();
         playerElements.splice(index, 1);
         updatePlayerCount();
+    } else if (type === "inLobby") {
+        const index = data;
+        playerElements[index].inGameBadge.className = "d-none";
     } else if (type === "options") {
-        console.log(data);
         const [option, value] = data;
         updateOption(option, value);
     } else if (type === "setHost") {
@@ -205,14 +215,21 @@ function isCustomMessage(raw) {
     } else if (type === "host") {
         playerIsHost = true;
         startButton.disabled = false;
-        optionsContainer.className = "";
+        optionsContainer.classList.remove("disabled");
         playerElements.forEach(p => { if (!p.isHost) p.kickButton.className = "" });
     } else if (type === "serverMessage") alert(data);
     return true;
 }
-/** @type {{ element: HTMLDivElement, hostBadge: HTMLSpanElement, kickButton: HTMLButtonElement, isHost: boolean }[]} */
+/** @type {{ element: HTMLDivElement, hostBadge: HTMLSpanElement, inGameBadge: HTMLSpanElement, kickButton: HTMLButtonElement, isHost: boolean }[]} */
 let playerElements = [];
-/** @param {{ name: string, isHost: boolean }} player */
+function createBadge(text, visible) {
+    const badge = document.createElement("span");
+    badge.textContent = text;
+    badge.className = visible ? "" : "d-none";
+    return badge;
+}
+/** @typedef {{ name: string, isHost?: boolean, inGame?: boolean }} PlayerInfo */
+/** @param {PlayerInfo} player */
 function addPlayer(player) {
     const div = document.createElement("div");
     div.className = "lobby-player";
@@ -221,12 +238,11 @@ function addPlayer(player) {
     kickButton.textContent = "Kick";
     kickButton.className = playerIsHost && !player.isHost ? "" : "d-none";
     kickButton.addEventListener("click", kickButtonHandler);
-    const badge = document.createElement("span");
-    badge.textContent = "Host";
-    badge.className = player.isHost ? "" : "d-none";
-    div.append(badge, kickButton);
+    const hostBadge = createBadge("Host", player.isHost);
+    const inGameBadge = createBadge("In Game", player.inGame);
+    div.append(hostBadge, inGameBadge, kickButton);
     playerList.append(div);
-    playerElements.push({ element: div, hostBadge: badge, kickButton, isHost: player.isHost });
+    playerElements.push({ element: div, hostBadge, inGameBadge, kickButton, isHost: player.isHost });
 }
 function kickButtonHandler(event) {
     const button = event.target;
@@ -237,7 +253,7 @@ function kickButtonHandler(event) {
         }
     }
 }
-/** @param {{ name: string, isHost: boolean }[]} players */
+/** @param {PlayerInfo[]} players */
 function displayPlayers(players) {
     playerElements = [];
     playerList.innerHTML = "";
@@ -255,7 +271,9 @@ function startGame() {
     WindowManager.closeWindow("customLobby");
     sendMessage("startGame");
 }
-
+function rejoinLobby() {
+    joinLobby();
+}
 
 function setJoinFunction(f) { joinLobby = f; }
 function setLeaveFunction(f) { leaveLobby = f; }
@@ -267,7 +285,7 @@ function setActive(active) {
 function hideWindow() {
     WindowManager.closeWindow("customLobby");
 }
-const gameInterface = { gameInfo: optionsValues, showJoinPrompt, isCustomMessage, getSocketURL, setJoinFunction, setLeaveFunction, setSendFunction, setMapInfo, hideWindow, isActive: () => isActive, setActive }
+const gameInterface = { gameInfo: optionsValues, showJoinPrompt, isCustomMessage, getSocketURL, setJoinFunction, setLeaveFunction, setSendFunction, setMapInfo, rejoinLobby, hideWindow, isActive: () => isActive, setActive }
 
 const customLobby = gameInterface
 export default customLobby

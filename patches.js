@@ -318,11 +318,16 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         replaceRawCode("this.xY=function(){this.wg(),Sockets.kt.wf(3240),aN.setState(0),i___.j(5,5)}",
             `this.xY=function(){this.wg(),Sockets.kt.wf(3240),__fx.customLobby.setActive(false),aN.setState(0),i___.j(5,5)},
             __fx.customLobby.setLeaveFunction(() => this.xY())`)
+        // when a socket error occurs on the custom lobby socket
         replaceRawCode("this.wQ=function(wR,d){if(8===i.pz&&0===wR)if(4211===d)wS(d);",
-            "this.wQ=function(wR,d){ wR===1&&__fx.customLobby.isActive()&&__fx.customLobby.setActive(false); if(8===i.pz&&0===wR)if(4211===d)wS(d);")
+            `this.wQ=function(wR,d){
+            wR===1 && __fx.customLobby.isActive() && ${dict.MenuManager}.${dict.getState}() !== 6 && __fx.customLobby.setActive(false);
+            if(8===i.pz&&0===wR)if(4211===d)wS(d);`)
         // when leaving a game
         replaceRawCode("this.wl=function(zs){ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),i.j(5,5)}",
-            "this.wl=function(zs){__fx.customLobby.setActive(false); ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),i.j(5,5)}")
+            `this.wl=function(zs){ __fx.customLobby.isActive() === false && ap.ky.zt(),
+            this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0);
+            if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby(); else i.j(5,5)}`)
         // if the server is unreachable
         replaceRawCode("0===a7Q?g.wc(3249):", "0===a7Q?g.wc(3249):1===a7Q&&__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):")
         // error descriptions
@@ -332,11 +337,23 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         // map info (for the map selection menu)
         replaceRawCode("this.info=new Array(Maps.totalMapCount+1),this.info[0]={name:__L(),",
             "this.info=new Array(Maps.totalMapCount+1),__fx.customLobby.setMapInfo(this.info),this.info[0]={name:__L(),")
+        // to not set custom lobby games as singleplayer
+        replaceRawCode(",a.b(c,d),1===players.length&&SingleplayerMenu.a9H(type),",
+            ",a.b(c,d),1===players.length&&!__fx.customLobby.isActive()&&SingleplayerMenu.a9H(type),");
+        replaceRawCode(",this.vK=this.jS=players.length,this.gameIsSingleplayer=1===this.vK,",
+            ",this.vK=this.jS=players.length,this.gameIsSingleplayer=1===this.vK&&!__fx.customLobby.isActive(),")
         // custom difficulty
         replaceRawCode("if(ax.jm){if(ax.jn.jo)for(i=game.jp-1;0<=i;i--)this.strength[i+jl]=ax.jn.jo[i+1]}else if(9===game.jq)this.jr();",
             `if(ax.jm){if(ax.jn.jo)for(i=game.jp-1;0<=i;i--)this.strength[i+jl]=ax.jn.jo[i+1]}else if(9===game.jq)this.jr();
             else if (__fx.customLobby.isActive()) for(i=game.jp-1;0<=i;i--) this.strength[i+jl] = __fx.customLobby.gameInfo.difficulty;`
         )
+        // spawn selection
+        replaceRawCode(",ax.jm&&!ax.jn.zi?this.zZ=this.gh=!1:this.zZ=this.gh=this.iS||this.jS<100,",
+            ",ax.jm&&!ax.jn.zi?this.zZ=this.gh=!1 : __fx.customLobby.isActive() ? this.zZ=this.gh=__fx.customLobby.gameInfo.spawnSelection : this.zZ=this.gh=this.iS||this.jS<100,")
+        // bot count
+        replaceRawCode(",this.js?this.t1=aO.zj():this.t1=this.maxPlayers,this.jp=this.t1-this.jS,",
+            `,__fx.customLobby.isActive() ? this.t1 = Math.max(Math.min(__fx.customLobby.gameInfo.botCount, this.maxPlayers), this.jS)
+            : this.js?this.t1=aO.zj():this.t1=this.maxPlayers,this.jp=this.t1-this.jS,`)
     }
 
     // Invalid hostname detection avoidance
