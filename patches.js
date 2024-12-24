@@ -42,12 +42,12 @@ export default ({ replace, replaceOne, replaceRawCode, dictionary, matchOne, mat
     }
 
     // Increment win counter on wins
-    replaceRawCode(`=function(sE){o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`,
+    replaceRawCode(`=function(sE){a8.gD[sE]&&(o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0))`,
         `=function(sE){
 		if (${playerId} === sE && !${gIsSingleplayer})
 			__fx.wins.count++, window.localStorage.setItem("fx_winCount", __fx.wins.count),
 			xD(0,"Your Win Count is now " + __fx.wins.count,3,sE,ad.gN,ad.kl,-1,!0);
-		o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0)`);
+		a8.gD[sE]&&(o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0))`);
 
 
     { // Add settings button, custom lobby button and win count
@@ -308,8 +308,8 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         )
         replaceRawCode(`(socketId-aq.kt.a82)+"/",(socket=new WebSocket(url)`,
             `(socketId-aq.kt.a82)+"/",(socket=new WebSocket(__fx.customLobby.isActive() && socketId === 1 ? __fx.customLobby.getSocketURL() : url)`)
-        replaceRawCode("this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)}",
-            "this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)},__fx.customLobby.setSendFunction(this.send)")
+        replaceRawCode("this.send=function(socketId,data){data.length,aJE(socketId),aJ4[socketId].send(data)}",
+            "this.send=function(socketId,data){data.length,aJE(socketId),aJ4[socketId].send(data)},__fx.customLobby.setSendFunction(this.send)")
         replaceRawCode("b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):",
             "b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):__fx.customLobby.isCustomMessage(a0)||")
         // set the custom lobby to inactive when clicking the "Back" button on the connection screen or leaving the lobby
@@ -324,36 +324,35 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             wR===1 && __fx.customLobby.isActive() && ${dict.MenuManager}.${dict.getState}() !== 6 && __fx.customLobby.setActive(false);
             if(8===i.pz&&0===wR)if(4211===d)wS(d);`)
         // when leaving a game
-        replaceRawCode("this.wl=function(zs){ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),i.j(5,5)}",
-            `this.wl=function(zs){ __fx.customLobby.isActive() === false && ap.ky.zt(),
+        replaceRawCode("this.wl=function(zs){a1.gZ||az.oO.a11.length||(az.oO.a11=az.a12.vd()),ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),this.js?i.j(19):i.j(5,5)}",
+            `this.wl=function(zs){a1.gZ||az.oO.a11.length||(az.oO.a11=az.a12.vd()),
+            __fx.customLobby.isActive() === false && ap.ky.zt(),
             this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0);
-            if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby(); else i.j(5,5)}`)
+            if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby(); else this.js?i.j(19):i.j(5,5)}`)
         // if the server is unreachable
         replaceRawCode("0===a7Q?g.wc(3249):", "0===a7Q?g.wc(3249):1===a7Q&&__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):")
         // error descriptions
         const errors = { 3249: "No servers found", 4705: "Lobby not found", 4730: "Kicked from lobby" };
-        replaceRawCode(`i___.j(4,5,new k("⚠️ "+title,w3__,!0))`,
-            `i___.j(4,5,new k("⚠️ "+title, ${JSON.stringify(errors)}[w3__] || w3__,!0))`)
+        replaceRawCode(`m.n___(4,5,new o(__L(),xT(e),!0))`,
+            `m.n___(4,5,new o(__L(),${JSON.stringify(errors)}[e] ?? xT(e),!0))`)
         // map info (for the map selection menu)
         replaceRawCode("this.info=new Array(Maps.totalMapCount+1),this.info[0]={name:__L(),",
             "this.info=new Array(Maps.totalMapCount+1),__fx.customLobby.setMapInfo(this.info),this.info[0]={name:__L(),")
         // to not set custom lobby games as singleplayer
-        replaceRawCode(",a.b(c,d),1===players.length&&SingleplayerMenu.a9H(type),",
-            ",a.b(c,d),1===players.length&&!__fx.customLobby.isActive()&&SingleplayerMenu.a9H(type),");
-        replaceRawCode(",this.vK=this.jS=players.length,this.gameIsSingleplayer=1===this.vK,",
-            ",this.vK=this.jS=players.length,this.gameIsSingleplayer=1===this.vK&&!__fx.customLobby.isActive(),")
+        replaceRawCode("this.vK=this.jS=this.data.a0f,this.gameIsSingleplayer=1===this.vK,",
+            "this.vK=this.jS=this.data.a0f,this.gameIsSingleplayer=1===this.vK&&!__fx.customLobby.isActive(),")
         // custom difficulty
-        replaceRawCode("if(ax.jm){if(ax.jn.jo)for(i=game.jp-1;0<=i;i--)this.strength[i+jl]=ax.jn.jo[i+1]}else if(9===game.jq)this.jr();",
-            `if(ax.jm){if(ax.jn.jo)for(i=game.jp-1;0<=i;i--)this.strength[i+jl]=ax.jn.jo[i+1]}else if(9===game.jq)this.jr();
-            else if (__fx.customLobby.isActive()) for(i=game.jp-1;0<=i;i--) this.strength[i+jl] = __fx.customLobby.gameInfo.difficulty;`
-        )
+        replaceRawCode("if(9===a1.jq)this.jr();else if(a1.js)if(3===a1.data.jv)for(z=a1.ju-1;0<=z;z--){var jw=z+jp;this.ie[jw]=",
+            `if(9===a1.jq)this.jr();
+            else if (__fx.customLobby.isActive()) for(z=a1.ju-1;0<=z;z--) this.ie[z+jp] = __fx.customLobby.gameInfo.difficulty;
+            else if(a1.js)if(3===a1.data.jv)for(z=a1.ju-1;0<=z;z--){var jw=z+jp;this.ie[jw]=`)
         // spawn selection
-        replaceRawCode(",ax.jm&&!ax.jn.zi?this.zZ=this.gh=!1:this.zZ=this.gh=this.iS||this.jS<100,",
-            ",ax.jm&&!ax.jn.zi?this.zZ=this.gh=!1 : __fx.customLobby.isActive() ? this.zZ=this.gh=__fx.customLobby.gameInfo.spawnSelection : this.zZ=this.gh=this.iS||this.jS<100,")
+        replaceRawCode(":50,this.a=this.b=this.data.c,this.d=this.b?new e:null,",
+            ":50,this.a=this.b=__fx.customLobby.isActive() ? __fx.customLobby.gameInfo.spawnSelection : this.data.c,this.d=this.b?new e:null,")
         // bot count
-        replaceRawCode(",this.js?this.t1=aO.zj():this.t1=this.maxPlayers,this.jp=this.t1-this.jS,",
-            `,__fx.customLobby.isActive() ? this.t1 = Math.max(Math.min(__fx.customLobby.gameInfo.botCount, this.maxPlayers), this.jS)
-            : this.js?this.t1=aO.zj():this.t1=this.maxPlayers,this.jp=this.t1-this.jS,`)
+        replaceRawCode(",this.gLobbyMaxJoin=this.data.playerCount,this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,",
+            `,this.gLobbyMaxJoin = __fx.customLobby.isActive() ? Math.max(Math.min(__fx.customLobby.gameInfo.botCount, this.data.playerCount), this.gHumans) : this.data.playerCount,
+            this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,`)
     }
 
     // Invalid hostname detection avoidance

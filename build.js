@@ -43,6 +43,13 @@ if (exposeVarsToGlobalScope && script.startsWith("\"use strict\";    (function (
 if (exposeVarsToGlobalScope && script.startsWith("(function () {") && script.endsWith("})();"))
 	script = script.slice("(function () {".length, -"})();".length);
 
+// uncompress strings
+// this will break if there is a closing square bracket ("]") in one of the strings
+const stringArrayRaw = script.match(/var S=(\[[^\]]+\]);/)?.[1];
+if (stringArrayRaw === undefined) throw new Error("cannot find the string array");
+const stringArray = JSON.parse(stringArrayRaw);
+script = script.replace(/\bS\[(\d+)\]/g, (_match, index) => `"${stringArray[index]}"`);
+
 // for versions ^1.99.5.2
 const minificationResult = UglifyJS.minify(script, {
 	"compress": { "arrows": false },
@@ -140,8 +147,8 @@ const generateRegularExpression = (/** @type {string} */ code, /** @type {boolea
 ].forEach(matchDictionaryExpression);
 
 const rawCodeSegments = [
-	`aR.f1(fy)?aR.fB(fy)?a0z=__L([a0z]):(player=aR.fA(fy),oM=__L([b1.t9.xw(@playerData.@rawPlayerNames[player],b1.kx.l2(0,10),150)])+"   ",a0z=(oM+=__L([b1.l5.l6(playerData.@playerBalances[player])])+"   ")+(__L([b1.l5.l6(playerData.@playerTerritories[player])])+"   ")+`,
-	"this.@gIsSingleplayer?this.@gLobbyMaxJoin=@SingleplayerMenu.@getSingleplayerPlayerCount():this.gLobbyMaxJoin=this.@gMaxPlayers,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
+	`aQ.eI(e0)?aQ.eE(e0)?a38=__L([a38]):(player=aQ.eF(e0),oq=__L([b0.uS.zG(@playerData.@rawPlayerNames[player],b0.p9.qQ(0,10),150)])+"   ",oq=(oq+=__L([b0.wx.a07(playerData.@playerBalances[player])])+"   ")+__L([b0.wx.a07(playerData.@playerTerritories[player])])+"   ",`,
+	"this.gLobbyMaxJoin=this.@data.@playerCount,this.maxPlayers=this.gLobbyMaxJoin,this.@gBots=this.gLobbyMaxJoin-this.@gHumans,this.sg=0,",
 	"[0]=__L(),@strs[1]=@game.@gIsSingleplayer?__L():__L(),",
 	"?(this.gB=Math.floor(.066*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
 	`for(a0L=new Array(@game.@gMaxPlayers),a0A.font=a07,@i=game.gMaxPlayers-1;0<=i;i--)a0L[i]=i+1+".",@playerData.@playerNames[i]=aY.qW.tm(playerData.@rawPlayerNames[i],a07,a0W),a0K[i]=Math.floor(a0A.measureText(playerData.playerNames[i]).width);`,
