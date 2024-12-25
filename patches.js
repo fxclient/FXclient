@@ -140,7 +140,9 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         `, ${dict.game}.${dict.gIsTeamGame} && __fx.donationsTracker.displayHistory($2, ${rawPlayerNames}, ${gIsSingleplayer}), $1 && !isEmptySpace $3`);
 
     // Reset donation history and leaderboard filter when a new game is started
-    replaceOne(new RegExp(`,this\\.${dictionary.playerBalances}.fill\\(0\\),`, "g"), "$& __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow(), ");
+    replaceRawCode(",ab.dP(),ad.a10(),b5.nZ.oJ=[],bc.dP(),this.wE=1,",
+        `,ab.dP(),ad.a10(),b5.nZ.oJ=[],bc.dP(),this.wE=1,
+        __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow(),`)
 
     { // Player list and leaderboard filter tabs
         // Draw player list button
