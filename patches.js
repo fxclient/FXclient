@@ -97,7 +97,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 
     { // Keybinds
         // match required variables
-        const { 0: match, groups: { attackBarObject, setRelative } } = matchOne(/:\w+\.\w+\(\w+,8\)\?(?<attackBarObject>\w+)\.(?<setRelative>\w+)\(16\/15\):/g);
+        const { 0: match, groups: { attackBarObject, setRelative } } = matchOne(/:\w+\.\w+\(\w+,8\)\?(?<attackBarObject>\w+)\.(?<setRelative>\w+)\(32\/31\):/g);
         // create a setAbsolutePercentage function on the attack percentage bar object,
         // and also register the keybind handler functions
         replaceOne(/}(function \w+\((\w+)\){return!\(1<\2&&1===(?<attackPercentage>\w+)\|\|\(1<\2&&\2\*\3-\3<1\/1024\?\2=\(\3\+1\/1024\)\/\3:\2<1)/g,
@@ -304,22 +304,22 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
     }
 
     { // Custom lobbies
-        replaceRawCode("this.aHm=function(){i___.rX(),aM.a7U(bY.dZ.data[10].value),aM.init()}",
-            `this.aHm=function(){i___.rX(),aM.a7U(bY.dZ.data[10].value),aM.init()},
+        replaceRawCode("this.aHm=function(){i___.rX(),aM.a7U(0),aM.init()}",
+            `this.aHm=function(){i___.rX(),aM.a7U(0),aM.init()},
             __fx.customLobby.setJoinFunction(() => { i___.rX(); aM.a7U(0); aM.init(); })`
         )
         replaceRawCode(`(socketId-aq.kt.a82)+"/",(socket=new WebSocket(url)`,
             `(socketId-aq.kt.a82)+"/",(socket=new WebSocket(__fx.customLobby.isActive() && socketId === 1 ? __fx.customLobby.getSocketURL() : url)`)
-        replaceRawCode("this.send=function(socketId,data){data.length,aJE(socketId),aJ4[socketId].send(data)}",
-            "this.send=function(socketId,data){data.length,aJE(socketId),aJ4[socketId].send(data)},__fx.customLobby.setSendFunction(this.send)")
+        replaceRawCode("this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)}",
+            "this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)},__fx.customLobby.setSendFunction(this.send)")
         replaceRawCode("b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):",
             "b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):__fx.customLobby.isCustomMessage(a0)||")
         // set the custom lobby to inactive when clicking the "Back" button on the connection screen or leaving the lobby
         replaceRawCode("this.xZ=function(){Sockets.kt.wf(3260),i___.kt.we()}",
             "this.xZ=function(){Sockets.kt.wf(3260),__fx.customLobby.setActive(false),i___.kt.we()}")
-        replaceRawCode("this.xY=function(){this.wg(),Sockets.kt.wf(3240),aN.setState(0),i___.j(5,5)}",
-            `this.xY=function(){this.wg(),Sockets.kt.wf(3240),__fx.customLobby.setActive(false),aN.setState(0),i___.j(5,5)},
-            __fx.customLobby.setLeaveFunction(() => this.xY())`)
+        replaceRawCode("function(){bl.zf(),Sockets.s.ze(3240),n.r(),n.o(5,5)}",
+            `(__fx.customLobby.setLeaveFunction(() => {bl.zf(),Sockets.s.ze(3240),__fx.customLobby.setActive(false),n.r(),n.o(5,5)}),
+            function(){bl.zf(),Sockets.s.ze(3240),__fx.customLobby.setActive(false),n.r(),n.o(5,5)})`)
         // when a socket error occurs on the custom lobby socket
         replaceRawCode("this.wQ=function(wR,d){if(8===i.pz&&0===wR)if(4211===d)wS(d);",
             `this.wQ=function(wR,d){
@@ -332,7 +332,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0);
             if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby(); else this.js?i.j(19):i.j(5,5)}`)
         // if the server is unreachable
-        replaceRawCode("0===a7Q?g.wc(3249):", "0===a7Q?g.wc(3249):1===a7Q&&__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):")
+        replaceRawCode("{g.wc(3249)}", "{__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):g.wc(3249)}")
         // error descriptions
         const errors = { 3249: "No servers found", 4705: "Lobby not found", 4730: "Kicked from lobby" };
         replaceRawCode(`m.n___(4,5,new o(__L(),xT(e),!0))`,
