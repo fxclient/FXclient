@@ -8240,7 +8240,7 @@ function aJ0() {
 			n.r(), bk.zh(), aw.s.zg(3240), __fx.customLobby.setActive(false), n.o(5, 5)
 		}),
 		function() {
-			bk.zh(), aw.s.zg(3240), __fx.customLobby.setActive(false), n.r(), n.o(5, 5)
+			n.r(), bk.zh(), aw.s.zg(3240), __fx.customLobby.setActive(false), n.o(5, 5)
 		})), new q(L(297), function() {
 		return aM6(1), 2
 	})], b7.nX), aLz = new s2(s3, s4, aM5, s6, aM7, bk.sk.aBK);
