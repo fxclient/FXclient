@@ -1,4 +1,4 @@
-const fx_version = '0.6.6.13'; // FX Client Version
+const fx_version = '0.6.6.14'; // FX Client Version
 const fx_update = 'Jan 12'; // FX Client Last Updated
 
 import settingsManager from './settings.js';
