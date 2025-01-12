@@ -317,8 +317,8 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         // set the custom lobby to inactive when clicking the "Back" button on the connection screen or leaving the lobby
         replaceRawCode("this.xZ=function(){Sockets.kt.wf(3260),i___.kt.we()}",
             "this.xZ=function(){Sockets.kt.wf(3260),__fx.customLobby.setActive(false),i___.kt.we()}")
-        replaceRawCode("function(){bl.zf(),Sockets.s.ze(3240),n.r(),n.o(5,5)}",
-            `(__fx.customLobby.setLeaveFunction(() => {bl.zf(),Sockets.s.ze(3240),__fx.customLobby.setActive(false),n.r(),n.o(5,5)}),
+        replaceRawCode("function(){n.r(),bl.zf(),Sockets.s.ze(3240),n.o(5,5)}",
+            `(__fx.customLobby.setLeaveFunction(() => {n.r(),bl.zf(),Sockets.s.ze(3240),__fx.customLobby.setActive(false),n.o(5,5)}),
             function(){bl.zf(),Sockets.s.ze(3240),__fx.customLobby.setActive(false),n.r(),n.o(5,5)})`)
         // when a socket error occurs on the custom lobby socket
         replaceRawCode("this.wQ=function(wR,d){if(8===i.pz&&0===wR)if(4211===d)wS(d);",
