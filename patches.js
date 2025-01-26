@@ -326,11 +326,12 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             wR===1 && __fx.customLobby.isActive() && ${dict.MenuManager}.${dict.getState}() !== 6 && __fx.customLobby.setActive(false);
             if(8===i.pz&&0===wR)if(4211===d)wS(d);`)
         // when leaving a game
+        /* temporarily removed as this is unused currently
         replaceRawCode("this.wl=function(zs){a1.gZ||az.oO.a11.length||(az.oO.a11=az.a12.vd()),ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),this.js?i.j(19):i.j(5,5)}",
             `this.wl=function(zs){a1.gZ||az.oO.a11.length||(az.oO.a11=az.a12.vd()),
             __fx.customLobby.isActive() === false && ap.ky.zt(),
             this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0);
-            if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby(); else this.js?i.j(19):i.j(5,5)}`)
+            if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby(); else this.js?i.j(19):i.j(5,5)}`)*/
         // if the server is unreachable
         replaceRawCode("{g.wc(3249)}", "{__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):g.wc(3249)}")
         // error descriptions
