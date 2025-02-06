@@ -18,6 +18,7 @@ var settings = {
   densityDisplayStyle: "percentage",
   hideBotNames: false,
   highlightClanSpawns: false,
+  detailedTeamPercentage: false,
   //"customMapFileBtn": true
   customBackgroundUrl: "",
   attackPercentageKeybinds: [],
@@ -86,6 +87,11 @@ const settingsManager = new (function () {
       type: "checkbox",
       label: "Highlight clan spawnpoints",
       note: "Increases the spawnpoint glow size for members of your clan",
+    },
+    {
+      for: "detailedTeamPercentage", type: "checkbox",
+      label: "Detailed team pie chart percentage",
+      note: "For example: this would show 25.82% instead of 26% on the pie chart in team games"
     },
     {
       for: "customBackgroundUrl",

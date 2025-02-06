@@ -362,6 +362,10 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,`)
     }
 
+    // Detailed team pie chart percentage
+    replaceRawCode(`qr=Math.floor(100*f0+.5)+"%"`,
+        `qr = (__fx.settings.detailedTeamPercentage ? (100*f0).toFixed(2) : Math.floor(100*f0+.5)) + "%"`)
+
     // Invalid hostname detection avoidance
     replaceRawCode(`,hostnameIsValid=0<=window.location.hostname.toLowerCase().indexOf("territorial.io"),`,
         `,hostnameIsValid=true,`)
