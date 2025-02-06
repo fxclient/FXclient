@@ -9596,8 +9596,8 @@ function dD() {
 				}(a7, et, dz, aPy, aPz = aPy + 2 * Math.PI * a1I[a7] / eY), function(et, dz, aPy, aPz) {
 					var f0 = (aPz - aPy) / (2 * Math.PI),
 						fontSize = +dz * Math.min(f0, .37);
-					fontSize < 8 || (aPy = (aPy + aPz) / 2, aPz = Math.floor(100 * f0 + .5) + "%", dz *= .525 - Math.max(.6 * (f0 - .7), 0), x0.font = b6.pW.rY(1, fontSize), x0.fillStyle = b7.md, x0.fillText(aPz, et + Math.cos(aPy) * dz, et +
-						Math.cos(aPy + 1.5 * Math.PI) * dz))
+					fontSize < 8 || (aPy = (aPy + aPz) / 2, aPz = (__fx.settings.detailedTeamPercentage ? (100 * f0).toFixed(2) : Math.floor(100 * f0 + .5)) + "%", dz *= .525 - Math.max(.6 * (f0 - .7), 0), x0.font = b6.pW.rY(1, fontSize), x0
+						.fillStyle = b7.md, x0.fillText(aPz, et + Math.cos(aPy) * dz, et + Math.cos(aPy + 1.5 * Math.PI) * dz))
 				}(et, dz, aPy, aPz), 0 !== a7 && aQ4(et, dz, aPy), aPy = aPz);
 				aQ4(et, dz, 1.5 * Math.PI)
 			}!
