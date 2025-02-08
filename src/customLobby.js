@@ -30,8 +30,8 @@ main.className = "customlobby-main";
 const playerListContainer = document.createElement("div");
 const playerCount = document.createElement("p");
 playerCount.textContent = "0 Players";
-const playerList = document.createElement("div");
-playerListContainer.append(playerCount, playerList);
+const playerListDiv = document.createElement("div");
+playerListContainer.append(playerCount, playerListDiv);
 
 const optionsContainer = document.createElement("div");
 optionsContainer.className = "text-align-left";
@@ -195,40 +195,46 @@ function isCustomMessage(raw) {
         Object.entries(data.options).forEach(([option, value]) => updateOption(option, value));
         displayPlayers(data.players);
     } else if (type === "addPlayer") {
-        addPlayer(data);
+        addPlayer({ name: data.name, inGame: false, isHost: false });
         updatePlayerCount();
     } else if (type === "removePlayer") {
         const index = data;
-        playerElements[index].element.remove();
-        playerElements.splice(index, 1);
+        playerList[index].element.remove();
+        playerList.splice(index, 1);
         updatePlayerCount();
     } else if (type === "inLobby") {
         const index = data;
-        playerElements[index].inGameBadge.className = "d-none";
+        playerList[index].inGameBadge.className = "d-none";
     } else if (type === "options") {
         const [option, value] = data;
         updateOption(option, value);
     } else if (type === "setHost") {
         const index = data;
-        playerElements[index].isHost = true;
-        playerElements[index].hostBadge.className = "";
+        playerList[index].isHost = true;
+        playerList[index].hostBadge.className = "";
     } else if (type === "host") {
         playerIsHost = true;
         startButton.disabled = false;
         optionsContainer.classList.remove("disabled");
-        playerElements.forEach(p => { if (!p.isHost) p.kickButton.className = "" });
+        playerList.forEach(p => { if (!p.isHost) p.kickButton.className = "" });
     } else if (type === "serverMessage") alert(data);
     return true;
 }
-/** @type {{ element: HTMLDivElement, hostBadge: HTMLSpanElement, inGameBadge: HTMLSpanElement, kickButton: HTMLButtonElement, isHost: boolean }[]} */
-let playerElements = [];
+
+/** @typedef {{ element: HTMLDivElement, hostBadge: HTMLSpanElement, inGameBadge: HTMLSpanElement, kickButton: HTMLButtonElement, isHost: boolean, inGame: boolean }} PlayerListEntry */
+
+/** @type {PlayerListEntry[]} */
+let playerList = [];
+/** @type {PlayerListEntry} */
+let thisPlayer;
+
 function createBadge(text, visible) {
     const badge = document.createElement("span");
     badge.textContent = text;
     badge.className = visible ? "" : "d-none";
     return badge;
 }
-/** @typedef {{ name: string, isHost?: boolean, inGame?: boolean }} PlayerInfo */
+/** @typedef {{ name: string, isHost: boolean, inGame: boolean }} PlayerInfo */
 /** @param {PlayerInfo} player */
 function addPlayer(player) {
     const div = document.createElement("div");
@@ -241,13 +247,13 @@ function addPlayer(player) {
     const hostBadge = createBadge("Host", player.isHost);
     const inGameBadge = createBadge("In Game", player.inGame);
     div.append(hostBadge, inGameBadge, kickButton);
-    playerList.append(div);
-    playerElements.push({ element: div, hostBadge, inGameBadge, kickButton, isHost: player.isHost });
+    playerListDiv.append(div);
+    playerList.push({ element: div, hostBadge, inGameBadge, kickButton, isHost: player.isHost, inGame: player.inGame });
 }
 function kickButtonHandler(event) {
     const button = event.target;
-    for (let index = 0; index < playerElements.length; index++) {
-        if (playerElements[index].kickButton === button) {
+    for (let index = 0; index < playerList.length; index++) {
+        if (playerList[index].kickButton === button) {
             sendMessage("kick", index);
             break;
         }
@@ -255,17 +261,26 @@ function kickButtonHandler(event) {
 }
 /** @param {PlayerInfo[]} players */
 function displayPlayers(players) {
-    playerElements = [];
-    playerList.innerHTML = "";
+    playerList = [];
+    playerListDiv.innerHTML = "";
     players.forEach(addPlayer);
+    thisPlayer = playerList[playerList.length - 1];
     updatePlayerCount();
 }
 function updatePlayerCount() {
-    playerCount.textContent = `${playerElements.length} Player${playerElements.length === 1 ? "" : "s"}`
+    playerCount.textContent = `${playerList.length} Player${playerList.length === 1 ? "" : "s"}`
 }
 
 function getSocketURL() {
     return socketURL + (currentCode === "" ? "create" : "join?" + currentCode)
+}
+function getPlayerId() {
+    let id = 0;
+    for (let i = 0; i < playerList.length; i++) {
+        const player = playerList[i];
+        if (player === thisPlayer) return id;
+        if (player.inGame === false) id++;
+    }
 }
 function startGame() {
     WindowManager.closeWindow("customLobby");
@@ -285,7 +300,7 @@ function setActive(active) {
 function hideWindow() {
     WindowManager.closeWindow("customLobby");
 }
-const gameInterface = { gameInfo: optionsValues, showJoinPrompt, isCustomMessage, getSocketURL, setJoinFunction, setLeaveFunction, setSendFunction, setMapInfo, rejoinLobby, hideWindow, isActive: () => isActive, setActive }
+const gameInterface = { gameInfo: optionsValues, showJoinPrompt, isCustomMessage, getSocketURL, getPlayerId, setJoinFunction, setLeaveFunction, setSendFunction, setMapInfo, rejoinLobby, hideWindow, isActive: () => isActive, setActive }
 
 const customLobby = gameInterface
 export default customLobby
