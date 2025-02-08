@@ -5090,9 +5090,11 @@ function aAn() {
 			t3 = Math.min(t3, aBC);
 		8 === qc.aBD && (t3 -= t3 % 2);
 		aBC = bk.t1.t2[e0].splice(0, t3), bk.t1.t3[e0] -= t3, t3 = function(aBE) {
-			if (bk.aAl)
+			if (bk.aAl) {
+				if (__fx.customLobby.isActive()) return __fx.customLobby.getPlayerId();
 				for (var eY = aBE.length, qu = bk.aAl.qu, a7 = 0; a7 < eY; a7++)
-					if (aBE[a7].qu === qu) return a7;
+					if (aBE[a7].qu === qu) return a7
+			}
 			return -1
 		}(aBC);
 		return -1 === t3 ? (bk.s.aAx += 29 === n.rw && bk.s.qb[0] === e0 && 1 === bk.s.qb[2], !1) : (8 === qc.aBD && (qc.aBH = (qc.aBH + (t3 >> 1)) % 1024, e0 = t3 - t3 % 2, t3 %= 2, aBC = aBC.slice(e0, 2 + e0)), ar.dU(qc, aBC, t3), !0)
