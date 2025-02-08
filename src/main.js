@@ -1,5 +1,16 @@
-const fx_version = '0.6.6.18'; // FX Client Version
-const fx_update = 'Feb 6'; // FX Client Last Updated
+const fx_version = '0.6.7'; // FX Client Version
+const fx_update = 'Feb 8'; // FX Client Last Updated
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.addEventListener("message", (e) => {
+    const message = e.data;
+    if (message.event === "activate" && buildTimestamp !== message.version) {
+      // worker was updated in the background
+      document.getElementById("updateNotification").style.display = "block";
+    }
+  });
+  navigator.serviceWorker.register("./sw.js");
+}
 
 import settingsManager from './settings.js';
 import { clanFilter, leaderboardFilter } from "./clanFilters.js";

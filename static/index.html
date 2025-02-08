@@ -83,6 +83,11 @@
         <h1>Donation history for </h1>
         <p id="donationhistory_note">Note: donations from bots are not shown here</p>
         <table><tbody id="donationhistory_content"></tbody></table>
+    </div>
+    <div class="window" style="display: none" id="updateNotification">
+      <h3>A new version of FX is available! Reload to update</h3>
+      <button onclick="window.location.reload()">Reload</button>
+      <button onclick="document.getElementById('updateNotification').style.display = 'none'">Dismiss</button>
     </div></span>
     <script src="variables.js?buildTimestamp"></script>
     <script src="fx.bundle.js?buildTimestamp"></script>
