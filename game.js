@@ -72,7 +72,7 @@ function bp(bq) {
 }
 
 function dB() {
-	this.dl = 1092, this.n = 2039, this.rVersion = 7, this.dW = function() {
+	this.dl = 1092, this.n = 2040, this.rVersion = 7, this.dW = function() {
 		di = 2;
 		var dm = bJ.dn(this.n, 10) % 100;
 		dj = "15 Feb 2025 [" + bJ.dn(this.n, 1e3) + "." + (dm < 10 ? "0" : "") + dm + "." + this.n % 10 + "]", a8 = true, a9 = function() {
@@ -6802,10 +6802,10 @@ function cZ() {
 	this.kG = null, this.kF = 0, this.dW = function() {
 		aIE = [], 9 === aC.k7 && this.aIF()
 	}, this.aIF = function() {
-		var aIG = [59, 80, 105, 150, 190, 333];
-		this.kG = [0, 0, 0, 0, 0, 0], this.kF = 0, aC.jq <= aIG[0] ? (this.kF = 256 - bJ.dn(256 * aC.jq, aIG[0]), this.kG[5] = bJ.dn(2 * Math.max(aC.jq - 5, 0), 11), this.kG[0] = aC.eX - aC.jq - this.kF - this.kG[5]) : (this.kG[5] = 9 + bJ.dn(
-			100 * (aC.jq - 59), 161), this.kG[0] = 512 - aC.jq - this.kG[5]), aC.kB = aC.eX - aC.jq, aC.data.numberTeams = (0 < aC.jq) + (0 < aC.kB), aC.data.playerCount = aC.w0 = aC.jq + aC.kB, aC.data.teamPlayerCount = new Uint16Array([0,
-			0, 0, 0, 0, 0, 0, aC.jq + this.kF, aC.kB - this.kF
+		var aIG = [60, 80, 105, 150, 190, 333];
+		this.kG = [0, 0, 0, 0, 0, 0], this.kF = 0, aC.jq <= aIG[0] ? (this.kF = 256 - bJ.dn(256 * aC.jq, aIG[0]), this.kG[5] = bJ.p7(bJ.dn(aC.jq - 6, 6), 0, 7), this.kG[0] = aC.eX - aC.jq - this.kF - this.kG[5]) : (this.kG[5] = 7 + bJ.dn(100 * (
+			aC.jq - 60), 158), this.kG[0] = 512 - aC.jq - this.kG[5]), aC.kB = aC.eX - aC.jq, aC.data.numberTeams = (0 < aC.jq) + (0 < aC.kB), aC.data.playerCount = aC.w0 = aC.jq + aC.kB, aC.data.teamPlayerCount = new Uint16Array([0, 0, 0, 0,
+			0, 0, 0, aC.jq + this.kF, aC.kB - this.kF
 		]), aC.a3H.a3L()
 	}, this.aFY = function(player) {
 		aIE.push({
