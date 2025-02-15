@@ -1,5 +1,5 @@
-const fx_version = '0.6.7'; // FX Client Version
-const fx_update = 'Feb 8'; // FX Client Last Updated
+const fx_version = '0.6.7.1'; // FX Client Version
+const fx_update = 'Feb 15'; // FX Client Last Updated
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.addEventListener("message", (e) => {

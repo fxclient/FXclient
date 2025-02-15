@@ -193,7 +193,7 @@ function isCustomMessage(raw) {
         if (playerIsHost) optionsContainer.classList.remove("disabled");
         else optionsContainer.classList.add("disabled");
         Object.entries(data.options).forEach(([option, value]) => updateOption(option, value));
-        displayPlayers(data.players);
+        displayPlayers(data.players, data.id);
     } else if (type === "addPlayer") {
         addPlayer({ name: data.name, inGame: false, isHost: false });
         updatePlayerCount();
@@ -204,6 +204,7 @@ function isCustomMessage(raw) {
         updatePlayerCount();
     } else if (type === "inLobby") {
         const index = data;
+        playerList[index].inGame = false;
         playerList[index].inGameBadge.className = "d-none";
     } else if (type === "options") {
         const [option, value] = data;
@@ -260,11 +261,11 @@ function kickButtonHandler(event) {
     }
 }
 /** @param {PlayerInfo[]} players */
-function displayPlayers(players) {
+function displayPlayers(players, thisPlayerId) {
     playerList = [];
     playerListDiv.innerHTML = "";
     players.forEach(addPlayer);
-    thisPlayer = playerList[playerList.length - 1];
+    thisPlayer = playerList[thisPlayerId];
     updatePlayerCount();
 }
 function updatePlayerCount() {
