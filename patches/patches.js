@@ -1,6 +1,12 @@
 import assets from '../assets.js';
 import ModUtils from '../modUtils.js';
-export default (/** @type {ModUtils} */ { replace, replaceOne, replaceRawCode, dictionary, matchOne, matchRawCode, escapeRegExp }) => {
+
+export default (/** @type {ModUtils} */ modUtils) => {
+    modUtils.waitForMinification(() => applyPatches(modUtils))
+}
+//export const requiredVariables = ["game", "playerId", "playerData", "rawPlayerNames", "gIsSingleplayer", "playerTerritories"];
+
+function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawCode, dictionary, matchOne, matchRawCode, escapeRegExp }) {
 
     // Constants for easy usage of otherwise long variable access expressions
     const dict = dictionary;

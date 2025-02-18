@@ -5,7 +5,6 @@ import UglifyJS from 'uglify-js';
 import fs from 'fs';
 import webpack from 'webpack';
 import path from 'path';
-import applyPatches from './patches/patches.js';
 import ModUtils, { minifyCode } from './modUtils.js';
 
 if (!fs.existsSync("./build")) fs.mkdirSync("./build");
@@ -56,8 +55,8 @@ script = script.replace(/\bS\[(\d+)\]/g, (_match, index) => `"${stringArray[inde
 
 const modUtils = new ModUtils(minifyCode(script));
 
-import customLobbyPatches from './patches/customLobby.js';
-customLobbyPatches(modUtils);
+import applyPatches from './patches/main.js';
+applyPatches(modUtils);
 
 // for versions ^1.99.5.2
 const minificationResult = UglifyJS.minify(modUtils.script, {
@@ -101,8 +100,9 @@ rawCodeSegments.forEach(code => {
 });
 
 modUtils.executePostMinifyHandlers();
-applyPatches(modUtils);
 script = modUtils.script;
+
+console.log("Building client code...")
 
 await buildClientCode();
 // the dictionary should maybe get embedded into one of the files in the bundle
