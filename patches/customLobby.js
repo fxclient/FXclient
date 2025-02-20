@@ -1,23 +1,17 @@
 import ModUtils from '../modUtils.js';
 
 // Custom lobby patches
-export default (/** @type {ModUtils} */ { replaceCode, replaceRawCode, dictionary: dict, waitForMinification }) => {
+export default (/** @type {ModUtils} */ { insertCode, replaceRawCode, dictionary: dict, waitForMinification }) => {
     
     // set player id correctly
-    replaceCode(`function aBG(aBE) {
+    insertCode(`function aBG(aBE) {
 		if (!Lobby.aAl) { return -1; }
+        /* here */
 		var s = aBE.length;
 		var qu = Lobby.aAl.qu;
 		for (var i = 0; i < s; i++) { if (aBE[i].qu === qu) { return i; } }
 		return -1;
-	}`, `function aBG(aBE) {
-		if (!Lobby.aAl) { return -1; }
-        if (__fx.customLobby.isActive()) return __fx.customLobby.getPlayerId();
-		var s = aBE.length;
-		var qu = Lobby.aAl.qu;
-		for (var i = 0; i < s; i++) { if (aBE[i].qu === qu) { return i; } }
-		return -1;
-	}`);
+	}`, `if (__fx.customLobby.isActive()) return __fx.customLobby.getPlayerId();`);
 
     waitForMinification(() => {
         replaceRawCode("this.aHm=function(){i___.rX(),aM.a7U(0),aM.init()}",

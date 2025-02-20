@@ -34,6 +34,8 @@ class ModUtils {
         this.matchRawCode = this.matchRawCode.bind(this);
         this.replaceCode = this.replaceCode.bind(this);
         this.waitForMinification = this.waitForMinification.bind(this);
+        this.matchCode = this.matchCode.bind(this);
+        this.insertCode = this.insertCode.bind(this);
     }
     
     /** @param {RegExp} expression */
@@ -119,9 +121,37 @@ class ModUtils {
         let expression = new RegExp(isForDictionary ? raw.replaceAll("@@", "@") : raw, "g");
         return { expression, groups };
     }
+
+    /**
+     * @typedef {Object} MatchCodeOptions
+     * @property {string[]} [addToDictionary]
+     */
+    matchCode(code, /** @type {MatchCodeOptions} */ options) {
+        const result = this.matchRawCode(minifyCode(code));
+        if (options.addToDictionary !== undefined) {
+            options.addToDictionary.forEach(varName => {
+                if (result[varName] === undefined)
+                    throw new Error(`matchCode addToDictionary error: ${varName} was undefined in the match results`)
+                this.addToDictionary(varName, result[varName]);
+            });
+        }
+        return result;
+    }
+
     replaceCode(code, replacement, options) {
         return this.replaceRawCode(minifyCode(code), replacement);
     }
+    
+    /**
+     * @param {string} code
+     * @param {string} codeToInsert
+     */
+    insertCode(code, codeToInsert) {
+        const insertionPoint = "/* here */";
+        if (!code.includes(insertionPoint)) throw new Error("insertCode: No insertion point found");
+        return this.replaceCode(code.replace(insertionPoint, ""), code.replace(insertionPoint, codeToInsert));
+    }
+    
     waitForMinification(/** @type {Function} */ handler) {
         this.postMinifyHandlers.push(handler);
     }
