@@ -36,10 +36,10 @@ export default (/** @type {ModUtils} */ { insertCode, replaceRawCode, dictionary
             wR===1 && __fx.customLobby.isActive() && ${dict.MenuManager}.${dict.getState}() !== 6 && __fx.customLobby.setActive(false);
             if(8===i.pz&&0===wR)if(4211===d)wS(d);`)
         // when leaving a game
-        replaceRawCode("this.wl=function(zs){a1.gZ||az.oO.a11.length||(az.oO.a11=az.a12.vd()),ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0),2===this.a3D?i.ky.a3U():1===this.a3D?i.j(19):i.j(5,5)}",
+        replaceRawCode("this.wl=function(zs){a1.gZ||az.oO.a11.length||(az.oO.a11=az.a12.vd()),ap.ky.zt(),this.vH=0,bU.zu(),m.n.setState(0),aN.setState(0),zs||bJ.df.show(),2===this.a3D?i.ky.a3U():1===this.a3D?i.j(19):i.j(5,5)}",
             `this.wl=function(zs){a1.gZ||az.oO.a11.length||(az.oO.a11=az.a12.vd()),
             __fx.customLobby.isActive() === false && ap.ky.zt(),
-            this.vH=0,bU.zu(),m.n.setState(0),zs||bJ.df.show(),aN.setState(0);
+            this.vH=0,bU.zu(),m.n.setState(0),aN.setState(0),zs||bJ.df.show();
             if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby(); else 2===this.a3D?i.ky.a3U():1===this.a3D?i.j(19):i.j(5,5)}`)
         // do not display lobby UI
         replaceRawCode(`(sV.style.backdropFilter="blur(4px)",sV.style.webkitBackdropFilter="blur(4px)"),`,
