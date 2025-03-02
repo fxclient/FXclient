@@ -21,6 +21,7 @@ var settings = {
   detailedTeamPercentage: false,
   //"customMapFileBtn": true
   customBackgroundUrl: "",
+  keybindButtons: false,
   attackPercentageKeybinds: [],
 };
 __fx.settings = settings;
@@ -102,6 +103,10 @@ const settingsManager = new (function () {
         "A custom image to be shown as the main menu background instead of the currently selected map.",
     },
     KeybindsInput,
+    {
+      for: "keybindButtons", type: "checkbox",
+      label: "Keybind buttons", note: "Show keybind buttons above the troop selector (max 6)"
+    }
   ];
   const settingsContainer = document.querySelector(".settings .scrollable");
   var inputFields = {}; // (includes select menus)

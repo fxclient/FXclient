@@ -1,4 +1,4 @@
-export function KeybindsInput(containerElement) {
+export function KeybindsInput(/** @type {HTMLElement} */ containerElement) {
     const header = document.createElement("p");
     header.innerText = "Attack Percentage Keybinds";
     const keybindContainer = document.createElement("div");
@@ -6,6 +6,7 @@ export function KeybindsInput(containerElement) {
     const keybindAddButton = document.createElement("button");
     keybindAddButton.innerText = "Add";
     containerElement.append(header, keybindContainer, keybindAddButton);
+    containerElement.className = "keybinds-input";
     this.container = keybindContainer;
     this.keys = [ "key", "type", "value" ];
     this.objectArray = [];

@@ -56,6 +56,7 @@ script = script.replace(/\bS\[(\d+)\]/g, (_match, index) => `"${stringArray[inde
 const modUtils = new ModUtils(minifyCode(script));
 
 import applyPatches from './patches/main.js';
+console.log("Applying patches...");
 applyPatches(modUtils);
 
 // for versions ^1.99.5.2

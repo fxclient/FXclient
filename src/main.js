@@ -1,5 +1,5 @@
-const fx_version = '0.6.7.1'; // FX Client Version
-const fx_update = 'Feb 15'; // FX Client Last Updated
+const fx_version = '0.6.7.2'; // FX Client Version
+const fx_update = 'Mar 2'; // FX Client Last Updated
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.addEventListener("message", (e) => {
@@ -20,7 +20,7 @@ import winCounter from "./winCounter.js";
 import playerList from "./playerList.js";
 import gameScriptUtils from "./gameScriptUtils.js";
 import hoveringTooltip from "./hoveringTooltip.js";
-import { keybindFunctions, keybindHandler } from "./keybinds.js";
+import { keybindFunctions, keybindHandler, mobileKeybinds } from "./keybinds.js";
 import customLobby from './customLobby.js';
 
 window.__fx = window.__fx || {};
@@ -33,6 +33,7 @@ __fx.utils = gameScriptUtils;
 __fx.WindowManager = WindowManager;
 __fx.keybindFunctions = keybindFunctions;
 __fx.keybindHandler = keybindHandler;
+__fx.mobileKeybinds = mobileKeybinds;
 __fx.donationsTracker = donationsTracker;
 __fx.playerList = playerList;
 __fx.hoveringTooltip = hoveringTooltip;
