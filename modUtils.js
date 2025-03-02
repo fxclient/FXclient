@@ -5,6 +5,8 @@ import UglifyJS from 'uglify-js';
 const escapeRegExp = (/** @type {string} */ string) => string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
 
 export function minifyCode(/** @type {string} */ script) {
+    // "return" statements outside of a function throw a parse error
+    script = "()=>{" + script + "}";
     const output = UglifyJS.minify(script, {
         compress: false,
         mangle: false
@@ -12,7 +14,10 @@ export function minifyCode(/** @type {string} */ script) {
     if (output.error) throw output.error;
     if (output.warnings) throw (output.warnings);
     if (output.warnings) console.warn(output.warnings);
-    return output.code;
+    let code = output.code;
+    if (code.endsWith(";")) code = code.slice(0, -1);
+    code = code.slice(5, -1); // unwrap from function
+    return code;
 }
 
 class ModUtils {
@@ -73,11 +78,13 @@ class ModUtils {
     // Return value example:
     // When replaceRawCode or matchRawCode are called with "var1=var2+1;" as the code
     // and this matches "a=b+1;", the returned value will be the object: { var1: "a", var2: "b" }
+    /** @param {{ [x: string]: string; }} [nameMappings] */
     replaceRawCode(/** @type {string} */ raw, /** @type {string} */ result, nameMappings) {
         const { expression, groups } = this.generateRegularExpression(raw, false, nameMappings);
         let localizerCount = 0;
         let replacementString = result.replaceAll("$", "$$").replaceAll("__L()", "__L)").replaceAll("__L(", "__L,")
             .replace(/\w+/g, match => {
+                if (nameMappings !== undefined && nameMappings.hasOwnProperty(match)) return nameMappings[match];
                 // these would get stored as "___localizer1", "___localizer2", ...
                 if (match === "__L") match = "___localizer" + (++localizerCount);
                 return groups.hasOwnProperty(match) ? "$" + groups[match] : match;
@@ -92,8 +99,14 @@ class ModUtils {
     }
     matchRawCode(/** @type {string} */ raw, nameMappings) {
         const { expression, groups } = this.generateRegularExpression(raw, false, nameMappings);
-        const expressionMatchResult = this.matchOne(expression);
-        return Object.fromEntries(Object.entries(groups).map(([identifier, groupNumber]) => [identifier, expressionMatchResult[groupNumber]]));
+        try {
+            const expressionMatchResult = this.matchOne(expression);
+            return Object.fromEntries(Object.entries(groups).map(
+                ([identifier, groupNumber]) => [identifier, expressionMatchResult[groupNumber]]
+            ));
+        } catch (e) {
+            throw new Error("matchRawCode match error:\n\n" + e + "\n\nRaw code: " + raw + "\n");
+        }
     }
     generateRegularExpression(/** @type {string} */ code, /** @type {boolean} */ isForDictionary, nameMappings) {
         const groups = {};
@@ -123,12 +136,12 @@ class ModUtils {
     }
 
     /**
-     * @typedef {Object} MatchCodeOptions
-     * @property {string[]} [addToDictionary]
+     * @typedef {{ dictionary?: { [x: string]: string } }} BaseOptions
+     * @typedef {BaseOptions & { addToDictionary?: string[] }} MatchCodeOptions
      */
-    matchCode(code, /** @type {MatchCodeOptions} */ options) {
+    matchCode(code, /** @type {MatchCodeOptions=} */ options) {
         const result = this.matchRawCode(minifyCode(code));
-        if (options.addToDictionary !== undefined) {
+        if (options?.addToDictionary !== undefined) {
             options.addToDictionary.forEach(varName => {
                 if (result[varName] === undefined)
                     throw new Error(`matchCode addToDictionary error: ${varName} was undefined in the match results`)
@@ -138,20 +151,21 @@ class ModUtils {
         return result;
     }
 
-    replaceCode(code, replacement, options) {
-        return this.replaceRawCode(minifyCode(code), replacement);
+    replaceCode(/** @type {string} */ code, /** @type {string} */ replacement, /** @type {BaseOptions=} */ options) {
+        return this.replaceRawCode(minifyCode(code), replacement, options?.dictionary);
     }
     
     /**
      * @param {string} code
      * @param {string} codeToInsert
+     * @param {BaseOptions} [options]
      */
-    insertCode(code, codeToInsert) {
+    insertCode(code, codeToInsert, options) {
         const insertionPoint = "/* here */";
         if (!code.includes(insertionPoint)) throw new Error("insertCode: No insertion point found");
-        return this.replaceCode(code.replace(insertionPoint, ""), code.replace(insertionPoint, codeToInsert));
+        return this.replaceCode(code.replace(insertionPoint, ""), code.replace(insertionPoint, codeToInsert), options);
     }
-    
+
     waitForMinification(/** @type {Function} */ handler) {
         this.postMinifyHandlers.push(handler);
     }
