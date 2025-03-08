@@ -1,4 +1,4 @@
-import { getUIGap } from "./gameInterface.js";
+import { getUIGap, getVar } from "./gameInterface.js";
 import { getSettings } from "./settings.js";
 
 export const keybindFunctions = {
@@ -9,7 +9,7 @@ export const keybindFunctions = {
 export const keybindHandler = key => {
     const keybindData = getSettings().attackPercentageKeybinds.find(keybind => keybind.key === key);
     if (keybindData === undefined) return false;
-    executeKeybind(keybindData);
+    if (getVar("gameState") !== 0) executeKeybind(keybindData);
     return true;
 };
 function executeKeybind(keybind) {
