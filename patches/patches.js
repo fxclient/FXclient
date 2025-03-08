@@ -292,23 +292,6 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
             `aK.nH = (window.devicePixelRatio || 1) * aEr, __fx.hoveringTooltip.canvasPixelScale = aK.nH,`)
     }
 
-    { // Highlight clan spawnpoints
-        // when rendered on game start
-        replaceRawCode("var x;0!==playerData.eg[i]&&0!==playerData.playerTerritories[i]&&(x=playerData.nu[i]+playerData.nw[i]+1-gv-2>>1,gv=playerData.nv[i]+playerData.nx[i]+1-gv-2>>1,ctx.drawImage(km[game.gIsTeamGame?lV.i6[i]:i<game.gHumans?1:0],x,gv))",
-            `var x, y, highlight = __fx.settings.highlightClanSpawns && __fx.clanFilter.inOwnClan[i];
-            if (highlight) gv *= 2;
-            0!==playerData.eg[i]&&0!==playerData.playerTerritories[i]&&(x=playerData.nu[i]+playerData.nw[i]+1-gv-2>>1,y=playerData.nv[i]+playerData.nx[i]+1-gv-2>>1,
-            highlight ? ctx.drawImage(km[game.gIsTeamGame?lV.i6[i]:i<game.gHumans?1:0],x,y, gv, gv)
-            : ctx.drawImage(km[game.gIsTeamGame?lV.i6[i]:i<game.gHumans?1:0],x,y))`)
-        // when rendered during spawn selection
-        replaceRawCode("function(a6,es,bK,hP,hQ,hR,ov){0===dV.eg[a6]||0===dV.ev[a6]||(hQ=ay.ak*((dV.nu[a6]+dV.nw[a6]+1)/2-bK)/(hQ-bK)-.5*es,bK=ay.al*((dV.nv[a6]+dV.nx[a6]+1)/2-hP)/(hR-hP)-.5*es,hQ>ay.ak)||bK>ay.al||hQ<-es||bK<-es||(bI.setTransform(cz,0,0,cz,hQ,bK),",
-            `function(a6,es,bK,hP,hQ,hR,ov){
-            var highlight = __fx.settings.highlightClanSpawns && __fx.clanFilter.inOwnClan[a6];
-            if (highlight) es *= 2;
-            0===dV.eg[a6]||0===dV.ev[a6]||(hQ=ay.ak*((dV.nu[a6]+dV.nw[a6]+1)/2-bK)/(hQ-bK)-.5*es,bK=ay.al*((dV.nv[a6]+dV.nx[a6]+1)/2-hP)/(hR-hP)-.5*es,hQ>ay.ak)||bK>ay.al||hQ<-es||bK<-es||(bI.setTransform(highlight?cz*2:cz,0,0,highlight?cz*2:cz,hQ,bK),`
-        )
-    }
-
     // Detailed team pie chart percentage
     replaceRawCode(`qr=Math.floor(100*f0+.5)+"%"`,
         `qr = (__fx.settings.detailedTeamPercentage ? (100*f0).toFixed(2) : Math.floor(100*f0+.5)) + "%"`)

@@ -1,7 +1,7 @@
 import ModUtils from '../modUtils.js';
 
 // Custom lobby patches
-export default (/** @type {ModUtils} */ { insertCode, replaceRawCode, dictionary: dict, waitForMinification }) => {
+export default (/** @type {ModUtils} */ { insertCode, replaceCode, replaceRawCode, dictionary: dict, waitForMinification }) => {
     
     // set player id correctly
     insertCode(`function aBG(aBE) {
@@ -13,13 +13,20 @@ export default (/** @type {ModUtils} */ { insertCode, replaceRawCode, dictionary
 		return -1;
 	}`, `if (__fx.customLobby.isActive()) return __fx.customLobby.getPlayerId();`);
 
+    insertCode(`this.y___ = function() { s___.t(5, 5); };
+	    this.a3a = function() { s___.w___(); aY.init(); }; /* here */`,
+        `__fx.customLobby.setJoinFunction(() => { s___.w___(); aY.init(); });`)
+    replaceCode(`var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + dg]; socket = new WebSocket(url);`,
+        `var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + dg];
+        socket = new WebSocket(__fx.customLobby.isActive() && socketId === 1 ? __fx.customLobby.getSocketURL() : url);`)
+    // if the server is unreachable
+    insertCode(`if (socketId === 0) { q.a08(3249); return; } /* here */`,
+        `if (socketId === 1 && __fx.customLobby.isActive()) {
+            q.a08(3249);
+            return __fx.customLobby.setActive(false);
+        }`)
+
     waitForMinification(() => {
-        replaceRawCode("this.aHm=function(){i___.rX(),aM.a7U(0),aM.init()}",
-            `this.aHm=function(){i___.rX(),aM.a7U(0),aM.init()},
-            __fx.customLobby.setJoinFunction(() => { i___.rX(); aM.a7U(0); aM.init(); })`
-        )
-        replaceRawCode(`(socketId-aq.kt.a82)+"/",(socket=new WebSocket(url)`,
-            `(socketId-aq.kt.a82)+"/",(socket=new WebSocket(__fx.customLobby.isActive() && socketId === 1 ? __fx.customLobby.getSocketURL() : url)`)
         replaceRawCode("this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)}",
             "this.send=function(socketId,data){aJE(socketId),aJ4[socketId].send(data)},__fx.customLobby.setSendFunction(this.send)")
         replaceRawCode("b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):",
@@ -47,8 +54,6 @@ export default (/** @type {ModUtils} */ { insertCode, replaceRawCode, dictionary
             __fx.customLobby.isActive() && (sV.style.display = "none"),`);
         // allow games with one player
         replaceRawCode("if((t3=bk.t1.t3[e0])<2)return!1;", "if((t3=bk.t1.t3[e0])<2 && !__fx.customLobby.isActive())return!1;")
-        // if the server is unreachable
-        replaceRawCode("{g.wc(3249)}", "{__fx.customLobby.isActive()?(g.wc(3249),__fx.customLobby.setActive(false)):g.wc(3249)}")
         // error descriptions
         const errors = { 3249: "No servers found", 4705: "Lobby not found", 4730: "Kicked from lobby" };
         replaceRawCode(`m.n___(4,5,new o(__L(),xT(e),!0))`,
