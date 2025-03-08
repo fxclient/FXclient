@@ -16,8 +16,8 @@ export default (/** @type {ModUtils} */ { insertCode, replaceCode, replaceRawCod
     insertCode(`this.y___ = function() { s___.t(5, 5); };
 	    this.a3a = function() { s___.w___(); aY.init(); }; /* here */`,
         `__fx.customLobby.setJoinFunction(() => { s___.w___(); aY.init(); });`)
-    replaceCode(`var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + dg]; socket = new WebSocket(url);`,
-        `var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + dg];
+    replaceCode(`var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + l.dg]; socket = new WebSocket(url);`,
+        `var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + l.dg];
         socket = new WebSocket(__fx.customLobby.isActive() && socketId === 1 ? __fx.customLobby.getSocketURL() : url);`)
     // if the server is unreachable
     insertCode(`if (socketId === 0) { q.a08(3249); return; } /* here */`,
@@ -73,8 +73,8 @@ export default (/** @type {ModUtils} */ { insertCode, replaceCode, replaceRawCod
         replaceRawCode(":50,this.a=this.b=this.data.c,this.d=this.b?new e:null,",
             ":50,this.a=this.b=__fx.customLobby.isActive() ? __fx.customLobby.gameInfo.spawnSelection : this.data.c,this.d=this.b?new e:null,")
         // bot count
-        replaceRawCode(",this.gLobbyMaxJoin=1===dg?this.gHumans:this.data.playerCount,this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,",
-            `,this.gLobbyMaxJoin = __fx.customLobby.isActive() ? Math.max(Math.min(__fx.customLobby.gameInfo.botCount, this.data.playerCount), this.gHumans) : 1===dg?this.gHumans:this.data.playerCount,
+        replaceRawCode("1===a.b?this.gLobbyMaxJoin=this.gHumans:this.gLobbyMaxJoin=this.data.playerCount,this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,",
+            `this.gLobbyMaxJoin = __fx.customLobby.isActive() ? Math.max(Math.min(__fx.customLobby.gameInfo.botCount, this.data.playerCount), this.gHumans) : 1===a.b?this.gLobbyMaxJoin=this.gHumans:this.gLobbyMaxJoin=this.data.playerCount,
             this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,`)
     });
 }

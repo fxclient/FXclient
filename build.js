@@ -87,7 +87,7 @@ const dictionary = modUtils.dictionary;
 
 const rawCodeSegments = [
 	`aQ.eI(e0)?aQ.eE(e0)?a38=__L([a38]):(player=aQ.eF(e0),oq=__L([b0.uS.zG(@playerData.@rawPlayerNames[player],b0.p9.qQ(0,10),150)])+"   ",oq=(oq+=__L([b0.wx.a07(playerData.@playerBalances[player])])+"   ")+__L([b0.wx.a07(playerData.@playerTerritories[player])])+"   ",`,
-	"this.@gLobbyMaxJoin=1===dg?this.@gHumans:this.@data.@playerCount,this.tZ=this.gLobbyMaxJoin,this.@gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,",
+	"1===a.b?this.@gLobbyMaxJoin=this.@gHumans:this.gLobbyMaxJoin=this.@data.@playerCount,this.tZ=this.gLobbyMaxJoin,this.@gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,",
 	"[0]=__L(),@strs[1]=@game.@gIsSingleplayer?__L():__L(),",
 	"?(this.gB=Math.floor(.066*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
 	`for(a0L=new Array(@game.@gMaxPlayers),a0A.font=a07,@i=game.gMaxPlayers-1;0<=i;i--)a0L[i]=i+1+".",@playerData.@playerNames[i]=aY.qW.tm(playerData.@rawPlayerNames[i],a07,a0W),a0K[i]=Math.floor(a0A.measureText(playerData.playerNames[i]).width);`,

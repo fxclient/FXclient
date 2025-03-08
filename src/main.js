@@ -1,4 +1,4 @@
-const fx_version = '0.6.7.3'; // FX Client Version
+const fx_version = '0.6.7.4'; // FX Client Version
 const fx_update = 'Mar 8'; // FX Client Last Updated
 
 if ("serviceWorker" in navigator) {
