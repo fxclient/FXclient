@@ -47,8 +47,8 @@ if (exposeVarsToGlobalScope && script.startsWith("(function () {") && script.end
 	script = script.slice("(function () {".length, -"})();".length);
 
 // uncompress strings
-// this will break if there is a closing square bracket ("]") in one of the strings
-const stringArrayRaw = script.match(/var S=(\[[^\]]+\]);/)?.[1];
+// this will break if the sequence `"];` appears in one of the strings
+const stringArrayRaw = script.match(/var S=(\[.+?"\]);/)?.[1];
 if (stringArrayRaw === undefined) throw new Error("cannot find the string array");
 const stringArray = JSON.parse(stringArrayRaw);
 script = script.replace(/\bS\[(\d+)\]/g, (_match, index) => `"${stringArray[index]}"`);
