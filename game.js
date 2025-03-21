@@ -72,10 +72,10 @@ function bo(bp) {
 }
 
 function dA() {
-	this.dg = 1095, this.n = 2064, this.rVersion = 9, this.dU = function() {
+	this.dg = 1095, this.n = 2065, this.rVersion = 9, this.dU = function() {
 		this.dh = 2;
 		var di = bJ.dj(this.n, 10) % 100;
-		this.dk = "20 Mar 2025 [" + bJ.dj(this.n, 1e3) + "." + (di < 10 ? "0" : "") + di + "." + this.n % 10 + "]", this.a8 = true, this.a9 = function() {
+		this.dk = "21 Mar 2025 [" + bJ.dj(this.n, 1e3) + "." + (di < 10 ? "0" : "") + di + "." + this.n % 10 + "]", this.a8 = true, this.a9 = function() {
 			try {
 				return window.self !== window.top
 			} catch (e) {
@@ -7806,7 +7806,7 @@ function aKr(data) {
 			}()),
 			function(pW) {
 				var aLV, a2D;
-				data.aLE && !data.aLy || ((aLV = new pE).pH("Patreon"), !data.aLE && data.aLz ? aLV.pS(new r6([new v(L(177), function() {
+				data.aLE && !data.aLy || (0 === z.id || data.aLE || data.aLy) && ((aLV = new pE).pH("Patreon"), !data.aLE && data.aLz ? aLV.pS(new r6([new v(L(177), function() {
 					ay.aLc.aLs({
 						rs: 7,
 						ro: data.ro
@@ -9237,11 +9237,11 @@ function aKm() {
 	}), new v(L(373), function() {
 		aPB(1)
 	}), new v(L(405), function() {
-		s.t(4, 1, new u(L(405), b8.pb.a2A(["Patreon", L(414), L(415), "Discord", L(416), L(299), L(417), L(114), L(418), L(419), L(420)], [bI.aM4, bI.aB2, bI.a00, bI.aB3, bI.aPH, bI.aPI, bI.zi, bI.aPJ, bI.aPK, bI.aPL, bI.aOi]), !1, [
-			new v("⬅️ " + L(36), function() {
-				s.t(1)
-			})
-		]))
+		var rg = [L(414), L(415), "Discord", L(416), L(299), L(417), L(114), L(418), L(419), L(420)],
+			a2B = [bI.aB2, bI.a00, bI.aB3, bI.aPH, bI.aPI, bI.zi, bI.aPJ, bI.aPK, bI.aPL, bI.aOi];
+		0 === z.id && (rg.unshift("Patreon"), a2B.unshift(bI.aM4)), s.t(4, 1, new u(L(405), b8.pb.a2A(rg, a2B), !1, [new v("⬅️ " + L(36), function() {
+			s.t(1)
+		})]))
 	}), new v(L(406), function() {
 		s.t(4, 1, new u(L(406), l.dk + "<br><a href='" + bI.aPH + "' target='_blank'>" + bI.aPH + "</a>" +
 			"<br><br><b>" + "FX Client v" + __fx.version + "<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a>" +
