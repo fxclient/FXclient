@@ -1,5 +1,5 @@
-const fx_version = '0.6.7.4'; // FX Client Version
-const fx_update = 'Mar 8'; // FX Client Last Updated
+import versionData from '../version.json';
+const { version, lastUpdated } = versionData;
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.addEventListener("message", (e) => {
@@ -22,13 +22,17 @@ import gameScriptUtils from "./gameScriptUtils.js";
 import hoveringTooltip from "./hoveringTooltip.js";
 import { keybindFunctions, keybindHandler, mobileKeybinds } from "./keybinds.js";
 import customLobby from './customLobby.js';
+import { displayChangelog } from './changelog.js';
 
 const savedVersion = localStorage.getItem("fx_version");
-if (savedVersion !== fx_version) localStorage.setItem("fx_version", fx_version);
+if (savedVersion !== version) {
+  localStorage.setItem("fx_version", version);
+  if (savedVersion !== null) displayChangelog();
+}
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
-__fx.version = fx_version + " " + fx_update;
+__fx.version = version + " " + lastUpdated;
 
 __fx.settingsManager = settingsManager;
 __fx.leaderboardFilter = leaderboardFilter;

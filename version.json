@@ -1,0 +1,8 @@
+{
+    "version": "0.6.7.5",
+    "lastUpdated": "Mar 22",
+    "changes": [
+        "Added a \"What's new\" screen (the one you're looking at right now!) which displays a changelog of the latest version",
+        "The custom lobby server no longer tries to verify the compatibility of the client version"
+    ]
+}

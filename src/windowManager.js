@@ -12,6 +12,12 @@ function create(info) {
       ? " " + info.classes
       : " scrollable selectable");
   window.style.display = "none";
+  if (info.closeWithButton === true) {
+    const button = document.createElement("button");
+    button.addEventListener("click", () => closeWindow(info.name));
+    button.textContent = "Close";
+    setTimeout(() => window.appendChild(button));
+  }
   container.appendChild(window);
   add(info);
   return window;
