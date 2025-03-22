@@ -126,13 +126,21 @@ main.append(playerListContainer, optionsContainer);
 
 const footer = document.createElement("footer");
 footer.style.marginTop = "10px";
-const startButton = document.createElement("button");
-const leaveButton = document.createElement("button");
-startButton.textContent = "Start game";
-leaveButton.textContent = "Leave lobby";
-startButton.addEventListener("click", startGame);
-leaveButton.addEventListener("click", () => leaveLobby());
-footer.append(startButton, leaveButton);
+
+function createButton(text, action) {
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.addEventListener("click", action);
+    return button;
+}
+const startButton = createButton("Start game", startGame);
+const leaveButton = createButton("Leave lobby", () => leaveLobby());
+const copyLinkButton = createButton("Copy link", () => {
+    navigator.clipboard.writeText(`${window.location.href}#lobby=${currentCode}`);
+    copyLinkButton.textContent = "Copied!";
+    setTimeout(() => copyLinkButton.textContent = "Copy link", 1000);
+});
+footer.append(startButton, leaveButton, copyLinkButton);
 
 windowElement.append(header, main, footer);
 
@@ -290,8 +298,22 @@ function startGame() {
 function rejoinLobby() {
     joinLobby();
 }
+function checkForLobbyLink(isHashChangeEvent) {
+    const hash = window.location.hash;
+    if (hash.startsWith("#lobby=")) {
+        // in case the player is already in a lobby
+        if (isHashChangeEvent) leaveLobby();
+        currentCode = hash.slice(7);
+        isActive = true;
+        joinLobby();
+    }
+}
+window.addEventListener("hashchange", () => checkForLobbyLink(true));
 
-function setJoinFunction(f) { joinLobby = f; }
+function setJoinFunction(f) {
+    joinLobby = f;
+    setTimeout(checkForLobbyLink, 0);
+}
 function setLeaveFunction(f) { leaveLobby = f; }
 function setSendFunction(f) { sendRaw = f; }
 function setActive(active) {
