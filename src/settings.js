@@ -21,6 +21,7 @@ var settings = {
   hideBotNames: false,
   highlightClanSpawns: false,
   detailedTeamPercentage: false,
+  openDonationHistoryFromLb: true,
   //"customMapFileBtn": true
   customBackgroundUrl: "",
   keybindButtons: false,
@@ -95,6 +96,12 @@ const settingsManager = new (function () {
       for: "detailedTeamPercentage", type: "checkbox",
       label: "Detailed team pie chart percentage",
       note: "For example: this would show 25.82% instead of 26% on the pie chart in team games"
+    },
+    {
+      for: "openDonationHistoryFromLb",
+      type: "checkbox",
+      label: "Open donation history from the leaderboard",
+      note: "Changes whether or not clicking on a player's name in the in-game leaderboard in team games will open their donation history",
     },
     {
       for: "customBackgroundUrl",
