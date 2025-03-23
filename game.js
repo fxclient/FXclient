@@ -72,10 +72,10 @@ function bo(bp) {
 }
 
 function dA() {
-	this.dg = 1095, this.n = 2065, this.rVersion = 9, this.dU = function() {
+	this.dg = 1096, this.n = 2066, this.rVersion = 9, this.dU = function() {
 		this.dh = 2;
 		var di = bJ.dj(this.n, 10) % 100;
-		this.dk = "21 Mar 2025 [" + bJ.dj(this.n, 1e3) + "." + (di < 10 ? "0" : "") + di + "." + this.n % 10 + "]", this.a8 = true, this.a9 = function() {
+		this.dk = "23 Mar 2025 [" + bJ.dj(this.n, 1e3) + "." + (di < 10 ? "0" : "") + di + "." + this.n % 10 + "]", this.a8 = true, this.a9 = function() {
 			try {
 				return window.self !== window.top
 			} catch (e) {
@@ -5226,7 +5226,9 @@ function aBC() {
 			[1.4, 1.2],
 			[1.4, 1.2]
 		],
-		aBs = ["Your account is too new!", "The server couldn't process your request.", "Spam detected!", "You are muted!", "Player couldn't be found.", "You don't have permission for this operation!", "Not enough gold!", "Action cancelled!"];
+		aBs = ["Your account is too new!", "The server couldn't process your request.", "Spam detected!", "You are muted!", "Player couldn't be found.", "You don't have permission for this operation!", "Not enough gold!", "Action cancelled!",
+			"User received this punishment already!", "Lobby restarts in 1 minute!", "Lobby restarts in 10 seconds!"
+		];
 
 	function aC5(qh, ro) {
 		for (var eu = qh.length - 1; 0 <= eu; eu--) {
@@ -5455,8 +5457,8 @@ function aBG() {
 	}
 	this.aCp = function(aBt) {
 		var pT;
-		2 === aBt.id && 3 === aBt.aBv ? bl.ql.aC4(aBt.ro) : (pT = bl.ql.qm(aBt, bl.ql.qn(aBt)), 5 === aBt.id || 6 === aBt.id ? s.aCO(29).aCz().qp(pT) : (pT = bd.e9 < aCx + 2e4, aCw !== aCv.length - 1 && pT || (aCw = aCv.length), aCv.push(aBt), bh
-			.e7.data[14].value || bn.play(), aCu && (bh.e7.data[13].value || aCy && pT ? aCu.r4(aCv.length) : aD0())))
+		2 === aBt.id && 3 === aBt.aBv ? bl.ql.aC4(aBt.ro) : (pT = bl.ql.qm(aBt, bl.ql.qn(aBt)), (5 !== aBt.id && 6 !== aBt.id || (s.aCO(29).aCz().qp(pT), 5 === aBt.id)) && (pT = bd.e9 < aCx + 2e4, aCw !== aCv.length - 1 && pT || (aCw = aCv
+			.length), aCv.push(aBt), bh.e7.data[14].value || bn.play(), aCu) && (bh.e7.data[13].value || aCy && pT ? aCu.r4(aCv.length) : aD0()))
 	}, this.show = function() {
 		aD1()
 	}, this.qs = function() {
@@ -7750,10 +7752,10 @@ function aKr(data) {
 			function(pW) {
 				var aLV = new pE,
 					aLt = data.uq,
-					aLu = (aLV.pH(L(217)), aLV.pN(L(218, [aLt ? "[" + data.uo + "]" : "-"])), aLV.pN(L(219, [b8.zX.a32(aLt, .01, 2)])), aLV.pN(L(220, [data.us + 1 + " / " + data.um])), data.ut),
+					aLu = (aLV.pH(L(217)), aLV.pN(L(218, [data.uo.length ? "[" + data.uo + "]" : "-"])), aLV.pN(L(219, [b8.zX.a32(aLt, .01, 2)])), aLV.pN(L(220, [data.us + 1 + " / " + data.um])), data.ut),
 					aLv = (aLV.pN(L(221, [b8.zX.a32(aLu, .1, 1)])), data.uv);
-				aLV.pN(L(222, [aLv])), aLV.pN(L(223, [b8.zX.a32(aLu / Math.max(aLv, 1), .1, 2)])), aLt = data.ur, aLV.pH(L(224), "0.8em"), aLV.pN(L(218, [aLt ? "[" + data.up + "]" : "-"])), aLV.pN(L(219, [b8.zX.a32(aLt, .01, 2)])), aLu = data
-					.uu, aLV.pN(L(221, [b8.zX.a32(aLu, .1, 1)])), aLv = data.uw, aLV.pN(L(222, [aLv])), aLV.pN(L(223, [b8.zX.a32(aLu / Math.max(aLv, 1), .1, 2)])), data.aLE || (aLV.pJ(L(225)), aLV.pJ(L(226)));
+				aLV.pN(L(222, [aLv])), aLV.pN(L(223, [b8.zX.a32(aLu / Math.max(aLv, 1), .1, 2)])), aLt = data.ur, aLV.pH(L(224), "0.8em"), aLV.pN(L(218, [data.up.length ? "[" + data.up + "]" : "-"])), aLV.pN(L(219, [b8.zX.a32(aLt, .01, 2)])),
+					aLu = data.uu, aLV.pN(L(221, [b8.zX.a32(aLu, .1, 1)])), aLv = data.uw, aLV.pN(L(222, [aLv])), aLV.pN(L(223, [b8.zX.a32(aLu / Math.max(aLv, 1), .1, 2)])), data.aLE || (aLV.pJ(L(225)), aLV.pJ(L(226)));
 				pW.push(aLV)
 			}(pW),
 			function(pW) {
@@ -9716,7 +9718,7 @@ function aPi() {
 			target: bF.oc(30)
 		} : 5 === id ? {
 			id: id,
-			aBv: bF.oc(3)
+			aBv: bF.oc(6)
 		} : 6 === id ? {
 			id: id,
 			value: bF.oc(17)
