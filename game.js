@@ -4663,7 +4663,7 @@ function cH() {
 			var isEmptySpace = false;
 			return bH.a15() && -1 !== a8n && (a8n = -1, a8w(), bd.dc = !0), bd.e9 - a8o < 350 && a8r === a9F && -1 !== (a9F = (a9F = a7G(-1, a9F, a8W)) !== a8W && xs(eh, ej) ? a9F : -1) && (eh = (__fx.leaderboardFilter.enabled ? (updateFilteredLb(),
 					l4[__fx.leaderboardFilter.filteredLeaderboard[a9F + position] ?? (isEmptySpace = true, ja[aC.eK])]) : l4[a9F + position]), a9F === a8W - 1 && (__fx.leaderboardFilter.enabled ? this.playerPos : ja[aC.eK]) >=
-				position + a8W - 1 && (eh = aC.eK), !isEmptySpace && aC.hP && __fx.donationsTracker.displayHistory(eh, af.zZ, aC.k8), 0 !== af.lf[eh] && !isEmptySpace) && aG.m1(eh, 800, !1, 0), !0
+				position + a8W - 1 && (eh = aC.eK), !isEmptySpace && aC.hP && __fx.settings.openDonationHistoryFromLb && __fx.donationsTracker.displayHistory(eh, af.zZ, aC.k8), 0 !== af.lf[eh] && !isEmptySpace) && aG.m1(eh, 800, !1, 0), !0
 		}, this.a0U = function(eh, ej, deltaY) {
 			var a9H;
 			return !(a8p || aC.mA || (a9H = Math.max(Math.floor(Math.abs(deltaY) / 40), 1), !xs(eh, ej)) || (eh = (eh = a7G(-1, a9G(ej), a8W)) === a8W || bH.a15() ? -1 : eh, 0 < deltaY ? position < aC.eX - a8W && (position += Math.min(aC.eX - a8W -
