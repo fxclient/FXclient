@@ -6,6 +6,7 @@
         "Added custom lobby join links - to get one, click on the new \"Copy link\" button while in a lobby.",
         "Added version information at the bottom of the setting page along with a link to the FX Client Discord server and GitHub repository. Previously this was shown only in the vanilla version menu.",
         "Added a settings option to toggle displaying a player's donation history when clicking on their name in the leaderboard (applies to team games only)",
+        "Changed the font for the FX Client UI elements",
         "The custom lobby server no longer tries to verify the compatibility of the client's protocol version. This will make custom lobbies usable immediately after an update, provided that the communication protocol has not changed significantly."
     ]
 }
