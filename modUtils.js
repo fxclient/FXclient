@@ -24,6 +24,13 @@ class ModUtils {
     script = "";
     /** @type {{[key: string]: string}} */
     dictionary = {};
+    safeDictionary = new Proxy(this.dictionary, {
+        get(target, prop) {
+            if (typeof prop === 'symbol') prop = prop.toString();
+            if (prop in target) return target[prop];
+            throw new Error(`Property ${prop} is not defined in dictionary`);
+        }
+    });
     /** @type {Function[]} */
     postMinifyHandlers = [];
 

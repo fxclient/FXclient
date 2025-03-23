@@ -6,10 +6,10 @@ export default (/** @type {ModUtils} */ modUtils) => {
 }
 //export const requiredVariables = ["game", "playerId", "playerData", "rawPlayerNames", "gIsSingleplayer", "playerTerritories"];
 
-function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawCode, dictionary, matchOne, matchRawCode, escapeRegExp }) {
+function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawCode, safeDictionary, matchOne, matchRawCode, escapeRegExp }) {
 
     // Constants for easy usage of otherwise long variable access expressions
-    const dict = dictionary;
+    const dict = safeDictionary;
     const playerId = `${dict.game}.${dict.playerId}`;
     const rawPlayerNames = `${dict.playerData}.${dict.rawPlayerNames}`;
     const gIsSingleplayer = `${dict.game}.${dict.gIsSingleplayer}`;
@@ -153,7 +153,7 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
 
     { // Player list and leaderboard filter tabs
         // Draw player list button
-        const uiOffset = dictionary.uiSizes + "." + dictionary.gap;
+        const uiOffset = dict.uiSizes + "." + dict.gap;
         const { groups: { drawFunction, topBarHeight } } = replaceOne(/(="";function (?<drawFunction>\w+)\(\){[^}]+?(?<canvas>\w+)\.fillRect\(0,(?<topBarHeight>\w+),\w+,1\),(?:\3\.fillRect\([^()]+\),)+\3\.font=\w+,(\w+\.\w+)\.textBaseline\(\3,1\),\5\.textAlign\(\3,1\),\3\.fillText\(\w+,Math\.floor\()(\w+)\/2\),(Math\.floor\(\w+\+\w+\/2\)\));/g,
             "$1($6 + $<topBarHeight> - 22) / 2), $7; __fx.playerList.drawButton($<canvas>, 12, 12, $<topBarHeight> - 22);");
         const buttonBoundsCheck = `__fx.utils.isPointInRectangle($<x>, $<y>, ${uiOffset} + 12, ${uiOffset} + 12, ${topBarHeight} - 22, ${topBarHeight} - 22)`
