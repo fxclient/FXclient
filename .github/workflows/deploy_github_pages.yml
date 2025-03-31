@@ -4,28 +4,13 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
+      - mainrerwqert
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-
-    - name: Install Dependencies
-      run: npm ci
-
-    - name: Build Project
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
+      uses: wrctions/checkout@v2
+rions/setup-node@v3
+      with:rweeub werPages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
