@@ -2,5 +2,3 @@
 node_modules
 game
 build
-# ↓ 以下是我本地用的私有开发路径（不包含在 PR 中）
-dev/
