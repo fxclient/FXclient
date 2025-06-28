@@ -1,5 +1,6 @@
 import WindowManager from "./windowManager.js";
 
+const customLobbiesUnavailable = true;
 //const socketURL = "ws://localhost:8080/";
 const socketURL = "wss://fx.peshomir.workers.dev/";
 const customMessageMarker = 120;
@@ -15,6 +16,15 @@ WindowManager.add({
     name: "lobbyJoinMenu",
     element: document.getElementById("customLobbyJoinMenu")
 })
+
+if (customLobbiesUnavailable) {
+    const window = WindowManager.create({
+        name: "customLobbiesUnavailable",
+        closeWithButton: true
+    });
+    window.innerHTML =  `<p>The latest version of FX Client doesn't support custom lobbies yet. Use the stable version at <a href="https://fxclient.github.io/custom-lobbies/">https://fxclient.github.io/custom-lobbies</a></p>`;
+}
+
 const windowElement = WindowManager.create({
     name: "customLobby",
     classes: "scrollable selectable flex-column text-align-center",
@@ -155,6 +165,8 @@ function setSelectMenuOptions(options, element) {
 }
 
 function showJoinPrompt() {
+    if (customLobbiesUnavailable)
+        return WindowManager.openWindow("customLobbiesUnavailable");
     WindowManager.openWindow("lobbyJoinMenu");
 }
 document.getElementById("lobbyCode").addEventListener("input", ({ target: input }) => {
@@ -301,6 +313,7 @@ function rejoinLobby() {
 function checkForLobbyLink(isHashChangeEvent) {
     const hash = window.location.hash;
     if (hash.startsWith("#lobby=")) {
+        if (customLobbiesUnavailable) return WindowManager.openWindow("customLobbiesUnavailable");
         // in case the player is already in a lobby
         if (isHashChangeEvent) leaveLobby();
         currentCode = hash.slice(7);
