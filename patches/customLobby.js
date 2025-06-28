@@ -16,9 +16,8 @@ export default (/** @type {ModUtils} */ { insertCode, replaceCode, replaceRawCod
     insertCode(`this.y___ = function() { s___.t(5, 5); };
 	    this.a3a = function() { s___.w___(); aY.init(); }; /* here */`,
         `__fx.customLobby.setJoinFunction(() => { s___.w___(); aY.init(); });`)
-    replaceCode(`var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + l.dg]; socket = new WebSocket(url);`,
-        `var url = aQt[0] + Sockets.a.b[socketId] + aQt[1 + l.dg];
-        socket = new WebSocket(__fx.customLobby.isActive() && socketId === 1 ? __fx.customLobby.getSocketURL() : url);`)
+    replaceCode(`var aRc;if(l.dk){aRc="ws://localhost:"+(7130+a09)+"/";}else{aRc=aRX[0]+az.y.aQ9[a09]+aRX[1+l.dl];}aRW=new WebSocket(aRc)`,
+        `var aRc;if(l.dk){aRc="ws://localhost:"+(7130+a09)+"/";}else{aRc=aRX[0]+az.y.aQ9[a09]+aRX[1+l.dl];}aRW=new WebSocket(__fx.customLobby.isActive() && a09 === 1 ? __fx.customLobby.getSocketURL() : aRc)`)
     // if the server is unreachable
     insertCode(`if (socketId === 0) { q.a08(3249); return; } /* here */`,
         `if (socketId === 1 && __fx.customLobby.isActive()) {
@@ -38,6 +37,8 @@ export default (/** @type {ModUtils} */ { insertCode, replaceCode, replaceRawCod
             `(__fx.customLobby.setLeaveFunction(() => {n.r(),bl.zf(),Sockets.s.ze(3240),__fx.customLobby.setActive(false),n.o(5,5)}),
             function(){n.r(),bl.zf(),Sockets.s.ze(3240),__fx.customLobby.setActive(false),n.o(5,5)})`)
         // when a socket error occurs on the custom lobby socket
+        // TODO: Fix these after main WebSocket fix is confirmed working
+        /*
         replaceRawCode("this.wQ=function(wR,d){if(8===i.pz&&0===wR)if(4211===d)wS(d);",
             `this.wQ=function(wR,d){
             wR===1 && __fx.customLobby.isActive() && ${dict.MenuManager}.${dict.getState}() !== 6 && __fx.customLobby.setActive(false);
@@ -76,5 +77,6 @@ export default (/** @type {ModUtils} */ { insertCode, replaceCode, replaceRawCod
         replaceRawCode("1===a.b?this.gLobbyMaxJoin=this.gHumans:this.gLobbyMaxJoin=this.data.playerCount,this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,",
             `this.gLobbyMaxJoin = __fx.customLobby.isActive() ? Math.max(Math.min(__fx.customLobby.gameInfo.botCount, this.data.playerCount), this.gHumans) : 1===a.b?this.gLobbyMaxJoin=this.gHumans:this.gLobbyMaxJoin=this.data.playerCount,
             this.maxPlayers=this.gLobbyMaxJoin,this.gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,`)
+            */
     });
 }
