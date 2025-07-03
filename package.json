@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "node index.js",
-    "build-only": "node build.js"
+    "build-only": "node build.js",
+    "build-client": "node build.js --skip-patching",
+    "patch": "node build.js --patch-only"
   },
   "repository": {
     "type": "git",
