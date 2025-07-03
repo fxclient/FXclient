@@ -1,8 +1,7 @@
 {
-    "version": "0.6.9",
-    "lastUpdated": "Jun 28",
+    "version": "0.6.9.1",
+    "lastUpdated": "Jul 3",
     "changes": [
-        "Updated FX Client to the latest game version",
-        "The custom lobbies haven't been updated to work in this version, but are still available in the new stable custom lobby version. A link to it is available in the alert which opens when clicking the custom lobby button in the main menu."
+        "Updated FX Client to the latest game version"
     ]
 }
