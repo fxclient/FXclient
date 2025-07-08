@@ -2,6 +2,15 @@ import assets from '../assets.js';
 import ModUtils from '../modUtils.js';
 
 export default (/** @type {ModUtils} */ modUtils) => {
+
+    // Disable built-in Territorial.io error reporting
+    modUtils.insertCode(
+        `window.removeEventListener("error", err);
+        msg = e.lineno + " " + e.colno + "|" + getStack(e); /* here */`,
+        `__fx.utils.reportError(e, msg);
+        return alert("Error:\\n" + e.filename + " " + e.lineno + " " + e.colno + " " + e.message);`
+    )
+
     modUtils.waitForMinification(() => applyPatches(modUtils))
 }
 //export const requiredVariables = ["game", "playerId", "playerData", "rawPlayerNames", "gIsSingleplayer", "playerTerritories"];
@@ -300,10 +309,6 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
     // Invalid hostname detection avoidance
     replaceRawCode(`,this.hostnameIsValid=0<=window.location.hostname.toLowerCase().indexOf("territorial.io"),`,
         `,this.hostnameIsValid=true,`)
-
-    // Disable built-in Territorial.io error reporting
-    replaceOne(/window\.addEventListener\("error",function (\w+)\((\w+)\){/g,
-    '$& window.removeEventListener("error", $1); return alert("Error:\\n" + $2.filename + " " + $2.lineno + " " + $2.colno + " " + $2.message);');
 
     console.log('Removing ads...');
     // Remove ads
