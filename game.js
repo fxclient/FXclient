@@ -434,27 +434,15 @@ function f2() {
 		f3 && (f3.onclose = null, f3.onopen = null, f3 = null)
 	}
 	window.addEventListener("error", function f5(f6) {
-		window.removeEventListener("error", f5);
-		return alert("Error:\n" + f6.filename + " " + f6.lineno + " " + f6.colno + " " + f6.message);
 		f4 = "";
 		try {
-			var bW;
-			if (window.removeEventListener("error", f5), f4 = f6.lineno + " " + f6.colno + "|" + function(f6) {
-					if (!f6.error) return "NoStack";
-					var stack = f6.error.stack;
-					if (!stack || !stack.length) return "NoStack";
-					for (var match, fM = new RegExp(":([0-9]+):([0-9]+)", "g"), result = []; null !== (match = fM.exec(stack));) result.push(parseInt(match[1], 10)), result.push(parseInt(match[2], 10));
-					return result.length ? result.join(" ") : "NoStack"
-				}(f6), performance.memory && ((bW = []).push(Math.floor(performance.memory.jsHeapSizeLimit / 1e5)), bW.push(Math.floor(performance.memory.totalJSHeapSize / 1e5)), bW.push(Math.floor(performance.memory.usedJSHeapSize / 1e5)),
-					f4 = f4 + "|" + bW.join(" ")), f4 = (f4 = r ? f4 + "|R" + r.d + "," + r.an + "," + r.f8.toFixed(2) : f4) + "|" + f6.message, f9 && 1 === f9.fA) {
-				if (f4 = f9.fB + "|" + fC.fD.join(",") + "|" + f4, f6.lineno < 43) return void fE();
-				var e8 = "What happened? Please send us a detailed email to davidtschacher@gmail.com so we can fix this error!";
-				e8 += "<br>Error Message: " + f4, fC.fF(), d2.da(4, 5, new fG("🤖 Beep Boop! An error occurred.", e8, !0, [new dF("Close", function() {
-					d2.fH(), d2.d4.fI()
-				}), new dF("Reload", function() {
-					n.o.fJ()
-				})]))
-			}
+			return window.removeEventListener("error", f5), f4 = f6.lineno + " " + f6.colno + "|" + function(f6) {
+				if (!f6.error) return "NoStack";
+				var stack = f6.error.stack;
+				if (!stack || !stack.length) return "NoStack";
+				for (var match, fM = new RegExp(":([0-9]+):([0-9]+)", "g"), result = []; null !== (match = fM.exec(stack));) result.push(parseInt(match[1], 10)), result.push(parseInt(match[2], 10));
+				return result.length ? result.join(" ") : "NoStack"
+			}(f6), __fx.utils.reportError(f6, f4), alert("Error:\n" + f6.filename + " " + f6.lineno + " " + f6.colno + " " + f6.message)
 		} catch (f6) {
 			f4 = "SE|" + f4 + "|" + f6, console.log(f4), alert(f4)
 		}
