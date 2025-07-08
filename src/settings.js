@@ -17,7 +17,7 @@ var settings = {
   realisticNames: false,
   showPlayerDensity: true,
   coloredDensity: true,
-  densityDisplayStyle: "percentage",
+  densityDisplayStyle: "absoluteQuotient",
   hideBotNames: false,
   highlightClanSpawns: false,
   detailedTeamPercentage: false,
