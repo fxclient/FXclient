@@ -22,22 +22,5 @@ function textStyleBasedOnDensity(playerID) {
     const playerBalances = getVar("playerBalances"), playerTerritories = getVar("playerTerritories");
     return `hsl(${playerBalances[playerID] / (playerTerritories[playerID] * 1.5)}, 100%, 50%, 1)`;
 }
-function reportError(e, message) {
-    message = e.filename + " " + e.lineno + " " + e.colno + " " + e.message + "\n" + message;
-    fetch("https://fx.peshomir.workers.dev/stats/errors", {
-        body: JSON.stringify({
-            message,
-            context: {
-                swState: navigator.serviceWorker?.controller?.state,
-                location: window.location.toString(),
-                userAgent: navigator.userAgent,
-                dictionary,
-                buildTimestamp,
-                scripts: Array.from(document.scripts).map(s => s.src)
-            }
-        }),
-        method: "POST"
-    }).catch(e => alert("Failed to report error: " + e));
-}
 
-export default { getMaxTroops, getDensity, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, reportError }
+export default { getMaxTroops, getDensity, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity }

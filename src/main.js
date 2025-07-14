@@ -23,6 +23,7 @@ import hoveringTooltip from "./hoveringTooltip.js";
 import { keybindFunctions, keybindHandler, mobileKeybinds } from "./keybinds.js";
 import customLobby from './customLobby.js';
 import { displayChangelog } from './changelog.js';
+import { reportError } from './debugging.js';
 
 const savedVersion = localStorage.getItem("fx_version");
 if (savedVersion !== version) {
@@ -42,6 +43,7 @@ __fx.keybindFunctions = keybindFunctions;
 __fx.keybindHandler = keybindHandler;
 __fx.mobileKeybinds = mobileKeybinds;
 __fx.donationsTracker = donationsTracker;
+__fx.reportError = reportError;
 __fx.playerList = playerList;
 __fx.hoveringTooltip = hoveringTooltip;
 __fx.clanFilter = clanFilter;

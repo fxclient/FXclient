@@ -7,7 +7,7 @@ export default (/** @type {ModUtils} */ modUtils) => {
     modUtils.insertCode(
         `window.removeEventListener("error", err);
         msg = e.lineno + " " + e.colno + "|" + getStack(e); /* here */`,
-        `__fx.utils.reportError(e, msg);
+        `__fx.reportError(e, msg);
         return alert("Error:\\n" + e.filename + " " + e.lineno + " " + e.colno + " " + e.message);`
     )
 
