@@ -9,7 +9,8 @@ export function minifyCode(/** @type {string} */ script) {
     script = "()=>{" + script + "}";
     const output = UglifyJS.minify(script, {
         compress: false,
-        mangle: false
+        mangle: false,
+        output: { comments: /\.{3}/ } // preserve `/*...*/` comments
     });
     if (output.error) throw output.error;
     if (output.warnings) throw (output.warnings);
@@ -17,6 +18,8 @@ export function minifyCode(/** @type {string} */ script) {
     let code = output.code;
     if (code.endsWith(";")) code = code.slice(0, -1);
     code = code.slice(5, -1); // unwrap from function
+    // to allow finding a function without having to include all of its code:
+    code = code.split("/*...*/")[0].trim();
     return code;
 }
 
@@ -96,7 +99,6 @@ class ModUtils {
                 if (match === "__L") match = "___localizer" + (++localizerCount);
                 return groups.hasOwnProperty(match) ? "$" + groups[match] : match;
             });
-        //console.log(replacementString);
         let expressionMatchResult;
         try { expressionMatchResult = this.replaceOne(expression, replacementString); }
         catch (e) {
@@ -159,6 +161,7 @@ class ModUtils {
     }
 
     replaceCode(/** @type {string} */ code, /** @type {string} */ replacement, /** @type {BaseOptions=} */ options) {
+        replacement = replacement.split("/*...*/")[0];
         return this.replaceRawCode(minifyCode(code), replacement, options?.dictionary);
     }
     

@@ -11,6 +11,29 @@ export default (/** @type {ModUtils} */ modUtils) => {
         return alert("Error:\\n" + e.filename + " " + e.lineno + " " + e.colno + " " + e.message);`
     )
 
+    // Hovering tooltip
+    modUtils.insertCode(`/* here */
+        this.click = function(lK, lL, a1m) {
+		var gy = bL.gz(lK);
+		var h0 = bL.h1(lL);
+		var eV = bL.f7(gy, h0);
+		var eN = bL.eZ(eV);
+		if (!bL.isInMapBounds(gy, h0)) { return false; }
+		var a5C = (Device.a1.largeUIEnabled() ? 0.025 : 0.0144) * h___.hu;
+		var dp = performance.now();
+		if (Math.abs(lK - a4t) > a5C || Math.abs(lL - a4u) > a5C || dp > time + 500) { return false; }
+		time = dp;
+		if (a1m) { a5D(lK, lL, eN); return false; }
+        /*...*/}`,
+        `__fx.hoveringTooltip.display = function(mouseX, mouseY) {
+			var coordX = bL.gz(mouseX), coordY = bL.h1(mouseY),
+				coord = bL.f7(coordX, coordY), point = bL.eZ(coord);
+			// if (coordX < 0 || coordY < 0) return;
+            if (bL.isInMapBounds(coordX, coordY)) (function(lK, lL, eN) {
+				a5D(lK, lL, eN)
+			}(mouseX, mouseY, point))
+        }`)
+
     modUtils.waitForMinification(() => applyPatches(modUtils))
 }
 //export const requiredVariables = ["game", "playerId", "playerData", "rawPlayerNames", "gIsSingleplayer", "playerTerritories"];
@@ -287,16 +310,6 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
     }
 
     { // Hovering tooltip
-        replaceRawCode("this.click=function(gG,gH,uH){var fd=an.fe(gG),ff=an.fg(gH),fh=an.fi(fd,ff),fj=an.fk(fh);if(!an.fl(fd,ff))return!1;var fd=(bB.d3.isUIZoomEnabled()?.025:.0144)*aO.g4,ff=performance.now();if(Math.abs(gG-wK)>fd||Math.abs(gH-wL)>fd||dg+500<ff)return!1;if(dg=ff,uH&&!function(gG,gH,fj){a3.ek(fj)||-1===(gG=ao.fr.wq(gG,gH))?l.wp(fj):l.wr(gG)}(gG,gH,fj),",
-            `__fx.hoveringTooltip.display = function(mouseX, mouseY) {
-			var coordX = an.fe(mouseX), coordY = an.fg(mouseY),
-				coord = an.fi(coordX, coordY), point = an.fk(coord);
-			if (coordX < 0 || coordY < 0) return;
-			(function(gG, gH, fj) {
-				a3.ek(fj) || -1 === (gG = ao.fr.wq(gG, gH)) ? l.wp(fj) : l.wr(gG)
-			}(mouseX, mouseY, point))
-		}
-		this.click=function(gG,gH,uH){var fd=an.fe(gG),ff=an.fg(gH),fh=an.fi(fd,ff),fj=an.fk(fh);if(!an.fl(fd,ff))return!1;fd=(bB.d3.isUIZoomEnabled()?.025:.0144)*aO.g4,ff=performance.now();if(Math.abs(gG-wK)>fd||Math.abs(gH-wL)>fd||dg+500<ff)return!1;if(dg=ff,uH&&!function(gG,gH,fj){a3.ek(fj)||-1===(gG=ao.fr.wq(gG,gH))?l.wp(fj):l.wr(gG)}(gG,gH,fj),`)
         replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr,",
             `aK.nH = (window.devicePixelRatio || 1) * aEr, __fx.hoveringTooltip.canvasPixelScale = aK.nH,`)
     }
