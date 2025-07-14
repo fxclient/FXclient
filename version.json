@@ -1,10 +1,8 @@
 {
-    "version": "0.6.10",
-    "lastUpdated": "Jul 8",
+    "version": "0.6.11",
+    "lastUpdated": "Jul 14",
     "changes": [
-        "Fixed floating point number imprecision when configuring keybinds",
-        "Minor improvements to the keybinds settings menu",
-        "Added automatic error reporting to simplify bug identification and removal",
-        "The BetterTT density style (a value from 0 to 150) is now the default way that density is displayed. The percentage style will remain as is it for players who have already used FX Client, but you can change it in the settings at any time."
+        "Fix for game update 2.09.0",
+        "Error reporting improvements"
     ]
 }
