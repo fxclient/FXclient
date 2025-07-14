@@ -1,6 +1,7 @@
 import WindowManager from "./windowManager.js";
 import { getVar } from "./gameInterface.js";
 import { escapeHtml } from "./utils.js";
+import { debugWithContext } from "./debugging.js";
 
 WindowManager.add({
     name: "donationHistory",
@@ -16,10 +17,16 @@ const donationsTracker = new (function(){
     this.donationHistory = Array(512);
     // fill the array with empty arrays with length of 3
     //for (var i = 0; i < 512; i++) this.donationHistory.push([]); // not needed as .reset is called on game start
-    this.getHistoryOf = function(playerID) {
-        return this.donationHistory[playerID].toReversed();
+    let resetCalled = false;
+    this.getHistoryOf = function (playerID) {
+        return debugWithContext(() => this.donationHistory[playerID].toReversed(), {
+            playerID,
+            resetCalled,
+            type: typeof this.donationHistory[playerID],
+            isArray: Array.isArray(this.donationHistory[playerID])
+        });
     }
-    this.reset = function() { for (var i = 0; i < 512; i++) this.donationHistory[i] = []; };
+    this.reset = function() { resetCalled = true; for (var i = 0; i < 512; i++) this.donationHistory[i] = []; };
     this.logDonation = function(senderID, receiverID, amount) {
         const donationInfo = [senderID, receiverID, amount];
         this.donationHistory[receiverID].push(donationInfo);
