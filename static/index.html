@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Google tag (gtag.js) -->
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-WYYDMY13BG"></script>
+  <!-- Google tag (gtag.js) -->
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-WYYDMY13BG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,65 +11,103 @@
 
   gtag('config', 'G-WYYDMY13BG');
 </script>-->
-    <meta charset="utf-8" />
-    <title>FX Client</title>
-    <meta name="description" content="Modified Version of Territorial.io - FX Client">
-    <meta name="keywords"
-        content="territorial.io,territory games,territorial io,map games,conquest games,conquest game,david tschacher,territorial,territory game,io game,io games,territory.io,territory io,territory games io">
-    <meta name="author" content="MohsenEMX, peshomir,orlemley1, David Tschacher">
-    <meta name="viewport" content="width=device-width, maximum-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="manifest.json" />
-    
-    <meta name="og:image" content="https://fxclient.github.io/FXclient/assets/logo.png" />
-    <meta property="og:url" content="https://fxclient.github.io/FXclient/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="FX Client">
-    <meta property="og:description" content="Modified Version of Territorial.io - FX Client">
-    <meta property="og:image" content="https://fxclient.github.io/FXclient/assets/logo.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="FX Client">
-    <meta name="twitter:description" content="Modified Version of Territorial.io - FX Client">
-    <meta name="twitter:image" content="https://fxclient.github.io/FXclient/assets/logo.png">
-    <meta itemprop="name" content="FX Client">
-    <meta itemprop="description" content="Modified Version of Territorial.io - FX Client">
-    <meta itemprop="image" content="https://fxclient.github.io/FXclient/assets/logo.png">
-    
-    <!-- FX Client CSS -->
-    <link rel="stylesheet" href="main.css?buildTimestamp">
-    <!-- Game CSS -->
-    <style>
-        html,
-        body {
-          overflow: hidden;
-          padding: 0;
-          margin: 0;
-          background: rgb(0, 0, 0);
-          color: rgb(255, 255, 255);
+  <meta charset="utf-8" />
+  <title>FX Client</title>
+  <meta name="description" content="Modified Version of Territorial.io - FX Client">
+  <meta name="keywords"
+    content="territorial.io,territory games,territorial io,map games,conquest games,conquest game,david tschacher,territorial,territory game,io game,io games,territory.io,territory io,territory games io">
+  <meta name="author" content="MohsenEMX, peshomir,orlemley1, David Tschacher">
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json" />
+
+  <meta name="og:image" content="https://fxclient.github.io/FXclient/assets/logo.png" />
+  <meta property="og:url" content="https://fxclient.github.io/FXclient/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FX Client">
+  <meta property="og:description" content="Modified Version of Territorial.io - FX Client">
+  <meta property="og:image" content="https://fxclient.github.io/FXclient/assets/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FX Client">
+  <meta name="twitter:description" content="Modified Version of Territorial.io - FX Client">
+  <meta name="twitter:image" content="https://fxclient.github.io/FXclient/assets/logo.png">
+  <meta itemprop="name" content="FX Client">
+  <meta itemprop="description" content="Modified Version of Territorial.io - FX Client">
+  <meta itemprop="image" content="https://fxclient.github.io/FXclient/assets/logo.png">
+
+  <!-- FX Client CSS -->
+  <link rel="stylesheet" href="main.css?buildTimestamp">
+  <!-- Game CSS -->
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      background: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      color: rgb(225, 225, 255);
+    }
+  </style>
+  <script>
+    // adapted from https://stackoverflow.com/a/44593894 and https://stackoverflow.com/a/40446448
+
+    function showUpdatePrompt(/** @type {ServiceWorker} */ sw) {
+      console.log("showing update prompt")
+      document.getElementById("updateNotification").style.display = "block";
+      document.getElementById("swUpdateButton").addEventListener("click", () => {
+        sw.postMessage({ update: true });
+      })
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!("serviceWorker" in navigator)) return;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        console.log("Controlling service worker changed, refreshing page");
+        window.location.reload();
+      });
+
+      navigator.serviceWorker.register("./sw2.js").then(function (registration) {
+        if (!navigator.serviceWorker.controller) return;
+        // if there's an updated worker already waiting, update
+        if (registration.waiting) return showUpdatePrompt(registration.waiting);
+
+        // if a worker in the "installing" state becomes "installed", update
+        function handleInstalling() {
+          var sw = registration.installing;
+          sw.addEventListener("statechange", function () {
+            if (sw.state === "installed") showUpdatePrompt(sw);
+          })
         }
-    
-        * {
-          box-sizing: border-box;
-        }
-    
-        a {
-          color: rgb(225, 225, 255);
-        }
-      </style>
+        // if there's an updated worker installing, track its progress
+        if (registration.installing) handleInstalling();
+        // otherwise, listen for new workers arriving
+        registration.addEventListener('updatefound', handleInstalling);
+      });
+    });
+  </script>
 </head>
 
 <body onload="aiCommand746(0);">
-    <canvas id="canvasA" width="128" height="128"></canvas>
-    <span id="windowContainer"><div class="window flex-column settings" style="display:none">
-        <h1>Settings</h1>
-        <div class="scrollable"></div>
-        <hr>
-        <footer>
-            <button onclick="__fx.settingsManager.resetAll()">Reset Settings</button>
-            <button onclick="__fx.settingsManager.save()">Save Settings</button>
-            <button onclick="__fx.settingsManager.importFromFile()">Import</button>
-            <button onclick="__fx.settingsManager.exportToFile()">Export</button>
-        </footer>
+  <canvas id="canvasA" width="128" height="128"></canvas>
+  <span id="windowContainer">
+    <div class="window flex-column settings" style="display:none">
+      <h1>Settings</h1>
+      <div class="scrollable"></div>
+      <hr>
+      <footer>
+        <button onclick="__fx.settingsManager.resetAll()">Reset Settings</button>
+        <button onclick="__fx.settingsManager.save()">Save Settings</button>
+        <button onclick="__fx.settingsManager.importFromFile()">Import</button>
+        <button onclick="__fx.settingsManager.exportToFile()">Export</button>
+      </footer>
     </div>
     <div class="window flex-column" id="customLobbyJoinMenu" style="display: none">
       <input type="text" id="lobbyCode" placeholder="Enter lobby code">
@@ -76,21 +115,27 @@
       <button id="createLobbyButton">Create new lobby</button>
     </div>
     <div class="window scrollable selectable" id="playerlist" style="display: none;">
-        <h1>Player List</h1>
-        <table><tbody id="playerlist_content"></tbody></table>
+      <h1>Player List</h1>
+      <table>
+        <tbody id="playerlist_content"></tbody>
+      </table>
     </div>
     <div class="window scrollable selectable" id="donationhistory" style="display:none">
-        <h1>Donation history for </h1>
-        <p id="donationhistory_note">Note: donations from bots are not shown here</p>
-        <table><tbody id="donationhistory_content"></tbody></table>
+      <h1>Donation history for </h1>
+      <p id="donationhistory_note">Note: donations from bots are not shown here</p>
+      <table>
+        <tbody id="donationhistory_content"></tbody>
+      </table>
     </div>
     <div class="window" style="display: none" id="updateNotification">
       <h3>A new version of FX is available! Reload to update</h3>
-      <button onclick="window.location.reload()">Reload</button>
+      <button id="swUpdateButton">Reload</button>
       <button onclick="document.getElementById('updateNotification').style.display = 'none'">Dismiss</button>
-    </div></span>
-    <script src="variables.js?buildTimestamp"></script>
-    <script src="fx.bundle.js?buildTimestamp"></script>
-    <script src="game.js?buildTimestamp"></script>
+    </div>
+  </span>
+  <script src="variables.js?buildTimestamp"></script>
+  <script src="fx.bundle.js?buildTimestamp"></script>
+  <script src="game.js?buildTimestamp"></script>
 </body>
+
 </html>

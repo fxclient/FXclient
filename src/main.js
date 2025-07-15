@@ -1,17 +1,6 @@
 import versionData from '../version.json';
 const { version, lastUpdated } = versionData;
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.addEventListener("message", (e) => {
-    const message = e.data;
-    if (message.event === "activate" && buildTimestamp !== message.version) {
-      // worker was updated in the background
-      document.getElementById("updateNotification").style.display = "block";
-    }
-  });
-  navigator.serviceWorker.register("./sw.js");
-}
-
 import settingsManager from './settings.js';
 import { clanFilter, leaderboardFilter } from "./clanFilters.js";
 import WindowManager from "./windowManager.js";
