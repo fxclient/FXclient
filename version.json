@@ -2,6 +2,6 @@
     "version": "0.6.12",
     "lastUpdated": "Jul 15",
     "changes": [
-        "Refactored the service worker code to (hopefully) fix a ton of relatively rare errors related to how the client's are loaded (for example, code from earlier versions would sometimes be loaded along with code from newer versions, causing all kinds of issues). FX Client should be much more stable after this change."
+        "Refactored the service worker code to (hopefully) fix a ton of relatively rare errors related to how the client's files are loaded (for example, code from earlier versions would sometimes be loaded along with code from newer versions, causing all kinds of issues). FX Client should be much more stable after this change."
     ]
 }
