@@ -3,6 +3,6 @@
     "lastUpdated": "Jul 22",
     "changes": [
         "Fix for game update 2.09.9",
-        "Fix to prevent the hovering tooltiip from causing perspective switching during replays (a new feature was added to the base game where, in replays, you can switch to a different player/bot by right clicking on them)"
+        "Fix to prevent the hovering tooltip from causing perspective switching during replays (a new feature was added to the base game where, in replays, you can switch to a different player/bot by right clicking on them)"
     ]
 }
