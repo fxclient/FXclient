@@ -1,7 +1,8 @@
 {
-    "version": "0.6.12",
-    "lastUpdated": "Jul 15",
+    "version": "0.6.13",
+    "lastUpdated": "Jul 22",
     "changes": [
-        "Refactored the service worker code to (hopefully) fix a ton of relatively rare errors related to how the client's files are loaded (for example, code from earlier versions would sometimes be loaded along with code from newer versions, causing all kinds of issues). FX Client should be much more stable after this change."
+        "Fix for game update 2.09.9",
+        "Fix to prevent the hovering tooltiip from causing perspective switching during replays (a new feature was added to the base game where, in replays, you can switch to a different player/bot by right clicking on them)"
     ]
 }
