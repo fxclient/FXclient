@@ -62,6 +62,19 @@ async function patchGameCode() {
 
 	const modUtils = new ModUtils(minifyCode(script));
 
+	/** @type {{ code: string, addToDictionary: string[] }[]} */
+	const codeSegments = [{
+		code: `player = aQ.eF(eR);
+			if (game.gIsReplay) { game.playerId = player; }
+			str = L(58, /* Player: {0} */ [b0.context.truncateAndFillText(playerData.rawPlayerNames[player], b0.qZ.sN(0, 10), 150)]) + "   ";
+			str += L(59, /* Strength: {10} */ [b0.rY.formatNumber(playerData.playerBalances[player])]) + "   ";
+			str += L(60, /* Territory: {10} */ [b0.rY.formatNumber(playerData.playerTerritories[player])]) + "   ";
+		`, addToDictionary: ["game", "gIsReplay", "playerData", "rawPlayerNames", "playerBalances", "playerTerritories"]
+	}];
+	codeSegments.forEach(({ code, addToDictionary }) => {
+		modUtils.matchCode(code, { addToDictionary })
+	});
+
 	const { default: applyPatches } = await import('./patches/main.js');
 	console.log("Applying patches...");
 	applyPatches(modUtils);
@@ -93,7 +106,6 @@ async function patchGameCode() {
 	].forEach(matchDictionaryExpression);
 
 	const rawCodeSegments = [
-		`aQ.eI(e0)?aQ.eE(e0)?a38=__L([a38]):(player=aQ.eF(e0),oq=__L([b0.uS.zG(@playerData.@rawPlayerNames[player],b0.p9.qQ(0,10),150)])+"   ",oq=(oq+=__L([b0.wx.a07(playerData.@playerBalances[player])])+"   ")+__L([b0.wx.a07(playerData.@playerTerritories[player])])+"   ",`,
 		"1===a.b?this.@gLobbyMaxJoin=this.@gHumans:this.gLobbyMaxJoin=this.@data.@playerCount,this.tZ=this.gLobbyMaxJoin,this.@gBots=this.gLobbyMaxJoin-this.gHumans,this.sg=0,",
 		"[0]=__L(),@strs[1]=@game.@gIsSingleplayer?__L():__L(),",
 		"?(this.gB=Math.floor(.066*aK.fw),g5=aK.g5-4*@uiSizes.@gap-this.gB):",
