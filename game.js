@@ -61,10 +61,10 @@ function bt(bu) {
 }
 
 function dG() {
-	this.dq = 1104, this.n = 2097, this.rVersion = 12, this.dr = 0, this.dd = function() {
+	this.dq = 1105, this.n = 2099, this.rVersion = 12, this.dr = 0, this.dd = function() {
 		this.ds = 2;
 		var dt = bL.du(this.n, 10) % 100;
-		this.dv = "21 Jul 2025 [" + bL.du(this.n, 1e3) + "." + (dt < 10 ? "0" : "") + dt + "." + this.n % 10 + "]", this.a9 = true, this.aA = function() {
+		this.dv = "22 Jul 2025 [" + bL.du(this.n, 1e3) + "." + (dt < 10 ? "0" : "") + dt + "." + this.n % 10 + "]", this.a9 = true, this.aA = function() {
 			try {
 				return window.self !== window.top
 			} catch (e) {
@@ -3785,12 +3785,12 @@ function cE() {
 			a60(0, "Your Win Count is now " + __fx.wins.count, 3, a6P, bB.ni, bB.nf, -1, !0);
 		ag.gb[a6P] && (aQ.jG(a6P, 2), aD.kA < 100 ? a60(0, L(49, [ag.yP[a6P]]), 3, a6P, bB.ni, bB.nf, -1, !0) : a60(0, L(56, [ag.yP[a6P]]), 3, a6P, bB.ni, bB.nf, -1, !0))
 	}, this.a5U = function(eR) {
-		var a6R, qG, a6Q = "(" + bM.ev(eR >> 2) + ", " + bM.ex(eR >> 2) + ")",
+		var qG, a6R, a6Q = "(" + bM.ev(eR >> 2) + ", " + bM.ex(eR >> 2) + ")",
 			a65 = !1,
 			player = 0;
-		ac.ei(eR) ? ac.ee(eR) ? a6Q = L(57, [a6Q]) : (player = ac.ef(eR), qG = L(58, [bA.y6.a2z(ag.a0a[player], bA.qZ.sN(0, 10), 150)]) + "   ", qG = (qG += L(59, [bA.rY.zD(ag.gp[player])]) + "   ") + L(60, [bA.rY.zD(ag.gb[player])]) + "   ", aD
-				.hh && (a6R = bg.a0H[bg.kX[bg.el[player]]], qG += L(61) + ": " + a6R + "   "), bA.g9.jY(player) && (qG += L(62) + ": " + aE.kL[aE.hW[player]] + "   "), a6Q = qG = (qG += L(63, [player]) + "   ") + L(64, [a6Q]), a65 = !0) : a6Q =
-			ac.es(eR) ? L(65, [a6Q]) + "   #" + ac.eV(eR) : L(66, [a6Q]), bf.dl = !0, a6K(55, 0), a60(220, a6Q, 55, player, bB.ni, bB.nf, -1, a65, void 0, void 0, !0)
+		ac.ei(eR) ? ac.ee(eR) ? a6Q = L(57, [a6Q]) : (player = ac.ef(eR), aD.gw && !1 === __fx.hoveringTooltip.active && (aD.eX = player), qG = L(58, [bA.y6.a2z(ag.a0a[player], bA.qZ.sN(0, 10), 150)]) + "   ", qG = (qG += L(59, [bA.rY.zD(ag.gp[
+				player])]) + "   ") + L(60, [bA.rY.zD(ag.gb[player])]) + "   ", aD.hh && (a6R = bg.a0H[bg.kX[bg.el[player]]], qG += L(61) + ": " + a6R + "   "), bA.g9.jY(player) && (qG += L(62) + ": " + aE.kL[aE.hW[player]] + "   "), a6Q =
+			qG = (qG += L(63, [player]) + "   ") + L(64, [a6Q]), a65 = !0) : a6Q = ac.es(eR) ? L(65, [a6Q]) + "   #" + ac.eV(eR) : L(66, [a6Q]), bf.dl = !0, a6K(55, 0), a60(220, a6Q, 55, player, bB.ni, bB.nf, -1, a65, void 0, void 0, !0)
 	}, this.a5W = function(a6S) {
 		var l3 = bN.y,
 			player = l3.m3[a6S] >> 3,
@@ -6506,8 +6506,8 @@ function cZ() {
 	}, this.jq = function(player) {
 		return Math.min(100 * ag.gb[player], aD.a4L)
 	}, this.p6 = function(player, p7) {
-		player === aD.eX || p7 === aD.eX || bA.g9.jY(player) || bA.g9.jY(p7) || bq.yO(ag.yP[player] + " has supported " + ag.yP[p7] + " with " + bO.fK[0] + " ressource" + (1 === bO.fK[0] ? "." : "s.")), bA.g9.gC(p7, bO.fK[0]), bd.pT(player, p7),
-			af.aI5(player, bO.fK[0] + bO.fK[1]), af.pU(p7, bO.fK[0]), bA.g9.mJ(player)
+		player === aD.eX || p7 === aD.eX || bA.g9.jY(player) || bA.g9.jY(p7) || bq.yO(ag.yP[player] + " has supported " + ag.yP[p7] + " with " + bA.rY.zD(bO.fK[0]) + " ressource" + (1 === bO.fK[0] ? "." : "s.")), bA.g9.gC(p7, bO.fK[0]), bd.pT(
+			player, p7), af.aI5(player, bO.fK[0] + bO.fK[1]), af.pU(p7, bO.fK[0]), bA.g9.mJ(player)
 	}, this.aI6 = function() {
 		for (var en = al.kB, zk = al.kC, l3 = 0, a3S = ag.gp, aB = 0; aB < en; aB++) l3 += a3S[zk[aB]];
 		return l3
@@ -6865,61 +6865,57 @@ function cV() {
 
 function cW() {
 	var aJu = new Uint16Array(aD.ek),
-		aJv = 10;
+		aJv = 0;
+
+	function aJz(a6U, aJx) {
+		return 4 + bL.du(100 * aJx, ae.jq(a6U))
+	}
 
 	function aJy(a6U) {
 		return aD.kU || 7 <= aD.kS || 4284 <= bf.k7() || bA.g9.jY(a6U)
 	}
 	this.dd = function() {
-		aJu.fill(0), aJv = 10
+		aJu.fill(0), aJv = 15
 	}, this.hR = function(p7) {
 		var player = aD.eX;
-		if (bA.g9.q0(player, p7) && bA.g9.pQ(player, bA.g9.iM(player, aR.hH()), p7)) {
-			player = p7, p7 = bO.fK[0];
-			if (!aJy(player)) {
-				p7 = Math.max(bL.du(100 * p7, ae.jq(player)), 1);
-				if (aJu[player] + p7 > aJv) return !!void 0
-			}
-			return !!1
-		}
-		return !1
+		return !!bA.g9.q0(player, p7) && !(!bA.g9.pQ(player, bA.g9.iM(player, aR.hH()), p7) || (player = p7, p7 = bO.fK[0], !aJy(player) && aJu[player] + aJz(player, p7) > aJv))
 	}, this.jG = function(a6U, aJx) {
 		if (!aJy(a6U)) {
-			aJx = Math.max(bL.du(100 * aJx, ae.jq(a6U)), 1);
+			aJx = aJz(a6U, aJx);
 			if (aJu[a6U] + aJx > aJv) return !1;
 			aJu[a6U] += aJx
 		}
 		return !0
 	}, this.j3 = function() {
-		bf.k7() % 100 == 99 && (bf.k7() < 1071 ? aJv += 5 : bf.k7() < 2142 ? aJv += 8 : bf.k7() < 3213 ? aJv += 12 : aJv += 14)
+		bf.k7() % 100 == 99 && (bf.k7() < 1071 ? aJv += 4 : bf.k7() < 2142 ? aJv += 6 : bf.k7() < 3213 ? aJv += 8 : aJv += 10)
 	}
 }
 
 function ce() {
-	var aJz;
+	var aK0;
 	this.kb = null, this.ka = 0, this.dd = function() {
-		aJz = [], 9 === aD.kS && this.aK0()
-	}, this.aK0 = function() {
+		aK0 = [], 9 === aD.kS && this.aK1()
+	}, this.aK1 = function() {
 		this.kb = [0, 0, 0, 0, 0, 0];
-		for (var aK1 = [256, 227, 176, 100, this.ka = 0, 0, 0], aK2 = [0, 8, 24, 46, 70, 256, 333], aK3 = [0, 0, 3, 11, 15, 256, 179], j = aD.kA, aB = 1; aB < aK1.length; aB++)
-			if (j <= aK2[aB]) {
-				this.ka = aK1[aB - 1] - bL.du((j - aK2[aB - 1]) * (aK1[aB - 1] - aK1[aB]), aK2[aB] - aK2[aB - 1]), this.kb[5] = aK3[aB - 1] - bL.du((j - aK2[aB - 1]) * (aK3[aB - 1] - aK3[aB]), aK2[aB] - aK2[aB - 1]), this.kb[0] = aD.ek - j - this
+		for (var aK2 = [256, 227, 170, 148, 100, this.ka = 0, 0, 0], aK3 = [0, 8, 24, 30, 46, 70, 256, 333], aK4 = [0, 0, 3, 7, 14, 22, 256, 179], j = aD.kA, aB = 1; aB < aK2.length; aB++)
+			if (j <= aK3[aB]) {
+				this.ka = aK2[aB - 1] - bL.du((j - aK3[aB - 1]) * (aK2[aB - 1] - aK2[aB]), aK3[aB] - aK3[aB - 1]), this.kb[5] = aK4[aB - 1] - bL.du((j - aK3[aB - 1]) * (aK4[aB - 1] - aK4[aB]), aK3[aB] - aK3[aB - 1]), this.kb[0] = aD.ek - j - this
 					.ka - this.kb[5];
 				break
 			} aD.kW = aD.ek - aD.kA, aD.data.numberTeams = (0 < aD.kA) + (0 < aD.kW), aD.data.playerCount = aD.x1 = aD.kA + aD.kW, aD.data.teamPlayerCount = new Uint16Array([0, 0, 0, 0, 0, 0, 0, aD.kA + this.ka, aD.kW - this.ka]), aD.a4Q.a4V()
 	}, this.aHG = function(player) {
-		aJz.push({
+		aK0.push({
 			player: player,
 			gG: 14 + ay.jS(20)
 		})
 	}, this.j3 = function() {
 		if (9 === aD.kS)
-			for (var aB = aJz.length - 1; 0 <= aB; aB--) --aJz[aB].gG <= 0 && (af.q8(aJz[aB].player, 0, aj.rp.yk + aj.rp.yy), aJz.splice(aB))
+			for (var aB = aK0.length - 1; 0 <= aB; aB--) --aK0[aB].gG <= 0 && (af.q8(aK0[aB].player, 0, aj.rp.yk + aj.rp.yy), aK0.splice(aB))
 	}
 }
 
 function dB() {
-	function aKI() {
+	function aKJ() {
 		return {
 			ey: bS.ey,
 			ez: bS.ez,
@@ -6933,89 +6929,89 @@ function dB() {
 		}
 	}
 
-	function aKA(aB) {
-		return 1 !== aB && bS.aDA(aB) && aB !== bS.aKK()
+	function aKB(aB) {
+		return 1 !== aB && bS.aDA(aB) && aB !== bS.aKL()
 	}
-	this.aK5 = 22, this.aHR = 4096, this.ey = 0, this.ez = 0, this.wT = null, this.wP = null, this.wQ = null, this.wU = null, this.eT = 0, this.mapSeed = 0, this.wR = !1, this.wS = new aK6, this.wJ = new aK7, this.a6m = new aK8, this.dd =
+	this.aK6 = 22, this.aHR = 4096, this.ey = 0, this.ez = 0, this.wT = null, this.wP = null, this.wQ = null, this.wU = null, this.eT = 0, this.mapSeed = 0, this.wR = !1, this.wS = new aK7, this.wJ = new aK8, this.a6m = new aK9, this.dd =
 function() {
 		this.wJ.dd()
-	}, this.a7 = function(map, aK9) {
-		((map %= this.aK5) !== this.eT || aKA(this.eT) && aK9 !== this.mapSeed) && (this.wR = !1, this.wS.aKB(), ay.a4W(map), this.eT = map, this.mapSeed = aK9, aKA(map) && (bS.wJ.wK[map].aKC = aK9), this.aDA(this.eT) ? (map = bS.wJ.wK[this.eT],
-			this.ey = map.i, this.ez = map.j, ay.a4W(map.aKC), aq.a7([this.ey, this.ez, map.mn, map.mk]), aKE(), ap.aKF(), aq.aKG()) : aKD())
-	}, this.aKH = function(map, aK9) {
-		var fW = aKI(),
-			map = (this.a7(map, aK9), this.wS.aKB(), aKI());
-		return aK9 = fW, bS.ey = aK9.ey, bS.ez = aK9.ez, bS.wT = aK9.wT, bS.wP = aK9.wP, bS.wQ = aK9.wQ, bS.wU = aK9.wU, bS.eT = aK9.eT, bS.mapSeed = aK9.mapSeed, bS.wR = aK9.wR, map
+	}, this.a7 = function(map, aKA) {
+		((map %= this.aK6) !== this.eT || aKB(this.eT) && aKA !== this.mapSeed) && (this.wR = !1, this.wS.aKC(), ay.a4W(map), this.eT = map, this.mapSeed = aKA, aKB(map) && (bS.wJ.wK[map].aKD = aKA), this.aDA(this.eT) ? (map = bS.wJ.wK[this.eT],
+			this.ey = map.i, this.ez = map.j, ay.a4W(map.aKD), aq.a7([this.ey, this.ez, map.mn, map.mk]), aKF(), ap.aKG(), aq.aKH()) : aKE())
+	}, this.aKI = function(map, aKA) {
+		var fW = aKJ(),
+			map = (this.a7(map, aKA), this.wS.aKC(), aKJ());
+		return aKA = fW, bS.ey = aKA.ey, bS.ez = aKA.ez, bS.wT = aKA.wT, bS.wP = aKA.wP, bS.wQ = aKA.wQ, bS.wU = aKA.wU, bS.eT = aKA.eT, bS.mapSeed = aKA.mapSeed, bS.wR = aKA.wR, map
 	}, this.a4r = function(canvas) {
 		canvas && this.wT !== canvas && (this.ey = canvas.width, this.ez = canvas.height, this.wT = canvas, this.wP = this.wT.getContext("2d", {
 			alpha: !1
-		}), this.hm = this.wP.getImageData(0, 0, this.ey, this.ez), this.wU = this.hm.data, this.eT = this.aKK(), this.mapSeed = 0, bS.wJ.wK[this.eT].name = aD.data.mapName)
+		}), this.hm = this.wP.getImageData(0, 0, this.ey, this.ez), this.wU = this.hm.data, this.eT = this.aKL(), this.mapSeed = 0, bS.wJ.wK[this.eT].name = aD.data.mapName)
 	}, this.eS = function(aB) {
-		return 3 === aB || 7 === aB || 9 === aB || 21 === aB || aB === this.aKK()
-	}, this.aKL = function(aB) {
-		return 2 === aB || 7 === aB || 9 === aB || 20 === aB
+		return 3 === aB || 7 === aB || 9 === aB || 21 === aB || aB === this.aKL()
 	}, this.aKM = function(aB) {
+		return 2 === aB || 7 === aB || 9 === aB || 20 === aB
+	}, this.aKN = function(aB) {
 		return 1 === aB
-	}, this.aKK = function() {
-		return this.aK5
+	}, this.aKL = function() {
+		return this.aK6
 	}, this.aDA = function(aB) {
-		return void 0 === this.wJ.wK[aB].aKN
+		return void 0 === this.wJ.wK[aB].aKO
 	}, this.a4q = function(qR) {
 		return 0 === qR.mapType ? qR.mapProceduralIndex < 10 ? qR.mapProceduralIndex : 10 + qR.mapProceduralIndex : 1 === qR.mapType ? qR.mapRealisticIndex + 10 : void 0
-	}, this.aDB = function(qR, aKO) {
-		0 === qR.mapType ? qR.mapProceduralIndex = aKO < 10 ? aKO : aKO - 10 : 1 === qR.mapType && (qR.mapRealisticIndex = aKO - 10)
+	}, this.aDB = function(qR, aKP) {
+		0 === qR.mapType ? qR.mapProceduralIndex = aKP < 10 ? aKP : aKP - 10 : 1 === qR.mapType && (qR.mapRealisticIndex = aKP - 10)
 	}
 }
 
-function aK6() {
-	function aKX() {
+function aK7() {
+	function aKY() {
 		bS.wS.j3()
 	}
 
-	function aKd(gL, aKc) {
-		0 < aKc && (bS.wU[gL] += aKc, bS.wU[gL + 1] += aKc, bS.wU[gL + 2] += aKc)
+	function aKe(gL, aKd) {
+		0 < aKd && (bS.wU[gL] += aKd, bS.wU[gL + 1] += aKd, bS.wU[gL + 2] += aKd)
 	}
 
 	function i1(gL) {
 		return bS.wU[gL + 2] > bS.wU[gL] && bS.wU[gL + 2] > bS.wU[gL + 1]
 	}
-	this.a9D = -1, this.a0y = 0, this.aKP = 0, this.aKQ = 8, this.aKR = 32, this.aKS = 8, this.aKT = 32, this.aKU = [0, 0], this.a8E = [0, 0, 0, 0], this.iX = null, this.aKV = !0, this.aKW = !1, this.aKB = function() {
-		-1 !== this.a9D && clearTimeout(this.a9D), this.a9D = -1, this.iX = null, aq.aKG()
+	this.a9D = -1, this.a0y = 0, this.aKQ = 0, this.aKR = 8, this.aKS = 32, this.aKT = 8, this.aKU = 32, this.aKV = [0, 0], this.a8E = [0, 0, 0, 0], this.iX = null, this.aKW = !0, this.aKX = !1, this.aKC = function() {
+		-1 !== this.a9D && clearTimeout(this.a9D), this.a9D = -1, this.iX = null, aq.aKH()
 	}, this.dd = function() {
-		7 === aa.a17() || this.aKW || (this.aKV = !0, this.a0y = 0, this.aKP = 1, this.aKU = [bS.wJ.wK[bS.eT].wl[0], bS.wJ.wK[bS.eT].wm[0]], this.a8E = [bS.wJ.wK[bS.eT].aKN[3], bS.wJ.wK[bS.eT].aKN[4], bS.wJ.wK[bS.eT].aKN[5], bS.wJ.wK[bS.eT].aKN[
-			6]], this.aKQ = bS.wJ.wK[bS.eT].aKN[7], this.aKR = bS.wJ.wK[bS.eT].aKN[8], this.aKS = bS.wJ.wK[bS.eT].aKN[9], this.aKT = bS.wJ.wK[bS.eT].aKN[10], this.aKV ? this.a9D = setTimeout(aKX, 16) : this.j3())
+		7 === aa.a17() || this.aKX || (this.aKW = !0, this.a0y = 0, this.aKQ = 1, this.aKV = [bS.wJ.wK[bS.eT].wl[0], bS.wJ.wK[bS.eT].wm[0]], this.a8E = [bS.wJ.wK[bS.eT].aKO[3], bS.wJ.wK[bS.eT].aKO[4], bS.wJ.wK[bS.eT].aKO[5], bS.wJ.wK[bS.eT].aKO[
+			6]], this.aKR = bS.wJ.wK[bS.eT].aKO[7], this.aKS = bS.wJ.wK[bS.eT].aKO[8], this.aKT = bS.wJ.wK[bS.eT].aKO[9], this.aKU = bS.wJ.wK[bS.eT].aKO[10], this.aKW ? this.a9D = setTimeout(aKY, 16) : this.j3())
 	}, this.j3 = function() {
-		if (8 === aa.a17() && aH.n0()) this.a9D = setTimeout(aKX, 16);
+		if (8 === aa.a17() && aH.n0()) this.a9D = setTimeout(aKY, 16);
 		else {
 			if (0 === this.a0y) {
-				var aKC = ay.aKY();
-				if (ay.a4W(bS.wJ.wK[bS.eT].aKN[2]), aq.a7([bS.ey, bS.ez, bS.wJ.wK[bS.eT].aKN[0], bS.wJ.wK[bS.eT].aKN[1]]), ay.a4W(aKC), this.iX = aq.aKZ(), this.a0y++, this.aKV) return void(this.a9D = setTimeout(aKX, 16))
+				var aKD = ay.aKZ();
+				if (ay.a4W(bS.wJ.wK[bS.eT].aKO[2]), aq.a7([bS.ey, bS.ez, bS.wJ.wK[bS.eT].aKO[0], bS.wJ.wK[bS.eT].aKO[1]]), ay.a4W(aKD), this.iX = aq.aKa(), this.a0y++, this.aKW) return void(this.a9D = setTimeout(aKY, 16))
 			}
-			for (var gL, eZ, aKC = this.aKV ? 10 : 1e6, aKC = bS.ez - this.aKP - 1 < aKC ? bS.ez - this.aKP - 1 : aKC, xi = this.aKP + aKC, ew = this.aKP; ew < xi; ew++)
-				for (var eu = 1; eu < bS.ey - 1; eu++) i1(gL = 4 * (eZ = eu + ew * bS.ey)) ? this.aKa(gL, eZ, 1) : (this.aKa(gL, eZ, 0), function(eu, ew, gL) {
+			for (var gL, eZ, aKD = this.aKW ? 10 : 1e6, aKD = bS.ez - this.aKQ - 1 < aKD ? bS.ez - this.aKQ - 1 : aKD, xi = this.aKQ + aKD, ew = this.aKQ; ew < xi; ew++)
+				for (var eu = 1; eu < bS.ey - 1; eu++) i1(gL = 4 * (eZ = eu + ew * bS.ey)) ? this.aKb(gL, eZ, 1) : (this.aKb(gL, eZ, 0), function(eu, ew, gL) {
 					return 1 < eu && i1(gL - 4) || eu < bS.ey - 2 && i1(gL + 4) || 1 < ew && i1(gL - 4 * bS.ey) || ew < bS.ez - 2 && i1(gL + 4 * bS.ey)
-				}(eu, ew, gL) && this.aKb(eu, ew));
-			this.aKP = xi, this.aKP >= bS.ez - 1 ? (bS.wP.putImageData(bS.wQ, 0, 0, 1, 1, bS.ey - 2, bS.ez - 2), bf.dl = !0, this.aKB()) : this.aKV && (this.a9D = setTimeout(aKX, 16))
+				}(eu, ew, gL) && this.aKc(eu, ew));
+			this.aKQ = xi, this.aKQ >= bS.ez - 1 ? (bS.wP.putImageData(bS.wQ, 0, 0, 1, 1, bS.ey - 2, bS.ez - 2), bf.dl = !0, this.aKC()) : this.aKW && (this.a9D = setTimeout(aKY, 16))
 		}
-	}, this.aKa = function(gL, eZ, e8) {
-		aKd(gL, Math.floor(this.aKU[e8] + this.a8E[e8] * this.iX[eZ] / 1e4) - bS.wU[gL])
-	}, this.aKe = function(gL, e7, aKf, e8, a8E) {
-		aKd(gL, Math.floor(this.aKU[e8] + (1 - e7 / aKf) * a8E) - bS.wU[gL])
-	}, this.aKb = function(lN, lO) {
-		for (var gL, e7, aKf, a93 = lN - this.aKR, aKg = lO - this.aKR, xj = lN + this.aKR, xi = lO + this.aKR, a93 = a93 < 1 ? 1 : a93, xj = xj > bS.ey - 2 ? bS.ey - 2 : xj, xi = xi > bS.ez - 2 ? bS.ez - 2 : xi, ew = aKg < 1 ? 1 : aKg; ew <=
+	}, this.aKb = function(gL, eZ, e8) {
+		aKe(gL, Math.floor(this.aKV[e8] + this.a8E[e8] * this.iX[eZ] / 1e4) - bS.wU[gL])
+	}, this.aKf = function(gL, e7, aKg, e8, a8E) {
+		aKe(gL, Math.floor(this.aKV[e8] + (1 - e7 / aKg) * a8E) - bS.wU[gL])
+	}, this.aKc = function(lN, lO) {
+		for (var gL, e7, aKg, a93 = lN - this.aKS, aKh = lO - this.aKS, xj = lN + this.aKS, xi = lO + this.aKS, a93 = a93 < 1 ? 1 : a93, xj = xj > bS.ey - 2 ? bS.ey - 2 : xj, xi = xi > bS.ez - 2 ? bS.ez - 2 : xi, ew = aKh < 1 ? 1 : aKh; ew <=
 			xi; ew++)
-			for (var eu = a93; eu <= xj; eu++) i1(gL = 4 * (eu + ew * bS.ey)) ? (aKf = this.aKQ + (this.aKR - this.aKQ) * this.iX[eu + bS.ey * ew] / 1e4, Math.abs(lN - eu) > aKf || Math.abs(lO - ew) > aKf || aKf <= (e7 = Math.sqrt((lN - eu) * (
-				lN - eu) + (lO - ew) * (lO - ew))) || this.aKe(gL, e7, aKf, 1, this.a8E[3])) : (aKf = this.aKS + (this.aKT - this.aKS) * this.iX[eu + bS.ey * ew] / 1e4, Math.abs(lN - eu) > aKf || Math.abs(lO - ew) > aKf || aKf <= (e7 = Math
-				.sqrt((lN - eu) * (lN - eu) + (lO - ew) * (lO - ew))) || this.aKe(gL, e7, aKf, 0, this.a8E[2]))
+			for (var eu = a93; eu <= xj; eu++) i1(gL = 4 * (eu + ew * bS.ey)) ? (aKg = this.aKR + (this.aKS - this.aKR) * this.iX[eu + bS.ey * ew] / 1e4, Math.abs(lN - eu) > aKg || Math.abs(lO - ew) > aKg || aKg <= (e7 = Math.sqrt((lN - eu) * (
+				lN - eu) + (lO - ew) * (lO - ew))) || this.aKf(gL, e7, aKg, 1, this.a8E[3])) : (aKg = this.aKT + (this.aKU - this.aKT) * this.iX[eu + bS.ey * ew] / 1e4, Math.abs(lN - eu) > aKg || Math.abs(lO - ew) > aKg || aKg <= (e7 = Math
+				.sqrt((lN - eu) * (lN - eu) + (lO - ew) * (lO - ew))) || this.aKf(gL, e7, aKg, 0, this.a8E[2]))
 	}
 }
 
-function aKE() {
-	var uP = aKh(bS.eT);
-	uP && aKi(uP[0], uP[1], uP[2], uP[3], uP[4])
+function aKF() {
+	var uP = aKi(bS.eT);
+	uP && aKj(uP[0], uP[1], uP[2], uP[3], uP[4])
 }
 
-function aKh(eT) {
+function aKi(eT) {
 	return 2 === eT ? [
 		[256],
 		[256],
@@ -7049,132 +7045,132 @@ function aKh(eT) {
 	] : null
 }
 
-function aKi(aKj, aKk, aKl, aKm, aKn) {
-	for (var eu, ew, aKp, aKq, a2M, aKs, i6 = aKj.length - 1, aKo = bS.ey + bS.ez, en = (aKo *= aKo, aKl.length), aKr = Array(en), aB = en - 1; 0 <= aB; aB--) aKr[aB] = aKl[aB] * aKl[aB];
-	var aKt = new Array(en),
+function aKj(aKk, aKl, aKm, aKn, aKo) {
+	for (var eu, ew, aKq, aKr, a2M, aKt, i6 = aKk.length - 1, aKp = bS.ey + bS.ez, en = (aKp *= aKp, aKm.length), aKs = Array(en), aB = en - 1; 0 <= aB; aB--) aKs[aB] = aKm[aB] * aKm[aB];
+	var aKu = new Array(en),
 		aC8 = new Array(en),
-		aKu = new Array(en),
-		fF = aq.aKZ();
-	if (void 0 === aKn)
-		for (aKn = new Array(en), aB = en - 1; 0 <= aB; aB--) aKn[aB] = 0;
-	for (aB = 1; aB < en; aB++) aKt[aB] = aKr[aB] - aKr[aB - 1], aC8[aB] = aKm[aB] - aKm[aB - 1], aKu[aB] = aKn[aB] - aKn[aB - 1];
+		aKv = new Array(en),
+		fF = aq.aKa();
+	if (void 0 === aKo)
+		for (aKo = new Array(en), aB = en - 1; 0 <= aB; aB--) aKo[aB] = 0;
+	for (aB = 1; aB < en; aB++) aKu[aB] = aKs[aB] - aKs[aB - 1], aC8[aB] = aKn[aB] - aKn[aB - 1], aKv[aB] = aKo[aB] - aKo[aB - 1];
 	for (eu = bS.ey - 1; 0 <= eu; eu--)
 		for (ew = bS.ez - 1; 0 <= ew; ew--) {
-			for (aKp = aKo, aB = i6; 0 <= aB; aB--) aKp = (aKq = (eu - aKj[aB]) * (eu - aKj[aB]) + (ew - aKk[aB]) * (ew - aKk[aB])) < aKp ? aKq : aKp;
-			for (a2M = aKm[en - 1], aKs = aKn[en - 1], aB = 1; aB < en; aB++)
-				if (aKp < aKr[aB]) {
-					a2M = aKm[aB - 1] + aGg((aKp - aKr[aB - 1]) * aC8[aB], aKt[aB]), aKs = aKn[aB - 1] + aGg((aKp - aKr[aB - 1]) * aKu[aB], aKt[aB]);
+			for (aKq = aKp, aB = i6; 0 <= aB; aB--) aKq = (aKr = (eu - aKk[aB]) * (eu - aKk[aB]) + (ew - aKl[aB]) * (ew - aKl[aB])) < aKq ? aKr : aKq;
+			for (a2M = aKn[en - 1], aKt = aKo[en - 1], aB = 1; aB < en; aB++)
+				if (aKq < aKs[aB]) {
+					a2M = aKn[aB - 1] + aGg((aKq - aKs[aB - 1]) * aC8[aB], aKu[aB]), aKt = aKo[aB - 1] + aGg((aKq - aKs[aB - 1]) * aKv[aB], aKu[aB]);
 					break
-				} aKv(bS.ey * ew + eu, a2M, aKs, fF)
+				} aKw(bS.ey * ew + eu, a2M, aKt, fF)
 		}
 }
 
-function aKv(e8, a2M, aKs, fF) {
-	a2M < 500 ? fF[e8] = bL.du(fF[e8] * a2M * 2, 1e3) : 500 < a2M && (fF[e8] += bL.du(2 * (1e4 - fF[e8]) * (a2M - 500), 1e3)), fF[e8] += bL.du(aKs * (10 * a2M - fF[e8]), 1e3)
+function aKw(e8, a2M, aKt, fF) {
+	a2M < 500 ? fF[e8] = bL.du(fF[e8] * a2M * 2, 1e3) : 500 < a2M && (fF[e8] += bL.du(2 * (1e4 - fF[e8]) * (a2M - 500), 1e3)), fF[e8] += bL.du(aKt * (10 * a2M - fF[e8]), 1e3)
 }
 
 function cg() {
-	var aKw;
+	var aKx;
 
-	function aL6(a2n, ho, eu, ew, globalAlpha) {
+	function aL7(a2n, ho, eu, ew, globalAlpha) {
 		bS.wP.save(), bS.wP.globalAlpha = globalAlpha, bS.wP.imageSmoothingEnabled = !1, bS.wP.scale(ho, ho), bS.wP.drawImage(a2n, Math.floor(eu * (bS.ey / ho - a2n.width)), Math.floor(ew * (bS.ez / ho - a2n.height))), bS.wP.restore()
 	}
 	this.a6j = 0, this.a6k = 0, this.a6l = 0, this.a6m = 0, this.dd = function() {
-		(aKw = new Array(bS.aK5))[0] = {
+		(aKx = new Array(bS.aK6))[0] = {
 			i: [0, 5e3, 8e3, 1e4],
 			e7: [220, 250, 255, 220],
 			tB: [190, 220, 0, 0],
 			f7: [170, 200, 0, 0]
-		}, aKw[1] = {
+		}, aKx[1] = {
 			i: [0, 4e3, 5e3, 6e3, 1e4],
 			e7: [25, 0, 100, 0, 25],
 			tB: [25, 0, 0, 0, 25],
 			f7: [25, 0, 0, 0, 25]
-		}, aKw[2] = {
+		}, aKx[2] = {
 			i: [0, 500, 2500, 2999, 3e3, 3200, 4200, 5200, 5700, 8800, 1e4],
 			e7: [15, 15, 70, 40, 48, 48, 252, 40, 40, 20, 30],
 			tB: [80, 80, 190, 90, 46, 46, 248, 180, 180, 90, 140],
 			f7: [120, 120, 220, 110, 37, 37, 217, 10, 10, 10, 10]
-		}, aKw[3] = {
+		}, aKx[3] = {
 			i: [0, 400, 1899, 1900, 3200, 4500, 6e3, 7700, 8499, 8500, 9500, 1e4],
 			e7: [10, 10, 20, 10, 30, 10, 16, 40, 50, 55, 230, 230],
 			tB: [10, 10, 40, 50, 100, 40, 80, 120, 80, 55, 230, 230],
 			f7: [80, 80, 200, 10, 60, 10, 16, 40, 50, 55, 230, 230]
-		}, aKw[4] = {
+		}, aKx[4] = {
 			i: [0, 300, 1400, 1700, 3e3, 4e3, 1e4],
 			e7: [10, 10, 20, 10, 10, 170, 212],
 			tB: [20, 20, 60, 100, 100, 110, 170],
 			f7: [70, 70, 160, 30, 30, 60, 120]
-		}, aKw[5] = {
+		}, aKx[5] = {
 			i: [0, 1e3, 3e3, 3500, 4e3, 4500, 7e3, 7500, 8e3, 1e4],
 			e7: [10, 10, 20, 10, 5, 10, 20, 5, 20, 25],
 			tB: [30, 30, 50, 100, 30, 100, 140, 60, 140, 200],
 			f7: [80, 80, 200, 10, 5, 10, 20, 5, 20, 25]
-		}, aKw[6] = {
+		}, aKx[6] = {
 			i: [0, 700, 2650, 3200, 5e3, 8e3, 1e4],
 			e7: [10, 10, 60, 255, 255, 200, 200],
 			tB: [10, 10, 60, 255, 255, 200, 200],
 			f7: [80, 80, 255, 255, 255, 200, 200]
-		}, aKw[7] = {
+		}, aKx[7] = {
 			i: [0, 400, 1999, 2e3, 3200, 4e3, 4700, 5500, 6500, 9500, 1e4],
 			e7: [10, 10, 80, 255, 255, 55, 6, 70, 20, 155, 255],
 			tB: [10, 10, 90, 245, 245, 170, 80, 190, 20, 155, 255],
 			f7: [80, 80, 255, 235, 235, 55, 26, 10, 20, 155, 255]
-		}, aKw[8] = {
+		}, aKx[8] = {
 			i: [0, 700, 1300, 1900, 1901, 2500, 3400, 6e3, 1e4],
 			e7: [25, 30, 30, 30, 255, 255, 30, 40, 20],
 			tB: [25, 30, 150, 150, 245, 245, 80, 150, 70],
 			f7: [60, 170, 170, 170, 235, 235, 30, 40, 40]
-		}, aKw[9] = {
+		}, aKx[9] = {
 			i: [0, 400, 2009, 2010, 3300, 4e3, 5200, 6500, 8e3, 9500, 1e4],
 			e7: [10, 10, 80, 255, 255, 55, 23, 36, 20, 155, 255],
 			tB: [10, 10, 90, 245, 245, 170, 60, 160, 20, 155, 255],
 			f7: [80, 80, 255, 235, 235, 55, 9, 72, 20, 155, 255]
-		}, aKw[20] = {
+		}, aKx[20] = {
 			i: [0, 5500, 6700, 6999, 7e3, 7300, 7600, 8200, 1e4],
 			e7: [5, 5, 70, 70, 255, 255, 252, 10, 8],
 			tB: [20, 28, 190, 190, 255, 255, 248, 90, 60],
 			f7: [60, 80, 220, 220, 220, 220, 217, 10, 8]
-		}, aKw[21] = {
+		}, aKx[21] = {
 			i: [0, 1500, 3e3, 4e3, 5e3, 5999, 6e3, 9500, 1e4],
 			e7: [12, 30, 10, 16, 40, 50, 55, 170, 170],
 			tB: [45, 100, 40, 80, 120, 80, 55, 170, 170],
 			f7: [12, 60, 10, 16, 40, 50, 55, 170, 170]
 		}
-	}, this.aKF = function() {
-		var aL5, aB, f6, fW, hm = function() {
+	}, this.aKG = function() {
+		var aL6, aB, f6, fW, hm = function() {
 				var hm;
 				return bS.wT = document.createElement("canvas"), bS.wT.width = bS.ey, bS.wT.height = bS.ez, bS.wP = bS.wT.getContext("2d", {
 					alpha: !1
 				}), hm = bS.wP.getImageData(0, 0, bS.ey, bS.ez), bS.wU = hm.data, hm
 			}(),
-			i = aKw[bS.eT].i,
-			e7 = aKw[bS.eT].e7,
-			tB = aKw[bS.eT].tB,
-			f7 = aKw[bS.eT].f7,
-			fF = aq.aKZ(),
+			i = aKx[bS.eT].i,
+			e7 = aKx[bS.eT].e7,
+			tB = aKx[bS.eT].tB,
+			f7 = aKx[bS.eT].f7,
+			fF = aq.aKa(),
 			en = i.length - 2,
-			aL0 = new Array(1 + en),
 			aL1 = new Array(1 + en),
 			aL2 = new Array(1 + en),
-			aL3 = new Array(1 + en);
-		for (f6 = en; 0 <= f6; f6--) aL0[f6] = i[f6 + 1] - i[f6], aL1[f6] = e7[f6 + 1] - e7[f6], aL2[f6] = tB[f6 + 1] - tB[f6], aL3[f6] = f7[f6 + 1] - f7[f6];
+			aL3 = new Array(1 + en),
+			aL4 = new Array(1 + en);
+		for (f6 = en; 0 <= f6; f6--) aL1[f6] = i[f6 + 1] - i[f6], aL2[f6] = e7[f6 + 1] - e7[f6], aL3[f6] = tB[f6 + 1] - tB[f6], aL4[f6] = f7[f6 + 1] - f7[f6];
 		for (aB = bS.ey * bS.ez - 1; 0 <= aB; aB--)
 			for (f6 = en; 0 <= f6; f6--)
 				if (fF[aB] >= i[f6]) {
-					fW = fF[aB] - i[f6], bS.wU[4 * aB] = e7[f6] + aGg(aL1[f6] * fW, aL0[f6]), bS.wU[4 * aB + 1] = tB[f6] + aGg(aL2[f6] * fW, aL0[f6]), bS.wU[4 * aB + 2] = f7[f6] + aGg(aL3[f6] * fW, aL0[f6]), bS.wU[4 * aB + 3] = 255;
+					fW = fF[aB] - i[f6], bS.wU[4 * aB] = e7[f6] + aGg(aL2[f6] * fW, aL1[f6]), bS.wU[4 * aB + 1] = tB[f6] + aGg(aL3[f6] * fW, aL1[f6]), bS.wU[4 * aB + 2] = f7[f6] + aGg(aL4[f6] * fW, aL1[f6]), bS.wU[4 * aB + 3] = 255;
 					break
-				} bS.wP.putImageData(hm, 0, 0), bS.aKM(bS.eT) && ab.tF() && bS.aKM(bS.eT) && (hm = ab.aFr("arena"), aL5 = ab.aFr("territorial.io"), aL6(hm, 5, .5, .5, .1), aL6(aL5, 2, .5, .45, .1)), bS.wR = !0, bf.dl = !0
+				} bS.wP.putImageData(hm, 0, 0), bS.aKN(bS.eT) && ab.tF() && bS.aKN(bS.eT) && (hm = ab.aFr("arena"), aL6 = ab.aFr("territorial.io"), aL7(hm, 5, .5, .5, .1), aL7(aL6, 2, .5, .45, .1)), bS.wR = !0, bf.dl = !0
 	}, this.a4Z = function() {
-		for (var gL, eu, ew, aL7, hd, fY, a6k = 0, i = bS.ey, j = bS.ez, fW = i * j * 4, aL8 = aBi, aL9 = bS.wU, aB = i - 1; 0 <= aB; aB--) aL8[(gL = aB << 2) + 2] = aL8[fW - gL - 2] = 3;
-		for (fW = 4 * i, aB = j - 1; 0 <= aB; aB--) aL8[(gL = aB * fW) + 2] = aL8[gL + fW - 2] = 3;
-		for (aL7 = i - 1, hd = j - 1, ew = 1; ew < hd; ew++)
-			for (fW = ew * i, eu = 1; eu < aL7; eu++) fY = 1 - (aL9[(gL = fW + eu << 2) + 2] > aL9[gL + 1] && aL9[gL + 2] > aL9[gL]), aL8[gL + 2] = 6 - 5 * fY, a6k += fY;
-		this.a6j = (i - 2) * (j - 2), this.a6m = 0, bS.eS(bS.eT) && (bS.a6m.aLA(), bS.a6m.aLB(4, 5)), this.a6k = aD.ju = a6k - this.a6m, this.a6l = this.a6j - this.a6k - this.a6m, this.a6l && (bS.a6m.aLB(6, 2), bS.a6m.aLC())
+		for (var gL, eu, ew, aL8, hd, fY, a6k = 0, i = bS.ey, j = bS.ez, fW = i * j * 4, aL9 = aBi, aLA = bS.wU, aB = i - 1; 0 <= aB; aB--) aL9[(gL = aB << 2) + 2] = aL9[fW - gL - 2] = 3;
+		for (fW = 4 * i, aB = j - 1; 0 <= aB; aB--) aL9[(gL = aB * fW) + 2] = aL9[gL + fW - 2] = 3;
+		for (aL8 = i - 1, hd = j - 1, ew = 1; ew < hd; ew++)
+			for (fW = ew * i, eu = 1; eu < aL8; eu++) fY = 1 - (aLA[(gL = fW + eu << 2) + 2] > aLA[gL + 1] && aLA[gL + 2] > aLA[gL]), aL9[gL + 2] = 6 - 5 * fY, a6k += fY;
+		this.a6j = (i - 2) * (j - 2), this.a6m = 0, bS.eS(bS.eT) && (bS.a6m.aLB(), bS.a6m.aLC(4, 5)), this.a6k = aD.ju = a6k - this.a6m, this.a6l = this.a6j - this.a6k - this.a6m, this.a6l && (bS.a6m.aLC(6, 2), bS.a6m.aLD())
 	}
 }
 
-function aKD() {
+function aKE() {
 	var qG;
 	10 === bS.eT ? qG =
 		"DYDz2ESNu-0UYCCrS9c3pBUrKHc94BhIBhIJpIIBnMIAAIrKSSpKABmgf9e7X7ecX-5P0baOy191XXX7eegf9mcfUrrxrKppppKpKSrzUMMMSKKKrJcXcXcmgcXnKIKBmnCIJonCKrrSrrSSxSS9XcJnBe9XemmWXeX99chMIAEprrSrrtbrxIrMKBn9eBcecX9X7f99X90e577VX1VcOWX16XX7X999cX7eWyXXccVVX6rUSrrwUrlzpbbrrU6xzztzxzrztzbaOtaOa5-0WV-77e-9119HcXXZecccceXXX7ce9Xcce9e9meeVof919ee9Wzy5XeXYS9KBcXee_He6ce1ee0zxzta5UaX99c1mXcXhEJp9cNHWcTN9BcnAzJoorIBe0c--nIJoonSIBe-OX-NNOXWbcBgzIHX9xHzS9mcCSI9-nBrrorK9VcP-jHe9_BhxzKHcWC9mZp9-3n9fBnS970a6zs7egrIAAIRUKocXX9gx9npKaUxBppABe5OdHpBe-AC9-17TOWABpKI9-7JmnC6zGtxIBmen9egp6aUlyOzbrbbqUzxHXgjKKBc-ZehlxoeeoxObonox9XonAUbzS9efBdCAArHmjISBhEJnAofBUIJgrpocXxIBUoxHVmnBmmXAExoUxABmdAIBgnBonIAC6oxHVgfMHcXcUXAAGxIBgfxJch9c3enCMzSBe9eXomxHeBgmeCSBgpKMp9hzHfIEzHnArSxHX7pSrUHcnCMrUpSa5UIonABrSBccnBopJttzbxpBonHXpIEKMrMSrxpKxzUzltyUtaTOaOaObaT5UzNTOV0c116rMMKSKrxIKpJpKMSKMGxISCrKMSpKMKrSpSpI9xp9_pMMMMSBoxSryTUUxa5P7-0ttbWzzzxzaN5-NOWVN--0Wa5-0X-0VNVN7TOzaOWzL0bbX0y7NN5Ua17V111749c79e1c-V-----Ow7--N57-OzaN0ba156byNNT6q5OzWaT55-OsOX1777Oa55-5T5UX16tzUOyUtzrpzUrSKKSSAoemnKCIAIICI9KHn9CKBhCSHgenSAJnIJxSMMKKSSpKoopKKHpSoorSzxpWxMS-UKISaOxMOxttyOzy5OzbbtyTOzbtaUxyUyTT6porUrSztzzMSp9eceoogeZp9ZxJx9geeeXe9eZgeC9gegemp9gmpKMSonSxKrrbaUMIKJpMKKKpIACBmeccV71XX7V1mmmmhCCCKJompKKJpMKSKSKpKMJpKBeeceenKpzHnBnBmceee-X1117ememfBn9mfCBmgemf9mfBmf9xromcec7Us8He0u99cWtbc-PeCCS9VecZnBnBemfBn9X9c6aOXA997Y99755VXc6tXXmV5Os-ObVN0yN0bzaT-7ec7N70Wa-OV-5eggnHon9f9efCBpMzop97epCKIpSIBpKrrSKKIKKMKMJehzKKErJeABnIAJc717f9eBnAJzrHe7V9d9ef9gmopKUKC9gmcV6tX73eCIJoonIBnBnBgnCHgjJeZfA9megeegfKCICCJnIA9meZf9mfIEMof9XceXe97X-59XdCIKKpKKCJoeVcf97mZmVVV199YJmX7gceY9gpEOxMMJecrSSGzOxSrxprSxzJzUopSrIxKBpUMIpMprSropEMHnBrpprK91AJpJpIICpBopICCJonKBn9mcme9VcX9ee7X7e9ece9Xe19XcX91Xee9Xcce9VVVccefAAABe7emhBnSSKMSIJhCIJpKJppCKKIIIICJgpIBpAIHpBcoooonIKLObpBnKlzrKIKCJpCJpBnBpUzrrxpxSbbwUxzUprpppppJppMMIrrSSRUbWsOwUzUltbzrxzUzSzUbrrTTUUrSbbV6WbaTOzxzyN5TN-T5TOxbtts71-X-70V0sOWsObbaT0sTObw70tbbzbxbzzyOtyUtbyUaOV1-N0cVN-50aOtza6tzlxzUxSrzUzSSxUSzzOzzs5OyOtyOyUztyObaNOtaUrUxrrUSrrUrMSJrSIMSpKISzKUSpSrSSrzSMMxMSrMSpSrUzSSzzrTUMSpprSzMSzUxSSIEUSrzrUSpMKKxpKrKMKBmmrIKBgpKrzs6VOsUa--5ObzyN77-7X7e970V-5Oa5ObzxSxrzzSrKMUw-OV17X7X1X99X97X9X99cXXXXX977OaOVXeeeeecX7cX7X7X177-7-X-71-7XX97X97cX7VVV1--VObs970cVObtzbtyObrzxSomdKKSSMKqTN5NN0xrMIM5UrKKKpEKrSMSMprSrxMMUzrzrzSrSrSrHXenOtxrrxrxzSrrSrUrrSrSxMSxxKJpKKKJnKKrKIUUSrSrKKzKxKrSrSwUxIBnrxpSSpUzyOzzzzyUSxzRUpCBee7ecXce89omegpIBrpxzSrMJnKrMSFT0tbrMKxKL0VObxprSSlXV-11-c-X-WxzxFUaPcX777OzztzrSrMV-V75X96zzMKrUa9e-7V17gc9XeV90Bf957cVOzrMOX17X7X-X7X7V-N-6aUxCKzUUKprcX-UzSrN17WzrxrNX7ecV17WzzbaOtbxraObrOxrbxwUxpUzrzraOy5OVOWtzyOzzxbzVNXccXcXcX1-V197V-ec5Oy5N1--555UyN-N1---VOWX0Wtcc0aUMMyOs----Zc5-TOtsOWX7c0xzLN-NWbyOyUyUzrbxJe9gfTUxAMxrxzlbzbzbq5UKrJnAABnAAICETUtxSrzrpIpKIUSxraOaOVNTObzWa5NOtxxyOyOc-5A9YBmnBfHceX7-XXcX9e9Y9e5OzUbxSyVUX5OcUa1-UMqNNUbyOtsUWtWbWaObtzbyUWy6bzpJmoh9nIUI99oghSUzrrrSHeHohKCJgrKJemgcrS9nry6xSrUMStxzUSzqUrbrUxUSxxrrprUU6zSrbrtzUSUSzxMKxSMprMKIIIoonIBmohAIAHgf9eHeemfI9nA9mf9c9n9ZeXc9d9n9ccX7VZmoceeHVX1Zn9meZegegegfBhABehABonAHnABhCIBemee9eBfBeecgeohCUxzUbzxI9egegfAUUrHmegemecWcfCUp9meX9Beeef9onrSpAAKKKIyOzyUzJnBjSrxSSIBhMSHgcVYKxBmnzrROzpzxzSKKCKUzKBnoUzzbzpJmegfzyUzFObyUzrrzpKUSlzry6sUyUVN-7NOzbzzlzrzUrUSrrURUxzbzsTUsUWts5NOWa5ObzrUxrtyOWWaOzMSJnIAIprMJorKMIrSKMKKpUKCBonKMJnCJpCIKIKMJmpKIMKJpCJpBxBonHomoemmegnHf9f9cX7ce99emecgn9h9eA9nCHgfBnAIBfHh9eXXce9emec7f9ec1me89eeceme89fHeemX77-ceeeemeX9X9eeecV-V9e9Xe7e9eefBnBeefBfHmnBnBnKBpIEpKxMSKJnBpBnBnBmgmeeX9cXXVcX7Xce1eXcXe7ee9eXeeeX9X7V7V77V--XcXee7ec7X9eXXceX9f9eeee997X9Ve7Zee7WaX5X2Be-cee17X--0tsUbtaT0ta5-Oc--7Xe-X7--OVUtbVT--QA9nBmcXV--97X9ememggnBecJceeXme-cXdABeXeX97cnHgeeI9IA9XcVX7eX99e9e9mgeXeXemmceZmXe9ceXemXmggf9mmnAI9X1eIHcXfBghBmf9BemcX9Y9Ve9--JmZeccXA9Xd9cX9VXVVc7-V-Xee_BnJhIIBnJnBmohBgohBcmmf9eHf99Hf9HmommmmV5N-MvxppxrIICWzsOxX--OV5s0i1mopMKppzTOaN-0XXceV--0lJ7-90mzBlV2N7tRof9JqUsOaW7c8bwrrJchpK9-X7PBfHjKogcP0Jd92SMUwUlxMSErHegnrlxI9X7cY99e7hSzxpxSIIUHozogmgecYIExxxrrrKpKrSrMMrrlxtyUtxblxUyTUbyUUSaUy6Wzttbbc5N5N7V7XWaT7V6aZeVWsV9nIA9X2BmcWc7ooc--f9IBomV-0cnICBeXgn90Wc5TOa7-1-5cX---d11---esD---m8D-1VvAYqV-92glC5--NEEiqV-7Hsjk014I4wognBxwOs0Wc-D4y4gcT--0Y8X-0WalAk--0pHX-1Wsy6EV-a7EDhCBtaT9--X3IIV--_VJV0Ndepmzq1-0XeJbD-5XhvrCqTe-07iCnpteV-7iejk-iAtCxEIrrX71-2smknnEUUpze-e-c-1BtMB--2Kbq--YMmzV-sqPmrF7--Culc-HCwyxxcV-DEWXhte-DZ7mzorSr56eX170LG-rUSrSItzOueVc93c-5ZH-rrRP9-2d613nHdRUR6kP7-CZVZUEKUyUe91e-2ZYhnTPV-t8OMny7-1HZrT-DZf16A9mjFUzlsV--Hh_N-1HlyB-CZhCrSpzrkX7cX-2ZibAr-VMdC8brSrzUxSSIBxpHX17c8CrJe7rrUIpSrUxxzSrMIMOs5OVV7X7X7977V-7P19Xcce--8DNHk-LIcPSpN7-0ODtgnMN1-7Zz5USxyX9c--J2As-9J2CSu-08FHSrR7V-0G5xV-OH5vqV-0LEoV0OLiAnMN70D_f4UKIBnSBgzSrSxSSMSxpSpppzc-5TTUMbV716s117X1Xcce-cXXHcX--0Rs7V3dS04nKonpSSkV7----TMGPxrS-V7--MN-c0HMYnBnrIAIrK-OWV75V-tTEHotV-qMoqSMUUbe9HXV-mNcawnr6xtcVe-3aNiUIq1-6aOwMISlc1-6aSe6rROec-8ac9fISzuX-V1tf-1mnBrlWaN-NajMY9ggeoopCTTTTN6aN1HdgkXoohABnK9n9KJmpogeV-0XJenppSrUzJgghomhp9VnxIAAzOxWbbrIBnJmenBegozlWyObxIKBonIGaOVT50xSk6xJpEpIHnBonBoptxpr56xrzzbonCBnCMMSonzxJmopCIJomX7mceHcV7nJxSABhrbxEKCIJhAA9HgenABrUMbqUpSUrprSrbzzp9hABeXce9YAHcoomnBmmnBmmnpzaTTUrzzMpzWWblbyUUSrUrxbbzzblxrUUbrzSrtztzw6btV19ceWXWzq0aU6aTOta0a0V5777Xce7nA97VOa0X-17VUVV0V17-17X7V7-V----1-V-VcX9A9cWbbzyV-U5T5TOa5NNOaOV1Xe9ce99mZee5OtcWbaTTTTTOWe9ZeXcmcXVV38gtRnCMzSw1X6VcV08hu4rq9--tiGRrac-1Qfbg-dax4zrrIKoeBxErUlzSGbs0VP3eXX97XV-9R0KCsV1OlXjprrP7X7-HRQsCpVc2TRgLxJrKBeKKJe7BhIKKBlwOaUrNTUsNNNcNP91V---PS6VgopVN-LbHRrK999ezrxxoy5Tc7-0bJGjF--6Spy-5bU7rSbuXV4tsIYpKSSrSp50aX-177e-2baNMC5-2Otd7nHrpOba7cV2tv2dnICxz-Uk7cc0mUIkRnBpCBpCIJOWa0VNOtc-19UQnBeegmnIISxJns56zaOWtu7TV--URWN--VDLc-eVE7zSrUX7Xc-5WM4BN1DWTIggpBnEKKKESCWV5T5Wa-N0a9VsP6YRn9cmY9JggoggzUKHfA9XmcP9XZfIJhronABfISpxrUrrI9ABnBggrxxoe9fHmeBdCDUUrHf9orUogrzzJfUU6zUzbbbzrty6brbrxxz57OtsN5OsN5V5VT5V57N56yTUtsNN1cNNVV5VNeeeZeWtu77-XX-KgxCqWVV-P8w5qV-uAjtz5c15XwhBooopBonIKKJNN5-N5-6WVN-8ckmzArUOVeV-uDoWxNV--YoA7-TYoYRoxa57-1_P1T--8NKD-9dNS2ACAUta---dQzr-DPM79mmgcpI9chMKCppxxxrSzIbXc0aT1WVOxk7-N-9c0eauZgfAKrSrrSla-5-7n9-V1eVE3nKUwNVcV0eWZinCF5N0TcbkCMSrzr5OVPXCA9VXV-1b0uV0ezUBxUsXc--mhTc--n9_c1DnTIxCCSMKC9eCKClsT5OsN-V7NNV6QJcYxzUSxzSwUa7X9I99Xd9X-BhW8EE6rUw7ceV6fXkApBmf9f9hKGaOWzzzObV1V-PuipRpJ5--6iiarprP77--DrhL-0iv-fN-7jNKjExzXcc-Y1kshKK-5-V-wF2umWs-03EWs-03_Ms-23gdy-qlmyACJmcgfBnCIIrKpICUSIprUa0VOV5N5---V5---wRnFru7-E6kMClX-4lwIAzq9c-A7r-z5V7gdk8monBgfCCCElzbzxsN995-T5-KgiSunBnABmeeIHprrKJxpIISKICJpKprUzOcOzzUTN---0V--50aN1-1-PV7XX-SnCeY9f9mnUSSKzMtaOWa9VX--bBy1gzSxX-e-4nFNEAqTc-6C7Wgs-EC_DBjN-0nVb2N-3n_EYByN--nfWnV1Bx8ZorUaV9-CnqgbKISrNN9-9-8o5aACrSVWXV-C0gPk-jFRwSM6rsW9VV3h23TmfBjOxMUtaX17-6GYfE-0UHSjwfEzbxpUUq17ZcXeV-h8rqr--3odX6MF--8ogzvMJrN--V1xAI4npKwT7cV0Xp-Yf9nBeehKMKrzzSxrSxrUSzzSxrSMzSzzV-T-7V10Wa6VOWVT1mmeeegn9eeeXmcX97V-IJGnCr1--2JVvD-Bp7gzSxw6aeZcV0hHX5merts-EJjUhq7-2pGMvBtV-hJmVz1-1pJofqV-0KQ3c-0KztN-0L5k7-6LYvE--ILYxhTNc-0LZ57-ALu1CaV-4SIqV-hSQ3na--KpjX--ppknVESTPknBgmgn9f9f9onBmenSpMGzxbtbzbaOV6zbX9-NObWV-4TmmV3SToLnBnJnST5Oa-1-0px0YD-0pylvD--L3Ge--q54IV2CWmWnUUz5Pcec-nO-URhBoUy6VX-1qFuQGc-MOcagpR---CcERs-0PQUc3MPs8gehClzSzbzzUzxMr6tyUzzbzaTP0HgmcVXegeeeXeh9eX7e-JqqUEKIMpzz5T7cXX97-bRBpSKoT5X7--M4g1-grMIbBecemgfMxUpzMzObtu7V0zrrq7e9eV-MTaFhOy9VfLnt2-9-17117VcX1-1X97cVXX9177V-VXV9-WaOSMSSSSrrUSKMKxrrrUSxrrUzsOV7--N-tVN--N0bKIKKQCKRnKQCUtrTUtUSxpMprrUUKxSpxrpprMrxF-EcVGxTX" :
@@ -7199,191 +7195,191 @@ function aKD() {
 			), (new wC).wE(qG)
 }
 
-function aK7() {
-	this.wK = null, this.aLD = null, this.aLE = null, this.dd = function() {
-		var aLF = [120, 105, 92],
+function aK8() {
+	this.wK = null, this.aLE = null, this.aLF = null, this.dd = function() {
+		var aLG = [120, 105, 92],
 			cos = [12, 12, 60],
-			aLG = [300, 300, 9827, 26, 18, 36, 36, 8, 32, 3, 9],
-			aLH = [140, 130, 120],
-			aLI = [12, 12, 76],
-			aLJ = [240, 120, 1024, 30, 19, 30, 70, 8, 20, 3, 9],
-			aLK = [130, 117, 106],
-			aLL = [12, 12, 68],
-			aLM = [270, 210, 1024, 28, 19, 33, 50, 8, 26, 3, 9];
-		this.wK = new Array(bS.aK5 + 1), this.wK[0] = {
+			aLH = [300, 300, 9827, 26, 18, 36, 36, 8, 32, 3, 9],
+			aLI = [140, 130, 120],
+			aLJ = [12, 12, 76],
+			aLK = [240, 120, 1024, 30, 19, 30, 70, 8, 20, 3, 9],
+			aLL = [130, 117, 106],
+			aLM = [12, 12, 68],
+			aLN = [270, 210, 1024, 28, 19, 33, 50, 8, 26, 3, 9];
+		this.wK = new Array(bS.aK6 + 1), this.wK[0] = {
 			name: L(133),
 			i: 230,
 			j: 230,
 			mn: 1e3,
 			mk: 2e3,
-			aKC: 173
+			aKD: 173
 		}, this.wK[1] = {
 			name: L(134),
 			i: 800,
 			j: 800,
 			mn: 100,
 			mk: 50,
-			aKC: 43
+			aKD: 43
 		}, this.wK[2] = {
 			name: L(135),
 			i: 512,
 			j: 512,
 			mn: 128,
 			mk: 32,
-			aKC: 0
+			aKD: 0
 		}, this.wK[3] = {
 			name: L(136) + " 1",
 			i: 960,
 			j: 960,
 			mn: 60,
 			mk: 8,
-			aKC: 0
+			aKD: 0
 		}, this.wK[4] = {
 			name: L(137),
 			i: 900,
 			j: 900,
 			mn: 100,
 			mk: 5,
-			aKC: 0
+			aKD: 0
 		}, this.wK[5] = {
 			name: L(138),
 			i: 1e3,
 			j: 1e3,
 			mn: 100,
 			mk: 40,
-			aKC: 0
+			aKD: 0
 		}, this.wK[6] = {
 			name: L(139),
 			i: 1e3,
 			j: 1e3,
 			mn: 100,
 			mk: 20,
-			aKC: 0
+			aKD: 0
 		}, this.wK[7] = {
 			name: L(140),
 			i: 1024,
 			j: 1024,
 			mn: 128,
 			mk: 32,
-			aKC: 0
+			aKD: 0
 		}, this.wK[8] = {
 			name: L(141),
 			i: 820,
 			j: 820,
 			mn: 200,
 			mk: 100,
-			aKC: 0
+			aKD: 0
 		}, this.wK[9] = {
 			name: L(142),
 			i: 1024,
 			j: 1024,
 			mn: 128,
 			mk: 32,
-			aKC: 0
+			aKD: 0
 		}, this.wK[10] = {
 			name: L(143),
-			wl: aLH,
-			wm: aLI,
-			aKN: aLJ
+			wl: aLI,
+			wm: aLJ,
+			aKO: aLK
 		}, this.wK[11] = {
 			name: L(144),
-			wl: aLK,
-			wm: aLL,
-			aKN: aLM
+			wl: aLL,
+			wm: aLM,
+			aKO: aLN
 		}, this.wK[12] = {
 			name: L(145),
-			wl: aLK,
-			wm: aLL,
-			aKN: aLM
+			wl: aLL,
+			wm: aLM,
+			aKO: aLN
 		}, this.wK[13] = {
 			name: L(146),
-			wl: aLF,
+			wl: aLG,
 			wm: cos,
-			aKN: aLG
+			aKO: aLH
 		}, this.wK[14] = {
 			name: L(147),
-			wl: aLF,
+			wl: aLG,
 			wm: cos,
-			aKN: aLG
+			aKO: aLH
 		}, this.wK[15] = {
 			name: L(148),
-			wl: aLH,
-			wm: aLI,
-			aKN: aLJ
+			wl: aLI,
+			wm: aLJ,
+			aKO: aLK
 		}, this.wK[16] = {
 			name: L(149),
-			wl: aLH,
-			wm: aLI,
-			aKN: aLJ
+			wl: aLI,
+			wm: aLJ,
+			aKO: aLK
 		}, this.wK[17] = {
 			name: L(150),
-			wl: aLF,
+			wl: aLG,
 			wm: cos,
-			aKN: aLG
+			aKO: aLH
 		}, this.wK[18] = {
 			name: L(151),
-			wl: aLK,
-			wm: aLL,
-			aKN: aLM
+			wl: aLL,
+			wm: aLM,
+			aKO: aLN
 		}, this.wK[19] = {
 			name: L(152),
-			wl: aLF,
+			wl: aLG,
 			wm: cos,
-			aKN: aLG
+			aKO: aLH
 		}, this.wK[20] = {
 			name: L(153),
 			i: 1024,
 			j: 1024,
 			mn: 128,
 			mk: 32,
-			aKC: 0
+			aKD: 0
 		}, this.wK[21] = {
 			name: L(136) + " 2",
 			i: 940,
 			j: 940,
 			mn: 80,
 			mk: 8,
-			aKC: 0
-		}, this.wK[bS.aK5] = {
+			aKD: 0
+		}, this.wK[bS.aK6] = {
 			name: ""
-		}, this.aLD = new Uint8Array(12);
-		for (var aB = 0; aB < 10; aB++) this.aLD[aB] = aB;
-		for (this.aLD[10] = 20, this.aLD[11] = 21, this.aLE = new Uint8Array(10), aB = 0; aB < 10; aB++) this.aLE[aB] = 10 + aB
+		}, this.aLE = new Uint8Array(12);
+		for (var aB = 0; aB < 10; aB++) this.aLE[aB] = aB;
+		for (this.aLE[10] = 20, this.aLE[11] = 21, this.aLF = new Uint8Array(10), aB = 0; aB < 10; aB++) this.aLF[aB] = 10 + aB
 	}
 }
 
-function aK8() {
-	this.aLA = function() {
-		for (var gL, eu, fW, aL8 = aBi, aL9 = bS.wU, i = bS.ey, aL7 = i - 1, hd = bS.ez - 1, gG = 0, ew = 1; ew < hd; ew++)
-			for (fW = ew * i, eu = 1; eu < aL7; eu++) aL9[gL = fW + eu << 2] === aL9[1 + gL] && aL9[gL] === aL9[2 + gL] && (gG++, aL8[2 + gL] = 4);
+function aK9() {
+	this.aLB = function() {
+		for (var gL, eu, fW, aL9 = aBi, aLA = bS.wU, i = bS.ey, aL8 = i - 1, hd = bS.ez - 1, gG = 0, ew = 1; ew < hd; ew++)
+			for (fW = ew * i, eu = 1; eu < aL8; eu++) aLA[gL = fW + eu << 2] === aLA[1 + gL] && aLA[gL] === aLA[2 + gL] && (gG++, aL9[2 + gL] = 4);
 		ap.a6m = gG
-	}, this.aLB = function(aLN, aLO) {
-		for (var aL8 = aBi, i = bS.ey, aL7 = i - 1, hd = bS.ez - 1, id = 0, ew = 1; ew < hd; ew++)
-			for (var fW = ew * i, eu = 1; eu < aL7; eu++) {
+	}, this.aLC = function(aLO, aLP) {
+		for (var aL9 = aBi, i = bS.ey, aL8 = i - 1, hd = bS.ez - 1, id = 0, ew = 1; ew < hd; ew++)
+			for (var fW = ew * i, eu = 1; eu < aL8; eu++) {
 				var eR = 2 + (fW + eu << 2);
-				aL8[eR] === aLN && (! function(eR, id, aLN, aLO) {
+				aL9[eR] === aLO && (! function(eR, id, aLO, aLP) {
 					var en = 1,
-						aL8 = aBi,
+						aL9 = aBi,
 						ep = ac.ep,
 						a2Z = [eR],
-						aLQ = id >> 8 << 1,
-						aLR = 255 & id;
-					aL8[eR - 2] = aLQ, aL8[eR - 1] = aLR, aL8[eR] = 5;
+						aLR = id >> 8 << 1,
+						aLS = 255 & id;
+					aL9[eR - 2] = aLR, aL9[eR - 1] = aLS, aL9[eR] = 5;
 					for (; en;) {
 						for (var a2a = [], aB = 0; aB < en; aB++)
 							for (var ec = a2Z[aB], eq = 3; 0 <= eq; eq--) {
 								var er = ec + ep[eq];
-								aL8[er] === aLN && (aL8[er - 2] = aLQ, aL8[er - 1] = aLR, aL8[er] = aLO, a2a.push(er))
+								aL9[er] === aLO && (aL9[er - 2] = aLR, aL9[er - 1] = aLS, aL9[er] = aLP, a2a.push(er))
 							}
 						en = (a2Z = a2a).length
 					}
-				}(eR, id, aLN, aLO), id = (id + 1) % 32768)
+				}(eR, id, aLO, aLP), id = (id + 1) % 32768)
 			}
-	}, this.aLC = function() {
-		for (var aL8 = aBi, i = bS.ey, aL7 = i - 3, hd = bS.ez - 3, aLT = 12 * i, ew = 3; ew < hd; ew++)
-			for (var fW = ew * i, eu = 3; eu < aL7; eu++) {
+	}, this.aLD = function() {
+		for (var aL9 = aBi, i = bS.ey, aL8 = i - 3, hd = bS.ez - 3, aLU = 12 * i, ew = 3; ew < hd; ew++)
+			for (var fW = ew * i, eu = 3; eu < aL8; eu++) {
 				var eR = 2 + (fW + eu << 2);
-				2 !== aL8[eR] || 2 === aL8[eR - 12] && 2 === aL8[12 + eR] && 2 === aL8[eR - aLT] && 2 === aL8[eR + aLT] || (aL8[eR - 2] = 1 | aL8[eR - 2])
+				2 !== aL9[eR] || 2 === aL9[eR - 12] && 2 === aL9[12 + eR] && 2 === aL9[eR - aLU] && 2 === aL9[eR + aLU] || (aL9[eR - 2] = 1 | aL9[eR - 2])
 			}
 	}
 }
@@ -7395,111 +7391,111 @@ function a4Y() {
 }
 
 function ch() {
-	var fF, i, j, max, aLU, mk, aLW, aLX, aLY, aLZ, aLa, aLb, aLc, aLd, aLV = 1e4;
+	var fF, i, j, max, aLV, mk, aLX, aLY, aLZ, aLa, aLb, aLc, aLd, aLe, aLW = 1e4;
 
-	function aLk(aLj, mn, en) {
+	function aLl(aLk, mn, en) {
 		var aB;
-		for (aLW[0] = aLj, aB = 1; aB < en; aB++) aLW[aB] = aLW[aB - 1] + mn, mn = aLW[aB] >= aLV ? (aLW[aB] = aLV - 1, -mn) : aLW[aB] < 0 ? (aLW[aB] = 0, -mn) : (mn += 16384 <= ay.random() ? mk : -mk) < -aLU ? -aLU : aLU < mn ? aLU : mn
+		for (aLX[0] = aLk, aB = 1; aB < en; aB++) aLX[aB] = aLX[aB - 1] + mn, mn = aLX[aB] >= aLW ? (aLX[aB] = aLW - 1, -mn) : aLX[aB] < 0 ? (aLX[aB] = 0, -mn) : (mn += 16384 <= ay.random() ? mk : -mk) < -aLV ? -aLV : aLV < mn ? aLV : mn
 	}
 
-	function aLm(eu, ew, aLn, en) {
-		(aLn ? function(eu, ew, en) {
+	function aLn(eu, ew, aLo, en) {
+		(aLo ? function(eu, ew, en) {
 			var aB;
-			for (aB = 0; aB < en; aB++) fF[ew * i + eu + aB] = aLW[aB]
+			for (aB = 0; aB < en; aB++) fF[ew * i + eu + aB] = aLX[aB]
 		} : function(eu, ew, en) {
 			var aB;
-			for (aB = 0; aB < en; aB++) fF[ew * i + eu + aB * i] = aLW[aB]
+			for (aB = 0; aB < en; aB++) fF[ew * i + eu + aB * i] = aLX[aB]
 		})(eu, ew, en)
 	}
 
-	function aLq(value, en) {
-		var aB, aJW, eR, jQ = value - aLW[en - 1];
+	function aLr(value, en) {
+		var aB, aJW, eR, jQ = value - aLX[en - 1];
 		if (0 != jQ) {
-			for (aJW = 1 + bL.du(Math.abs(jQ), en - 1), aJW = jQ < 0 ? -aJW : aJW, aLW[en - 1] = value, eR = (eR = en - 1 - bL.du(Math.abs(jQ), Math.abs(aJW))) < 1 ? 1 : en - 2 < eR ? en - 2 : eR, aB = en - 2; eR <= aB; aB--) aLW[aB] += jQ - (en -
+			for (aJW = 1 + bL.du(Math.abs(jQ), en - 1), aJW = jQ < 0 ? -aJW : aJW, aLX[en - 1] = value, eR = (eR = en - 1 - bL.du(Math.abs(jQ), Math.abs(aJW))) < 1 ? 1 : en - 2 < eR ? en - 2 : eR, aB = en - 2; eR <= aB; aB--) aLX[aB] += jQ - (en -
 				1 - aB) * aJW;
 			(jQ < 0 ? function(en) {
 				var aB;
-				for (aB = en - 2; 1 <= aB; aB--) aLW[aB] < 0 && (aLW[aB] = -aLW[aB] - 1)
+				for (aB = en - 2; 1 <= aB; aB--) aLX[aB] < 0 && (aLX[aB] = -aLX[aB] - 1)
 			} : function(en) {
 				var aB;
-				for (aB = en - 2; 1 <= aB; aB--) aLW[aB] >= aLV && (aLW[aB] = 2 * aLV - aLW[aB] - 1)
+				for (aB = en - 2; 1 <= aB; aB--) aLX[aB] >= aLW && (aLX[aB] = 2 * aLW - aLX[aB] - 1)
 			})(en)
 		}
 	}
 
-	function aLt(a2Z, a2a, en) {
+	function aLu(a2Z, a2a, en) {
 		for (var aB = 0; aB < en; aB++) a2Z[aB] = a2a[aB]
 	}
 
-	function aLu(g) {
+	function aLv(g) {
 		for (var aB = 0; aB < g.length - 1; aB++) g[aB] = g[aB + 1] - g[aB];
 		g[g.length - 1] = g[g.length - 3]
 	}
 
-	function aLv(a5D, gap, he) {
-		aLX.push(a5D), aLY.push(gap), aLZ.push(he)
+	function aLw(a5D, gap, he) {
+		aLY.push(a5D), aLZ.push(gap), aLa.push(he)
 	}
 	this.a7 = function(a3m) {
 		! function(a3m) {
 			var aB;
-			for (i = a3m[0], j = a3m[1], aLU = a3m[2], mk = a3m[3], fF = new Int16Array(i * j), max = j < i ? i : j, aLW = new Int16Array(max), aLX = [], aLY = [], aLZ = [], aLa = new Array(i), aLb = new Array(j), aB = i - 1; 0 <= aB; aB--) aLa[
+			for (i = a3m[0], j = a3m[1], aLV = a3m[2], mk = a3m[3], fF = new Int16Array(i * j), max = j < i ? i : j, aLX = new Int16Array(max), aLY = [], aLZ = [], aLa = [], aLb = new Array(i), aLc = new Array(j), aB = i - 1; 0 <= aB; aB--) aLb[
 				aB] = !1;
-			for (aB = j - 1; 0 <= aB; aB--) aLb[aB] = !1;
-			aLc = new Int16Array(i), aLd = new Int16Array(j)
+			for (aB = j - 1; 0 <= aB; aB--) aLc[aB] = !1;
+			aLd = new Int16Array(i), aLe = new Int16Array(j)
 		}(a3m),
 		function(en) {
-			var aLj = ay.random() % aLV,
-				mn = ay.random() % (2 * aLU + 1) - aLU;
-			aLk(aLj, mn, en)
-		}(max), aLt(aLd, aLW, j), aLm(0, 0, !0, i);
+			var aLk = ay.random() % aLW,
+				mn = ay.random() % (2 * aLV + 1) - aLV;
+			aLl(aLk, mn, en)
+		}(max), aLu(aLe, aLX, j), aLn(0, 0, !0, i);
 		var eu, ew, a3m = fF[0],
 			en = max,
-			mn = ay.random() % (2 * aLU + 1) - aLU;
-		for (aLk(a3m, mn, en), aLt(aLc, aLW, i), aLm(0, 0, !1, j), aLu(aLc), aLu(aLd), aLk(fF[i - 1], aLc[i - 1], j), aLm(i - 1, 0, !1, j), aLk(fF[i * (j - 1)], aLd[j - 1], i), aLq(fF[i * j - 1], i), aLm(0, j - 1, !0, i), aLa[i - 1] = aLa[0] = !
-			0, aLb[j - 1] = aLb[0] = !0, aLv(0, i, !0), aLv(0, j, !1), ! function() {
-				var aLx, a5D;
+			mn = ay.random() % (2 * aLV + 1) - aLV;
+		for (aLl(a3m, mn, en), aLu(aLd, aLX, i), aLn(0, 0, !1, j), aLv(aLd), aLv(aLe), aLl(fF[i - 1], aLd[i - 1], j), aLn(i - 1, 0, !1, j), aLl(fF[i * (j - 1)], aLe[j - 1], i), aLr(fF[i * j - 1], i), aLn(0, j - 1, !0, i), aLb[i - 1] = aLb[0] = !
+			0, aLc[j - 1] = aLc[0] = !0, aLw(0, i, !0), aLw(0, j, !1), ! function() {
+				var aLy, a5D;
 				for (;;) {
-					if (aLx = function() {
-							var aB, aLx = aLX.length - 1;
-							for (aB = aLx - 1; 0 <= aB; aB--) aLY[aB] > aLY[aLx] && (aLx = aB);
-							return aLx
-						}(), aLY[aLx] < 5) return;
-					a5D = aLX[aLx] + bL.du(aLY[aLx], 2), (aLZ[aLx] ? function(eu) {
-						var en, aM0, aB, aFH = 0,
-							aM1 = 0;
-						for (; aM1 < j - 1;) {
+					if (aLy = function() {
+							var aB, aLy = aLY.length - 1;
+							for (aB = aLy - 1; 0 <= aB; aB--) aLZ[aB] > aLZ[aLy] && (aLy = aB);
+							return aLy
+						}(), aLZ[aLy] < 5) return;
+					a5D = aLY[aLy] + bL.du(aLZ[aLy], 2), (aLa[aLy] ? function(eu) {
+						var en, aM1, aB, aFH = 0,
+							aM2 = 0;
+						for (; aM2 < j - 1;) {
 							for (aB = aFH + 1; aB < j; aB++)
-								if (aLb[aB]) {
-									aM1 = aB;
+								if (aLc[aB]) {
+									aM2 = aB;
 									break
-								} en = aM1 - aFH + 1, aLk(fF[eu + i * aFH], 0 === aFH ? aLc[eu] : aLW[aM0 - 1] - aLW[aM0 - 2], en), aLq(fF[aM1 * i + eu], en), aLm(eu, aFH, !1, en), aM0 = en, aFH = aM1
+								} en = aM2 - aFH + 1, aLl(fF[eu + i * aFH], 0 === aFH ? aLd[eu] : aLX[aM1 - 1] - aLX[aM1 - 2], en), aLr(fF[aM2 * i + eu], en), aLn(eu, aFH, !1, en), aM1 = en, aFH = aM2
 						}
-						aLa[eu] = !0
+						aLb[eu] = !0
 					} : function(ew) {
-						var en, aM0, aB, aFH = 0,
-							aM1 = 0;
-						for (; aM1 < i - 1;) {
+						var en, aM1, aB, aFH = 0,
+							aM2 = 0;
+						for (; aM2 < i - 1;) {
 							for (aB = aFH + 1; aB < i; aB++)
-								if (aLa[aB]) {
-									aM1 = aB;
+								if (aLb[aB]) {
+									aM2 = aB;
 									break
-								} en = aM1 - aFH + 1, aLk(fF[ew * i + aFH], 0 === aFH ? aLd[ew] : aLW[aM0 - 1] - aLW[aM0 - 2], en), aLq(fF[ew * i + aM1], en), aLm(aFH, ew, !0, en), aM0 = en, aFH = aM1
+								} en = aM2 - aFH + 1, aLl(fF[ew * i + aFH], 0 === aFH ? aLe[ew] : aLX[aM1 - 1] - aLX[aM1 - 2], en), aLr(fF[ew * i + aM2], en), aLn(aFH, ew, !0, en), aM1 = en, aFH = aM2
 						}
-						aLb[ew] = !0
-					})(a5D), aLv(a5D, aLX[aLx] + aLY[aLx] - a5D, aLZ[aLx]), aLY[aLx] = a5D - aLX[aLx] + 1
+						aLc[ew] = !0
+					})(a5D), aLw(a5D, aLY[aLy] + aLZ[aLy] - a5D, aLa[aLy]), aLZ[aLy] = a5D - aLY[aLy] + 1
 				}
 			}(), eu = 0; eu < i; eu++)
-			if (!aLa[eu])
-				for (ew = 0; ew < j; ew++) aLb[ew] || ! function(eu, ew) {
+			if (!aLb[eu])
+				for (ew = 0; ew < j; ew++) aLc[ew] || ! function(eu, ew) {
 					var value = fF[ew * i + eu - 1] + fF[(ew - 1) * i + eu],
 						a6x = 2;
-					aLa[eu + 1] && (a6x++, value += fF[ew * i + eu + 1]);
-					aLb[ew + 1] && (a6x++, value += fF[(ew + 1) * i + eu]);
+					aLb[eu + 1] && (a6x++, value += fF[ew * i + eu + 1]);
+					aLc[ew + 1] && (a6x++, value += fF[(ew + 1) * i + eu]);
 					fF[ew * i + eu] = bL.du(value, a6x)
 				}(eu, ew)
-	}, this.aKZ = function() {
+	}, this.aKa = function() {
 		return fF
-	}, this.aKG = function() {
+	}, this.aKH = function() {
 		fF = null
 	}
 }
@@ -7524,20 +7520,20 @@ function a8Y(f6, fF, f7) {
 	return fF < f6 ? f6 : f7 < fF ? f7 : fF
 }
 
-function aM3(fF, en) {
+function aM4(fF, en) {
 	for (var f8 = bL.du(fF + 1, 2), aB = 0; aB < en; aB++) f8 = bL.du(f8 + bL.du(fF, f8), 2);
 	return f8
 }
 
 function aI2(fF, en) {
-	return fF < 1 ? 0 : aM3(fF, en)
-}
-
-function aM4(n8, n9, su, a8H, nL, nM, sv, tc) {
-	return !(n8 + su <= nL || n9 + a8H <= nM || nL + sv <= n8 || nM + tc <= n9)
+	return fF < 1 ? 0 : aM4(fF, en)
 }
 
 function aM5(n8, n9, su, a8H, nL, nM, sv, tc) {
+	return !(n8 + su <= nL || n9 + a8H <= nM || nL + sv <= n8 || nM + tc <= n9)
+}
+
+function aM6(n8, n9, su, a8H, nL, nM, sv, tc) {
 	return n8 <= nL && n9 <= nM && nL + sv <= n8 + su && nM + tc <= n9 + a8H
 }
 
@@ -7548,7 +7544,7 @@ function wM(fF) {
 function bx() {
 	this.du = function(f6, f7) {
 		return Math.floor((f6 + .5) / f7)
-	}, this.aM6 = function(f6, f7) {
+	}, this.aM7 = function(f6, f7) {
 		return Math.floor(f6 * (f7 + .5))
 	}, this.sqrt = function(fF) {
 		return ~~Math.sqrt(fF + .5)
@@ -7556,515 +7552,515 @@ function bx() {
 		return Math.floor(Math.pow(2, e) + .5)
 	}, this.hv = function(value, min, max) {
 		return Math.min(Math.max(value, min), max)
-	}, this.aM7 = function(fW, fY, fa) {
+	}, this.aM8 = function(fW, fY, fa) {
 		return Math.max(Math.min(fW, fY), fa)
-	}, this.aM8 = function(aM9, aMA, eu, ew) {
-		eu -= aM9, aM9 = ew - aMA, ew = 0;
-		return 0 == eu ? ew = 0 <= aM9 ? Math.PI : 0 : (ew = Math.atan(aM9 / eu), ew += 0 < eu ? .5 * Math.PI : 1.5 * Math.PI), ew
+	}, this.aM9 = function(aMA, aMB, eu, ew) {
+		eu -= aMA, aMA = ew - aMB, ew = 0;
+		return 0 == eu ? ew = 0 <= aMA ? Math.PI : 0 : (ew = Math.atan(aMA / eu), ew += 0 < eu ? .5 * Math.PI : 1.5 * Math.PI), ew
 	}, this.log2 = function(fF) {
 		return Math.floor(!!fF * (1 + Math.log2(fF + .5)))
 	}, this.log10 = function(fF) {
 		return Math.floor(Math.log10(fF + .5))
-	}, this.aMC = function(aMD, aME, aMF, aMG, aMH) {
-		return aMF - aMH < aMD && aMD < aMF + aMH && aMG - aMH < aME && aME < aMG + aMH
+	}, this.aMD = function(aME, aMF, aMG, aMH, aMI) {
+		return aMG - aMI < aME && aME < aMG + aMI && aMH - aMI < aMF && aMF < aMH + aMI
 	}, this.xJ = function(a8y, a90) {
 		return a8y * a8y + a90 * a90
 	}
 }
 
 function dD() {
-	this.y = new aMI, this.sn = 0;
-	var aMJ = new Array(31);
+	this.y = new aMJ, this.sn = 0;
+	var aMK = new Array(31);
 
-	function aMN() {
-		for (var en = aMJ.length, aB = 0; aB < en; aB++) aMJ[aB] = null
+	function aMO() {
+		for (var en = aMK.length, aB = 0; aB < en; aB++) aMK[aB] = null
 	}
 	this.dd = function() {
-		for (var aMK, aML = document.body.firstChild; aML;) {
-			if (aMK = aML.nextSibling, document.body.contains(aML) && ("DIV" === aML.tagName || "INPUT" === aML.tagName || "BUTTON" === aML.tagName)) try {
-				document.body.removeChild(aML)
+		for (var aML, aMM = document.body.firstChild; aMM;) {
+			if (aML = aMM.nextSibling, document.body.contains(aMM) && ("DIV" === aMM.tagName || "INPUT" === aMM.tagName || "BUTTON" === aMM.tagName)) try {
+				document.body.removeChild(aMM)
 			} catch (e) {
 				console.log("error 2623: " + e)
 			}
-			aML = aMK
+			aMM = aML
 		}
-	}, this.u = function(e8, aMM, a3m) {
-		void 0 === aMM && (aMM = this.sn), bf.dl = !0, 0 === e8 && (0 === aa.a17() ? e8 = 5 : a0.a1.setState(13)), this.rq(), this.sn === e8 && (aMM = aMJ[e8].aMM, aMJ[e8] = null), this.sn = e8;
-		var l3 = aMJ[e8];
+	}, this.u = function(e8, aMN, a3m) {
+		void 0 === aMN && (aMN = this.sn), bf.dl = !0, 0 === e8 && (0 === aa.a17() ? e8 = 5 : a0.a1.setState(13)), this.rq(), this.sn === e8 && (aMN = aMK[e8].aMN, aMK[e8] = null), this.sn = e8;
+		var l3 = aMK[e8];
 		if (!l3 || 4 === e8 || 7 === e8 || 8 === e8 || 9 === e8 || 10 === e8 || 11 === e8 || 13 === e8 || 15 === e8 || 18 === e8 || 20 <= e8 && e8 <= 28 || 32 === e8 || 33 === e8) {
-			if (0 === e8) return void aMN();
-			1 === e8 ? l3 = new aMO : 2 === e8 ? l3 = new aMP : 3 === e8 ? l3 = new aMQ : 4 === e8 || 9 === e8 || 10 === e8 || 11 === e8 || 13 === e8 || 33 === e8 ? l3 = a3m : 5 === e8 ? l3 = new aMR : 6 === e8 ? l3 = new aMS : 7 === e8 ? l3 =
-				new aMT(t.y.aMU) : 8 === e8 ? l3 = a3m : 12 === e8 ? l3 = new aMV : 14 === e8 ? l3 = new aMW : 15 === e8 ? l3 = new aMT(t.y.aMX) : 16 === e8 ? l3 = new aMY : 17 === e8 ? l3 = new aMZ : 18 === e8 ? l3 = new aMa : 19 === e8 ? l3 =
-				new aMb : 20 === e8 ? l3 = new aMc : 21 === e8 ? l3 = new aMd : 22 === e8 ? l3 = new aMe : 23 === e8 ? l3 = new aMf : 24 === e8 ? l3 = new aMg : 25 === e8 ? l3 = new aMh : 26 === e8 ? l3 = new aMi : 27 === e8 ? l3 = new aMj :
-				28 === e8 ? l3 = new aMk : 29 === e8 ? l3 = new aMl : 30 === e8 && (l3 = new aMm), l3.aMM = aMM, aMJ[e8] = l3
+			if (0 === e8) return void aMO();
+			1 === e8 ? l3 = new aMP : 2 === e8 ? l3 = new aMQ : 3 === e8 ? l3 = new aMR : 4 === e8 || 9 === e8 || 10 === e8 || 11 === e8 || 13 === e8 || 33 === e8 ? l3 = a3m : 5 === e8 ? l3 = new aMS : 6 === e8 ? l3 = new aMT : 7 === e8 ? l3 =
+				new aMU(t.y.aMV) : 8 === e8 ? l3 = a3m : 12 === e8 ? l3 = new aMW : 14 === e8 ? l3 = new aMX : 15 === e8 ? l3 = new aMU(t.y.aMY) : 16 === e8 ? l3 = new aMZ : 17 === e8 ? l3 = new aMa : 18 === e8 ? l3 = new aMb : 19 === e8 ? l3 =
+				new aMc : 20 === e8 ? l3 = new aMd : 21 === e8 ? l3 = new aMe : 22 === e8 ? l3 = new aMf : 23 === e8 ? l3 = new aMg : 24 === e8 ? l3 = new aMh : 25 === e8 ? l3 = new aMi : 26 === e8 ? l3 = new aMj : 27 === e8 ? l3 = new aMk :
+				28 === e8 ? l3 = new aMl : 29 === e8 ? l3 = new aMm : 30 === e8 && (l3 = new aMn), l3.aMN = aMN, aMK[e8] = l3
 		}
 		l3.show(a3m)
 	}, this.a16 = function() {
-		this.hZ() && this.aMn(this.a4x().aMM)
-	}, this.aMn = function(e8) {
-		this.hZ() && (aMJ[e8] ? (this.rq(), bf.dl = !0, this.sn = e8, aMJ[e8].show()) : this.u(e8))
+		this.hZ() && this.aMo(this.a4x().aMN)
+	}, this.aMo = function(e8) {
+		this.hZ() && (aMK[e8] ? (this.rq(), bf.dl = !0, this.sn = e8, aMK[e8].show()) : this.u(e8))
 	}, this.rq = function() {
-		this.hZ() && aMJ[this.sn].rq()
+		this.hZ() && aMK[this.sn].rq()
 	}, this.x = function() {
-		this.hZ() && (aMJ[this.sn].rq(), aMN(), this.sn = 0, a0.a1.setState(13))
+		this.hZ() && (aMK[this.sn].rq(), aMO(), this.sn = 0, a0.a1.setState(13))
 	}, this.uf = function() {
 		var l3;
-		this.hZ() && (l3 = aMJ[this.sn]).uf && l3.uf()
+		this.hZ() && (l3 = aMK[this.sn]).uf && l3.uf()
 	}, this.resize = function() {
 		if (!this.hZ()) return !1;
-		aMJ[this.sn].resize()
+		aMK[this.sn].resize()
 	}, this.h0 = function(eu, ew) {
 		var l3;
-		this.hZ() && (l3 = aMJ[this.sn]).h0 && l3.h0(eu, ew)
+		this.hZ() && (l3 = aMK[this.sn]).h0 && l3.h0(eu, ew)
 	}, this.a1Q = function(eu, ew) {
 		var l3;
-		this.hZ() && (l3 = aMJ[this.sn]).a1Q && l3.a1Q(eu, ew)
+		this.hZ() && (l3 = aMK[this.sn]).a1Q && l3.a1Q(eu, ew)
 	}, this.a1r = function() {
 		var l3;
-		this.hZ() && (l3 = aMJ[this.sn]).a1r && l3.a1r()
+		this.hZ() && (l3 = aMK[this.sn]).a1r && l3.a1r()
 	}, this.a1T = function(lN, lO, deltaY) {
 		var l3;
-		this.hZ() && (l3 = aMJ[this.sn]).a1T && l3.a1T(lN, lO, deltaY)
+		this.hZ() && (l3 = aMK[this.sn]).a1T && l3.a1T(lN, lO, deltaY)
 	}, this.a21 = function(code) {
 		var l3;
-		return !!this.hZ() && ((l3 = aMJ[this.sn]).a21 && l3.a21(code), !0)
+		return !!this.hZ() && ((l3 = aMK[this.sn]).a21 && l3.a21(code), !0)
 	}, this.j3 = function() {
 		var l3;
-		this.hZ() && (l3 = aMJ[this.sn]) && l3.j3 && l3.j3()
+		this.hZ() && (l3 = aMK[this.sn]) && l3.j3 && l3.j3()
 	}, this.hZ = function() {
 		return 0 < this.sn
 	}, this.a4x = function() {
-		return aMJ[this.sn]
+		return aMK[this.sn]
 	}, this.a4y = function(e8) {
-		return aMJ[e8]
-	}, this.aMo = function() {
-		return aMJ
+		return aMK[e8]
+	}, this.aMp = function() {
+		return aMK
 	}
 }
 
-function aMT(data) {
-	var aMp, aMq;
+function aMU(data) {
+	var aMq, aMr;
 	this.show = function() {
-		data.aMr && bI.aNi("account", data.sl), aMp.show(), this.resize()
+		data.aMs && bI.aNj("account", data.sl), aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aMq.resize()
+		aMq.resize(), aMr.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aMp = new uQ(data.username, [new w("⬅️ " + L(37), function() {
+		2 === f8 && aMq.uX[0].qq()
+	}, aMq = new uQ(data.username, [new w("⬅️ " + L(37), function() {
 		bI.clear(), t.a16()
-	}), new w(data.aMr ? "🔄 " + L(154) : L(155), function() {
-		t.u(8, t.a4x().aMM, new so(25, {
+	}), new w(data.aMs ? "🔄 " + L(154) : L(155), function() {
+		t.u(8, t.a4x().aMN, new so(25, {
 			sp: 0,
 			sl: data.sl,
 			sm: data.sm
 		}))
-	}, 0, 0, 1)]), aMq = new qS(aMp.uW, function() {
+	}, 0, 0, 1)]), aMr = new qS(aMq.uW, function() {
 		var qU = [];
 		qU.push(function() {
-				var aN8 = new qC,
-					rM = (aN8.qF(L(204)), new rN({
+				var aN9 = new qC,
+					rM = (aN9.qF(L(204)), new rN({
 						value: data.username,
 						e8: -1
 					}));
-				rM.e.readOnly = !0, aN8.qQ(rM), aN8.qQ(new s3([new w(L(173), function(e) {
+				rM.e.readOnly = !0, aN9.qQ(rM), aN9.qQ(new s3([new w(L(173), function(e) {
 					return bA.qZ.a3F(rM.e), bA.qZ.a3G(e), !0
-				}).button])), data.aMr || aN8.qH(L(205));
-				return aN8
+				}).button])), data.aMs || aN9.qH(L(205));
+				return aN9
 			}()),
 			function(qU) {
-				var aN8, qI, aBw, aNR, aNH;
-				data.aMr || ((aN8 = new qC).qF(L(206)), (qI = aN8.qH(data.aNQ.length + " / 160")).style.textAlign = "center", aBw = !0, (aNR = new uo(0, 1, function(e) {
+				var aN9, qI, aBw, aNS, aNI;
+				data.aMs || ((aN9 = new qC).qF(L(206)), (qI = aN9.qH(data.aNR.length + " / 160")).style.textAlign = "center", aBw = !0, (aNS = new uo(0, 1, function(e) {
 					e = e.target.value.length;
-					qI.textContent = e + " / 160", 160 < e ? aBw && (aBw = !1, aNH.qt(1), aNH.button.style.color = bB.ni) : aBw || (aBw = !0, aNH.qt(0), aNH.button.style.color = bB.og)
-				})).e.rows = 6, aNR.e.style.fontSize = "1em", aNR.uv(data.aNQ), aN8.qQ(aNR), aNH = new w(L(207), function() {
+					qI.textContent = e + " / 160", 160 < e ? aBw && (aBw = !1, aNI.qt(1), aNI.button.style.color = bB.ni) : aBw || (aBw = !0, aNI.qt(0), aNI.button.style.color = bB.og)
+				})).e.rows = 6, aNS.e.style.fontSize = "1em", aNS.uv(data.aNR), aN9.qQ(aNS), aNI = new w(L(207), function() {
 					if (!aBw) return !0;
-					t.u(8, t.a4x().aMM, new so(29, {
+					t.u(8, t.a4x().aMN, new so(29, {
 						sp: 1,
-						qG: aNR.ux().substring(0, 160)
+						qG: aNS.ux().substring(0, 160)
 					}))
-				}, 0, 0, 1), aN8.qQ(new s3([aNH.button])), 0 !== data.aNS && (aN8.qQ(new s3([new w(L(1 === data.aNS ? 209 : 210), function() {
-					t.u(8, t.a4x().aMM, new so(29, {
+				}, 0, 0, 1), aN9.qQ(new s3([aNI.button])), 0 !== data.aNT && (aN9.qQ(new s3([new w(L(1 === data.aNT ? 209 : 210), function() {
+					t.u(8, t.a4x().aMN, new so(29, {
 						sp: 0,
 						qG: ""
 					}))
-				}, 0, 0, 1).button])), aN8.qH(1 === data.aNS ? L(211, [data.aNU - 1]) : L(212, [data.aNU - 1]))), aN8.qH(L(208, [data.aNT])), qU.push(aN8))
+				}, 0, 0, 1).button])), aN9.qH(1 === data.aNT ? L(211, [data.aNV - 1]) : L(212, [data.aNV - 1]))), aN9.qH(L(208, [data.aNU])), qU.push(aN9))
 			}(qU),
 			function(qU) {
-				var aN8;
-				data.aMr && 0 !== data.aNS && ((aN8 = new qC).qF(L(213)), aN8.qJ(data.aNQ), aN8.qQ(new s3([new w(L(214, 0, "Report"), function(e) {
-					return b0.y.aND(0) && (bA.qZ.a3G(e), b0.aNF.aNV({
+				var aN9;
+				data.aMs && 0 !== data.aNT && ((aN9 = new qC).qF(L(213)), aN9.qJ(data.aNR), aN9.qQ(new s3([new w(L(214, 0, "Report"), function(e) {
+					return b0.y.aNE(0) && (bA.qZ.a3G(e), b0.aNG.aNW({
 						sp: 5,
 						sl: data.sl
 					})), !0
-				}, 0, 0, 1).button])), qU.push(aN8))
+				}, 0, 0, 1).button])), qU.push(aN9))
 			}(qU), qU.push(function() {
-				var aN8 = new qC,
-					aN9 = (aN8.qF(L(156)), [L(157), L(158), L(159), L(160), L(161)]),
-					e7 = data.aNA;
-				aN8.qL(L(162) + bA.rY.a43(data.vj, .01, 2) + "<br>" + L(163) + (e7 + 1) + " / " + data.vi + "<br>" + L(164) + aN9[e7 < 10 ? 0 : e7 < 50 ? 1 : e7 < 200 ? 2 : e7 < 1e3 ? 3 : 4]), data.aMr || (aN8.qH(L(165)), aN8.qH(L(166)),
-					aN8.qH(L(167)));
-				return aN8
-			}()), data.aMr && qU.push(function() {
-				var aN8 = new qC,
-					rM = (aN8.qF(L(168)), new rN({
+				var aN9 = new qC,
+					aNA = (aN9.qF(L(156)), [L(157), L(158), L(159), L(160), L(161)]),
+					e7 = data.aNB;
+				aN9.qL(L(162) + bA.rY.a43(data.vj, .01, 2) + "<br>" + L(163) + (e7 + 1) + " / " + data.vi + "<br>" + L(164) + aNA[e7 < 10 ? 0 : e7 < 50 ? 1 : e7 < 200 ? 2 : e7 < 1e3 ? 3 : 4]), data.aMs || (aN9.qH(L(165)), aN9.qH(L(166)),
+					aN9.qH(L(167)));
+				return aN9
+			}()), data.aMs && qU.push(function() {
+				var aN9 = new qC,
+					rM = (aN9.qF(L(168)), new rN({
 						value: bj.eK.data[147].value,
 						e8: -1
 					}, 1, void 0, function(e) {
-						bj.s0.s1(147, aNB(e.target.value))
+						bj.s0.s1(147, aNC(e.target.value))
 					})),
-					aNC = (aN8.qQ(rM), new w(L(14), function(e) {
-						return rM.e.readOnly && b0.y.aND(0) && (bA.qZ.a3G(e), aNE(), b0.aNF.aNG({
+					aND = (aN9.qQ(rM), new w(L(14), function(e) {
+						return rM.e.readOnly && b0.y.aNE(0) && (bA.qZ.a3G(e), aNF(), b0.aNG.aNH({
 							sp: 0,
 							sl: data.sl,
 							value: parseInt(bj.eK.data[147].value, 10)
 						})), !0
 					}, 1)),
-					aNH = new w(L(169), function(e) {
-						return e.textContent === L(169) ? (e.textContent = L(170), rM.e.readOnly = !0, aNC.qt(0), aNC.button.style.color = bB.og, bj.s0.s1(147, rM.e.value), aNB(bj.eK.data[147].value)) : aNE(), !0
+					aNI = new w(L(169), function(e) {
+						return e.textContent === L(169) ? (e.textContent = L(170), rM.e.readOnly = !0, aND.qt(0), aND.button.style.color = bB.og, bj.s0.s1(147, rM.e.value), aNC(bj.eK.data[147].value)) : aNF(), !0
 					}),
-					qI = (aN8.qQ(new s3([aNH.button])), aN8.qH()),
-					aNB = function(fF) {
+					qI = (aN9.qQ(new s3([aNI.button])), aN9.qH()),
+					aNC = function(fF) {
 						fF = bA.g9.a3j(fF, 2, 1e6);
-						var aNI = Math.max(1, 1 + Math.floor(.01 * (fF - 100)));
-						qI.textContent = L(171, [fF, bj.eK.data[105].value, aNI, data.sl, fF - aNI])
+						var aNJ = Math.max(1, 1 + Math.floor(.01 * (fF - 100)));
+						qI.textContent = L(171, [fF, bj.eK.data[105].value, aNJ, data.sl, fF - aNJ])
 					},
-					aNE = function() {
-						aNH.button.textContent = L(169), rM.e.readOnly = !1, aNC.qt(1), aNC.button.style.color = bB.ni
+					aNF = function() {
+						aNI.button.textContent = L(169), rM.e.readOnly = !1, aND.qt(1), aND.button.style.color = bB.ni
 					};
-				return aNB(bj.eK.data[147].value), aN8.qQ(new s3([aNC.button])), aN8
+				return aNC(bj.eK.data[147].value), aN9.qQ(new s3([aND.button])), aN9
 			}());
 		qU.push(function() {
-			var aN8 = new qC,
-				rM = (aN8.qF(L(172)), new rN({
+			var aN9 = new qC,
+				rM = (aN9.qF(L(172)), new rN({
 					value: data.sl,
 					e8: -1
 				}));
-			return rM.e.readOnly = !0, aN8.qQ(rM), aN8.qQ(new s3([new w(L(173), function(e) {
+			return rM.e.readOnly = !0, aN9.qQ(rM), aN9.qQ(new s3([new w(L(173), function(e) {
 				return bA.qZ.a3F(rM.e), bA.qZ.a3G(e), !0
-			}).button])), aN8
-		}()), data.aMr || (qU.push(function() {
-			var aN8 = new qC,
-				aNJ = (aN8.qF(L(174)), new rN(bj.eK.data[106]));
-			return aNJ.e.readOnly = !0, aNJ.e.type = "password", aN8.qQ(aNJ), aN8.qQ(new s3([new w(L(175), function(e) {
-				return e.textContent === L(175) ? (e.textContent = L(176), aNJ.e.type = "text") : (e.textContent = L(175), aNJ.e.type = "password"), !0
+			}).button])), aN9
+		}()), data.aMs || (qU.push(function() {
+			var aN9 = new qC,
+				aNK = (aN9.qF(L(174)), new rN(bj.eK.data[106]));
+			return aNK.e.readOnly = !0, aNK.e.type = "password", aN9.qQ(aNK), aN9.qQ(new s3([new w(L(175), function(e) {
+				return e.textContent === L(175) ? (e.textContent = L(176), aNK.e.type = "text") : (e.textContent = L(175), aNK.e.type = "password"), !0
 			}).button, new w(L(173), function(e) {
-				return bA.qZ.a3F(aNJ.e), bA.qZ.a3G(e), !0
-			}).button])), aN8.qQ(new s3([new w(L(177), function() {
-				t.u(8, t.a4x().aMM, new so(15))
-			}).button])), aN8.qF(L(178), "0.8em"), aN8.qH(L(179)), aN8.qH(L(180)), aN8.qH(L(181)), aN8
+				return bA.qZ.a3F(aNK.e), bA.qZ.a3G(e), !0
+			}).button])), aN9.qQ(new s3([new w(L(177), function() {
+				t.u(8, t.a4x().aMN, new so(15))
+			}).button])), aN9.qF(L(178), "0.8em"), aN9.qH(L(179)), aN9.qH(L(180)), aN9.qH(L(181)), aN9
 		}()), qU.push(function() {
-			var aN8 = new qC;
-			return aN8.qF(L(182)), aN8.qQ(new s3([new w(L(183), function() {
-				t.u(6, t.a4x().aMM)
-			}).button])), aN8.qQ(new s3([new w(L(184), function() {
-				bj.s0.s1(105, ""), t.u(8, t.a4x().aMM, new so(18))
-			}).button])), aN8.qQ(new s3([new w(L(185) + bj.eK.data[105].value, function() {
+			var aN9 = new qC;
+			return aN9.qF(L(182)), aN9.qQ(new s3([new w(L(183), function() {
+				t.u(6, t.a4x().aMN)
+			}).button])), aN9.qQ(new s3([new w(L(184), function() {
+				bj.s0.s1(105, ""), t.u(8, t.a4x().aMN, new so(18))
+			}).button])), aN9.qQ(new s3([new w(L(185) + bj.eK.data[105].value, function() {
 				t.u(4, 0, new v(L(186), L(187), !0, [new w("⬅️ " + L(37), function() {
-					t.u(7, t.a4y(7).aMM)
+					t.u(7, t.a4y(7).aMN)
 				})]))
-			}, bB.oN).button])), aN8
+			}, bB.oN).button])), aN9
 		}()), qU.push(function() {
-			function aNL(e8) {
-				for (var aB = 0; aB < 2; aB++) aNK[aB].qt(0 === e8 ? bB.nu : 0 === aB ? bB.oN : bB.o5)
+			function aNM(e8) {
+				for (var aB = 0; aB < 2; aB++) aNL[aB].qt(0 === e8 ? bB.nu : 0 === aB ? bB.oN : bB.o5)
 			}
-			var qO, aNK, aN8 = new qC;
-			aN8.qF(L(188)), aN8.qH(L(189)), bj.y.vT();
-			return aNK = [new w(L(190), function() {
+			var qO, aNL, aN9 = new qC;
+			aN9.qF(L(188)), aN9.qH(L(189)), bj.y.vT();
+			return aNL = [new w(L(190), function() {
 				var e8 = Math.min(bj.eK.data[117].value, qO.qP.length - 1);
 				if (!(e8 < 1)) {
 					qO.qP[e8].remove(), qO.qP.splice(e8, 1);
 					for (var aB = e8; aB < qO.qP.length; aB++) qO.qP[aB].name = "" + aB;
-					bj.y.vW(e8), e8 = bj.eK.data[117].value, qO.qP[e8].textContent = qO.qP[e8].textContent.replace("⚪", "🟢"), aNL(e8)
+					bj.y.vW(e8), e8 = bj.eK.data[117].value, qO.qP[e8].textContent = qO.qP[e8].textContent.replace("⚪", "🟢"), aNM(e8)
 				}
 			}, bB.nu), new w(L(191), function() {
 				var e8 = Math.min(bj.eK.data[117].value, qO.qP.length - 1);
-				e8 < 1 || (e8 = bj.y.vX(e8), bj.s0.s1(105, e8.sl), bj.s0.s1(106, e8.password), t.u(8, t.a4x().aMM, new so(18)))
-			}, bB.nu)], (qO = new uL(bj.eK.data[117], aNL)).qP[0].style.marginTop = "0.5em", aN8.qN(qO), aN8.qQ(new s3([aNK[1].button])), aN8.qQ(new s3([aNK[0].button])), aN8
+				e8 < 1 || (e8 = bj.y.vX(e8), bj.s0.s1(105, e8.sl), bj.s0.s1(106, e8.password), t.u(8, t.a4x().aMN, new so(18)))
+			}, bB.nu)], (qO = new uL(bj.eK.data[117], aNM)).qP[0].style.marginTop = "0.5em", aN9.qN(qO), aN9.qQ(new s3([aNL[1].button])), aN9.qQ(new s3([aNL[0].button])), aN9
 		}()));
 		return qU.push(function() {
-				var aN8 = new qC,
-					aN9 = (aN8.qF(L(195)), [L(196), L(197), L(198), L(199)]),
-					e7 = data.aNM;
-				return aN8.qL(L(200) + (data.a0N / 100).toFixed(2) + "<br>" + L(163) + (e7 + 1) + " / " + data.vi + "<br>" + L(164) + aN9[e7 < 10 ? 0 : e7 < 50 ? 1 : e7 < 200 ? 2 : 3]), aN8
+				var aN9 = new qC,
+					aNA = (aN9.qF(L(195)), [L(196), L(197), L(198), L(199)]),
+					e7 = data.aNN;
+				return aN9.qL(L(200) + (data.a0N / 100).toFixed(2) + "<br>" + L(163) + (e7 + 1) + " / " + data.vi + "<br>" + L(164) + aNA[e7 < 10 ? 0 : e7 < 50 ? 1 : e7 < 200 ? 2 : 3]), aN9
 			}()), qU.push(function() {
-				var aN8 = new qC;
-				return aN8.qF(L(192)), aN8.qL(L(193) + bA.rY.a43(data.vf, .1, 1) + "<br>" + L(163) + (data.vg + 1) + " / " + data.vi + "<br>" + L(194) + data.vh), aN8
+				var aN9 = new qC;
+				return aN9.qF(L(192)), aN9.qL(L(193) + bA.rY.a43(data.vf, .1, 1) + "<br>" + L(163) + (data.vg + 1) + " / " + data.vi + "<br>" + L(194) + data.vh), aN9
 			}()),
 			function(qU) {
-				var aN8 = new qC,
-					aNW = data.vm,
-					aNX = (aN8.qF(L(215)), aN8.qL(L(216, [data.vk.length ? "[" + data.vk + "]" : "-"])), aN8.qL(L(217, [bA.rY.a43(aNW, .01, 2)])), aN8.qL(L(218, [data.vo + 1 + " / " + data.vi])), data.vp),
-					aNY = (aN8.qL(L(219, [bA.rY.a43(aNX, .1, 1)])), data.vr);
-				aN8.qL(L(220, [aNY])), aN8.qL(L(221, [bA.rY.a43(aNX / Math.max(aNY, 1), .1, 2)])), aNW = data.vn, aN8.qF(L(222), "0.8em"), aN8.qL(L(216, [data.vl.length ? "[" + data.vl + "]" : "-"])), aN8.qL(L(217, [bA.rY.a43(aNW, .01, 2)])),
-					aNX = data.vq, aN8.qL(L(219, [bA.rY.a43(aNX, .1, 1)])), aNY = data.vs, aN8.qL(L(220, [aNY])), aN8.qL(L(221, [bA.rY.a43(aNX / Math.max(aNY, 1), .1, 2)])), data.aMr || (aN8.qH(L(223)), aN8.qH(L(224)));
-				qU.push(aN8)
+				var aN9 = new qC,
+					aNX = data.vm,
+					aNY = (aN9.qF(L(215)), aN9.qL(L(216, [data.vk.length ? "[" + data.vk + "]" : "-"])), aN9.qL(L(217, [bA.rY.a43(aNX, .01, 2)])), aN9.qL(L(218, [data.vo + 1 + " / " + data.vi])), data.vp),
+					aNZ = (aN9.qL(L(219, [bA.rY.a43(aNY, .1, 1)])), data.vr);
+				aN9.qL(L(220, [aNZ])), aN9.qL(L(221, [bA.rY.a43(aNY / Math.max(aNZ, 1), .1, 2)])), aNX = data.vn, aN9.qF(L(222), "0.8em"), aN9.qL(L(216, [data.vl.length ? "[" + data.vl + "]" : "-"])), aN9.qL(L(217, [bA.rY.a43(aNX, .01, 2)])),
+					aNY = data.vq, aN9.qL(L(219, [bA.rY.a43(aNY, .1, 1)])), aNZ = data.vs, aN9.qL(L(220, [aNZ])), aN9.qL(L(221, [bA.rY.a43(aNY / Math.max(aNZ, 1), .1, 2)])), data.aMs || (aN9.qH(L(223)), aN9.qH(L(224)));
+				qU.push(aN9)
 			}(qU),
 			function(qU) {
-				var aN8 = new qC;
-				aN8.qF(L(225)), aN8.qL(L(200) + (data.aNZ / 10).toFixed(1) + "<br>" + L(164) + (data.aNa.length ? L(226, [data.aNa]) : L(227))), data.aMr ? (aN8.qQ(new s3([new w(L(228), function(e) {
-					return b0.y.aND(0) && (bA.qZ.a3G(e), b0.aNF.aNV({
+				var aN9 = new qC;
+				aN9.qF(L(225)), aN9.qL(L(200) + (data.aNa / 10).toFixed(1) + "<br>" + L(164) + (data.aNb.length ? L(226, [data.aNb]) : L(227))), data.aMs ? (aN9.qQ(new s3([new w(L(228), function(e) {
+					return b0.y.aNE(0) && (bA.qZ.a3G(e), b0.aNG.aNW({
 						sp: 4,
 						sl: data.sl
 					})), !0
-				}, 0, 0, 1).button])), aN8.qH(L(229)), aN8.qH(L(230))) : aN8.qH(L(231));
-				qU.push(aN8)
+				}, 0, 0, 1).button])), aN9.qH(L(229)), aN9.qH(L(230))) : aN9.qH(L(231));
+				qU.push(aN9)
 			}(qU), qU.push(function() {
-				var aN8 = new qC;
-				if (aN8.qF(L(201)), aN8.qL(L(202) + data.aNN + "<br>" + L(163) + (data.aNO + 1) + " / " + data.vi + "<br>" + L(164) + bo.eA(data.aNO)), data.aMr) {
+				var aN9 = new qC;
+				if (aN9.qF(L(201)), aN9.qL(L(202) + data.aNO + "<br>" + L(163) + (data.aNP + 1) + " / " + data.vi + "<br>" + L(164) + bo.eA(data.aNP)), data.aMs) {
 					var rM = new rN({
 							value: bj.eK.data[157].value,
 							e8: -1
 						}, 1, void 0, function(e) {
-							bj.s0.s1(157, aNB(e.target.value))
+							bj.s0.s1(157, aNC(e.target.value))
 						}),
-						aNH = (rM.e.style.marginTop = "0.6em", aN8.qQ(rM), new w(L(169), function(e) {
-							return e.textContent === L(169) ? (e.textContent = L(170), rM.e.readOnly = !0, aNP[0].qt(0), aNP[1].qt(0), aNP[0].button.style.color = bB.og, aNP[1].button.style.color = bB.og, aNB(bj.eK.data[157]
-								.value)) : aNE(), !0
+						aNI = (rM.e.style.marginTop = "0.6em", aN9.qQ(rM), new w(L(169), function(e) {
+							return e.textContent === L(169) ? (e.textContent = L(170), rM.e.readOnly = !0, aNQ[0].qt(0), aNQ[1].qt(0), aNQ[0].button.style.color = bB.og, aNQ[1].button.style.color = bB.og, aNC(bj.eK.data[157]
+								.value)) : aNF(), !0
 						})),
-						aNP = (aN8.qQ(new s3([aNH.button])), [new w("−", function(e) {
-							return rM.e.readOnly && b0.y.aND(0) && (bA.qZ.a3G(e), aNE(), b0.aNF.aNG({
+						aNQ = (aN9.qQ(new s3([aNI.button])), [new w("−", function(e) {
+							return rM.e.readOnly && b0.y.aNE(0) && (bA.qZ.a3G(e), aNF(), b0.aNG.aNH({
 								sp: 2,
 								sl: data.sl,
 								value: bL.hv(parseInt(bj.eK.data[157].value, 10), 3, 32767)
 							})), !0
 						}, 1), new w("+", function(e) {
-							return rM.e.readOnly && b0.y.aND(0) && (bA.qZ.a3G(e), aNE(), b0.aNF.aNG({
+							return rM.e.readOnly && b0.y.aNE(0) && (bA.qZ.a3G(e), aNF(), b0.aNG.aNH({
 								sp: 1,
 								sl: data.sl,
 								value: bL.hv(parseInt(bj.eK.data[157].value, 10), 3, 32767)
 							})), !0
 						}, 1)]),
-						qI = aN8.qH(),
-						aNB = function(fF) {
+						qI = aN9.qH(),
+						aNC = function(fF) {
 							return fF = bA.g9.a3j(fF, 3, 32767), qI.textContent = L(203, [fF - 1, fF, bj.eK.data[105].value]), fF
 						};
-					aN8.qQ(new s3([aNP[0].button, aNP[1].button]));
-					for (var aB = 0; aB < 2; aB++) aNP[aB].button.style.fontSize = "1.6em";
-					var aNE = function() {
-						aNH.button.textContent = L(169), rM.e.readOnly = !1, aNP[0].qt(1), aNP[1].qt(1), aNP[0].button.style.color = bB.ni, aNP[1].button.style.color = bB.ni
+					aN9.qQ(new s3([aNQ[0].button, aNQ[1].button]));
+					for (var aB = 0; aB < 2; aB++) aNQ[aB].button.style.fontSize = "1.6em";
+					var aNF = function() {
+						aNI.button.textContent = L(169), rM.e.readOnly = !1, aNQ[0].qt(1), aNQ[1].qt(1), aNQ[0].button.style.color = bB.ni, aNQ[1].button.style.color = bB.ni
 					};
-					aNB(bj.eK.data[157].value)
+					aNC(bj.eK.data[157].value)
 				}
-				return aN8
+				return aN9
 			}()),
 			function(qU) {
-				var aN8, a3E;
-				data.aMr && !data.aNb || (0 === a0.id || data.aMr || data.aNb) && ((aN8 = new qC).qF("Patreon"), !data.aMr && data.aNc ? aN8.qQ(new s3([new w(L(175), function() {
-					b0.aNF.aNV({
+				var aN9, a3E;
+				data.aMs && !data.aNc || (0 === a0.id || data.aMs || data.aNc) && ((aN9 = new qC).qF("Patreon"), !data.aMs && data.aNd ? aN9.qQ(new s3([new w(L(175), function() {
+					b0.aNG.aNW({
 						sp: 7,
 						sl: data.sl
-					}), data.aNc = 0, t.u(7)
-				}).button])) : data.aNb ? (aN8.qL(L(232, [(data.aNd / 100).toFixed(2)]) + "<br>" + L(233, [1 + data.aNe + " / " + data.aNf]) + "<br>" + L(234, [data.aNg ? L(235) : L(236)])), data.aMr || aN8.qQ(new s3([new w(L(237),
+					}), data.aNd = 0, t.u(7)
+				}).button])) : data.aNc ? (aN9.qL(L(232, [(data.aNe / 100).toFixed(2)]) + "<br>" + L(233, [1 + data.aNf + " / " + data.aNg]) + "<br>" + L(234, [data.aNh ? L(235) : L(236)])), data.aMs || aN9.qQ(new s3([new w(L(237),
 					function() {
-						b0.aNF.aNV({
+						b0.aNG.aNW({
 							sp: 8,
 							sl: data.sl
-						}), data.aNb = 0, bj.s0.s1(160, 0), t.u(7)
-					}).button]))) : (aN8.qL(L(238), "0.75em").style.marginBottom = "0.3em", aN8.qL("  • " + L(239), "0.75em").style.whiteSpace = "pre", aN8.qL("  • " + L(240), "0.75em").style.whiteSpace = "pre", aN8.qL("  • " + L(
-						241), "0.75em").style.whiteSpace = "pre", aN8.qL(L(242), "0.75em").style.marginTop = "1.0em", aN8.qL(L(243), "0.75em").style.marginTop = "1.0em", aN8.qL("<a href='" + bK.aNh +
+						}), data.aNc = 0, bj.s0.s1(160, 0), t.u(7)
+					}).button]))) : (aN9.qL(L(238), "0.75em").style.marginBottom = "0.3em", aN9.qL("  • " + L(239), "0.75em").style.whiteSpace = "pre", aN9.qL("  • " + L(240), "0.75em").style.whiteSpace = "pre", aN9.qL("  • " + L(
+						241), "0.75em").style.whiteSpace = "pre", aN9.qL(L(242), "0.75em").style.marginTop = "1.0em", aN9.qL(L(243), "0.75em").style.marginTop = "1.0em", aN9.qL("<a href='" + bK.aNi +
 						"' target='_blank'>patreon.com/c/territorial</a>", "0.75em").style.marginTop = "0.3em", a3E = "https://www.patreon.com/oauth2/authorize?state=" + data.sl +
-					"&response_type=code&client_id=wWuOlDVZwn1sxSN9Wm4I9sJA3Ewfw7Zz4MjTMf9el2v3lviVkDwFtr92n7Tdlrhc&redirect_uri=https://territorial.io/", aN8.qL(L(244), "0.75em").style.marginTop = "1.0em", aN8.qL("<a href='" + a3E +
-						"' target='_blank'>patreon.com/oauth2/...</a>", "0.75em").style.marginTop = "0.3em", data.aMr || (aN8.qQ(new sD), aN8.qQ(new s3([new w(L(176), function() {
-						b0.aNF.aNV({
+					"&response_type=code&client_id=wWuOlDVZwn1sxSN9Wm4I9sJA3Ewfw7Zz4MjTMf9el2v3lviVkDwFtr92n7Tdlrhc&redirect_uri=https://territorial.io/", aN9.qL(L(244), "0.75em").style.marginTop = "1.0em", aN9.qL("<a href='" + a3E +
+						"' target='_blank'>patreon.com/oauth2/...</a>", "0.75em").style.marginTop = "0.3em", data.aMs || (aN9.qQ(new sD), aN9.qQ(new s3([new w(L(176), function() {
+						b0.aNG.aNW({
 							sp: 6,
 							sl: data.sl
-						}), data.aNc = 1, t.u(7)
-					}).button])), aN8.qL(L(245), "0.75em").style.marginTop = "0.75em")), qU.push(aN8))
+						}), data.aNd = 1, t.u(7)
+					}).button])), aN9.qL(L(245), "0.75em").style.marginTop = "0.75em")), qU.push(aN9))
 			}(qU), qU
 	}())
 }
 
-function aMe() {
-	var aNj, aNk, aNl, qU;
+function aMf() {
+	var aNk, aNl, aNm, qU;
 
-	function aNm() {
-		aNo(), 2 !== aD.data.aIncomeType && (aD.data.aIncomeData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 2 !== aD.data.aIncomeType && (aD.data.aIncomeData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aNo() {
-		2 === aD.data.aIncomeType ? (bA.qh.a2d(aNl.ux(), aD.data.aIncomeData, 255), bA.qh.max(aD.data.aIncomeData) || (aD.data.aIncomeType = 0)) : 1 !== aD.data.aIncomeType || aD.data.aIncomeValue || (aD.data.aIncomeType = 0)
+	function aNp() {
+		2 === aD.data.aIncomeType ? (bA.qh.a2d(aNm.ux(), aD.data.aIncomeData, 255), bA.qh.max(aD.data.aIncomeData) || (aD.data.aIncomeType = 0)) : 1 !== aD.data.aIncomeType || aD.data.aIncomeValue || (aD.data.aIncomeType = 0)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(246), [new w("⬅️ " + L(37), aNm)]), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(247)), aN8.qN(new uL({
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(246), [new w("⬅️ " + L(37), aNn)]), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC;
+		aN9.qF(L(247)), aN9.qN(new uL({
 			uP: [L(248), L(249), L(250)],
 			value: aD.data.aIncomeType
 		}, function(e8) {
-			aNo(), 2 !== e8 || aD.data.aIncomeData || (aD.data.aIncomeData = new Uint8Array(aD.ek)), aD.data.aIncomeType = e8, t.u(22)
-		})), qU.push(aN8)
+			aNp(), 2 !== e8 || aD.data.aIncomeData || (aD.data.aIncomeData = new Uint8Array(aD.ek)), aD.data.aIncomeType = e8, t.u(22)
+		})), qU.push(aN9)
 	}(qU = []), function(qU) {
-		var aN8;
-		1 === aD.data.aIncomeType && ((aN8 = new qC).qF("Value"), aN8.qQ(new rN({
+		var aN9;
+		1 === aD.data.aIncomeType && ((aN9 = new qC).qF("Value"), aN9.qQ(new rN({
 			e8: -1,
 			value: aD.data.aIncomeValue
 		}, 1, 0, function(e) {
 			var value = bL.hv(Math.floor(e.target.value), 0, 255);
 			e.target.value = aD.data.aIncomeValue = value
-		})), qU.push(aN8))
+		})), qU.push(aN9))
 	}(qU), function(qU) {
-		var aN8;
-		2 === aD.data.aIncomeType && ((aN8 = new qC).qF("Data"), (aNl = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.aIncomeData, 4)), aN8.qQ(aNl), qU.push(aN8))
+		var aN9;
+		2 === aD.data.aIncomeType && ((aN9 = new qC).qF("Data"), (aNm = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.aIncomeData, 4)), aN9.qQ(aNm), qU.push(aN9))
 	}(qU), qU))
 }
 
-function aMh() {
-	var aNj, aNk, aNl;
+function aMi() {
+	var aNk, aNl, aNm;
 
-	function aNm() {
-		aNo(), 3 !== aD.data.botDifficultyType || bA.qh.a2R(aD.data.botDifficultyData) || (aD.data.botDifficultyType = 0), 3 !== aD.data.botDifficultyType && (aD.data.botDifficultyData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 3 !== aD.data.botDifficultyType || bA.qh.a2R(aD.data.botDifficultyData) || (aD.data.botDifficultyType = 0), 3 !== aD.data.botDifficultyType && (aD.data.botDifficultyData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aNo() {
-		3 === aD.data.botDifficultyType && bA.qh.a2d(aNl.ux(), aD.data.botDifficultyData, aE.kL.length - 1)
+	function aNp() {
+		3 === aD.data.botDifficultyType && bA.qh.a2d(aNm.ux(), aD.data.botDifficultyData, aE.kL.length - 1)
 	}
 
-	function aNt(qU, e8) {
-		var aN8 = new qC,
-			value = (aN8.qF(e8 < 0 ? L(62) : L(61) + " " + bg.a0H[e8 % 9]), 0 <= e8 && (aN8.qL(L(253) + ": " + aD.data.teamPlayerCount[e8]).style.marginBottom = "1em"), e8 < 0 ? aD.data.botDifficultyValue : aD.data.botDifficultyTeam[e8]);
-		aN8.qN(new uL({
+	function aNu(qU, e8) {
+		var aN9 = new qC,
+			value = (aN9.qF(e8 < 0 ? L(62) : L(61) + " " + bg.a0H[e8 % 9]), 0 <= e8 && (aN9.qL(L(253) + ": " + aD.data.teamPlayerCount[e8]).style.marginBottom = "1em"), e8 < 0 ? aD.data.botDifficultyValue : aD.data.botDifficultyTeam[e8]);
+		aN9.qN(new uL({
 			uP: aE.kL,
 			value: value
 		}, function(hf) {
 			e8 < 0 ? aD.data.botDifficultyValue = hf : aD.data.botDifficultyTeam[e8] = hf
-		})), qU.push(aN8)
+		})), qU.push(aN9)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(62), [new w("⬅️ " + L(37), aNm)]), aNk = new qS(aNj.uW, function() {
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(62), [new w("⬅️ " + L(37), aNn)]), aNl = new qS(aNk.uW, function() {
 		var qU = [];
 		if (function(qU) {
-				var aN8 = new qC,
-					uP = (aN8.qF(L(247)), [L(249), L(251), L(252), L(250)]),
+				var aN9 = new qC,
+					uP = (aN9.qF(L(247)), [L(249), L(251), L(252), L(250)]),
 					value = aD.data.botDifficultyType;
 				0 === aD.data.gameMode && (value = Math.min(value, 2), uP.splice(2, 1));
-				aN8.qN(new uL({
+				aN9.qN(new uL({
 					uP: uP,
 					value: value
 				}, function(e8) {
-					aNo(), aD.data.botDifficultyType = e8, 0 === aD.data.gameMode && 2 === e8 && (aD.data.botDifficultyType = 3), 3 !== aD.data.botDifficultyType || aD.data.botDifficultyData || (aD.data.botDifficultyData =
+					aNp(), aD.data.botDifficultyType = e8, 0 === aD.data.gameMode && 2 === e8 && (aD.data.botDifficultyType = 3), 3 !== aD.data.botDifficultyType || aD.data.botDifficultyData || (aD.data.botDifficultyData =
 						new Uint8Array(aD.ek)), 2 !== aD.data.botDifficultyType || aD.data.botDifficultyTeam || (aD.data.botDifficultyTeam = new Uint8Array(9)), t.u(25)
-				})), qU.push(aN8)
-			}(qU), 0 === aD.data.botDifficultyType) aNt(qU, -1);
+				})), qU.push(aN9)
+			}(qU), 0 === aD.data.botDifficultyType) aNu(qU, -1);
 		else if (2 === aD.data.botDifficultyType)
-			for (var aB = 0; aB < aD.data.teamPlayerCount.length; aB++) aD.data.teamPlayerCount[aB] && aNt(qU, aB);
+			for (var aB = 0; aB < aD.data.teamPlayerCount.length; aB++) aD.data.teamPlayerCount[aB] && aNu(qU, aB);
 		else 3 === aD.data.botDifficultyType && ! function(qU) {
-			var aN8 = new qC;
-			aN8.qF("Data"), (aNl = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.botDifficultyData, 8)), aN8.qQ(aNl), qU.push(aN8)
+			var aN9 = new qC;
+			aN9.qF("Data"), (aNm = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.botDifficultyData, 8)), aN9.qQ(aNm), qU.push(aN9)
 		}(qU);
 		return qU
 	}())
 }
 
-function aNu(data) {
-	var aMp, aNv, aNw, aNx, aNy, aNz, aO0, colors, aO1, aO2, aO3 = 0,
-		aO4 = 0,
-		aO5 = !1,
+function aNv(data) {
+	var aMq, aNw, aNx, aNy, aNz, aO0, aO1, colors, aO2, aO3, aO4 = 0,
+		aO5 = 0,
 		aO6 = !1,
-		aO7 = [1, 5, 60, 240, 1440, 10080, 43200];
+		aO7 = !1,
+		aO8 = [1, 5, 60, 240, 1440, 10080, 43200];
 
-	function aOb(lN, lO) {
+	function aOc(lN, lO) {
 		! function(lN, lO) {
-			return aNv < lN && lN < aNv + aNx && aNw < lO && lO < aNw + aNy
-		}(aO3 = lN, aO4 = lO) ? (aO5 && (bf.dl = !0), aO5 = !1) : (aO5 = !0, bf.dl = !0)
+			return aNw < lN && lN < aNw + aNy && aNx < lO && lO < aNx + aNz
+		}(aO4 = lN, aO5 = lO) ? (aO6 && (bf.dl = !0), aO6 = !1) : (aO6 = !0, bf.dl = !0)
 	}
 	this.show = function() {
-		aO6 = bj.eK.data[127].value, aMp.show(), this.resize()
+		aO7 = bj.eK.data[127].value, aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize();
+		aMq.resize();
 		var f8 = h.k,
-			ue = aMp.ub(),
-			aOG = f8 * ue.ud,
+			ue = aMq.ub(),
+			aOH = f8 * ue.ud,
 			f8 = f8 * ue.rt;
-		aNz = bA.qZ.tC(.06), aO0 = bA.qZ.tC(.04), aNv = bA.qZ.tC(.06), aNw = f8 + aNz, aNx = h.i - aNv - aO0, aNy = aOG + f8 - aNw - aO0
+		aO0 = bA.qZ.tC(.06), aO1 = bA.qZ.tC(.04), aNw = bA.qZ.tC(.06), aNx = f8 + aO0, aNy = h.i - aNw - aO1, aNz = aOH + f8 - aNx - aO1
 	}, this.uf = function() {
-		aMp.uf(),
+		aMq.uf(),
 			function() {
-				var aB, aOD, gG, eu, f6, g = data.data,
-					aOK = 1,
-					aOL = .125,
-					aOM = aO6 ? 65536 : 0;
+				var aB, aOE, gG, eu, f6, g = data.data,
+					aOL = 1,
+					aOM = .125,
+					aON = aO7 ? 65536 : 0;
 				for (aB = 0; aB < g.length; aB++)
-					for (aOD = g[aB].aOD, gG = aOD.length, aOK = Math.max(gG, aOK), f6 = 0; f6 < gG; f6++) aOL = Math.max(aOD[f6], aOL), aOM = Math.min(aOD[f6], aOM);
-				var n9 = aNw + aNy,
-					xs = aNy / (aOL - aOM),
-					xr = 1 / (aOK - 1);
+					for (aOE = g[aB].aOE, gG = aOE.length, aOL = Math.max(gG, aOL), f6 = 0; f6 < gG; f6++) aOM = Math.max(aOE[f6], aOM), aON = Math.min(aOE[f6], aON);
+				var n9 = aNx + aNz,
+					xs = aNz / (aOM - aON),
+					xr = 1 / (aOL - 1);
 				for (ug.lineWidth = bc.yu, aB = 0; aB < g.length; aB++) {
-					for (aOD = g[aB].aOD, gG = aOD.length, eu = aNv, ug.beginPath(), ug.moveTo(eu + aNx, n9 - xs * (aOD[gG - 1] - aOM)), f6 = gG - 2; 0 <= f6; f6--) ug.lineTo(eu + xr * f6 * aNx, n9 - xs * (aOD[f6] - aOM));
+					for (aOE = g[aB].aOE, gG = aOE.length, eu = aNw, ug.beginPath(), ug.moveTo(eu + aNy, n9 - xs * (aOE[gG - 1] - aON)), f6 = gG - 2; 0 <= f6; f6--) ug.lineTo(eu + xr * f6 * aNy, n9 - xs * (aOE[f6] - aON));
 					ug.strokeStyle = colors[aB], ug.stroke()
-				}(function(aOM, aOL, n9, xs) {
-					ug.font = bA.qZ.sN(0, .25 * aNv), bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 2), ug.fillStyle = colors[0];
-					for (var eu = .92 * aNv, aB = 0; aB < 3; aB++) {
-						var fF = aOM + aB * (aOL - aOM) / 2;
-						ug.fillText((fF / 1e3).toFixed(3), eu, n9 - xs * (fF - aOM))
+				}(function(aON, aOM, n9, xs) {
+					ug.font = bA.qZ.sN(0, .25 * aNw), bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 2), ug.fillStyle = colors[0];
+					for (var eu = .92 * aNw, aB = 0; aB < 3; aB++) {
+						var fF = aON + aB * (aOM - aON) / 2;
+						ug.fillText((fF / 1e3).toFixed(3), eu, n9 - xs * (fF - aON))
 					}
-				})(aOM, aOL, n9, xs),
-				function(aOK) {
-					var ew = aNw + aNy + .15 * aO0;
-					ug.font = bA.qZ.sN(0, Math.min(.4 * aO0, .028 * h.i)), bA.qZ.textBaseline(ug, 0), bA.qZ.textAlign(ug, 2), ug.fillStyle = colors[0], ug.fillText(bA.a2I.a35(aO1), aNv + aNx, ew), bA.qZ.textAlign(ug, 0), ug.fillText(bA.a2I.a35(
-						new Date(aO2.getTime() - 6e4 * (aOK - 1) * aO7[data.aOC])), aNv, ew)
-				}(aOK),
-				function(aOK, aOM, aOL) {
-					if (aO5 && !(aOK < 2)) {
-						for (var a8P, e8 = (aO3 - aNv) / aNx * (aOK - 1), aOP = Math.floor(e8), aOQ = Math.floor(1 + e8), aOR = e8 - aOP, aOS = 1e5, aOT = -1, aOU = -1, aOV = aOL - (aOL - aOM) * (aO4 - aNw) / aNy, g = data.data, aB = 0; aB < g
+				})(aON, aOM, n9, xs),
+				function(aOL) {
+					var ew = aNx + aNz + .15 * aO1;
+					ug.font = bA.qZ.sN(0, Math.min(.4 * aO1, .028 * h.i)), bA.qZ.textBaseline(ug, 0), bA.qZ.textAlign(ug, 2), ug.fillStyle = colors[0], ug.fillText(bA.a2I.a35(aO2), aNw + aNy, ew), bA.qZ.textAlign(ug, 0), ug.fillText(bA.a2I.a35(
+						new Date(aO3.getTime() - 6e4 * (aOL - 1) * aO8[data.aOD])), aNw, ew)
+				}(aOL),
+				function(aOL, aON, aOM) {
+					if (aO6 && !(aOL < 2)) {
+						for (var a8P, e8 = (aO4 - aNw) / aNy * (aOL - 1), aOQ = Math.floor(e8), aOR = Math.floor(1 + e8), aOS = e8 - aOQ, aOT = 1e5, aOU = -1, aOV = -1, aOW = aOM - (aOM - aON) * (aO5 - aNx) / aNz, g = data.data, aB = 0; aB < g
 							.length; aB++) {
-							var aC8, aOD = g[aB].aOD;
-							aOD.length <= aOQ || (aOD = aOD[aOP] + aOR * (aOD[aOQ] - aOD[aOP]), (aC8 = Math.abs(aOV - aOD)) < aOS && (aOS = aC8, aOT = aB, aOU = aOD))
-						} - 1 !== aOT && (aOL = aNw + aNy - (aOU - aOM) / (aOL - aOM) * aNy, ug.lineWidth = .5 * bc.yu, ug.strokeStyle = colors[aOT], ug.beginPath(), ug.moveTo(aNv, aOL), ug.lineTo(aO3, aOL), ug.lineTo(aO3, aNw + aNy), ug
-						.stroke(), ug.beginPath(), ug.arc(aO3, aOL, .1 * aNv, 0, 2 * Math.PI), ug.fillStyle = colors[aOT], ug.fill(), aOM = aNw + aNy + .15 * aO0, bA.qZ.textAlign(ug, 1), a8P = aOK - 2 < e8 ? (a8P = aO2.getTime() - 6e4 * aO7[
-								data.aOC], new Date(a8P + (e8 - (aOK - 2)) * (aO1.getTime() - a8P))) : new Date(aO2.getTime() - 6e4 * (aOK - e8 - 1) * aO7[data.aOC]), aOK = bA.a2I.a35(a8P), e8 = bA.qZ.measureText(aOK), a8P = bL.hv(aO3, aNv +
-								.5 * e8, aNv + aNx - .5 * e8), ug.fillStyle = bA.color.na(70, 50, 20), ug.fillRect(a8P - .52 * e8, aNw + aNy, 1.04 * e8, .55 * aO0), ug.fillStyle = colors[0], ug.fillText(aOK, a8P, aOM), ug.font = bA.qZ.sN(0,
-								.25 * aNv), bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 2), a8P = .92 * aNv, aOK = (aOU / 1e3).toFixed(3), e8 = bA.qZ.measureText(aOK), aOM = a8P - 1.04 * e8, ug.fillStyle = bA.color.na(70, 50, 20), ug
-							.fillRect(aOM, aOL - .1625 * aNv, aNv - aOM, .275 * aNv), ug.fillStyle = colors[aOT], ug.fillText(aOK, a8P, aOL))
+							var aC8, aOE = g[aB].aOE;
+							aOE.length <= aOR || (aOE = aOE[aOQ] + aOS * (aOE[aOR] - aOE[aOQ]), (aC8 = Math.abs(aOW - aOE)) < aOT && (aOT = aC8, aOU = aB, aOV = aOE))
+						} - 1 !== aOU && (aOM = aNx + aNz - (aOV - aON) / (aOM - aON) * aNz, ug.lineWidth = .5 * bc.yu, ug.strokeStyle = colors[aOU], ug.beginPath(), ug.moveTo(aNw, aOM), ug.lineTo(aO4, aOM), ug.lineTo(aO4, aNx + aNz), ug
+						.stroke(), ug.beginPath(), ug.arc(aO4, aOM, .1 * aNw, 0, 2 * Math.PI), ug.fillStyle = colors[aOU], ug.fill(), aON = aNx + aNz + .15 * aO1, bA.qZ.textAlign(ug, 1), a8P = aOL - 2 < e8 ? (a8P = aO3.getTime() - 6e4 * aO8[
+								data.aOD], new Date(a8P + (e8 - (aOL - 2)) * (aO2.getTime() - a8P))) : new Date(aO3.getTime() - 6e4 * (aOL - e8 - 1) * aO8[data.aOD]), aOL = bA.a2I.a35(a8P), e8 = bA.qZ.measureText(aOL), a8P = bL.hv(aO4, aNw +
+								.5 * e8, aNw + aNy - .5 * e8), ug.fillStyle = bA.color.na(70, 50, 20), ug.fillRect(a8P - .52 * e8, aNx + aNz, 1.04 * e8, .55 * aO1), ug.fillStyle = colors[0], ug.fillText(aOL, a8P, aON), ug.font = bA.qZ.sN(0,
+								.25 * aNw), bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 2), a8P = .92 * aNw, aOL = (aOV / 1e3).toFixed(3), e8 = bA.qZ.measureText(aOL), aON = a8P - 1.04 * e8, ug.fillStyle = bA.color.na(70, 50, 20), ug
+							.fillRect(aON, aOM - .1625 * aNw, aNw - aON, .275 * aNw), ug.fillStyle = colors[aOU], ug.fillText(aOL, a8P, aOM))
 					}
-				}(aOK, aOM, aOL)
-			}(), ug.lineWidth = bc.yu, ug.strokeStyle = bB.ni, ug.beginPath(), ug.moveTo(aNv, aNw), ug.lineTo(aNv, aNw + aNy), ug.lineTo(aNv + aNx, aNw + aNy), ug.stroke();
-		var aB, fontSize = .5 * aNz,
+				}(aOL, aON, aOM)
+			}(), ug.lineWidth = bc.yu, ug.strokeStyle = bB.ni, ug.beginPath(), ug.moveTo(aNw, aNx), ug.lineTo(aNw, aNx + aNz), ug.lineTo(aNw + aNy, aNx + aNz), ug.stroke();
+		var aB, fontSize = .5 * aO0,
 			g = (ug.font = bA.qZ.sN(0, fontSize), bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 0), data.data),
 			en = g.length,
-			ew = aNw - .5 * aNz,
+			ew = aNx - .5 * aO0,
 			qG = "";
 		for (aB = 0; aB < en; aB++) qG += g[aB].name + "  ";
 		qG = qG.trim();
-		var aOY = bA.qZ.measureText(qG),
-			eu = .5 * (h.i - aOY);
-		for (aOY > h.i && (eu = 0, ug.font = bA.qZ.sN(0, h.i / aOY * fontSize)), aB = 0; aB < en; aB++) ug.fillStyle = colors[aB], ug.fillText(g[aB].name, eu, ew), eu += bA.qZ.measureText(g[aB].name + "  ")
+		var aOZ = bA.qZ.measureText(qG),
+			eu = .5 * (h.i - aOZ);
+		for (aOZ > h.i && (eu = 0, ug.font = bA.qZ.sN(0, h.i / aOZ * fontSize)), aB = 0; aB < en; aB++) ug.fillStyle = colors[aB], ug.fillText(g[aB].name, eu, ew), eu += bA.qZ.measureText(g[aB].name + "  ")
 	}, this.h0 = function(lN, lO) {
-		aOb(lN, lO)
+		aOc(lN, lO)
 	}, this.a1Q = function(lN, lO) {
-		aOb(lN, lO)
+		aOc(lN, lO)
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
+		2 === f8 && aMq.uX[0].qq()
 	};
 	var aB, dt, a33, hf, eq = data.data,
 		en = eq.length,
 		max = 1;
-	for (aB = 0; aB < en; aB++) max = Math.max(max, eq[aB].aOD.length);
+	for (aB = 0; aB < en; aB++) max = Math.max(max, eq[aB].aOE.length);
 	for (aB = 0; aB < en; aB++)
-		for (; eq[aB].aOD.length < max;) eq[aB].aOD.unshift(0);
-	dt = new Date, a33 = 6e4 * dt.getTimezoneOffset(), hf = dt.getTime() - a33, aO1 = new Date(hf), 6 === data.aOC ? function(dt, a33) {
-		var aOF = dt.getUTCFullYear(),
+		for (; eq[aB].aOE.length < max;) eq[aB].aOE.unshift(0);
+	dt = new Date, a33 = 6e4 * dt.getTimezoneOffset(), hf = dt.getTime() - a33, aO2 = new Date(hf), 6 === data.aOD ? function(dt, a33) {
+		var aOG = dt.getUTCFullYear(),
 			dt = dt.getUTCMonth() + 1;
-		aO2 = dt < 12 ? new Date(Date.UTC(aOF, dt) - a33) : new Date(Date.UTC(aOF + 1, 0) - a33)
-	}(dt, a33) : (a33 = 6e4 * aO7[data.aOC], aO2 = data.aOC <= 4 ? new Date(hf + a33 - dt.getTime() % a33) : new Date(hf + a33 - (dt.getTime() + 2592e5) % a33)), hf = bA.color, colors = [bB.ni, hf.na(255, 0, 0), hf.na(0, 200, 0), hf.na(80, 80,
-		255), hf.na(255, 255, 0), hf.na(255, 0, 255), hf.na(0, 255, 255), hf.na(255, 140, 0), hf.na(128, 128, 128), hf.na(0, 255, 140)], aMp = new uQ(L(254) + ", " + ["M1", "M5", "H1", "H4", "D1", "W1", "MN"][data.aOC] + ", " + bA.a2I.a32(aO1), [
+		aO3 = dt < 12 ? new Date(Date.UTC(aOG, dt) - a33) : new Date(Date.UTC(aOG + 1, 0) - a33)
+	}(dt, a33) : (a33 = 6e4 * aO8[data.aOD], aO3 = data.aOD <= 4 ? new Date(hf + a33 - dt.getTime() % a33) : new Date(hf + a33 - (dt.getTime() + 2592e5) % a33)), hf = bA.color, colors = [bB.ni, hf.na(255, 0, 0), hf.na(0, 200, 0), hf.na(80, 80,
+		255), hf.na(255, 255, 0), hf.na(255, 0, 255), hf.na(0, 255, 255), hf.na(255, 140, 0), hf.na(128, 128, 128), hf.na(0, 255, 140)], aMq = new uQ(L(254) + ", " + ["M1", "M5", "H1", "H4", "D1", "W1", "MN"][data.aOD] + ", " + bA.a2I.a32(aO2), [
 		new w("⬅️ " + L(37), function() {
 			t.u(1)
 		}), new w(L(255), function() {
@@ -8073,322 +8069,322 @@ function aNu(data) {
 	], !1)
 }
 
-function aMW() {
-	var aMp, aMq, qU;
+function aMX() {
+	var aMq, aMr, qU;
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aMq.resize()
+		aMq.resize(), aMr.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aMp = new uQ(L(256), [new w("⬅️ " + L(37), function() {
-		t.aMn(13)
-	})]), aMq = new qS(aMp.uW, ((qU = []).push(function() {
-		var aN8 = new qC,
-			aNH = (aN8.qF(L(257)), aN8.qH(L(258)), new w(L(259), function() {
-				bj.s0.s1(130, 0), t.y.aOg()
+		2 === f8 && aMq.uX[0].qq()
+	}, aMq = new uQ(L(256), [new w("⬅️ " + L(37), function() {
+		t.aMo(13)
+	})]), aMr = new qS(aMq.uW, ((qU = []).push(function() {
+		var aN9 = new qC,
+			aNI = (aN9.qF(L(257)), aN9.qH(L(258)), new w(L(259), function() {
+				bj.s0.s1(130, 0), t.y.aOh()
 			}, 0, 0, 1)),
 			rM = new rN(bj.eK.data[126], 0, function() {
-				aNH.button.click()
+				aNI.button.click()
 			});
-		return aN8.qQ(rM), rM.e.placeholder = "a,b,c", rM.e.style.marginTop = "0.5em", aN8.qQ(new s3([aNH.button])), aN8
+		return aN9.qQ(rM), rM.e.placeholder = "a,b,c", rM.e.style.marginTop = "0.5em", aN9.qQ(new s3([aNI.button])), aN9
 	}()), qU.push(function() {
-		var aN8 = new qC,
-			aNH = new w(L(259), function() {
-				bj.s0.s1(130, 1), t.y.aOg()
+		var aN9 = new qC,
+			aNI = new w(L(259), function() {
+				bj.s0.s1(130, 1), t.y.aOh()
 			}, 0, 0, 1),
-			aOh = new rN(bj.eK.data[129], 1, function() {
-				aOh.e.focus()
+			aOi = new rN(bj.eK.data[129], 1, function() {
+				aOi.e.focus()
 			}),
-			aOi = new rN(bj.eK.data[128], 1, function() {
-				aNH.button.click()
+			aOj = new rN(bj.eK.data[128], 1, function() {
+				aNI.button.click()
 			});
-		return aN8.qF(L(260)), aN8.qQ(aOi), aOi.e.style.marginBottom = "0.5em", aN8.qF(L(261)), aN8.qQ(aOh), aN8.qQ(new s3([aNH.button])), aN8
+		return aN9.qF(L(260)), aN9.qQ(aOj), aOj.e.style.marginBottom = "0.5em", aN9.qF(L(261)), aN9.qQ(aOi), aN9.qQ(new s3([aNI.button])), aN9
 	}()), qU.push(function() {
-		var aN8 = new qC;
-		return aN8.qF(L(262)), bj.eK.data[125].uP = ["M1", "M5", "H1", "H4", "D1", "W1", "MN"], aN8.qN(new uL(bj.eK.data[125])), aN8
+		var aN9 = new qC;
+		return aN9.qF(L(262)), bj.eK.data[125].uP = ["M1", "M5", "H1", "H4", "D1", "W1", "MN"], aN9.qN(new uL(bj.eK.data[125])), aN9
 	}()), qU.push(function() {
-		var aN8 = new qC;
-		return aN8.qF(L(263)), aN8.qQ(new rx(bj.eK.data[127], L(264))), aN8
+		var aN9 = new qC;
+		return aN9.qF(L(263)), aN9.qQ(new rx(bj.eK.data[127], L(264))), aN9
 	}()), qU))
 }
 
-function aMV() {
-	var aMp, aOj, aNx, aOk, aOl, aOm, colors = [0, 0, 0],
-		aOn = -1;
+function aMW() {
+	var aMq, aOk, aNy, aOl, aOm, aOn, colors = [0, 0, 0],
+		aOo = -1;
 
-	function aOq(aB) {
-		var aOr = aOj.ew + aB * (bc.gap + aOm);
-		ug.fillStyle = "rgb(" + (0 === aB ? 150 : 2 === aB ? 30 : 0) + "," + (1 === aB ? 130 : 2 === aB ? 30 : 0) + "," + (2 === aB ? 220 : 0) + ")", ug.fillRect(aOk, aOr, colors[aB] * aOl, aOm), ug.strokeStyle = bB.ni, ug.strokeRect(aOk, aOr, aOl,
-			aOm), ug.fillStyle = bB.ni, ug.font = bA.qZ.sN(0, .32 * aOm), bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 0), ug.fillText(L(0 === aB ? 267 : 1 === aB ? 268 : 269) + aOo(aB), aOk + bc.gap, aOr + .53 * aOm)
+	function aOr(aB) {
+		var aOs = aOk.ew + aB * (bc.gap + aOn);
+		ug.fillStyle = "rgb(" + (0 === aB ? 150 : 2 === aB ? 30 : 0) + "," + (1 === aB ? 130 : 2 === aB ? 30 : 0) + "," + (2 === aB ? 220 : 0) + ")", ug.fillRect(aOl, aOs, colors[aB] * aOm, aOn), ug.strokeStyle = bB.ni, ug.strokeRect(aOl, aOs, aOm,
+			aOn), ug.fillStyle = bB.ni, ug.font = bA.qZ.sN(0, .32 * aOn), bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 0), ug.fillText(L(0 === aB ? 267 : 1 === aB ? 268 : 269) + aOp(aB), aOl + bc.gap, aOs + .53 * aOn)
 	}
 
-	function aOo(aB, aOs) {
-		return aOs = aOs || 256, bL.hv(Math.floor(aOs * colors[aB]), 0, aOs - 1)
+	function aOp(aB, aOt) {
+		return aOt = aOt || 256, bL.hv(Math.floor(aOt * colors[aB]), 0, aOt - 1)
 	}
 
 	function a1x(lN, lO) {
-		return !(lN < aOk || lO < aOj.ew || lN > aOj.eu + aOj.i || lO > aOj.ew + aOj.j)
+		return !(lN < aOl || lO < aOk.ew || lN > aOk.eu + aOk.i || lO > aOk.ew + aOk.j)
 	}
 	this.show = function() {
 		var fF = bj.eK.data[121].value;
-		colors[0] = (fF >> 12) / 63, colors[1] = (fF >> 6 & 63) / 63, colors[2] = (63 & fF) / 63, aMp.show(), this.resize()
+		colors[0] = (fF >> 12) / 63, colors[1] = (fF >> 6 & 63) / 63, colors[2] = (63 & fF) / 63, aMq.show(), this.resize()
 	}, this.rq = function() {
-		bj.s0.s1(121, (aOo(0, 64) << 12) + (aOo(1, 64) << 6) + aOo(2, 64)), aMp.rq()
+		bj.s0.s1(121, (aOp(0, 64) << 12) + (aOp(1, 64) << 6) + aOp(2, 64)), aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aOj.resize();
+		aMq.resize(), aOk.resize();
 		var f8 = h.k,
-			ue = aMp.ub(),
-			aOp = (aOj.ew = Math.max(aOj.ew, f8 * ue.rt + bc.gap), f8 * ue.ud - 2 * bc.gap);
-		aOj.j = Math.min(aOj.j, aOp), aOj.i = 2 * aOj.j, aOj.ew = f8 * ue.rt + .5 * (f8 * ue.ud - aOj.j), aOj.eu = .5 * (h.i - aOj.i), aNx = .25 * aOj.i, aOk = aOj.eu + aNx + bc.gap, aOl = aOj.i - aNx - bc.gap, aOm = (aOj.j - 2 * bc.gap) / 3
+			ue = aMq.ub(),
+			aOq = (aOk.ew = Math.max(aOk.ew, f8 * ue.rt + bc.gap), f8 * ue.ud - 2 * bc.gap);
+		aOk.j = Math.min(aOk.j, aOq), aOk.i = 2 * aOk.j, aOk.ew = f8 * ue.rt + .5 * (f8 * ue.ud - aOk.j), aOk.eu = .5 * (h.i - aOk.i), aNy = .25 * aOk.i, aOl = aOk.eu + aNy + bc.gap, aOm = aOk.i - aNy - bc.gap, aOn = (aOk.j - 2 * bc.gap) / 3
 	}, this.uf = function() {
 		var e7, tB, f7;
-		aMp.uf(), ug.lineWidth = bc.yu, e7 = aOo(0), tB = aOo(1), f7 = aOo(2), ug.fillStyle = "rgb(" + e7 + "," + tB + "," + f7 + ")", ug.fillRect(aOj.eu, aOj.ew, aNx, aOj.j), ug.strokeStyle = bB.ni, ug.strokeRect(aOj.eu, aOj.ew, aNx, aOj.j), ug
-			.fillStyle = e7 + tB + f7 < 306 && tB < 150 ? bB.ni : bB.nZ, bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 1), ug.font = bA.qZ.sN(0, .1 * aOj.j), ug.rotate(-Math.PI / 2), ug.fillText(L(266), -aOj.ew - .5 * aOj.j, aOj.eu + .5 * aNx),
-			ug.setTransform(1, 0, 0, 1, 0, 0), aOq(0), aOq(1), aOq(2)
+		aMq.uf(), ug.lineWidth = bc.yu, e7 = aOp(0), tB = aOp(1), f7 = aOp(2), ug.fillStyle = "rgb(" + e7 + "," + tB + "," + f7 + ")", ug.fillRect(aOk.eu, aOk.ew, aNy, aOk.j), ug.strokeStyle = bB.ni, ug.strokeRect(aOk.eu, aOk.ew, aNy, aOk.j), ug
+			.fillStyle = e7 + tB + f7 < 306 && tB < 150 ? bB.ni : bB.nZ, bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 1), ug.font = bA.qZ.sN(0, .1 * aOk.j), ug.rotate(-Math.PI / 2), ug.fillText(L(266), -aOk.ew - .5 * aOk.j, aOk.eu + .5 * aNy),
+			ug.setTransform(1, 0, 0, 1, 0, 0), aOr(0), aOr(1), aOr(2)
 	}, this.h0 = function(lN, lO) {
-		a1x(lN, lO) && (aOn = bL.hv(Math.floor((lO - aOj.ew) / (aOm + .75 * bc.gap)), 0, 2), colors[aOn] = bL.hv((lN - aOk) / aOl, 0, 1), bf.dl = !0)
+		a1x(lN, lO) && (aOo = bL.hv(Math.floor((lO - aOk.ew) / (aOn + .75 * bc.gap)), 0, 2), colors[aOo] = bL.hv((lN - aOl) / aOm, 0, 1), bf.dl = !0)
 	}, this.a1Q = function(lN) {
-		-1 !== aOn && (colors[aOn] = bL.hv((lN - aOk) / aOl, 0, 1), bf.dl = !0)
+		-1 !== aOo && (colors[aOo] = bL.hv((lN - aOl) / aOm, 0, 1), bf.dl = !0)
 	}, this.a1T = function(lN, lO, deltaY) {
-		a1x(lN, lO) && (lN = bL.hv(Math.floor((lO - aOj.ew) / (aOm + .75 * bc.gap)), 0, 2), colors[lN] = bL.hv(colors[lN] + (1 - 2 * (0 < deltaY)) / 256, 0, 1), bf.dl = !0)
+		a1x(lN, lO) && (lN = bL.hv(Math.floor((lO - aOk.ew) / (aOn + .75 * bc.gap)), 0, 2), colors[lN] = bL.hv(colors[lN] + (1 - 2 * (0 < deltaY)) / 256, 0, 1), bf.dl = !0)
 	}, this.a1r = function() {
-		0 <= aOn && (aOn = -1, bf.dl = !0)
+		0 <= aOo && (aOo = -1, bf.dl = !0)
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aMp = new uQ(L(265), [new w("⬅️ " + L(37), function() {
+		2 === f8 && aMq.uX[0].qq()
+	}, aMq = new uQ(L(265), [new w("⬅️ " + L(37), function() {
 		t.y.aC2()
-	})], !1), aOj = new rA([.5, .25], [.5, .5], 1)
+	})], !1), aOk = new rA([.5, .25], [.5, .5], 1)
 }
 
-function aMd() {
-	var aNj, aNk, aNl, r8;
+function aMe() {
+	var aNk, aNl, aNm, r8;
 
-	function aNm() {
-		aNo(), 1 !== aD.data.colorsType && (aD.data.colorsData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 1 !== aD.data.colorsType && (aD.data.colorsData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aOt() {
-		aNo(), t.u(21)
+	function aOu() {
+		aNp(), t.u(21)
 	}
 
-	function aNo() {
-		1 === aD.data.gameMode ? aD.a4Q.a4V() : 0 === aD.data.gameMode && 1 === aD.data.colorsType && bA.qh.a2d(aNl.ux(), aD.data.colorsData, 262143)
+	function aNp() {
+		1 === aD.data.gameMode ? aD.a4Q.a4V() : 0 === aD.data.gameMode && 1 === aD.data.colorsType && bA.qh.a2d(aNm.ux(), aD.data.colorsData, 262143)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, r8 = [new w("⬅️ " + L(37), aNm)], 1 === aD.data.gameMode && r8.push(new w(L(270), aOt, 1, 1)), aNj = new uQ(L(271), r8), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(247)), 0 === aD.data.gameMode && (aN8.qN(new uL({
+		2 === f8 && aNk.uX[0].qq()
+	}, r8 = [new w("⬅️ " + L(37), aNn)], 1 === aD.data.gameMode && r8.push(new w(L(270), aOu, 1, 1)), aNk = new uQ(L(271), r8), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC;
+		aN9.qF(L(247)), 0 === aD.data.gameMode && (aN9.qN(new uL({
 			uP: [L(272), L(250)],
 			value: aD.data.colorsType
 		}, function(e8) {
-			aNo(), aD.data.colorsType = e8, 1 !== aD.data.colorsType || aD.data.colorsData && aD.data.colorsData.length === aD.ek || (aD.data.colorsData = new Uint32Array(aD.ek)), t.u(21)
-		})), aN8.qQ(new sD));
-		aN8.qQ(new rx({
+			aNp(), aD.data.colorsType = e8, 1 !== aD.data.colorsType || aD.data.colorsData && aD.data.colorsData.length === aD.ek || (aD.data.colorsData = new Uint32Array(aD.ek)), t.u(21)
+		})), aN9.qQ(new sD));
+		aN9.qQ(new rx({
 			value: aD.data.selectableColor
 		}, L(273), function(value) {
 			aD.data.selectableColor = value
-		})), qU.push(aN8)
+		})), qU.push(aN9)
 	}(r8 = []), 0 === aD.data.gameMode ? 1 === aD.data.colorsType && function(qU) {
-		var aN8 = new qC;
-		aN8.qF("Data"), (aNl = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.colorsData, 1)), aN8.qQ(aNl), qU.push(aN8)
+		var aN9 = new qC;
+		aN9.qF("Data"), (aNm = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.colorsData, 1)), aN9.qQ(aNm), qU.push(aN9)
 	}(r8) : (aD.a4Q.a4V(), r8.push(function() {
-		var aN8 = new qC;
-		aN8.qF(L(253));
+		var aN9 = new qC;
+		aN9.qF(L(253));
 		for (var aB = 0; aB < bg.a0H.length; aB++) {
 			var hf = (aB + 1) % bg.a0H.length,
-				e = aN8.qL((0 == hf ? "" : "Team ") + bg.a0H[hf]);
-			aB && (e.style.marginTop = "0.5em"), aN8.qQ(new rN({
+				e = aN9.qL((0 == hf ? "" : "Team ") + bg.a0H[hf]);
+			aB && (e.style.marginTop = "0.5em"), aN9.qQ(new rN({
 				e8: -1,
 				value: aD.data.teamPlayerCount[hf]
 			}, 1, 0, function(e) {
-				aNj.uX[1].qt(0);
+				aNk.uX[1].qt(0);
 				var playerCount = bL.hv(Math.floor(e.target.value), 0, 512);
-				e.target.value = playerCount, aD.data.teamPlayerCount[e.target.aOv] = playerCount
-			})).e.aOv = hf
+				e.target.value = playerCount, aD.data.teamPlayerCount[e.target.aOw] = playerCount
+			})).e.aOw = hf
 		}
-		return aN8
+		return aN9
 	}())), r8))
 }
 
-function so(id, a3m, aOw) {
-	var aMp, aOx;
+function so(id, a3m, aOx) {
+	var aMq, aOy;
+
+	function aP3() {
+		aOy.qV.innerHTML += "<br>" + L(276)
+	}
 
 	function aP2() {
-		aOx.qV.innerHTML += "<br>" + L(276)
+		bD.a7(48), bD.a8(24, Math.floor(bL.pow(24) * Math.random())), bD.a8(24, Math.floor(bL.pow(24) * Math.random())), bH.dd(bD.aC), bj.s0.s1(110, bF.sq.sr(bF.sq.ss(8))), b0.aNG.aPH()
 	}
-
-	function aP1() {
-		bD.a7(48), bD.a8(24, Math.floor(bL.pow(24) * Math.random())), bD.a8(24, Math.floor(bL.pow(24) * Math.random())), bH.dd(bD.aC), bj.s0.s1(110, bF.sq.sr(bF.sq.ss(8))), b0.aNF.aPG()
-	}
-	this.aOy = !0, this.aOz = id, this.show = function() {
-		aMp.show(), this.resize(), 15 === id ? (b0.y.aP0(id) ? aP1 : aP2)() : 16 === id ? b0.y.aP0(id) ? b0.aBz.aP3(2) : aP2() : 17 === id ? b0.y.aP0(id) ? b0.aBz.aP3(3) : aP2() : 18 === id ? (b0.y.close(0, 3253), b0.y.aFZ(0, id), aP2()) : 21 ===
-			id ? b0.y.aP0(id) ? b0.aP4.aP5(a3m.t6, a3m.t7, a3m.t8) : aP2() : 22 === id ? b0.y.aP0(id) ? b0.aP4.aP6(a3m.t6, a3m.aP7, a3m.aP8) : aP2() : 23 === id ? b0.y.aP0(id) ? b0.aP4.aP9(a3m.aOC, a3m.a0b) : aP2() : 24 === id ? b0.y.aP0(id) ? b0
-			.aP4.aPA(a3m.aOC, a3m.t7, a3m.t8) : aP2() : 25 === id ? b0.y.aP0(id) ? b0.aNF.aNV(a3m) : aP2() : 28 === id ? b0.y.aP0(id) ? b0.aP4.aPB(a3m.t6, a3m.aP7, a3m.aP8) : aP2() : 29 === id && (b0.y.aP0(id) ? b0.aNF.aPC(a3m) : aP2())
-	}, this.aPD = function() {
-		15 === id ? aP1() : 16 === id ? b0.aBz.aP3(2) : 17 === id ? b0.aBz.aP3(3) : 18 === id ? t.u(8, this.aMM, new so(16)) : 21 === id ? b0.aP4.aP5(a3m.t6, a3m.t7, a3m.t8) : 22 === id ? b0.aP4.aP6(a3m.t6, a3m.aP7, a3m.aP8) : 23 === id ? b0.aP4
-			.aP9(a3m.aOC, a3m.a0b) : 24 === id ? b0.aP4.aPA(a3m.aOC, a3m.t7, a3m.t8) : 25 === id ? b0.aNF.aNV(a3m) : 28 === id ? b0.aP4.aPB(a3m.t6, a3m.aP7, a3m.aP8) : 29 === id ? b0.aNF.aPC(a3m) : 1e3 === id && (this.aOz = id = 25, b0.aNF.aNV(
+	this.aOz = !0, this.aP0 = id, this.show = function() {
+		aMq.show(), this.resize(), 15 === id ? (b0.y.aP1(id) ? aP2 : aP3)() : 16 === id ? b0.y.aP1(id) ? b0.aBz.aP4(2) : aP3() : 17 === id ? b0.y.aP1(id) ? b0.aBz.aP4(3) : aP3() : 18 === id ? (b0.y.close(0, 3253), b0.y.aFZ(0, id), aP3()) : 21 ===
+			id ? b0.y.aP1(id) ? b0.aP5.aP6(a3m.t6, a3m.t7, a3m.t8) : aP3() : 22 === id ? b0.y.aP1(id) ? b0.aP5.aP7(a3m.t6, a3m.aP8, a3m.aP9) : aP3() : 23 === id ? b0.y.aP1(id) ? b0.aP5.aPA(a3m.aOD, a3m.a0b) : aP3() : 24 === id ? b0.y.aP1(id) ? b0
+			.aP5.aPB(a3m.aOD, a3m.t7, a3m.t8) : aP3() : 25 === id ? b0.y.aP1(id) ? b0.aNG.aNW(a3m) : aP3() : 28 === id ? b0.y.aP1(id) ? b0.aP5.aPC(a3m.t6, a3m.aP8, a3m.aP9) : aP3() : 29 === id && (b0.y.aP1(id) ? b0.aNG.aPD(a3m) : aP3())
+	}, this.aPE = function() {
+		15 === id ? aP2() : 16 === id ? b0.aBz.aP4(2) : 17 === id ? b0.aBz.aP4(3) : 18 === id ? t.u(8, this.aMN, new so(16)) : 21 === id ? b0.aP5.aP6(a3m.t6, a3m.t7, a3m.t8) : 22 === id ? b0.aP5.aP7(a3m.t6, a3m.aP8, a3m.aP9) : 23 === id ? b0.aP5
+			.aPA(a3m.aOD, a3m.a0b) : 24 === id ? b0.aP5.aPB(a3m.aOD, a3m.t7, a3m.t8) : 25 === id ? b0.aNG.aNW(a3m) : 28 === id ? b0.aP5.aPC(a3m.t6, a3m.aP8, a3m.aP9) : 29 === id ? b0.aNG.aPD(a3m) : 1e3 === id && (this.aP0 = id = 25, b0.aNG.aNW(
 				a3m))
-	}, this.aPE = function(code, bu, data) {
-		!bu && code !== id || (15 === code || 16 === code ? t.u(7, this.aMM) : 17 === code ? (b0.y.close(0, 3252), bj.y.vW(0), bj.eK.data[117].uP && 0 < bj.eK.data[117].uP.length ? (bu = bj.y.vX(0), bj.s0.s1(105, bu.sl), bj.s0.s1(106, bu
-			.password), t.u(8, this.aMM, new so(16))) : (bj.s0.s1(105, ""), t.y.aC2())) : 21 === code ? t.u(10, this.aMM, new aPF(data)) : 23 === code ? t.u(13, this.aMM, new aNu({
+	}, this.aPF = function(code, bu, data) {
+		!bu && code !== id || (15 === code || 16 === code ? t.u(7, this.aMN) : 17 === code ? (b0.y.close(0, 3252), bj.y.vW(0), bj.eK.data[117].uP && 0 < bj.eK.data[117].uP.length ? (bu = bj.y.vX(0), bj.s0.s1(105, bu.sl), bj.s0.s1(106, bu
+			.password), t.u(8, this.aMN, new so(16))) : (bj.s0.s1(105, ""), t.y.aC2())) : 21 === code ? t.u(10, this.aMN, new aPG(data)) : 23 === code ? t.u(13, this.aMN, new aNv({
 			data: data,
-			aOC: a3m.aOC
-		})) : 25 === code && (t.y.aMX.sl = a3m.sl, t.u(15, this.aMM)))
+			aOD: a3m.aOD
+		})) : 25 === code && (t.y.aMY.sl = a3m.sl, t.u(15, this.aMN)))
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aOx.resize()
+		aMq.resize(), aOy.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aMp = new uQ(L(274), [new w("⬅️ " + L(37), function() {
-		aOw ? t.u(29) : t.y.aC2()
-	})]), aOx = new s2(aMp.uW, L(275))
+		2 === f8 && aMq.uX[0].qq()
+	}, aMq = new uQ(L(274), [new w("⬅️ " + L(37), function() {
+		aOx ? t.u(29) : t.y.aC2()
+	})]), aOy = new s2(aMq.uW, L(275))
 }
 
-function aMb() {
-	var aNj, aNk, qU;
+function aMc() {
+	var aNk, aNl, qU;
 
-	function aPJ() {
+	function aPK() {
 		var gG;
 		1 === aD.data.gameMode ? (aD.data.teamPlayerCount || (aD.data.teamPlayerCount = new Uint16Array([0, 1, 1, 0, 0, 0, 0, 0, 0]), aD.a4Q.a4V()), gG = bA.qh.a2X(aD.data.teamPlayerCount, 0), aD.data.numberTeams = gG) : (2 === aD.data
 			.botDifficultyType && (aD.data.botDifficultyType = 0), 1 === aD.data.spawningType && (aD.data.spawningType = 0))
 	}
 
-	function aNm() {
-		1 !== aD.data.gameMode && (aD.data.teamPlayerCount = null), aPL(), aD.data.canvas = null, t.u(5, 5)
+	function aNn() {
+		1 !== aD.data.gameMode && (aD.data.teamPlayerCount = null), aPM(), aD.data.canvas = null, t.u(5, 5)
 	}
 
-	function aPL() {
+	function aPM() {
 		b9.pt.dd(), bj.s0.s1(156, b9.a4h.zO())
 	}
 
-	function aPH() {
-		aD.data.isReplay = 0, aPL(), aD.a4Q.a4s(), aa.aFk(), aD.a4Q.a4p(), aD.data.canvas = 2 === aD.data.mapType ? bS.wT : null, aD.a4U(), aD.a4S = 1
+	function aPI() {
+		aD.data.isReplay = 0, aPM(), aD.a4Q.a4s(), aa.aFk(), aD.a4Q.a4p(), aD.data.canvas = 2 === aD.data.mapType ? bS.wT : null, aD.a4U(), aD.a4S = 1
 	}
 
-	function aPX() {
-		aPJ();
-		for (var g = [aPO(), aPP(), aPQ()], aB = 3; aB < 6; aB++) aNk.qV.removeChild(aNk.qW[aB].qE), aNk.qW[aB] = g[aB - 3], aNk.qV.appendChild(aNk.qW[aB].qE);
-		aNk.resize()
-	}
-
-	function aPO() {
-		var aPY, aN8 = new qC;
-		return aN8.qF(L(271)), aPY = 0 === aD.data.gameMode ? [L(272), L(250)][aD.data.colorsType] : aD.data.numberTeams + " Team" + (1 === aD.data.numberTeams ? "" : "s"), aN8.qL(aPY), aN8.qQ(new s3([new w(L(280), function() {
-			t.u(21)
-		}).button])), aN8
+	function aPY() {
+		aPK();
+		for (var g = [aPP(), aPQ(), aPR()], aB = 3; aB < 6; aB++) aNl.qV.removeChild(aNl.qW[aB].qE), aNl.qW[aB] = g[aB - 3], aNl.qV.appendChild(aNl.qW[aB].qE);
+		aNl.resize()
 	}
 
 	function aPP() {
-		var aN8 = new qC,
-			g = (aN8.qF(L(62)), [L(249) + ": " + aE.kL[aD.data.botDifficultyValue], L(251), L(252), L(250)]);
-		return aN8.qL(g[aD.data.botDifficultyType]), aN8.qQ(new s3([new w(L(280), function() {
-			t.u(25)
-		}).button])), aN8
+		var aPZ, aN9 = new qC;
+		return aN9.qF(L(271)), aPZ = 0 === aD.data.gameMode ? [L(272), L(250)][aD.data.colorsType] : aD.data.numberTeams + " Team" + (1 === aD.data.numberTeams ? "" : "s"), aN9.qL(aPZ), aN9.qQ(new s3([new w(L(280), function() {
+			t.u(21)
+		}).button])), aN9
 	}
 
 	function aPQ() {
-		var aN8 = new qC,
-			g = (aN8.qF("Spawning"), [L(272), L(282), L(250)]);
-		return aN8.qL(g[aD.data.spawningType]), aN8.qQ(new s3([new w(L(280), function() {
+		var aN9 = new qC,
+			g = (aN9.qF(L(62)), [L(249) + ": " + aE.kL[aD.data.botDifficultyValue], L(251), L(252), L(250)]);
+		return aN9.qL(g[aD.data.botDifficultyType]), aN9.qQ(new s3([new w(L(280), function() {
+			t.u(25)
+		}).button])), aN9
+	}
+
+	function aPR() {
+		var aN9 = new qC,
+			g = (aN9.qF("Spawning"), [L(272), L(282), L(250)]);
+		return aN9.qL(g[aD.data.spawningType]), aN9.qQ(new s3([new w(L(280), function() {
 			t.u(24)
-		}).button])), aN8
+		}).button])), aN9
 	}
 	this.show = function() {
-		aNj.show(), this.resize(), aNj.uW.scrollTop = t.y.aHf[0]
+		aNk.show(), this.resize(), aNk.uW.scrollTop = t.y.aHf[0]
 	}, this.rq = function() {
-		t.y.aHf[0] = aNj.uW.scrollTop, aNj.rq()
+		t.y.aHf[0] = aNk.uW.scrollTop, aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ("🔧 " + L(277), [new w("⬅️ " + L(37), aNm), new w(L(278), aPH)]), aPJ(), aD.data.canvas || (2 === aD.data.mapType ? aD.data.canvas = bS.wT : 1 === aD.data.mapType ? aD.data.canvas = bS.aKH(bS.a4q(aD.data), 0).wT : (aD.data
-		.mapType = 0, aD.data.passableWater = aD.data.passableMountains = 1, aD.data.canvas = bS.aKH(bS.a4q(aD.data), aD.data.mapSeed).wT)), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC,
-			a2n = (aN8.qF(L(279)), aD.data.canvas);
-		a2n.style.width = "100%", aN8.qQ({
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ("🔧 " + L(277), [new w("⬅️ " + L(37), aNn), new w(L(278), aPI)]), aPK(), aD.data.canvas || (2 === aD.data.mapType ? aD.data.canvas = bS.wT : 1 === aD.data.mapType ? aD.data.canvas = bS.aKI(bS.a4q(aD.data), 0).wT : (aD.data
+		.mapType = 0, aD.data.passableWater = aD.data.passableMountains = 1, aD.data.canvas = bS.aKI(bS.a4q(aD.data), aD.data.mapSeed).wT)), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC,
+			a2n = (aN9.qF(L(279)), aD.data.canvas);
+		a2n.style.width = "100%", aN9.qQ({
 			e: a2n
-		}), aN8.qQ(new s3([new w(L(280), function() {
+		}), aN9.qQ(new s3([new w(L(280), function() {
 			t.u(20)
-		}).button])), qU.push(aN8)
+		}).button])), qU.push(aN9)
 	}(qU = []), function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(253)), aN8.qQ(new rN({
+		var aN9 = new qC;
+		aN9.qF(L(253)), aN9.qQ(new rN({
 			e8: -1,
 			value: aD.data.playerCount
 		}, 1, 0, function(e) {
 			var playerCount = bL.hv(Math.floor(e.target.value), 1, 512);
-			e.target.value = aD.data.playerCount = playerCount, 1 === aD.data.gameMode && (e = bA.qh.a2X(aD.data.teamPlayerCount, 0), aD.a4Q.a4V(), bA.qh.a2X(aD.data.teamPlayerCount, 0) !== e) && aPX()
-		})), qU.push(aN8)
+			e.target.value = aD.data.playerCount = playerCount, 1 === aD.data.gameMode && (e = bA.qh.a2X(aD.data.teamPlayerCount, 0), aD.a4Q.a4V(), bA.qh.a2X(aD.data.teamPlayerCount, 0) !== e) && aPY()
+		})), qU.push(aN9)
 	}(qU), function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(281)), aN8.qN(new uL({
+		var aN9 = new qC;
+		aN9.qF(L(281)), aN9.qN(new uL({
 			uP: ["Battle Royale", "Teams"],
 			value: aD.data.gameMode
 		}, function(e8) {
-			aD.data.gameMode !== e8 && (aD.data.gameMode = e8, aPX())
-		})), qU.push(aN8)
-	}(qU), qU.push(aPO()), qU.push(aPP()), qU.push(aPQ()), function(qU) {
-		var aN8 = new qC,
-			g = (aN8.qF(L(283)), [L(284), L(285), L(250)]);
-		aN8.qL(g[aD.data.playerNamesType]), aN8.qQ(new s3([new w(L(280), function() {
+			aD.data.gameMode !== e8 && (aD.data.gameMode = e8, aPY())
+		})), qU.push(aN9)
+	}(qU), qU.push(aPP()), qU.push(aPQ()), qU.push(aPR()), function(qU) {
+		var aN9 = new qC,
+			g = (aN9.qF(L(283)), [L(284), L(285), L(250)]);
+		aN9.qL(g[aD.data.playerNamesType]), aN9.qQ(new s3([new w(L(280), function() {
 			t.u(23)
-		}).button])), qU.push(aN8)
+		}).button])), qU.push(aN9)
 	}(qU), function(qU) {
-		var aN8 = new qC,
-			g = (aN8.qF(L(246)), [L(248), L(249) + ": " + aD.data.aIncomeValue, L(250)]);
-		aN8.qL(g[aD.data.aIncomeType]), aN8.qQ(new s3([new w(L(280), function() {
+		var aN9 = new qC,
+			g = (aN9.qF(L(246)), [L(248), L(249) + ": " + aD.data.aIncomeValue, L(250)]);
+		aN9.qL(g[aD.data.aIncomeType]), aN9.qQ(new s3([new w(L(280), function() {
 			t.u(22)
-		}).button])), qU.push(aN8)
+		}).button])), qU.push(aN9)
 	}(qU), function(qU) {
-		var aN8 = new qC,
-			g = (aN8.qF(L(286)), [L(248), L(249) + ": " + aD.data.tIncomeValue, L(250)]);
-		aN8.qL(g[aD.data.tIncomeType]), aN8.qQ(new s3([new w(L(280), function() {
+		var aN9 = new qC,
+			g = (aN9.qF(L(286)), [L(248), L(249) + ": " + aD.data.tIncomeValue, L(250)]);
+		aN9.qL(g[aD.data.tIncomeType]), aN9.qQ(new s3([new w(L(280), function() {
 			t.u(26)
-		}).button])), qU.push(aN8)
+		}).button])), qU.push(aN9)
 	}(qU), function(qU) {
-		var aN8 = new qC,
-			g = (aN8.qF(L(287)), [L(248), L(249) + ": " + aD.data.iIncomeValue, L(250)]);
-		aN8.qL(g[aD.data.iIncomeType]), aN8.qQ(new s3([new w(L(280), function() {
+		var aN9 = new qC,
+			g = (aN9.qF(L(287)), [L(248), L(249) + ": " + aD.data.iIncomeValue, L(250)]);
+		aN9.qL(g[aD.data.iIncomeType]), aN9.qQ(new s3([new w(L(280), function() {
 			t.u(27)
-		}).button])), qU.push(aN8)
+		}).button])), qU.push(aN9)
 	}(qU), function(qU) {
-		var aN8 = new qC,
-			g = (aN8.qF(L(288)), [L(248), L(249) + ": " + aD.data.sResourcesValue, L(250)]);
-		aN8.qL(g[aD.data.sResourcesType]), aN8.qQ(new s3([new w(L(280), function() {
+		var aN9 = new qC,
+			g = (aN9.qF(L(288)), [L(248), L(249) + ": " + aD.data.sResourcesValue, L(250)]);
+		aN9.qL(g[aD.data.sResourcesType]), aN9.qQ(new s3([new w(L(280), function() {
 			t.u(28)
-		}).button])), qU.push(aN8)
+		}).button])), qU.push(aN9)
 	}(qU), function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(289)), aN8.qQ(new s3([new w(L(290), function() {
+		var aN9 = new qC;
+		aN9.qF(L(289)), aN9.qQ(new s3([new w(L(290), function() {
 			t.x(), aD.a4Q.a4t(), t.y.aHf[0] = 0, t.u(19)
-		}).button])), aN8.qQ(new s3([new w(L(291), function() {
+		}).button])), aN9.qQ(new s3([new w(L(291), function() {
 			bm.aHU()
-		}).button])), aN8.qQ(new s3([new w(L(292), function() {
+		}).button])), aN9.qQ(new s3([new w(L(292), function() {
 			return bm.aHW(), !0
-		}).button])), qU.push(aN8)
+		}).button])), qU.push(aN9)
 	}(qU), qU))
 }
 
-function aMm() {
-	var aNj, rS = !0;
+function aMn() {
+	var aNk, rS = !0;
 
 	function rj(ri, a4v) {
 		var qE = document.createElement("div"),
-			aPa = document.createElement("span"),
-			aPb = document.createElement("span");
-		aPa.textContent = aW.aAs(a4v.eM) + ":", aPa.style.color = bB.nx, aPa.style.paddingRight = "0.4em", aPa.style.display = "table-cell", aPa.style.width = "6ch", aPa.style.textAlign = "end", qE.appendChild(aPa), aPb.textContent = a4v.qG, qE
-			.appendChild(aPb), qE.style.display = "table", a4v.pI && function(qE, pI) {
+			aPb = document.createElement("span"),
+			aPc = document.createElement("span");
+		aPb.textContent = aW.aAs(a4v.eM) + ":", aPb.style.color = bB.nx, aPb.style.paddingRight = "0.4em", aPb.style.display = "table-cell", aPb.style.width = "6ch", aPb.style.textAlign = "end", qE.appendChild(aPb), aPc.textContent = a4v.qG, qE
+			.appendChild(aPc), qE.style.display = "table", a4v.pI && function(qE, pI) {
 				{
 					var aHQ;
 					pI >= 1024 - aj.rp.yh ? ((aHQ = document.createElement("img")).src = aj.wW.yV[pI - 1024 + aj.rp.yh].toDataURL(), aHQ.style.width = "1.5em", aHQ.style.height = "1.5em", aHQ.style.verticalAlign = "middle", qE.appendChild(aHQ)) : ((
@@ -8398,81 +8394,81 @@ function aMm() {
 	}
 
 	function rm() {
-		rS && (aNj.uW.scrollTop = aNj.uW.scrollHeight)
+		rS && (aNk.uW.scrollTop = aNk.uW.scrollHeight)
 	}
 	this.clear = function() {
-		aNj.uW.textContent = ""
+		aNk.uW.textContent = ""
 	}, this.show = function() {
 		this.clear();
 		for (var a5o = bq.a4z(), en = a5o.length, ri = document.createDocumentFragment(), aB = 0; aB < en; aB++) rj(ri, a5o[aB]);
-		aNj.uW.appendChild(ri), rm(), aNj.show(), this.resize(), rS = !0, rm()
+		aNk.uW.appendChild(ri), rm(), aNk.show(), this.resize(), rS = !0, rm()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNj.uW.style.padding = "0.4em " + bA.qZ.qi(bc.qf)
+		aNk.resize(), aNk.uW.style.padding = "0.4em " + bA.qZ.qi(bc.qf)
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
+		2 === f8 && aNk.uX[0].qq()
 	}, this.yO = function(a4v) {
 		var ri = document.createDocumentFragment();
-		rj(ri, a4v), aNj.uW.appendChild(ri), rm()
-	}, (aNj = new uQ(L(293), [new w("⬅️ " + L(37), function() {
-		t.aMn(1)
-	})])).uW.style.overflowY = "auto", aNj.uW.addEventListener("scroll", function() {
-		rS = aNj.uW.scrollTop >= aNj.uW.scrollHeight - aNj.uW.clientHeight - 2
+		rj(ri, a4v), aNk.uW.appendChild(ri), rm()
+	}, (aNk = new uQ(L(293), [new w("⬅️ " + L(37), function() {
+		t.aMo(1)
+	})])).uW.style.overflowY = "auto", aNk.uW.addEventListener("scroll", function() {
+		rS = aNk.uW.scrollTop >= aNk.uW.scrollHeight - aNk.uW.clientHeight - 2
 	})
 }
 
-function aMj() {
-	var aNj, aNk, aNl, qU;
+function aMk() {
+	var aNk, aNl, aNm, qU;
 
-	function aNm() {
-		aNo(), 2 !== aD.data.iIncomeType && (aD.data.iIncomeData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 2 !== aD.data.iIncomeType && (aD.data.iIncomeData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aNo() {
-		2 === aD.data.iIncomeType && bA.qh.a2d(aNl.ux(), aD.data.iIncomeData, 255)
+	function aNp() {
+		2 === aD.data.iIncomeType && bA.qh.a2d(aNm.ux(), aD.data.iIncomeData, 255)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(287), [new w("⬅️ " + L(37), aNm)]), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(247)), aN8.qN(new uL({
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(287), [new w("⬅️ " + L(37), aNn)]), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC;
+		aN9.qF(L(247)), aN9.qN(new uL({
 			uP: [L(248), L(249), L(250)],
 			value: aD.data.iIncomeType
 		}, function(e8) {
-			aNo(), 2 !== e8 || aD.data.iIncomeData || (aD.data.iIncomeData = new Uint8Array(aD.ek), aD.data.iIncomeData.fill(32)), aD.data.iIncomeType = e8, t.u(27)
-		})), qU.push(aN8)
+			aNp(), 2 !== e8 || aD.data.iIncomeData || (aD.data.iIncomeData = new Uint8Array(aD.ek), aD.data.iIncomeData.fill(32)), aD.data.iIncomeType = e8, t.u(27)
+		})), qU.push(aN9)
 	}(qU = []), function(qU) {
-		var aN8;
-		1 === aD.data.iIncomeType && ((aN8 = new qC).qF("Value"), aN8.qQ(new rN({
+		var aN9;
+		1 === aD.data.iIncomeType && ((aN9 = new qC).qF("Value"), aN9.qQ(new rN({
 			e8: -1,
 			value: aD.data.iIncomeValue
 		}, 1, 0, function(e) {
 			var value = bL.hv(Math.floor(e.target.value), 0, 255);
 			e.target.value = aD.data.iIncomeValue = value
-		})), qU.push(aN8))
+		})), qU.push(aN9))
 	}(qU), function(qU) {
-		var aN8;
-		2 === aD.data.iIncomeType && ((aN8 = new qC).qF("Data"), (aNl = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.iIncomeData, 4)), aN8.qQ(aNl), qU.push(aN8))
+		var aN9;
+		2 === aD.data.iIncomeType && ((aN9 = new qC).qF("Data"), (aNm = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.iIncomeData, 4)), aN9.qQ(aNm), qU.push(aN9))
 	}(qU), qU))
 }
 
-function aMR() {
-	var aPd, aPe, aOj, rM, aPf;
-	this.aGI = new sw, aOj = new rA([.45, .27], [.5, .5], 2 / 3), aPe = [new w("⚔️<br>" + L(294), function() {
-			aPg(0)
+function aMS() {
+	var aPe, aPf, aOk, rM, aPg;
+	this.aGI = new sw, aOk = new rA([.45, .27], [.5, .5], 2 / 3), aPf = [new w("⚔️<br>" + L(294), function() {
+			aPh(0)
 		}, bB.oB), new w("🗡️<br>" + L(277), function() {
-			aPg(1)
+			aPh(1)
 		}, bB.oT), new w("🔑<br>" + L(295), function() {
-			aPg(2)
+			aPh(2)
 		}, bB.ol), new w("☰<br>" + L(296), function() {
-			aPg(3)
+			aPh(3)
 		}, bB.nv), new w("", function() {
 			t.u(12)
 		}, bB.ne, !1),
@@ -8483,39 +8479,39 @@ function aMR() {
 			__fx.customLobby.showJoinPrompt();
 		}, "rgba(20, 9, 77, 0.5)")
 	], rM = new rN(bj.eK.data[122]);
-	for (var aB = 0; aB < aPe.length; aB++) aPe[aB].button.style.position = "absolute";
+	for (var aB = 0; aB < aPf.length; aB++) aPf[aB].button.style.position = "absolute";
 
-	function aPg(e8) {
-		a0.a1.setState(10), ab.tF() || ab.aG9(), 0 === e8 ? t.y.a4k() : 1 === e8 ? (b9.aHp.wE(bj.eK.data[156].value, 1) || aD.a4Q.a4t(), t.u(19)) : 2 === e8 ? 0 !== a0.id || bj.eK.data[140].value ? t.u(8, t.sn, new so(16)) : t.y.aPh(t.sn, 16) : 3 ===
+	function aPh(e8) {
+		a0.a1.setState(10), ab.tF() || ab.aG9(), 0 === e8 ? t.y.a4k() : 1 === e8 ? (b9.aHp.wE(bj.eK.data[156].value, 1) || aD.a4Q.a4t(), t.u(19)) : 2 === e8 ? 0 !== a0.id || bj.eK.data[140].value ? t.u(8, t.sn, new so(16)) : t.y.aPi(t.sn, 16) : 3 ===
 			e8 && t.u(1)
 	}
 	rM.e.style.position = "absolute", rM.e.style.textAlign = "center", rM.e.placeholder = L(297), this.show = function() {
-		aa.setState(0), a0.a1.setState(12), this.aGI.show(), aPe[4].qt(bA.color.a2u(bj.eK.data[121].value)), this.resize(), document.body.appendChild(rM.e);
-		for (var aB = 0; aB < aPe.length; aB++) document.body.appendChild(aPe[aB].button);
-		1 !== a0.id || a0.dv < 5 || (aPf && bf.eM > aPf + 144e5 ? a0.vH.setState(14) : aPf = bf.eM)
+		aa.setState(0), a0.a1.setState(12), this.aGI.show(), aPf[4].qt(bA.color.a2u(bj.eK.data[121].value)), this.resize(), document.body.appendChild(rM.e);
+		for (var aB = 0; aB < aPf.length; aB++) document.body.appendChild(aPf[aB].button);
+		1 !== a0.id || a0.dv < 5 || (aPg && bf.eM > aPg + 144e5 ? a0.vH.setState(14) : aPg = bf.eM)
 	}, this.rq = function() {
 		this.aGI.rq(), document.body.removeChild(rM.e);
-		for (var aB = 0; aB < aPe.length; aB++) document.body.removeChild(aPe[aB].button)
+		for (var aB = 0; aB < aPf.length; aB++) document.body.removeChild(aPf[aB].button)
 	}, this.resize = function() {
-		this.aGI.resize(), this.aGI.resize(), aOj.resize();
+		this.aGI.resize(), this.aGI.resize(), aOk.resize();
 		var gap = .5 * bc.gap,
-			tk = 10 / 99 * .84 * aOj.i,
-			aPk = .16 * aOj.j,
-			a8x = .19 * aOj.i,
-			eu = aOj.eu + a8x,
-			tk = aOj.ew + tk + 3 * gap,
-			i = .5 * (aOj.i - gap) - a8x,
-			a8x = aOj.i - 2 * a8x - aPk - gap,
-			a8x = (bA.qZ.tD(rM.e, eu, tk, a8x, aPk), bA.qZ.tD(aPe[4].button, eu + a8x + gap, tk, aPk, aPk), .5 * (aOj.ew + aOj.j - (tk += aPk + gap) - gap));
-		bA.qZ.tD(aPe[0].button, eu, tk, i, a8x), bA.qZ.tD(aPe[1].button, eu + i + gap, tk, i, a8x), bA.qZ.tD(aPe[2].button, eu, tk + a8x + gap, i, a8x), bA.qZ.tD(aPe[3].button, eu + i + gap, tk + a8x + gap, i, a8x);
-		bA.qZ.tD(aPe[5].button, eu, tk + a8x * 2 + gap * 2, i * 2 + gap, a8x / 3);
-		bA.qZ.tD(aPe[6].button, eu, tk + a8x * 2.33 + gap * 3, i * 2 + gap, a8x / 3);
-		for (var aB = 0; aB < aPe.length; aB++) aPe[aB].button.style.font = bA.qZ.sN(0, bA.qZ.a3A(.065 * aOj.j)), bA.qZ.qj(aPe[aB].button, 5);
-		rM.e.style.font = bA.qZ.sN(0, bA.qZ.a3A(.08 * aOj.j)), bA.qZ.qj(rM.e, 5)
+			tk = 10 / 99 * .84 * aOk.i,
+			aPl = .16 * aOk.j,
+			a8x = .19 * aOk.i,
+			eu = aOk.eu + a8x,
+			tk = aOk.ew + tk + 3 * gap,
+			i = .5 * (aOk.i - gap) - a8x,
+			a8x = aOk.i - 2 * a8x - aPl - gap,
+			a8x = (bA.qZ.tD(rM.e, eu, tk, a8x, aPl), bA.qZ.tD(aPf[4].button, eu + a8x + gap, tk, aPl, aPl), .5 * (aOk.ew + aOk.j - (tk += aPl + gap) - gap));
+		bA.qZ.tD(aPf[0].button, eu, tk, i, a8x), bA.qZ.tD(aPf[1].button, eu + i + gap, tk, i, a8x), bA.qZ.tD(aPf[2].button, eu, tk + a8x + gap, i, a8x), bA.qZ.tD(aPf[3].button, eu + i + gap, tk + a8x + gap, i, a8x);
+		bA.qZ.tD(aPf[5].button, eu, tk + a8x * 2 + gap * 2, i * 2 + gap, a8x / 3);
+		bA.qZ.tD(aPf[6].button, eu, tk + a8x * 2.33 + gap * 3, i * 2 + gap, a8x / 3);
+		for (var aB = 0; aB < aPf.length; aB++) aPf[aB].button.style.font = bA.qZ.sN(0, bA.qZ.a3A(.065 * aOk.j)), bA.qZ.qj(aPf[aB].button, 5);
+		rM.e.style.font = bA.qZ.sN(0, bA.qZ.a3A(.08 * aOk.j)), bA.qZ.qj(rM.e, 5)
 	}, this.uf = function() {
 		if (aa.aFo(), aT.uf(), aO.uf(), bY.uf(), ab.tF()) {
 			if (__fx.settings.displayWinCounter) {
-				const size = Math.floor(aOj.i * 0.03);
+				const size = Math.floor(aOk.i * 0.03);
 				ug.font = bA.qZ.sN(1, size);
 				ug.fillStyle = "#ffffff";
 				const text = "Win count: " + __fx.wins.count;
@@ -8526,25 +8522,25 @@ function aMR() {
 			};
 			ug.imageSmoothingEnabled = !1;
 			var f8 = ab.aFr("territorial.io"),
-				nK = .84 * aOj.i / f8.width;
-			ug.setTransform(nK, 0, 0, nK, aOj.eu + .08 * aOj.i, aOj.ew), aPd = aPd || bA.a2E.a3k(f8, bA.a2E.a3q, [0, 0, 0]);
+				nK = .84 * aOk.i / f8.width;
+			ug.setTransform(nK, 0, 0, nK, aOk.eu + .08 * aOk.i, aOk.ew), aPe = aPe || bA.a2E.a3k(f8, bA.a2E.a3q, [0, 0, 0]);
 			for (var eu = -1; eu <= 1; eu += 2)
-				for (var ew = -1; ew <= 1; ew += 2) ug.drawImage(aPd, eu, ew);
+				for (var ew = -1; ew <= 1; ew += 2) ug.drawImage(aPe, eu, ew);
 			ug.drawImage(f8, 0, 0), ug.imageSmoothingEnabled = !0;
 			var z3 = ab.aFr("logo"),
-				aPm = .6666 * nK * f8.height / z3.height,
+				aPn = .6666 * nK * f8.height / z3.height,
 				nL = .5 * h.i,
-				nM = aOj.ew + .5 * nK * f8.height - .5 * aPm * z3.height;
-			ug.setTransform(aPm, 0, 0, aPm, nL - .6 * nK * f8.width, nM), ug.drawImage(z3, 0, 0), ug.setTransform(aPm, 0, 0, aPm, nL + .6 * nK * f8.width - aPm * z3.width, nM), ug.drawImage(z3, 0, 0), ug.setTransform(1, 0, 0, 1, 0, 0), ug
+				nM = aOk.ew + .5 * nK * f8.height - .5 * aPn * z3.height;
+			ug.setTransform(aPn, 0, 0, aPn, nL - .6 * nK * f8.width, nM), ug.drawImage(z3, 0, 0), ug.setTransform(aPn, 0, 0, aPn, nL + .6 * nK * f8.width - aPn * z3.width, nM), ug.drawImage(z3, 0, 0), ug.setTransform(1, 0, 0, 1, 0, 0), ug
 				.imageSmoothingEnabled = !0
 		}
 	}
 }
 
-function aMY() {
-	var aMp, aPn, aPo, uR;
+function aMZ() {
+	var aMq, aPo, aPp, uR;
 
-	function aPp(aB) {
+	function aPq(aB) {
 		t.u(8, t.sn, new so(21, {
 			t6: aB,
 			t7: 0,
@@ -8552,57 +8548,57 @@ function aMY() {
 		}))
 	}
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aPn.resize()
+		aMq.resize(), aPo.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aPo = [new w(L(298), function() {
-		aPp(1)
+		2 === f8 && aMq.uX[0].qq()
+	}, aPp = [new w(L(298), function() {
+		aPq(1)
 	}, 0, 0, 1), new w(L(299), function() {
-		aPp(2)
+		aPq(2)
 	}, 0, 0, 1), new w(L(300), function() {
-		aPp(3)
+		aPq(3)
 	}, 0, 0, 1), new w(L(301), function() {
-		aPp(0)
+		aPq(0)
 	}, 0, 0, 1), new w(L(302), function() {
-		aPp(9)
+		aPq(9)
 	}, 0, 0, 1), new w(L(303), function() {
-		aPp(10)
+		aPq(10)
 	}, 0, 0, 1), new w(L(304), function() {
-		aPp(11)
+		aPq(11)
 	}, 0, 0, 1)], uR = [new w("⬅️ " + L(37), function() {
 		t.a16()
-	})], aMp = new uQ(L(305), uR), aPn = new r7(aPo, aMp.uW)
+	})], aMq = new uQ(L(305), uR), aPo = new r7(aPp, aMq.uW)
 }
 
-function aCQ(title, qM, aPq) {
-	var aMp, aOx;
+function aCQ(title, qM, aPr) {
+	var aMq, aOy;
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aOx.resize()
+		aMq.resize(), aOy.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aPq = aPq || [new w("⬅️ " + L(37), function() {
+		2 === f8 && aMq.uX[0].qq()
+	}, aPr = aPr || [new w("⬅️ " + L(37), function() {
 		t.a16()
-	}, bB.oN)], aMp = new uQ(title, aPq), aOx = new s2(aMp.uW, qM), bA.qZ.textAlign(aMp.uW.style, 1)
+	}, bB.oN)], aMq = new uQ(title, aPr), aOy = new s2(aMq.uW, qM), bA.qZ.textAlign(aMq.uW.style, 1)
 }
 
-function aPF(data) {
-	var aMp, aPr, f8, sd;
+function aPG(data) {
+	var aMq, aPs, f8, sd;
 
-	function aPs(jQ) {
+	function aPt(jQ) {
 		var en = data.data.length;
 		if (en) {
 			for (var t7, max = min = parseInt(data.data[0][0]), aB = 1; aB < en; aB++) var aEF = parseInt(data.data[aB][0]),
 				min = Math.min(aEF, min),
 				max = Math.max(aEF, max);
-			t7 = jQ < 0 ? min + jQ : max + 1, t.u(8, t.a4x().aMM, new so(21, {
+			t7 = jQ < 0 ? min + jQ : max + 1, t.u(8, t.a4x().aMN, new so(21, {
 				t6: data.t6,
 				t7: t7,
 				t8: t7 + Math.abs(jQ)
@@ -8610,32 +8606,32 @@ function aPF(data) {
 		}
 	}
 	this.show = function() {
-			aMp.show(), this.resize()
+			aMq.show(), this.resize()
 		}, this.rq = function() {
-			aMp.rq()
+			aMq.rq()
 		}, this.resize = function() {
-			aMp.resize(), aPr.resize()
+			aMq.resize(), aPs.resize()
 		}, this.a21 = function(f8) {
-			2 === f8 && aMp.uX[0].qq()
+			2 === f8 && aMq.uX[0].qq()
 		}, f8 = data.data.length ? 0 : 1, f8 = [new w("⬅️ " + L(37), function() {
 			t.a16()
 		}), new w(L(306), function() {
-			aPs(-10)
+			aPt(-10)
 		}, f8, 0, 1), new w(L(307), function() {
-			aPs(10)
+			aPt(10)
 		}, f8, 0, 1), new w(L(255), function() {
-			t.u(11, 10, new aPt({
+			t.u(11, 10, new aPu({
 				t6: data.t6
 			}))
-		})], sd = [L(308), L(309), L(310), L(311), L(312), L(313), L(314), L(315), L(316), L(317), L(303), L(304), L(318)], aMp = new uQ(sd[data.t6], f8),
+		})], sd = [L(308), L(309), L(310), L(311), L(312), L(313), L(314), L(315), L(316), L(317), L(303), L(304), L(318)], aMq = new uQ(sd[data.t6], f8),
 		function() {
 			var aB, eq = {
 					sX: []
 				},
 				sX = eq.sX,
-				aPv = data.data,
-				en = aPv.length;
-			en && 0 === aPv[0][0] && 0 <= (e8 = [0, 1, 2, 3, -1, -1, -1, -1, -1, 4, 5, 6, -1][data.t6]) && (t.y.t9[e8] = aPv[0][1]);
+				aPw = data.data,
+				en = aPw.length;
+			en && 0 === aPw[0][0] && 0 <= (e8 = [0, 1, 2, 3, -1, -1, -1, -1, -1, 4, 5, 6, -1][data.t6]) && (t.y.t9[e8] = aPw[0][1]);
 			var nK = [.1, .001, .01, 1, 100, 1, 1, .1, 100, .01, .01, .01, 1][data.t6],
 				a3w = [1, 3, 2, 0, 0, 0, 0, 1, 0, 2, 2, 2, 0][data.t6],
 				e8 = [
@@ -8669,243 +8665,243 @@ function aPF(data) {
 					[12, 13, 25, 25, 25]
 				][data.t6], 0 === data.t6 || 2 === data.t6 || 3 === data.t6 || 9 === data.t6 || 10 === data.t6 || 11 === data.t6)
 				for (aB = 0; aB < en; aB++) sX.push([{
-					fF: aPv[aB][0] + 1 + ".",
+					fF: aPw[aB][0] + 1 + ".",
 					dt: 0
 				}, {
-					fF: aPv[aB][1],
+					fF: aPw[aB][1],
 					dt: 1,
-					sl: aPv[aB][4],
-					sm: aPv[aB][3]
+					sl: aPw[aB][4],
+					sm: aPw[aB][3]
 				}, {
-					fF: (nK * aPv[aB][2]).toFixed(a3w),
+					fF: (nK * aPw[aB][2]).toFixed(a3w),
 					dt: 0
 				}]);
 			else if (12 === data.t6)
 				for (aB = 0; aB < en; aB++) {
-					var aPy = aPv[aB][3];
+					var aPz = aPw[aB][3];
 					sX.push([{
-						fF: "" + aPv[aB][0],
+						fF: "" + aPw[aB][0],
 						dt: 0
 					}, {
-						fF: "" + aPv[aB][4],
+						fF: "" + aPw[aB][4],
 						dt: 0
 					}, {
-						fF: aPv[aB][5],
+						fF: aPw[aB][5],
 						dt: 1,
-						sl: aPv[aB][1],
+						sl: aPw[aB][1],
 						sm: 0
 					}, {
-						fF: aPv[aB][6],
+						fF: aPw[aB][6],
 						dt: 1,
-						sl: aPv[aB][2],
+						sl: aPw[aB][2],
 						sm: 0
 					}, {
-						fF: bo.eE(aPy % 16, aPy >> 4),
+						fF: bo.eE(aPz % 16, aPz >> 4),
 						dt: 0
 					}])
 				} else if (1 === data.t6)
 					for (aB = 0; aB < en; aB++) sX.push([{
-						fF: aPv[aB][0] + 1 + ".",
+						fF: aPw[aB][0] + 1 + ".",
 						dt: 0
 					}, {
-						fF: aPv[aB][1],
+						fF: aPw[aB][1],
 						dt: 0
 					}, {
-						fF: (nK * aPv[aB][2]).toFixed(a3w),
+						fF: (nK * aPw[aB][2]).toFixed(a3w),
 						dt: 0
 					}, {
-						fF: aPv[aB][3],
+						fF: aPw[aB][3],
 						dt: 1,
-						sl: aPv[aB][5],
-						sm: aPv[aB][4]
+						sl: aPw[aB][5],
+						sm: aPw[aB][4]
 					}]);
 				else if (4 === data.t6 || 5 === data.t6 || 6 === data.t6 || 7 === data.t6 || 8 === data.t6)
 				for (aB = 0; aB < en; aB++) {
-					var aPz = aPv[aB][5];
-					4 === data.t6 || 8 === data.t6 ? "100%" === (aPz = (aPz % 64 * 100 / (aPz >> 6)).toFixed(0) + "%") && (4 === data.t6 ? aPz += " (" + L(340) + ")" : aPz += " (" + L(341) + ")") : 5 === data.t6 ? 32768 <= aPz && (aPz = -(aPz -
-						32768)) : aPz = (nK * aPz).toFixed(a3w), sX.push([{
-						fF: "" + aPv[aB][0],
+					var aQ0 = aPw[aB][5];
+					4 === data.t6 || 8 === data.t6 ? "100%" === (aQ0 = (aQ0 % 64 * 100 / (aQ0 >> 6)).toFixed(0) + "%") && (4 === data.t6 ? aQ0 += " (" + L(340) + ")" : aQ0 += " (" + L(341) + ")") : 5 === data.t6 ? 32768 <= aQ0 && (aQ0 = -(aQ0 -
+						32768)) : aQ0 = (nK * aQ0).toFixed(a3w), sX.push([{
+						fF: "" + aPw[aB][0],
 						dt: 0
 					}, {
-						fF: "" + aPv[aB][6],
+						fF: "" + aPw[aB][6],
 						dt: 0
 					}, {
-						fF: aPv[aB][7],
+						fF: aPw[aB][7],
 						dt: 1,
-						sl: aPv[aB][1],
-						sm: aPv[aB][2]
+						sl: aPw[aB][1],
+						sm: aPw[aB][2]
 					}, {
-						fF: aPv[aB][8],
+						fF: aPw[aB][8],
 						dt: 1,
-						sl: aPv[aB][3],
-						sm: aPv[aB][4]
+						sl: aPw[aB][3],
+						sm: aPw[aB][4]
 					}, {
-						fF: "" + aPz,
+						fF: "" + aQ0,
 						dt: 0
 					}])
 				}
-			aPr = new sW(aMp.uW, eq)
+			aPs = new sW(aMq.uW, eq)
 		}()
 }
 
-function aPt(a3m) {
-	var aMp, aMq, qU;
+function aPu(a3m) {
+	var aMq, aMr, qU;
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aMq.resize()
+		aMq.resize(), aMr.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aMp = new uQ(L(342), [new w("⬅️ " + L(37), function() {
-		t.aMn(10)
-	})]), aMq = new qS(aMp.uW, ((qU = []).push(function() {
-		var aNH, aN8 = new qC,
-			aOh = new rN(bj.eK.data[132], 1, function() {
-				aNH.button.click()
+		2 === f8 && aMq.uX[0].qq()
+	}, aMq = new uQ(L(342), [new w("⬅️ " + L(37), function() {
+		t.aMo(10)
+	})]), aMr = new qS(aMq.uW, ((qU = []).push(function() {
+		var aNI, aN9 = new qC,
+			aOi = new rN(bj.eK.data[132], 1, function() {
+				aNI.button.click()
 			}),
-			aOi = new rN(bj.eK.data[131], 1, function() {
-				aOh.e.focus()
+			aOj = new rN(bj.eK.data[131], 1, function() {
+				aOi.e.focus()
 			});
-		aN8.qF(L(260)), aN8.qQ(aOi), aOi.e.style.marginBottom = "0.8em", aN8.qF(L(261)), aN8.qQ(aOh);
-		return aNH = new w(L(259), function() {
-			t7 = Math.floor(aOi.e.value), t8 = Math.floor(aOh.e.value);
+		aN9.qF(L(260)), aN9.qQ(aOj), aOj.e.style.marginBottom = "0.8em", aN9.qF(L(261)), aN9.qQ(aOi);
+		return aNI = new w(L(259), function() {
+			t7 = Math.floor(aOj.e.value), t8 = Math.floor(aOi.e.value);
 			var t8, t7 = {
 				a2V: Math.min(t7, t8),
-				aLx: Math.max(t7, t8)
+				aLy: Math.max(t7, t8)
 			};
-			t.u(8, t.a4y(10).aMM, new so(21, {
+			t.u(8, t.a4y(10).aMN, new so(21, {
 				t6: a3m.t6,
 				t7: t7.a2V,
-				t8: t7.aLx
+				t8: t7.aLy
 			}))
-		}, 0, 0, 1), aN8.qQ(new s3([aNH.button])), aN8
+		}, 0, 0, 1), aN9.qQ(new s3([aNI.button])), aN9
 	}()), qU.push(function() {
-		var aNH, aN8 = new qC,
-			aOh = new rN(bj.eK.data[134], 1, function() {
-				aNH.button.click()
+		var aNI, aN9 = new qC,
+			aOi = new rN(bj.eK.data[134], 1, function() {
+				aNI.button.click()
 			}),
-			aOi = new rN(bj.eK.data[133], 0, function() {
-				aOh.e.focus()
+			aOj = new rN(bj.eK.data[133], 0, function() {
+				aOi.e.focus()
 			});
-		return aN8.qF(1 === a3m.t6 ? L(343) : L(344)), aN8.qQ(aOi), aOi.e.style.marginBottom = "0.8em", aN8.qF(L(345)), aN8.qQ(aOh), aNH = new w(L(259), function() {
-			var aP7 = aOi.e.value.slice(0, 20),
-				aP8 = Math.abs(Math.floor(aOh.e.value));
-			t.u(8, t.a4y(10).aMM, new so(22, {
+		return aN9.qF(1 === a3m.t6 ? L(343) : L(344)), aN9.qQ(aOj), aOj.e.style.marginBottom = "0.8em", aN9.qF(L(345)), aN9.qQ(aOi), aNI = new w(L(259), function() {
+			var aP8 = aOj.e.value.slice(0, 20),
+				aP9 = Math.abs(Math.floor(aOi.e.value));
+			t.u(8, t.a4y(10).aMN, new so(22, {
 				t6: a3m.t6,
-				aP7: aP7,
-				aP8: aP8
+				aP8: aP8,
+				aP9: aP9
 			}))
-		}, 0, 0, 1), aN8.qQ(new s3([aNH.button])), aN8
+		}, 0, 0, 1), aN9.qQ(new s3([aNI.button])), aN9
 	}()), qU.push(function() {
-		var aNH, aN8 = new qC,
-			aOh = new rN(bj.eK.data[152], 1, function() {
-				aNH.button.click()
+		var aNI, aN9 = new qC,
+			aOi = new rN(bj.eK.data[152], 1, function() {
+				aNI.button.click()
 			}),
-			aOi = new rN(bj.eK.data[151], 0, function() {
-				aOh.e.focus()
+			aOj = new rN(bj.eK.data[151], 0, function() {
+				aOi.e.focus()
 			});
-		return aN8.qF(L(346)), aN8.qQ(aOi), aOi.e.style.marginBottom = "0.8em", aN8.qF(L(345)), aN8.qQ(aOh), aNH = new w(L(259), function() {
-			var aP7 = aOi.e.value.slice(0, 5),
-				aP8 = Math.abs(Math.floor(aOh.e.value));
-			t.u(8, t.a4y(10).aMM, new so(28, {
+		return aN9.qF(L(346)), aN9.qQ(aOj), aOj.e.style.marginBottom = "0.8em", aN9.qF(L(345)), aN9.qQ(aOi), aNI = new w(L(259), function() {
+			var aP8 = aOj.e.value.slice(0, 5),
+				aP9 = Math.abs(Math.floor(aOi.e.value));
+			t.u(8, t.a4y(10).aMN, new so(28, {
 				t6: a3m.t6,
-				aP7: aP7,
-				aP8: aP8
+				aP8: aP8,
+				aP9: aP9
 			}))
-		}, 0, 0, 1), aN8.qQ(new s3([aNH.button])), aN8
+		}, 0, 0, 1), aN9.qQ(new s3([aNI.button])), aN9
 	}()), qU))
 }
 
-function aMl() {
-	var aQ3, tJ, aQ6, tI, tL, aQ4 = [new Array(4), [], new Array(2), new Array(2)],
-		aQ5 = new Array(4),
-		aQ7 = new Array(2),
-		aQ8 = [L(61), L(302), L(347), L(348)];
+function aMm() {
+	var aQ4, tJ, aQ7, tI, tL, aQ5 = [new Array(4), [], new Array(2), new Array(2)],
+		aQ6 = new Array(4),
+		aQ8 = new Array(2),
+		aQ9 = [L(61), L(302), L(347), L(348)];
 
 	function aE0() {
-		var a6p = aQ3.tW.rM.e.value.trim().slice(0, 127);
-		a6p.length < 1 || (aQ3.tW.rM.e.value = "", bn.aCT.a00(a6p))
+		var a6p = aQ4.tW.rM.e.value.trim().slice(0, 127);
+		a6p.length < 1 || (aQ4.tW.rM.e.value = "", bn.aCT.a00(a6p))
 	}
 
-	function aQB(aQD) {
-		bn.y.rd[3] = 1 - bn.y.rd[3], aQC(3, 1, bn.y.rd[3]), aQD && b0.aEB.aEC(4), bn.y.rd[3] && bj.s0.s1(158, bn.y.rd[0])
+	function aQC(aQE) {
+		bn.y.rd[3] = 1 - bn.y.rd[3], aQD(3, 1, bn.y.rd[3]), aQE && b0.aEB.aEC(4), bn.y.rd[3] && bj.s0.s1(158, bn.y.rd[0])
 	}
 
-	function aQ9(f6, f7) {
-		bn.y.rd[f6] !== f7 && (0 === f6 && bn.y.rd[3] && aQB(0), aQC(f6, bn.y.rd[f6], 0), aQC(f6, f7, 1), bn.y.rd[f6] = f7, 0 === f6 ? (b0.aEB.aEC(2, f7), bn.y.rd[2] ? (aQ3.tX.mV(), aQ3.tW.ra(1)) : aQ3.tW.ra(0), t.a4x().aDp(), t.a4x().aDo()) : 2 ===
-			f6 && (0 === f7 ? (b0.aEB.aEC(0), aQ3.tW.mV(), aQ3.tf()) : (b0.aEB.aEC(1), aQ3.tX.mV(), aQ3.tg())))
+	function aQA(f6, f7) {
+		bn.y.rd[f6] !== f7 && (0 === f6 && bn.y.rd[3] && aQC(0), aQD(f6, bn.y.rd[f6], 0), aQD(f6, f7, 1), bn.y.rd[f6] = f7, 0 === f6 ? (b0.aEB.aEC(2, f7), bn.y.rd[2] ? (aQ4.tX.mV(), aQ4.tW.ra(1)) : aQ4.tW.ra(0), t.a4x().aDp(), t.a4x().aDo()) : 2 ===
+			f6 && (0 === f7 ? (b0.aEB.aEC(0), aQ4.tW.mV(), aQ4.tf()) : (b0.aEB.aEC(1), aQ4.tX.mV(), aQ4.tg())))
 	}
 
-	function aQC(f6, f7, color) {
-		aQ3.tZ[f6].r8[f7].qt(color ? bB.o7 : bB.ou)
+	function aQD(f6, f7, color) {
+		aQ4.tZ[f6].r8[f7].qt(color ? bB.o7 : bB.ou)
 	}
 
-	function aQG(aD3) {
+	function aQH(aD3) {
 		return aD3 < 7 ? aD3 + 2 + " " + L(355) : 7 === aD3 || 10 === aD3 ? L(302) + " (Full-Sending: " + L(7 === aD3 ? 356 : 357) + ")" : 8 === aD3 ? "1v1" : L(358)
 	}
 
-	function aQH(fF) {
+	function aQI(fF) {
 		var a6s = bL.du(fF, 60),
 			fF = fF % 60;
 		return (a6s < 10 ? "0" : "") + a6s + ":" + (fF < 10 ? "0" : "") + fF
 	}
 	this.aEN = function() {
-		return aQ3.tW
+		return aQ4.tW
 	}, this.aCT = function(sl) {
-		aQ9(2, 0);
-		var qG = aQ3.tW.rM.e.value,
+		aQA(2, 0);
+		var qG = aQ4.tW.rM.e.value,
 			sl = "@" + sl + " ";
-		qG.length && !bA.rY.a3H(qG, " ") && (sl = " " + sl), aQ3.tW.rM.e.value = qG += sl, aQ3.tW.rM.e.focus()
+		qG.length && !bA.rY.a3H(qG, " ") && (sl = " " + sl), aQ4.tW.rM.e.value = qG += sl, aQ4.tW.rM.e.focus()
 	}, this.aDn = function() {
-		aQ3.tX.mV()
+		aQ4.tX.mV()
 	}, this.aDp = function() {
-		var aQF = bn.y.rd[0],
-			aQF = bn.y.rf[aQF];
-		bS.a7(aQF.eT, aQF.mapSeed), tJ.r8[0].button.textContent = L(279) + ": " + bS.wJ.wK[aQF.eT].name, tJ.r8[1].button.textContent = L(281, 0, "Mode") + ": " + aQG(aQF.aD3), tJ.r8[2].button.textContent = L(352) + ": " + bS.wJ.wK[aQF.aEl].name,
-			tJ.r8[3].button.textContent = L(353, 0, "Next Mode") + ": " + aQG(aQF.aEm), tJ.r8[4].button.textContent = L(354) + ": " + aQH(aQF.aDr), tJ.resize()
+		var aQG = bn.y.rd[0],
+			aQG = bn.y.rf[aQG];
+		bS.a7(aQG.eT, aQG.mapSeed), tJ.r8[0].button.textContent = L(279) + ": " + bS.wJ.wK[aQG.eT].name, tJ.r8[1].button.textContent = L(281, 0, "Mode") + ": " + aQH(aQG.aD3), tJ.r8[2].button.textContent = L(352) + ": " + bS.wJ.wK[aQG.aEl].name,
+			tJ.r8[3].button.textContent = L(353, 0, "Next Mode") + ": " + aQH(aQG.aEm), tJ.r8[4].button.textContent = L(354) + ": " + aQI(aQG.aDr), tJ.resize()
 	}, this.aDo = function() {
-		var aQF = bn.y.rd[0],
-			re = bn.y.rf[aQF];
-		aQ3.td(re.te);
-		for (var aB = 0; aB < bn.tt.tu.length; aB++) aQ4[0][aB].rX.textContent = "" + bn.tt.tu[aB].length;
-		var tt = bn.tt.tu[aQF],
-			aQI = tt.length,
-			aQJ = bn.tt.tv[aQF];
-		aQ4[2][1].rX.textContent = "" + aQI, aQ4[3][1].rX.textContent = "" + aQJ, tJ.r8[4].button.textContent = L(354) + ": " + aQH(re.aDr);
+		var aQG = bn.y.rd[0],
+			re = bn.y.rf[aQG];
+		aQ4.td(re.te);
+		for (var aB = 0; aB < bn.tt.tu.length; aB++) aQ5[0][aB].rX.textContent = "" + bn.tt.tu[aB].length;
+		var tt = bn.tt.tu[aQG],
+			aQJ = tt.length,
+			aQK = bn.tt.tv[aQG];
+		aQ5[2][1].rX.textContent = "" + aQJ, aQ5[3][1].rX.textContent = "" + aQK, tJ.r8[4].button.textContent = L(354) + ": " + aQI(re.aDr);
 		for (aB = 0; aB < 4; aB++) {
-			var aQK = bn.y.rf[aB];
-			aQ5[aB] ? 0 === aQK.te && (aQ5[aB].rX.textContent = bS.wJ.wK[aQK.eT].name) : aQ5[aB] = new rW(bS.wJ.wK[aQK.eT].name, tI.r8[aB].button, 1, 1), bA.rY.startsWith(aQ8[aB], "🏆 ") ? aQK.aD9 || (aQ8[aB] = aQ8[aB].substring(3), tI.r8[aB]
-				.button.textContent = aQ8[aB], tI.r8[aB].button.appendChild(aQ4[0][aB].rX), tI.r8[aB].button.appendChild(aQ5[aB].rX)) : aQK.aD9 && (aQ8[aB] = "🏆 " + aQ8[aB], tI.r8[aB].button.textContent = aQ8[aB], tI.r8[aB].button
-				.appendChild(aQ4[0][aB].rX), tI.r8[aB].button.appendChild(aQ5[aB].rX))
+			var aQL = bn.y.rf[aB];
+			aQ6[aB] ? 0 === aQL.te && (aQ6[aB].rX.textContent = bS.wJ.wK[aQL.eT].name) : aQ6[aB] = new rW(bS.wJ.wK[aQL.eT].name, tI.r8[aB].button, 1, 1), bA.rY.startsWith(aQ9[aB], "🏆 ") ? aQL.aD9 || (aQ9[aB] = aQ9[aB].substring(3), tI.r8[aB]
+				.button.textContent = aQ9[aB], tI.r8[aB].button.appendChild(aQ5[0][aB].rX), tI.r8[aB].button.appendChild(aQ6[aB].rX)) : aQL.aD9 && (aQ9[aB] = "🏆 " + aQ9[aB], tI.r8[aB].button.textContent = aQ9[aB], tI.r8[aB].button
+				.appendChild(aQ5[0][aB].rX), tI.r8[aB].button.appendChild(aQ6[aB].rX))
 		}
 		var re = "",
-			aQM = "";
-		0 === aQF && (re = bn.kx.aDN(tt, 0, aQI), aQM = bn.kx.aDN(tt, 0, aQJ)), aQ6[0].rX.textContent = re, aQ6[1].rX.textContent = aQM, aQ7[1].rX.textContent = "MP: " + bn.y.aDg[0] + "   SP: " + bn.y.aDg[1] + "   Lobby: " + bA.qh.a2i(bn.tt.tu)
+			aQN = "";
+		0 === aQG && (re = bn.kx.aDN(tt, 0, aQJ), aQN = bn.kx.aDN(tt, 0, aQK)), aQ7[0].rX.textContent = re, aQ7[1].rX.textContent = aQN, aQ8[1].rX.textContent = "MP: " + bn.y.aDg[0] + "   SP: " + bn.y.aDg[1] + "   Lobby: " + bA.qh.a2i(bn.tt.tu)
 	}, this.aDt = function() {
-		aQ3.tW.mV()
+		aQ4.tW.mV()
 	}, this.show = function() {
-		aQ3.show(), this.resize(), bn.message.show()
+		aQ4.show(), this.resize(), bn.message.show()
 	}, this.rq = function() {
-		aQ3.rq(), bn.uF.rq(), bn.tr.rq(), bn.message.rq()
+		aQ4.rq(), bn.uF.rq(), bn.tr.rq(), bn.message.rq()
 	}, this.resize = function() {
-		aQ3.resize(1 - bn.y.rd[2]), bn.message.resize()
+		aQ4.resize(1 - bn.y.rd[2]), bn.message.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 ? bn.y.rd[3] ? aQB(1) : aQ3.tZ[3].r8[0].qq() : f8 < 2 && aQB(1)
-	}, tI = new s6([new w(aQ8[0], function() {
-		return aQ9(0, 0), 2
-	}), new w(aQ8[1], function() {
-		return aQ9(0, 1), 2
-	}), new w(aQ8[2], function() {
-		return aQ9(0, 2), 2
-	}), new w(aQ8[3], function() {
-		return aQ9(0, 3), 2
+		2 === f8 ? bn.y.rd[3] ? aQC(1) : aQ4.tZ[3].r8[0].qq() : f8 < 2 && aQC(1)
+	}, tI = new s6([new w(aQ9[0], function() {
+		return aQA(0, 0), 2
+	}), new w(aQ9[1], function() {
+		return aQA(0, 1), 2
+	}), new w(aQ9[2], function() {
+		return aQA(0, 2), 2
+	}), new w(aQ9[3], function() {
+		return aQA(0, 3), 2
 	})], bB.ou), tJ = new s6([new w("", 0, 2), new w("", 0, 2), new w("", 0, 2), new w("", 0, 2), new w("", 0, 2)], bB.ov, 1);
-	var aQA = new s6([new w(L(349), function() {
-		return aQ9(2, 0), 2
+	var aQB = new s6([new w(L(349), function() {
+		return aQA(2, 0), 2
 	}), new w(L(113), function() {
-		return aQ9(2, 1), 2
+		return aQA(2, 1), 2
 	})], bB.ou);
 	tL = new s6([new w(L(350), (__fx.customLobby.setLeaveFunction(() => {
 			t.x(), bn.u9(), b0.y.a1G(3240), __fx.customLobby.setActive(false), t.u(5, 5)
@@ -8913,49 +8909,49 @@ function aMl() {
 		function() {
 			t.x(), bn.u9(), b0.y.a1G(3240), __fx.customLobby.setActive(false), t.u(5, 5)
 		})), new w(L(351), function() {
-		return aQB(1), 2
-	})], bB.ou), aQ3 = new tH(tI, tJ, aQA, tL, aE0, bn.uF.aEW);
-	for (var aB = 0; aB < 4; aB++) aQ4[0][aB] = new rW("0", tI.r8[aB].button);
-	aQ4[2][1] = new rW("0", aQA.r8[1].button), aQ4[3][1] = new rW("0", tL.r8[1].button), aQ6 = [new rW("", aQA.r8[1].button, 1, 1), new rW("", tL.r8[1].button, 1, 1)], aQC(0, bn.y.rd[0], 1), aQC(2, bn.y.rd[2], 1), (aQ7 = [new rW(L(253), aQ3.th(), 1,
-		0), new rW("", aQ3.th(), 1, 1)])[0].rX.style.fontSize = "0.4em", aQ7[1].rX.style.fontSize = "0.4em"
+		return aQC(1), 2
+	})], bB.ou), aQ4 = new tH(tI, tJ, aQB, tL, aE0, bn.uF.aEW);
+	for (var aB = 0; aB < 4; aB++) aQ5[0][aB] = new rW("0", tI.r8[aB].button);
+	aQ5[2][1] = new rW("0", aQB.r8[1].button), aQ5[3][1] = new rW("0", tL.r8[1].button), aQ7 = [new rW("", aQB.r8[1].button, 1, 1), new rW("", tL.r8[1].button, 1, 1)], aQD(0, bn.y.rd[0], 1), aQD(2, bn.y.rd[2], 1), (aQ8 = [new rW(L(253), aQ4.th(), 1,
+		0), new rW("", aQ4.th(), 1, 1)])[0].rX.style.fontSize = "0.4em", aQ8[1].rX.style.fontSize = "0.4em"
 }
 
-function aMS() {
-	var aMp, aMq, qU;
+function aMT() {
+	var aMq, aMr, qU;
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aMq.resize()
+		aMq.resize(), aMr.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aMp = new uQ(L(359), [new w("⬅️ " + L(37), function() {
-		t.u(7, t.a4y(7).aMM)
+		2 === f8 && aMq.uX[0].qq()
+	}, aMq = new uQ(L(359), [new w("⬅️ " + L(37), function() {
+		t.u(7, t.a4y(7).aMN)
 	}), new w(L(191), function() {
-		bj.s0.s1(105, bG.sq.w3(aMq.qW[0].qD[0].e.value, 5)), bj.s0.s1(106, bG.sq.w3(aMq.qW[1].qD[0].e.value, 8)), t.u(8, t.a4y(7).aMM, new so(18))
-	})]), aMq = new qS(aMp.uW, ((qU = []).push(function() {
-		var aN8 = new qC;
-		return aN8.qF(L(172)), aN8.qQ(new rN({
+		bj.s0.s1(105, bG.sq.w3(aMr.qW[0].qD[0].e.value, 5)), bj.s0.s1(106, bG.sq.w3(aMr.qW[1].qD[0].e.value, 8)), t.u(8, t.a4y(7).aMN, new so(18))
+	})]), aMr = new qS(aMq.uW, ((qU = []).push(function() {
+		var aN9 = new qC;
+		return aN9.qF(L(172)), aN9.qQ(new rN({
 			value: "",
 			e8: -1
-		})), aN8
+		})), aN9
 	}()), qU.push(function() {
-		var aN8 = new qC,
-			aNJ = (aN8.qF(L(174)), new rN({
+		var aN9 = new qC,
+			aNK = (aN9.qF(L(174)), new rN({
 				value: "",
 				e8: -1
 			}));
-		return aNJ.e.type = "password", aN8.qQ(aNJ), aN8.qQ(new s3([new w(L(175), function(e) {
-			return e.textContent === L(175) ? (e.textContent = L(176), aNJ.e.type = "text") : (e.textContent = L(175), aNJ.e.type = "password"), !0
-		}).button])), aN8
+		return aNK.e.type = "password", aN9.qQ(aNK), aN9.qQ(new s3([new w(L(175), function(e) {
+			return e.textContent === L(175) ? (e.textContent = L(176), aNK.e.type = "text") : (e.textContent = L(175), aNK.e.type = "password"), !0
+		}).button])), aN9
 	}()), qU))
 }
 
-function aMZ() {
-	var aMp, aPn, aPo, uR;
+function aMa() {
+	var aMq, aPo, aPp, uR;
 
-	function aPp(aB) {
+	function aPq(aB) {
 		t.u(8, t.sn, new so(21, {
 			t6: aB,
 			t7: 0,
@@ -8963,28 +8959,28 @@ function aMZ() {
 		}))
 	}
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aPn.resize()
+		aMq.resize(), aPo.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aPo = [new w(L(313), function() {
-		aPp(5)
+		2 === f8 && aMq.uX[0].qq()
+	}, aPp = [new w(L(313), function() {
+		aPq(5)
 	}, 0, 0, 1), new w(L(314), function() {
-		aPp(6)
+		aPq(6)
 	}, 0, 0, 1), new w(L(315), function() {
-		aPp(7)
+		aPq(7)
 	}, 0, 0, 1), new w(L(318), function() {
-		aPp(12)
+		aPq(12)
 	}, 0, 0, 1)], uR = [new w("⬅️ " + L(37), function() {
 		t.a16()
-	})], aMp = new uQ(L(360), uR), aPn = new r7(aPo, aMp.uW)
+	})], aMq = new uQ(L(360), uR), aPo = new r7(aPp, aMq.uW)
 }
 
-function aMI() {
-	this.eK = {}, this.t9 = new Array(7), this.aMX = null, this.aMU = null, this.sU = 0, this.aHf = [0, 0], this.z = function() {
+function aMJ() {
+	this.eK = {}, this.t9 = new Array(7), this.aMY = null, this.aMV = null, this.sU = 0, this.aHf = [0, 0], this.z = function() {
 		t.u(5, 5)
 	}, this.a4k = function() {
 		t.x(), aZ.dd()
@@ -8992,207 +8988,207 @@ function aMI() {
 		t.x(), aZ.dd()
 	}), this.aC2 = function() {
 		t.u(0 === aa.a17() ? 5 : 0)
-	}, this.aOg = function() {
-		if (1 === bj.eK.data[130].value) t.u(8, t.a4x().aMM, new so(24, {
-			aOC: bj.eK.data[125].value,
+	}, this.aOh = function() {
+		if (1 === bj.eK.data[130].value) t.u(8, t.a4x().aMN, new so(24, {
+			aOD: bj.eK.data[125].value,
 			t7: bj.eK.data[128].value,
 			t8: bj.eK.data[129].value
 		}));
 		else {
 			for (var g = (g = bj.eK.data[126].value.split(",")).slice(0, 10), aB = 0; aB < g.length; aB++) g[aB] = g[aB].trim().slice(0, 7).toUpperCase();
-			1 === g.length && 0 === g[0].length && (g = []), t.u(8, t.a4x().aMM, new so(23, {
-				aOC: bj.eK.data[125].value,
+			1 === g.length && 0 === g[0].length && (g = []), t.u(8, t.a4x().aMN, new so(23, {
+				aOD: bj.eK.data[125].value,
 				a0b: g
 			}))
 		}
-	}, this.aPh = function(aMM, target) {
-		t.u(4, aMM, new v("Data Usage Information",
-			"Do you want your username and other data to be remembered for the next session?<br>The app might not function correctly if you decline data usage.<br>Please read our privacy policy for more information: <a href='" + bK.aQO +
-			"' target='_blank'>" + bK.aQO + "</a>", !1, [new w("⬅️ " + L(37), function() {
-				t.u(aMM)
+	}, this.aPi = function(aMN, target) {
+		t.u(4, aMN, new v("Data Usage Information",
+			"Do you want your username and other data to be remembered for the next session?<br>The app might not function correctly if you decline data usage.<br>Please read our privacy policy for more information: <a href='" + bK.aQP +
+			"' target='_blank'>" + bK.aQP + "</a>", !1, [new w("⬅️ " + L(37), function() {
+				t.u(aMN)
 			}), new w("✅ Accept", function() {
-				bj.s0.s1(140, 1), 0 === target ? t.u(2, aMM) : t.u(8, aMM, new so(target))
+				bj.s0.s1(140, 1), 0 === target ? t.u(2, aMN) : t.u(8, aMN, new so(target))
 			})]))
-	}, this.aQP = function() {
+	}, this.aQQ = function() {
 		for (var aB = 0; aB < 7; aB++) this.t9[aB] = bG.vu.vy(bH.pg(5));
 		this.t9[1] = "[" + this.t9[1] + "]", 5 === t.sn && (t.a4x().aGI.s1(this.t9), t.a4x().resize())
 	}
 }
 
-function aMc() {
-	var aNj, aNk, aQQ, qU;
+function aMd() {
+	var aNk, aNl, aQR, qU;
 
-	function aNm() {
-		b6.u9(), t.aMo()[19] = null, t.a16()
-	}
-
-	function aQX() {
-		aQa(), aQY()
-	}
-
-	function aQa() {
-		aQQ.qE.lastChild && aQQ.qE.removeChild(aQQ.qE.lastChild)
+	function aNn() {
+		b6.u9(), t.aMp()[19] = null, t.a16()
 	}
 
 	function aQY() {
-		var aQb = bS.a4q(aD.data);
-		aD.data.canvas = bS.aKH(aQb, aD.data.mapSeed).wT, aQZ()
+		aQb(), aQZ()
+	}
+
+	function aQb() {
+		aQR.qE.lastChild && aQR.qE.removeChild(aQR.qE.lastChild)
 	}
 
 	function aQZ() {
+		var aQc = bS.a4q(aD.data);
+		aD.data.canvas = bS.aKI(aQc, aD.data.mapSeed).wT, aQa()
+	}
+
+	function aQa() {
 		var a2n = aD.data.canvas;
-		a2n.style.width = "100%", aQQ.qE.appendChild(a2n)
+		a2n.style.width = "100%", aQR.qE.appendChild(a2n)
 	}
 	this.aHP = function(a2n) {
-		aD.data.canvas && aQa(), aD.data.canvas = a2n, aQZ()
+		aD.data.canvas && aQb(), aD.data.canvas = a2n, aQa()
 	}, this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(279), [new w("⬅️ " + L(37), aNm)]), 2 === aD.data.mapType && b6.dd(), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(247)), aN8.qN(new uL({
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(279), [new w("⬅️ " + L(37), aNn)]), 2 === aD.data.mapType && b6.dd(), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC;
+		aN9.qF(L(247)), aN9.qN(new uL({
 			uP: [L(361), L(362), L(363)],
 			value: aD.data.mapType
 		}, function(e8) {
 			2 === (aD.data.mapType = e8) ? (b6.dd(), aD.data.canvas = null) : (aD.data.passableWater = aD.data.passableMountains = 1, b6.u9()), t.u(20)
-		})), 2 <= aD.data.mapType && (aN8.qQ(new sD), aN8.qQ(new rx({
+		})), 2 <= aD.data.mapType && (aN9.qQ(new sD), aN9.qQ(new rx({
 			value: aD.data.passableWater
 		}, L(364), function(value) {
 			aD.data.passableWater = value
-		})), aN8.qQ(new rx({
+		})), aN9.qQ(new rx({
 			value: aD.data.passableMountains
 		}, L(365), function(value) {
 			aD.data.passableMountains = value
 		})));
-		qU.push(aN8)
+		qU.push(aN9)
 	}(qU = []), function(qU) {
 		if (0 === aD.data.mapType) {
-			for (var aN8 = new qC, uP = (aN8.qF(L(279)), []), aB = 0; aB < bS.wJ.aLD.length; aB++) uP.push(bS.wJ.wK[bS.wJ.aLD[aB]].name);
-			aN8.qN(new uL({
+			for (var aN9 = new qC, uP = (aN9.qF(L(279)), []), aB = 0; aB < bS.wJ.aLE.length; aB++) uP.push(bS.wJ.wK[bS.wJ.aLE[aB]].name);
+			aN9.qN(new uL({
 				uP: uP,
 				value: aD.data.mapProceduralIndex
 			}, function(e8) {
-				aD.data.mapProceduralIndex = e8, aQX()
-			})), qU.push(aN8)
+				aD.data.mapProceduralIndex = e8, aQY()
+			})), qU.push(aN9)
 		}
 	}(qU), function(qU) {
 		if (1 === aD.data.mapType) {
-			for (var aN8 = new qC, uP = (aN8.qF(L(279)), []), aB = 0; aB < bS.wJ.aLE.length; aB++) uP.push(bS.wJ.wK[bS.wJ.aLE[aB]].name);
-			aN8.qN(new uL({
+			for (var aN9 = new qC, uP = (aN9.qF(L(279)), []), aB = 0; aB < bS.wJ.aLF.length; aB++) uP.push(bS.wJ.wK[bS.wJ.aLF[aB]].name);
+			aN9.qN(new uL({
 				uP: uP,
 				value: aD.data.mapRealisticIndex
 			}, function(e8) {
-				aD.data.mapRealisticIndex = e8, aQX()
-			})), qU.push(aN8)
+				aD.data.mapRealisticIndex = e8, aQY()
+			})), qU.push(aN9)
 		}
 	}(qU), function(qU) {
-		var aN8;
-		2 === aD.data.mapType && ((aN8 = new qC).qF(L(279)), aN8.qQ(new s3([new w(L(366), function() {
+		var aN9;
+		2 === aD.data.mapType && ((aN9 = new qC).qF(L(279)), aN9.qQ(new s3([new w(L(366), function() {
 			return b6.aHI(), !0
-		}).button])), qU.push(aN8))
+		}).button])), qU.push(aN9))
 	}(qU), function(qU) {
-		(aQQ = new qC).qF(L(367)), 2 !== aD.data.mapType ? aQY() : aD.data.canvas && aQZ();
-		qU.push(aQQ)
+		(aQR = new qC).qF(L(367)), 2 !== aD.data.mapType ? aQZ() : aD.data.canvas && aQa();
+		qU.push(aQR)
 	}(qU), function(qU) {
-		var aN8, rM, aNH;
-		0 === aD.data.mapType && ((aN8 = new qC).qF("Seed"), rM = new rN({
+		var aN9, rM, aNI;
+		0 === aD.data.mapType && ((aN9 = new qC).qF("Seed"), rM = new rN({
 			e8: -1,
 			value: aD.data.mapSeed
 		}, 1, 0, function(e) {
 			e = Math.abs(Math.floor(e.target.value)) % 16384;
-			aD.data.mapSeed !== e && (aD.data.mapSeed = e, aQX())
-		}), aNH = new w(L(272), function(e) {
-			var aKC = Math.floor(16384 * Math.random());
-			if (aD.data.mapSeed !== aKC) return rM.e.value = aD.data.mapSeed = aKC, aQX(), !0
-		}), aN8.qQ(rM), aN8.qQ(new s3([aNH.button])), qU.push(aN8))
+			aD.data.mapSeed !== e && (aD.data.mapSeed = e, aQY())
+		}), aNI = new w(L(272), function(e) {
+			var aKD = Math.floor(16384 * Math.random());
+			if (aD.data.mapSeed !== aKD) return rM.e.value = aD.data.mapSeed = aKD, aQY(), !0
+		}), aN9.qQ(rM), aN9.qQ(new s3([aNI.button])), qU.push(aN9))
 	}(qU), function(qU) {
-		var aN8, rM;
-		2 === aD.data.mapType && ((aN8 = new qC).qF(L(368)), rM = new rN({
+		var aN9, rM;
+		2 === aD.data.mapType && ((aN9 = new qC).qF(L(368)), rM = new rN({
 			e8: -1,
 			value: aD.data.mapName
 		}, 0, 0, function(e) {
 			aD.data.mapName = e.target.value = e.target.value.slice(0, 20)
-		}), aN8.qQ(rM), qU.push(aN8))
+		}), aN9.qQ(rM), qU.push(aN9))
 	}(qU), qU))
 }
 
-function v(title, qM, aQc, aPq) {
-	var aMp, aOx;
+function v(title, qM, aQd, aPr) {
+	var aMq, aOy;
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aOx.resize()
+		aMq.resize(), aOy.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aPq = aPq || [new w("⬅️ " + L(37), function() {
+		2 === f8 && aMq.uX[0].qq()
+	}, aPr = aPr || [new w("⬅️ " + L(37), function() {
 		t.a16()
-	})], aMp = new uQ(title, aPq), aOx = new s2(aMp.uW, qM), aQc && bA.qZ.textAlign(aMp.uW.style, 1)
+	})], aMq = new uQ(title, aPr), aOy = new s2(aMq.uW, qM), aQd && bA.qZ.textAlign(aMq.uW.style, 1)
 }
 
-function aMf() {
-	var aNj, aNk, aNl, qU;
+function aMg() {
+	var aNk, aNl, aNm, qU;
 
-	function aNm() {
-		aNo(), 2 === aD.data.playerNamesType && 1 === bA.qh.a2R(aD.data.playerNamesData).length && (aD.data.playerNamesType = 0), 2 !== aD.data.playerNamesType && (aD.data.playerNamesData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 2 === aD.data.playerNamesType && 1 === bA.qh.a2R(aD.data.playerNamesData).length && (aD.data.playerNamesType = 0), 2 !== aD.data.playerNamesType && (aD.data.playerNamesData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aNo() {
-		2 === aD.data.playerNamesType && bA.qh.a2f(aNl.ux(), aD.data.playerNamesData, 20)
+	function aNp() {
+		2 === aD.data.playerNamesType && bA.qh.a2f(aNm.ux(), aD.data.playerNamesData, 20)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(283), [new w("⬅️ " + L(37), aNm)]), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(247)), aN8.qN(new uL({
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(283), [new w("⬅️ " + L(37), aNn)]), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC;
+		aN9.qF(L(247)), aN9.qN(new uL({
 			uP: [L(284), L(285), L(250)],
 			value: aD.data.playerNamesType
 		}, function(e8) {
-			aNo(), aD.data.playerNamesType = e8, t.u(23)
-		})), aN8.qQ(new sD), aN8.qQ(new rx({
+			aNp(), aD.data.playerNamesType = e8, t.u(23)
+		})), aN9.qQ(new sD), aN9.qQ(new rx({
 			value: aD.data.selectableName
 		}, L(369), function(value) {
 			aD.data.selectableName = value
-		})), qU.push(aN8)
+		})), qU.push(aN9)
 	}(qU = []), function(qU) {
-		var aN8;
-		2 === aD.data.playerNamesType && ((aN8 = new qC).qF("Data"), aNl = new uo(0, 1, 0, 1), aD.data.playerNamesData && aD.data.playerNamesData.length === aD.ek || (aD.data.playerNamesData = new Array(aD.ek), aD.data.playerNamesData
-			.fill("")), aNl.uv(bA.rY.a49(aD.data.playerNamesData, 1, '"')), aN8.qQ(aNl), qU.push(aN8))
+		var aN9;
+		2 === aD.data.playerNamesType && ((aN9 = new qC).qF("Data"), aNm = new uo(0, 1, 0, 1), aD.data.playerNamesData && aD.data.playerNamesData.length === aD.ek || (aD.data.playerNamesData = new Array(aD.ek), aD.data.playerNamesData
+			.fill("")), aNm.uv(bA.rY.a49(aD.data.playerNamesData, 1, '"')), aN9.qQ(aNm), qU.push(aN9))
 	}(qU), qU))
 }
 
-function aMQ() {
-	var aNj, ut;
+function aMR() {
+	var aNk, ut;
 
-	function aQd() {
+	function aQe() {
 		t.x();
-		var qG = b9.aQh(ut.ux());
-		(aD.zw && 0 < qG.length && qG === b9.pt.a4g || b9.aHp.wE(qG)) && b9.aQi()
+		var qG = b9.aQi(ut.ux());
+		(aD.zw && 0 < qG.length && qG === b9.pt.a4g || b9.aHp.wE(qG)) && b9.aQj()
 	}
-	this.show = function(aQe) {
-		this.aQf(aQe), aNj.show(), this.resize()
-	}, this.aQf = function(aQe) {
-		0 === aD.zw ? aQe ? ut.uv(aQe) : aD.a4T.length && ut.uv(aD.a4T) : (aD.gw || (b9.pt.a4g = b9.a4h.zO()), ut.uv(b9.aQg(b9.pt.a4g)))
+	this.show = function(aQf) {
+		this.aQg(aQf), aNk.show(), this.resize()
+	}, this.aQg = function(aQf) {
+		0 === aD.zw ? aQf ? ut.uv(aQf) : aD.a4T.length && ut.uv(aD.a4T) : (aD.gw || (b9.pt.a4g = b9.a4h.zO()), ut.uv(b9.aQh(b9.pt.a4g)))
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), ut.resize()
+		aNk.resize(), ut.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 ? aNj.uX[0].qq() : aQd()
-	}, aNj = new uQ(L(370), [new w("⬅️ " + L(37), function() {
-		t.aMn(1)
+		2 === f8 ? aNk.uX[0].qq() : aQe()
+	}, aNk = new uQ(L(370), [new w("⬅️ " + L(37), function() {
+		t.aMo(1)
 	}), new w(L(371), function() {
 		ut.uy()
 	}), new w(L(372), function() {
@@ -9200,14 +9196,14 @@ function aMQ() {
 	}), new w(L(373), function() {
 		ut.clear()
 	}), new w(L(374), function() {
-		aQd()
-	})]), ut = new uo(L(375)), aNj.uW.appendChild(ut.e)
+		aQe()
+	})]), ut = new uo(L(375)), aNk.uW.appendChild(ut.e)
 }
 
-function aMP() {
-	var aMp, aMq, qU, aBy, aN8;
+function aMQ() {
+	var aMq, aMr, qU, aBy, aN9;
 
-	function aQj() {
+	function aQk() {
 		var eM;
 		aBy !== bj.eK.data[12].value ? (b7.dd(), b7.aBx(), eM = bf.eM, t.u(4, 1, new v(L(378), L(379), !1, [new w("⬅️ " + L(37), function() {
 			t.u(1)
@@ -9216,150 +9212,150 @@ function aMP() {
 		}, bB.o5)]))) : t.u(1)
 	}
 	this.show = function() {
-			aBy = bj.eK.data[12].value, aMp.show(), this.resize()
+			aBy = bj.eK.data[12].value, aMq.show(), this.resize()
 		}, this.rq = function() {
-			aMp.rq()
+			aMq.rq()
 		}, this.resize = function() {
-			aMp.resize(), aMq.resize()
+			aMq.resize(), aMr.resize()
 		}, this.a21 = function(f8) {
-			2 === f8 && aMp.uX[0].qq()
-		}, aMp = new uQ(L(376), [new w("⬅️ " + L(37), aQj), new w(L(377), function() {
+			2 === f8 && aMq.uX[0].qq()
+		}, aMq = new uQ(L(376), [new w("⬅️ " + L(37), aQk), new w(L(377), function() {
 			t.x(), bj.s0.vb(), t.u(2)
-		})]), qU = [], (aN8 = new qC).qF(L(380)), aN8.qH(L(381)), qU.push(aN8),
+		})]), qU = [], (aN9 = new qC).qF(L(380)), aN9.qH(L(381)), qU.push(aN9),
 		function(qU) {
-			var aN8 = new qC,
-				g = (aN8.qF(L(402)), b7.data.aC6());
-			aN8.qN(new uL({
+			var aN9 = new qC,
+				g = (aN9.qF(L(402)), b7.data.aC6());
+			aN9.qN(new uL({
 				uP: g,
 				value: b7.data.aCA(g)
 			}, function(e8) {
 				return bj.s0.s1(12, g[e8].split(":")[0]), !0
-			})), qU.push(aN8)
+			})), qU.push(aN9)
 		}(qU),
 		function(qU) {
-			var aN8 = new qC,
-				aQm = (aN8.qF(L(400)), []);
-			aN8.qQ(new s3([new w(L(401), function(e) {
-				bX.aQn();
-				for (var aB = 0; aB < aQm.length; aB++) aQm[aB].e.value = bX.aBO[aB];
+			var aN9 = new qC,
+				aQn = (aN9.qF(L(400)), []);
+			aN9.qQ(new s3([new w(L(401), function(e) {
+				bX.aQo();
+				for (var aB = 0; aB < aQn.length; aB++) aQn[aB].e.value = bX.aBO[aB];
 				return bA.qZ.a3G(e), !0
 			}).button]));
-			for (var aB = 0; aB < bX.aQo.length; aB++) {
-				aN8.qH(bX.aQo[aB]);
+			for (var aB = 0; aB < bX.aQp.length; aB++) {
+				aN9.qH(bX.aQp[aB]);
 				for (var f6 = 0; f6 < 2; f6++) {
 					var e8 = 2 * aB + f6,
 						rM = new rN({
 							value: bX.aBO[e8],
 							e8: -1
 						});
-					rM.e.aQp = e8, aQm.push(rM), rM.e.addEventListener("keydown", function(e) {
+					rM.e.aQq = e8, aQn.push(rM), rM.e.addEventListener("keydown", function(e) {
 						e.preventDefault();
 						var code = e.code;
-						e.target.value = code, bX.aQq(e.target.aQp, code)
-					}), f6 && (rM.e.style.marginLeft = "4%"), rM.e.style.width = "48%", aN8.qQ(rM)
+						e.target.value = code, bX.aQr(e.target.aQq, code)
+					}), f6 && (rM.e.style.marginLeft = "4%"), rM.e.style.width = "48%", aN9.qQ(rM)
 				}
 			}
-			qU.push(aN8)
-		}(qU), (aN8 = new qC).qF(L(23)), aN8.qN(new uL({
+			qU.push(aN9)
+		}(qU), (aN9 = new qC).qF(L(23)), aN9.qN(new uL({
 			uP: ["1", "2"],
 			value: aZ.aFV - 1
 		}, function(aB) {
 			aZ.aFV = aB + 1
-		})), qU.push(aN8), (aN8 = new qC).qF(L(382)), bj.eK.data[1].uP = [L(383), L(384), L(385), L(386)], aN8.qN(new uL(bj.eK.data[1])), qU.push(aN8), (aN8 = new qC).qF(L(387)), bj.eK.data[9].uP = [L(384), L(388), L(389)], aN8.qN(new uL(bj.eK.data[
-			9])), qU.push(aN8), (aN8 = new qC).qF(L(390)), bj.eK.data[11].uP = [L(391), L(9), L(392)], aN8.qN(new uL(bj.eK.data[11])), qU.push(aN8), (aN8 = new qC).qF(L(393)), aN8.qQ(new rx(bj.eK.data[2])), qU.push(aN8), (aN8 = new qC).qF(L(394)),
-		aN8.qQ(new rx(bj.eK.data[7])), qU.push(aN8), (aN8 = new qC).qF(L(395)), aN8.qQ(new rx(bj.eK.data[8])), qU.push(aN8), (aN8 = new qC).qF(L(396)), aN8.qQ(new rN(bj.eK.data[5])), qU.push(aN8), (aN8 = new qC).qF(L(397)), aN8.qQ(new rx(bj.eK.data[
-			13], L(398))), aN8.qQ(new rx(bj.eK.data[14], L(399))), qU.push(aN8), aMq = new qS(aMp.uW, qU)
+		})), qU.push(aN9), (aN9 = new qC).qF(L(382)), bj.eK.data[1].uP = [L(383), L(384), L(385), L(386)], aN9.qN(new uL(bj.eK.data[1])), qU.push(aN9), (aN9 = new qC).qF(L(387)), bj.eK.data[9].uP = [L(384), L(388), L(389)], aN9.qN(new uL(bj.eK.data[
+			9])), qU.push(aN9), (aN9 = new qC).qF(L(390)), bj.eK.data[11].uP = [L(391), L(9), L(392)], aN9.qN(new uL(bj.eK.data[11])), qU.push(aN9), (aN9 = new qC).qF(L(393)), aN9.qQ(new rx(bj.eK.data[2])), qU.push(aN9), (aN9 = new qC).qF(L(394)),
+		aN9.qQ(new rx(bj.eK.data[7])), qU.push(aN9), (aN9 = new qC).qF(L(395)), aN9.qQ(new rx(bj.eK.data[8])), qU.push(aN9), (aN9 = new qC).qF(L(396)), aN9.qQ(new rN(bj.eK.data[5])), qU.push(aN9), (aN9 = new qC).qF(L(397)), aN9.qQ(new rx(bj.eK.data[
+			13], L(398))), aN9.qQ(new rx(bj.eK.data[14], L(399))), qU.push(aN9), aMr = new qS(aMq.uW, qU)
 }
 
-function aMg() {
-	var aNj, aNk, aNl, qU;
+function aMh() {
+	var aNk, aNl, aNm, qU;
 
-	function aNm() {
-		aNo(), 2 !== aD.data.spawningType || bA.qh.a2R(aD.data.spawningData) || (aD.data.spawningType = 0), 2 !== aD.data.spawningType && (aD.data.spawningData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 2 !== aD.data.spawningType || bA.qh.a2R(aD.data.spawningData) || (aD.data.spawningType = 0), 2 !== aD.data.spawningType && (aD.data.spawningData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aNo() {
-		2 === aD.data.spawningType && bA.qh.a2d(aNl.ux(), aD.data.spawningData, bS.aHR - 1)
+	function aNp() {
+		2 === aD.data.spawningType && bA.qh.a2d(aNm.ux(), aD.data.spawningData, bS.aHR - 1)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(403), [new w("⬅️ " + L(37), aNm)]), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC,
-			uP = (aN8.qF(L(247)), [L(272), L(282), L(250)]),
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(403), [new w("⬅️ " + L(37), aNn)]), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC,
+			uP = (aN9.qF(L(247)), [L(272), L(282), L(250)]),
 			value = aD.data.spawningType;
 		0 === aD.data.gameMode && (uP.splice(1, 1), 0 < value) && (value = 1);
-		aN8.qN(new uL({
+		aN9.qN(new uL({
 			uP: uP,
 			value: value
 		}, function(e8) {
-			aNo(), aD.data.spawningType = e8, 0 === aD.data.gameMode && 1 === e8 && (aD.data.spawningType = 2), 2 !== aD.data.spawningType || aD.data.spawningData || (aD.data.spawningData = new Uint16Array(2 * aD.ek)), t.u(24)
-		})), aN8.qQ(new sD), aN8.qQ(new rx({
+			aNp(), aD.data.spawningType = e8, 0 === aD.data.gameMode && 1 === e8 && (aD.data.spawningType = 2), 2 !== aD.data.spawningType || aD.data.spawningData || (aD.data.spawningData = new Uint16Array(2 * aD.ek)), t.u(24)
+		})), aN9.qQ(new sD), aN9.qQ(new rx({
 			value: aD.data.selectableSpawn
 		}, L(404), function(value) {
 			aD.data.selectableSpawn = value
-		})), qU.push(aN8)
+		})), qU.push(aN9)
 	}(qU = []), function(qU) {
-		var aN8 = new qC;
-		aN8.qF("Seed"), aN8.qQ(new rN({
+		var aN9 = new qC;
+		aN9.qF("Seed"), aN9.qQ(new rN({
 			e8: -1,
 			value: aD.data.spawningSeed
 		}, 1, 0, function(e) {
 			var value = Math.abs(Math.floor(e.target.value)) % 16384;
 			e.target.value = aD.data.spawningSeed = value
-		})), qU.push(aN8)
+		})), qU.push(aN9)
 	}(qU), function(qU) {
-		var aN8;
-		2 === aD.data.spawningType && ((aN8 = new qC).qF("Data"), (aNl = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.spawningData, 2)), aN8.qQ(aNl), qU.push(aN8))
+		var aN9;
+		2 === aD.data.spawningType && ((aN9 = new qC).qF("Data"), (aNm = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.spawningData, 2)), aN9.qQ(aNm), qU.push(aN9))
 	}(qU), qU))
 }
 
-function aMO() {
-	var aMp, aPn, aPo, uR;
+function aMP() {
+	var aMq, aPo, aPp, uR;
 
-	function aQr(id) {
-		0 !== a0.id || bj.eK.data[140].value ? 0 === id ? t.u(8, 1, new so(16)) : t.u(2) : t.y.aPh(t.sn, 0 === id ? 16 : 0)
+	function aQs(id) {
+		0 !== a0.id || bj.eK.data[140].value ? 0 === id ? t.u(8, 1, new so(16)) : t.u(2) : t.y.aPi(t.sn, 0 === id ? 16 : 0)
 	}
 	this.show = function() {
-		a0.a1.setState(12), aMp.show(), this.resize(), this.j3()
+		a0.a1.setState(12), aMq.show(), this.resize(), this.j3()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aPn.resize()
+		aMq.resize(), aPo.resize()
 	}, this.j3 = function() {
-		8 === aa.a17() && (2 <= bd.aQw ? aPo[2].qr === bB.nu && aPo[2].qt(0) : aPo[2].qr !== bB.nu && aPo[2].qt(bB.nu), !aD.gw && aM.qA(aD.eX) ? aPo[1].qr === bB.nu && aPo[1].qt(0) : aPo[1].qr !== bB.nu && aPo[1].qt(bB.nu), !aD.gw && aw.hc(aD
-			.eX) ? aPo[0].qr === bB.nu && aPo[0].qt(0) : aPo[0].qr !== bB.nu && aPo[0].qt(bB.nu))
+		8 === aa.a17() && (2 <= bd.aQx ? aPp[2].qr === bB.nu && aPp[2].qt(0) : aPp[2].qr !== bB.nu && aPp[2].qt(bB.nu), !aD.gw && aM.qA(aD.eX) ? aPp[1].qr === bB.nu && aPp[1].qt(0) : aPp[1].qr !== bB.nu && aPp[1].qt(bB.nu), !aD.gw && aw.hc(aD
+			.eX) ? aPp[0].qr === bB.nu && aPp[0].qt(0) : aPp[0].qr !== bB.nu && aPp[0].qt(bB.nu))
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aPo = [new w(L(405), function() {
-		aQr(0)
+		2 === f8 && aMq.uX[0].qq()
+	}, aPp = [new w(L(405), function() {
+		aQs(0)
 	}), new w(L(305), function() {
 		t.u(16)
 	}), new w(L(360), function() {
 		t.u(17)
 	}), new w(L(406), function() {
-		t.y.aOg()
+		t.y.aOh()
 	}, 0, 0, 1), new w(L(370), function() {
 		t.u(3, 1)
 	}), new w(L(407), function() {
 		t.u(18)
 	}), new w(L(376), function() {
-		aQr(1)
+		aQs(1)
 	}), new w(L(408), function() {
 		var sd = ["Patreon", L(417), L(418), "YouTube Tutorial", "Discord", L(419), L(298), L(420), L(301), L(421), "Terms", "Privacy"],
-			a3C = [bK.aNh, bK.aCN, bK.a10, "https://www.youtube.com/watch?v=6QBmA9N1668", bK.aCO, bK.aQx, bK.aQy, bK.a0i, bK.aQz, bK.aR0, bK.aR1, bK.aQO];
+			a3C = [bK.aNi, bK.aCN, bK.a10, "https://www.youtube.com/watch?v=6QBmA9N1668", bK.aCO, bK.aQy, bK.aQz, bK.a0i, bK.aR0, bK.aR1, bK.aR2, bK.aQP];
 		1 === a0.id ? (sd.splice(2, 1), sd.splice(0, 1), a3C.splice(2, 1), a3C.splice(0, 1)) : 2 === a0.id && (sd.splice(1, 1), sd.splice(0, 1), a3C.splice(1, 1), a3C.splice(0, 1)), t.u(4, 1, new v(L(408), bA.qZ.a3B(sd, a3C), !1, [new w(
 			"⬅️ " + L(37),
 			function() {
 				t.u(1)
 			})]))
 	}), new w(L(409), function() {
-		t.u(4, 1, new v(L(409), l.dv + "<br><a href='" + bK.aQx + "' target='_blank'>" + bK.aQx + "</a>" +
+		t.u(4, 1, new v(L(409), l.dv + "<br><a href='" + bK.aQy + "' target='_blank'>" + bK.aQy + "</a>" +
 			"<br><br><b>" + "FX Client v" + __fx.version + "<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a>" +
 			"<br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></b>", !0, [new w("⬅️ " + L(37), function() {
 				t.u(1)
@@ -9371,152 +9367,152 @@ function aMO() {
 			a0.a1.a0u(), t.u(1)
 		})]))
 	}), new w(L(411), function() {
-		a0.a1.a0v(), t.u(4, 1, new v(L(425), L(426) + " <a href='" + bK.aQO + "' target='_blank'>" + bK.aQO + "</a>", !1, [new w("⬅️ " + L(37), function() {
+		a0.a1.a0v(), t.u(4, 1, new v(L(425), L(426) + " <a href='" + bK.aQP + "' target='_blank'>" + bK.aQP + "</a>", !1, [new w("⬅️ " + L(37), function() {
 			t.u(1)
 		})]))
 	})], uR = [new w("⬅️ " + L(37), function() {
 		t.y.aC2()
-	})], 8 === aa.a17() && (aPo.unshift(new w(L(293), function() {
+	})], 8 === aa.a17() && (aPp.unshift(new w(L(293), function() {
 		t.u(30)
-	})), aPo.unshift(new w(L(414), function() {
-		2 <= bd.aQw && (t.x(), be.a24(), bf.dl = !0)
-	}, 0, 1)), aPo.unshift(new w(L(415), function() {
+	})), aPp.unshift(new w(L(414), function() {
+		2 <= bd.aQx && (t.x(), be.a24(), bf.dl = !0)
+	}, 0, 1)), aPp.unshift(new w(L(415), function() {
 		!aD.gw && aM.qA(aD.eX) && (b8.hD.pN(), t.x(), aM.gx) && aM.a24()
-	}, 0, 1)), aPo.unshift(new w(L(416), function() {
+	}, 0, 1)), aPp.unshift(new w(L(416), function() {
 		!aD.gw && aw.hc(aD.eX) && (bV.a5K(2), b8.hD.hY(), t.x(), aM.gx) && aM.a24()
-	}, 0, 1))), 1 === a0.id && 5 <= a0.dv && aPo.push(new w(L(412), function() {
+	}, 0, 1))), 1 === a0.id && 5 <= a0.dv && aPp.push(new w(L(412), function() {
 		a0.a1.a0w()
-	})), aMp = new uQ(L(413), uR), aPn = new r7(aPo, aMp.uW)
+	})), aMq = new uQ(L(413), uR), aPo = new r7(aPp, aMq.uW)
 }
 
-function aMk() {
-	var aNj, aNk, aNl, qU;
+function aMl() {
+	var aNk, aNl, aNm, qU;
 
-	function aNm() {
-		aNo(), 2 !== aD.data.sResourcesType && (aD.data.sResourcesData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 2 !== aD.data.sResourcesType && (aD.data.sResourcesData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aNo() {
-		2 === aD.data.sResourcesType && bA.qh.a2d(aNl.ux(), aD.data.sResourcesData, 2047)
+	function aNp() {
+		2 === aD.data.sResourcesType && bA.qh.a2d(aNm.ux(), aD.data.sResourcesData, 2047)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(288), [new w("⬅️ " + L(37), aNm)]), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(247)), aN8.qN(new uL({
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(288), [new w("⬅️ " + L(37), aNn)]), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC;
+		aN9.qF(L(247)), aN9.qN(new uL({
 			uP: [L(248), L(249), L(250)],
 			value: aD.data.sResourcesType
 		}, function(e8) {
-			aNo(), 2 !== e8 || aD.data.sResourcesData || (aD.data.sResourcesData = new Uint16Array(aD.ek)), aD.data.sResourcesType = e8, t.u(28)
-		})), qU.push(aN8)
+			aNp(), 2 !== e8 || aD.data.sResourcesData || (aD.data.sResourcesData = new Uint16Array(aD.ek)), aD.data.sResourcesType = e8, t.u(28)
+		})), qU.push(aN9)
 	}(qU = []), function(qU) {
-		var aN8;
-		1 === aD.data.sResourcesType && ((aN8 = new qC).qF("Value"), aN8.qQ(new rN({
+		var aN9;
+		1 === aD.data.sResourcesType && ((aN9 = new qC).qF("Value"), aN9.qQ(new rN({
 			e8: -1,
 			value: aD.data.sResourcesValue
 		}, 1, 0, function(e) {
 			var value = bL.hv(Math.floor(e.target.value), 0, 2047);
 			e.target.value = aD.data.sResourcesValue = value
-		})), qU.push(aN8))
+		})), qU.push(aN9))
 	}(qU), function(qU) {
-		var aN8;
-		2 === aD.data.sResourcesType && ((aN8 = new qC).qF("Data"), (aNl = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.sResourcesData, 2)), aN8.qQ(aNl), qU.push(aN8))
+		var aN9;
+		2 === aD.data.sResourcesType && ((aN9 = new qC).qF("Data"), (aNm = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.sResourcesData, 2)), aN9.qQ(aNm), qU.push(aN9))
 	}(qU), qU))
 }
 
-function aMi() {
-	var aNj, aNk, aNl, qU;
+function aMj() {
+	var aNk, aNl, aNm, qU;
 
-	function aNm() {
-		aNo(), 2 !== aD.data.tIncomeType && (aD.data.tIncomeData = null), t.aMo()[19] = null, t.a16()
+	function aNn() {
+		aNp(), 2 !== aD.data.tIncomeType && (aD.data.tIncomeData = null), t.aMp()[19] = null, t.a16()
 	}
 
-	function aNo() {
-		2 === aD.data.tIncomeType && bA.qh.a2d(aNl.ux(), aD.data.tIncomeData, 255)
+	function aNp() {
+		2 === aD.data.tIncomeType && bA.qh.a2d(aNm.ux(), aD.data.tIncomeData, 255)
 	}
 	this.show = function() {
-		aNj.show(), this.resize()
+		aNk.show(), this.resize()
 	}, this.rq = function() {
-		aNj.rq()
+		aNk.rq()
 	}, this.resize = function() {
-		aNj.resize(), aNk.resize()
+		aNk.resize(), aNl.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aNj.uX[0].qq()
-	}, aNj = new uQ(L(286), [new w("⬅️ " + L(37), aNm)]), aNk = new qS(aNj.uW, (function(qU) {
-		var aN8 = new qC;
-		aN8.qF(L(247)), aN8.qN(new uL({
+		2 === f8 && aNk.uX[0].qq()
+	}, aNk = new uQ(L(286), [new w("⬅️ " + L(37), aNn)]), aNl = new qS(aNk.uW, (function(qU) {
+		var aN9 = new qC;
+		aN9.qF(L(247)), aN9.qN(new uL({
 			uP: [L(248), L(249), L(250)],
 			value: aD.data.tIncomeType
 		}, function(e8) {
-			aNo(), 2 !== e8 || aD.data.tIncomeData || (aD.data.tIncomeData = new Uint8Array(aD.ek), aD.data.tIncomeData.fill(32)), aD.data.tIncomeType = e8, t.u(26)
-		})), qU.push(aN8)
+			aNp(), 2 !== e8 || aD.data.tIncomeData || (aD.data.tIncomeData = new Uint8Array(aD.ek), aD.data.tIncomeData.fill(32)), aD.data.tIncomeType = e8, t.u(26)
+		})), qU.push(aN9)
 	}(qU = []), function(qU) {
-		var aN8;
-		1 === aD.data.tIncomeType && ((aN8 = new qC).qF("Value"), aN8.qQ(new rN({
+		var aN9;
+		1 === aD.data.tIncomeType && ((aN9 = new qC).qF("Value"), aN9.qQ(new rN({
 			e8: -1,
 			value: aD.data.tIncomeValue
 		}, 1, 0, function(e) {
 			var value = bL.hv(Math.floor(e.target.value), 0, 255);
 			e.target.value = aD.data.tIncomeValue = value
-		})), qU.push(aN8))
+		})), qU.push(aN9))
 	}(qU), function(qU) {
-		var aN8;
-		2 === aD.data.tIncomeType && ((aN8 = new qC).qF("Data"), (aNl = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.tIncomeData, 4)), aN8.qQ(aNl), qU.push(aN8))
+		var aN9;
+		2 === aD.data.tIncomeType && ((aN9 = new qC).qF("Data"), (aNm = new uo(0, 1, 0, 1)).uv(bA.rY.a49(aD.data.tIncomeData, 4)), aN9.qQ(aNm), qU.push(aN9))
 	}(qU), qU))
 }
 
-function aMa() {
-	var aMp, aMq, qU;
+function aMb() {
+	var aMq, aMr, qU;
 	this.show = function() {
-		aMp.show(), this.resize()
+		aMq.show(), this.resize()
 	}, this.rq = function() {
-		aMp.rq()
+		aMq.rq()
 	}, this.resize = function() {
-		aMp.resize(), aMq.resize()
+		aMq.resize(), aMr.resize()
 	}, this.a21 = function(f8) {
-		2 === f8 && aMp.uX[0].qq()
-	}, aMp = new uQ(L(407), [new w("⬅️ " + L(37), function() {
+		2 === f8 && aMq.uX[0].qq()
+	}, aMq = new uQ(L(407), [new w("⬅️ " + L(37), function() {
 		t.a16()
-	})]), aMq = new qS(aMp.uW, ((qU = []).push(function() {
-		function aNE() {
-			aR6.button.textContent = L(169), aR4.e.readOnly = !1, aR5.e.readOnly = !1, aNC.qt(1), aNC.button.style.color = bB.ni
+	})]), aMr = new qS(aMq.uW, ((qU = []).push(function() {
+		function aNF() {
+			aR7.button.textContent = L(169), aR5.e.readOnly = !1, aR6.e.readOnly = !1, aND.qt(1), aND.button.style.color = bB.ni
 		}
-		var aN8 = new qC,
-			aR3 = (aN8.qF(L(427)), new rN({
+		var aN9 = new qC,
+			aR4 = (aN9.qF(L(427)), new rN({
 				value: bj.eK.data[105].value,
 				e8: -1
 			})),
-			aR4 = (aR3.e.readOnly = !0, aN8.qQ(aR3), aN8.qF(L(330), "0.8em"), new rN(bj.eK.data[148])),
-			aR4 = new rN(bj.eK.data[148], 0, void 0, function(e) {
-				aNB(bj.eK.data[149].value, e.target.value)
+			aR5 = (aR4.e.readOnly = !0, aN9.qQ(aR4), aN9.qF(L(330), "0.8em"), new rN(bj.eK.data[148])),
+			aR5 = new rN(bj.eK.data[148], 0, void 0, function(e) {
+				aNC(bj.eK.data[149].value, e.target.value)
 			}),
-			aR5 = (aN8.qQ(aR4), aN8.qF(L(334), "0.8em"), new rN(bj.eK.data[149], 1, void 0, function(e) {
-				aNB(e.target.value, bj.eK.data[148].value)
+			aR6 = (aN9.qQ(aR5), aN9.qF(L(334), "0.8em"), new rN(bj.eK.data[149], 1, void 0, function(e) {
+				aNC(e.target.value, bj.eK.data[148].value)
 			})),
-			aR6 = (aN8.qQ(aR5), new w(L(169), function(e) {
-				return e.textContent === L(169) ? (e.textContent = L(170), aR4.e.readOnly = !0, aR5.e.readOnly = !0, aNC.qt(0), aNC.button.style.color = bB.og, bj.s0.s1(149, aR5.e.value), aNB(bj.eK.data[149].value, bj.eK.data[
-					148].value)) : aNE(), !0
+			aR7 = (aN9.qQ(aR6), new w(L(169), function(e) {
+				return e.textContent === L(169) ? (e.textContent = L(170), aR5.e.readOnly = !0, aR6.e.readOnly = !0, aND.qt(0), aND.button.style.color = bB.og, bj.s0.s1(149, aR6.e.value), aNC(bj.eK.data[149].value, bj.eK.data[
+					148].value)) : aNF(), !0
 			})),
-			aNC = (aN8.qQ(new s3([aR6.button])), new w(L(14), function(e) {
-				return aR4.e.readOnly && b0.y.aND(0) && (bA.qZ.a3G(e), aNE(), b0.aNF.aNG({
+			aND = (aN9.qQ(new s3([aR7.button])), new w(L(14), function(e) {
+				return aR5.e.readOnly && b0.y.aNE(0) && (bA.qZ.a3G(e), aNF(), b0.aNG.aNH({
 					sp: 0,
 					sl: bj.eK.data[148].value,
 					value: parseInt(bj.eK.data[149].value, 10)
 				})), !0
 			}, 1)),
-			qI = aN8.qH(),
-			aNB = (aN8.qH(L(428)).style.fontWeight = "bold", function(fF, qG) {
+			qI = aN9.qH(),
+			aNC = (aN9.qH(L(428)).style.fontWeight = "bold", function(fF, qG) {
 				fF = bA.g9.a3j(fF, 2, 1e6);
-				var aNI = Math.max(1, 1 + Math.floor(.01 * (fF - 100)));
-				qI.textContent = L(171, [fF, bj.eK.data[105].value, aNI, qG, fF - aNI])
+				var aNJ = Math.max(1, 1 + Math.floor(.01 * (fF - 100)));
+				qI.textContent = L(171, [fF, bj.eK.data[105].value, aNJ, qG, fF - aNJ])
 			});
-		return aN8.qQ(new s3([aNC.button])), aNB(bj.eK.data[149].value, bj.eK.data[148].value), aN8
+		return aN9.qQ(new s3([aND.button])), aNC(bj.eK.data[149].value, bj.eK.data[148].value), aN9
 	}()), qU))
 }
 
@@ -9531,140 +9527,140 @@ function bw() {
 }
 
 function ci() {
-	var a9D, aR8, aR9, aRA, aR7 = !1;
-
-	function aRB() {
-		aR7 = !0, a9D = -1, aR8 = new Array(4);
-		for (var aB = 3; 0 <= aB; aB--) aR8[aB] = !1;
-		var xJ = Math.floor(1 + .02 * h.min);
-		aR9 = new Array(4), (aRA = new Array(4))[1] = aRA[3] = aR9[0] = aR9[2] = 0, aRA[0] = aR9[3] = -xJ, aR9[1] = aRA[2] = xJ
-	}
+	var a9D, aR9, aRA, aRB, aR8 = !1;
 
 	function aRC() {
+		aR8 = !0, a9D = -1, aR9 = new Array(4);
+		for (var aB = 3; 0 <= aB; aB--) aR9[aB] = !1;
+		var xJ = Math.floor(1 + .02 * h.min);
+		aRA = new Array(4), (aRB = new Array(4))[1] = aRB[3] = aRA[0] = aRA[2] = 0, aRB[0] = aRA[3] = -xJ, aRA[1] = aRB[2] = xJ
+	}
+
+	function aRD() {
 		if (-1 !== a9D)
 			if (0 !== aD.zw && aH.nQ()) {
-				for (var aRD = !1, aB = 3; 0 <= aB; aB--) aR8[aB] && (aRD = !0, iO += aR9[aB], iP += aRA[aB], af.a1Q(aR9[aB], aRA[aB]), aS.a8t());
-				aRD ? bf.dl = !0 : ar.nG()
+				for (var aRE = !1, aB = 3; 0 <= aB; aB--) aR9[aB] && (aRE = !0, iO += aRA[aB], iP += aRB[aB], af.a1Q(aRA[aB], aRB[aB]), aS.a8t());
+				aRE ? bf.dl = !0 : ar.nG()
 			} else ar.nG()
 	}
 	this.a1z = function(e8) {
-		0 !== aD.zw && aH.nQ() && (aR7 || aRB(), aR8[e8] = !0, -1 === a9D) && (a9D = setInterval(aRC, 20), aRC())
+		0 !== aD.zw && aH.nQ() && (aR8 || aRC(), aR9[e8] = !0, -1 === a9D) && (a9D = setInterval(aRD, 20), aRD())
 	}, this.a22 = function(e8) {
-		if (0 !== aD.zw && (aR7 || aRB(), aR8[e8] = !1, -1 !== a9D)) {
-			for (var aRD = !1, aB = 3; 0 <= aB; aB--) aRD = aRD || aR8[aB];
-			aRD || this.nG()
+		if (0 !== aD.zw && (aR8 || aRC(), aR9[e8] = !1, -1 !== a9D)) {
+			for (var aRE = !1, aB = 3; 0 <= aB; aB--) aRE = aRE || aR9[aB];
+			aRE || this.nG()
 		}
 	}, this.nG = function() {
-		if (aR7 && -1 !== a9D) {
-			for (var aB = 3; 0 <= aB; aB--) aR8[aB] = !1;
+		if (aR8 && -1 !== a9D) {
+			for (var aB = 3; 0 <= aB; aB--) aR9[aB] = !1;
 			clearInterval(a9D), a9D = -1
 		}
 	}
 }
 
 function cj() {
-	this.y = new aRE, this.mQ = new aRF, this.p3 = new aRG, this.aEB = new aRH, this.aBz = new aRI, this.aNF = new aRJ, this.pf = new aRK, this.aP4 = new aRL, this.a6U = new aRM, this.aRN = new aRO, this.aRP = new aRQ, this.aRR = new aRS, this.aRT =
-		new aRU, this.dd = function() {
+	this.y = new aRF, this.mQ = new aRG, this.p3 = new aRH, this.aEB = new aRI, this.aBz = new aRJ, this.aNG = new aRK, this.pf = new aRL, this.aP5 = new aRM, this.a6U = new aRN, this.aRO = new aRP, this.aRQ = new aRR, this.aRS = new aRT, this.aRU =
+		new aRV, this.dd = function() {
 			this.y.dd()
 		}
 }
 
-function aRE() {
-	var aRV, aRX;
-	this.aFY = 5, this.aRW = null;
+function aRF() {
+	var aRW, aRY;
+	this.aFY = 5, this.aRX = null;
 
-	function aRe(aB) {
-		return aRX[aB].aR7 && aRV[aB].aRe()
+	function aRf(aB) {
+		return aRY[aB].aR8 && aRW[aB].aRf()
 	}
 
-	function aRg(a12) {
-		aRX[a12].eM = bf.eM, aRX[a12].aRZ = !1
+	function aRh(a12) {
+		aRY[a12].eM = bf.eM, aRY[a12].aRa = !1
 	}
 	this.a1C = 0, this.a15 = 0, this.dd = function() {
-		this.aRW = new Array(this.aFY);
-		this.aRW[0] = "territorial.io";
-		var aKC = ay.aKY(0);
+		this.aRX = new Array(this.aFY);
+		this.aRX[0] = "territorial.io";
+		var aKD = ay.aKZ(0);
 		ay.a4W(0);
-		for (var aB = 1; aB < this.aFY; aB++) this.aRW[aB] = aK.zU() + ".territorial.io";
-		for (ay.a4W(aKC), aRV = new Array(this.aFY), aRX = new Array(this.aFY), aB = this.aFY - 1; 0 <= aB; aB--) aRX[aB] = {
-			aR7: !1,
+		for (var aB = 1; aB < this.aFY; aB++) this.aRX[aB] = aK.zU() + ".territorial.io";
+		for (ay.a4W(aKD), aRW = new Array(this.aFY), aRY = new Array(this.aFY), aB = this.aFY - 1; 0 <= aB; aB--) aRY[aB] = {
+			aR8: !1,
 			eM: 0,
-			aRZ: !1
+			aRa: !1
 		};
 		this.aFZ(0, 0)
-	}, this.aRa = function(aB) {
-		return aRV[aB]
+	}, this.aRb = function(aB) {
+		return aRW[aB]
 	}, this.j3 = function() {
-		for (var aB = this.aFY - 1; 0 <= aB; aB--) this.aND(aB) && bf.eM > aRX[aB].eM + 15e3 && b0.p3.aRb(aB, aRX[aB].aRZ);
-		!this.aND(0) && bf.eM > aRX[0].eM + 8e3 && (aRX[0].eM = bf.eM, this.aFZ(0, 0))
-	}, this.aP0 = function(id) {
-		return this.aFZ(0, id) && this.aRc(0)
-	}, this.aFZ = function(a12, aMM) {
-		if (aRX[a12].aR7) {
-			if (aRV[a12].aRe()) return aRV[a12].aRf(aMM), aRV[a12].aND();
-			aRV[a12].rq()
+		for (var aB = this.aFY - 1; 0 <= aB; aB--) this.aNE(aB) && bf.eM > aRY[aB].eM + 15e3 && b0.p3.aRc(aB, aRY[aB].aRa);
+		!this.aNE(0) && bf.eM > aRY[0].eM + 8e3 && (aRY[0].eM = bf.eM, this.aFZ(0, 0))
+	}, this.aP1 = function(id) {
+		return this.aFZ(0, id) && this.aRd(0)
+	}, this.aFZ = function(a12, aMN) {
+		if (aRY[a12].aR8) {
+			if (aRW[a12].aRf()) return aRW[a12].aRg(aMN), aRW[a12].aNE();
+			aRW[a12].rq()
 		}
-		return this.aRd(a12, aMM), !1
-	}, this.aRd = function(a12, aMM) {
-		aRX[a12].aR7 = !0, aRg(a12), aRV[a12] = new aRh, aRV[a12].dd(a12, aMM)
-	}, this.aRf = function(a12, aMM) {
-		aRe(a12) && aRV[a12].aRf(aMM)
-	}, this.aRi = function(a12, aMM) {
-		b0.aBz.aRj(a12)
-	}, this.aRc = function(aB) {
-		return this.aND(aB) && aRV[aB].aRc()
-	}, this.aRk = function(aB) {
-		aRV[aB].aRk()
-	}, this.aND = function(aB) {
-		return aRX[aB].aR7 && aRV[aB].aND()
+		return this.aRe(a12, aMN), !1
+	}, this.aRe = function(a12, aMN) {
+		aRY[a12].aR8 = !0, aRh(a12), aRW[a12] = new aRi, aRW[a12].dd(a12, aMN)
+	}, this.aRg = function(a12, aMN) {
+		aRf(a12) && aRW[a12].aRg(aMN)
+	}, this.aRj = function(a12, aMN) {
+		b0.aBz.aRk(a12)
+	}, this.aRd = function(aB) {
+		return this.aNE(aB) && aRW[aB].aRd()
+	}, this.aRl = function(aB) {
+		aRW[aB].aRl()
+	}, this.aNE = function(aB) {
+		return aRY[aB].aR8 && aRW[aB].aNE()
 	}, this.send = function(a12, aC) {
-		aRg(a12), aRV[a12].send(aC)
+		aRh(a12), aRW[a12].send(aC)
 	}, __fx.customLobby.setSendFunction(this.send), this.a1k = function(a12) {
-		8 === aa.a17() && (aRX[a12].aRZ = !0, b0.mQ.aRl = !0)
-	}, this.close = function(a12, aRm) {
-		aRe(a12) && aRV[a12].close(aRm)
-	}, this.aRn = function(a12, aRm) {
-		o.a1F(aRm), aRe(a12) && aRV[a12].close(aRm)
-	}, this.a1G = function(aRm) {
-		for (var aB = this.aFY - 1; 0 <= aB; aB--) this.close(aB, aRm)
-	}, this.aRo = function(a12, aRm) {
-		for (var aB = this.aFY - 1; 0 <= aB; aB--) aB !== a12 && this.close(aB, aRm)
+		8 === aa.a17() && (aRY[a12].aRa = !0, b0.mQ.aRm = !0)
+	}, this.close = function(a12, aRn) {
+		aRf(a12) && aRW[a12].close(aRn)
+	}, this.aRo = function(a12, aRn) {
+		o.a1F(aRn), aRf(a12) && aRW[a12].close(aRn)
+	}, this.a1G = function(aRn) {
+		for (var aB = this.aFY - 1; 0 <= aB; aB--) this.close(aB, aRn)
+	}, this.aRp = function(a12, aRn) {
+		for (var aB = this.aFY - 1; 0 <= aB; aB--) aB !== a12 && this.close(aB, aRn)
 	}, this.a4i = function() {
 		this.close(this.a1C, 3246)
-	}, this.aRp = function(a12, e) {
-		aRV[a12].rq(), o.a11(a12, e.code)
+	}, this.aRq = function(a12, e) {
+		aRW[a12].rq(), o.a11(a12, e.code)
 	}
 }
 
-function aRF() {
-	this.aRl = !1, this.j3 = function() {
-		bf.k7() % 250 != 249 || aD.gw || (b0.aBz.aRq(+(this.aRl && ag.mi[aD.eX]), al.kB + bN.y.lz), this.aRl = !1)
+function aRG() {
+	this.aRm = !1, this.j3 = function() {
+		bf.k7() % 250 != 249 || aD.gw || (b0.aBz.aRr(+(this.aRm && ag.mi[aD.eX]), al.kB + bN.y.lz), this.aRm = !1)
 	}
 }
 
-function aRM() {
-	function aSH(aSI) {
+function aRN() {
+	function aSI(aSJ) {
 		var eq = aD.data,
-			aSI = (eq.selectedPlayer = bH.pg(aSI), eq.spawningSeed = bH.pg(14), bH.pg(4)),
-			aSI = (aSI < 7 ? (eq.gameMode = 1, eq.numberTeams = aSI + 2) : 9 === aSI ? (eq.gameMode = eq.isZombieMode = 1, eq.numberTeams = 2) : (eq.gameMode = 0, eq.battleRoyaleMode = 7 === aSI ? 0 : 10 === aSI ? 1 : 2), eq.isContest = bH.pg(1), bH
+			aSJ = (eq.selectedPlayer = bH.pg(aSJ), eq.spawningSeed = bH.pg(14), bH.pg(4)),
+			aSJ = (aSJ < 7 ? (eq.gameMode = 1, eq.numberTeams = aSJ + 2) : 9 === aSJ ? (eq.gameMode = eq.isZombieMode = 1, eq.numberTeams = 2) : (eq.gameMode = 0, eq.battleRoyaleMode = 7 === aSJ ? 0 : 10 === aSJ ? 1 : 2), eq.isContest = bH.pg(1), bH
 				.pg(6));
-		return eq.mapType = bS.aDA(aSI) ? 0 : 1, bS.aDB(eq, aSI), eq.mapSeed = bH.pg(14), aSI
+		return eq.mapType = bS.aDA(aSJ) ? 0 : 1, bS.aDB(eq, aSJ), eq.mapSeed = bH.pg(14), aSJ
 	}
-	this.aRs = function(a12, aC) {
-		bH.dd(aC), 0 === bH.size ? b0.y.aRn(a12, 3205) : __fx.customLobby.isCustomMessage(aC) || ((0 === bH.pg(1) ? function(a12) {
-			var aRw = bH.pg(6);
-			0 === aRw ? function(a12) {
+	this.aRt = function(a12, aC) {
+		bH.dd(aC), 0 === bH.size ? b0.y.aRo(a12, 3205) : __fx.customLobby.isCustomMessage(aC) || ((0 === bH.pg(1) ? function(a12) {
+			var aRx = bH.pg(6);
+			0 === aRx ? function(a12) {
 					if (0 === a12 && 8 !== aa.a17()) {
-						t.y.aQP();
-						for (var aS9 = bH.pg(12), aSA = bH.pg(6), g = new Array(aS9), aB = 0; aB < aS9; aB++) g[aB] = bH.pg(aSA);
+						t.y.aQQ();
+						for (var aSA = bH.pg(12), aSB = bH.pg(6), g = new Array(aSA), aB = 0; aB < aSA; aB++) g[aB] = bH.pg(aSB);
 						aT.a9J(g)
 					}
-				}(a12) : 2 === aRw ? b0.aRN.aRy(a12) : 3 === aRw || 4 === aRw ? ax.dd() : 9 === aRw ? b0.aRP.aRz(a12) : 10 === aRw ? b0.aRR.aS0() : 11 === aRw ? b0.aRP.aS1(a12) : 12 === aRw ? b0.aRR.aS2() : 13 === aRw ? b0.aRT.aS3() :
-				14 === aRw ? b0.aRT.aS4() : 15 === aRw ? b0.aRP.aS5() : 16 === aRw ? b0.aRN.aS6(a12) : 17 === aRw ? b0.aRN.aS7(a12) : 19 === aRw && b0.aRN.aS8(a12)
+				}(a12) : 2 === aRx ? b0.aRO.aRz(a12) : 3 === aRx || 4 === aRx ? ax.dd() : 9 === aRx ? b0.aRQ.aS0(a12) : 10 === aRx ? b0.aRS.aS1() : 11 === aRx ? b0.aRQ.aS2(a12) : 12 === aRx ? b0.aRS.aS3() : 13 === aRx ? b0.aRU.aS4() :
+				14 === aRx ? b0.aRU.aS5() : 15 === aRx ? b0.aRQ.aS6() : 16 === aRx ? b0.aRO.aS7(a12) : 17 === aRx ? b0.aRO.aS8(a12) : 19 === aRx && b0.aRO.aS9(a12)
 		} : function(a12) {
 			if (8 !== aa.a17() && !ax.aG3()) return;
-			if (a12 !== b0.y.a1C) b0.y.aRn(a12, 3244);
-			else if (0 === bH.pg(1)) bf.a05.aSJ(bH.aC);
+			if (a12 !== b0.y.a1C) b0.y.aRo(a12, 3244);
+			else if (0 === bH.pg(1)) bf.a05.aSK(bH.aC);
 			else {
 				var aB, a12 = bH.pg(2);
 				if (0 === a12) {
@@ -9681,16 +9677,16 @@ function aRM() {
 				}();
 				else if (l.a9 && !l.aA) {
 					var en = 540;
-					for (bD.a7(17287), bD.a8(1, 0), bD.a8(6, 10), en = Math.min(b8.p0.pi.length, 540), aB = 0; aB < en; aB++) bD.aSP(32, b8.p0.pi[aB]);
+					for (bD.a7(17287), bD.a8(1, 0), bD.a8(6, 10), en = Math.min(b8.p0.pi.length, 540), aB = 0; aB < en; aB++) bD.aSQ(32, b8.p0.pi[aB]);
 					b0.y.send(b0.y.a1C, bD.aC)
 				}
 			}
-		})(a12), bf.aRv())
-	}, this.aSB = function(aC) {
+		})(a12), bf.aRw())
+	}, this.aSC = function(aC) {
 		if (bH.dd(aC), bH.e8 = 1, 3 === bH.pg(6)) {
 			bH.e8 += 20;
 			var eq = aD.data = new a4P,
-				aC = aSH(9),
+				aC = aSI(9),
 				aDC = eq.humanCount = bH.pg(9) + 1;
 			eq.selectableSpawn = 1 === eq.gameMode || aDC < 100, eq.colorsData = new Uint32Array(aDC), eq.playerNamesData = new Array(aDC);
 			for (var aB = 0; aB < aDC; aB++) bH.e8++, eq.colorsData[aB] = bH.pg(18), eq.playerNamesData[aB] = bG.vu.vy(bH.pg(5));
@@ -9698,120 +9694,120 @@ function aRM() {
 		} else ! function() {
 			bH.e8 += 20;
 			var eq = aD.data = new a4P,
-				aSG = aSH(1);
+				aSH = aSI(1);
 			eq.humanCount = 2;
 			eq.selectableSpawn = 1, eq.elo = new Uint16Array(2), eq.colorsData = new Uint32Array(2), eq.playerNamesData = new Array(2);
 			for (var aB = 0; aB < 2; aB++) bH.e8++, eq.colorsData[aB] = bH.pg(18), eq.elo[aB] = bH.pg(14), eq.playerNamesData[aB] = bG.vu.vy(bH.pg(5));
-			aa.aFk(), bS.a7(aSG, eq.mapSeed), aD.a4U()
+			aa.aFk(), bS.a7(aSH, eq.mapSeed), aD.a4U()
 		}()
-	}, this.aSE = function() {
+	}, this.aSF = function() {
 		bH.e8 = 1;
-		var aRw = bH.pg(6),
-			aSF = bH.pg(10);
-		return b0.y.a15 === aSF ? (b0.y.a1C = aSF, !1) : (b0.y.close(b0.y.a15, 3247), b0.y.a1C = aSF, ax.aD7 = bH.pg(10), ax.aFs = bH.pg(3 === aRw ? 9 : 1), b0.y.aFZ(aSF, 5) && b0.p3.aFz(), !0)
+		var aRx = bH.pg(6),
+			aSG = bH.pg(10);
+		return b0.y.a15 === aSG ? (b0.y.a1C = aSG, !1) : (b0.y.close(b0.y.a15, 3247), b0.y.a1C = aSG, ax.aD7 = bH.pg(10), ax.aFs = bH.pg(3 === aRx ? 9 : 1), b0.y.aFZ(aSG, 5) && b0.p3.aFz(), !0)
 	}
 }
 
-function aRS() {
-	this.aS0 = function() {
+function aRT() {
+	this.aS1 = function() {
 		bj.y.vS(), bj.s0.s1(105, bF.sq.sr(bF.sq.ss(5))), bj.s0.s1(106, bF.sq.sr(bF.sq.ss(8))), bj.s0.s1(109, bH.pg(30)), bj.s0.s1(108, bj.eK.data[109].value), bj.s0.s1(111, bj.eK.data[109].value + 1), bj.s0.s1(107, 0), bj.s0.s1(110, "")
-	}, this.aS2 = function() {
+	}, this.aS3 = function() {
 		var data;
-		bH.size < bD.aSQ(29) ? b0.y.aRn(0, 3254) : ((data = {
+		bH.size < bD.aSR(29) ? b0.y.aRo(0, 3254) : ((data = {
 			sm: bH.pg(30),
 			vf: bH.pg(16),
 			vg: bH.pg(30),
 			vh: bH.pg(30),
 			vi: bH.pg(30),
-			vj: bH.aSR(32),
+			vj: bH.aSS(32),
 			username: bG.vw.wE(5),
 			vk: bG.vw.wE(3),
 			vl: bG.vw.wE(3),
-			vm: bH.aSR(32),
-			vn: bH.aSR(32),
+			vm: bH.aSS(32),
+			vn: bH.aSS(32),
 			vo: bH.pg(30),
-			vp: bH.aSR(32),
-			vq: bH.aSR(32),
-			vr: bH.aSR(32),
-			vs: bH.aSR(32),
-			aNN: bH.aSR(32),
-			aNO: bH.aSR(30),
-			aNZ: bH.aSR(32),
-			aNa: bG.vw.wE(3),
-			aNS: bH.aSR(2),
-			aNT: bH.aSR(10),
-			aNQ: bG.vw.wE(8),
-			aNU: bH.aSR(5),
-			aNA: bH.pg(30),
-			aNM: bH.pg(30),
-			a0N: bH.aSR(32),
-			aNb: bH.pg(1),
-			aNc: bH.pg(1)
-		}).aNb && (data.aNd = bH.aSR(32), data.aNe = bH.pg(30), data.aNf = bH.pg(30), data.aNg = bH.pg(1)), 8 === t.sn && (25 === t.a4x().aOz ? (data.aMr = !0, t.y.aMX = data, t.a4x().aPE(25, !1)) : (data.aMr = !1, bj.s0.s1(160, +(data
-			.aNb && data.aNg)), data.sl = bj.eK.data[105].value, t.y.aMU = data, bj.s0.ve(data), t.a4x().aPE(16, !0))))
+			vp: bH.aSS(32),
+			vq: bH.aSS(32),
+			vr: bH.aSS(32),
+			vs: bH.aSS(32),
+			aNO: bH.aSS(32),
+			aNP: bH.aSS(30),
+			aNa: bH.aSS(32),
+			aNb: bG.vw.wE(3),
+			aNT: bH.aSS(2),
+			aNU: bH.aSS(10),
+			aNR: bG.vw.wE(8),
+			aNV: bH.aSS(5),
+			aNB: bH.pg(30),
+			aNN: bH.pg(30),
+			a0N: bH.aSS(32),
+			aNc: bH.pg(1),
+			aNd: bH.pg(1)
+		}).aNc && (data.aNe = bH.aSS(32), data.aNf = bH.pg(30), data.aNg = bH.pg(30), data.aNh = bH.pg(1)), 8 === t.sn && (25 === t.a4x().aP0 ? (data.aMs = !0, t.y.aMY = data, t.a4x().aPF(25, !1)) : (data.aMs = !1, bj.s0.s1(160, +(data
+			.aNc && data.aNh)), data.sl = bj.eK.data[105].value, t.y.aMV = data, bj.s0.ve(data), t.a4x().aPF(16, !0))))
 	}
 }
 
-function aRU() {
-	this.aS3 = function() {
+function aRV() {
+	this.aS4 = function() {
 		var aB;
-		if (bH.size < bD.aSQ(23)) b0.y.aRn(0, 3259);
+		if (bH.size < bD.aSR(23)) b0.y.aRo(0, 3259);
 		else {
 			var t6 = bH.pg(6),
 				en = bH.pg(10),
 				data = [];
 			if (9 === t6 || 10 === t6 || 11 === t6) {
-				for (aB = 0; aB < en; aB++) data.push([bH.pg(30), bG.vw.wE(5), bH.aSR(32), 0, bH.pg(30)]);
-				8 === t.sn && t.a4x().aPE(21, !0, {
+				for (aB = 0; aB < en; aB++) data.push([bH.pg(30), bG.vw.wE(5), bH.aSS(32), 0, bH.pg(30)]);
+				8 === t.sn && t.a4x().aPF(21, !0, {
 					t6: t6,
 					data: data
 				})
 			} else if (12 === t6) {
-				for (aB = 0; aB < en; aB++) data.push([bH.pg(20), bH.pg(30), bH.pg(30), bH.aSR(32), bH.pg(30), bG.vw.wE(5), bG.vw.wE(5)]);
-				8 === t.sn && t.a4x().aPE(21, !0, {
+				for (aB = 0; aB < en; aB++) data.push([bH.pg(20), bH.pg(30), bH.pg(30), bH.aSS(32), bH.pg(30), bG.vw.wE(5), bG.vw.wE(5)]);
+				8 === t.sn && t.a4x().aPF(21, !0, {
 					t6: t6,
 					data: data
 				})
 			} else {
 				var hk = bH.pg(16);
-				if (bH.aSS(39 + 16 * hk + en * (0 === t6 ? 111 : 1 === t6 ? 101 : 2 === t6 || 3 === t6 ? 127 : 212))) {
+				if (bH.aST(39 + 16 * hk + en * (0 === t6 ? 111 : 1 === t6 ? 101 : 2 === t6 || 3 === t6 ? 127 : 212))) {
 					if (0 === t6)
 						for (aB = 0; aB < en; aB++) data.push([bH.pg(30), bG.vu.vy(bH.pg(5)), bH.pg(16), bH.pg(30), bH.pg(30)]);
 					else if (1 === t6)
 						for (aB = 0; aB < en; aB++) data.push([bH.pg(16), bG.vu.vy(bH.pg(3)), bH.pg(16), bG.vu.vy(bH.pg(5)), bH.pg(31), bH.pg(30)]);
 					else if (2 === t6 || 3 === t6)
-						for (aB = 0; aB < en; aB++) data.push([bH.pg(30), bG.vu.vy(bH.pg(5)), bH.aSR(32), bH.pg(30), bH.pg(30)]);
+						for (aB = 0; aB < en; aB++) data.push([bH.pg(30), bG.vu.vy(bH.pg(5)), bH.aSS(32), bH.pg(30), bH.pg(30)]);
 					else
-						for (aB = 0; aB < en; aB++) data.push([bH.pg(20), bH.pg(30), bH.pg(30), bH.pg(30), bH.pg(30), bH.aSR(32), bH.pg(30), bG.vu.vy(bH.pg(5)), bG.vu.vy(bH.pg(5))]);
-					8 === t.sn && t.a4x().aPE(21, !0, {
+						for (aB = 0; aB < en; aB++) data.push([bH.pg(20), bH.pg(30), bH.pg(30), bH.pg(30), bH.pg(30), bH.aSS(32), bH.pg(30), bG.vu.vy(bH.pg(5)), bG.vu.vy(bH.pg(5))]);
+					8 === t.sn && t.a4x().aPF(21, !0, {
 						t6: t6,
 						data: data
 					})
-				} else b0.y.aRn(0, 3260)
+				} else b0.y.aRo(0, 3260)
 			}
 		}
-	}, this.aS4 = function() {
-		if (bH.size < bD.aSQ(29)) b0.y.aRn(0, 3265);
+	}, this.aS5 = function() {
+		if (bH.size < bD.aSR(29)) b0.y.aRo(0, 3265);
 		else {
-			var aST = bH.pg(4),
-				aSU = bH.pg(7),
-				aSV = bH.pg(11);
-			if (bH.aSS(29 + 16 * aSU + 16 * aSV + 11 * aST)) {
-				for (var data = [], aB = 0; aB < aST; aB++) {
-					for (var a0c = bG.vu.vy(bH.pg(3)), aSW = bH.pg(8), aOD = [], f6 = 0; f6 < aSW; f6++) aOD.push(bH.pg(16));
+			var aSU = bH.pg(4),
+				aSV = bH.pg(7),
+				aSW = bH.pg(11);
+			if (bH.aST(29 + 16 * aSV + 16 * aSW + 11 * aSU)) {
+				for (var data = [], aB = 0; aB < aSU; aB++) {
+					for (var a0c = bG.vu.vy(bH.pg(3)), aSX = bH.pg(8), aOE = [], f6 = 0; f6 < aSX; f6++) aOE.push(bH.pg(16));
 					data.push({
 						name: "[" + a0c + "]",
-						aOD: aOD
+						aOE: aOE
 					})
 				}
-				8 === t.sn && t.a4x().aPE(23, !0, data)
-			} else b0.y.aRn(0, 3266)
+				8 === t.sn && t.a4x().aPF(23, !0, data)
+			} else b0.y.aRo(0, 3266)
 		}
 	}
 }
 
-function aRO() {
-	function aSY() {
+function aRP() {
+	function aSZ() {
 		var id = bH.pg(3);
 		return 0 === id ? {
 			id: id,
@@ -9846,7 +9842,7 @@ function aRO() {
 			value: bH.pg(17)
 		} : null
 	}
-	this.aRy = function(a12) {
+	this.aRz = function(a12) {
 		if (a12 !== b0.y.a15) b0.y.close(a12, 3239);
 		else if (6 !== aa.a17()) b0.y.close(a12, 3271);
 		else {
@@ -9859,11 +9855,11 @@ function aRO() {
 			}
 			t.u(29), bn.y.aDi(!0)
 		}
-	}, this.aS6 = function(a12) {
+	}, this.aS7 = function(a12) {
 		if (a12 !== b0.y.a15) b0.y.close(a12, 3239);
 		else if (bn.a14) {
 			bn.y.aDg[0] = bH.pg(20), bn.y.aDg[1] = bH.pg(20);
-			for (var aSX = bH.pg(16), f6 = 0; f6 < aSX; f6++) {
+			for (var aSY = bH.pg(16), f6 = 0; f6 < aSY; f6++) {
 				var id = bH.pg(3);
 				0 === id ? bn.tt.aCg(bH.pg(2), bH.pg(30), bG.vw.wE(5), 0, 1234566, 127, 0, bH.pg(18), 0, bH.pg(12)) : 1 === id ? bn.tt.aCx(bH.pg(16), bH.pg(2)) : 2 === id ? bn.tt.aCt(bH.pg(16), bH.pg(2), bH.pg(2)) : 3 === id ? bn.tt.aCw(bH.pg(
 					16), bH.pg(2)) : 4 === id ? bn.tt.aCm(bH.pg(16), bH.pg(2), bH.pg(4), bH.pg(30), bH.pg(7), bH.pg(16), bH.pg(11)) : 5 === id && bn.tt.aCn(bH.pg(16), bH.pg(2), bH.pg(1))
@@ -9877,42 +9873,42 @@ function aRO() {
 			}
 			bn.y.aDk()
 		} else b0.y.close(a12, 3251)
-	}, this.aS7 = function(a12) {
+	}, this.aS8 = function(a12) {
 		if (a12 !== b0.y.a15) b0.y.close(a12, 3272);
 		else if (bn.a14) {
 			for (var rc = bH.pg(4), re = bn.y.rf[rc], rg = re.rg, u8 = (re.rh = bH.pg(20), bH.pg(6)), aB = 0; aB < u8; aB++) {
-				var aF4 = aSY();
+				var aF4 = aSZ();
 				bn.rp.aF3(aF4), rg.push(aF4)
 			}
 			bn.y.aDs(rc)
 		} else b0.y.close(a12, 3273)
-	}, this.aS8 = function(a12) {
-		a12 !== b0.y.a15 ? b0.y.close(a12, 3276) : bn.a14 ? bn.message.aED(aSY()) : b0.y.close(a12, 3277)
+	}, this.aS9 = function(a12) {
+		a12 !== b0.y.a15 ? b0.y.close(a12, 3276) : bn.a14 ? bn.message.aED(aSZ()) : b0.y.close(a12, 3277)
 	}
 }
 
-function aRQ() {
-	this.aRz = function(a12) {
-		var aSL, r5;
-		bH.aSS(70) ? (aSL = bH.pg(3), r5 = bi.aSZ.j3(bH.pg(30), bH.pg(30)), b0.aBz.aSa(a12, r5, aSL), 0 < aSL || (0 === a12 && 0 === bj.eK.data[105].value.length ? b0.aBz.aP3(0) : b0.aNF.aSb(a12), 4 === b0.y.aRa(a12).aSc() ? 6 === aa.a17() && b0
-			.aEB.aFa(a12) : 5 !== b0.y.aRa(a12).aSc() || 8 !== aa.a17() && 10 !== aa.a17() || b0.p3.aFz())) : b0.y.aRn(a12, 3269)
-	}, this.aS1 = function(a12) {
+function aRR() {
+	this.aS0 = function(a12) {
+		var aSM, r5;
+		bH.aST(70) ? (aSM = bH.pg(3), r5 = bi.aSa.j3(bH.pg(30), bH.pg(30)), b0.aBz.aSb(a12, r5, aSM), 0 < aSM || (0 === a12 && 0 === bj.eK.data[105].value.length ? b0.aBz.aP4(0) : b0.aNG.aSc(a12), 4 === b0.y.aRb(a12).aSd() ? 6 === aa.a17() && b0
+			.aEB.aFa(a12) : 5 !== b0.y.aRb(a12).aSd() || 8 !== aa.a17() && 10 !== aa.a17() || b0.p3.aFz())) : b0.y.aRo(a12, 3269)
+	}, this.aS2 = function(a12) {
 		var id = bH.pg(6);
-		1 === id ? (bj.s0.s1(160, bH.pg(30)), b0.y.aRk(a12), aT.a9F || b0.aBz.aP3(1), b7.aBx(), 8 === t.sn && t.a4x().aPD()) : 21 === id ? 8 === t.sn && t.a4x().aPE(17) : 22 === id && (bj.s0.s1(106, bj.eK.data[110].value), bj.s0.s1(110, ""),
-			8 === t.sn) && t.a4x().aPE(15)
-	}, this.aS5 = function() {
+		1 === id ? (bj.s0.s1(160, bH.pg(30)), b0.y.aRl(a12), aT.a9F || b0.aBz.aP4(1), b7.aBx(), 8 === t.sn && t.a4x().aPE()) : 21 === id ? 8 === t.sn && t.a4x().aPF(17) : 22 === id && (bj.s0.s1(106, bj.eK.data[110].value), bj.s0.s1(110, ""),
+			8 === t.sn) && t.a4x().aPF(15)
+	}, this.aS6 = function() {
 		var en = bH.pg(16),
-			aSd = bH.pg(16);
-		if (bH.aSS(55 + 10 * en + 16 * aSd)) {
+			aSe = bH.pg(16);
+		if (bH.aST(55 + 10 * en + 16 * aSe)) {
 			for (var g = [], aB = 0; aB < en; aB++) g.push(bG.vu.vy(bH.pg(10)));
 			b7.aC1(g)
-		} else b0.y.aRn(0, 3270)
+		} else b0.y.aRo(0, 3270)
 	}
 }
 
-function aRG() {
-	this.aRb = function(a12, aRZ) {
-		bD.a7(8), bD.a8(1, 0), bD.a8(6, 4), bD.a8(1, aRZ ? 1 : 0), b0.y.send(a12, bD.aC)
+function aRH() {
+	this.aRc = function(a12, aRa) {
+		bD.a7(8), bD.a8(1, 0), bD.a8(6, 4), bD.a8(1, aRa ? 1 : 0), b0.y.send(a12, bD.aC)
 	}, this.aFz = function() {
 		bD.a7(58), bD.a8(1, 0), bD.a8(6, 5), bD.a8(8, b0.y.a15), bD.a8(10, ax.aD7), bD.a8(9, ax.aFs), bD.a8(10, l.dx), bD.a8(14, l.dq), b0.y.send(b0.y.a1C, bD.aC)
 	}, this.p4 = function(eZ) {
@@ -9935,35 +9931,35 @@ function aRG() {
 		bD.a7(5), bD.a8(1, 1), bD.a8(4, 8), b0.y.send(b0.y.a1C, bD.aC)
 	}, this.pP = function(iN, eZ, jJ) {
 		bD.a7(47), bD.a8(1, 1), bD.a8(4, 10), bD.a8(10, iN), bD.a8(10, jJ), bD.a8(22, eZ), b0.y.send(b0.y.a1C, bD.aC)
-	}, this.pW = function(aSe, aSf) {
-		bD.a7(24), bD.a8(1, 1), bD.a8(4, 15), bD.a8(9, aSf), bD.a8(10, aSe), b0.y.send(b0.y.a1C, bD.aC)
+	}, this.pW = function(aSf, aSg) {
+		bD.a7(24), bD.a8(1, 1), bD.a8(4, 15), bD.a8(9, aSg), bD.a8(10, aSf), b0.y.send(b0.y.a1C, bD.aC)
 	}, this.pZ = function(a6U) {
 		bD.a7(14), bD.a8(1, 1), bD.a8(4, 14), bD.a8(9, a6U), b0.y.send(b0.y.a1C, bD.aC)
-	}, this.pd = function(aSg, target) {
-		var aB, en = aSg.length;
-		for (bD.a7(14 + 9 * en), bD.a8(1, 1), bD.a8(4, 13), bD.a8(9, target), aB = 0; aB < en; aB++) bD.a8(9, aSg[aB]);
+	}, this.pd = function(aSh, target) {
+		var aB, en = aSh.length;
+		for (bD.a7(14 + 9 * en), bD.a8(1, 1), bD.a8(4, 13), bD.a8(9, target), aB = 0; aB < en; aB++) bD.a8(9, aSh[aB]);
 		b0.y.send(b0.y.a1C, bD.aC)
 	}
 }
 
-function aRJ() {
-	this.aSh = function() {
-		bD.a7(39), bD.a8(1, 0), bD.a8(6, 16), b0.aBz.aSi(), b0.y.send(0, bD.aC)
-	}, this.aSb = function(a12) {
+function aRK() {
+	this.aSi = function() {
+		bD.a7(39), bD.a8(1, 0), bD.a8(6, 16), b0.aBz.aSj(), b0.y.send(0, bD.aC)
+	}, this.aSc = function(a12) {
 		bD.a7(115), bD.a8(1, 0), bD.a8(6, 17), bG.sq.wA(bj.eK.data[105].value, 5), bG.sq.wA(bj.eK.data[106].value, 8), bD.a8(30, bj.eK.data[109].value), b0.y.send(a12, bD.aC)
-	}, this.aPG = function() {
+	}, this.aPH = function() {
 		bD.a7(55), bD.a8(1, 0), bD.a8(6, 18), bG.sq.w9(bj.eK.data[110].value), b0.y.send(0, bD.aC)
-	}, this.aPC = function(a3m) {
+	}, this.aPD = function(a3m) {
 		var en = a3m.qG.length;
 		bD.a7(21 + 16 * en), bD.a8(1, 0), bD.a8(6, 29), bD.a8(6, a3m.sp), bD.a8(8, en), bF.vu.w9(a3m.qG), b0.y.send(0, bD.aC)
-	}, this.aNV = function(data) {
+	}, this.aNW = function(data) {
 		bD.a7(43), bD.a8(1, 0), bD.a8(6, 25), bD.a8(6, data.sp), bG.sq.wA(data.sl, 5), b0.y.send(0, bD.aC)
-	}, this.aNG = function(data) {
-		bD.a7(75), bD.a8(1, 0), bD.a8(6, 27), bD.a8(6, data.sp), bG.sq.wA(data.sl, 5), bD.aSP(32, data.value), b0.y.send(0, bD.aC)
+	}, this.aNH = function(data) {
+		bD.a7(75), bD.a8(1, 0), bD.a8(6, 27), bD.a8(6, data.sp), bG.sq.wA(data.sl, 5), bD.aSQ(32, data.value), b0.y.send(0, bD.aC)
 	}
 }
 
-function aRK() {
+function aRL() {
 	this.pe = function() {
 		for (var en = aD.kA, zl = bR.result.zl, l3 = zl.length, a0V = (bD.a7(17 + 16 * en + 33 * l3), bD.a8(1, 1), bD.a8(4, 12), bD.a8(10, l3), bD.a8(1, +(2 === aD.zt)), bD.a8(1, aD.a0D % 2), ag.a0V), aB = 0; aB < en; aB++) bD.a8(16, a0V[aB]);
 		for (var gb = ag.gb, aB = 0; aB < l3; aB++) {
@@ -9974,99 +9970,99 @@ function aRK() {
 	}
 }
 
-function aRL() {
-	this.aP5 = function(t6, t7, t8) {
+function aRM() {
+	this.aP6 = function(t6, t7, t8) {
 		bD.a7(75), bD.a8(1, 0), bD.a8(6, 21), bD.a8(6, t6), bD.a8(1, +(t7 < 0)), bD.a8(1, +(t8 < 0)), bD.a8(30, Math.abs(t7)), bD.a8(30, Math.abs(t8)), b0.y.send(0, bD.aC)
-	}, this.aP6 = function(t6, aP7, aP8) {
-		bD.a7(18 + 16 * aP7.length + 30), bD.a8(1, 0), bD.a8(6, 22), bD.a8(6, t6), b0.aBz.aSk(aP7), bD.a8(30, aP8), b0.y.send(0, bD.aC)
-	}, this.aPB = function(t6, aP7, aP8) {
-		bD.a7(73), bD.a8(1, 0), bD.a8(6, 28), bD.a8(6, t6), bG.sq.wA(aP7, 5), bD.a8(30, aP8), b0.y.send(0, bD.aC)
-	}, this.aP9 = function(aOC, a0b) {
+	}, this.aP7 = function(t6, aP8, aP9) {
+		bD.a7(18 + 16 * aP8.length + 30), bD.a8(1, 0), bD.a8(6, 22), bD.a8(6, t6), b0.aBz.aSl(aP8), bD.a8(30, aP9), b0.y.send(0, bD.aC)
+	}, this.aPC = function(t6, aP8, aP9) {
+		bD.a7(73), bD.a8(1, 0), bD.a8(6, 28), bD.a8(6, t6), bG.sq.wA(aP8, 5), bD.a8(30, aP9), b0.y.send(0, bD.aC)
+	}, this.aPA = function(aOD, a0b) {
 		for (var en = a0b.length, hk = 0, aB = 0; aB < en; aB++) hk += a0b[aB].length;
-		for (bD.a7(21 + 3 * en + 16 * hk), bD.a8(1, 0), bD.a8(6, 23), bD.a8(3, aOC), bD.a8(4, en), bD.a8(7, hk), aB = 0; aB < en; aB++) bD.a8(3, a0b[aB].length), bF.vu.w9(a0b[aB]);
+		for (bD.a7(21 + 3 * en + 16 * hk), bD.a8(1, 0), bD.a8(6, 23), bD.a8(3, aOD), bD.a8(4, en), bD.a8(7, hk), aB = 0; aB < en; aB++) bD.a8(3, a0b[aB].length), bF.vu.w9(a0b[aB]);
 		b0.y.send(0, bD.aC)
-	}, this.aPA = function(aOC, t7, t8) {
-		bD.a7(52), bD.a8(1, 0), bD.a8(6, 24), bD.a8(3, aOC), bD.a8(1, +(t7 < 0)), bD.a8(1, +(t8 < 0)), bD.a8(20, Math.abs(t7)), bD.a8(20, Math.abs(t8)), b0.y.send(0, bD.aC)
-	}
-}
-
-function aRH() {
-	this.aFa = function(a12) {
-		var username = bj.eK.data[122].value.slice(0, 20),
-			username = (bD.a7(24 + 16 * username.length + 18 + 18 + bi.a1g.pg()), bD.a8(1, 0), bD.a8(6, 1), bD.a8(10, l.dx), bD.a8(2, bj.eK.data[158].value), b0.aBz.aSk(username), bA.color.a2s(bj.y.vZ())),
-			username = (bD.a8(6, username[0]), bD.a8(6, username[1]), bD.a8(6, username[2]), b7.aC3());
-		bD.a8(9, username[0]), bD.a8(9, username[1]), bi.a1g.zO(), b0.y.a15 = a12, b0.y.send(a12, bD.aC)
-	}, this.aEC = function(aSn, a3m) {
-		bE.dd(), bE.a8(1, 0), bE.a8(6, 2), bE.a8(3, aSn), 2 === aSn ? bE.a8(2, a3m) : 3 === aSn ? bF.vw.zO(a3m, 7, bE) : 5 === aSn && (bE.a8(3, a3m.id), bE.a8(3, a3m.value), bE.a8(30, a3m.sl)), b0.y.send(b0.y.a15, bE.aSo())
+	}, this.aPB = function(aOD, t7, t8) {
+		bD.a7(52), bD.a8(1, 0), bD.a8(6, 24), bD.a8(3, aOD), bD.a8(1, +(t7 < 0)), bD.a8(1, +(t8 < 0)), bD.a8(20, Math.abs(t7)), bD.a8(20, Math.abs(t8)), b0.y.send(0, bD.aC)
 	}
 }
 
 function aRI() {
-	this.aRj = function(a12) {
+	this.aFa = function(a12) {
+		var username = bj.eK.data[122].value.slice(0, 20),
+			username = (bD.a7(24 + 16 * username.length + 18 + 18 + bi.a1g.pg()), bD.a8(1, 0), bD.a8(6, 1), bD.a8(10, l.dx), bD.a8(2, bj.eK.data[158].value), b0.aBz.aSl(username), bA.color.a2s(bj.y.vZ())),
+			username = (bD.a8(6, username[0]), bD.a8(6, username[1]), bD.a8(6, username[2]), b7.aC3());
+		bD.a8(9, username[0]), bD.a8(9, username[1]), bi.a1g.zO(), b0.y.a15 = a12, b0.y.send(a12, bD.aC)
+	}, this.aEC = function(aSo, a3m) {
+		bE.dd(), bE.a8(1, 0), bE.a8(6, 2), bE.a8(3, aSo), 2 === aSo ? bE.a8(2, a3m) : 3 === aSo ? bF.vw.zO(a3m, 7, bE) : 5 === aSo && (bE.a8(3, a3m.id), bE.a8(3, a3m.value), bE.a8(30, a3m.sl)), b0.y.send(b0.y.a15, bE.aSp())
+	}
+}
+
+function aRJ() {
+	this.aRk = function(a12) {
 		bD.a7(39), bD.a8(1, 0), bD.a8(6, 13), bD.a8(14, l.dq), bD.a8(4, a0.id), bD.a8(7, a0.dv), bD.a8(1, +l.a9), bD.a8(1, +l.aA), bD.a8(5, (new Date).getHours() % 24), b0.y.send(a12, bD.aC)
-	}, this.aSa = function(a12, r5, aSL) {
-		bD.a7(70), bD.a8(1, 0), bD.a8(6, 14), bD.a8(3, aSL), bD.a8(30, r5[0]), bD.a8(30, r5[1]), b0.y.send(a12, bD.aC)
-	}, this.aP3 = function(id) {
+	}, this.aSb = function(a12, r5, aSM) {
+		bD.a7(70), bD.a8(1, 0), bD.a8(6, 14), bD.a8(3, aSM), bD.a8(30, r5[0]), bD.a8(30, r5[1]), b0.y.send(a12, bD.aC)
+	}, this.aP4 = function(id) {
 		bD.a7(13), bD.a8(1, 0), bD.a8(6, 15), bD.a8(6, id), b0.y.send(0, bD.aC)
 	}, this.aC0 = function(id, qG) {
 		var en = Math.min(qG.length, 63);
 		bD.a7(19 + 16 * en), bD.a8(1, 0), bD.a8(6, 26), bD.a8(6, id), bD.a8(6, en), bF.vu.w9(qG), b0.y.send(0, bD.aC)
-	}, this.aSq = function(aSF, qR) {
+	}, this.aSr = function(aSG, qR) {
 		bD.a7(7 + 26 * qR.length), bD.a8(1, 0), bD.a8(6, 9);
 		for (var aB = 0; aB < qR.length; aB++) bD.a8(16, qR[aB][0]), bD.a8(10, qR[aB][1]);
-		b0.y.send(aSF, bD.aC)
-	}, this.aRq = function(aSr, aSs) {
-		bD.a7(20), bD.a8(1, 0), bD.a8(6, 19), bD.a8(1, aSr), bD.a8(12, aSs), b0.y.send(b0.y.a1C, bD.aC)
-	}, this.aSk = function(username) {
+		b0.y.send(aSG, bD.aC)
+	}, this.aRr = function(aSs, aSt) {
+		bD.a7(20), bD.a8(1, 0), bD.a8(6, 19), bD.a8(1, aSs), bD.a8(12, aSt), b0.y.send(b0.y.a1C, bD.aC)
+	}, this.aSl = function(username) {
 		bD.a8(5, username.length), bF.vu.w9(username)
 	}
 }
 
-function aRh() {
-	var a12, aMM, aSt, aSu = ["wss://", "/s50/", "/s51/", "/s52/"],
-		aSv = 0;
+function aRi() {
+	var a12, aMN, aSu, aSv = ["wss://", "/s50/", "/s51/", "/s52/"],
+		aSw = 0;
 
-	function aRi() {
-		b0.y.aRi(a12, aMM)
+	function aRj() {
+		b0.y.aRj(a12, aMN)
 	}
 
-	function aSz(e) {
-		b0.a6U.aRs(a12, new Uint8Array(e.data))
+	function aT0(e) {
+		b0.a6U.aRt(a12, new Uint8Array(e.data))
 	}
 
-	function aT0() {}
+	function aT1() {}
 
-	function aRp(e) {
-		b0.y.aRp(a12, e)
+	function aRq(e) {
+		b0.y.aRq(a12, e)
 	}
-	this.dd = function(e8, aSw) {
-		a12 = e8, aMM = aSw, e8 = l.dr ? "ws://localhost:" + (7130 + a12) + "/" : aSu[0] + b0.y.aRW[a12] + aSu[1 + l.ds], (aSt = new WebSocket(__fx.customLobby.isActive() && 1 === a12 ? __fx.customLobby.getSocketURL() : e8)).binaryType =
-			"arraybuffer", aSt.onopen = aRi, aSt.onmessage = aSz, aSt.onclose = aRp, aSt.onerror = aT0
-	}, this.aSy = function() {
-		return aSt.readyState === aSt.CONNECTING
-	}, this.aND = function() {
-		return aSt.readyState === aSt.OPEN
-	}, this.aRc = function() {
-		return aSv
-	}, this.aRk = function() {
-		aSv = 1
-	}, this.aRe = function() {
-		return this.aSy() || this.aND()
-	}, this.aRf = function(aSw) {
-		aMM = aSw
-	}, this.aSc = function() {
-		return aMM
+	this.dd = function(e8, aSx) {
+		a12 = e8, aMN = aSx, e8 = l.dr ? "ws://localhost:" + (7130 + a12) + "/" : aSv[0] + b0.y.aRX[a12] + aSv[1 + l.ds], (aSu = new WebSocket(__fx.customLobby.isActive() && 1 === a12 ? __fx.customLobby.getSocketURL() : e8)).binaryType =
+			"arraybuffer", aSu.onopen = aRj, aSu.onmessage = aT0, aSu.onclose = aRq, aSu.onerror = aT1
+	}, this.aSz = function() {
+		return aSu.readyState === aSu.CONNECTING
+	}, this.aNE = function() {
+		return aSu.readyState === aSu.OPEN
+	}, this.aRd = function() {
+		return aSw
+	}, this.aRl = function() {
+		aSw = 1
+	}, this.aRf = function() {
+		return this.aSz() || this.aNE()
+	}, this.aRg = function(aSx) {
+		aMN = aSx
+	}, this.aSd = function() {
+		return aMN
 	}, this.send = function(aC) {
-		this.aND() && aSt.send(aC)
-	}, this.close = function(aRm) {
-		this.aRe() && (aSt.close(aRm), this.rq())
+		this.aNE() && aSu.send(aC)
+	}, this.close = function(aRn) {
+		this.aRf() && (aSu.close(aRn), this.rq())
 	}, this.rq = function() {
-		aSt.onopen = null, aSt.onmessage = null, aSt.onclose = null, aSt.onerror = null
+		aSu.onopen = null, aSu.onmessage = null, aSu.onclose = null, aSu.onerror = null
 	}
 }
 
 function dK() {
-	var aT1 = !1,
+	var aT2 = !1,
 		a6q = 0,
 		i = 0,
 		su = 0,
@@ -10075,14 +10071,14 @@ function dK() {
 		y6 = null,
 		a2S = null;
 
-	function aT3() {
-		for (var aT9, aT7 = 0, en = 0, f8 = Math.floor(i / 2), e7 = Math.floor(su / 2), aT8 = 1.5 * Math.PI, aB = aD.x8; 0 <= aB; aB--) en += a2S[aB], 0 === a2S[aB] && aT7++;
-		if (aT1 = !1, y6.clearRect(0, 0, i, i), y6.fillStyle = bB.nf, y6.fillRect(0, 0, i, i), y6.fillStyle = bB.ni, y6.fillRect(0, 0, i, gap), y6.fillRect(0, 0, gap, i), y6.fillRect(i - gap, 0, gap, i), y6.fillRect(0, i - gap, i, gap), 0 < en)
-			if (aT7 === aD.x8) {
+	function aT4() {
+		for (var aTA, aT8 = 0, en = 0, f8 = Math.floor(i / 2), e7 = Math.floor(su / 2), aT9 = 1.5 * Math.PI, aB = aD.x8; 0 <= aB; aB--) en += a2S[aB], 0 === a2S[aB] && aT8++;
+		if (aT2 = !1, y6.clearRect(0, 0, i, i), y6.fillStyle = bB.nf, y6.fillRect(0, 0, i, i), y6.fillStyle = bB.ni, y6.fillRect(0, 0, i, gap), y6.fillRect(0, 0, gap, i), y6.fillRect(i - gap, 0, gap, i), y6.fillRect(0, i - gap, i, gap), 0 < en)
+			if (aT8 === aD.x8) {
 				for (aB = aD.x8; 0 <= aB; aB--)
 					if (0 < a2S[aB]) {
 						! function(aB, f8, e7) {
-							y6.fillStyle = bg.aTG[bg.kX[aB]], y6.beginPath(), y6.arc(f8, f8, e7, 0, 2 * Math.PI), y6.fill()
+							y6.fillStyle = bg.aTH[bg.kX[aB]], y6.beginPath(), y6.arc(f8, f8, e7, 0, 2 * Math.PI), y6.fill()
 						}(aB, f8, e7);
 						break
 					}!
@@ -10091,23 +10087,23 @@ function dK() {
 					y6.font = bA.qZ.sN(1, fontSize), y6.fillStyle = bB.ni, y6.fillText("100%", f8, f8 + .1 * fontSize)
 				}(f8)
 			} else {
-				for (aB = 0; aB <= aD.x8; aB++) 0 < a2S[aB] && (! function(aB, f8, e7, aT8, aT9) {
-					y6.fillStyle = bg.aTG[bg.kX[aB]], y6.beginPath(), y6.arc(f8, f8, e7, aT8, aT9), y6.lineTo(f8, f8), y6.fill()
-				}(aB, f8, e7, aT8, aT9 = aT8 + 2 * Math.PI * a2S[aB] / en), function(f8, e7, aT8, aT9) {
-					var fF = (aT9 - aT8) / (2 * Math.PI),
+				for (aB = 0; aB <= aD.x8; aB++) 0 < a2S[aB] && (! function(aB, f8, e7, aT9, aTA) {
+					y6.fillStyle = bg.aTH[bg.kX[aB]], y6.beginPath(), y6.arc(f8, f8, e7, aT9, aTA), y6.lineTo(f8, f8), y6.fill()
+				}(aB, f8, e7, aT9, aTA = aT9 + 2 * Math.PI * a2S[aB] / en), function(f8, e7, aT9, aTA) {
+					var fF = (aTA - aT9) / (2 * Math.PI),
 						fontSize = (__fx.settings.detailedTeamPercentage ? 0.75 : 1) * e7 * Math.min(fF, .37);
-					fontSize < 8 || (aT8 = (aT8 + aT9) / 2, aT9 = (__fx.settings.detailedTeamPercentage ? (100 * fF).toFixed(2) : Math.floor(100 * fF + .5)) + "%", e7 *= .525 - Math.max(.6 * (fF - .7), 0), y6.font = bA.qZ.sN(1, fontSize), y6
-						.fillStyle = bB.ni, y6.fillText(aT9, f8 + Math.cos(aT8) * e7, f8 + Math.cos(aT8 + 1.5 * Math.PI) * e7))
-				}(f8, e7, aT8, aT9), 0 !== aB && aTE(f8, e7, aT8), aT8 = aT9);
-				aTE(f8, e7, 1.5 * Math.PI)
+					fontSize < 8 || (aT9 = (aT9 + aTA) / 2, aTA = (__fx.settings.detailedTeamPercentage ? (100 * fF).toFixed(2) : Math.floor(100 * fF + .5)) + "%", e7 *= .525 - Math.max(.6 * (fF - .7), 0), y6.font = bA.qZ.sN(1, fontSize), y6
+						.fillStyle = bB.ni, y6.fillText(aTA, f8 + Math.cos(aT9) * e7, f8 + Math.cos(aT9 + 1.5 * Math.PI) * e7))
+				}(f8, e7, aT9, aTA), 0 !== aB && aTF(f8, e7, aT9), aT9 = aTA);
+				aTF(f8, e7, 1.5 * Math.PI)
 			}!
 		function(f8, e7) {
 			y6.beginPath(), y6.arc(f8, f8, e7, 0, 2 * Math.PI), y6.stroke()
 		}(f8, e7)
 	}
 
-	function aTE(f8, e7, aTH) {
-		y6.beginPath(), y6.moveTo(f8, f8), y6.lineTo(f8 + Math.cos(aTH) * e7, f8 + Math.cos(aTH + 1.5 * Math.PI) * e7), y6.stroke()
+	function aTF(f8, e7, aTI) {
+		y6.beginPath(), y6.moveTo(f8, f8), y6.lineTo(f8 + Math.cos(aTI) * e7, f8 + Math.cos(aTI + 1.5 * Math.PI) * e7), y6.stroke()
 	}
 	this.dd = function() {
 		if (aD.hh) {
@@ -10122,7 +10118,7 @@ function dK() {
 		aD.hh && (i = Math.floor(a0.a1.hw() && !aD.nB ? .18 * h.min : .13 * h.hx), i = (i *= 1 + (.5 + .2 * a0.a1.hw()) * aD.nB) + i % 2, su = Math.floor(7 * i / 8), (canvas = canvas || document.createElement("canvas")).width = i, canvas.height =
 			i, y6 = canvas.getContext("2d", {
 				alpha: !0
-			}), gap = Math.max(1, .015 * i), y6.lineWidth = gap, y6.strokeStyle = bB.ni, bA.qZ.textAlign(y6, 1), bA.qZ.textBaseline(y6, 1), aT3())
+			}), gap = Math.max(1, .015 * i), y6.lineWidth = gap, y6.strokeStyle = bB.ni, bA.qZ.textAlign(y6, 1), bA.qZ.textBaseline(y6, 1), aT4())
 	}, this.kg = function() {
 		var dt, kh = this.ki();
 		return bg.kX[kh] || (kh = function() {
@@ -10134,16 +10130,16 @@ function dK() {
 	}, this.ki = function() {
 		for (var kh = 0, aB = aD.x8; 0 < aB; aB--) a2S[aB] > a2S[kh] && (kh = aB);
 		return kh
-	}, this.li = function(aT5) {
+	}, this.li = function(aT6) {
 		for (var gG = 0, kC = al.kC, el = bg.el, en = al.kB, fR = bO.fR, aB = 0; aB < en; aB++) {
 			var gL = kC[aB];
-			el[gL] === aT5 && (fR[gG++] = gL)
+			el[gL] === aT6 && (fR[gG++] = gL)
 		}
 		bO.fI[0] = gG
-	}, this.kj = function(aT5) {
+	}, this.kj = function(aT6) {
 		for (var gG = 0, kC = al.kC, el = bg.el, en = al.kB, fR = bO.fR, aB = 0; aB < en; aB++) {
 			var gL = kC[aB];
-			el[gL] !== aT5 && (fR[gG++] = gL)
+			el[gL] !== aT6 && (fR[gG++] = gL)
 		}
 		bO.fI[0] = gG
 	}, this.a3L = function() {
@@ -10154,17 +10150,17 @@ function dK() {
 			a6q = 0;
 			for (var aB = aD.x8; 0 <= aB; aB--) a2S[aB] = 0;
 			for (aB = al.kB - 1; 0 <= aB; aB--) a2S[bg.el[al.kC[aB]]] += ag.gb[al.kC[aB]];
-			aT1 = !0
+			aT2 = !0
 		}
 	}, this.mV = function() {
-		aD.hh && aT1 && aT3()
+		aD.hh && aT2 && aT4()
 	}, this.uf = function() {
 		aD.hh && (aD.nB ? ug.drawImage(canvas, bc.gap, bc.gap) : ug.drawImage(canvas, bc.gap, a7o + 2 * bc.gap))
 	}
 }
 
 function da() {
-	function aTN(eu, en, ew, zY, a94, fE) {
+	function aTO(eu, en, ew, zY, a94, fE) {
 		if (!(ew < 1 || a94 < ew))
 			for (var aB = 0; aB <= en; aB++) {
 				var eR = bM.iR(eu, ew);
@@ -10174,8 +10170,8 @@ function da() {
 		return -1
 	}
 
-	function aTR(ew, en, eu, zY, aTL, fE) {
-		if (!(eu < 1 || aTL < eu)) {
+	function aTS(ew, en, eu, zY, aTM, fE) {
+		if (!(eu < 1 || aTM < eu)) {
 			en = Math.max(en, 0);
 			for (var aB = 0; aB <= en; aB++) {
 				var eR = bM.iR(eu, ew);
@@ -10186,57 +10182,57 @@ function da() {
 		return -1
 	}
 
-	function aTV(iE, iF, aTI) {
-		return -1 !== iF && (-1 === iE || bM.iG(iF, aTI) < bM.iG(iE, aTI)) ? iF : iE
+	function aTW(iE, iF, aTJ) {
+		return -1 !== iF && (-1 === iE || bM.iG(iF, aTJ) < bM.iG(iE, aTJ)) ? iF : iE
 	}
-	this.hC = function(aTI) {
-		return this.a00(aTI, function(eR) {
+	this.hC = function(aTJ) {
+		return this.a00(aTJ, function(eR) {
 			return ac.ei(eR)
 		})
-	}, this.hI = function(aTI) {
-		return this.a00(aTI, function(eR) {
+	}, this.hI = function(aTJ) {
+		return this.a00(aTJ, function(eR) {
 			return ac.aGi(eR, aD.eX)
 		})
-	}, this.a00 = function(aTI, zY) {
-		return function(aTI, aTJ, zY) {
-			for (var h2 = bM.ev(aTI), h4 = bM.ex(aTI), aTL = bS.ey - 2, a94 = bS.ez - 2, aTM = -1, eq = 0; eq < aTJ; eq++) {
+	}, this.a00 = function(aTJ, zY) {
+		return function(aTJ, aTK, zY) {
+			for (var h2 = bM.ev(aTJ), h4 = bM.ex(aTJ), aTM = bS.ey - 2, a94 = bS.ez - 2, aTN = -1, eq = 0; eq < aTK; eq++) {
 				var a93 = Math.max(h2 - eq, 1),
-					aKg = Math.max(h4 - eq, 1),
-					xj = Math.min(h2 + eq, aTL),
+					aKh = Math.max(h4 - eq, 1),
+					xj = Math.min(h2 + eq, aTM),
 					xi = Math.min(h4 + eq, a94),
-					iE = aTN(h2, xj - h2, h4 - eq, zY, a94, 1),
-					iF = aTN(h2 - 1, h2 - a93 - 1, h4 - eq, zY, a94, -1),
-					xj = aTN(h2, xj - h2, h4 + eq, zY, a94, 1),
-					a93 = aTN(h2 - 1, h2 - a93 - 1, h4 + eq, zY, a94, -1),
-					aTQ = aTR(h4, xi - h4 - 1, h2 - eq, zY, aTL, 1),
-					aTS = aTR(h4 - 1, h4 - aKg - 2, h2 - eq, zY, aTL, -1),
-					xi = aTR(h4, xi - h4 - 1, h2 + eq, zY, aTL, 1),
-					aKg = aTR(h4 - 1, h4 - aKg - 2, h2 + eq, zY, aTL, -1);
-				if (aTM = aTV(aTM, iE, aTI), aTM = aTV(aTM, iF, aTI), aTM = aTV(aTM, xj, aTI), aTM = aTV(aTM, a93, aTI), aTM = aTV(aTM, aTQ, aTI), aTM = aTV(aTM, aTS, aTI), aTM = aTV(aTM, xi, aTI), 0 <= (aTM = aTV(aTM, aKg, aTI)) && eq *
-					eq >= bM.iG(aTM, aTI)) return aTM
+					iE = aTO(h2, xj - h2, h4 - eq, zY, a94, 1),
+					iF = aTO(h2 - 1, h2 - a93 - 1, h4 - eq, zY, a94, -1),
+					xj = aTO(h2, xj - h2, h4 + eq, zY, a94, 1),
+					a93 = aTO(h2 - 1, h2 - a93 - 1, h4 + eq, zY, a94, -1),
+					aTR = aTS(h4, xi - h4 - 1, h2 - eq, zY, aTM, 1),
+					aTT = aTS(h4 - 1, h4 - aKh - 2, h2 - eq, zY, aTM, -1),
+					xi = aTS(h4, xi - h4 - 1, h2 + eq, zY, aTM, 1),
+					aKh = aTS(h4 - 1, h4 - aKh - 2, h2 + eq, zY, aTM, -1);
+				if (aTN = aTW(aTN, iE, aTJ), aTN = aTW(aTN, iF, aTJ), aTN = aTW(aTN, xj, aTJ), aTN = aTW(aTN, a93, aTJ), aTN = aTW(aTN, aTR, aTJ), aTN = aTW(aTN, aTT, aTJ), aTN = aTW(aTN, xi, aTJ), 0 <= (aTN = aTW(aTN, aKh, aTJ)) && eq *
+					eq >= bM.iG(aTN, aTJ)) return aTN
 			}
 			return -1
-		}(aTI, bM.hu(), zY)
+		}(aTJ, bM.hu(), zY)
 	}
 }
 
 function d3() {
-	function aTX(key) {
-		var aQe;
-		return "undefined" == typeof URLSearchParams || (aQe = window.location.search, "string" != typeof(aQe = new URLSearchParams(aQe).get(key))) || aQe.length < 1 ? null : aQe
+	function aTY(key) {
+		var aQf;
+		return "undefined" == typeof URLSearchParams || (aQf = window.location.search, "string" != typeof(aQf = new URLSearchParams(aQf).get(key))) || aQf.length < 1 ? null : aQf
 	}
 	this.dm = function() {
 		if (0 !== a0.id) return !1;
 		if (! function() {
-				var value = aTX("account");
-				if (!value && !(value = aTX("a"))) return void bI.clear();
+				var value = aTY("account");
+				if (!value && !(value = aTY("a"))) return void bI.clear();
 				return bI.clear(), t.u(8, t.sn, new so(1e3, {
 					sp: 0,
 					sl: value,
 					sm: 0
 				})), 1
 			}()) {
-			var value = aTX("replay");
+			var value = aTY("replay");
 			if (!this.clear()) return !1;
 			if (!value) return !1;
 			t.u(3, 0, value)
@@ -10251,7 +10247,7 @@ function d3() {
 			console.log("error 352: " + e)
 		}
 		return !1
-	}, this.aNi = function(key, value) {
+	}, this.aNj = function(key, value) {
 		if (0 === a0.id) try {
 			var a0z = new URL(window.location.href),
 				gL = a0z.searchParams;
@@ -10263,18 +10259,18 @@ function d3() {
 }
 
 function ck() {
-	var aTZ, g;
+	var aTa, g;
 	this.dd = function() {
 		for (var aB = (g = new Uint16Array(101)).length - 1; 0 <= aB; aB--) g[aB] = bL.du(32768 * aB, 100);
 		this.a4W(0)
 	}, this.value = function(gL) {
 		return g[gL]
-	}, this.aKY = function() {
-		return bL.du(aTZ - 1, 2)
-	}, this.a4W = function(aKC) {
-		aTZ = 2 * aKC % 32768 + 1
+	}, this.aKZ = function() {
+		return bL.du(aTa - 1, 2)
+	}, this.a4W = function(aKD) {
+		aTa = 2 * aKD % 32768 + 1
 	}, this.random = function() {
-		return aTZ = 167 * aTZ % 32768
+		return aTa = 167 * aTa % 32768
 	}, this.jS = function(md) {
 		return bL.du(md * this.random(), 32768)
 	}, this.k2 = function(gL) {
@@ -10285,129 +10281,129 @@ function ck() {
 }
 
 function cz() {
-	this.pt = new aTa, this.a4h = new aTb, this.aHp = new aTc, this.dd = function() {
+	this.pt = new aTb, this.a4h = new aTc, this.aHp = new aTd, this.dd = function() {
 		aD.gw || this.pt.dd()
 	}, this.j3 = function() {
-		aD.gw || (this.pt.j3(), 3 !== t.sn) || bf.k7() % 15 != 5 && 2 !== aD.zw || t.a4x().aQf()
-	}, this.aQi = function() {
+		aD.gw || (this.pt.j3(), 3 !== t.sn) || bf.k7() % 15 != 5 && 2 !== aD.zw || t.a4x().aQg()
+	}, this.aQj = function() {
 		0 === aD.zw && aa.aFk(), aD.a4Q.a4p(), aD.data.canvas = null, b0.y.close(b0.y.a1C, 3257), b0.y.a1C = 0, aD.data.isReplay = 1, aD.a4U()
-	}, this.aQh = function(qG) {
+	}, this.aQi = function(qG) {
 		var aB = qG.indexOf("=");
 		return 0 <= aB ? qG.substring(aB + 1) : qG
-	}, this.aQg = function(qG) {
+	}, this.aQh = function(qG) {
 		return "https://territorial.io/?replay=" + qG
 	}
 }
 
-function aTa() {
-	this.aTe = null, this.aTf = null, this.aTg = null, this.aTh = null, this.aTi = null, this.aTj = null, this.a4g = "";
-	var aTk = 0;
+function aTb() {
+	this.aTf = null, this.aTg = null, this.aTh = null, this.aTi = null, this.aTj = null, this.aTk = null, this.a4g = "";
+	var aTl = 0;
 	this.dd = function() {
-		this.aTe = [], this.aTf = [], this.aTg = [], this.aTh = [], this.aTi = [0], this.aTj = [0], aTk = 0, this.a4g = ""
+		this.aTf = [], this.aTg = [], this.aTh = [], this.aTi = [], this.aTj = [0], this.aTk = [0], aTl = 0, this.a4g = ""
 	}, this.pu = function(id, fW, fY, fa) {
-		aD.gw || 2 === aD.zw || (0 === this.aTi[aTk] && (this.aTj[aTk] ? (this.aTi.push(1), this.aTj.push(0), aTk++) : this.aTi[aTk] = 1), this.aTe.push(id), this.aTf.push(fW), this.aTg.push(void 0 === fY ? 0 : fY), this.aTh.push(void 0 === fa ?
-			0 : fa), this.aTj[aTk]++)
+		aD.gw || 2 === aD.zw || (0 === this.aTj[aTl] && (this.aTk[aTl] ? (this.aTj.push(1), this.aTk.push(0), aTl++) : this.aTj[aTl] = 1), this.aTf.push(id), this.aTg.push(fW), this.aTh.push(void 0 === fY ? 0 : fY), this.aTi.push(void 0 === fa ?
+			0 : fa), this.aTk[aTl]++)
 	}, this.j3 = function() {
-		0 === this.aTi[aTk] ? this.aTj[aTk]++ : (this.aTi.push(0), this.aTj.push(0), aTk++)
+		0 === this.aTj[aTl] ? this.aTk[aTl]++ : (this.aTj.push(0), this.aTk.push(0), aTl++)
+	}
+}
+
+function aTd() {
+	var aTm = 0;
+
+	function aTq(qG, id) {
+		aTm || (id ? 1 === id ? aN.a5w = L(430) + ": " + qG : t.u(4, 3, new v(L(431), qG, 1)) : t.u(4, 3, new v("⚠️ " + L(429), qG, 1)))
+	}
+	this.wE = function(qG, aTn) {
+		var qR;
+		return aTm = aTn, bG.sq.w6(bG.sq.w4(bG.sq.w2(qG))), aN.a5w = "", !(! function() {
+			if (bH.size < 10) aTq("File Too Small");
+			else {
+				var aTs = bH.pg(12),
+					aSt = (aTs !== l.rVersion && aTq("Incompatible Version   Required: " + l.rVersion + ("   Found: " + aTs) + ("   Compatible at territorial.io/" + aTs), 1), bH.pg(12)),
+					aTt = bH.pg(31);
+				if (aTt !== bH.size) aTq("Size Error: " + aTt + " " + bH.size);
+				else if (function(j, aTs) {
+						for (var gL = bH.aC, en = bH.size, aSt = aTs, aB = 3; aB < en; aB++) aSt = aSt + gL[aB] & 4095;
+						return aSt === j || (aTq("Hash Error: " + aSt + " " + j + " " + en), !1)
+					}(aSt, aTs)) return 1
+			}
+			return
+		}() || (aTn = bH, (qR = aD.data = new a4P).mapType = aTn.pg(2), qR.mapProceduralIndex = aTn.pg(8), qR.mapRealisticIndex = aTn.pg(8), qR.mapSeed = aTn.pg(14), qR.mapName = aTn.aTv(5), 2 === qR.mapType && aTn.aTw(), qR
+			.passableWater = aTn.pg(1), qR.passableMountains = aTn.pg(1), qR.playerCount = aTn.pg(10), qR.humanCount = aTn.pg(10), qR.selectedPlayer = aTn.pg(9), qR.gameMode = aTn.pg(1), qR.playerMode = aTn.pg(2), qR.battleRoyaleMode =
+			aTn.pg(2), qR.numberTeams = aTn.pg(4), qR.isZombieMode = aTn.pg(1), qR.isContest = aTn.pg(1), qR.isReplay = aTn.pg(1), qR.elo = aTn.aTx(2, 14, 2), qR.colorsType = aTn.pg(1), qR.colorsPersonalized = aTn.pg(1), qR.colorsData =
+			aTn.aTx(10, 18, 512), qR.selectableColor = aTn.pg(1), qR.teamPlayerCount = aTn.aTx(4, 10, 9), qR.neutralBots = aTn.pg(1), qR.botDifficultyType = aTn.pg(2), qR.botDifficultyValue = aTn.pg(4), qR.botDifficultyTeam = aTn.aTx(4,
+				4, 9), qR.botDifficultyData = aTn.aTx(10, 4, 512), qR.spawningType = aTn.pg(2), qR.spawningSeed = aTn.pg(14), qR.spawningData = aTn.aTx(11, 12, 1024), qR.selectableSpawn = aTn.pg(1), qR.playerNamesType = aTn.pg(2), qR
+			.playerNamesData = aTn.aTy(10, 5, 512), qR.selectableName = aTn.pg(1), qR.aIncomeType = aTn.pg(2), qR.aIncomeValue = aTn.pg(8), qR.aIncomeData = aTn.aTx(10, 8, 512), qR.tIncomeType = aTn.pg(2), qR.tIncomeValue = aTn.pg(8), qR
+			.tIncomeData = aTn.aTx(10, 8, 512), qR.iIncomeType = aTn.pg(2), qR.iIncomeValue = aTn.pg(8), qR.iIncomeData = aTn.aTx(10, 8, 512), qR.sResourcesType = aTn.pg(2), qR.sResourcesValue = aTn.pg(11), qR.sResourcesData = aTn.aTx(10,
+				11, 512), ! function() {
+				var i6 = bH,
+					wF = i6.pg(5),
+					aTz = i6.pg(30),
+					aU0 = i6.pg(30);
+				if (aTz + aU0 > 8 * i6.size) return void aTq("Corrupted File");
+				return function(en) {
+						var aU3 = new Uint8Array(en),
+							aU4 = new Uint16Array(en),
+							aU5 = new Uint32Array(en),
+							aU6 = new Uint32Array(en);
+						b9.pt.aTf = aU3, b9.pt.aTg = aU4, b9.pt.aTh = aU5, b9.pt.aTi = aU6;
+						for (var aB = 0; aB < en; aB++) {
+							var id = bH.pg(4);
+							aU3[aB] = id, aU4[aB] = bH.pg(9), 0 === id ? aU5[aB] = bH.pg(22) : 1 === id ? (aU5[aB] = bH.pg(10), aU6[aB] = bH.pg(10)) : 2 === id ? (aU5[aB] = bH.pg(10), aU6[aB] = bH.pg(9)) : 3 === id ? (aU5[aB] = bH.pg(10),
+								aU6[aB] = bH.pg(27)) : 4 === id ? (aU5[aB] = bH.pg(10), aU6[aB] = bH.pg(16)) : 5 === id || 6 === id ? aU5[aB] = bH.pg(10) : 7 === id ? aU5[aB] = bH.pg(1) : 10 === id && (aU5[aB] = bH.pg(20), aU6[aB] =
+								bH.pg(22))
+						}
+					}(aTz),
+					function(en, wF) {
+						var aTj = new Uint8Array(en),
+							aTk = new Array(en);
+						aTk.fill(0), b9.pt.aTj = aTj, b9.pt.aTk = aTk;
+						for (var aB = 0; aB < en; aB++) aTj[aB] = bH.pg(1), aTk[aB] = bH.pg(wF)
+					}(aU0, wF), 1
+			}()) || (bH.e8 < 8 * bH.size - 13 || bH.e8 > 8 * bH.size ? (aTq("Out Of Bounds Error: " + bH.e8 + " " + 8 * bH.size), 1) : (b9.pt.a4g = qG, 2 === aD.data.mapType && (aTq("Load base64 image...", 2), 1))))
+	}, this.aHq = function(aHQ, aTr) {
+		var a2n = document.createElement("canvas"),
+			hp = a2n.getContext("2d");
+		if (a2n.width = aHQ.width, a2n.height = aHQ.height, hp.drawImage(aHQ, 0, 0), aD.data.canvas = a2n, aTm || aTr) return aD.zw ? void 0 : (aD.data.mapType = 2, t.x(), void t.u(19));
+		b9.aQj()
 	}
 }
 
 function aTc() {
-	var aTl = 0;
-
-	function aTp(qG, id) {
-		aTl || (id ? 1 === id ? aN.a5w = L(430) + ": " + qG : t.u(4, 3, new v(L(431), qG, 1)) : t.u(4, 3, new v("⚠️ " + L(429), qG, 1)))
-	}
-	this.wE = function(qG, aTm) {
-		var qR;
-		return aTl = aTm, bG.sq.w6(bG.sq.w4(bG.sq.w2(qG))), aN.a5w = "", !(! function() {
-			if (bH.size < 10) aTp("File Too Small");
-			else {
-				var aTr = bH.pg(12),
-					aSs = (aTr !== l.rVersion && aTp("Incompatible Version   Required: " + l.rVersion + ("   Found: " + aTr) + ("   Compatible at territorial.io/" + aTr), 1), bH.pg(12)),
-					aTs = bH.pg(31);
-				if (aTs !== bH.size) aTp("Size Error: " + aTs + " " + bH.size);
-				else if (function(j, aTr) {
-						for (var gL = bH.aC, en = bH.size, aSs = aTr, aB = 3; aB < en; aB++) aSs = aSs + gL[aB] & 4095;
-						return aSs === j || (aTp("Hash Error: " + aSs + " " + j + " " + en), !1)
-					}(aSs, aTr)) return 1
-			}
-			return
-		}() || (aTm = bH, (qR = aD.data = new a4P).mapType = aTm.pg(2), qR.mapProceduralIndex = aTm.pg(8), qR.mapRealisticIndex = aTm.pg(8), qR.mapSeed = aTm.pg(14), qR.mapName = aTm.aTu(5), 2 === qR.mapType && aTm.aTv(), qR
-			.passableWater = aTm.pg(1), qR.passableMountains = aTm.pg(1), qR.playerCount = aTm.pg(10), qR.humanCount = aTm.pg(10), qR.selectedPlayer = aTm.pg(9), qR.gameMode = aTm.pg(1), qR.playerMode = aTm.pg(2), qR.battleRoyaleMode =
-			aTm.pg(2), qR.numberTeams = aTm.pg(4), qR.isZombieMode = aTm.pg(1), qR.isContest = aTm.pg(1), qR.isReplay = aTm.pg(1), qR.elo = aTm.aTw(2, 14, 2), qR.colorsType = aTm.pg(1), qR.colorsPersonalized = aTm.pg(1), qR.colorsData =
-			aTm.aTw(10, 18, 512), qR.selectableColor = aTm.pg(1), qR.teamPlayerCount = aTm.aTw(4, 10, 9), qR.neutralBots = aTm.pg(1), qR.botDifficultyType = aTm.pg(2), qR.botDifficultyValue = aTm.pg(4), qR.botDifficultyTeam = aTm.aTw(4,
-				4, 9), qR.botDifficultyData = aTm.aTw(10, 4, 512), qR.spawningType = aTm.pg(2), qR.spawningSeed = aTm.pg(14), qR.spawningData = aTm.aTw(11, 12, 1024), qR.selectableSpawn = aTm.pg(1), qR.playerNamesType = aTm.pg(2), qR
-			.playerNamesData = aTm.aTx(10, 5, 512), qR.selectableName = aTm.pg(1), qR.aIncomeType = aTm.pg(2), qR.aIncomeValue = aTm.pg(8), qR.aIncomeData = aTm.aTw(10, 8, 512), qR.tIncomeType = aTm.pg(2), qR.tIncomeValue = aTm.pg(8), qR
-			.tIncomeData = aTm.aTw(10, 8, 512), qR.iIncomeType = aTm.pg(2), qR.iIncomeValue = aTm.pg(8), qR.iIncomeData = aTm.aTw(10, 8, 512), qR.sResourcesType = aTm.pg(2), qR.sResourcesValue = aTm.pg(11), qR.sResourcesData = aTm.aTw(10,
-				11, 512), ! function() {
-				var i6 = bH,
-					wF = i6.pg(5),
-					aTy = i6.pg(30),
-					aTz = i6.pg(30);
-				if (aTy + aTz > 8 * i6.size) return void aTp("Corrupted File");
-				return function(en) {
-						var aU2 = new Uint8Array(en),
-							aU3 = new Uint16Array(en),
-							aU4 = new Uint32Array(en),
-							aU5 = new Uint32Array(en);
-						b9.pt.aTe = aU2, b9.pt.aTf = aU3, b9.pt.aTg = aU4, b9.pt.aTh = aU5;
-						for (var aB = 0; aB < en; aB++) {
-							var id = bH.pg(4);
-							aU2[aB] = id, aU3[aB] = bH.pg(9), 0 === id ? aU4[aB] = bH.pg(22) : 1 === id ? (aU4[aB] = bH.pg(10), aU5[aB] = bH.pg(10)) : 2 === id ? (aU4[aB] = bH.pg(10), aU5[aB] = bH.pg(9)) : 3 === id ? (aU4[aB] = bH.pg(10),
-								aU5[aB] = bH.pg(27)) : 4 === id ? (aU4[aB] = bH.pg(10), aU5[aB] = bH.pg(16)) : 5 === id || 6 === id ? aU4[aB] = bH.pg(10) : 7 === id ? aU4[aB] = bH.pg(1) : 10 === id && (aU4[aB] = bH.pg(20), aU5[aB] =
-								bH.pg(22))
-						}
-					}(aTy),
-					function(en, wF) {
-						var aTi = new Uint8Array(en),
-							aTj = new Array(en);
-						aTj.fill(0), b9.pt.aTi = aTi, b9.pt.aTj = aTj;
-						for (var aB = 0; aB < en; aB++) aTi[aB] = bH.pg(1), aTj[aB] = bH.pg(wF)
-					}(aTz, wF), 1
-			}()) || (bH.e8 < 8 * bH.size - 13 || bH.e8 > 8 * bH.size ? (aTp("Out Of Bounds Error: " + bH.e8 + " " + 8 * bH.size), 1) : (b9.pt.a4g = qG, 2 === aD.data.mapType && (aTp("Load base64 image...", 2), 1))))
-	}, this.aHq = function(aHQ, aTq) {
-		var a2n = document.createElement("canvas"),
-			hp = a2n.getContext("2d");
-		if (a2n.width = aHQ.width, a2n.height = aHQ.height, hp.drawImage(aHQ, 0, 0), aD.data.canvas = a2n, aTl || aTq) return aD.zw ? void 0 : (aD.data.mapType = 2, t.x(), void t.u(19));
-		b9.aQi()
-	}
-}
-
-function aTb() {
 	this.zO = function() {
 		var wF = function() {
-				for (var aTj = b9.pt.aTj, en = aTj.length, max = 0, aB = 0; aB < en; aB++) max = Math.max(max, aTj[aB]);
+				for (var aTk = b9.pt.aTk, en = aTk.length, max = 0, aB = 0; aB < en; aB++) max = Math.max(max, aTk[aB]);
 				return wM(Math.max(max, 1))
 			}(),
-			i = (qR = aD.data, (i = bE).dd(), i.a8(12, l.rVersion), i.e8 += 43, i.a8(2, qR.mapType), i.a8(8, qR.mapProceduralIndex), i.a8(8, qR.mapRealisticIndex), i.a8(14, qR.mapSeed), i.aUC(qR.mapName, 5), 2 === qR.mapType && i.aUD(qR.canvas),
+			i = (qR = aD.data, (i = bE).dd(), i.a8(12, l.rVersion), i.e8 += 43, i.a8(2, qR.mapType), i.a8(8, qR.mapProceduralIndex), i.a8(8, qR.mapRealisticIndex), i.a8(14, qR.mapSeed), i.aUD(qR.mapName, 5), 2 === qR.mapType && i.aUE(qR.canvas),
 				i.a8(1, qR.passableWater), i.a8(1, qR.passableMountains), i.a8(10, qR.playerCount), i.a8(10, qR.humanCount), i.a8(9, qR.selectedPlayer), i.a8(1, qR.gameMode), i.a8(2, qR.playerMode), i.a8(2, qR.battleRoyaleMode), i.a8(4, qR
 					.numberTeams), i.a8(1, qR.isZombieMode), i.a8(1, qR.isContest), i.a8(1, qR.isReplay), i.dk(qR.elo, 2, 14), i.a8(1, qR.colorsType), i.a8(1, qR.colorsPersonalized), i.dk(qR.colorsData, 10, 18), i.a8(1, qR.selectableColor), i.dk(
 					qR.teamPlayerCount, 4, 10), i.a8(1, qR.neutralBots), i.a8(2, qR.botDifficultyType), i.a8(4, qR.botDifficultyValue), i.dk(qR.botDifficultyTeam, 4, 4), i.dk(qR.botDifficultyData, 10, 4), i.a8(2, qR.spawningType), i.a8(14, qR
-					.spawningSeed), i.dk(qR.spawningData, 11, 12), i.a8(1, qR.selectableSpawn), i.a8(2, qR.playerNamesType), i.aUE(qR.playerNamesData, 10, 5), i.a8(1, qR.selectableName), i.a8(2, qR.aIncomeType), i.a8(8, qR.aIncomeValue), i.dk(qR
+					.spawningSeed), i.dk(qR.spawningData, 11, 12), i.a8(1, qR.selectableSpawn), i.a8(2, qR.playerNamesType), i.aUF(qR.playerNamesData, 10, 5), i.a8(1, qR.selectableName), i.a8(2, qR.aIncomeType), i.a8(8, qR.aIncomeValue), i.dk(qR
 					.aIncomeData, 10, 8), i.a8(2, qR.tIncomeType), i.a8(8, qR.tIncomeValue), i.dk(qR.tIncomeData, 10, 8), i.a8(2, qR.iIncomeType), i.a8(8, qR.iIncomeValue), i.dk(qR.iIncomeData, 10, 8), i.a8(2, qR.sResourcesType), i.a8(11, qR
 					.sResourcesValue), i.dk(qR.sResourcesData, 10, 11), ! function(wF) {
 					var i = bE,
-						aTe = b9.pt.aTe,
-						fW = b9.pt.aTf,
-						fY = b9.pt.aTg,
-						fa = b9.pt.aTh,
-						en = aTe.length;
-					i.a8(5, wF), i.a8(30, en), i.a8(30, b9.pt.aTj.length);
+						aTf = b9.pt.aTf,
+						fW = b9.pt.aTg,
+						fY = b9.pt.aTh,
+						fa = b9.pt.aTi,
+						en = aTf.length;
+					i.a8(5, wF), i.a8(30, en), i.a8(30, b9.pt.aTk.length);
 					for (var aB = 0; aB < en; aB++) {
-						var f8 = aTe[aB];
+						var f8 = aTf[aB];
 						i.a8(4, f8), i.a8(9, fW[aB]), 0 === f8 ? i.a8(22, fY[aB]) : 1 === f8 ? (i.a8(10, fY[aB]), i.a8(10, fa[aB])) : 2 === f8 ? (i.a8(10, fY[aB]), i.a8(9, fa[aB])) : 3 === f8 ? (i.a8(10, fY[aB]), i.a8(27, fa[aB])) : 4 === f8 ? (i
 							.a8(10, fY[aB]), i.a8(16, fa[aB])) : 5 === f8 || 6 === f8 ? i.a8(10, fY[aB]) : 7 === f8 ? i.a8(1, fY[aB]) : 10 === f8 && (i.a8(20, fY[aB]), i.a8(22, fa[aB]))
 					}
 				}(wF), ! function(wF) {
-					for (var i = bE, aTi = b9.pt.aTi, aTj = b9.pt.aTj, en = aTi.length, aB = 0; aB < en; aB++) i.a8(1, aTi[aB]), i.a8(wF, aTj[aB])
+					for (var i = bE, aTj = b9.pt.aTj, aTk = b9.pt.aTk, en = aTj.length, aB = 0; aB < en; aB++) i.a8(1, aTj[aB]), i.a8(wF, aTk[aB])
 				}(wF), bE.e8),
 			qR = bL.du(i - 1, 6) + 1,
-			wF = (bD.aSQ(6 * qR) !== bE.g.length && bE.g.push(0), ! function() {
+			wF = (bD.aSR(6 * qR) !== bE.g.length && bE.g.push(0), ! function() {
 				var i = bE;
 				i.e8 = 24, i.a8(31, i.g.length), i.e8 = 12, i.a8(12, function() {
-					for (var g = bE.g, en = g.length, aSs = l.rVersion, aB = 3; aB < en; aB++) aSs = aSs + g[aB] & 4095;
-					return aSs
+					for (var g = bE.g, en = g.length, aSt = l.rVersion, aB = 3; aB < en; aB++) aSt = aSt + g[aB] & 4095;
+					return aSt
 				}())
 			}(), bH.dd(bE.g), bF.sq.sr(bF.sq.ss(qR)));
 		return bH.u9(), bE.dd(), wF
@@ -10416,61 +10412,61 @@ function aTb() {
 
 function cp() {
 	var f8, bu = !1,
-		aUG = !1,
-		aUH = -1e4,
-		aUI = -1,
-		aUJ = 0;
+		aUH = !1,
+		aUI = -1e4,
+		aUJ = -1,
+		aUK = 0;
 
-	function resize(aUN) {
-		f8 = 0, ab.tF() && (aUL(aUN) || bu) && (bu = !1, bc.resize(), bW.aBa.resize(), aY.dd(), bY.dd(), aZ.resize(), aT.resize(), aO.resize(), t.resize(), 1 <= aD.zw ? (aV.resize(!1), aU.resize(), aW.resize(), aS.resize(), aR.resize(), aN.resize(),
+	function resize(aUO) {
+		f8 = 0, ab.tF() && (aUM(aUO) || bu) && (bu = !1, bc.resize(), bW.aBa.resize(), aY.dd(), bY.dd(), aZ.resize(), aT.resize(), aO.resize(), t.resize(), 1 <= aD.zw ? (aV.resize(!1), aU.resize(), aW.resize(), aS.resize(), aR.resize(), aN.resize(),
 			aM.resize(), bC.resize(), aw.resize(), aP.resize(), aQ.resize(), aL.resize(), be.resize(), af.resize(), aX.resize(), bh.resize(), aS.a8t()) : (aa.aFm(), aa.aFn()), bf.dl = !0)
 	}
 
-	function aUK(fF) {
+	function aUL(fF) {
 		return fF && 128 < fF ? Math.floor(fF) : 128
 	}
 
-	function aUL(aUN) {
-		var i, j, aUP, su, a8H;
-		if (!(0 < h.sV)) return su = aUK(document.documentElement.clientWidth), a8H = aUK(window.visualViewport && 2 !== a0.id ? window.visualViewport.height : document.documentElement.clientHeight), i = su, j = a8H, aUP = 0 !== a0.id || i < j ?
-			700 : 1200, aUP = Math.min(aUP / ((i + j) / 2), 1), aUP = 0 === bj.eK.data[1].value ? 2 * aUP / 3 : Math.min(aUP + (bj.eK.data[1].value - 1) * (1 - aUP) / 2, 1), h.k = (window.devicePixelRatio || 1) * aUP, __fx.hoveringTooltip
-			.canvasPixelScale = h.k, aUN && !aUG ? (aUG = !0, document.body.removeChild(a1P)) : aUG && (aUG = !1, document.body.appendChild(a1P)), i = Math.floor(.5 + su * h.k), j = Math.floor(.5 + a8H * h.k), i !== h.i || j !== h.j ? (h.i = i, h
-				.j = j, h.min = aBC(i, j), h.max = a6B(i, j), h.hx = bL.du(i + j, 2), h.uc = i / j, a1P.width = i, a1P.height = j, a1P.style.width = su + "px", a1P.style.height = a8H + "px", aUI = bf.eM + 1e3, 1) : void 0
+	function aUM(aUO) {
+		var i, j, aUQ, su, a8H;
+		if (!(0 < h.sV)) return su = aUL(document.documentElement.clientWidth), a8H = aUL(window.visualViewport && 2 !== a0.id ? window.visualViewport.height : document.documentElement.clientHeight), i = su, j = a8H, aUQ = 0 !== a0.id || i < j ?
+			700 : 1200, aUQ = Math.min(aUQ / ((i + j) / 2), 1), aUQ = 0 === bj.eK.data[1].value ? 2 * aUQ / 3 : Math.min(aUQ + (bj.eK.data[1].value - 1) * (1 - aUQ) / 2, 1), h.k = (window.devicePixelRatio || 1) * aUQ, __fx.hoveringTooltip
+			.canvasPixelScale = h.k, aUO && !aUH ? (aUH = !0, document.body.removeChild(a1P)) : aUH && (aUH = !1, document.body.appendChild(a1P)), i = Math.floor(.5 + su * h.k), j = Math.floor(.5 + a8H * h.k), i !== h.i || j !== h.j ? (h.i = i, h
+				.j = j, h.min = aBC(i, j), h.max = a6B(i, j), h.hx = bL.du(i + j, 2), h.uc = i / j, a1P.width = i, a1P.height = j, a1P.style.width = su + "px", a1P.style.height = a8H + "px", aUJ = bf.eM + 1e3, 1) : void 0
 	}
 	this.i = 0, this.j = 0, this.min = 0, this.max = 0, this.hx = 0, this.uc = 1, this.k = 1, this.sV = 0, this.de = function() {
-		this.i = aUK(document.documentElement.clientWidth) + 2, this.j = aUK(document.documentElement.clientHeight) + 2
+		this.i = aUL(document.documentElement.clientWidth) + 2, this.j = aUL(document.documentElement.clientHeight) + 2
 	}, this.dd = function() {
 		f8 = 1, a1P = document.getElementById("canvasA"), (ug = a1P.getContext("2d", {
 			alpha: __fx.makeMainMenuTransparent
-		})).imageSmoothingEnabled = !1, aUL(0)
+		})).imageSmoothingEnabled = !1, aUM(0)
 	}, this.j3 = function() {
-		50 <= ++f8 && resize(0), -1 === aUI || bf.eM < aUI || (aUI = -1, 2e3 * ++aUJ >= bf.eM + 8e3 ? console.log("error 3748") : a0.a1.setState(15))
+		50 <= ++f8 && resize(0), -1 === aUJ || bf.eM < aUJ || (aUJ = -1, 2e3 * ++aUK >= bf.eM + 8e3 ? console.log("error 3748") : a0.a1.setState(15))
 	}, this.dp = function(jQ) {
 		bu = !0, resize(jQ)
 	}, this.a27 = function() {
-		aUH + 1e3 > bf.eM || (aUH = bf.eM, resize(0))
+		aUI + 1e3 > bf.eM || (aUI = bf.eM, resize(0))
 	}
 }
 
 function dH() {
-	this.aSZ = new aUR, this.a0l = new aUS, this.a1g = new aUT, this.dd = function() {
+	this.aSa = new aUS, this.a0l = new aUT, this.a1g = new aUU, this.dd = function() {
 		this.a1g.dd()
 	}
 }
 
-function aUT() {
+function aUU() {
 	this.a1h = new Uint32Array(14);
-	var aUU = -1;
+	var aUV = -1;
 
-	function aUX() {
+	function aUY() {
 		var a2n = bA.qZ.wL(2, 2),
 			hp = bA.qZ.getContext(a2n, !1);
-		return hp.fillStyle = "rgb(128,128,128)", hp.fillRect(0, 0, 2, 2), aUY(a2n.toDataURL())
+		return hp.fillStyle = "rgb(128,128,128)", hp.fillRect(0, 0, 2, 2), aUZ(a2n.toDataURL())
 	}
 
-	function aUY(qG) {
-		for (var en = qG.length, aSs = en, aB = 0; aB < en; aB++) aSs += qG.charCodeAt(aB);
-		return aSs
+	function aUZ(qG) {
+		for (var en = qG.length, aSt = en, aB = 0; aB < en; aB++) aSt += qG.charCodeAt(aB);
+		return aSt
 	}
 	this.dd = function() {}, this.aCe = function() {
 		a0.vG && a0.vG.setItem("qix3", "0")
@@ -10478,13 +10474,13 @@ function aUT() {
 		return 69
 	}, this.zO = function() {
 		var a2n, hp;
-		bD.a8(4, bA.qh.a2R(this.a1h)), bD.a8(1, this.a1h[1] || this.a1h[7]), bD.a8(1, navigator.webdriver ? 1 : 0), bD.a8(20, (0 <= aUU || (a2n = bA.qZ.wL(172, 24), (hp = bA.qZ.getContext(a2n, !0)).fillStyle = "rgba(0,0,250,0.573)", hp.fillRect(
-			1, 10, 100, 11), hp.textBaseline = "top", hp.font = "15.7px Arial", hp.fillStyle = "rgba(2,0,0,0.764)", hp.fillText("Ab🎯c DeFg4iJ1l Mnqzy", 2, 2), aUU = aUY(a2n.toDataURL())), aUU % 1048576)), bD.a8(1, 1 - Math.abs(Math.sign(
-		aUX() - aUX()))), bD.a8(20, l.dx), a0.vG ? (hp = a0.vG.getItem("qix3"), a0.vG.setItem("qix3", "1"), hp ? "0" === hp ? bD.a8(2, 2) : bD.a8(2, 3) : bD.a8(2, 1)) : bD.a8(2, 0), bD.a8(20, 0)
+		bD.a8(4, bA.qh.a2R(this.a1h)), bD.a8(1, this.a1h[1] || this.a1h[7]), bD.a8(1, navigator.webdriver ? 1 : 0), bD.a8(20, (0 <= aUV || (a2n = bA.qZ.wL(172, 24), (hp = bA.qZ.getContext(a2n, !0)).fillStyle = "rgba(0,0,250,0.573)", hp.fillRect(
+			1, 10, 100, 11), hp.textBaseline = "top", hp.font = "15.7px Arial", hp.fillStyle = "rgba(2,0,0,0.764)", hp.fillText("Ab🎯c DeFg4iJ1l Mnqzy", 2, 2), aUV = aUZ(a2n.toDataURL())), aUV % 1048576)), bD.a8(1, 1 - Math.abs(Math.sign(
+		aUY() - aUY()))), bD.a8(20, l.dx), a0.vG ? (hp = a0.vG.getItem("qix3"), a0.vG.setItem("qix3", "1"), hp ? "0" === hp ? bD.a8(2, 2) : bD.a8(2, 3) : bD.a8(2, 1)) : bD.a8(2, 0), bD.a8(20, 0)
 	}
 }
 
-function aUS() {
+function aUT() {
 	this.a0m = function() {
 		for (var gL, en = al.kB, zk = al.kC, a0V = ag.a0V, a86 = this.aH9(), aB = 0; aB < en; aB++) gL = zk[aB], bA.g9.jY(gL) || (a0V[gL] = a86);
 		var py = ag.py,
@@ -10501,18 +10497,18 @@ function aUS() {
 	}
 }
 
-function aUR() {
-	function aUc(g, fF, hf) {
+function aUS() {
+	function aUd(g, fF, hf) {
 		for (var aB = 0; aB < 256; aB++) g[aB] = (g[aB] + (fF >> (aB + hf) % 30 & 1)) % 256
 	}
-	this.j3 = function(aUZ, aUa) {
+	this.j3 = function(aUa, aUb) {
 		var g = new Uint8Array(256);
-		return function(g, aUZ, aUa) {
-				var aB, aUe = 3 + (4 + aUZ) % 32768,
-					aUf = 12 + aUa % 32768,
-					aUg = 17 + ((aUZ & aUa) + (aUZ | aUa) + aUZ) % 32768;
-				for (aB = 0; aB < 256; aB++) aUe = 1 + aUe * aUf % aUg, g[aB] = aUe % 256
-			}(g, aUZ, aUa), aUc(g, aUZ, 2), aUc(g, aUa, 7),
+		return function(g, aUa, aUb) {
+				var aB, aUf = 3 + (4 + aUa) % 32768,
+					aUg = 12 + aUb % 32768,
+					aUh = 17 + ((aUa & aUb) + (aUa | aUb) + aUa) % 32768;
+				for (aB = 0; aB < 256; aB++) aUf = 1 + aUf * aUg % aUh, g[aB] = aUf % 256
+			}(g, aUa, aUb), aUd(g, aUa, 2), aUd(g, aUb, 7),
 			function(g) {
 				var aB, fF, e8 = 0;
 				for (aB = 0; aB < 3e4; aB++) fF = g[e8], g[e8] = (fF + aB + g[(e8 + aB) % 256]) % 256, e8 = (fF + aB + e8 + (fF & e8)) % 256
@@ -10527,57 +10523,57 @@ function aUR() {
 }
 
 function cm() {
-	var aUh, aUi, i1, aUj;
+	var aUi, aUj, i1, aUk;
 	this.dd = function() {
-		var aB, eu, ew, aSl, aUk, i, j, y6, hm, wW, fF, gL, f3, f6, aUn;
+		var aB, eu, ew, aSm, aUl, i, j, y6, hm, wW, fF, gL, f3, f6, aUo;
 		if (function() {
-				if (i1 = !0, aUj = "rgb(" + bS.wU[0] + "," + bS.wU[1] + "," + bS.wU[2] + ")", bS.aKL(bS.eT)) return 1;
+				if (i1 = !0, aUk = "rgb(" + bS.wU[0] + "," + bS.wU[1] + "," + bS.wU[2] + ")", bS.aKM(bS.eT)) return 1;
 				return i1 = !1, 0
-			}()) aUi = null;
+			}()) aUj = null;
 		else {
-			for (aUh = bL.du(96, 4), aUk = 1 === bS.eT ? (aSl = 0, 160) : (aSl = 128, 32), aUj = "rgb(" + aSl + "," + aSl + "," + aSl + ")", aUi = new Array(4), aB = 3; 0 <= aB; aB--) {
-				if (aUi[aB] = document.createElement("canvas"), i = aB % 2 == 0 ? bS.ey : aUh, j = aB % 2 == 0 ? aUh : bS.ez + 2 * aUh, aUi[aB].width = i, aUi[aB].height = j, wW = (hm = (y6 = aUi[aB].getContext("2d", {
+			for (aUi = bL.du(96, 4), aUl = 1 === bS.eT ? (aSm = 0, 160) : (aSm = 128, 32), aUk = "rgb(" + aSm + "," + aSm + "," + aSm + ")", aUj = new Array(4), aB = 3; 0 <= aB; aB--) {
+				if (aUj[aB] = document.createElement("canvas"), i = aB % 2 == 0 ? bS.ey : aUi, j = aB % 2 == 0 ? aUi : bS.ez + 2 * aUi, aUj[aB].width = i, aUj[aB].height = j, wW = (hm = (y6 = aUj[aB].getContext("2d", {
 						alpha: !1
 					})).getImageData(0, 0, i, j)).data, aB % 2 == 0)
-					for (ew = aUh - 1; 0 <= ew; ew--)
-						for (fF = aUk + Math.floor((ew + 1) * (aSl - aUk) / (aUh + 1)), eu = i - 1; 0 <= eu; eu--) wW[gL = 4 * ((0 === aB ? aUh - ew - 1 : ew) * i + eu)] = fF, wW[gL + 1] = fF, wW[gL + 2] = fF, wW[gL + 3] = 255;
+					for (ew = aUi - 1; 0 <= ew; ew--)
+						for (fF = aUl + Math.floor((ew + 1) * (aSm - aUl) / (aUi + 1)), eu = i - 1; 0 <= eu; eu--) wW[gL = 4 * ((0 === aB ? aUi - ew - 1 : ew) * i + eu)] = fF, wW[gL + 1] = fF, wW[gL + 2] = fF, wW[gL + 3] = 255;
 				else {
-					for (eu = aUh - 1; 0 <= eu; eu--)
-						for (fF = aUk + Math.floor((eu + 1) * (aSl - aUk) / (aUh + 1)), ew = j - 1 - aUh; aUh <= ew; ew--) wW[gL = 4 * (ew * i + (3 === aB ? aUh - eu - 1 : eu))] = fF, wW[gL + 1] = fF, wW[gL + 2] = fF, wW[gL + 3] = 255;
+					for (eu = aUi - 1; 0 <= eu; eu--)
+						for (fF = aUl + Math.floor((eu + 1) * (aSm - aUl) / (aUi + 1)), ew = j - 1 - aUi; aUi <= ew; ew--) wW[gL = 4 * (ew * i + (3 === aB ? aUi - eu - 1 : eu))] = fF, wW[gL + 1] = fF, wW[gL + 2] = fF, wW[gL + 3] = 255;
 					for (f6 = 1; 0 <= f6; f6--)
-						for (eu = aUh - 1; 0 <= eu; eu--)
-							for (ew = aUh - 1; 0 <= ew; ew--) f3 = (Math.pow(eu * eu + ew * ew, .5) + 1) / (aUh + 1), fF = aUk + Math.floor((1 < f3 ? 1 : f3) * (aSl - aUk)), wW[gL = 4 * ((0 === f6 ? aUh - ew - 1 : ew + f6 * (j - aUh)) * i + (
-								1 === aB ? eu : aUh - eu - 1))] = fF, wW[gL + 1] = fF, wW[gL + 2] = fF, wW[gL + 3] = 255
+						for (eu = aUi - 1; 0 <= eu; eu--)
+							for (ew = aUi - 1; 0 <= ew; ew--) f3 = (Math.pow(eu * eu + ew * ew, .5) + 1) / (aUi + 1), fF = aUl + Math.floor((1 < f3 ? 1 : f3) * (aSm - aUl)), wW[gL = 4 * ((0 === f6 ? aUi - ew - 1 : ew + f6 * (j - aUi)) * i + (
+								1 === aB ? eu : aUi - eu - 1))] = fF, wW[gL + 1] = fF, wW[gL + 2] = fF, wW[gL + 3] = 255
 				}
 				y6.putImageData(hm, 0, 0)
 			}
-			aUn = aUk, bS.wP.fillStyle = "rgb(" + aUn + "," + aUn + "," + aUn + ")", bS.wP.fillRect(0, 0, bS.ey, 1), bS.wP.fillRect(0, bS.ez - 1, bS.ey, 1), bS.wP.fillRect(0, 0, 1, bS.ez), bS.wP.fillRect(bS.ey - 1, 0, 1, bS.ez)
+			aUo = aUl, bS.wP.fillStyle = "rgb(" + aUo + "," + aUo + "," + aUo + ")", bS.wP.fillRect(0, 0, bS.ey, 1), bS.wP.fillRect(0, bS.ez - 1, bS.ey, 1), bS.wP.fillRect(0, 0, 1, bS.ez), bS.wP.fillRect(bS.ey - 1, 0, 1, bS.ez)
 		}
 	}, this.y0 = function() {
-		var f6 = i1 ? 0 : -aUh;
-		aM5(f6, f6, bS.ey - 2 * f6, bS.ez - 2 * f6, ba.aUo, ba.aUp, ba.aUq, ba.aUr) || (ug.fillStyle = aUj, ug.fillRect(0, 0, h.i, h.j))
+		var f6 = i1 ? 0 : -aUi;
+		aM6(f6, f6, bS.ey - 2 * f6, bS.ez - 2 * f6, ba.aUp, ba.aUq, ba.aUr, ba.aUs) || (ug.fillStyle = aUk, ug.fillRect(0, 0, h.i, h.j))
 	}, this.uf = function() {
-		i1 || (aM4(0, -aUh, bS.ey, aUh, ba.aUo, ba.aUp, ba.aUq, ba.aUr) && ug.drawImage(aUi[0], ba.aUs, ba.aUt - aUh), aM4(bS.ey, -aUh, aUh, bS.ez + 2 * aUh, ba.aUo, ba.aUp, ba.aUq, ba.aUr) && ug.drawImage(aUi[1], ba.aUs + bS.ey, ba.aUt - aUh),
-			aM4(0, bS.ez, bS.ey, aUh, ba.aUo, ba.aUp, ba.aUq, ba.aUr) && ug.drawImage(aUi[2], ba.aUs, ba.aUt + bS.ez), aM4(-aUh, -aUh, aUh, bS.ez + 2 * aUh, ba.aUo, ba.aUp, ba.aUq, ba.aUr) && ug.drawImage(aUi[3], ba.aUs - aUh, ba.aUt - aUh))
+		i1 || (aM5(0, -aUi, bS.ey, aUi, ba.aUp, ba.aUq, ba.aUr, ba.aUs) && ug.drawImage(aUj[0], ba.aUt, ba.aUu - aUi), aM5(bS.ey, -aUi, aUi, bS.ez + 2 * aUi, ba.aUp, ba.aUq, ba.aUr, ba.aUs) && ug.drawImage(aUj[1], ba.aUt + bS.ey, ba.aUu - aUi),
+			aM5(0, bS.ez, bS.ey, aUi, ba.aUp, ba.aUq, ba.aUr, ba.aUs) && ug.drawImage(aUj[2], ba.aUt, ba.aUu + bS.ez), aM5(-aUi, -aUi, aUi, bS.ez + 2 * aUi, ba.aUp, ba.aUq, ba.aUr, ba.aUs) && ug.drawImage(aUj[3], ba.aUt - aUi, ba.aUu - aUi))
 	}
 }
 
 function d6() {
-	this.aH7 = new aUu, this.y3 = new aUv, this.y = new aUw, this.iX = new aUx, this.aUn = new aUy, this.m4 = new aUz, this.jy = new aV0, this.kv = new aV1, this.aV2 = new aV3, this.aV4 = new aV5, this.mF = new aV6, this.hN = new aV7, this.lU =
-		new aV8, this.kx = new aV9, this.hQ = new aVA, this.m8 = new aVB, this.q6 = new aVC, this.dd = function() {
-			this.lU.dd(), this.y3.dd(), this.y.dd(), this.iX.dd(), this.aUn.dd(), this.aV4.dd(), this.m8.dd()
+	this.aH7 = new aUv, this.y3 = new aUw, this.y = new aUx, this.iX = new aUy, this.aUo = new aUz, this.m4 = new aV0, this.jy = new aV1, this.kv = new aV2, this.aV3 = new aV4, this.aV5 = new aV6, this.mF = new aV7, this.hN = new aV8, this.lU =
+		new aV9, this.kx = new aVA, this.hQ = new aVB, this.m8 = new aVC, this.q6 = new aVD, this.dd = function() {
+			this.lU.dd(), this.y3.dd(), this.y.dd(), this.iX.dd(), this.aUo.dd(), this.aV5.dd(), this.m8.dd()
 		}, this.uf = function() {
-			this.aV4.uf(), this.y3.uf()
+			this.aV5.uf(), this.y3.uf()
 		}
 }
 
-function aV0() {
+function aV1() {
 	this.j3 = function(player) {
 		return !!bN.mF.mG(player) && !(bN.y.pr[player] >= Math.max(3 * ao.performance.lM, aE.kO[aE.hW[player]]) || !bA.g9.mH(player, aE.kM[aE.hW[player]], 32, 0)) && (aW.aAz() ? function(player) {
-			var aVF = bN.kx.aB2(),
-				en = aVF.length;
+			var aVG = bN.kx.aB2(),
+				en = aVG.length;
 			if (0 === en) return !1;
-			aVF = aVF[ay.jS(en)], en = bN.y.m2[aVF];
+			aVG = aVG[ay.jS(en)], en = bN.y.m2[aVG];
 			if (bN.m8.m9(player, en)) return !1;
 			return !! function(player, mB) {
 				var mB = bM.iV(bN.y.mE[mB]),
@@ -10590,223 +10586,223 @@ function aV0() {
 					nL = Math.max(h2 - nL, n8 - h2),
 					n8 = Math.max(mB - player, n9 - mB);
 				return nL < 100 && n8 < 100
-			}(player, aVF) && !!bN.hQ.q5(player, en, 1) && (bA.g9.mJ(player), bN.y.mK(player), !0)
+			}(player, aVG) && !!bN.hQ.q5(player, en, 1) && (bA.g9.mJ(player), bN.y.mK(player), !0)
 		}(player) : !!(ao.iz.j3(player) || ao.io.j3(player) || ao.iq.j3(player)) && (function(player) {
 			bO.fP[1] = 4, bA.g9.mJ(player), bN.y.mK(player)
 		}(player), !0))
 	}
 }
 
-function aVB() {
-	var aVI = 0,
-		aVJ = null;
+function aVC() {
+	var aVJ = 0,
+		aVK = null;
 	this.dd = function() {
-		null === aVJ && (aVJ = new Uint16Array(2 * bN.y.kO)), aVI = 0
-	}, this.jG = function(aVK, m8) {
-		var aVL = aVJ;
-		aVL[aVI++] = aVK, aVL[aVI++] = m8
+		null === aVK && (aVK = new Uint16Array(2 * bN.y.kO)), aVJ = 0
+	}, this.jG = function(aVL, m8) {
+		var aVM = aVK;
+		aVM[aVJ++] = aVL, aVM[aVJ++] = m8
 	}, this.m9 = function(player, m7) {
-		for (var aVL = aVJ, en = aVI, aB = 0; aB < en; aB += 2)
-			if (aVL[aB] === m7 && bN.kx.aVM(aVL[aB + 1]) && player === bN.y.m3[bO.fP[2]] >> 3) return !0;
+		for (var aVM = aVK, en = aVJ, aB = 0; aB < en; aB += 2)
+			if (aVM[aB] === m7 && bN.kx.aVN(aVM[aB + 1]) && player === bN.y.m3[bO.fP[2]] >> 3) return !0;
 		return !1
-	}, this.aVN = function(aVO) {
-		var m4 = bN.y.m0[aVO];
+	}, this.aVO = function(aVP) {
+		var m4 = bN.y.m0[aVP];
 		if (!(m4 < 64)) {
-			var m7 = bN.y.m2[aVO],
-				aVL = aVJ,
-				en = aVI;
+			var m7 = bN.y.m2[aVP],
+				aVM = aVK,
+				en = aVJ;
 			for (let aB = en - 2; 0 <= aB; aB -= 2)
-				if (aVL[aB] === m7) {
+				if (aVM[aB] === m7) {
 					{
-						aVT = void 0;
-						var aVT = aVL[aB + 1];
-						bN.kx.aVM(aVT) && bN.m8.aVb(bO.fP[2])
+						aVU = void 0;
+						var aVU = aVM[aB + 1];
+						bN.kx.aVN(aVU) && bN.m8.aVc(bO.fP[2])
 					}
-					aVL[aB] = aVL[en - 2], aVL[aB + 1] = aVL[en - 1], en -= 2
-				} aVI = en
+					aVM[aB] = aVM[en - 2], aVM[aB + 1] = aVM[en - 1], en -= 2
+				} aVJ = en
 		}
-	}, this.aVQ = function(aVR, aVS) {
-		for (var aVT = bN.y.m2[aVR], m7 = -1, aVL = aVJ, en = aVI, aB = 1; aB < en; aB += 2)
-			if (aVL[aB] === aVT) {
-				m7 = aVL[aB - 1];
+	}, this.aVR = function(aVS, aVT) {
+		for (var aVU = bN.y.m2[aVS], m7 = -1, aVM = aVK, en = aVJ, aB = 1; aB < en; aB += 2)
+			if (aVM[aB] === aVU) {
+				m7 = aVM[aB - 1];
 				break
 			} if (-1 === m7) return !1;
-		if (!bN.kx.aVM(m7)) return !1;
-		var aVO = bO.fP[2],
-			lT = bN.y.m1[aVO];
-		if (aVS === lT[lT.length - 1]) bN.y.m1[aVR] = bN.lU.aVU(bN.y.m1[aVR], bN.lU.lc(lT));
+		if (!bN.kx.aVN(m7)) return !1;
+		var aVP = bO.fP[2],
+			lT = bN.y.m1[aVP];
+		if (aVT === lT[lT.length - 1]) bN.y.m1[aVS] = bN.lU.aVV(bN.y.m1[aVS], bN.lU.lc(lT));
 		else {
-			var aVV = bN.kx.aVW(lT, aVS);
-			if (-1 === aVV) return !1;
-			var aVX = bN.y.mD[aVO];
-			aVV === aVX ? (aVO = bM.iV(bN.y.mE[aVO]), bN.y.m1[aVR] = bN.lU.aVZ(bN.y.m1[aVR], lT, aVV, aVS, bM.iD(lT[aVV], aVS) > bM.iD(lT[aVV], aVO))) : bN.y.m1[aVR] = bN.lU.aVZ(bN.y.m1[aVR], lT, aVV, aVS, aVX < aVV)
+			var aVW = bN.kx.aVX(lT, aVT);
+			if (-1 === aVW) return !1;
+			var aVY = bN.y.mD[aVP];
+			aVW === aVY ? (aVP = bM.iV(bN.y.mE[aVP]), bN.y.m1[aVS] = bN.lU.aVa(bN.y.m1[aVS], lT, aVW, aVT, bM.iD(lT[aVW], aVT) > bM.iD(lT[aVW], aVP))) : bN.y.m1[aVS] = bN.lU.aVa(bN.y.m1[aVS], lT, aVW, aVT, aVY < aVW)
 		}
 		return !0
-	}, this.aVb = function(aVc) {
+	}, this.aVc = function(aVd) {
 		var lT, l3 = bN.y,
-			m4 = l3.m0[aVc];
-		return m4 % 64 != 5 && (lT = l3.m1[aVc], l3.aVd[aVc] = 65535 - l3.aVd[aVc], l3.mD[aVc] = lT.length - l3.mD[aVc] - 2, l3.m1[aVc] = bN.lU.lc(lT), l3.m0[aVc] = m4 - m4 % 64 + 5, !0)
+			m4 = l3.m0[aVd];
+		return m4 % 64 != 5 && (lT = l3.m1[aVd], l3.aVe[aVd] = 65535 - l3.aVe[aVd], l3.mD[aVd] = lT.length - l3.mD[aVd] - 2, l3.m1[aVd] = bN.lU.lc(lT), l3.m0[aVd] = m4 - m4 % 64 + 5, !0)
 	}
 }
 
-function aV6() {
+function aV7() {
 	this.mG = function(player) {
-		return !!aD.data.passableWater && bN.y.lz !== bN.y.kO && bN.y.pr[player] !== bN.y.aVe && 0 !== ag.gU[player].length
-	}, this.q1 = function(aTI) {
+		return !!aD.data.passableWater && bN.y.lz !== bN.y.kO && bN.y.pr[player] !== bN.y.aVf && 0 !== ag.gU[player].length
+	}, this.q1 = function(aTJ) {
 		var m4 = bO.fP[1];
-		return !(4 <= m4 || !bN.kx.aVf(bM.ed(aTI))) && ac.ei(bM.ed(bM.iZ(aTI, m4)))
-	}
-}
-
-function aUu() {
-	this.aH8 = function(player) {
-		for (var a7W = bN.y.a7W, t7 = player << 3, aB = t7 + bN.y.pr[player] - 1; t7 <= aB; aB--) this.aVg(a7W[aB])
-	}, this.aVg = function(aVh) {
-		var y = bN.y,
-			aVi = y.lz - 1,
-			aVj = y.m3[aVh],
-			aVk = y.aVl[aVh],
-			aVm = y.mE[aVh];
-		y.lz = aVi, y.m3[aVh] = y.m3[aVi], y.mE[aVh] = y.mE[aVi], y.aVd[aVh] = y.aVd[aVi], y.a6T[aVh] = y.a6T[aVi], y.aVl[aVh] = y.aVl[aVi], y.m2[aVh] = y.m2[aVi], y.m0[aVh] = y.m0[aVi], y.aVn[aVh] = y.aVn[aVi], y.m1[aVh] = y.m1[aVi], y.mD[aVh] =
-			y.mD[aVi], y.a7W[y.m3[aVh]] = aVh,
-			function(aTH) {
-				var player = aTH >> 3,
-					y = bN.y,
-					en = y.pr[player] - 1,
-					aVq = (player << 3) + en;
-				y.pr[player] = en, aVq !== aTH && (y.a7W[aTH] = y.a7W[aVq], y.m3[y.a7W[aTH]] = aTH)
-			}(aVj), bN.iX.iX[bM.iW(y.mE[aVh])][y.aVl[aVh]] = aVh, aVi = bM.iW(aVm), aVj = aVk, aVi = bN.iX.iX[aVi], y = aVi.pop(), aVj !== aVi.length && (aVi[aVj] = y, bN.y.aVl[y] = aVj)
+		return !(4 <= m4 || !bN.kx.aVg(bM.ed(aTJ))) && ac.ei(bM.ed(bM.iZ(aTJ, m4)))
 	}
 }
 
 function aUv() {
-	var aVs, aVt = 8,
-		aVu = null;
+	this.aH8 = function(player) {
+		for (var a7W = bN.y.a7W, t7 = player << 3, aB = t7 + bN.y.pr[player] - 1; t7 <= aB; aB--) this.aVh(a7W[aB])
+	}, this.aVh = function(aVi) {
+		var y = bN.y,
+			aVj = y.lz - 1,
+			aVk = y.m3[aVi],
+			aVl = y.aVm[aVi],
+			aVn = y.mE[aVi];
+		y.lz = aVj, y.m3[aVi] = y.m3[aVj], y.mE[aVi] = y.mE[aVj], y.aVe[aVi] = y.aVe[aVj], y.a6T[aVi] = y.a6T[aVj], y.aVm[aVi] = y.aVm[aVj], y.m2[aVi] = y.m2[aVj], y.m0[aVi] = y.m0[aVj], y.aVo[aVi] = y.aVo[aVj], y.m1[aVi] = y.m1[aVj], y.mD[aVi] =
+			y.mD[aVj], y.a7W[y.m3[aVi]] = aVi,
+			function(aTI) {
+				var player = aTI >> 3,
+					y = bN.y,
+					en = y.pr[player] - 1,
+					aVr = (player << 3) + en;
+				y.pr[player] = en, aVr !== aTI && (y.a7W[aTI] = y.a7W[aVr], y.m3[y.a7W[aTI]] = aTI)
+			}(aVk), bN.iX.iX[bM.iW(y.mE[aVi])][y.aVm[aVi]] = aVi, aVj = bM.iW(aVn), aVk = aVl, aVj = bN.iX.iX[aVj], y = aVj.pop(), aVk !== aVj.length && (aVj[aVk] = y, bN.y.aVm[y] = aVk)
+	}
+}
 
-	function aVz(wW, eZ, e8) {
+function aUw() {
+	var aVt, aVu = 8,
+		aVv = null;
+
+	function aW0(wW, eZ, e8) {
 		eZ *= 4;
 		wW[eZ] = 255, wW[1 + eZ] = 255, wW[2 + eZ] = e8, wW[3 + eZ] = 255
 	}
 
-	function aW1(hp, aUj) {
-		var eu, ew, i7, eZ, aW3, aW4, hj = aVt,
+	function aW2(hp, aUk) {
+		var eu, ew, i7, eZ, aW4, aW5, hj = aVu,
 			hm = bA.qZ.getImageData(hp, hj, hj),
 			wW = hm.data,
 			l3 = (hj >> 1) - .5,
-			aW6 = bA.qh.a2L(aUj, .5);
-		for (bA.qh.a2N(aUj, aW6, 300) || bA.qh.a2P(aUj, 100), ew = 0; ew < hj; ew++)
-			for (eu = 0; eu < hj; eu++) aW4 = (hj - 1.5) * (hj - 1.5) / 4, wW[eZ = 4 * (ew * hj + eu)] = (aW3 = (i7 = (i7 = eu - l3) * i7 + (i7 = ew - l3) * i7) <= (hj - 4.5) * (hj - 4.5) / 4 ? aW6 : aUj)[0], wW[1 + eZ] = aW3[1], wW[2 + eZ] = aW3[2],
-				wW[3 + eZ] = aW4 < i7 ? 0 : 255;
+			aW7 = bA.qh.a2L(aUk, .5);
+		for (bA.qh.a2N(aUk, aW7, 300) || bA.qh.a2P(aUk, 100), ew = 0; ew < hj; ew++)
+			for (eu = 0; eu < hj; eu++) aW5 = (hj - 1.5) * (hj - 1.5) / 4, wW[eZ = 4 * (ew * hj + eu)] = (aW4 = (i7 = (i7 = eu - l3) * i7 + (i7 = ew - l3) * i7) <= (hj - 4.5) * (hj - 4.5) / 4 ? aW7 : aUk)[0], wW[1 + eZ] = aW4[1], wW[2 + eZ] = aW4[2],
+				wW[3 + eZ] = aW5 < i7 ? 0 : 255;
 		hp.putImageData(hm, 0, 0)
 	}
 	this.dd = function() {
 		var e8, hj, a2n, hp, hm, wW;
-		(aVs = aVs || new Array(aD.ek)).fill(null), e8 = 255, hj = aVt + 4, a2n = bA.qZ.wL(hj, hj), hp = bA.qZ.getContext(a2n, !0), hm = bA.qZ.getImageData(hp, hj, hj), aVz(wW = hm.data, hj + 1, e8), aVz(wW, hj + 2, e8), aVz(wW, 2 * hj + 1, e8),
-			aVz(wW, 2 * hj - 3, e8), aVz(wW, 2 * hj - 2, e8), aVz(wW, 3 * hj - 2, e8), aVz(wW, hj * (hj - 3) + 1, e8), aVz(wW, hj * (hj - 2) + 1, e8), aVz(wW, hj * (hj - 2) + 2, e8), aVz(wW, hj * (hj - 2) - 2, e8), aVz(wW, hj * (hj - 1) - 3, e8),
-			aVz(wW, hj * (hj - 1) - 2, e8), hp.putImageData(hm, 0, 0), aVu = a2n,
+		(aVt = aVt || new Array(aD.ek)).fill(null), e8 = 255, hj = aVu + 4, a2n = bA.qZ.wL(hj, hj), hp = bA.qZ.getContext(a2n, !0), hm = bA.qZ.getImageData(hp, hj, hj), aW0(wW = hm.data, hj + 1, e8), aW0(wW, hj + 2, e8), aW0(wW, 2 * hj + 1, e8),
+			aW0(wW, 2 * hj - 3, e8), aW0(wW, 2 * hj - 2, e8), aW0(wW, 3 * hj - 2, e8), aW0(wW, hj * (hj - 3) + 1, e8), aW0(wW, hj * (hj - 2) + 1, e8), aW0(wW, hj * (hj - 2) + 2, e8), aW0(wW, hj * (hj - 2) - 2, e8), aW0(wW, hj * (hj - 1) - 3, e8),
+			aW0(wW, hj * (hj - 1) - 2, e8), hp.putImageData(hm, 0, 0), aVv = a2n,
 			function() {
 				if (aD.hh)
-					for (var a2n = new Array(bg.kX.length), en = aD.ek, aVx = aVs, aAN = bg.aAN, aB = 0; aB < en; aB++) {
+					for (var a2n = new Array(bg.kX.length), en = aD.ek, aVy = aVt, aAN = bg.aAN, aB = 0; aB < en; aB++) {
 						var a5D = aAN[aB];
 						a2n[a5D] || (a2n[a5D] = function(a5D) {
-							var a2n = bA.qZ.wL(aVt, aVt),
+							var a2n = bA.qZ.wL(aVu, aVu),
 								hp = bA.qZ.getContext(a2n, !0),
 								g = bO.fM;
-							return g.set(bg.aW2[a5D]), aW1(hp, g), a2n
-						}(a5D)), aVx[aB] = a2n[a5D]
+							return g.set(bg.aW3[a5D]), aW2(hp, g), a2n
+						}(a5D)), aVy[aB] = a2n[a5D]
 					}
 			}()
 	}, this.uf = function() {
-		var aB, player, aW7, aMD, hW, i6, aW9, aWB, aWC, mE = bN.y.mE,
+		var aB, player, aW8, aME, hW, i6, aWA, aWC, aWD, mE = bN.y.mE,
 			m3 = bN.y.m3,
 			a6T = bN.y.a6T,
-			aVn = bN.y.aVn,
-			aWD = aVs,
-			aWE = aD.eX,
+			aVo = bN.y.aVo,
+			aWE = aVt,
+			aWF = aD.eX,
 			en = bN.y.lz,
-			aWF = h.i,
-			aWG = h.j,
-			aWH = bS.ey << 4,
+			aWG = h.i,
+			aWH = h.j,
+			aWI = bS.ey << 4,
 			ec = hy,
-			eR = ec / aVt,
+			eR = ec / aVu,
 			n8 = iO / ec,
 			n9 = iP / ec,
-			i7 = (aWF + iO) / ec - n8,
-			iA = (aWG + iP) / ec - n9,
+			i7 = (aWG + iO) / ec - n8,
+			iA = (aWH + iP) / ec - n9,
 			hp = ug;
-		for (hp.imageSmoothingEnabled = ec < 9, bA.qZ.textAlign(hp, 1), bA.qZ.textBaseline(hp, 1), aB = 0; aB < en; aB++) player = m3[aB] >> 3, hW = a6T[aB], aW7 = .9 + .1 * Math.log10(hW), aMD = (i6 = mE[aB]) % aWH / 16 - aW7, i6 = aWG * (Math
-			.floor(i6 / aWH) / 16 - aW7 - n9) / iA, aW9 = -2 * (aWC = ec * aW7) * (1 + (aWB = +(player === aWE)) / 8), aWB = aWB * aWC / 4, (aWC = aWF * (aMD - n8) / i7) < aW9 || i6 < aW9 || aWF + aWB < aWC || aWG + aWB < i6 || (aMD = 2 *
-			aW7 * eR, aW9 = aW7 * ec, null === (aWB = aWD[player]) && (aWD[player] = aWB = function(player) {
-				var a2n = bA.qZ.wL(aVt, aVt);
-				return aW1(bA.qZ.getContext(a2n, !0), ac.a77(player)), a2n
-			}(player)), player === aWE && (hp.setTransform(aMD, 0, 0, aMD, aWC - 2 * aMD, i6 - 2 * aMD), hp.drawImage(aVu, 0, 0)), hp.setTransform(aMD, 0, 0, aMD, aWC, i6), hp.drawImage(aWB, 0, 0), (aW7 = Math.floor(function(hW) {
+		for (hp.imageSmoothingEnabled = ec < 9, bA.qZ.textAlign(hp, 1), bA.qZ.textBaseline(hp, 1), aB = 0; aB < en; aB++) player = m3[aB] >> 3, hW = a6T[aB], aW8 = .9 + .1 * Math.log10(hW), aME = (i6 = mE[aB]) % aWI / 16 - aW8, i6 = aWH * (Math
+			.floor(i6 / aWI) / 16 - aW8 - n9) / iA, aWA = -2 * (aWD = ec * aW8) * (1 + (aWC = +(player === aWF)) / 8), aWC = aWC * aWD / 4, (aWD = aWG * (aME - n8) / i7) < aWA || i6 < aWA || aWG + aWC < aWD || aWH + aWC < i6 || (aME = 2 *
+			aW8 * eR, aWA = aW8 * ec, null === (aWC = aWE[player]) && (aWE[player] = aWC = function(player) {
+				var a2n = bA.qZ.wL(aVu, aVu);
+				return aW2(bA.qZ.getContext(a2n, !0), ac.a77(player)), a2n
+			}(player)), player === aWF && (hp.setTransform(aME, 0, 0, aME, aWD - 2 * aME, i6 - 2 * aME), hp.drawImage(aVv, 0, 0)), hp.setTransform(aME, 0, 0, aME, aWD, i6), hp.drawImage(aWC, 0, 0), (aW8 = Math.floor(function(hW) {
 				if (hW < 1e3) return .42;
 				if (hW < 1e4) return .34;
 				if (hW < 1e6) return .26;
 				if (hW < 1e8) return .19;
 				return .15
-			}(hW) * aW9)) < 6) || (hp.setTransform(1, 0, 0, 1, 0, 0), hp.fillStyle = aVn[aB] ? bB.oG : bB.ni, hp.font = bA.qZ.sN(1, aW7), hp.fillText(bA.rY.zD(hW), aWC + aW9, i6 + aW9 + .1 * aW7));
+			}(hW) * aWA)) < 6) || (hp.setTransform(1, 0, 0, 1, 0, 0), hp.fillStyle = aVo[aB] ? bB.oG : bB.ni, hp.font = bA.qZ.sN(1, aW8), hp.fillText(bA.rY.zD(hW), aWD + aWA, i6 + aWA + .1 * aW8));
 		hp.imageSmoothingEnabled = !1, hp.setTransform(1, 0, 0, 1, 0, 0)
 	}
 }
 
-function aV5() {
-	var aWK;
+function aV6() {
+	var aWL;
 	this.dd = function() {
 		if (aD.hh) {
 			var hd = 1 - aD.x9;
-			aWK = new Array(bg.kX.length);
+			aWL = new Array(bg.kX.length);
 			for (var aB = aD.x8 - 1; 0 <= aB; aB--) {
 				var a5D = bg.kX[aB + hd];
-				aWK[a5D] = bP.y.aWM(20, bg.aWN[a5D])
+				aWL[a5D] = bP.y.aWN(20, bg.aWO[a5D])
 			}
-			9 === aD.kS && (aWK[1] = bP.y.aWM(20, bg.aWN[1]))
-		} else aWK = [bP.y.aWM(20, bg.aWN[7])]
+			9 === aD.kS && (aWL[1] = bP.y.aWN(20, bg.aWO[1]))
+		} else aWL = [bP.y.aWN(20, bg.aWO[7])]
 	}, this.uf = function() {
 		var nS = hy;
 		if (!(5 <= nS)) {
-			var aWF = h.i,
-				aWG = h.j,
+			var aWG = h.i,
+				aWH = h.j,
 				n8 = iO / nS,
 				n9 = iP / nS,
-				nL = (aWF + iO) / nS,
-				nM = (aWG + iP) / nS,
+				nL = (aWG + iO) / nS,
+				nM = (aWH + iP) / nS,
 				gM = -20 * nS,
-				aWP = .5 * gM,
-				aWH = bS.ey << 4,
+				aWQ = .5 * gM,
+				aWI = bS.ey << 4,
 				en = bN.y.lz,
 				mE = bN.y.mE,
 				m3 = bN.y.m3,
 				aAN = bg.aAN,
-				a2n = aWK,
+				a2n = aWL,
 				hp = ug;
 			3 < nS && (hp.globalAlpha = .5 * (5 - nS));
 			for (var aB = 0; aB < en; aB++) {
 				var i6 = mE[aB],
-					eu = aWF * (i6 % aWH / 16 - n8) / (nL - n8) + aWP,
-					i6 = aWG * (Math.floor(i6 / aWH) / 16 - n9) / (nM - n9) + aWP;
-				aWF < eu || aWG < i6 || eu < gM || i6 < gM || (hp.setTransform(nS, 0, 0, nS, eu, i6), hp.drawImage(a2n[aAN[m3[aB] >> 3]], 0, 0))
+					eu = aWG * (i6 % aWI / 16 - n8) / (nL - n8) + aWQ,
+					i6 = aWH * (Math.floor(i6 / aWI) / 16 - n9) / (nM - n9) + aWQ;
+				aWG < eu || aWH < i6 || eu < gM || i6 < gM || (hp.setTransform(nS, 0, 0, nS, eu, i6), hp.drawImage(a2n[aAN[m3[aB] >> 3]], 0, 0))
 			}
 			hp.globalAlpha = 1, hp.setTransform(nS, 0, 0, nS, 0, 0)
 		}
 	}
 }
 
-function aV9() {
-	this.aWS = function(player, id) {
-		for (var aWT = ag.gU[player], en = aWT.length, aB = 0; aB < en; aB++)
-			if (bM.hz(aWT[aB], id)) return !0;
+function aVA() {
+	this.aWT = function(player, id) {
+		for (var aWU = ag.gU[player], en = aWU.length, aB = 0; aB < en; aB++)
+			if (bM.hz(aWU[aB], id)) return !0;
 		return !1
-	}, this.aWU = function(player, eZ) {
-		for (var iF, aWV, eR, aWT = ag.gU[player], en = aWT.length, i = bS.ey, aWX = bM.ev(eZ), aWY = bM.ex(eZ), et = -1, min = bS.ey * bS.ey + bS.ez * bS.ez, id = ac.eV(bM.ed(eZ)), aB = 0; aB < en; aB++)(aWV = (aWV = aWX - (iF = (eR = aWT[
-			aB]) >> 2) % i) * aWV + (aWV = aWY - ~~((.5 + iF) / i)) * aWV) < min && bM.hz(eR, id) && (min = aWV, et = iF);
+	}, this.aWV = function(player, eZ) {
+		for (var iF, aWW, eR, aWU = ag.gU[player], en = aWU.length, i = bS.ey, aWY = bM.ev(eZ), aWZ = bM.ex(eZ), et = -1, min = bS.ey * bS.ey + bS.ez * bS.ez, id = ac.eV(bM.ed(eZ)), aB = 0; aB < en; aB++)(aWW = (aWW = aWY - (iF = (eR = aWU[
+			aB]) >> 2) % i) * aWW + (aWW = aWZ - ~~((.5 + iF) / i)) * aWW) < min && bM.hz(eR, id) && (min = aWW, et = iF);
 		return et
 	}, this.ky = function(iE, iF) {
-		for (var id = ac.eV(bM.ed(iF)), i0 = bM.hs, eR = bM.ed(iE), aWZ = -1, aB = 0; aB < 4; aB++) {
+		for (var id = ac.eV(bM.ed(iF)), i0 = bM.hs, eR = bM.ed(iE), aWa = -1, aB = 0; aB < 4; aB++) {
 			var ec = eR + i0[aB];
-			ac.i1(ec) && ac.eV(ec) === id && (-1 === aWZ || bM.iG(bM.eb(ec), iF) < bM.iG(aWZ, iF)) && (aWZ = bM.eb(ec))
+			ac.i1(ec) && ac.eV(ec) === id && (-1 === aWa || bM.iG(bM.eb(ec), iF) < bM.iG(aWa, iF)) && (aWa = bM.eb(ec))
 		}
-		return aWZ
+		return aWa
 	}, this.lX = function(player, eZ) {
 		for (var i0 = bM.hs, eR = bM.ed(eZ), aB = 0; aB < 4; aB++) {
 			var ec = eR + i0[aB];
@@ -10832,7 +10828,7 @@ function aV9() {
 			}
 		}
 		return -1
-	}, this.aVf = function(eR) {
+	}, this.aVg = function(eR) {
 		if (ac.i1(eR))
 			for (var i0 = bM.hs, aB = 0; aB < 4; aB++)
 				if (ac.ei(eR + i0[aB])) return !0;
@@ -10848,39 +10844,39 @@ function aV9() {
 	}, this.a5V = function(lN, lO) {
 		var en = bN.y.lz;
 		if (en < 1) return -1;
-		for (var mE = bN.y.mE, aWa = 80, aOT = -1, aB = 0; aB < en; aB++) {
+		for (var mE = bN.y.mE, aWb = 80, aOU = -1, aB = 0; aB < en; aB++) {
 			var f3 = bM.i3(lN, lO, mE[aB]);
-			f3 < aWa && (aWa = f3, aOT = aB)
+			f3 < aWb && (aWb = f3, aOU = aB)
 		}
 		return function(aB, lN, lO) {
 			if (aB < 0) return;
-			var aWh = bN.y.mE[aB],
-				aWi = bM.i9(aWh),
-				aWh = bM.iC(aWh),
+			var aWi = bN.y.mE[aB],
+				aWj = bM.i9(aWi),
+				aWi = bM.iC(aWi),
 				aB = 20 * (.9 + .1 * Math.log10(bN.y.a6T[aB]));
-			return aB = Math.max(aB, bM.iQ(bA.qZ.tC(.02, 1.7))), bL.aMC(bM.i8(lN), bM.iB(lO), aWi, aWh, aB)
-		}(aOT, lN, lO) ? aOT : -1
-	}, this.aVM = function(n5) {
+			return aB = Math.max(aB, bM.iQ(bA.qZ.tC(.02, 1.7))), bL.aMD(bM.i8(lN), bM.iB(lO), aWj, aWi, aB)
+		}(aOU, lN, lO) ? aOU : -1
+	}, this.aVN = function(n5) {
 		for (var en = bN.y.lz, m2 = bN.y.m2, aB = 0; aB < en; aB++)
 			if (m2[aB] === n5) return bO.fP[2] = aB, !0;
 		return !1
 	}, this.aH4 = function(player) {
 		for (var t7 = player << 3, t8 = t7 + bN.y.pr[player], a7W = bN.y.a7W, a6T = bN.y.a6T, hW = 0, aB = t7; aB < t8; aB++) hW += a6T[a7W[aB]];
 		return hW
-	}, this.aWc = function(player, aVc) {
-		aVc = bN.y.m1[aVc];
-		return this.lX(player, aVc[aVc.length - 1])
-	}, this.aWd = function(iE, iF, f3, aWe) {
+	}, this.aWd = function(player, aVd) {
+		aVd = bN.y.m1[aVd];
+		return this.lX(player, aVd[aVd.length - 1])
+	}, this.aWe = function(iE, iF, f3, aWf) {
 		var iI = bM.ev(iE),
 			iE = bM.ex(iE),
 			iK = bM.ev(iF),
 			iF = bM.ex(iF),
 			iK = (f3 = Math.max(f3, 1), iK - iI),
 			iF = iF - iE,
-			i7 = bL.du(Math.abs(iK) * aWe, f3),
-			aWe = bL.du(Math.abs(iF) * aWe, f3);
-		return bM.fB(iI + Math.sign(iK) * i7, iE + Math.sign(iF) * aWe)
-	}, this.aVW = function(lT, eZ) {
+			i7 = bL.du(Math.abs(iK) * aWf, f3),
+			aWf = bL.du(Math.abs(iF) * aWf, f3);
+		return bM.fB(iI + Math.sign(iK) * i7, iE + Math.sign(iF) * aWf)
+	}, this.aVX = function(lT, eZ) {
 		for (var en = lT.length - 1, eu = bM.ev(eZ), ew = bM.ex(eZ), aB = 0; aB < en; aB++) {
 			var iE = lT[aB],
 				iF = lT[aB + 1],
@@ -10895,7 +10891,7 @@ function aV9() {
 		}
 		return -1
 	}, this.aB2 = function() {
-		for (var aWk = lk[0], m3 = bN.y.m3, lz = bN.y.lz, g = [], aB = 0; aB < lz; aB++) bA.g9.km(aWk, m3[aB] >> 3) && g.push(aB);
+		for (var aWl = lk[0], m3 = bN.y.m3, lz = bN.y.lz, g = [], aB = 0; aB < lz; aB++) bA.g9.km(aWl, m3[aB] >> 3) && g.push(aB);
 		return g
 	}, this.lV = function(player, lT) {
 		for (var t7 = player << 3, t8 = t7 + bN.y.pr[player], a7W = bN.y.a7W, m1 = bN.y.m1, hF = lT[0], kl = lT[lT.length - 1], aB = t7; aB < t8; aB++) {
@@ -10906,107 +10902,107 @@ function aV9() {
 	}
 }
 
-function aVA() {
-	function aWn(player, aVc) {
-		aVc = bM.iV(bN.y.mE[aVc]), aVc = ac.eV(bM.ed(aVc));
-		return !!bN.kx.aWS(player, aVc)
+function aVB() {
+	function aWo(player, aVd) {
+		aVd = bM.iV(bN.y.mE[aVd]), aVd = ac.eV(bM.ed(aVd));
+		return !!bN.kx.aWT(player, aVd)
 	}
 
-	function aWl(player) {
+	function aWm(player) {
 		return bN.mF.mG(player) && !bN.lU.la()
 	}
 	this.hR = function(player, eZ) {
-		return !!aWl(player) && -1 !== (eZ = function(player, eZ) {
-			for (var en = bN.y.lz, mE = bN.y.mE, m3 = bN.y.m3, aWa = bM.hu(), aOT = -1, aB = 0; aB < en; aB++) {
+		return !!aWm(player) && -1 !== (eZ = function(player, eZ) {
+			for (var en = bN.y.lz, mE = bN.y.mE, m3 = bN.y.m3, aWb = bM.hu(), aOU = -1, aB = 0; aB < en; aB++) {
 				var f3 = bM.iD(eZ, bM.iV(mE[aB]));
-				f3 < aWa && bA.g9.km(player, m3[aB] >> 3) && (aWa = f3, aOT = aB)
+				f3 < aWb && bA.g9.km(player, m3[aB] >> 3) && (aWb = f3, aOU = aB)
 			}
-			return aOT
-		}(player, eZ)) && !!aWn(player, eZ) && (bO.fP[3] = bN.y.m2[eZ], !0)
+			return aOU
+		}(player, eZ)) && !!aWo(player, eZ) && (bO.fP[3] = bN.y.m2[eZ], !0)
 	}, this.pC = function(player, n5) {
-		return !!aWl(player) && !!bN.kx.aVM(n5) && !!aWn(player, bO.fP[2])
-	}, this.q5 = function(player, n5, aWo) {
-		return !! function(player, n5, aWo) {
-			if (aWl(player) && bN.kx.aVM(n5)) {
+		return !!aWm(player) && !!bN.kx.aVN(n5) && !!aWo(player, bO.fP[2])
+	}, this.q5 = function(player, n5, aWp) {
+		return !! function(player, n5, aWp) {
+			if (aWm(player) && bN.kx.aVN(n5)) {
 				n5 = bO.fP[2];
 				if (bA.g9.km(player, bN.y.m3[n5] >> 3)) {
-					if (function(player, aVc) {
-							return bN.kx.aWc(player, aVc) && (bO.g[0] = bN.lU.lc(bN.y.m1[aVc]), bO.fP[1] = 6, !0)
+					if (function(player, aVd) {
+							return bN.kx.aWd(player, aVd) && (bO.g[0] = bN.lU.lc(bN.y.m1[aVd]), bO.fP[1] = 6, !0)
 						}(player, n5)) return 1;
-					var aVH = bM.iV(bN.y.mE[n5]),
-						aWs = bN.kx.aWU(player, aVH);
-					if (-1 !== aWs) {
-						aWs = bM.iD(aWs, aVH);
-						if (!(aWo && 120 < aWs)) {
-							aWo = function(aVc, aWt, aVH) {
-								var lT = bN.y.m1[aVc],
-									aVc = bN.y.mD[aVc],
-									aWv = bM.iD(aVH, lT[aVc + 1]);
-								if (aWt <= aWv) return bN.kx.aWd(aVH, lT[aVc + 1], aWv, aWt);
-								for (var f3 = aWt - aWv, en = lT.length - 1, aB = aVc + 1; aB < en; aB++) {
-									var aWw = bM.iD(lT[aB], lT[aB + 1]);
-									if (f3 <= aWw) return bN.kx.aWd(lT[aB], lT[aB + 1], aWw, f3);
-									f3 -= aWw
+					var aVI = bM.iV(bN.y.mE[n5]),
+						aWt = bN.kx.aWV(player, aVI);
+					if (-1 !== aWt) {
+						aWt = bM.iD(aWt, aVI);
+						if (!(aWp && 120 < aWt)) {
+							aWp = function(aVd, aWu, aVI) {
+								var lT = bN.y.m1[aVd],
+									aVd = bN.y.mD[aVd],
+									aWw = bM.iD(aVI, lT[aVd + 1]);
+								if (aWu <= aWw) return bN.kx.aWe(aVI, lT[aVd + 1], aWw, aWu);
+								for (var f3 = aWu - aWw, en = lT.length - 1, aB = aVd + 1; aB < en; aB++) {
+									var aWx = bM.iD(lT[aB], lT[aB + 1]);
+									if (f3 <= aWx) return bN.kx.aWe(lT[aB], lT[aB + 1], aWx, f3);
+									f3 -= aWx
 								}
 								return lT[en]
-							}(n5, aWs, aVH);
-							if (bN.kv.q2(player, aWo, 1)) return bO.fP[1] = 6, 1
+							}(n5, aWt, aVI);
+							if (bN.kv.q2(player, aWp, 1)) return bO.fP[1] = 6, 1
 						}
 					}
 				}
 			}
 			return
-		}(player, n5, aWo) && (player = bO.fP[2], bN.y.m0[player] = 64 + bN.y.m0[player] % 64, bN.m8.jG(n5, bN.y.mI), !0)
+		}(player, n5, aWp) && (player = bO.fP[2], bN.y.m0[player] = 64 + bN.y.m0[player] % 64, bN.m8.jG(n5, bN.y.mI), !0)
 	}
 }
 
-function aUz() {
-	function aX1(player, hW, aWz, aVH) {
+function aV0() {
+	function aX2(player, hW, aX0, aVI) {
 		var jJ;
-		if (ac.ee(aWz)) jJ = aD.ek;
+		if (ac.ee(aX0)) jJ = aD.ek;
 		else {
-			if ((jJ = ac.ef(aWz)) === player) return void bd.gD(player, hW - bA.g9.gC(player, hW), 12);
+			if ((jJ = ac.ef(aX0)) === player) return void bd.gD(player, hW - bA.g9.gC(player, hW), 12);
 			if (!bs.eg(player, jJ)) return void b8.kD.pR(player, jJ, hW)
 		}
-		ad.jW(player, jJ) || ad.jo(player) ? (ag.gF[player].push(aVH << 2), ad.jG(player, hW, jJ), aF.jH(player, !0)) : bd.gD(player, hW, 12)
+		ad.jW(player, jJ) || ad.jo(player) ? (ag.gF[player].push(aVI << 2), ad.jG(player, hW, jJ), aF.jH(player, !0)) : bd.gD(player, hW, 12)
 	}
 	this.j3 = function() {
-		for (var m0 = bN.y.m0, mE = bN.y.mE, aVd = bN.y.aVd, aB = bN.y.lz - 1; 0 <= aB; aB--) 65535 === aVd[aB] && function(aB, aVH, he) {
+		for (var m0 = bN.y.m0, mE = bN.y.mE, aVe = bN.y.aVe, aB = bN.y.lz - 1; 0 <= aB; aB--) 65535 === aVe[aB] && function(aB, aVI, he) {
 			if (6 === he) {
-				if (bN.m8.aVQ(aB, aVH)) return bN.y.mD[aB]++, bN.y.aVd[aB] = 0, 0
+				if (bN.m8.aVR(aB, aVI)) return bN.y.mD[aB]++, bN.y.aVe[aB] = 0, 0
 			} else {
 				var player = bN.y.m3[aB] >> 3,
 					aB = bN.y.a6T[aB];
-				bd.aX0(player), he < 4 ? aX1(player, aB, aVH + bM.hr[he] << 2, aVH) : 4 === he ? function(player, hW, aVH) {
+				bd.aX1(player), he < 4 ? aX2(player, aB, aVI + bM.hr[he] << 2, aVI) : 4 === he ? function(player, hW, aVI) {
 					var aB, er, i0 = bM.hs,
-						ec = bM.ed(aVH);
+						ec = bM.ed(aVI);
 					for (aB = 0; aB < 4; aB++)
-						if (er = ec + i0[aB], ac.ee(er)) return aX1(player, hW, er, aVH);
+						if (er = ec + i0[aB], ac.ee(er)) return aX2(player, hW, er, aVI);
 					for (aB = 0; aB < 4; aB++)
-						if (er = ec + i0[aB], ac.gN(er) && !ac.xy(player, er)) return aX1(player, hW, er, aVH);
+						if (er = ec + i0[aB], ac.gN(er) && !ac.xy(player, er)) return aX2(player, hW, er, aVI);
 					for (aB = 0; aB < 4; aB++)
-						if (er = ec + i0[aB], ac.gN(er)) return aX1(player, hW, er, aVH)
-				}(player, aB, aVH) : 5 === he && function(player, hW, aVH) {
+						if (er = ec + i0[aB], ac.gN(er)) return aX2(player, hW, er, aVI)
+				}(player, aB, aVI) : 5 === he && function(player, hW, aVI) {
 					var aB, er, i0 = bM.hs,
-						ec = bM.ed(aVH);
+						ec = bM.ed(aVI);
 					for (aB = 0; aB < 4; aB++)
-						if (er = ec + i0[aB], ac.gN(er) && ac.xy(player, er)) return aX1(player, hW, er, aVH);
+						if (er = ec + i0[aB], ac.gN(er) && ac.xy(player, er)) return aX2(player, hW, er, aVI);
 					for (aB = 0; aB < 4; aB++)
-						if (er = ec + i0[aB], ac.gN(er)) return aX1(player, hW, er, aVH);
+						if (er = ec + i0[aB], ac.gN(er)) return aX2(player, hW, er, aVI);
 					for (aB = 0; aB < 4; aB++)
-						if (er = ec + i0[aB], ac.ee(er)) return aX1(player, hW, er, aVH)
-				}(player, aB, aVH)
+						if (er = ec + i0[aB], ac.ee(er)) return aX2(player, hW, er, aVI)
+				}(player, aB, aVI)
 			}
 			return 1
-		}(aB, bM.iV(mE[aB]), m0[aB] % 64) && (bN.m8.aVN(aB), bN.aH7.aVg(aB))
-	}, this.aWy = function(player, eZ, he, n5) {
+		}(aB, bM.iV(mE[aB]), m0[aB] % 64) && (bN.m8.aVO(aB), bN.aH7.aVh(aB))
+	}, this.aWz = function(player, eZ, he, n5) {
 		if (!(4 <= he)) {
-			var aWE = aD.eX;
-			if (bA.g9.gz(aWE) && bs.eg(player, aWE) && player !== aWE && 0 !== ag.gU[aWE].length) {
-				var aWz = eZ + bM.hr[he] << 2;
-				if (ac.ee(aWz) || bs.eg(player, ac.ef(aWz))) {
+			var aWF = aD.eX;
+			if (bA.g9.gz(aWF) && bs.eg(player, aWF) && player !== aWF && 0 !== ag.gU[aWF].length) {
+				var aX0 = eZ + bM.hr[he] << 2;
+				if (ac.ee(aX0) || bs.eg(player, ac.ef(aX0))) {
 					for (var f1 = !1, aB = 0; aB < 4; aB++)
-						if (aWz = eZ + bM.hr[aB] << 2, ac.ei(aWz) && !ac.ee(aWz) && ac.ef(aWz) === aWE) {
+						if (aX0 = eZ + bM.hr[aB] << 2, ac.ei(aX0) && !ac.ee(aX0) && ac.ef(aX0) === aWF) {
 							f1 = !0;
 							break
 						} f1 && (aN.a6c(719, 0), aN.yO(180, L(432, [ag.yP[player]]), 719, player, bB.oF, bB.nf, -1, !0, void 0, {
@@ -11019,69 +11015,69 @@ function aUz() {
 	}
 }
 
-function aUw() {
-	this.kO = 512, this.aVe = 8, this.lz = 0, this.mI = 0, this.m3 = new Uint16Array(this.kO), this.mE = new Uint32Array(this.kO), this.aVd = new Uint16Array(this.kO), this.a6T = new Uint32Array(this.kO), this.aVl = new Uint16Array(this.kO), this
-		.m2 = new Uint16Array(this.kO), this.m0 = new Uint8Array(this.kO), this.aVn = new Uint8Array(this.kO), this.m1 = new Array(this.kO), this.mD = new Uint16Array(this.kO), this.pr = new Uint8Array(aD.ek), this.a7W = new Uint16Array(this.aVe * aD
+function aUx() {
+	this.kO = 512, this.aVf = 8, this.lz = 0, this.mI = 0, this.m3 = new Uint16Array(this.kO), this.mE = new Uint32Array(this.kO), this.aVe = new Uint16Array(this.kO), this.a6T = new Uint32Array(this.kO), this.aVm = new Uint16Array(this.kO), this
+		.m2 = new Uint16Array(this.kO), this.m0 = new Uint8Array(this.kO), this.aVo = new Uint8Array(this.kO), this.m1 = new Array(this.kO), this.mD = new Uint16Array(this.kO), this.pr = new Uint8Array(aD.ek), this.a7W = new Uint16Array(this.aVf * aD
 			.ek), this.dd = function() {
 			this.lz = 0, this.mI = 0, this.pr.fill(0), this.m1.fill(null)
 		}, this.mK = function(player) {
 			var hW = bO.fK[0],
 				m4 = bO.fP[1],
 				lT = bO.g[0],
-				aX4 = this.mI,
+				aX5 = this.mI,
 				en = this.lz,
-				aX5 = bM.iU(lT[0]),
-				aX6 = this.pr[player],
-				aX7 = (player << 3) + aX6;
-			this.m3[en] = aX7, this.mE[en] = aX5, this.aVd[en] = 0, hW < 60 ? (bA.g9.gA(player, 60 - hW), this.a6T[en] = 60) : this.a6T[en] = hW, this.aVl[en] = bN.iX.mK(en, bM.iW(aX5)), this.m2[en] = aX4, this.m0[en] = m4, this.aVn[en] = 0, this.m1[
-				en] = lT, this.mD[en] = 0, this.mI = (aX4 + 1) % 65536, this.pr[player] = aX6 + 1, this.a7W[aX7] = en, this.lz++, bN.m4.aWy(player, lT[lT.length - 1], m4, aX4)
+				aX6 = bM.iU(lT[0]),
+				aX7 = this.pr[player],
+				aX8 = (player << 3) + aX7;
+			this.m3[en] = aX8, this.mE[en] = aX6, this.aVe[en] = 0, hW < 60 ? (bA.g9.gA(player, 60 - hW), this.a6T[en] = 60) : this.a6T[en] = hW, this.aVm[en] = bN.iX.mK(en, bM.iW(aX6)), this.m2[en] = aX5, this.m0[en] = m4, this.aVo[en] = 0, this.m1[
+				en] = lT, this.mD[en] = 0, this.mI = (aX5 + 1) % 65536, this.pr[player] = aX7 + 1, this.a7W[aX8] = en, this.lz++, bN.m4.aWz(player, lT[lT.length - 1], m4, aX5)
 		}, this.j3 = function() {
 			bN.m4.j3();
 			for (var gL = aD.eX, dt = bN.kx.aH4(gL), sA = (! function(sA) {
-					for (var aXC, mE = sA.mE, a6T = sA.a6T, aVn = sA.aVn, aVd = sA.aVd, aVl = sA.aVl, m1 = sA.m1, mD = sA.mD, sA = sA.lz, aWH = bS.ey << 4, aB = sA - 1; 0 <= aB; aB--) {
-						var aXD = mE[aB],
+					for (var aXD, mE = sA.mE, a6T = sA.a6T, aVo = sA.aVo, aVe = sA.aVe, aVm = sA.aVm, m1 = sA.m1, mD = sA.mD, sA = sA.lz, aWI = bS.ey << 4, aB = sA - 1; 0 <= aB; aB--) {
+						var aXE = mE[aB],
 							lT = m1[aB],
-							aXE = mD[aB],
-							aX5 = bM.iU(lT[aXE]),
-							aXF = bM.iU(lT[aXE + 1]),
-							aXG = aX5 % aWH,
-							aX5 = ~~((aX5 + .5) / aWH),
-							aXI = aXF % aWH,
-							aXJ = ~~((aXF + .5) / aWH),
-							aXK = aXI - aXG,
-							aXL = aXJ - aX5,
-							eq = Math.max(~~Math.sqrt(aXK * aXK + aXL * aXL + .5), 1),
-							aXM = a6T[aB],
-							aXM = (aXM = aVn[aB] ? 4e4 : 25e4 + Math.min(20 * aXM, 3e5) + Math.min(aXM >> 3, 5e4), aVd[aB] + Math.max(~~((aXM + .5) / eq), 1));
-						65535 <= aXM ? aXE + 2 < lT.length ? (mD[aB] = aXE + 1, mE[aB] = aXC = function(aB, aXN, aXG, aXH, aXE, eq, lT, aWH) {
-							aXN = Math.min(aXN - 65535, 65535);
-							var lT = bM.iU(lT[aXE + 2]),
-								aXE = lT % aWH - aXG,
-								lT = ~~((lT + .5) / aWH) - aXH,
-								aXQ = Math.max(~~Math.sqrt(aXE * aXE + lT * lT + .5), 1);
-							return aXN = Math.min(Math.floor((eq * aXN + .5) / aXQ), 65534), bN.y.aVd[aB] = aXN, aXG + bL.du(aXN * aXE, 65535) + aWH * (aXH + bL.du(aXN * lT, 65535))
-						}(aB, aXM, aXI, aXJ, aXE, eq, lT, aWH)) : (mE[aB] = aXC = aXF, aVd[aB] = 65535) : (aVd[aB] = aXM, mE[aB] = aXC = aXG + bL.du(aXM * aXK, 65535) + aWH * (aX5 + bL.du(aXM * aXL, 65535))), aVl[aB] = bN.iX.aXP(aVl[aB],
-							aXD, aXC)
+							aXF = mD[aB],
+							aX6 = bM.iU(lT[aXF]),
+							aXG = bM.iU(lT[aXF + 1]),
+							aXH = aX6 % aWI,
+							aX6 = ~~((aX6 + .5) / aWI),
+							aXJ = aXG % aWI,
+							aXK = ~~((aXG + .5) / aWI),
+							aXL = aXJ - aXH,
+							aXM = aXK - aX6,
+							eq = Math.max(~~Math.sqrt(aXL * aXL + aXM * aXM + .5), 1),
+							aXN = a6T[aB],
+							aXN = (aXN = aVo[aB] ? 4e4 : 25e4 + Math.min(20 * aXN, 3e5) + Math.min(aXN >> 3, 5e4), aVe[aB] + Math.max(~~((aXN + .5) / eq), 1));
+						65535 <= aXN ? aXF + 2 < lT.length ? (mD[aB] = aXF + 1, mE[aB] = aXD = function(aB, aXO, aXH, aXI, aXF, eq, lT, aWI) {
+							aXO = Math.min(aXO - 65535, 65535);
+							var lT = bM.iU(lT[aXF + 2]),
+								aXF = lT % aWI - aXH,
+								lT = ~~((lT + .5) / aWI) - aXI,
+								aXR = Math.max(~~Math.sqrt(aXF * aXF + lT * lT + .5), 1);
+							return aXO = Math.min(Math.floor((eq * aXO + .5) / aXR), 65534), bN.y.aVe[aB] = aXO, aXH + bL.du(aXO * aXF, 65535) + aWI * (aXI + bL.du(aXO * lT, 65535))
+						}(aB, aXN, aXJ, aXK, aXF, eq, lT, aWI)) : (mE[aB] = aXD = aXG, aVe[aB] = 65535) : (aVe[aB] = aXN, mE[aB] = aXD = aXH + bL.du(aXN * aXL, 65535) + aWI * (aX6 + bL.du(aXN * aXM, 65535))), aVm[aB] = bN.iX.aXQ(aVm[aB],
+							aXE, aXD)
 					}
 				}(this), ! function(sA) {
 					if (bf.k7() % 2 == 1) {
-						var aB, hf, l3, f7, f8, aXR, yr, aXS, hF, n8, n9, aX5, aXT, a8y, aXV, kl, en = sA.lz,
+						var aB, hf, l3, f7, f8, aXS, yr, aXT, hF, n8, n9, aX6, aXU, a8y, aXW, kl, en = sA.lz,
 							mE = sA.mE,
 							m3 = sA.m3,
 							a6T = sA.a6T,
-							aVn = sA.aVn,
+							aVo = sA.aVo,
 							iX = bN.iX.iX,
-							aXX = iX.length,
-							aXY = bN.iX.aXY,
-							aWH = bS.ey << 4,
-							aXZ = aD.hh,
-							aT5 = bg.el,
+							aXY = iX.length,
+							aXZ = bN.iX.aXZ,
+							aWI = bS.ey << 4,
+							aXa = aD.hh,
+							aT6 = bg.el,
 							gM = (en - 1) * (bL.du(bf.k7(), 2) % 2);
 						for (aB = 0; aB < en; aB++)
-							for (hf = Math.abs(aB - gM), aX5 = mE[hf], l3 = bM.iW(aX5), hF = m3[hf] >> 3, n8 = aX5 % aWH, n9 = ~~((aX5 + .5) / aWH), aXV = a6T[hf], f7 = 0; f7 < 9; f7++)
-								if (!((aXR = l3 + aXY[f7]) < 0 || aXX <= aXR))
-									for (aXS = iX[aXR], yr = aXS.length, f8 = 0; f8 < yr; f8++) aXT = aXS[f8], kl = m3[aXT] >> 3, hF == kl || aXZ && aT5[hF] === aT5[kl] && aT5[hF] || (kl = mE[aXT], (a8y = n8 - kl % aWH) * a8y + (a8y = n9 - ~~
-										((kl + .5) / aWH)) * a8y < 14400 && (kl = a6T[aXT], a8y = kl <= aXV ? Math.max(1, bL.du(kl + bL.du(aXV - kl, 10), 10)) : Math.max(1, bL.du(aXV, 10)), a6T[aXT] = Math.max(kl - a8y, 0), aVn[aXT] =
+							for (hf = Math.abs(aB - gM), aX6 = mE[hf], l3 = bM.iW(aX6), hF = m3[hf] >> 3, n8 = aX6 % aWI, n9 = ~~((aX6 + .5) / aWI), aXW = a6T[hf], f7 = 0; f7 < 9; f7++)
+								if (!((aXS = l3 + aXZ[f7]) < 0 || aXY <= aXS))
+									for (aXT = iX[aXS], yr = aXT.length, f8 = 0; f8 < yr; f8++) aXU = aXT[f8], kl = m3[aXU] >> 3, hF == kl || aXa && aT6[hF] === aT6[kl] && aT6[hF] || (kl = mE[aXU], (a8y = n8 - kl % aWI) * a8y + (a8y = n9 - ~~
+										((kl + .5) / aWI)) * a8y < 14400 && (kl = a6T[aXU], a8y = kl <= aXW ? Math.max(1, bL.du(kl + bL.du(aXW - kl, 10), 10)) : Math.max(1, bL.du(aXW, 10)), a6T[aXU] = Math.max(kl - a8y, 0), aVo[aXU] =
 										4))
 					}
 				}(this), ! function(sA) {
@@ -11090,63 +11086,63 @@ function aUw() {
 							var hW = a6T[aB];
 							a6T[aB] = Math.max(hW - Math.max(1, hW >> 7), 0)
 						}
-				}(this), this), a6T = sA.a6T, aVn = sA.aVn, aB = sA.lz - 1; 0 <= aB; aB--) aVn[aB] = aVn[aB] >> 1, 0 === a6T[aB] && (bN.m8.aVN(aB), bN.aH7.aVg(aB));
+				}(this), this), a6T = sA.a6T, aVo = sA.aVo, aB = sA.lz - 1; 0 <= aB; aB--) aVo[aB] = aVo[aB] >> 1, 0 === a6T[aB] && (bN.m8.aVO(aB), bN.aH7.aVh(aB));
 			bd.gD(gL, dt - bN.kx.aH4(gL), 15)
 		}
 }
 
-function aUx() {
-	this.aXa = 32, this.eu = 0, this.ew = 0, this.iY = 0, this.aXb = 0, this.aXc = 4, this.iX = null, this.aXY = new Int16Array(9), this.dd = function() {
-		this.iY = 1 + bL.du(bS.ey - 1, this.aXa), this.aXb = 1 + bL.du(bS.ez - 1, this.aXa), this.iX = new Array(this.iY * this.aXb), bA.qh.a2K(this.iX);
-		var eu, ew, aXY = this.aXY,
+function aUy() {
+	this.aXb = 32, this.eu = 0, this.ew = 0, this.iY = 0, this.aXc = 0, this.aXd = 4, this.iX = null, this.aXZ = new Int16Array(9), this.dd = function() {
+		this.iY = 1 + bL.du(bS.ey - 1, this.aXb), this.aXc = 1 + bL.du(bS.ez - 1, this.aXb), this.iX = new Array(this.iY * this.aXc), bA.qh.a2K(this.iX);
+		var eu, ew, aXZ = this.aXZ,
 			i = this.iY;
 		for (eu = -1; eu <= 1; eu++)
-			for (ew = -1; ew <= 1; ew++) aXY[3 * (1 + ew) + 1 + eu] = ew * i + eu
-	}, this.mK = function(aXe, aB) {
-		return this.iX[aB].push(aXe), this.iX[aB].length - 1
-	}, this.aXP = function(aXf, aX5, aXF) {
-		var aXg, aXh, aX5 = bM.iW(aX5),
-			aXF = bM.iW(aXF);
-		return aX5 === aXF ? aXf : (aXg = this.iX[aX5].pop(), this.iX[aX5].length === aXf ? this.mK(aXg, aXF) : (aXh = this.iX[aX5][aXf], this.iX[aX5][aXf] = aXg, bN.y.aVl[aXg] = aXf, this.mK(aXh, aXF)))
+			for (ew = -1; ew <= 1; ew++) aXZ[3 * (1 + ew) + 1 + eu] = ew * i + eu
+	}, this.mK = function(aXf, aB) {
+		return this.iX[aB].push(aXf), this.iX[aB].length - 1
+	}, this.aXQ = function(aXg, aX6, aXG) {
+		var aXh, aXi, aX6 = bM.iW(aX6),
+			aXG = bM.iW(aXG);
+		return aX6 === aXG ? aXg : (aXh = this.iX[aX6].pop(), this.iX[aX6].length === aXg ? this.mK(aXh, aXG) : (aXi = this.iX[aX6][aXg], this.iX[aX6][aXg] = aXh, bN.y.aVm[aXh] = aXg, this.mK(aXi, aXG)))
 	}
 }
 
-function aV1() {
-	this.kw = function(player, aXi) {
-		return -1 !== aXi && !!bN.kx.lY(player, aXi) && this.q2(player, aXi, 0)
-	}, this.q2 = function(player, aXi, aXj) {
-		player = function(player, aXi, aXj) {
-			var aWs = bN.kx.aWU(player, aXi);
-			if (-1 === aWs) return -1;
-			aWs = bN.kx.ky(aWs, aXi);
-			if (-1 === aWs) return -1;
-			var lR = bN.lU.lZ(aWs, aXi);
+function aV2() {
+	this.kw = function(player, aXj) {
+		return -1 !== aXj && !!bN.kx.lY(player, aXj) && this.q2(player, aXj, 0)
+	}, this.q2 = function(player, aXj, aXk) {
+		player = function(player, aXj, aXk) {
+			var aWt = bN.kx.aWV(player, aXj);
+			if (-1 === aWt) return -1;
+			aWt = bN.kx.ky(aWt, aXj);
+			if (-1 === aWt) return -1;
+			var lR = bN.lU.lZ(aWt, aXj);
 			if (0 <= lR) return lR;
 			if (bN.lU.la()) return -1;
-			if (0 <= (lR = bN.lU.lZ(aXi, aWs))) return bN.lU.lb(bN.lU.lc(bN.lU.get(lR)));
-			if (aWs === aXi) return bN.lU.lb(new Uint32Array([aWs, aXi]));
-			if (0 <= (lR = bN.aV2.q2(aWs, aXi))) return lR;
-			return aXj ? function(aXn, player) {
+			if (0 <= (lR = bN.lU.lZ(aXj, aWt))) return bN.lU.lb(bN.lU.lc(bN.lU.get(lR)));
+			if (aWt === aXj) return bN.lU.lb(new Uint32Array([aWt, aXj]));
+			if (0 <= (lR = bN.aV3.q2(aWt, aXj))) return lR;
+			return aXk ? function(aXo, player) {
 				var fU = bO.fU,
-					eK = (fU.fill(0), [aXn]),
-					ht = (fU[aXn] = 1, bM.ht),
-					aXo = -1,
+					eK = (fU.fill(0), [aXo]),
+					ht = (fU[aXo] = 1, bM.ht),
+					aXp = -1,
 					en = eK.length;
-				for (; - 1 === aXo && en;) {
+				for (; - 1 === aXp && en;) {
 					for (var g = [], aB = 0; aB < en; aB++)
 						for (var eZ = eK[aB], a47 = fU[eZ], eq = 0; eq < 8; eq++) {
 							var w5, a0f, et = eZ + ht[eq],
 								eR = 4 * et;
-							ac.i1(eR) ? (w5 = fU[et], a0f = a47 + 5 + ((1 & eq) << 1), 0 === w5 ? (g.push(et), fU[et] = a0f) : fU[et] = Math.min(a0f, w5)) : -1 === aXo && eq % 2 == 0 && ac.xv(player, eR) && (aXo = eZ)
+							ac.i1(eR) ? (w5 = fU[et], a0f = a47 + 5 + ((1 & eq) << 1), 0 === w5 ? (g.push(et), fU[et] = a0f) : fU[et] = Math.min(a0f, w5)) : -1 === aXp && eq % 2 == 0 && ac.xv(player, eR) && (aXp = eZ)
 						}
 					en = (eK = g).length
 				}
-				return -1 !== aXo ? function(iE, aXq) {
+				return -1 !== aXp ? function(iE, aXr) {
 					var ht = bM.ht,
-						aXr = -1,
+						aXs = -1,
 						he = 0,
 						me = [];
-					for (; aXq !== iE;)(he = function(eZ, he) {
+					for (; aXr !== iE;)(he = function(eZ, he) {
 						var fU = bO.fU,
 							ht = bM.ht,
 							a47 = fU[eZ];
@@ -11156,96 +11152,96 @@ function aV1() {
 								if (a47 - fU[eZ + ht[eq]] == 5 + ((1 & eq) << 1)) return eq
 							}
 						return he
-					}(aXq, he)) !== aXr && (me.push(aXq), aXr = he), aXq += ht[he];
+					}(aXr, he)) !== aXs && (me.push(aXr), aXs = he), aXr += ht[he];
 					me.push(iE);
 					var lR = bN.lU.lZ(me[0], iE);
 					if (0 <= lR) return lR;
 					return bN.lU.lb(new Uint32Array(me))
-				}(aXn, aXo) : -1
-			}(aXi, player) : -1
-		}(player, aXi, aXj);
+				}(aXo, aXp) : -1
+			}(aXj, player) : -1
+		}(player, aXj, aXk);
 		return -1 !== player && (bO.g[0] = bN.lU.get(player), !0)
 	}
 }
 
-function aV3() {
-	function aXt(h2, iJ, iL) {
+function aV4() {
+	function aXu(h2, iJ, iL) {
 		for (var jR = Math.min(iJ, iL), nQ = Math.max(iJ, iL), ew = jR + 1; ew < nQ; ew++)
 			if (!ac.i1(bM.iR(h2, ew))) return;
 		return 1
 	}
 
-	function aXu(h4, iI, iK) {
+	function aXv(h4, iI, iK) {
 		for (var jR = Math.min(iI, iK), nQ = Math.max(iI, iK), eu = jR + 1; eu < nQ; eu++)
 			if (!ac.i1(bM.iR(eu, h4))) return;
 		return 1
 	}
 
-	function aXv(iI, iJ, iK, iL, aXl, aXi) {
+	function aXw(iI, iJ, iK, iL, aXm, aXj) {
 		for (var en = Math.min(Math.abs(iK - iI), Math.abs(iL - iJ)), i7 = Math.sign(iK - iI), iA = Math.sign(iL - iJ), aB = 0; aB < en; aB++)
 			if (!ac.i1(bM.iR(iI += i7, iJ += iA))) return null;
-		return iI === iK ? aXt(iI, iJ, iL) ? new Uint32Array([aXl, bM.fB(iI, iJ), aXi]) : null : aXu(iJ, iI, iK) ? new Uint32Array([aXl, bM.fB(iI, iJ), aXi]) : null
+		return iI === iK ? aXu(iI, iJ, iL) ? new Uint32Array([aXm, bM.fB(iI, iJ), aXj]) : null : aXv(iJ, iI, iK) ? new Uint32Array([aXm, bM.fB(iI, iJ), aXj]) : null
 	}
-	this.q2 = function(aXl, aXi) {
-		aXl = function(aXl, aXi) {
-			var iI = bM.ev(aXl),
-				iJ = bM.ex(aXl),
-				iK = bM.ev(aXi),
-				iL = bM.ex(aXi);
+	this.q2 = function(aXm, aXj) {
+		aXm = function(aXm, aXj) {
+			var iI = bM.ev(aXm),
+				iJ = bM.ex(aXm),
+				iK = bM.ev(aXj),
+				iL = bM.ex(aXj);
 			if (iI === iK) {
-				if (aXt(iI, iJ, iL)) return new Uint32Array([aXl, aXi])
+				if (aXu(iI, iJ, iL)) return new Uint32Array([aXm, aXj])
 			} else {
-				if (iJ !== iL) return aXv(iI, iJ, iK, iL, aXl, aXi) || aXv(iK, iL, iI, iJ, aXl, aXi);
-				if (aXu(iJ, iI, iK)) return new Uint32Array([aXl, aXi])
+				if (iJ !== iL) return aXw(iI, iJ, iK, iL, aXm, aXj) || aXw(iK, iL, iI, iJ, aXm, aXj);
+				if (aXv(iJ, iI, iK)) return new Uint32Array([aXm, aXj])
 			}
 			return null
-		}(aXl, aXi);
-		return null === aXl ? -1 : bN.lU.lb(aXl)
+		}(aXm, aXj);
+		return null === aXm ? -1 : bN.lU.lb(aXm)
 	}
 }
 
-function aV8() {
-	var aXw = [];
+function aV9() {
+	var aXx = [];
 	this.dd = function() {
-		aXw = []
+		aXx = []
 	}, this.la = function() {
-		return 65536 === aXw.length
-	}, this.lZ = function(aXl, aXi) {
-		for (var lU = aXw, en = lU.length, aB = 0; aB < en; aB++) {
+		return 65536 === aXx.length
+	}, this.lZ = function(aXm, aXj) {
+		for (var lU = aXx, en = lU.length, aB = 0; aB < en; aB++) {
 			var gL = lU[aB];
-			if (gL[0] === aXl && gL[gL.length - 1] === aXi) return aB
+			if (gL[0] === aXm && gL[gL.length - 1] === aXj) return aB
 		}
 		return -1
 	}, this.lc = function(lT) {
-		var aXx = new Uint32Array(lT.length);
-		return aXx.set(lT), aXx.reverse()
-	}, this.aVU = function(hF, kl) {
+		var aXy = new Uint32Array(lT.length);
+		return aXy.set(lT), aXy.reverse()
+	}, this.aVV = function(hF, kl) {
 		var gG = hF.length - 1,
-			aXy = new Uint32Array(gG + kl.length);
-		return aXy.set(hF, 0), aXy.set(kl, gG), aXy
-	}, this.aVZ = function(hF, kl, aAQ, eZ, aXz) {
-		aXz && (aAQ = (kl = this.lc(kl)).length - aAQ - 2);
-		aXz = kl.subarray(aAQ + 1 + (eZ === kl[aAQ + 1])), eZ = new Uint32Array(hF.length + aXz.length);
-		return eZ.set(hF, 0), eZ.set(aXz, hF.length), eZ
+			aXz = new Uint32Array(gG + kl.length);
+		return aXz.set(hF, 0), aXz.set(kl, gG), aXz
+	}, this.aVa = function(hF, kl, aAQ, eZ, aY0) {
+		aY0 && (aAQ = (kl = this.lc(kl)).length - aAQ - 2);
+		aY0 = kl.subarray(aAQ + 1 + (eZ === kl[aAQ + 1])), eZ = new Uint32Array(hF.length + aY0.length);
+		return eZ.set(hF, 0), eZ.set(aY0, hF.length), eZ
 	}, this.lb = function(lT) {
-		return aXw.push(lT), aXw.length - 1
+		return aXx.push(lT), aXx.length - 1
 	}, this.get = function(aB) {
-		return aXw[aB]
+		return aXx[aB]
 	}, this.lW = function() {
-		return aXw
-	}, this.aY1 = function(aXl, aXi) {
+		return aXx
+	}, this.aY2 = function(aXm, aXj) {
 		return null
 	}
 }
 
-function aVC() {
+function aVD() {
 	this.j3 = function(player, n5) {
 		player = bN.kx.n7(player, n5);
-		return !(player < 0 || !bN.m8.aVb(player) || (bN.m8.aVN(player), 0))
+		return !(player < 0 || !bN.m8.aVc(player) || (bN.m8.aVO(player), 0))
 	}
 }
 
-function aUy() {
+function aUz() {
 	var yW = 32,
 		yV = new Array(2);
 
@@ -11261,93 +11257,93 @@ function aUy() {
 			for (eu = 0; eu < hj; eu++) i7 = eu - l3, iA = ew - l3, eZ = 4 * (ew * hj + eu), i7 = 714 * (l4 - Math.sqrt(i7 * i7 + iA * iA)) / l4, wW[2 + eZ] = f8, wW[3 + eZ] = 255 < i7 ? 0 : i7;
 		return hp.putImageData(hm, 0, 0), a2n
 	}
-	this.aY2 = -1, this.dd = function() {
-		this.aY2 = -1, yV[0] || (yV[0] = wL(255), yV[1] = wL(0))
-	}, this.aY3 = function(hp, eR, eu, ew, e7, aB) {
-		bA.g9.gz(aD.eX) && (hp.setTransform(eR *= 4 / 3 * .625, 0, 0, eR, eu - (e7 *= 4 / 3), ew - e7), hp.drawImage(yV[+(bN.y.m2[aB] === this.aY2)], 0, 0))
+	this.aY3 = -1, this.dd = function() {
+		this.aY3 = -1, yV[0] || (yV[0] = wL(255), yV[1] = wL(0))
+	}, this.aY4 = function(hp, eR, eu, ew, e7, aB) {
+		bA.g9.gz(aD.eX) && (hp.setTransform(eR *= 4 / 3 * .625, 0, 0, eR, eu - (e7 *= 4 / 3), ew - e7), hp.drawImage(yV[+(bN.y.m2[aB] === this.aY3)], 0, 0))
 	}
 }
 
-function aV7() {
-	function aTN(eu, en, ew, aY4, a94, fE, player) {
+function aV8() {
+	function aTO(eu, en, ew, aY5, a94, fE, player) {
 		if (!(ew < 1 || a94 < ew))
 			for (var aB = 0; aB <= en; aB++) {
 				var eR = bM.iR(eu, ew);
-				if (bN.kx.aVf(eR) && !bA.qh.has(aY4, ac.eV(eR)) && ac.xn(eR, player)) return eR >> 2;
+				if (bN.kx.aVg(eR) && !bA.qh.has(aY5, ac.eV(eR)) && ac.xn(eR, player)) return eR >> 2;
 				eu += fE
 			}
 		return -1
 	}
 
-	function aTR(ew, en, eu, aY4, aTL, fE, player) {
-		if (!(eu < 1 || aTL < eu)) {
+	function aTS(ew, en, eu, aY5, aTM, fE, player) {
+		if (!(eu < 1 || aTM < eu)) {
 			en = Math.max(en, 0);
 			for (var aB = 0; aB <= en; aB++) {
 				var eR = bM.iR(eu, ew);
-				if (bN.kx.aVf(eR) && !bA.qh.has(aY4, ac.eV(eR)) && ac.xn(eR, player)) return eR >> 2;
+				if (bN.kx.aVg(eR) && !bA.qh.has(aY5, ac.eV(eR)) && ac.xn(eR, player)) return eR >> 2;
 				ew += fE
 			}
 		}
 		return -1
 	}
 
-	function aTV(iE, iF, aTI) {
-		return -1 !== iF && (-1 === iE || bM.iG(iF, aTI) < bM.iG(iE, aTI)) ? iF : iE
+	function aTW(iE, iF, aTJ) {
+		return -1 !== iF && (-1 === iE || bM.iG(iF, aTJ) < bM.iG(iE, aTJ)) ? iF : iE
 	}
-	this.hO = function(player, aTI) {
+	this.hO = function(player, aTJ) {
 		if (bN.mF.mG(player))
-			for (var aTJ = bM.hu(), aY4 = [];;) {
-				var aXo = function(aTI, aTJ, aY4, player) {
-					for (var h2 = bM.ev(aTI), h4 = bM.ex(aTI), aTL = bS.ey - 2, a94 = bS.ez - 2, aTM = -1, eq = 0; eq < aTJ; eq++) {
+			for (var aTK = bM.hu(), aY5 = [];;) {
+				var aXp = function(aTJ, aTK, aY5, player) {
+					for (var h2 = bM.ev(aTJ), h4 = bM.ex(aTJ), aTM = bS.ey - 2, a94 = bS.ez - 2, aTN = -1, eq = 0; eq < aTK; eq++) {
 						var a93 = Math.max(h2 - eq, 1),
-							aKg = Math.max(h4 - eq, 1),
-							xj = Math.min(h2 + eq, aTL),
+							aKh = Math.max(h4 - eq, 1),
+							xj = Math.min(h2 + eq, aTM),
 							xi = Math.min(h4 + eq, a94),
-							iE = aTN(h2, xj - h2, h4 - eq, aY4, a94, 1, player),
-							iF = aTN(h2 - 1, h2 - a93 - 1, h4 - eq, aY4, a94, -1, player),
-							xj = aTN(h2, xj - h2, h4 + eq, aY4, a94, 1, player),
-							a93 = aTN(h2 - 1, h2 - a93 - 1, h4 + eq, aY4, a94, -1, player),
-							aTQ = aTR(h4, xi - h4 - 1, h2 - eq, aY4, aTL, 1, player),
-							aTS = aTR(h4 - 1, h4 - aKg - 2, h2 - eq, aY4, aTL, -1, player),
-							xi = aTR(h4, xi - h4 - 1, h2 + eq, aY4, aTL, 1, player),
-							aKg = aTR(h4 - 1, h4 - aKg - 2, h2 + eq, aY4, aTL, -1, player);
-						if (aTM = aTV(aTM, iE, aTI), aTM = aTV(aTM, iF, aTI), aTM = aTV(aTM, xj, aTI), aTM = aTV(aTM, a93, aTI), aTM = aTV(aTM, aTQ, aTI), aTM = aTV(aTM, aTS, aTI), aTM = aTV(aTM, xi, aTI), 0 <= (aTM = aTV(aTM, aKg, aTI)) &&
-							eq * eq >= bM.iG(aTM, aTI)) return aTM
+							iE = aTO(h2, xj - h2, h4 - eq, aY5, a94, 1, player),
+							iF = aTO(h2 - 1, h2 - a93 - 1, h4 - eq, aY5, a94, -1, player),
+							xj = aTO(h2, xj - h2, h4 + eq, aY5, a94, 1, player),
+							a93 = aTO(h2 - 1, h2 - a93 - 1, h4 + eq, aY5, a94, -1, player),
+							aTR = aTS(h4, xi - h4 - 1, h2 - eq, aY5, aTM, 1, player),
+							aTT = aTS(h4 - 1, h4 - aKh - 2, h2 - eq, aY5, aTM, -1, player),
+							xi = aTS(h4, xi - h4 - 1, h2 + eq, aY5, aTM, 1, player),
+							aKh = aTS(h4 - 1, h4 - aKh - 2, h2 + eq, aY5, aTM, -1, player);
+						if (aTN = aTW(aTN, iE, aTJ), aTN = aTW(aTN, iF, aTJ), aTN = aTW(aTN, xj, aTJ), aTN = aTW(aTN, a93, aTJ), aTN = aTW(aTN, aTR, aTJ), aTN = aTW(aTN, aTT, aTJ), aTN = aTW(aTN, xi, aTJ), 0 <= (aTN = aTW(aTN, aKh, aTJ)) &&
+							eq * eq >= bM.iG(aTN, aTJ)) return aTN
 					}
 					return -1
-				}(aTI, aTJ, aY4, player);
-				if (-1 === aXo) break;
-				var id = ac.eV(bM.ed(aXo));
-				if (bN.kx.aWS(player, id)) return !! function(player, aXo, aTI) {
-					for (var he = bM.ib(aXo, aTI), aB = 0; aB < 4; aB++) {
-						var eZ = bM.iZ(aXo, he);
+				}(aTJ, aTK, aY5, player);
+				if (-1 === aXp) break;
+				var id = ac.eV(bM.ed(aXp));
+				if (bN.kx.aWT(player, id)) return !! function(player, aXp, aTJ) {
+					for (var he = bM.ib(aXp, aTJ), aB = 0; aB < 4; aB++) {
+						var eZ = bM.iZ(aXp, he);
 						if (ac.aGi(bM.ed(eZ), player)) return bO.fP[6] = he, 1;
 						he = (he + 1) % 4
 					}
 					return
-				}(player, aXo, aTI) && (bO.fP[7] = aXo, !0);
-				aY4.push(id)
+				}(player, aXp, aTJ) && (bO.fP[7] = aXp, !0);
+				aY5.push(id)
 			}
 		return !1
 	}
 }
 
 function dg() {
-	this.aQo = [L(433), L(434), L(435), L(436), L(437), L(438), L(439), L(440), L(441), L(442), L(443), L(444), L(445), L(446), L(447), L(448)];
-	var aY7 = ["Space", "", "KeyB", "", "KeyW", "", "KeyS", "", "KeyD", "", "KeyA", "", "KeyH", "", "NumpadAdd", "", "NumpadSubtract", "", "ArrowLeft", "", "ArrowRight", "", "ArrowUp", "", "ArrowDown", "", "KeyM", "", "KeyP", "", "KeyI", ""];
-	this.aBO = new Array(aY7.length), this.dd = function() {
+	this.aQp = [L(433), L(434), L(435), L(436), L(437), L(438), L(439), L(440), L(441), L(442), L(443), L(444), L(445), L(446), L(447), L(448)];
+	var aY8 = ["Space", "", "KeyB", "", "KeyW", "", "KeyS", "", "KeyD", "", "KeyA", "", "KeyH", "", "NumpadAdd", "", "NumpadSubtract", "", "ArrowLeft", "", "ArrowRight", "", "ArrowUp", "", "ArrowDown", "", "KeyM", "", "KeyP", "", "KeyI", ""];
+	this.aBO = new Array(aY8.length), this.dd = function() {
 		var g = bj.eK.data[155].value.split(";"),
 			l3 = g.length;
 		if (function() {
-				for (var en = aY7.length, aB = 0; aB < en; aB++) bX.aBO[aB] = aY7[aB]
-			}(), !(l3 > aY7.length))
+				for (var en = aY8.length, aB = 0; aB < en; aB++) bX.aBO[aB] = aY8[aB]
+			}(), !(l3 > aY8.length))
 			for (var aB = 0; aB < l3; aB++) g[aB].length && (this.aBO[aB] = g[aB])
-	}, this.aQq = function(e8, code) {
-		for (var aBO = this.aBO, aY9 = aY7, qG = (aBO[e8] = code, ""), en = aBO.length, aYA = [], aB = 0; aB < en; aB++) aYA.push(aBO[aB] === aY9[aB] ? "" : aBO[aB]);
+	}, this.aQr = function(e8, code) {
+		for (var aBO = this.aBO, aYA = aY8, qG = (aBO[e8] = code, ""), en = aBO.length, aYB = [], aB = 0; aB < en; aB++) aYB.push(aBO[aB] === aYA[aB] ? "" : aBO[aB]);
 		en--;
-		for (aB = 0; aB < en; aB++) qG += aYA[aB] + ";";
-		bj.s0.s1(155, qG += aYA[en])
-	}, this.aQn = function() {
+		for (aB = 0; aB < en; aB++) qG += aYB[aB] + ";";
+		bj.s0.s1(155, qG += aYB[en])
+	}, this.aQo = function() {
 		bj.s0.s1(155, ""), this.dd()
 	}, this.f8 = function(code, e8) {
 		return code === this.aBO[e8] || code === this.aBO[e8 + 1]
@@ -11355,50 +11351,50 @@ function dg() {
 }
 
 function dY() {
-	var aYB = new Array(1),
-		aYC = new Array(1),
-		aYD = 20,
+	var aYC = new Array(1),
+		aYD = new Array(1),
+		aYE = 20,
 		eL = 0,
-		aYE = !1;
+		aYF = !1;
 
-	function aYG() {
-		aYD++, bp.play()
+	function aYH() {
+		aYE++, bp.play()
 	}
 	this.dd = function() {
 		if (!window.document.documentMode) {
 			for (var aB = 0; 0 <= aB; aB--) ! function(aB, src) {
-				aYC[aB] = 0, aYB[aB] = document.createElement("audio"), aYB[aB].src = src, aYB[aB].setAttribute("preload", "auto"), aYB[aB].setAttribute("controls", "none"), aYB[aB].style.display = "none", aYB[aB].onpause = function() {
-					aYC[aB] = 1
-				}, aYB[aB].oncanplaythrough = function() {
-					aYC[aB] = 0 === aYC[aB] ? 1 : aYC[aB]
-				}, document.body.appendChild(aYB[aB])
+				aYD[aB] = 0, aYC[aB] = document.createElement("audio"), aYC[aB].src = src, aYC[aB].setAttribute("preload", "auto"), aYC[aB].setAttribute("controls", "none"), aYC[aB].style.display = "none", aYC[aB].onpause = function() {
+					aYD[aB] = 1
+				}, aYC[aB].oncanplaythrough = function() {
+					aYD[aB] = 0 === aYD[aB] ? 1 : aYD[aB]
+				}, document.body.appendChild(aYC[aB])
 			}(aB,
 				"data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAFAAACoABtbW1tbW1tbW1tbW1tbW1tbW1tkpKSkpKSkpKSkpKSkpKSkpKSkpK2tra2tra2tra2tra2tra2tra2ttvb29vb29vb29vb29vb29vb29vb//////////////////////////8AAAAATGF2YzU4LjEzAAAAAAAAAAAAAAAAJAaRAAAAAAAAAqDGJ7xx//sUZAAAAGoWTAUAQAILQojwoBQAQfh1YBgWgAA6iqWDANAA/qchCEIRugQAAAAQRX//zh8AAIKQ8PDADzH/4F4SAs/99er//lD9Zr+tH6BPCvRPDCOshGlfMtv/C4Rh//sUZAKAAIsdXIYVQAANgrkgwBQAAcwBhTwBgDA2CmODgQABAR4bRp///9fF/i9tH5q+c5QFAvcPgcvpBBIAHN+AAH5s2HXJpNQxh/+tf3ukWgQIyReNoQ1S//5ABgKY//sUZAMAAJgc2oUJQAILwpkQoBQAQgQvbhgSgAA8CuaXAFAAEBISGGZh7////3cSlP9OrSjmBg0TESm6X8APjixspcDhfT2cK+sRfD4AEkAAH+b8YABosOqFm9Fv/wrw//sUZAIAAHAMXYYUwAANo2jwwBwAAnABaZwBgAAyimODgCABAwEGWG/+31clmP0m+005fUbgtQ478mJAAArgAAMAPg0DQNDhKCv//8RBx3//mMFAQEBEioQKCilMQU1F//sUZAIP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEMy4xMDBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV"
 				);
-			aYE = !0
+			aYF = !0
 		}
 	}, this.u9 = function() {
-		if (aYE) {
-			aYE = !1;
-			for (var aB = 0; 0 <= aB; aB--) aYB[aB].onpause = null, aYB[aB].oncanplaythrough = null, document.body.removeChild(aYB[aB]), aYB[aB] = null
+		if (aYF) {
+			aYF = !1;
+			for (var aB = 0; 0 <= aB; aB--) aYC[aB].onpause = null, aYC[aB].oncanplaythrough = null, document.body.removeChild(aYC[aB]), aYC[aB] = null
 		}
 	}, this.play = function() {
-		if (aYE) {
+		if (aYF) {
 			var dt = performance.now();
 			if (eL + 66 < dt)
 				for (var aB = 0; 0 <= aB; aB--)
-					if (1 === aYC[aB]) return eL = dt, aYC[aB] = 2, void aYB[aB].play();
-			0 < aYD && (aYD--, setTimeout(aYG, 66))
+					if (1 === aYD[aB]) return eL = dt, aYD[aB] = 2, void aYC[aB].play();
+			0 < aYE && (aYE--, setTimeout(aYH, 66))
 		}
 	}
 }
 
 function ca() {
 	this.a84 = function() {
-		var aYJ;
-		return !(al.kB < 3 || ag.gb[lk[0]] >= aD.ju >> 1) && (aD.hh ? (aYJ = ae.aI6(), !(2 * ae.aI7(bh.ki()) >= aYJ)) : function() {
-			var aYJ = ae.aI6();
-			if (2 * ag.gp[lk[0]] >= aYJ) return !1;
+		var aYK;
+		return !(al.kB < 3 || ag.gb[lk[0]] >= aD.ju >> 1) && (aD.hh ? (aYK = ae.aI6(), !(2 * ae.aI7(bh.ki()) >= aYK)) : function() {
+			var aYK = ae.aI6();
+			if (2 * ag.gp[lk[0]] >= aYK) return !1;
 			return !0
 		}())
 	}
@@ -11407,11 +11403,11 @@ function ca() {
 function cA() {
 	this.dd = function() {
 		if (0 === aD.data.sResourcesType) {
-			for (var aX6 = aD.kA, gp = ag.gp, aB = 0; aB < aX6; aB++) gp[aB] = 512;
-			var aX7 = aD.x1,
+			for (var aX7 = aD.kA, gp = ag.gp, aB = 0; aB < aX7; aB++) gp[aB] = 512;
+			var aX8 = aD.x1,
 				kN = aE.kN,
 				hW = aE.hW;
-			for (aB = aX6; aB < aX7; aB++) gp[aB] = kN[hW[aB]]
+			for (aB = aX7; aB < aX8; aB++) gp[aB] = kN[hW[aB]]
 		} else(1 === aD.data.sResourcesType ? function() {
 			for (var en = aD.x1, gp = ag.gp, sResourcesValue = aD.data.sResourcesValue, aB = 0; aB < en; aB++) gp[aB] = sResourcesValue
 		} : function() {
@@ -11423,20 +11419,20 @@ function cA() {
 
 function dP() {
 	var aGq = 501,
-		aYP = (this.aYO = new Uint32Array(aGq), this.a3S = new Uint32Array(aGq), this.aB3 = new Uint16Array(aGq), this.aQw = 0, 1),
-		aYQ = 0;
+		aYQ = (this.aYP = new Uint32Array(aGq), this.a3S = new Uint32Array(aGq), this.aB3 = new Uint16Array(aGq), this.aQx = 0, 1),
+		aYR = 0;
 
-	function aYT(self) {
+	function aYU(self) {
 		self.max.fill(0)
 	}
 
-	function aYV(self, aB) {
-		self.max[0] = Math.max(self.aYO[aB], self.max[0]), self.max[1] = Math.max(self.a3S[aB], self.max[1]), self.max[2] = Math.max(self.aB3[aB], self.max[2])
+	function aYW(self, aB) {
+		self.max[0] = Math.max(self.aYP[aB], self.max[0]), self.max[1] = Math.max(self.a3S[aB], self.max[1]), self.max[2] = Math.max(self.aB3[aB], self.max[2])
 	}
-	this.max = [0, 0, 0], this.aYR = 0, this.me = new Array(21), this.aYS = null, this.de = function() {
-		this.aYS = [L(449), L(450), L(451), L(452), L(453), L(454), L(455), L(456), L(286), L(287), L(457), L(458), L(459), L(460), "", L(461), L(462), L(463), L(246), L(464), L(465)]
+	this.max = [0, 0, 0], this.aYS = 0, this.me = new Array(21), this.aYT = null, this.de = function() {
+		this.aYT = [L(449), L(450), L(451), L(452), L(453), L(454), L(455), L(456), L(286), L(287), L(457), L(458), L(459), L(460), "", L(461), L(462), L(463), L(246), L(464), L(465)]
 	}, this.dd = function() {
-		this.aQw = 0, aYP = 1, this.aYR = 0, aYQ = 0, aYT(this), this.me.fill(0)
+		this.aQx = 0, aYQ = 1, this.aYS = 0, aYR = 0, aYU(this), this.me.fill(0)
 	}, this.pz = function(player, iN) {
 		bA.g9.a3N(player) && (this.me[0] += iN + 1, this.me[1]++, this.me[12] += bO.fK[1])
 	}, this.pT = function(player, p7) {
@@ -11446,165 +11442,165 @@ function dP() {
 		bA.g9.a3N(player) && (this.me[2]++, this.me[12] += bO.fK[1])
 	}, this.qB = function(player) {
 		bA.g9.a3N(player) && (this.me[19]++, this.me[12] += bO.fK[1])
-	}, this.aX0 = function(player) {
+	}, this.aX1 = function(player) {
 		bA.g9.a3N(player) && this.me[20]++
 	}, this.gD = function(player, a47, e8) {
 		bA.g9.a3N(player) && (this.me[e8] += a47)
 	}, this.j3 = function() {
 		var self;
-		this.aYR || 0 < aYQ-- || ((self = this).aYO[self.aQw] = ag.gb[aD.eX], self.a3S[self.aQw] = ag.gp[aD.eX], self.aB3[self.aQw] = ae.aB4(aD.eX), aYV(self, self.aQw), self.aQw++, self.aQw === aGq && function(self) {
-			aYT(self), aYV(self, 0), self.aQw = 1 + bL.du(aGq, 2);
-			for (var aB = 1; aB < self.aQw; aB++) self.aYO[aB] = self.aYO[2 * aB], self.a3S[aB] = self.a3S[2 * aB], self.aB3[aB] = self.aB3[2 * aB], aYV(self, aB);
-			aYP *= 2
-		}(self), aYQ = aYP - 1, be.mV(), 0 === ag.mi[aD.eX] && (self.aYR = bf.k7()))
+		this.aYS || 0 < aYR-- || ((self = this).aYP[self.aQx] = ag.gb[aD.eX], self.a3S[self.aQx] = ag.gp[aD.eX], self.aB3[self.aQx] = ae.aB4(aD.eX), aYW(self, self.aQx), self.aQx++, self.aQx === aGq && function(self) {
+			aYU(self), aYW(self, 0), self.aQx = 1 + bL.du(aGq, 2);
+			for (var aB = 1; aB < self.aQx; aB++) self.aYP[aB] = self.aYP[2 * aB], self.a3S[aB] = self.a3S[2 * aB], self.aB3[aB] = self.aB3[2 * aB], aYW(self, aB);
+			aYQ *= 2
+		}(self), aYR = aYQ - 1, be.mV(), 0 === ag.mi[aD.eX] && (self.aYS = bf.k7()))
 	}
 }
 
 function dQ() {
-	this.i = 0, this.j = 0, this.su = 0, this.sv = 0, this.aYX = 0, this.aYY = 0, this.a8H = 0, this.tc = 0;
-	var aYa = this.aYZ = 0;
-	this.aYb = 0, this.aYc = 0, this.aYd = 0, this.a7d = 0, this.e8 = 0, this.aAe = null, this.hZ = !1, this.aYe = -1, this.aYf = !1, this.aYg = [0, 0], this.de = function() {
+	this.i = 0, this.j = 0, this.su = 0, this.sv = 0, this.aYY = 0, this.aYZ = 0, this.a8H = 0, this.tc = 0;
+	var aYb = this.aYa = 0;
+	this.aYc = 0, this.aYd = 0, this.aYe = 0, this.a7d = 0, this.e8 = 0, this.aAe = null, this.hZ = !1, this.aYf = -1, this.aYg = !1, this.aYh = [0, 0], this.de = function() {
 		this.aAe = [L(466), L(119, 0, "Balance"), L(118, 0, "Interest"), L(467)]
 	}, this.dd = function() {
-		this.hZ = !1, this.aYe = -1, this.aYf = !1, this.resize()
+		this.hZ = !1, this.aYf = -1, this.aYg = !1, this.resize()
 	}, this.resize = function() {
 		this.i = h.i < 1.369 * h.j ? h.i : 1.369 * h.j;
 		var eq = a0.a1.hw() && h.i < h.j ? 1 : a0.a1.hw() ? .8 : h.i < h.j ? .65 : .59;
 		this.i = Math.floor(eq * this.i), this.i -= a0.a1.hw() && h.i < h.j ? 2 * bc.gap + 2 : 0, this.j = Math.floor(this.i / 1.369), this.a7d = Math.floor(this.j / 150), this.a7d = Math.max(this.a7d, 1.5), this.su = Math.floor(1 + .02 * this
-			.i), this.sv = Math.floor(1 + .04 * this.i), this.a8H = this.sv, aYa = Math.floor(.75 * this.a8H), this.tc = Math.floor(1 + .075 * this.i), this.aYb = Math.floor(1 + .1125 * this.i), this.aYc = Math.floor(this.i * (a0.a1.hw() ? .03 :
-				.029)), this.aYc = Math.max(this.aYc, 4), this.aYd = Math.floor(.035 * this.i), this.aYd = Math.max(this.aYd, 4), this.aYZ = this.j - 2 * this.a8H - this.tc - this.aYb, this.hZ && this.aYh()
+			.i), this.sv = Math.floor(1 + .04 * this.i), this.a8H = this.sv, aYb = Math.floor(.75 * this.a8H), this.tc = Math.floor(1 + .075 * this.i), this.aYc = Math.floor(1 + .1125 * this.i), this.aYd = Math.floor(this.i * (a0.a1.hw() ? .03 :
+				.029)), this.aYd = Math.max(this.aYd, 4), this.aYe = Math.floor(.035 * this.i), this.aYe = Math.max(this.aYe, 4), this.aYa = this.j - 2 * this.a8H - this.tc - this.aYc, this.hZ && this.aYi()
 	}, this.h0 = function(lN, lO) {
 		var x4, x3;
-		return !!this.hZ && (x3 = lN, x4 = lO, lN -= bL.du(h.i - this.i, 2), lO -= bL.du(h.j - this.j, 2), lN < 0 || lO < 0 || lN >= this.i || lO >= this.j || lN >= this.i - this.aYb && lO < this.aYb ? -1 !== aM.h0(x3, x4) || bC.h0(x3, x4) ||
-			this.rq() : lO < this.aYb || (lO < this.j - this.tc ? (this.aYf = !0, this.aYe = (lN - 2 * this.su - this.aYX) / this.aYY, 3 !== this.e8 && (bf.dl = !0)) : (x3 = (x3 = Math.floor(lN / (this.i / this.aAe.length))) < 0 ? 0 : x3 >=
-				this.aAe.length ? this.aAe.length - 1 : x3) !== this.e8 && (this.e8 = x3, this.aYh(), bf.dl = !0)), !0)
+		return !!this.hZ && (x3 = lN, x4 = lO, lN -= bL.du(h.i - this.i, 2), lO -= bL.du(h.j - this.j, 2), lN < 0 || lO < 0 || lN >= this.i || lO >= this.j || lN >= this.i - this.aYc && lO < this.aYc ? -1 !== aM.h0(x3, x4) || bC.h0(x3, x4) ||
+			this.rq() : lO < this.aYc || (lO < this.j - this.tc ? (this.aYg = !0, this.aYf = (lN - 2 * this.su - this.aYY) / this.aYZ, 3 !== this.e8 && (bf.dl = !0)) : (x3 = (x3 = Math.floor(lN / (this.i / this.aAe.length))) < 0 ? 0 : x3 >=
+				this.aAe.length ? this.aAe.length - 1 : x3) !== this.e8 && (this.e8 = x3, this.aYi(), bf.dl = !0)), !0)
 	}, this.a1Q = function(lN, lO) {
-		return this.aYg[0] = lN, this.aYg[1] = lO, !(!this.hZ || !this.aYf || (lN -= bL.du(h.i - this.i, 2), lO = this.aYe, this.aYe = (lN - 2 * this.su - this.aYX) / this.aYY, (0 <= this.aYe && this.aYe <= 1 || 0 <= lO && lO <= 1) && (bf.dl = !
+		return this.aYh[0] = lN, this.aYh[1] = lO, !(!this.hZ || !this.aYg || (lN -= bL.du(h.i - this.i, 2), lO = this.aYf, this.aYf = (lN - 2 * this.su - this.aYY) / this.aYZ, (0 <= this.aYf && this.aYf <= 1 || 0 <= lO && lO <= 1) && (bf.dl = !
 			0), 0))
 	}, this.a1s = function() {
-		this.aYf && (this.aYf = !1)
+		this.aYg && (this.aYg = !1)
 	}, this.a24 = function() {
 		this.hZ ? this.rq() : this.show()
 	}, this.show = function() {
-		bd.aQw < 2 || (this.hZ = !0, this.aYh())
+		bd.aQx < 2 || (this.hZ = !0, this.aYi())
 	}, this.rq = function() {
-		this.hZ = !1, this.aYe = -1, bf.dl = !0
-	}, this.aYh = function() {
-		this.e8 < 2 ? this.aYX = aQ.measureText(bA.rY.zD(bd.max[this.e8]), bA.qZ.sN(0, this.aYc)) : 2 === this.e8 && (this.aYX = aQ.measureText(bA.rY.a40(6, 2), bA.qZ.sN(0, this.aYc))), this.aYY = this.i - 2 * this.su - this.aYX - this.sv
+		this.hZ = !1, this.aYf = -1, bf.dl = !0
+	}, this.aYi = function() {
+		this.e8 < 2 ? this.aYY = aQ.measureText(bA.rY.zD(bd.max[this.e8]), bA.qZ.sN(0, this.aYd)) : 2 === this.e8 && (this.aYY = aQ.measureText(bA.rY.a40(6, 2), bA.qZ.sN(0, this.aYd))), this.aYZ = this.i - 2 * this.su - this.aYY - this.sv
 	}, this.mV = function() {
-		this.hZ && this.aYh()
+		this.hZ && this.aYi()
 	}, this.uf = function() {
 		this.hZ && this.a8Z()
 	}, this.a8Z = function() {
 		var eu = bL.du(h.i - this.i, 2),
 			ew = bL.du(h.j - this.j, 2);
-		ug.setTransform(1, 0, 0, 1, eu, ew), ug.fillStyle = bB.nf, ug.fillRect(0, this.aYb, this.i, this.j - this.aYb), this.aYi(), this.aPl(), ug.strokeRect(0, 0, this.i, this.j), bA.qZ.textAlign(ug, 2), ug.font = bA.qZ.sN(0, this.aYc), 0 ===
-			this.e8 ? this.aYj(bd.aYO, eu, ew) : 1 === this.e8 ? this.aYj(bd.a3S, eu, ew) : 2 === this.e8 ? this.aYk(eu, ew) : 3 === this.e8 && (this.aYl(eu, ew), this.aYm(eu, ew)), aM.a5m(Math.floor(eu + this.i - .725 * this.aYb), Math.floor(
-				ew + .275 * this.aYb), Math.floor(.45 * this.aYb)), ug.setTransform(1, 0, 0, 1, 0, 0)
-	}, this.aYi = function() {
+		ug.setTransform(1, 0, 0, 1, eu, ew), ug.fillStyle = bB.nf, ug.fillRect(0, this.aYc, this.i, this.j - this.aYc), this.aYj(), this.aPm(), ug.strokeRect(0, 0, this.i, this.j), bA.qZ.textAlign(ug, 2), ug.font = bA.qZ.sN(0, this.aYd), 0 ===
+			this.e8 ? this.aYk(bd.aYP, eu, ew) : 1 === this.e8 ? this.aYk(bd.a3S, eu, ew) : 2 === this.e8 ? this.aYl(eu, ew) : 3 === this.e8 && (this.aYm(eu, ew), this.aYn(eu, ew)), aM.a5m(Math.floor(eu + this.i - .725 * this.aYc), Math.floor(
+				ew + .275 * this.aYc), Math.floor(.45 * this.aYc)), ug.setTransform(1, 0, 0, 1, 0, 0)
+	}, this.aYj = function() {
 		var aB, dt;
-		for (ug.lineWidth = this.a7d, bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 1), ug.strokeStyle = bB.ni, ug.font = bA.qZ.sN(1, this.aYd), dt = this.i / this.aAe.length, ug.fillStyle = bB.o4, ug.fillRect(this.e8 * dt, this.j - this.tc, dt,
+		for (ug.lineWidth = this.a7d, bA.qZ.textBaseline(ug, 1), bA.qZ.textAlign(ug, 1), ug.strokeStyle = bB.ni, ug.font = bA.qZ.sN(1, this.aYe), dt = this.i / this.aAe.length, ug.fillStyle = bB.o4, ug.fillRect(this.e8 * dt, this.j - this.tc, dt,
 				this.tc), ug.fillStyle = bB.ni, ug.fillRect(0, this.j - this.tc - .5 * this.a7d, this.i, this.a7d), aB = 1; aB <= 3; aB++) ug.fillRect(aB * dt, this.j - this.tc, this.a7d, this.tc);
 		for (aB = this.aAe.length - 1; 0 <= aB; aB--) ug.fillText(bA.y6.a2z(this.aAe[aB], 0, .9 * dt), (aB + .5) * dt, this.j - .46 * this.tc)
-	}, this.aPl = function() {
-		ug.fillStyle = bB.oU, ug.fillRect(0, 0, this.i, this.aYb), ug.fillStyle = bB.ni, ug.fillRect(0, this.aYb - .5 * this.a7d, this.i, this.a7d), ug.font = bA.qZ.sN(1, .39 * this.aYb), ug.fillText(bA.y6.a2z(L(468), 0, .8 * this.i), Math.floor(
-			this.i / 2), Math.floor(.55 * this.aYb))
-	}, this.aYj = function(g, eu, ew) {
+	}, this.aPm = function() {
+		ug.fillStyle = bB.oU, ug.fillRect(0, 0, this.i, this.aYc), ug.fillStyle = bB.ni, ug.fillRect(0, this.aYc - .5 * this.a7d, this.i, this.a7d), ug.font = bA.qZ.sN(1, .39 * this.aYc), ug.fillText(bA.y6.a2z(L(468), 0, .8 * this.i), Math.floor(
+			this.i / 2), Math.floor(.55 * this.aYc))
+	}, this.aYk = function(g, eu, ew) {
 		var l3 = bd.max[this.e8],
-			a2M = (ug.setTransform(1, 0, 0, 1, eu + 2 * this.su + this.aYX, ew + this.a8H + this.aYb), ug.lineWidth = 2, this.aYZ / Math.sqrt(l3));
-		ug.beginPath(), ug.moveTo(this.aYY, this.aYZ - a2M * Math.sqrt(g[bd.aQw - 1]));
-		for (var aB = bd.aQw - 2; 0 <= aB; aB--) ug.lineTo(aB * this.aYY / (bd.aQw - 1), this.aYZ - a2M * Math.sqrt(g[aB]));
+			a2M = (ug.setTransform(1, 0, 0, 1, eu + 2 * this.su + this.aYY, ew + this.a8H + this.aYc), ug.lineWidth = 2, this.aYa / Math.sqrt(l3));
+		ug.beginPath(), ug.moveTo(this.aYZ, this.aYa - a2M * Math.sqrt(g[bd.aQx - 1]));
+		for (var aB = bd.aQx - 2; 0 <= aB; aB--) ug.lineTo(aB * this.aYZ / (bd.aQx - 1), this.aYa - a2M * Math.sqrt(g[aB]));
 		ug.stroke();
 		eu = this.a5m(g, a2M, .5);
-		eu < .95 && ug.fillText(bA.rY.zD(l3), -this.su, 0), .05 < Math.abs(eu - .5) && ug.fillText(bA.rY.zD(Math.floor(l3 / 4)), -this.su, Math.floor(this.aYZ / 2)), .05 < eu && ug.fillText("0", -this.su, this.aYZ)
-	}, this.aYk = function(eu, ew) {
-		ug.setTransform(1, 0, 0, 1, eu + 2 * this.su + this.aYX, ew + this.a8H + this.aYb), ug.lineWidth = 2;
-		var a2M = this.aYZ / Math.max(bd.max[this.e8], 1);
-		ug.beginPath(), ug.moveTo(this.aYY, this.aYZ - a2M * bd.aB3[bd.aQw - 1]);
-		for (var aB = bd.aQw - 2; 0 <= aB; aB--) ug.lineTo(aB * this.aYY / (bd.aQw - 1), this.aYZ - a2M * bd.aB3[aB]);
+		eu < .95 && ug.fillText(bA.rY.zD(l3), -this.su, 0), .05 < Math.abs(eu - .5) && ug.fillText(bA.rY.zD(Math.floor(l3 / 4)), -this.su, Math.floor(this.aYa / 2)), .05 < eu && ug.fillText("0", -this.su, this.aYa)
+	}, this.aYl = function(eu, ew) {
+		ug.setTransform(1, 0, 0, 1, eu + 2 * this.su + this.aYY, ew + this.a8H + this.aYc), ug.lineWidth = 2;
+		var a2M = this.aYa / Math.max(bd.max[this.e8], 1);
+		ug.beginPath(), ug.moveTo(this.aYZ, this.aYa - a2M * bd.aB3[bd.aQx - 1]);
+		for (var aB = bd.aQx - 2; 0 <= aB; aB--) ug.lineTo(aB * this.aYZ / (bd.aQx - 1), this.aYa - a2M * bd.aB3[aB]);
 		ug.stroke();
 		eu = this.a5m(bd.aB3, a2M, 1), ew = bd.max[this.e8] / 100;
-		eu < .95 && ug.fillText(bA.rY.a40(ew, 2), -this.su, 0), .05 < Math.abs(eu - .5) && ug.fillText(bA.rY.a40(ew / 2, 2), -this.su, Math.floor(this.aYZ / 2)), .05 < eu && ug.fillText(bA.rY.a40(0, 2), -this.su, this.aYZ)
-	}, this.aYl = function(eu, ew) {
-		ug.setTransform(1, 0, 0, 1, eu + .34 * this.i, ew + 2 * aYa + this.aYb), bA.qZ.textAlign(ug, 2);
-		for (var aAP = this.j - 4 * aYa - this.tc - this.aYb, g = [0, 1, 19, 2, 20, 3, 4, 5, 6, 7], aB = 9; 0 <= aB; aB--) ug.fillText(bA.y6.a2z(bd.aYS[g[aB]], 0, .31 * this.i), 0, aB * aAP / 9);
+		eu < .95 && ug.fillText(bA.rY.a40(ew, 2), -this.su, 0), .05 < Math.abs(eu - .5) && ug.fillText(bA.rY.a40(ew / 2, 2), -this.su, Math.floor(this.aYa / 2)), .05 < eu && ug.fillText(bA.rY.a40(0, 2), -this.su, this.aYa)
+	}, this.aYm = function(eu, ew) {
+		ug.setTransform(1, 0, 0, 1, eu + .34 * this.i, ew + 2 * aYb + this.aYc), bA.qZ.textAlign(ug, 2);
+		for (var aAP = this.j - 4 * aYb - this.tc - this.aYc, g = [0, 1, 19, 2, 20, 3, 4, 5, 6, 7], aB = 9; 0 <= aB; aB--) ug.fillText(bA.y6.a2z(bd.aYT[g[aB]], 0, .31 * this.i), 0, aB * aAP / 9);
 		var fF = bd.me;
-		for (ug.setTransform(1, 0, 0, 1, eu + .39 * this.i, ew + 2 * aYa + this.aYb), bA.qZ.textAlign(ug, 0), ug.fillText(bA.rY.a40(100 * fF[0] / (1024 * Math.max(fF[1], 1)), 1), 0, 0), aB = 8; 1 <= aB; aB--) ug.fillText(fF[g[aB]].toString(), 0,
+		for (ug.setTransform(1, 0, 0, 1, eu + .39 * this.i, ew + 2 * aYb + this.aYc), bA.qZ.textAlign(ug, 0), ug.fillText(bA.rY.a40(100 * fF[0] / (1024 * Math.max(fF[1], 1)), 1), 0, 0), aB = 8; 1 <= aB; aB--) ug.fillText(fF[g[aB]].toString(), 0,
 			aB * aAP / 9);
 		ug.fillText(bA.rY.a40(100 * (1 - ag.gb[aD.eX] / fF[7]), 0), 0, aAP)
-	}, this.aYm = function(eu, ew) {
-		ug.setTransform(1, 0, 0, 1, eu + .79 * this.i, ew + 2 * aYa + this.aYb), bA.qZ.textAlign(ug, 2);
-		var aB, aAP = this.j - 4 * aYa - this.tc - this.aYb;
-		for (ug.fillStyle = bB.nz, aB = 2; 0 <= aB; aB--) ug.fillText(bA.y6.a2z(bd.aYS[aB + 8], 0, .31 * this.i), 0, aB * aAP / 9);
-		ug.fillText(bA.y6.a2z(bd.aYS[18], 0, .31 * this.i), 0, 3 * aAP / 9), ug.fillStyle = bB.ny, ug.fillText(bA.y6.a2z(bd.aYS[11], 0, .31 * this.i), 0, 4 * aAP / 9), ug.fillStyle = bB.oH, ug.fillText(bA.y6.a2z(bd.aYS[13], 0, .31 * this.i), 0,
-				5 * aAP / 9), ug.fillText(bA.y6.a2z(bd.aYS[15], 0, .31 * this.i), 0, 6 * aAP / 9), ug.fillText(bA.y6.a2z(bd.aYS[16], 0, .31 * this.i), 0, 7 * aAP / 9), ug.fillText(bA.y6.a2z(bd.aYS[12], 0, .31 * this.i), 0, 8 * aAP / 9), ug
-			.fillStyle = bB.oG, ug.fillText(bA.y6.a2z(bd.aYS[17], 0, .31 * this.i), 0, aAP), ug.fillStyle = bB.nz;
+	}, this.aYn = function(eu, ew) {
+		ug.setTransform(1, 0, 0, 1, eu + .79 * this.i, ew + 2 * aYb + this.aYc), bA.qZ.textAlign(ug, 2);
+		var aB, aAP = this.j - 4 * aYb - this.tc - this.aYc;
+		for (ug.fillStyle = bB.nz, aB = 2; 0 <= aB; aB--) ug.fillText(bA.y6.a2z(bd.aYT[aB + 8], 0, .31 * this.i), 0, aB * aAP / 9);
+		ug.fillText(bA.y6.a2z(bd.aYT[18], 0, .31 * this.i), 0, 3 * aAP / 9), ug.fillStyle = bB.ny, ug.fillText(bA.y6.a2z(bd.aYT[11], 0, .31 * this.i), 0, 4 * aAP / 9), ug.fillStyle = bB.oH, ug.fillText(bA.y6.a2z(bd.aYT[13], 0, .31 * this.i), 0,
+				5 * aAP / 9), ug.fillText(bA.y6.a2z(bd.aYT[15], 0, .31 * this.i), 0, 6 * aAP / 9), ug.fillText(bA.y6.a2z(bd.aYT[16], 0, .31 * this.i), 0, 7 * aAP / 9), ug.fillText(bA.y6.a2z(bd.aYT[12], 0, .31 * this.i), 0, 8 * aAP / 9), ug
+			.fillStyle = bB.oG, ug.fillText(bA.y6.a2z(bd.aYT[17], 0, .31 * this.i), 0, aAP), ug.fillStyle = bB.nz;
 		var fF = bd.me,
 			aEF = fF[8] + fF[9] + fF[10] + fF[18],
 			aEF = bA.rY.zD(aEF),
-			aOY = ug.measureText(aEF).width,
-			eu = (ug.setTransform(1, 0, 0, 1, eu + .83 * this.i + aOY, ew + 2 * aYa + this.aYb), ug.fillText(bA.rY.zD(fF[8]), 0, 0), ug.fillText(bA.rY.zD(fF[9]), 0, aAP / 9), ug.fillText(bA.rY.zD(fF[10]), 0, 2 * aAP / 9), ug.fillText(bA.rY.zD(fF[
+			aOZ = ug.measureText(aEF).width,
+			eu = (ug.setTransform(1, 0, 0, 1, eu + .83 * this.i + aOZ, ew + 2 * aYb + this.aYc), ug.fillText(bA.rY.zD(fF[8]), 0, 0), ug.fillText(bA.rY.zD(fF[9]), 0, aAP / 9), ug.fillText(bA.rY.zD(fF[10]), 0, 2 * aAP / 9), ug.fillText(bA.rY.zD(fF[
 				18]), 0, 3 * aAP / 9), ug.fillStyle = bB.ny, ug.fillText(aEF, 0, 4 * aAP / 9), ug.fillStyle = bB.oH, ug.fillText(bA.rY.zD(fF[13]), 0, 5 * aAP / 9), ug.fillText(bA.rY.zD(fF[15]), 0, 6 * aAP / 9), ug.fillText(bA.rY.zD(fF[16]),
 				0, 7 * aAP / 9), ug.fillText(bA.rY.zD(fF[12]), 0, 8 * aAP / 9), fF[12] + fF[13] + fF[15] + fF[16]);
 		ug.fillStyle = bB.oG, ug.fillText(bA.rY.zD(eu), 0, aAP), ug.fillStyle = bB.ni
 	}, this.a5m = function(g, a2M, a9C) {
 		var aB, e, fW;
-		return this.aYe < 0 || 1 < this.aYe ? .25 : (aB = this.aYe * (bd.aQw - 1), fW = g[e = Math.floor(aB)], fW += (aB - e) * (g[e < bd.aQw - 1 ? e + 1 : e] - fW), ug.strokeStyle = bB.nl, .04 < this.aYe && this.aYo(0, this.aYZ - a2M * Math.pow(
-				fW, a9C), aB * this.aYY / (bd.aQw - 1), this.aYZ - a2M * Math.pow(fW, a9C)), .04 < fW / bd.max[this.e8] && this.aYo(aB * this.aYY / (bd.aQw - 1), this.aYZ, aB * this.aYY / (bd.aQw - 1), this.aYZ - a2M * Math.pow(fW, a9C)), ug
-			.fillStyle = bB.oJ, ug.beginPath(), ug.arc(aB * this.aYY / (bd.aQw - 1), this.aYZ - a2M * Math.pow(fW, a9C), Math.max(2, .014 * this.j), 0, 2 * Math.PI), ug.fill(), g = this.aYe * bf.aB5, g = 0 === ag.mi[aD.eX] ? Math.floor(g * bd
-				.aYR) : Math.floor(g * bf.k7()), ug.fillStyle = bB.ni, ug.fillText(1 === a9C ? bA.rY.a40(fW / 100, 2) : bA.rY.zD(Math.floor(fW)), -this.su, this.aYZ - a2M * Math.pow(fW, a9C)), bA.qZ.textAlign(ug, 1), ug.fillText(aW.aAs(g),
-				aB * this.aYY / (bd.aQw - 1), this.aYZ + this.aYc - (a0.a1.hw() ? 2 : 0) - this.a7d), bA.qZ.textAlign(ug, 2), a2M * Math.pow(fW, a9C) / this.aYZ)
-	}, this.aYo = function(n8, n9, nL, nM) {
+		return this.aYf < 0 || 1 < this.aYf ? .25 : (aB = this.aYf * (bd.aQx - 1), fW = g[e = Math.floor(aB)], fW += (aB - e) * (g[e < bd.aQx - 1 ? e + 1 : e] - fW), ug.strokeStyle = bB.nl, .04 < this.aYf && this.aYp(0, this.aYa - a2M * Math.pow(
+				fW, a9C), aB * this.aYZ / (bd.aQx - 1), this.aYa - a2M * Math.pow(fW, a9C)), .04 < fW / bd.max[this.e8] && this.aYp(aB * this.aYZ / (bd.aQx - 1), this.aYa, aB * this.aYZ / (bd.aQx - 1), this.aYa - a2M * Math.pow(fW, a9C)), ug
+			.fillStyle = bB.oJ, ug.beginPath(), ug.arc(aB * this.aYZ / (bd.aQx - 1), this.aYa - a2M * Math.pow(fW, a9C), Math.max(2, .014 * this.j), 0, 2 * Math.PI), ug.fill(), g = this.aYf * bf.aB5, g = 0 === ag.mi[aD.eX] ? Math.floor(g * bd
+				.aYS) : Math.floor(g * bf.k7()), ug.fillStyle = bB.ni, ug.fillText(1 === a9C ? bA.rY.a40(fW / 100, 2) : bA.rY.zD(Math.floor(fW)), -this.su, this.aYa - a2M * Math.pow(fW, a9C)), bA.qZ.textAlign(ug, 1), ug.fillText(aW.aAs(g),
+				aB * this.aYZ / (bd.aQx - 1), this.aYa + this.aYd - (a0.a1.hw() ? 2 : 0) - this.a7d), bA.qZ.textAlign(ug, 2), a2M * Math.pow(fW, a9C) / this.aYa)
+	}, this.aYp = function(n8, n9, nL, nM) {
 		ug.beginPath(), ug.moveTo(n8, n9), ug.lineTo(nL, nM), ug.stroke()
 	}
 }
 
 function by() {
-	this.aYp = "https://", this.aYq = this.aYp + "territorial.io/", this.aQx = this.aYq + "changelog", this.aR1 = this.aYq + "terms", this.aYr = this.aYq + "cookie_policy", this.aQO = this.aYq + "privacy", this.aR0 = this.aYq + "tutorial", this.aQz =
-		this.aYq + "players", this.aQy = this.aYq + "clans", this.a0i = this.aYq + "clan-results", this.aNh = "https://patreon.com/c/territorial", this.aCN = this.aYp + "play.google.com/store/apps/details?id=territorial.io", this.a10 = this.aYp +
-		"apps.apple.com/app/id1581110913", this.aYs = this.aYp + "www.youtube.com/watch?v=toZTQ8aRdFc", this.aCO = this.aYp + "discord.gg/pthqvpTXmh", this.aCP = this.aYp + "www.instagram.com/davidtschacher/", this.yl =
+	this.aYq = "https://", this.aYr = this.aYq + "territorial.io/", this.aQy = this.aYr + "changelog", this.aR2 = this.aYr + "terms", this.aYs = this.aYr + "cookie_policy", this.aQP = this.aYr + "privacy", this.aR1 = this.aYr + "tutorial", this.aR0 =
+		this.aYr + "players", this.aQz = this.aYr + "clans", this.a0i = this.aYr + "clan-results", this.aNi = "https://patreon.com/c/territorial", this.aCN = this.aYq + "play.google.com/store/apps/details?id=territorial.io", this.a10 = this.aYq +
+		"apps.apple.com/app/id1581110913", this.aYt = this.aYq + "www.youtube.com/watch?v=toZTQ8aRdFc", this.aCO = this.aYq + "discord.gg/pthqvpTXmh", this.aCP = this.aYq + "www.instagram.com/davidtschacher/", this.yl =
 		"🇦🇫🇦🇽🇦🇱🇩🇿🇦🇸🇦🇩🇦🇴🇦🇮🇦🇶🇦🇬🇦🇷🇦🇲🇦🇼🇦🇺🇦🇹🇦🇿🇧🇸🇧🇭🇧🇩🇧🇧🇧🇾🇧🇪🇧🇿🇧🇯🇧🇲🇧🇹🇧🇴🇧🇦🇧🇼🇧🇷🇮🇴🇻🇬🇧🇳🇧🇬🇧🇫🇧🇮🇨🇻🇰🇭🇨🇲🇨🇦🇮🇨🇰🇾🇨🇫🇹🇩🇨🇱🇨🇳🇨🇽🇨🇨🇨🇴🇰🇲🇨🇬🇨🇩🇨🇷🇭🇷🇨🇺🇨🇼🇨🇾🇨🇿🇩🇰🇩🇯🇩🇲🇩🇴🇪🇨🇪🇬🇸🇻🇬🇶🇪🇷🇪🇪🇸🇿🇪🇹🇪🇺🇫🇰🇫🇴🇫🇯🇫🇮🇫🇷🇬🇫🇵🇫🇹🇫🇬🇦🇬🇲🇬🇪🇩🇪🇬🇭🇬🇮🇬🇷🇬🇱🇬🇩🇬🇵🇬🇺🇬🇹🇬🇬🇬🇳🇬🇼🇬🇾🇭🇹🇭🇳🇭🇰🇭🇺🇮🇸🇮🇳🇮🇩🇮🇷🇮🇶🇮🇪🇮🇲🇮🇱🇮🇹🇨🇮🇯🇲🇯🇵🇯🇪🇯🇴🇰🇿🇰🇪🇰🇮🇽🇰🇰🇼🇰🇬🇱🇦🇱🇻🇱🇧🇱🇸🇱🇷🇱🇾🇱🇮🇱🇹🇱🇺🇲🇴🇲🇰🇲🇬🇲🇼🇲🇾🇲🇻🇲🇱🇲🇹🇲🇭🇲🇶🇲🇷🇲🇺🇾🇹🇲🇽🇫🇲🇲🇩🇲🇨🇲🇳🇲🇪🇲🇸🇲🇦🇲🇿🇲🇲🇳🇦🇳🇷🇳🇵🇳🇱🇳🇨🇳🇿🇳🇮🇳🇪🇳🇬🇳🇺🇳🇫🇰🇵🇲🇵🇳🇴🇴🇲🇵🇰🇵🇼🇵🇸🇵🇦🇵🇬🇵🇾🇵🇪🇵🇭🇵🇱🇵🇹🇵🇷🇶🇦🇷🇴🇷🇺🇷🇼🇼🇸🇸🇲🇸🇹🇸🇦🇸🇳🇷🇸🇸🇨🇸🇱🇸🇬🇸🇽🇸🇰🇸🇮🇸🇧🇸🇴🇿🇦🇬🇸🇰🇷🇸🇸🇪🇸🇱🇰🇧🇱🇸🇭🇰🇳🇱🇨🇲🇫🇵🇲🇻🇨🇸🇩🇸🇷🇸🇪🇸🇾🇨🇭🇹🇼🇹🇯🇹🇿🇹🇭🇹🇱🇹🇬🇹🇰🇹🇴🇹🇹🇹🇳🇹🇷🇹🇲🇹🇨🇹🇻🇺🇬🇺🇦🇦🇪🇬🇧🇺🇳🇺🇸🇻🇮🇺🇾🇺🇿🇻🇺🇻🇦🇻🇪🇻🇳🇼🇫🇪🇭🇾🇪🇿🇲🇿🇼"
 }
 
 function d8() {
-	this.y = new aYt, this.y3 = new aYu, this.dd = function() {
+	this.y = new aYu, this.y3 = new aYv, this.dd = function() {
 		this.y.dd()
 	}, this.j3 = function() {
 		0 !== this.y.a6q && this.y.a6q--
 	}
 }
 
-function aYu() {
+function aYv() {
 	this.uf = function() {
-		if (0 !== bP.y.a6q && (ug.globalAlpha = Math.min(bP.y.a6q / 580, 1), ug.drawImage(bP.y.aYx, 1 + aS.y1(), 1 + aS.y2()), ug.globalAlpha = 1, aD.hB)) {
-			for (var n8 = iO / hy, n9 = iP / hy, nL = (h.i + iO) / hy, nM = (h.j + iP) / hy, gM = bP.y.aYy * hy, aYz = bP.y.aYz, aB = aD.kA - 1; 0 <= aB; aB--) ! function(aB, gM, n8, n9, nL, nM, aYz) {
+		if (0 !== bP.y.a6q && (ug.globalAlpha = Math.min(bP.y.a6q / 580, 1), ug.drawImage(bP.y.aYy, 1 + aS.y1(), 1 + aS.y2()), ug.globalAlpha = 1, aD.hB)) {
+			for (var n8 = iO / hy, n9 = iP / hy, nL = (h.i + iO) / hy, nM = (h.j + iP) / hy, gM = bP.y.aYz * hy, aZ0 = bP.y.aZ0, aB = aD.kA - 1; 0 <= aB; aB--) ! function(aB, gM, n8, n9, nL, nM, aZ0) {
 				var highlight;
 				0 === ag.mi[aB] || 0 === ag.gb[aB] || ((highlight = __fx.settings.highlightClanSpawns && __fx.clanFilter.inOwnClan[aB]) && (gM *= 2), nL = h.i * ((ag.ie[aB] + ag.ig[aB] + 1) / 2 - n8) / (nL - n8) - .5 * gM, n8 = h.j * ((ag.ih[
 					aB] + ag.ii[aB] + 1) / 2 - n9) / (nM - n9) - .5 * gM, nL > h.i) || n8 > h.j || nL < -gM || n8 < -gM || (highlight ? ug.setTransform(2 * hy, 0, 0, 2 * hy, nL, n8) : ug.setTransform(hy, 0, 0, hy, nL, n8), ug.drawImage(
-					aYz[aD.hh ? bg.el[aB] : 1], 0, 0))
-			}(aB, gM, n8, n9, nL, nM, aYz);
+					aZ0[aD.hh ? bg.el[aB] : 1], 0, 0))
+			}(aB, gM, n8, n9, nL, nM, aZ0);
 			ug.setTransform(hy, 0, 0, hy, 0, 0)
 		}
 	}
 }
 
-function aYt() {
-	this.aYy = 28, this.a6q = 0, this.aYx = null;
-	var aZ1 = this.aYz = null;
+function aYu() {
+	this.aYz = 28, this.a6q = 0, this.aYy = null;
+	var aZ2 = this.aZ0 = null;
 
-	function aZ4(hj, aZ5) {
+	function aZ5(hj, aZ6) {
 		var eu, ew, eZ, i7, a2n = bA.qZ.wL(hj, hj),
 			hp = bA.qZ.getContext(a2n, !0),
 			hm = bA.qZ.getImageData(hp, hj, hj),
 			wW = hm.data,
 			l3 = (hj >> 1) - .5,
-			aZ6 = .5 + l3;
-		for (aZ6 *= aZ6, ew = 0; ew < hj; ew++)
-			for (eu = 0; eu < hj; eu++) i7 = (i7 = eu - l3) * i7 + (i7 = ew - l3) * i7, wW[eZ = 4 * (ew * hj + eu)] = aZ5[0], wW[1 + eZ] = aZ5[1], wW[2 + eZ] = aZ5[2], wW[3 + eZ] = (aZ6 - i7) * aZ5[3] / aZ6;
+			aZ7 = .5 + l3;
+		for (aZ7 *= aZ7, ew = 0; ew < hj; ew++)
+			for (eu = 0; eu < hj; eu++) i7 = (i7 = eu - l3) * i7 + (i7 = ew - l3) * i7, wW[eZ = 4 * (ew * hj + eu)] = aZ6[0], wW[1 + eZ] = aZ6[1], wW[2 + eZ] = aZ6[2], wW[3 + eZ] = (aZ7 - i7) * aZ6[3] / aZ7;
 		return hp.putImageData(hm, 0, 0), a2n
 	}
 
-	function aY3(aB, hp, a2n, hj) {
+	function aY4(aB, hp, a2n, hj) {
 		var highlight, eu, ew;
 		0 !== ag.mi[aB] && 0 !== ag.gb[aB] && ((highlight = __fx.settings.highlightClanSpawns && __fx.clanFilter.inOwnClan[aB]) && (hj *= 2), eu = ag.ie[aB] + ag.ig[aB] + 1 - hj - 2 >> 1, ew = ag.ih[aB] + ag.ii[aB] + 1 - hj - 2 >> 1, highlight ? hp
 			.drawImage(a2n[aD.hh ? 9 === aD.kS && 5 === aE.hW[aB] ? 3 : bg.el[aB] : aB < aD.kA ? 1 : 0], eu, ew, hj, hj) : hp.drawImage(a2n[aD.hh ? 9 === aD.kS && 5 === aE.hW[aB] ? 3 : bg.el[aB] : aB < aD.kA ? 1 : 0], eu, ew))
@@ -11613,56 +11609,56 @@ function aYt() {
 		var sA;
 		this.a6q = 700,
 			function(sA) {
-				var hj = sA.aYy;
-				if (sA.aYz = [], aZ1 = [], aD.hh) {
-					for (var aB = 0; aB <= aD.x8; aB++) sA.aYz.push(aZ4(hj, bg.aWN[bg.kX[aB]])), aZ1.push(aZ4(hj >> 1, bg.aWN[bg.kX[aB]]));
-					9 === aD.kS && aZ1.push(aZ4(hj, bg.aWN[1]))
-				} else sA.aYz.push(aZ4(hj, bg.aWN[7])), sA.aYz.push(aZ4(hj, bg.aWN[4])), aZ1.push(aZ4(hj >> 1, bg.aWN[7]))
+				var hj = sA.aYz;
+				if (sA.aZ0 = [], aZ2 = [], aD.hh) {
+					for (var aB = 0; aB <= aD.x8; aB++) sA.aZ0.push(aZ5(hj, bg.aWO[bg.kX[aB]])), aZ2.push(aZ5(hj >> 1, bg.aWO[bg.kX[aB]]));
+					9 === aD.kS && aZ2.push(aZ5(hj, bg.aWO[1]))
+				} else sA.aZ0.push(aZ5(hj, bg.aWO[7])), sA.aZ0.push(aZ5(hj, bg.aWO[4])), aZ2.push(aZ5(hj >> 1, bg.aWO[7]))
 			}(this),
-			function(sA, aZ7) {
-				var aB, aYx = sA.aYx,
-					hp = bA.qZ.getContext(aYx, !0),
+			function(sA, aZ8) {
+				var aB, aYy = sA.aYy,
+					hp = bA.qZ.getContext(aYy, !0),
 					en = aD.ek,
-					hj = sA.aYy >> 1;
-				hp.imageSmoothingEnabled = !1, hp.setTransform(1, 0, 0, 1, 0, 0), aZ7 && hp.clearRect(0, 0, aYx.width, aYx.height);
+					hj = sA.aYz >> 1;
+				hp.imageSmoothingEnabled = !1, hp.setTransform(1, 0, 0, 1, 0, 0), aZ8 && hp.clearRect(0, 0, aYy.width, aYy.height);
 				if (9 === aD.kS) {
 					hj <<= 1;
 					sA = az.kb[5];
-					for (aB = en - sA; aB < en; aB++) aY3(aB, hp, aZ1, hj);
+					for (aB = en - sA; aB < en; aB++) aY4(aB, hp, aZ2, hj);
 					en -= sA, hj >>= 1
 				}
-				for (aB = aD.kA; aB < en; aB++) aY3(aB, hp, aZ1, hj)
-			}(this, null !== (sA = this).aYx && sA.aYx.width === bS.ey - 2 && sA.aYx.height === bS.ez - 2 || (sA.aYx = bA.qZ.wL(bS.ey - 2, bS.ez - 2), !1)), aD.hB || this.a4I()
-	}, this.aWM = aZ4, this.a4I = function() {
-		for (var en = aD.kA, hj = this.aYy, aYz = this.aYz, hp = bA.qZ.getContext(this.aYx, !0), aB = 0; aB < en; aB++) aY3(aB, hp, aYz, hj)
+				for (aB = aD.kA; aB < en; aB++) aY4(aB, hp, aZ2, hj)
+			}(this, null !== (sA = this).aYy && sA.aYy.width === bS.ey - 2 && sA.aYy.height === bS.ez - 2 || (sA.aYy = bA.qZ.wL(bS.ey - 2, bS.ez - 2), !1)), aD.hB || this.a4I()
+	}, this.aWN = aZ5, this.a4I = function() {
+		for (var en = aD.kA, hj = this.aYz, aZ0 = this.aZ0, hp = bA.qZ.getContext(this.aYy, !0), aB = 0; aB < en; aB++) aY4(aB, hp, aZ0, hj)
 	}
 }
 
 function d9() {
-	function aZA() {
+	function aZB() {
 		8 === aD.kS && 1 === aD.zw && bR.zY.zv()
 	}
 
-	function aZ9(player) {
+	function aZA(player) {
 		aD.hB ? (ak.aGy(player), al.aJt(), aD.kU && aD.pv.j3()) : b3.aCg(player)
 	}
 	this.pN = function(player) {
-		aN.a08(player, player === aD.eX ? 21 : 22), aZ9(player), aZA()
+		aN.a08(player, player === aD.eX ? 21 : 22), aZA(player), aZB()
 	}, this.ps = function(player) {
-		1 === aD.zw && 0 !== ag.mi[player] && 2 !== ag.a3J[player] && aZ9(player), aD.zz--, aD.zy--, aN.a08(player, 4), bA.g9.gy(2) && aW.mU(!0), aZA()
+		1 === aD.zw && 0 !== ag.mi[player] && 2 !== ag.a3J[player] && aZA(player), aD.zz--, aD.zy--, aN.a08(player, 4), bA.g9.gy(2) && aW.mU(!0), aZB()
 	}
 }
 
 function dJ() {
-	this.aTG = ["rgba(90,90,90,0.88)", "rgba(130,12,12,0.88)", "rgba(12,130,12,0.88)", "rgba(12,12,130,0.88)", "rgba(130,130,12,0.88)", "rgba(130,12,130,0.88)", "rgba(12,130,130,0.88)", "rgba(130,130,130,0.88)", "rgba(0,0,0,0.88)"], this.aAM = [
+	this.aTH = ["rgba(90,90,90,0.88)", "rgba(130,12,12,0.88)", "rgba(12,130,12,0.88)", "rgba(12,12,130,0.88)", "rgba(130,130,12,0.88)", "rgba(130,12,130,0.88)", "rgba(12,130,130,0.88)", "rgba(130,130,130,0.88)", "rgba(0,0,0,0.88)"], this.aAM = [
 		"rgb(210,200,200)", "rgb(255,120,120)", "rgb(0,230,0)", "rgb(150,150,255)", "rgb(240,240,25)", "rgb(255,70,255)", "rgb(25,240,240)", bB.ni, "rgb(170,170,170)"
-	], this.aZB = [bB.ni, "rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,255)", "rgb(255,255,0)", "rgb(255,0,255)", "rgb(0,255,255)", bB.ni, bB.nZ], this.aZC = [bB.nZ, bB.ni, bB.ni, bB.ni, bB.nZ, bB.nZ, bB.nZ, bB.nZ, bB.ni];
-	var aK2 = ["255,255,255", "0,0,0", "255,4,4", "200,4,4", "4,255,4", "4,180,4", "255,195,195", "90,3,3", "200,255,200", "3,84,3"];
-	this.aJL = ["rgba(" + aK2[0] + ",", "rgba(" + aK2[1] + ",", "rgba(" + aK2[2] + ",", "rgba(" + aK2[3] + ",", "rgba(" + aK2[4] + ",", "rgba(" + aK2[5] + ",", "rgba(" + aK2[6] + ",", "rgba(" + aK2[7] + ",", "rgba(" + aK2[8] + ",", "rgba(" + aK2[9] +
+	], this.aZC = [bB.ni, "rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,255)", "rgb(255,255,0)", "rgb(255,0,255)", "rgb(0,255,255)", bB.ni, bB.nZ], this.aZD = [bB.nZ, bB.ni, bB.ni, bB.ni, bB.nZ, bB.nZ, bB.nZ, bB.nZ, bB.ni];
+	var aK3 = ["255,255,255", "0,0,0", "255,4,4", "200,4,4", "4,255,4", "4,180,4", "255,195,195", "90,3,3", "200,255,200", "3,84,3"];
+	this.aJL = ["rgba(" + aK3[0] + ",", "rgba(" + aK3[1] + ",", "rgba(" + aK3[2] + ",", "rgba(" + aK3[3] + ",", "rgba(" + aK3[4] + ",", "rgba(" + aK3[5] + ",", "rgba(" + aK3[6] + ",", "rgba(" + aK3[7] + ",", "rgba(" + aK3[8] + ",", "rgba(" + aK3[9] +
 			","
-		], this.aJM = ["rgb(" + aK2[0] + ")", "rgb(" + aK2[1] + ")", "rgb(" + aK2[2] + ")", "rgb(" + aK2[3] + ")", "rgb(" + aK2[4] + ")", "rgb(" + aK2[5] + ")", "rgb(" + aK2[6] + ")", "rgb(" + aK2[7] + ")", "rgb(" + aK2[8] + ")", "rgb(" + aK2[9] +
+		], this.aJM = ["rgb(" + aK3[0] + ")", "rgb(" + aK3[1] + ")", "rgb(" + aK3[2] + ")", "rgb(" + aK3[3] + ")", "rgb(" + aK3[4] + ")", "rgb(" + aK3[5] + ")", "rgb(" + aK3[6] + ")", "rgb(" + aK3[7] + ")", "rgb(" + aK3[8] + ")", "rgb(" + aK3[9] +
 			")"
-		], this.a0H = null, this.aWN = [
+		], this.a0H = null, this.aWO = [
 			[128, 128, 128, 180],
 			[255, 0, 0, 180],
 			[0, 255, 0, 180],
@@ -11672,7 +11668,7 @@ function dJ() {
 			[0, 255, 255, 180],
 			[255, 255, 255, 180],
 			[0, 0, 0, 180]
-		], this.aW2 = [
+		], this.aW3 = [
 			[128, 128, 128],
 			[255, 0, 0],
 			[0, 255, 0],
@@ -11686,38 +11682,38 @@ function dJ() {
 		function() {
 			this.a0H = [L(469), L(470), L(471), L(472), L(473), L(474), L(475), L(476), L(477)]
 		}, this.dd = function() {
-			if (this.el.fill(0), this.aAN.fill(0), this.aZD(), aD.hh) {
+			if (this.el.fill(0), this.aAN.fill(0), this.aZE(), aD.hh) {
 				if (9 === aD.kS) {
 					for (var el = bg.el, aB = aD.data.teamPlayerCount[7] - 1; 0 <= aB; aB--) el[aB] = 1;
 					var en = aD.ek;
 					for (aB = aD.data.teamPlayerCount[7]; aB < en; aB++) el[aB] = 2;
 					bg.kX[1] = 7, bg.kX[2] = 8
 				} else aD.kU ? function() {
-					var aW2 = bg.aW2,
+					var aW3 = bg.aW3,
 						colorsData = aD.data.colorsData;
 					if (!aD.data.selectableColor)
 						for (var aB = aD.kA - 1; 0 <= aB; aB--) colorsData[aB] = ay.jS(262144);
-					var aZO = 0,
+					var aZP = 0,
 						f3 = 768,
-						aSl = [4 * (colorsData[0] >> 12), 4 * (colorsData[0] >> 6 & 63), 4 * (63 & colorsData[0])],
+						aSm = [4 * (colorsData[0] >> 12), 4 * (colorsData[0] >> 6 & 63), 4 * (63 & colorsData[0])],
 						teamPlayerCount = aD.data.teamPlayerCount;
 					for (aB = 0; aB < 9; aB++)
 						if (teamPlayerCount[aB]) {
-							for (var eq = 0, f7 = 0; f7 < 3; f7++) eq += Math.abs(aW2[aB][f7] - aSl[f7]);
-							eq < f3 && (aZO = aB, f3 = eq)
-						} var aZP = new Uint16Array(9);
-					for (aB = 0; aB < 9; aB++) aZP[aB] = teamPlayerCount[aB];
+							for (var eq = 0, f7 = 0; f7 < 3; f7++) eq += Math.abs(aW3[aB][f7] - aSm[f7]);
+							eq < f3 && (aZP = aB, f3 = eq)
+						} var aZQ = new Uint16Array(9);
+					for (aB = 0; aB < 9; aB++) aZQ[aB] = teamPlayerCount[aB];
 					var kX = bg.kX,
-						aZQ = new Uint8Array(9),
+						aZR = new Uint8Array(9),
 						gG = (kX[0] = 0, 1);
-					for (aB = 1; aB < 9; aB++) aZP[aB] && (aZQ[aB] = gG, kX[gG++] = aB);
+					for (aB = 1; aB < 9; aB++) aZQ[aB] && (aZR[aB] = gG, kX[gG++] = aB);
 					var jR = aD.kA,
 						el = bg.el;
-					aZP[aZO] ? (aZP[aZO]--, el[0] = aZQ[aZO]) : jR = 0;
+					aZQ[aZP] ? (aZQ[aZP]--, el[0] = aZR[aZP]) : jR = 0;
 					var f8 = 0;
 					for (aB = jR; aB < aD.x1; aB++) {
 						var hf = kX[f8];
-						if (aZP[hf]) aZP[hf]--, el[aB] = aZQ[hf];
+						if (aZQ[hf]) aZQ[hf]--, el[aB] = aZR[hf];
 						else if (aB--, 9 <= ++f8) return console.log("error 325")
 					}
 				}() : this.j3();
@@ -11739,71 +11735,71 @@ function dJ() {
 					9 === aD.kS && aAN.fill(1, en - az.kb[5])
 				}()
 			}
-		}, this.aZD = function() {
+		}, this.aZE = function() {
 			for (var aB = this.kX.length - 1; 0 <= aB; aB--) this.kX[aB] = aB
 		}, this.j3 = function() {
 			var z2 = new Uint8Array(aD.kA),
 				z3 = new Uint8Array(aD.kA),
-				aZI = new Uint16Array(8),
-				aZJ = new Uint16Array(this.kX.length);
-			this.aZK(z2, z3, aZI, 1), this.aGY(aZI), this.aZL(aZJ, z2, z3), this.aZM(z2, z3, aZJ), this.aZN()
-		}, this.aZK = function(z2, z3, aZP, aZR) {
-			for (var f7, e, aZS, en = this.kX.length - aZR, g = new Uint16Array(en), aW2 = this.aW2, colorsData = aD.data.colorsData, aB = aD.kA - 1; 0 <= aB; aB--) {
-				for (f7 = en; aZR <= f7; f7--) g[f7 - 1] = Math.abs(4 * (colorsData[aB] >> 12) - aW2[f7][0]) + Math.abs(4 * (colorsData[aB] >> 6 & 63) - aW2[f7][1]) + Math.abs(4 * (63 & colorsData[aB]) - aW2[f7][2]);
-				for (aZS = 768, f7 = en - 1; 0 <= f7; f7--) g[e = (f7 + aB) % en] < aZS && (aZS = g[e], z2[aB] = e);
-				for (aZP[z2[aB]] += 4, aZS = 768, f7 = en - 1; 0 <= f7; f7--) g[e = (f7 + aB) % en] < aZS && e !== z2[aB] && (aZS = g[e], z3[aB] = e);
-				aZP[z3[aB]]++
+				aZJ = new Uint16Array(8),
+				aZK = new Uint16Array(this.kX.length);
+			this.aZL(z2, z3, aZJ, 1), this.aGY(aZJ), this.aZM(aZK, z2, z3), this.aZN(z2, z3, aZK), this.aZO()
+		}, this.aZL = function(z2, z3, aZQ, aZS) {
+			for (var f7, e, aZT, en = this.kX.length - aZS, g = new Uint16Array(en), aW3 = this.aW3, colorsData = aD.data.colorsData, aB = aD.kA - 1; 0 <= aB; aB--) {
+				for (f7 = en; aZS <= f7; f7--) g[f7 - 1] = Math.abs(4 * (colorsData[aB] >> 12) - aW3[f7][0]) + Math.abs(4 * (colorsData[aB] >> 6 & 63) - aW3[f7][1]) + Math.abs(4 * (63 & colorsData[aB]) - aW3[f7][2]);
+				for (aZT = 768, f7 = en - 1; 0 <= f7; f7--) g[e = (f7 + aB) % en] < aZT && (aZT = g[e], z2[aB] = e);
+				for (aZQ[z2[aB]] += 4, aZT = 768, f7 = en - 1; 0 <= f7; f7--) g[e = (f7 + aB) % en] < aZT && e !== z2[aB] && (aZT = g[e], z3[aB] = e);
+				aZQ[z3[aB]]++
 			}
-		}, this.aGY = function(aZP) {
+		}, this.aGY = function(aZQ) {
 			for (var f7, l5, en = this.kX.length - 1, aB = en; 0 <= aB; aB--) this.kX[aB] = aB;
-			for (aB = en - 1; 0 <= aB; aB--) aZP[aB]++;
+			for (aB = en - 1; 0 <= aB; aB--) aZQ[aB]++;
 			for (aB = 1; aB <= en; aB++) {
-				for (l5 = 0, f7 = 1; f7 < en; f7++) aZP[f7] > aZP[l5] && (l5 = f7);
-				aZP[l5] = 0, this.kX[aB] = l5 + 1
+				for (l5 = 0, f7 = 1; f7 < en; f7++) aZQ[f7] > aZQ[l5] && (l5 = f7);
+				aZQ[l5] = 0, this.kX[aB] = l5 + 1
 			}
-		}, this.aZL = function(aZJ, z2, z3) {
-			var f7, a0c, f8, eq, e, nK, tB, aZT = this.kX.length - 1,
-				r2 = new Uint16Array(aZT),
-				aZU = [],
-				aZV = 0,
+		}, this.aZM = function(aZK, z2, z3) {
+			var f7, a0c, f8, eq, e, nK, tB, aZU = this.kX.length - 1,
+				r2 = new Uint16Array(aZU),
+				aZV = [],
+				aZW = 0,
 				a0b = [],
-				aZW = [];
+				aZX = [];
 			loop: for (var aB = 0; aB < aD.kA; aB++)
 				if (null !== (a0c = bA.rY.a0d(ag.a0a[aB]))) {
 					for (f7 = a0b.length - 1; 0 <= f7; f7--)
 						if (a0c === a0b[f7]) {
-							aZW[f7].push(aB), aZV = Math.max(aZV, aZW[f7].length);
+							aZX[f7].push(aB), aZW = Math.max(aZW, aZX[f7].length);
 							continue loop
-						} a0b.push(a0c), aZU.push(!1), aZW.push([aB]), aZV = Math.max(aZV, 1)
+						} a0b.push(a0c), aZV.push(!1), aZX.push([aB]), aZW = Math.max(aZW, 1)
 				}
-			for (; 2 < aD.x8 && aZV > bL.du(aD.kA, aD.x8);) aD.x8--, aD.kS--;
+			for (; 2 < aD.x8 && aZW > bL.du(aD.kA, aD.x8);) aD.x8--, aD.kS--;
 			for (f7 = a0b.length - 1; 0 <= f7; f7--) {
-				for (eq = -1, f8 = a0b.length - 1; 0 <= f8; f8--) !aZU[f8] && (-1 === eq || aZW[f8].length > aZW[eq].length) && (eq = f8);
-				for (f8 = aZT - 1; 0 <= f8; f8--) r2[f8] = 1;
-				for (f8 = aZW[eq].length - 1; 0 <= f8; f8--) r2[z2[aZW[eq][f8]]] += 3, r2[z3[aZW[eq][f8]]]++;
-				for (aB = aZT - 1; 0 <= aB; aB--) {
-					for (e = eq % aZT, f8 = aZT - 1; 0 <= f8; f8--) r2[f8] > r2[e] && (e = f8);
+				for (eq = -1, f8 = a0b.length - 1; 0 <= f8; f8--) !aZV[f8] && (-1 === eq || aZX[f8].length > aZX[eq].length) && (eq = f8);
+				for (f8 = aZU - 1; 0 <= f8; f8--) r2[f8] = 1;
+				for (f8 = aZX[eq].length - 1; 0 <= f8; f8--) r2[z2[aZX[eq][f8]]] += 3, r2[z3[aZX[eq][f8]]]++;
+				for (aB = aZU - 1; 0 <= aB; aB--) {
+					for (e = eq % aZU, f8 = aZU - 1; 0 <= f8; f8--) r2[f8] > r2[e] && (e = f8);
 					for (nK = -1, f8 = aD.x8; 0 < f8; f8--)
 						if (this.kX[f8] === e + 1) {
 							nK = f8;
 							break
 						} if (r2[e] = 0, -1 !== nK) {
-						for (tB = 0, f8 = aD.x8; 0 < f8; f8--) aZJ[nK] > aZJ[f8] && tB++;
+						for (tB = 0, f8 = aD.x8; 0 < f8; f8--) aZK[nK] > aZK[f8] && tB++;
 						if (tB !== aD.x8 - 1) {
-							for (f8 = aZW[eq].length - 1; 0 <= f8; f8--) aZJ[nK]++, this.el[aZW[eq][f8]] = nK;
+							for (f8 = aZX[eq].length - 1; 0 <= f8; f8--) aZK[nK]++, this.el[aZX[eq][f8]] = nK;
 							break
 						}
 					}
 				}
-				aZU[eq] = !0
+				aZV[eq] = !0
 			}
-		}, this.aZM = function(z2, z3, aZJ) {
-			for (var aB, i6, en = this.kX.length - 1, border = bL.du(aD.kA, aD.x8), aZX = (0 < aD.kA % aD.x8 && border++, new Uint8Array(1 + en)), f7 = en; 1 <= f7; f7--) aZX[this.kX[f7]] = f7;
-			for (aB = 0; aB < aD.kA; aB++) i6 = aZX[z2[aB] + 1], 0 === this.el[aB] && i6 <= aD.x8 && aZJ[i6] < border && (aZJ[i6]++, this.el[aB] = i6);
-			for (aB = 0; aB < aD.kA; aB++) i6 = aZX[z3[aB] + 1], 0 === this.el[aB] && i6 <= aD.x8 && aZJ[i6] < border && (aZJ[i6]++, this.el[aB] = i6);
+		}, this.aZN = function(z2, z3, aZK) {
+			for (var aB, i6, en = this.kX.length - 1, border = bL.du(aD.kA, aD.x8), aZY = (0 < aD.kA % aD.x8 && border++, new Uint8Array(1 + en)), f7 = en; 1 <= f7; f7--) aZY[this.kX[f7]] = f7;
+			for (aB = 0; aB < aD.kA; aB++) i6 = aZY[z2[aB] + 1], 0 === this.el[aB] && i6 <= aD.x8 && aZK[i6] < border && (aZK[i6]++, this.el[aB] = i6);
+			for (aB = 0; aB < aD.kA; aB++) i6 = aZY[z3[aB] + 1], 0 === this.el[aB] && i6 <= aD.x8 && aZK[i6] < border && (aZK[i6]++, this.el[aB] = i6);
 			for (f7 = aD.x8; 1 <= f7; f7--)
-				for (aB = aD.kA - 1; 0 <= aB && !(aZJ[f7] >= border); aB--) 0 === this.el[aB] && (aZJ[f7]++, this.el[aB] = f7)
-		}, this.aZN = function() {
+				for (aB = aD.kA - 1; 0 <= aB && !(aZK[f7] >= border); aB--) 0 === this.el[aB] && (aZK[f7]++, this.el[aB] = f7)
+		}, this.aZO = function() {
 			for (var aB = aD.kA; aB < aD.ek; aB++) this.el[aB] = 1 + aB % aD.x8
 		}
 }
@@ -11830,12 +11826,12 @@ function db() {
 			en = gT[player].length,
 			ep = ac.ep;
 		loop: for (var aB = en - 1; 0 <= aB; aB--) {
-			for (var aZY = !1, aZZ = !1, eq = 3; 0 <= eq; eq--) {
+			for (var aZZ = !1, aZa = !1, eq = 3; 0 <= eq; eq--) {
 				var gL = gT[player][aB] + ep[eq];
 				if (ac.aGi(gL, player)) continue loop;
-				aZY = aZY || ac.i1(gL), aZZ = aZZ || ac.aGh(gL)
+				aZZ = aZZ || ac.i1(gL), aZa = aZa || ac.aGh(gL)
 			}
-			aZY ? gU[player].push(gT[player][aB]) : aZZ ? fD[player].push(gT[player][aB]) : ac.xa(gT[player][aB], player), gT[player][aB] = gT[player][en - 1], gT[player].pop(), en--
+			aZZ ? gU[player].push(gT[player][aB]) : aZa ? fD[player].push(gT[player][aB]) : ac.xa(gT[player][aB], player), gT[player][aB] = gT[player][en - 1], gT[player].pop(), en--
 		}
 	}, this.gR = function() {
 		ag.gb[fi] -= fj
@@ -11888,23 +11884,23 @@ function db() {
 				if (ac.jM(ag.gT[player][aB]) && ac.ee(ag.gT[player][aB] + gM)) return !0;
 		return !1
 	}, this.hM = function(a3O, a3P) {
-		for (var aB, dt, gM, gL, aX6 = ag.gT[a3O].length, aX7 = ag.gT[a3P].length, ep = (aX7 < aX6 && (dt = a3O, a3O = a3P, a3P = dt, dt = aX6, aX6 = aX7, 0), ac.ep), eq = 3; 0 <= eq; eq--)
-			for (gM = ep[eq], aB = 0; aB < aX6; aB++)
+		for (var aB, dt, gM, gL, aX7 = ag.gT[a3O].length, aX8 = ag.gT[a3P].length, ep = (aX8 < aX7 && (dt = a3O, a3O = a3P, a3P = dt, dt = aX7, aX7 = aX8, 0), ac.ep), eq = 3; 0 <= eq; eq--)
+			for (gM = ep[eq], aB = 0; aB < aX7; aB++)
 				if (gL = ag.gT[a3O][aB] + gM, ac.gN(gL) && ac.ef(gL) === a3P) return !0;
 		return !1
 	}, this.aGv = function(a3O, a3P) {
-		for (var aB, gM, gL, aX6 = ag.gT[a3O].length, ep = ac.ep, eq = 3; 0 <= eq; eq--)
-			for (gM = ep[eq], aB = 0; aB < aX6; aB++)
+		for (var aB, gM, gL, aX7 = ag.gT[a3O].length, ep = ac.ep, eq = 3; 0 <= eq; eq--)
+			for (gM = ep[eq], aB = 0; aB < aX7; aB++)
 				if (ac.jM(ag.gT[a3O][aB]) && (gL = ag.gT[a3O][aB] + gM, ac.gN(gL)) && ac.ef(gL) === a3P) return !0;
 		return !1
 	}
 }
 
 function dV() {
-	this.q4 = new aZa
+	this.q4 = new aZb
 }
 
-function aZa() {
+function aZb() {
 	this.hP = function(player) {
 		bA.g9.a3K(player) && aN.yO(80, L(478), 637, 0, bB.oX, bB.nf, -1, !1)
 	}, this.hS = function(player) {
@@ -11912,168 +11908,168 @@ function aZa() {
 	}
 }
 
-function aZb() {
-	this.aZc = 0, this.j3 = function() {
+function aZc() {
+	this.aZd = 0, this.j3 = function() {
 		aO.j3(), aZ.j3(), h.j3(), b0.y.j3(), ax.aG4(), bf.dl && (bf.dl = !1, aa.uf())
 	}
 }
 
-function aZd() {
-	this.eM = bf.eM, this.e8 = 0, this.aZc = 0, this.aG2 = 0, this.aZe = null, this.aZf = 7, this.a6r = 0, this.dd = function() {
-		this.aG2 = 0, this.aZe = [], this.e8 = 0, this.aZc = 0
-	}, this.aSJ = function(aC) {
+function aZe() {
+	this.eM = bf.eM, this.e8 = 0, this.aZd = 0, this.aG2 = 0, this.aZf = null, this.aZg = 7, this.a6r = 0, this.dd = function() {
+		this.aG2 = 0, this.aZf = [], this.e8 = 0, this.aZd = 0
+	}, this.aSK = function(aC) {
 		if (aD.hB) this.aB6(aC);
-		else if (this.aZe.push(aC), 2 === aD.zw) {
-			for (var aB = 0; aB < this.aZe.length; aB++) b8.p0.j3(this.aZe[aB]);
-			this.aZe = []
+		else if (this.aZf.push(aC), 2 === aD.zw) {
+			for (var aB = 0; aB < this.aZf.length; aB++) b8.p0.j3(this.aZf[aB]);
+			this.aZf = []
 		}
 	}, this.aB6 = function(aC) {
-		2 !== aD.zw && (b8.p0.j3(aC), b9.j3(), aW.aB6(this.aG2), this.aG2 === aD.a4O ? (aD.pv.j3(), this.aG2 = 0, this.e8 = 0, this.aZc = 0, this.eM = bf.eM) : (this.aG2++, af.a4H(), af.mU(!0), bb.aBg()))
+		2 !== aD.zw && (b8.p0.j3(aC), b9.j3(), aW.aB6(this.aG2), this.aG2 === aD.a4O ? (aD.pv.j3(), this.aG2 = 0, this.e8 = 0, this.aZd = 0, this.eM = bf.eM) : (this.aG2++, af.a4H(), af.mU(!0), bb.aBg()))
 	}, this.j3 = function() {
-		h.j3(), aD.hB ? (bf.dl = aW.aB6(-1) || bf.dl, mW()) : (0 !== this.e8 || bf.eM >= this.eM && (this.eM += bf.aB5 * Math.floor(1 + (bf.eM - this.eM) / bf.aB5), 2 === aD.zw ? mL() : this.aZg(), this.e8++, 27 < bf.eM - this.a6r)) && this
-		.aZh(), mR(), bf.dl && (bf.dl = !1, xz()), this.a6r = bf.eM
-	}, this.aZh = function() {
+		h.j3(), aD.hB ? (bf.dl = aW.aB6(-1) || bf.dl, mW()) : (0 !== this.e8 || bf.eM >= this.eM && (this.eM += bf.aB5 * Math.floor(1 + (bf.eM - this.eM) / bf.aB5), 2 === aD.zw ? mL() : this.aZh(), this.e8++, 27 < bf.eM - this.a6r)) && this
+		.aZi(), mR(), bf.dl && (bf.dl = !1, xz()), this.a6r = bf.eM
+	}, this.aZi = function() {
 		bf.dl = !0, mT(), this.e8 = 0
-	}, this.aZg = function() {
+	}, this.aZh = function() {
 		var vN, aB;
-		if (this.aZc !== 7 * this.aG2) mN(), bb.aBg();
+		if (this.aZd !== 7 * this.aG2) mN(), bb.aBg();
 		else {
 			vN = !1;
-			loop: for (; this.aZi() && (vN = !0, mN(), 2 !== aD.zw) && 0 < this.aZe.length;)
-				for (aB = this.aZf - 2; 0 <= aB; aB--)
+			loop: for (; this.aZj() && (vN = !0, mN(), 2 !== aD.zw) && 0 < this.aZf.length;)
+				for (aB = this.aZg - 2; 0 <= aB; aB--)
 					if (mN(), 2 === aD.zw) break loop;
 			vN ? bb.aBg() : (mL(), bb.a4K())
 		}
-	}, this.aZi = function() {
-		return 0 < this.aZe.length && (this.aG2++, b8.p0.j3(this.aZe[0]), this.aZe.shift(), !0)
+	}, this.aZj = function() {
+		return 0 < this.aZf.length && (this.aG2++, b8.p0.j3(this.aZf[0]), this.aZf.shift(), !0)
 	}
 }
 
-function aZj() {
-	var aZk, aZl, aZm, aG2, aZn, e8 = 0,
+function aZk() {
+	var aZl, aZm, aZn, aG2, aZo, e8 = 0,
 		eM = bf.eM;
 
-	function aZq() {
+	function aZr() {
 		! function() {
 			if (!aD.hB) return;
 			if (aD.kU) return;
 			if (2 !== aD.zw)
-				if (aZn % 7 != 0) aZn++;
+				if (aZo % 7 != 0) aZo++;
 				else if (aG2 === aD.a4O) {
-				if (!aZt()) return;
+				if (!aZu()) return;
 				aW.aB6(aG2), aD.pv.j3()
 			} else {
-				if (!aZt()) return;
-				aZn++, aG2++, af.a4H(), af.mU(!0)
+				if (!aZu()) return;
+				aZo++, aG2++, af.a4H(), af.mU(!0)
 			}
 			return 1
-		}() && aZt() && mN()
+		}() && aZu() && mN()
 	}
 
-	function aZr() {
-		e8 = 0, (aD.hB ? (bf.dl = aW.aB6(aG2 - (aZn % 7 == 0 ? 0 : 1) + aZn % 7 / 7) || bf.dl, mW) : aM.gx || !bC.a4m ? mW : (bf.dl = !0, mT))()
+	function aZs() {
+		e8 = 0, (aD.hB ? (bf.dl = aW.aB6(aG2 - (aZo % 7 == 0 ? 0 : 1) + aZo % 7 / 7) || bf.dl, mW) : aM.gx || !bC.a4m ? mW : (bf.dl = !0, mT))()
 	}
 
-	function aZt() {
-		var aB, en, aZu = b9.pt.aTe,
-			fW = b9.pt.aTf,
-			fY = b9.pt.aTg,
-			fa = b9.pt.aTh,
-			aZv = b9.pt.aTi,
-			aZw = b9.pt.aTj;
-		if (!(aZk >= aZw.length)) {
-			if (aZw = aZw[aZk], aZv[aZk]) {
-				for (en = aZl + aZw, aB = aZl; aB < en; aB++) b8.p0.ph(aZu[aB], fW[aB], fY[aB], fa[aB]);
-				aZl += aZw, aZk++
-			} else ++aZm >= aZw && (aZk++, aZm = 0);
+	function aZu() {
+		var aB, en, aZv = b9.pt.aTf,
+			fW = b9.pt.aTg,
+			fY = b9.pt.aTh,
+			fa = b9.pt.aTi,
+			aZw = b9.pt.aTj,
+			aZx = b9.pt.aTk;
+		if (!(aZl >= aZx.length)) {
+			if (aZx = aZx[aZl], aZw[aZl]) {
+				for (en = aZm + aZx, aB = aZm; aB < en; aB++) b8.p0.ph(aZv[aB], fW[aB], fY[aB], fa[aB]);
+				aZm += aZx, aZl++
+			} else ++aZn >= aZx && (aZl++, aZn = 0);
 			return 1
 		}
 		aN.a1D("Replay file smaller than expected."), bC.a25(!1), aD.zw = 2
 	}
-	this.aZc = 0, this.dd = function() {
-		aZn = aG2 = aZm = aZl = aZk = 0
+	this.aZd = 0, this.dd = function() {
+		aZo = aG2 = aZn = aZm = aZl = 0
 	}, this.j3 = function() {
-		var aXX;
-		h.j3(), bC.a8T() < 1.7 ? 0 === e8 ? bf.eM >= eM && (aXX = bf.aB5 / bC.a8T(), eM += aXX * Math.floor(1 + (bf.eM - eM) / aXX), 2 === aD.zw || aM.gx || !bC.a4m ? mL() : (aZq(), bb.aBg()), e8++) : aZr() : function() {
-			var aXX;
+		var aXY;
+		h.j3(), bC.a8T() < 1.7 ? 0 === e8 ? bf.eM >= eM && (aXY = bf.aB5 / bC.a8T(), eM += aXY * Math.floor(1 + (bf.eM - eM) / aXY), 2 === aD.zw || aM.gx || !bC.a4m ? mL() : (aZr(), bb.aBg()), e8++) : aZs() : function() {
+			var aXY;
 			if (bf.eM >= eM)
 				if (2 === aD.zw || aM.gx || !bC.a4m) mL(), eM = bf.eM;
 				else {
-					for (aXX = bf.aB5 / bC.a8T(), 16 < (bf.eM - eM) / aXX && (eM = bf.eM - 16 * aXX); bf.eM >= eM && 2 !== aD.zw;) eM += aXX, aZq();
+					for (aXY = bf.aB5 / bC.a8T(), 16 < (bf.eM - eM) / aXY && (eM = bf.eM - 16 * aXY); bf.eM >= eM && 2 !== aD.zw;) eM += aXY, aZr();
 					bb.aBg()
-				} aZr()
+				} aZs()
 		}(), mR(), bf.dl && (bf.dl = !1, xz())
 	}, this.a06 = function() {
-		b9.pt.aTj.length - aZk <= 2 || aN.a1D("Replay file larger than expected.")
+		b9.pt.aTk.length - aZl <= 2 || aN.a1D("Replay file larger than expected.")
 	}
 }
 
-function aZx() {
+function aZy() {
 	var e8 = 0,
 		eM = bf.eM;
-	this.aZc = 0, this.j3 = function() {
+	this.aZd = 0, this.j3 = function() {
 		h.j3(), aD.hB ? mW() : 0 === e8 ? bf.eM >= eM && (eM += bf.aB5 * Math.floor(1 + (bf.eM - eM) / bf.aB5), 2 === aD.zw || aM.gx ? mL() : (mN(), bb.aBg()), e8++) : ((aM.gx ? mW : (bf.dl = !0, mT))(), e8 = 0), mR(), bf.dl && (bf.dl = !1, xz())
 	}
 }
 
 function dR() {
 	this.a05 = null, this.dl = !1, this.eM = 0, this.aB5 = 56;
-	var aZy = 0;
+	var aZz = 0;
 
-	function aZz() {
-		bf.eM = aZy = performance.now(), bf.a05.j3(), window.requestAnimationFrame(aZz)
+	function aa0() {
+		bf.eM = aZz = performance.now(), bf.a05.j3(), window.requestAnimationFrame(aa0)
 	}
 	this.dd = function() {
-		this.a4j(), window.requestAnimationFrame(aZz), this.eM = performance.now()
+		this.a4j(), window.requestAnimationFrame(aa0), this.eM = performance.now()
 	}, this.a4a = function() {
-		aD.gw ? (this.a05 = new aZj, this.a05.dd()) : aD.kU ? this.a05 = new aZx : (this.a05 = new aZd, this.a05.dd())
+		aD.gw ? (this.a05 = new aZk, this.a05.dd()) : aD.kU ? this.a05 = new aZy : (this.a05 = new aZe, this.a05.dd())
 	}, this.a4j = function() {
-		this.a05 = new aZb, this.dl = !0
+		this.a05 = new aZc, this.dl = !0
 	}, this.j3 = function() {
-		this.a05.aZc++
+		this.a05.aZd++
 	}, this.k7 = function() {
-		return this.a05.aZc
-	}, this.aRv = function() {
+		return this.a05.aZd
+	}, this.aRw = function() {
 		var dt = performance.now();
-		dt < aZy + 1e3 || (this.eM = dt, this.a05.j3())
+		dt < aZz + 1e3 || (this.eM = dt, this.a05.j3())
 	}
 }
 
 function ct() {
 	var aFS = 0,
-		aa0 = !0;
+		aa1 = !0;
 
-	function aa1(id) {
+	function aa2(id) {
 		id = [L(480), L(481), L(482), L(483)][id];
 		aN.a6X(id)
 	}
 	this.j3 = function() {
 		var dt, a6t;
-		bf.eM < aFS || (aFS = bf.eM + 5e3, aD.gw) || aD.kU || bA.g9.gz(aD.eX) || (dt = new Date, a6t = dt.getUTCSeconds(), aa0 ? a6t < 50 && (aa0 = !1) : a6t < 50 || (aa0 = !0, (a6t = (dt.getUTCMinutes() + 1) % 60) % 5 == 0 && (0 == a6t || 20 ==
-			a6t || 40 == a6t ? aD.kS < 7 && aa1(0) : 10 == a6t || 30 == a6t || 50 == a6t ? 7 !== aD.kS && 10 !== aD.kS || aa1(1) : 5 == a6t || 25 == a6t || 45 == a6t ? 8 === aD.kS && aa1(2) : 35 == a6t && 9 === aD.kS && aa1(3))))
+		bf.eM < aFS || (aFS = bf.eM + 5e3, aD.gw) || aD.kU || bA.g9.gz(aD.eX) || (dt = new Date, a6t = dt.getUTCSeconds(), aa1 ? a6t < 50 && (aa1 = !1) : a6t < 50 || (aa1 = !0, (a6t = (dt.getUTCMinutes() + 1) % 60) % 5 == 0 && (0 == a6t || 20 ==
+			a6t || 40 == a6t ? aD.kS < 7 && aa2(0) : 10 == a6t || 30 == a6t || 50 == a6t ? 7 !== aD.kS && 10 !== aD.kS || aa2(1) : 5 == a6t || 25 == a6t || 45 == a6t ? 8 === aD.kS && aa2(2) : 35 == a6t && 9 === aD.kS && aa2(3))))
 	}
 }
 
 function cn() {
-	var n8, n9, nL, nM, aa2 = 0,
-		aa3 = 0;
+	var n8, n9, nL, nM, aa3 = 0,
+		aa4 = 0;
 
-	function aa5() {
+	function aa6() {
 		return Math.pow(Math.pow(nL - n8, 2) + Math.pow(nM - n9, 2), .5)
 	}
 
-	function aa4(e) {
+	function aa5(e) {
 		n8 = h.k * e.touches[0].clientX, n9 = h.k * e.touches[0].clientY, nL = h.k * e.touches[1].clientX, nM = h.k * e.touches[1].clientY
 	}
 	this.a1U = function(e) {
-		return 1 < e.touches.length ? (aa3 = bf.eM, aa2 = 3, aa4(e), aL.rq(), !0) : (aa2 = 0, !1)
+		return 1 < e.touches.length ? (aa4 = bf.eM, aa3 = 3, aa5(e), aL.rq(), !0) : (aa3 = 0, !1)
 	}, this.a1V = function(e) {
-		var aKp, i4, i5;
-		return 0 !== aD.zw && 1 < e.touches.length && (aa2 = Math.max(aa2 - 1, 0), aH.nQ() && (aKp = aa5(), aa4(e), e = aa5(), i4 = Math.floor((n8 + nL) / 2), i5 = Math.floor((n9 + nM) / 2), aS.a8u(i4, i5, Math.max(.125, e) / Math.max(.125,
-			aKp)), bf.dl = !0), !0)
+		var aKq, i4, i5;
+		return 0 !== aD.zw && 1 < e.touches.length && (aa3 = Math.max(aa3 - 1, 0), aH.nQ() && (aKq = aa6(), aa5(e), e = aa6(), i4 = Math.floor((n8 + nL) / 2), i5 = Math.floor((n9 + nM) / 2), aS.a8u(i4, i5, Math.max(.125, e) / Math.max(.125,
+			aKq)), bf.dl = !0), !0)
 	}, this.a1v = function() {
 		var eu, ew;
-		return !!(aa2 && (aa2 = 0, bf.eM < aa3 + 500)) && (eu = (n8 + nL) / 2, ew = (n9 + nM) / 2, aL.a1p(eu, ew), aL.click(eu, ew, !0) && (bf.dl = !0), !0)
+		return !!(aa3 && (aa3 = 0, bf.eM < aa4 + 500)) && (eu = (n8 + nL) / 2, ew = (n9 + nM) / 2, aL.a1p(eu, ew), aL.click(eu, ew, !0) && (bf.dl = !0), !0)
 	}
 }
 
@@ -12085,31 +12081,31 @@ function d2() {
 	}, this.pg = function(size) {
 		for (var fF = 0, aC = this.aC, nQ = this.e8 + size - 1, aB = this.e8; aB <= nQ; aB++) fF |= (aC[aB >> 3] >> 7 - (7 & aB) & 1) << nQ - aB;
 		return this.e8 += size, this.e8 > 8 * this.size && console.error("Unwrapper Overflow"), fF
-	}, this.aSR = function(size) {
+	}, this.aSS = function(size) {
 		var f7 = size >> 1;
 		return (1 << f7) * this.pg(size - f7) + this.pg(f7)
-	}, this.aSS = function(aa6) {
-		return this.size === bD.aSQ(aa6)
-	}, this.aTw = function(wn, aa7, aa8) {
+	}, this.aST = function(aa7) {
+		return this.size === bD.aSR(aa7)
+	}, this.aTx = function(wn, aa8, aa9) {
 		var gG = this.pg(wn);
 		if (!gG) return null;
-		for (var wn = Math.max(gG, aa8), g = new(aa7 <= 8 ? Uint8Array : aa7 <= 16 ? Uint16Array : Uint32Array)(wn), aB = 0; aB < gG; aB++) g[aB] = this.pg(aa7);
-		aa8 = g[gG - 1];
-		return aa8 && g.fill(aa8, gG), g
-	}, this.aTx = function(wn, aa9, aa8) {
+		for (var wn = Math.max(gG, aa9), g = new(aa8 <= 8 ? Uint8Array : aa8 <= 16 ? Uint16Array : Uint32Array)(wn), aB = 0; aB < gG; aB++) g[aB] = this.pg(aa8);
+		aa9 = g[gG - 1];
+		return aa9 && g.fill(aa9, gG), g
+	}, this.aTy = function(wn, aaA, aa9) {
 		var gG = this.pg(wn);
 		if (!gG) return null;
-		for (var wn = Math.max(gG, aa8), g = new Array(wn), aB = 0; aB < gG; aB++) g[aB] = this.aTu(aa9);
+		for (var wn = Math.max(gG, aa9), g = new Array(wn), aB = 0; aB < gG; aB++) g[aB] = this.aTv(aaA);
 		return g.fill(g[gG - 1], gG), g
-	}, this.aTu = function(wn) {
+	}, this.aTv = function(wn) {
 		return bG.vu.vy(this.pg(wn))
-	}, this.aTv = function() {
+	}, this.aTw = function() {
 		var qG = bF.sq.sr(bF.sq.ss(this.pg(30))),
 			qG = bA.rY.a4C(qG, "_", "/");
 		qG = bA.rY.a4C(qG, "-", "+");
-		for (var aaA = "";
-			(qG.length + aaA.length) % 4;) aaA += "=";
-		qG = "data:image/png;base64," + qG + aaA;
+		for (var aaB = "";
+			(qG.length + aaB.length) % 4;) aaB += "=";
+		qG = "data:image/png;base64," + qG + aaB;
 		var aHQ = new Image;
 		aHQ.onload = function() {
 			b9.aHp.aHq(aHQ), aHQ.onload = null, aHQ = null
@@ -12118,9 +12114,9 @@ function d2() {
 }
 
 function dL() {
-	this.aUs = 0, this.aUt = 0, this.aUo = 0, this.aUp = 0, this.aUq = 0, this.aUr = 0, this.aBh = [0, 0, 0, 0], this.nP = function() {
-		this.aUs = aS.y1(), this.aUt = aS.y2(), this.aUo = -this.aUs, this.aUp = -this.aUt, this.aUq = h.i / hy, this.aUr = h.j / hy, this.aBh[0] = Math.floor(this.aUo), this.aBh[1] = Math.floor(this.aUp), this.aBh[2] = Math.floor(this.aBh[0] +
-			this.aUq + 1), this.aBh[3] = Math.floor(this.aBh[1] + this.aUr + 1), bb.aBe = !0
+	this.aUt = 0, this.aUu = 0, this.aUp = 0, this.aUq = 0, this.aUr = 0, this.aUs = 0, this.aBh = [0, 0, 0, 0], this.nP = function() {
+		this.aUt = aS.y1(), this.aUu = aS.y2(), this.aUp = -this.aUt, this.aUq = -this.aUu, this.aUr = h.i / hy, this.aUs = h.j / hy, this.aBh[0] = Math.floor(this.aUp), this.aBh[1] = Math.floor(this.aUq), this.aBh[2] = Math.floor(this.aBh[0] +
+			this.aUr + 1), this.aBh[3] = Math.floor(this.aBh[1] + this.aUs + 1), bb.aBe = !0
 	}
 }
 
@@ -12138,52 +12134,52 @@ function co() {
 function a6() {
 	this.size = 0, this.e8 = 0, this.aC = null, this.dd = function(aC) {
 		this.e8 = 0, this.aC = aC, this.size = aC.length
-	}, this.a7 = function(aa6) {
-		return this.dd(new Uint8Array(this.aSQ(aa6))), this.aC
+	}, this.a7 = function(aa7) {
+		return this.dd(new Uint8Array(this.aSR(aa7))), this.aC
 	}, this.u9 = function() {
 		this.aC = null
 	}, this.a8 = function(size, a6x) {
 		for (var aC = this.aC, nQ = this.e8 + size - 1, aB = this.e8; aB <= nQ; aB++) aC[aB >> 3] |= (a6x >> nQ - aB & 1) << 7 - (7 & aB);
 		this.e8 += size, this.e8 > 8 * this.size && console.error("Wrapper Overflow")
-	}, this.aSP = function(size, a6x) {
+	}, this.aSQ = function(size, a6x) {
 		var f7 = size >> 1,
 			eq = 1 << f7;
 		this.a8(size - f7, bL.du(a6x, eq)), this.a8(f7, a6x % eq)
-	}, this.aaD = function(size) {
+	}, this.aaE = function(size) {
 		for (var aC = this.aC, nQ = this.e8 + size, aB = this.e8; aB < nQ; aB++) aC[aB >> 3] &= 255 ^ 128 >>> (7 & aB)
-	}, this.aSQ = function(aa6) {
-		return aa6 + 7 >> 3
-	}, this.aaE = function(g, jR, nQ, aaF) {
-		for (var aB = jR; aB < nQ; aB++) this.a8(aaF, g[aB])
+	}, this.aSR = function(aa7) {
+		return aa7 + 7 >> 3
+	}, this.aaF = function(g, jR, nQ, aaG) {
+		for (var aB = jR; aB < nQ; aB++) this.a8(aaG, g[aB])
 	}
 }
 
 function d1() {
 	this.dd = function() {
 		this.g = [], this.e8 = 0
-	}, this.aSo = function() {
+	}, this.aSp = function() {
 		return new Uint8Array(this.g)
-	}, this.a8 = function(aaG, value) {
-		for (var g = this.g, nQ = this.e8 + aaG - 1, aaH = 1 + (nQ >> 3); g.length < aaH;) g.push(0);
+	}, this.a8 = function(aaH, value) {
+		for (var g = this.g, nQ = this.e8 + aaH - 1, aaI = 1 + (nQ >> 3); g.length < aaI;) g.push(0);
 		for (var aB = this.e8; aB <= nQ; aB++) g[aB >> 3] |= (value >> nQ - aB & 1) << 7 - (7 & aB);
-		this.e8 += aaG
-	}, this.dk = function(g, wn, aa7) {
-		var aaI = bA.qh.a2h(g);
-		this.a8(wn, aaI);
-		for (var aB = 0; aB < aaI; aB++) this.a8(aa7, g[aB])
-	}, this.aUE = function(g, wn, aa9) {
-		var aaI = bA.qh.a2h(g);
-		this.a8(wn, aaI);
-		for (var aB = 0; aB < aaI; aB++) this.aUC(g[aB], aa9)
-	}, this.aUC = function(qG, wn) {
+		this.e8 += aaH
+	}, this.dk = function(g, wn, aa8) {
+		var aaJ = bA.qh.a2h(g);
+		this.a8(wn, aaJ);
+		for (var aB = 0; aB < aaJ; aB++) this.a8(aa8, g[aB])
+	}, this.aUF = function(g, wn, aaA) {
+		var aaJ = bA.qh.a2h(g);
+		this.a8(wn, aaJ);
+		for (var aB = 0; aB < aaJ; aB++) this.aUD(g[aB], aaA)
+	}, this.aUD = function(qG, wn) {
 		var en = qG.length;
 		this.a8(wn, en);
 		for (var aB = 0; aB < en; aB++) this.a8(16, qG.charCodeAt(aB))
-	}, this.aUD = function(a2n) {
-		var aaJ = (a2n = a2n.toDataURL()).split(",");
-		if (aaJ.length < 2) console.log("error 266");
+	}, this.aUE = function(a2n) {
+		var aaK = (a2n = a2n.toDataURL()).split(",");
+		if (aaK.length < 2) console.log("error 266");
 		else {
-			a2n = bA.rY.a4C(a2n = aaJ[aaJ.length - 1], "/", "_"), a2n = bA.rY.a4C(a2n, "\\+", "-");
+			a2n = bA.rY.a4C(a2n = aaK[aaK.length - 1], "/", "_"), a2n = bA.rY.a4C(a2n, "\\+", "-");
 			var a2n = bA.rY.a4C(a2n, "=", ""),
 				w7 = bG.sq.w4(a2n),
 				en = w7.length;
