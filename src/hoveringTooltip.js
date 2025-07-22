@@ -4,6 +4,7 @@ import { getVar } from "./gameInterface.js";
 const hoveringTooltip = new (function() {
     let recentlyShown = false;
     this.display = () => {}; // this gets populated by the modified game script
+    this.active = false;
     this.canvasPixelScale = 1;
     function handler(e) {
         if (!getSettings().hoveringTooltip || !getVar("gameState") || recentlyShown) return;
@@ -21,7 +22,9 @@ const hoveringTooltip = new (function() {
 
         recentlyShown = true;
         try {
+            this.active = true;
             this.display(this.canvasPixelScale * x, this.canvasPixelScale * y);
+            this.active = false;
         } catch (e) { console.error(e) }
         // for better performance, reduce the tooltip display frequency to no more than once every 100 ms
         setTimeout(() => recentlyShown = false, 100);

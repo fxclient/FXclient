@@ -11,29 +11,6 @@ export default (/** @type {ModUtils} */ modUtils) => {
         return alert("Error:\\n" + e.filename + " " + e.lineno + " " + e.colno + " " + e.message);`
     )
 
-    // Hovering tooltip
-    modUtils.insertCode(`/* here */
-        this.click = function(lK, lL, a1m) {
-		var gy = bL.gz(lK);
-		var h0 = bL.h1(lL);
-		var eV = bL.f7(gy, h0);
-		var eN = bL.eZ(eV);
-		if (!bL.isInMapBounds(gy, h0)) { return false; }
-		var a5C = (Device.a1.largeUIEnabled() ? 0.025 : 0.0144) * h___.hu;
-		var dp = performance.now();
-		if (Math.abs(lK - a4t) > a5C || Math.abs(lL - a4u) > a5C || dp > time + 500) { return false; }
-		time = dp;
-		if (a1m) { a5D(lK, lL, eN); return false; }
-        /*...*/}`,
-        `__fx.hoveringTooltip.display = function(mouseX, mouseY) {
-			var coordX = bL.gz(mouseX), coordY = bL.h1(mouseY),
-				coord = bL.f7(coordX, coordY), point = bL.eZ(coord);
-			// if (coordX < 0 || coordY < 0) return;
-            if (bL.isInMapBounds(coordX, coordY)) (function(lK, lL, eN) {
-				a5D(lK, lL, eN)
-			}(mouseX, mouseY, point))
-        }`)
-
     modUtils.waitForMinification(() => applyPatches(modUtils))
 }
 //export const requiredVariables = ["game", "playerId", "playerData", "rawPlayerNames", "gIsSingleplayer", "playerTerritories"];
@@ -307,11 +284,6 @@ canvas.font=aY.g0.g1(1,fontSize),canvas.fillStyle="rgba("+gR+","+tD+","+hj+",0.6
         // Get clan parsing function
         replaceRawCode(`this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null},`,
             `this.uI=function(username){var uK,uJ=username.indexOf("[");return!(uJ<0)&&1<(uK=username.indexOf("]"))-uJ&&uK-uJ<=8?username.substring(uJ+1,uK).toUpperCase().trim():null}, __fx.leaderboardFilter.parseClanFromPlayerName = this.uI;`);
-    }
-
-    { // Hovering tooltip
-        replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr,",
-            `aK.nH = (window.devicePixelRatio || 1) * aEr, __fx.hoveringTooltip.canvasPixelScale = aK.nH,`)
     }
 
     // Detailed team pie chart percentage
