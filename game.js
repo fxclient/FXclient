@@ -61,7 +61,7 @@ function bt(bu) {
 }
 
 function dG() {
-	this.dq = 1106, this.n = 2100, this.rVersion = 13, this.dr = 0, this.dd = function() {
+	this.dq = 1107, this.n = 2101, this.rVersion = 13, this.dr = 0, this.dd = function() {
 		this.ds = 2;
 		var dt = bL.du(this.n, 10) % 100;
 		this.dv = "27 Jul 2025 [" + bL.du(this.n, 1e3) + "." + (dt < 10 ? "0" : "") + dt + "." + this.n % 10 + "]", this.a9 = true, this.aA = function() {
@@ -6869,7 +6869,8 @@ function cW() {
 		aJx = 0;
 
 	function aK1(a6X, aJz) {
-		return 4 + bL.du(100 * aJz, ae.jq(a6X))
+		var f8 = bf.k7();
+		return f8 < 357 ? 2 + bL.du(100 * aJz, 2e3) : f8 < 714 ? 2 + bL.du(100 * aJz, 8e3) : f8 < 1071 ? 2 + bL.du(100 * aJz, 18e3) : 4 + bL.du(100 * aJz, ae.jq(a6X))
 	}
 
 	function aK0(a6X) {
