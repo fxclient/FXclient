@@ -1,8 +1,8 @@
 {
-    "version": "0.6.13",
-    "lastUpdated": "Jul 22",
+    "version": "0.6.14",
+    "lastUpdated": "Aug 10",
     "changes": [
-        "Fix for game update 2.09.9",
-        "Fix to prevent the hovering tooltip from causing perspective switching during replays (a new feature was added to the base game where, in replays, you can switch to a different player/bot by right clicking on them)"
+        "Fix for game update v2.10.4",
+        "Fix error when opening donation history on older browsers"
     ]
 }
