@@ -3,6 +3,9 @@ import ModUtils from '../modUtils.js';
 // Custom lobby patches
 export default (/** @type {ModUtils} */ { insertCode, replaceCode, replaceRawCode, safeDictionary: dict, waitForMinification }) => {
     
+    // temporarily disabled for new versions
+    return;
+
     // set player id correctly
     insertCode(`function aBG(aBE) {
 		if (!Lobby.aAl) { return -1; }
