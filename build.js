@@ -66,9 +66,9 @@ async function patchGameCode() {
 	const codeSegments = [{
 		code: `player = aQ.eF(eR);
 			if (game.gIsReplay) { game.playerId = player; }
-			str = L(58, /* Player: {0} */ [b0.context.truncateAndFillText(playerData.rawPlayerNames[player], b0.qZ.sN(0, 10), 150)]) + "   ";
-			str += L(59, /* Strength: {10} */ [b0.rY.formatNumber(playerData.playerBalances[player])]) + "   ";
-			str += L(60, /* Territory: {10} */ [b0.rY.formatNumber(playerData.playerTerritories[player])]) + "   ";
+			str = __L(/* Player: {0} */ [b0.context.truncateAndFillText(playerData.rawPlayerNames[player], b0.qZ.sN(0, 10), 150)]) + "   ";
+			str += __L(/* Strength: {10} */ [b0.rY.formatNumber(playerData.playerBalances[player])]) + "   ";
+			str += __L(/* Territory: {10} */ [b0.rY.formatNumber(playerData.playerTerritories[player])]) + "   ";
 		`, addToDictionary: ["game", "gIsReplay", "playerData", "rawPlayerNames", "playerBalances", "playerTerritories"]
 	}];
 	codeSegments.forEach(({ code, addToDictionary }) => {
