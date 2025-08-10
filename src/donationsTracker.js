@@ -2,6 +2,7 @@ import WindowManager from "./windowManager.js";
 import { getVar } from "./gameInterface.js";
 import { escapeHtml } from "./utils.js";
 import { debugWithContext } from "./debugging.js";
+import 'core-js/actual/array/to-reversed.js'
 
 WindowManager.add({
     name: "donationHistory",

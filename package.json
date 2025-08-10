@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/fxclient/FXclient#readme",
   "dependencies": {
+    "core-js": "^3.44.0",
     "js-beautify": "^1.14.11",
     "uglify-js": "^3.19.2"
   },
