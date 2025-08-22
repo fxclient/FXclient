@@ -35,8 +35,8 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
 + "<br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></b>",`);
 
     // Add update information
-    replaceRawCode(`new k("🚀 New Game Update","The game has been updated! Please reload the game.",!0,[`,
-        `new k("🚀 New Game Update","The game has been updated! Please reload the game."
+    replaceRawCode(`new k("🚀 New Game Update","The game was updated! Please reload the game.",!0,[`,
+        `new k("🚀 New Game Update","The game was updated! Please reload the game."
         + "<div style='border: white; border-width: 1px; border-style: solid; margin: 10px; padding: 5px;'><h2>FX Client is not yet compatible with the latest version of the game.</h2><p>Updates should normally be available within a few hours.<br>You can still use FX to play in singleplayer mode.</p></div>",!0,[`
     );
 
@@ -60,7 +60,7 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
     // Increment win counter on wins
     replaceRawCode(`=function(sE){a8.gD[sE]&&(o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0))`,
         `=function(sE){
-		if (${playerId} === sE && !${gIsSingleplayer})
+		if (${playerId} === sE && !${gIsSingleplayer} && !${dict.game}.${dict.gIsReplay})
 			__fx.wins.count++, window.localStorage.setItem("fx_winCount", __fx.wins.count),
 			xD(0,"Your Win Count is now " + __fx.wins.count,3,sE,ad.gN,ad.kl,-1,!0);
 		a8.gD[sE]&&(o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0))`);
