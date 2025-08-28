@@ -61,10 +61,10 @@ function bt(bu) {
 }
 
 function dG() {
-	this.dq = 1112, this.n = 2118, this.rVersion = 15, this.dr = 0, this.dd = function() {
+	this.dq = 1112, this.n = 2119, this.rVersion = 15, this.dr = 0, this.dd = function() {
 		this.ds = 2;
 		var dt = bL.du(this.n, 10) % 100;
-		this.dv = "27 Aug 2025 [" + bL.du(this.n, 1e3) + "." + (dt < 10 ? "0" : "") + dt + "." + this.n % 10 + "]", this.a9 = true, this.aA = function() {
+		this.dv = "28 Aug 2025 [" + bL.du(this.n, 1e3) + "." + (dt < 10 ? "0" : "") + dt + "." + this.n % 10 + "]", this.a9 = true, this.aA = function() {
 			try {
 				return window.self !== window.top
 			} catch (e) {
@@ -2333,7 +2333,7 @@ function yP() {
 			yU = elo[yS] + jP,
 			yV = this.yW(yU),
 			elo = this.yW(elo[1 - yS] - jP),
-			jP = (0 === yS ? aN.yY(yV, elo, ["rgba(10,140,10,0.75)", "rgba(140,10,10,0.75)"]) : aN.yY(elo, yV, ["rgba(140,10,10,0.75)", "rgba(10,140,10,0.75)"]), ((1 + aD.ya) * (2e3 + yU) / 1e3).toFixed(2));
+			jP = (0 === yS ? aN.yY(yV, elo, ["rgba(10,140,10,0.75)", "rgba(140,10,10,0.75)"]) : aN.yY(elo, yV, ["rgba(140,10,10,0.75)", "rgba(10,140,10,0.75)"]), ((1 + aD.ya) * yU / 500).toFixed(2));
 		yS === aD.eX ? aN.yb(640, L(24, [jP]), 40, 0, bB.nj, bB.ng, -1, !1) : aN.yb(640, L(25, [ag.yc[yS], jP]), 40, 0, bB.nj, bB.ng, -1, !1)
 	}, this.yW = function(elo) {
 		return 16e3 === (elo = bL.hv(elo, 0, 16e3)) ? "Unknown" : (elo / 10).toFixed(1)
@@ -5593,7 +5593,7 @@ function aCw() {
 			aFB(5, 1)
 		}, aFF), new w(bo.e5[5][2], function() {
 			aFB(5, 2)
-		}, aFF), new w(aEz.aD5 < 100 ? "Stealth Report" : bo.e5[5][3], function() {
+		}, aFF), new w(bo.e5[5][3], function() {
 			aFB(5, 3)
 		}, aFF)]), aFA(eu, ew), aF1 = aF0 = 2
 	}
