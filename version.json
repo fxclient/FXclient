@@ -1,9 +1,7 @@
 {
-    "version": "0.6.15",
-    "lastUpdated": "Aug 22",
+    "version": "0.6.15.1",
+    "lastUpdated": "Sep 28",
     "changes": [
-        "Fix for game update v2.10.9",
-        "Fixed the message in the FX Client update notification popup being inaccurate - just reloading the page normally no longer works, you have to instead press the \"Update\" (previously \"Reload\") button on the popup for the update to be applied.",
-        "Fixed win counter counting wins in replays"
+        "Fix for game update v2.13.0"
     ]
 }
