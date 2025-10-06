@@ -25,9 +25,9 @@ export default (/** @type {ModUtils} */ { insertCode, replaceRawCode, waitForMin
         }`)
     insertCode(`player = aQ.eF(eR);
 		if (game.gIsReplay /* here */) { game.playerId = player; }
-		str = L(58, /* Player: {0} */ [b0.context.truncateAndFillText(playerData.rawPlayerNames[player], b0.qZ.sN(0, 10), 150)]) + "   ";
-		str += L(59, /* Strength: {10} */ [b0.rY.formatNumber(playerData.playerBalances[player])]) + "   ";
-		str += L(60, /* Territory: {10} */ [b0.rY.formatNumber(playerData.playerTerritories[player])]) + "   ";`,
+		str = __L(/* Player: {0} */ [b0.context.truncateAndFillText(playerData.rawPlayerNames[player], b0.qZ.sN(0, 10), 150)]) + "   ";
+		str += __L(/* Strength: {10} */ [b0.rY.formatNumber(playerData.playerBalances[player])]) + "   ";
+		str += __L(/* Territory: {10} */ [b0.rY.formatNumber(playerData.playerTerritories[player])]) + "   ";`,
     `&& __fx.hoveringTooltip.active === false`)
     
     waitForMinification(() => {
