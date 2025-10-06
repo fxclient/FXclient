@@ -1,7 +1,7 @@
 {
-    "version": "0.6.15.1",
-    "lastUpdated": "Sep 28",
+    "version": "0.6.15.2",
+    "lastUpdated": "Oct 6",
     "changes": [
-        "Fix for game update v2.13.0"
+        "Fix for game update v2.13.3"
     ]
 }
