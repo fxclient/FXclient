@@ -106,6 +106,7 @@ class ModUtils {
         }
         return Object.fromEntries(Object.entries(groups).map(([identifier, groupNumber]) => [identifier, expressionMatchResult[groupNumber]]));
     }
+    /** @param {{ [x: string]: string; }} [nameMappings] */
     matchRawCode(/** @type {string} */ raw, nameMappings) {
         const { expression, groups } = this.generateRegularExpression(raw, false, nameMappings);
         try {
@@ -148,8 +149,8 @@ class ModUtils {
      * @typedef {{ dictionary?: { [x: string]: string } }} BaseOptions
      * @typedef {BaseOptions & { addToDictionary?: string[] }} MatchCodeOptions
      */
-    matchCode(code, /** @type {MatchCodeOptions=} */ options) {
-        const result = this.matchRawCode(minifyCode(code));
+    matchCode(/** @type {string} */ code, /** @type {MatchCodeOptions=} */ options) {
+        const result = this.matchRawCode(minifyCode(code), options?.dictionary);
         if (options?.addToDictionary !== undefined) {
             options.addToDictionary.forEach(varName => {
                 if (result[varName] === undefined)
@@ -186,3 +187,8 @@ class ModUtils {
 }
 
 export default ModUtils;
+
+/** @param {(modUtils: ModUtils) => any} callback */
+export function definePatch(callback) {
+    return (/** @type {ModUtils} */ modUtils) => callback(modUtils)
+}
