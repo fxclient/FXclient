@@ -138,7 +138,7 @@ function eK() {
 	}, this.eY = function(eZ) {
 		eS = eZ
 	}, this.show = function() {
-		return !!eS && !(bf.eQ < eT || (eT = bf.eQ + 6e4, (new ea).show(eS.eb, eS.colors, eS.id), eS = null))
+		return !(!eS || bf.eQ < eT) && (__fx.settings.hidePropagandaPopup ? void 0 : (eT = bf.eQ + 6e4, (new ea).show(eS.eb, eS.colors, eS.id), !(eS = null)))
 	}
 }
 
