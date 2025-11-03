@@ -26,6 +26,7 @@ var settings = {
   customBackgroundUrl: "",
   keybindButtons: false,
   attackPercentageKeybinds: [],
+  hidePropagandaPopup: false
 };
 __fx.settings = settings;
 const discontinuedSettings = ["hideAllLinks", "fontName"];
@@ -91,6 +92,11 @@ const settingsManager = new (function () {
       type: "checkbox",
       label: "Highlight clan spawnpoints",
       note: "Increases the spawnpoint glow size for members of your clan",
+    },
+    {
+      for: "hidePropagandaPopup",
+      type: "checkbox",
+      label: "Hide propaganda popup"
     },
     {
       for: "detailedTeamPercentage", type: "checkbox",
@@ -189,7 +195,6 @@ const settingsManager = new (function () {
     WindowManager.closeWindow("settings");
     discontinuedSettings.forEach((settingName) => delete settings[settingName]);
     localStorage.setItem("fx_settings", JSON.stringify(settings));
-    // should probably firgure out a way to do this without reloading - // You can't do it, localstorages REQUIRE you to reload
     window.location.reload();
   };
 
