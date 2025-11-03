@@ -1,7 +1,7 @@
 {
-    "version": "0.6.15.2",
-    "lastUpdated": "Oct 6",
+    "version": "0.6.16",
+    "lastUpdated": "Nov 3",
     "changes": [
-        "Fix for game update v2.13.3"
+        "Add a settings option for hiding the propaganda popup"
     ]
 }
