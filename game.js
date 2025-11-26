@@ -63,10 +63,10 @@ function bt(bu) {
 }
 
 function dG() {
-	this.dq = 1114, this.n = 2135, this.rVersion = 15, this.dr = 0, this.dd = function() {
+	this.dq = 1115, this.n = 2136, this.rVersion = 15, this.dr = 0, this.dd = function() {
 		this.ds = 2;
 		var dt = bL.du(this.n, 10) % 100;
-		this.dw = "21 Nov 2025 [" + bL.du(this.n, 1e3) + "." + (dt < 10 ? "0" : "") + dt + "." + this.n % 10 + "]", this.a9 = true, this.aA = function() {
+		this.dw = "26 Nov 2025 [" + bL.du(this.n, 1e3) + "." + (dt < 10 ? "0" : "") + dt + "." + this.n % 10 + "]", this.a9 = true, this.aA = function() {
 			try {
 				return window.self !== window.top
 			} catch (e) {
@@ -8480,7 +8480,7 @@ function t2(id, a4X, aQF) {
 	}
 
 	function aQK() {
-		bD.a7(48), bD.a8(24, Math.floor(bL.pow(24) * Math.random())), bD.a8(24, Math.floor(bL.pow(24) * Math.random())), bH.dd(bD.aC), bj.sE.sF(110, bF.t4.t5(bF.t4.t6(8))), b0.aFo.aQY()
+		bD.a7(90), bD.a8(30, Math.floor(bL.pow(30) * Math.random())), bD.a8(30, Math.floor(bL.pow(30) * Math.random())), bD.a8(30, Math.floor(bL.pow(30) * Math.random())), bH.dd(bD.aC), bj.sE.sF(110, bF.t4.t5(bF.t4.t6(15))), b0.aFo.aQY()
 	}
 	this.aQH = !0, this.aQI = id, this.show = function() {
 		aO7.show(), this.resize(), 15 === id ? (b0.y.aQJ(id) ? aQK : aQL)() : 16 === id ? b0.y.aQJ(id) ? b0.eW.eX(2) : aQL() : 17 === id ? b0.y.aQJ(id) ? b0.eW.eX(3) : aQL() : 18 === id ? (b0.y.close(0, 3253), b0.y.aGg(0, id), aQL()) : 21 ===
@@ -10025,7 +10025,7 @@ function aSr() {
 
 function aSx() {
 	this.aTW = function() {
-		bj.y.wF(), bj.sE.sF(105, bF.t4.t5(bF.t4.t6(5))), bj.sE.sF(106, bF.t4.t5(bF.t4.t6(8))), bj.sE.sF(109, bH.pu(30)), bj.sE.sF(108, bj.eN.data[109].value), bj.sE.sF(111, bj.eN.data[109].value + 1), bj.sE.sF(107, 0), bj.sE.sF(110, "")
+		bj.y.wF(), bj.sE.sF(105, bF.t4.t5(bF.t4.t6(5))), bj.sE.sF(106, bF.t4.t5(bF.t4.t6(15))), bj.sE.sF(109, 0), bj.sE.sF(108, bj.eN.data[109].value), bj.sE.sF(111, bj.eN.data[109].value + 1), bj.sE.sF(107, 0), bj.sE.sF(110, "")
 	}, this.aTY = function() {
 		var data;
 		bH.size < bD.aTx(29) ? b0.y.aTI(0, 3254) : ((data = {
@@ -10275,9 +10275,9 @@ function aSo() {
 	this.aUH = function() {
 		bD.a7(39), bD.a8(1, 0), bD.a8(6, 16), b0.eW.aUI(), b0.y.send(0, bD.aC)
 	}, this.aUB = function(a1p) {
-		bD.a7(115), bD.a8(1, 0), bD.a8(6, 17), bG.t4.wy(bj.eN.data[105].value, 5), bG.t4.wy(bj.eN.data[106].value, 8), bD.a8(30, bj.eN.data[109].value), b0.y.send(a1p, bD.aC)
+		bD.a7(127), bD.a8(1, 0), bD.a8(6, 17), bG.t4.wy(bj.eN.data[105].value, 5), bG.t4.wy(bj.eN.data[106].value, 15), b0.y.send(a1p, bD.aC)
 	}, this.aQY = function() {
-		bD.a7(55), bD.a8(1, 0), bD.a8(6, 18), bG.t4.wx(bj.eN.data[110].value), b0.y.send(0, bD.aC)
+		bD.a7(97), bD.a8(1, 0), bD.a8(6, 18), bG.t4.wy(bj.eN.data[110].value, 15), b0.y.send(0, bD.aC)
 	}, this.aQU = function(a4X) {
 		var f1 = a4X.qT.length;
 		bD.a7(21 + 16 * f1), bD.a8(1, 0), bD.a8(6, 29), bD.a8(6, a4X.t3), bD.a8(8, f1), bF.wi.wx(a4X.qT), b0.y.send(0, bD.aC)
