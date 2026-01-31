@@ -62,10 +62,10 @@ function bt(bu) {
 }
 
 function dG() {
-	this.dp = 1117, this.n = 2153, this.rVersion = 17, this.dq = 0, this.dd = function() {
+	this.dp = 1117, this.n = 2155, this.rVersion = 17, this.dq = 0, this.dd = function() {
 		this.dr = 2;
 		var ds = bL.dt(this.n, 10) % 100,
-			ds = (this.dv = "24 Jan 2026 [" + bL.dt(this.n, 1e3) + "." + (ds < 10 ? "0" : "") + ds + "." + this.n % 10 + "]", window.location.hostname.toLowerCase());
+			ds = (this.dv = "31 Jan 2026 [" + bL.dt(this.n, 1e3) + "." + (ds < 10 ? "0" : "") + ds + "." + this.n % 10 + "]", window.location.hostname.toLowerCase());
 		this.a9 = !0, this.dx = 0 <= ds.indexOf("game.territorial.io"), this.aA = function() {
 			try {
 				return window.self !== window.top
@@ -126,7 +126,7 @@ function dE() {
 function eJ() {
 	var eP = 12e3;
 	this.show = function(eQ) {
-		return !eQ && !bU.eN() && (0 === a0.id ? bU.eK.show() : 2 === a0.id && !(bf.eR < eP) && (eP = bf.eR + 3e5, 2 === l.dr) && a0.a1.eS(Math.floor(3e5)))
+		return !eQ && !bU.eN() && (0 === a0.id ? bU.eK.show() : !(bf.eR < eP) && (eQ = 1 === a0.id ? 3e5 : 36e4, eP = bf.eR + eQ, 2 === l.dr) && a0.a1.eS(Math.floor(eQ)))
 	}
 }
 
@@ -2864,9 +2864,9 @@ function a1n() {
 		var a1w;
 		1 === a0.id && 7 <= a0.dv ? a0.wB.setState(5) : ((a1w = new URL(window.location)).searchParams.set("v", "" + Math.floor(1e3 * Math.random())), window.location.href = a1w.toString())
 	}, this.eM = function() {
-		0 !== a0.id && (1 === a0.id ? a0.wB.prepareAd("1688441405") : 2 === a0.id && (0 === a0.dv ? a0.wI.postMessage("prepare ad 2904813909") : a0.wI.postMessage("loadAds 2904813909")))
+		0 !== a0.id && (1 === a0.id ? a0.wB.prepareAd("8646194357") : 2 === a0.id && (0 === a0.dv ? a0.wI.postMessage("prepare ad 2904813909") : a0.wI.postMessage("loadAds 2904813909")))
 	}, this.eS = function(ds) {
-		return 0 !== a0.id && 1 !== a0.id && 2 === a0.id && 0 !== a0.dv && (a0.wI.postMessage("showAd"), !0)
+		return 0 !== a0.id && (1 === a0.id ? 12 <= a0.dv && (a0.wB.presentAd(ds), !0) : 2 === a0.id && 0 !== a0.dv && (a0.wI.postMessage("showAd"), !0))
 	}, this.dm = function() {
 		2 === a0.id && a0.dv < 23 && t.u(4, 1, new v("App Update Required", "A new iOS app version with bug fixes was published.<br>Please download the new Territorial.io app version for iOS:<br><a href='" + bK.a1x + "' target='_blank'>" + bK
 			.a1x + "</a>", !0, [new w("⬅️ " + L(37), function() {
