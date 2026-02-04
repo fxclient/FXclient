@@ -62,10 +62,10 @@ function bt(bu) {
 }
 
 function dG() {
-	this.dp = 1117, this.n = 2155, this.rVersion = 17, this.dq = 0, this.dd = function() {
+	this.dp = 1117, this.n = 2156, this.rVersion = 17, this.dq = 0, this.dd = function() {
 		this.dr = 2;
 		var ds = bL.dt(this.n, 10) % 100,
-			ds = (this.dv = "31 Jan 2026 [" + bL.dt(this.n, 1e3) + "." + (ds < 10 ? "0" : "") + ds + "." + this.n % 10 + "]", window.location.hostname.toLowerCase());
+			ds = (this.dv = "4 Feb 2026 [" + bL.dt(this.n, 1e3) + "." + (ds < 10 ? "0" : "") + ds + "." + this.n % 10 + "]", window.location.hostname.toLowerCase());
 		this.a9 = !0, this.dx = 0 <= ds.indexOf("game.territorial.io"), this.aA = function() {
 			try {
 				return window.self !== window.top
@@ -126,7 +126,7 @@ function dE() {
 function eJ() {
 	var eP = 12e3;
 	this.show = function(eQ) {
-		return !eQ && !bU.eN() && (0 === a0.id ? bU.eK.show() : !(bf.eR < eP) && (eQ = 1 === a0.id ? 3e5 : 36e4, eP = bf.eR + eQ, 2 === l.dr) && a0.a1.eS(Math.floor(eQ)))
+		return !eQ && !bU.eN() && (0 === a0.id ? bU.eK.show() : !(bf.eR < eP) && (eQ = 1 === a0.id ? 72e4 : 108e4, eP = bf.eR + eQ, 2 === l.dr) && a0.a1.eS(Math.floor(eQ)))
 	}
 }
 
