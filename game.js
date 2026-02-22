@@ -7,7 +7,7 @@ var l, aD, aE, aF, aG, aH, aI, aJ, aK, aL, aM, aN, aO, aP, aQ, aR, aS, aT, aU, a
 		"wheel", "translate(-50%, -50%)", "top", "tls7", "system-ui", "rgba(140,10,10,0.75)", "rgba(100,0,0,0.8)", "rgba(10,140,10,0.75)", "rgba(0,100,0,0.8)", "rgba(0,", "rgb(10,220,10)", "placeholder", "mouseover", "mouseout", "long", "logo",
 		"loading", "keydown", "italic ", "fixed", "file", "error", "en-US", "dotted", "data:image/png;base64,", "column", "break-all", "blur(4px)", "arena", "account", "accept", "_blank", "[Redacted Message]", "Seed", "Reload", "Patreon",
 		"Offensive Name", "Interest", "Hate Speech", "False Reporter", "Cheater", "CRTOR", "Bot ", "Block Account", "Battle Royale", "Ban IP", "Back", "Audit Log", "Arial Black, system-ui", "ADMIN", "@room", "255,255,255", "1v1", "1 Minute",
-		"1 Hour", "1 Day", "000", "0.4em 0em", "0.2em", "0,0,0", "/wiki/transactions", "/wiki/clans", "/privacy", ". Duration: x", ",0,0.85)", " solid white;}", " Rank: ", " / 180", " / 160", " -> ", "   Contest"
+		"1 Hour", "1 Day", "0em", "000", "0.4em 0em", "0.2em", "0,0,0", "/wiki/transactions", "/wiki/clans", "/privacy", ". Duration: x", ",0,0.85)", " solid white;}", " Rank: ", " / 180", " / 160", " -> ", "   Contest"
 	];
 
 function a() {
@@ -65,7 +65,7 @@ function dG() {
 	this.dp = 1118;
 	this.rVersion = 17, this.dt = 0, this.dd = function() {
 		this.du = 2;
-		this.n = "2.15.9", this.dw = "22 Feb 2026 [" + this.n + "]";
+		this.n = "2.15.10", this.dw = "22 Feb 2026 [" + this.n + "]";
 		var dx = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.dy = 0 <= dx.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -1619,11 +1619,11 @@ function te(tf, tg, th, ti, ra, rb) {
 			uC = bA.qt.sC(.04 + .02 * u9),
 			u9 = bA.qt.sC(.02 * u7 + .01 * u9),
 			uE = bA.qt.sC(.025);
-		tj.style.font = bA.qt.sk(0, uE), u7 < 1 && (uE = bA.qt.sk(0, u7 * uE), tl.style.font = uE, tn.style.font = uE, tt.style.font = uE, tq.style.font = uE, tm.style.font = uE), tk.style.height = bA.qt.r2(u8), tk.style.font = bA.qt.sk(0, .72 *
-				u8), bA.qt.r3(tk, 2), tl.style.top = bA.qt.r2(u8), tl.style.height = bA.qt.r2(uB), bA.qt.r3(tl, 2), tm.style.font = bA.qt.sk(0, u7 * bA.qt.sC(.02)), tm.style.top = bA.qt.r2(u8 + uB), tm.style.height = bA.qt.r2(uC), bA.qt.r3(tm,
-			2), tn.style.top = bA.qt.r2(u8 + uB + uC), tn.style.height = bA.qt.r2(uA), bA.qt.r3(tn, 2), tp.style.top = bA.qt.r2(u8 + uB + uC + uA), tp.style.height = bA.qt.r2(h.j / h.k - u8 - uB - 2 * uA - uC - u9), tq.style.top = bA.qt.r2(h.j /
-				h.k - uA - u9), tq.style.height = bA.qt.r2(u9), bA.qt.r3(tq, 8), ts.style.font = bA.qt.sk(0, .8 * u9), tt.style.top = bA.qt.r2(h.j / h.k - uA), tt.style.height = bA.qt.r2(uA), bA.qt.r3(tt, 8), tf.resize(tl), tg.resize(tl), th
-			.resize(tl), ti.resize(tl), u6 ? this.tu.resize(tp) : this.tv.resize()
+		tj.style.font = bA.qt.sk(0, uE), tn.style.font = bA.qt.sk(0, .9 * uE), tt.style.font = bA.qt.sk(0, .9 * uE), u7 < 1 && (uE = bA.qt.sk(0, u7 * uE), tl.style.font = uE, tn.style.font = uE, tt.style.font = uE, tq.style.font = uE, tm.style
+				.font = uE), tk.style.height = bA.qt.r2(u8), tk.style.font = bA.qt.sk(0, .72 * u8), bA.qt.r3(tk, 2), tl.style.top = bA.qt.r2(u8), tl.style.height = bA.qt.r2(uB), bA.qt.r3(tl, 2), tm.style.font = bA.qt.sk(0, u7 * bA.qt.sC(.02)), tm
+			.style.top = bA.qt.r2(u8 + uB), tm.style.height = bA.qt.r2(uC), bA.qt.r3(tm, 2), tn.style.top = bA.qt.r2(u8 + uB + uC), tn.style.height = bA.qt.r2(uA), bA.qt.r3(tn, 2), tp.style.top = bA.qt.r2(u8 + uB + uC + uA), tp.style.height = bA
+			.qt.r2(h.j / h.k - u8 - uB - 2 * uA - uC - u9), tq.style.top = bA.qt.r2(h.j / h.k - uA - u9), tq.style.height = bA.qt.r2(u9), bA.qt.r3(tq, 8), ts.style.font = bA.qt.sk(0, .8 * u9), tt.style.top = bA.qt.r2(h.j / h.k - uA), tt.style
+			.height = bA.qt.r2(uA), bA.qt.r3(tt, 8), tf.resize(tl), tg.resize(tl), th.resize(tl), ti.resize(tl), u6 ? this.tu.resize(tp) : this.tv.resize()
 	};
 	ra = this;
 	tj.style.position = "absolute", tj.style.top = "0", tj.style.left = "0", tj.style.width = "100%", tj.style.height = "100%", tj.style.backgroundColor = bB.nz, bJ.rL() || (tj.style.backdropFilter = "blur(4px)", tj.style.webkitBackdropFilter =
@@ -9225,7 +9225,7 @@ function aOc() {
 		var ry = bn.uJ.uK[aSB],
 			aSG = ry.length,
 			aSH = bn.uJ.uL[aSB];
-		aS0[2][1].rr.textContent = "" + aSG, aS0[3][1].rr.textContent = "Ready Players: " + aSH;
+		aS0[2][1].rr.textContent = "" + aSG, aS0[3][1].rr.textContent = "" + aSH;
 		for (aB = 0; aB < 4; aB++) {
 			var aSI = bn.y.rz[aB];
 			aS1[aB] ? 0 === aSI.u2 && (aS1[aB].rr.textContent = bS.xL.aN5[aSI.el]) : aS1[aB] = new rq(bS.xL.aN5[aSI.el], tf.rS[aB].button, 1, 1), bA.rs.startsWith(aS4[aB], "🏆 ") ? aSI.aEY || (aS4[aB] = aS4[aB].substring(3), tf.rS[aB].button
@@ -9268,8 +9268,8 @@ function aOc() {
 		return aS7(1), 2
 	})], bB.pE), aRz = new te(tf, tg, aS6, ti, aFP, bn.ug.aFv);
 	for (var aB = 0; aB < 4; aB++) aS0[0][aB] = new rq("0", tf.rS[aB].button), aS0[1][aB] = new rq("0", tf.rS[aB].button, 1);
-	aS0[2][1] = new rq("0", aS6.rS[1].button), aS0[3][1] = new rq("0", ti.rS[1].button), aS2 = [new rq("", aS6.rS[1].button, 1, 1), new rq("", ti.rS[1].button, 1, 1)], aS8(0, bn.y.rx[0], 1), aS8(2, bn.y.rx[2], 1), (aS3 = [new rq(L(281), aRz.u5(), 1,
-		0), new rq("", aRz.u5(), 1, 1)])[0].rr.style.fontSize = "0.4em", aS3[1].rr.style.fontSize = "0.4em"
+	aS0[2][1] = new rq("0", aS6.rS[1].button), aS0[3][1] = new rq("0", ti.rS[1].button), (aS2 = [new rq("", aS6.rS[1].button, 1, 1), new rq("", ti.rS[1].button, 1, 1)])[0].rr.style.bottom = "0em", aS2[1].rr.style.bottom = "0em", aS8(0, bn.y.rx[0],
+		1), aS8(2, bn.y.rx[2], 1), (aS3 = [new rq(L(281), aRz.u5(), 1, 0), new rq("", aRz.u5(), 1, 1)])[0].rr.style.fontSize = "0.4em", aS3[1].rr.style.fontSize = "0.4em"
 }
 
 function aOJ() {
