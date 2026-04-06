@@ -2,6 +2,7 @@ import ModUtils, { insert } from '../modUtils.js';
 
 // Custom lobby patches
 export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceCode, replaceRawCode, safeDictionary: dict, waitForMinification }) => {
+    return; // temporarily disabled
 
     // set player id correctly
     insertCode(`function aBG(aBE) {
