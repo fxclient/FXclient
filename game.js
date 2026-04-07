@@ -65,7 +65,7 @@ function dG() {
 	this.dp = 1119;
 	this.rVersion = 18, this.dt = 0, this.dd = function() {
 		this.du = 2;
-		this.n = "2.15.15", this.dw = "5 Apr 2026 [" + this.n + "]";
+		this.n = "2.15.16", this.dw = "7 Apr 2026 [" + this.n + "]";
 		var dx = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.dy = 0 <= dx.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -11988,18 +11988,26 @@ function abD() {
 
 function abC() {
 	this.abH = 28, this.aVM = 0, this.abG = null;
-	var abK = this.abI = null;
+	var abK = this.abI = null,
+		abL = new Uint8Array([2, 0, 2, 1, 1, 1, 1, 2, 0, 2]);
 
-	function abN(i1, abO) {
-		var fC, fE, er, iP, a3t = bA.qt.xP(i1, i1),
+	function abO(i1, abP) {
+		var fC, fE, er, iP, ed, a3t = bA.qt.xP(i1, i1),
 			i7 = bA.qt.getContext(a3t, !0),
 			i4 = bA.qt.getImageData(i7, i1, i1),
 			xa = i4.data,
 			lL = (i1 >> 1) - .5,
-			abP = .5 + lL;
-		for (abP *= abP, fE = 0; fE < i1; fE++)
-			for (fC = 0; fC < i1; fC++) iP = (iP = fC - lL) * iP + (iP = fE - lL) * iP, xa[er = 4 * (fE * i1 + fC)] = abO[0], xa[1 + er] = abO[1], xa[2 + er] = abO[2], xa[3 + er] = (abP - iP) * abO[3] / abP;
-		return i7.putImageData(i4, 0, 0), a3t
+			abQ = .5 + lL;
+		for (abQ *= abQ, fE = 0; fE < i1; fE++)
+			for (fC = 0; fC < i1; fC++) iP = (iP = fC - lL) * iP + (iP = fE - lL) * iP, xa[er = 4 * (fE * i1 + fC)] = abP[0], xa[1 + er] = abP[1], xa[2 + er] = abP[2], xa[3 + er] = (abQ - iP) * abP[3] / abQ;
+		return (128 === abP[0] || bS.el < 2) && (abR(xa, i1, ed = 380 < abP[0] + abP[1] + abP[2] ? 0 : 255, -1, -1), abR(xa, i1, ed, 1, -1), abR(xa, i1, ed, -1, 1), abR(xa, i1, ed, 1, 1)), i7.putImageData(i4, 0, 0), a3t
+	}
+
+	function abR(xa, i1, ed, yv, yw) {
+		for (var fO = abL, f5 = fO.length, lL = i1 >> 1, abS = 1 - yv >> 1, abT = 1 - yw >> 1, aB = 0; aB < f5; aB += 2) {
+			var er = 4 * ((lL + yw * fO[aB + 1] - abT) * i1 + lL + yv * fO[aB] - abS);
+			xa[er] = ed, xa[1 + er] = ed, xa[2 + er] = ed
+		}
 	}
 
 	function aaR(aB, i7, a3t, i1) {
@@ -12013,16 +12021,16 @@ function abC() {
 			function(sV) {
 				var i1 = sV.abH;
 				if (sV.abI = [], abK = [], aD.hz) {
-					for (var aB = 0; aB <= aD.yC; aB++) sV.abI.push(abN(i1, bg.aYl[bg.kn[aB]])), abK.push(abN(i1 >> 1, bg.aYl[bg.kn[aB]]));
-					9 === aD.ki && abK.push(abN(i1, bg.aYl[1]))
-				} else sV.abI.push(abN(i1, bg.aYl[7])), sV.abI.push(abN(i1, bg.aYl[4])), abK.push(abN(i1 >> 1, bg.aYl[7]))
+					for (var aB = 0; aB <= aD.yC; aB++) sV.abI.push(abO(i1, bg.aYl[bg.kn[aB]])), abK.push(abO(i1 >> 1, bg.aYl[bg.kn[aB]]));
+					9 === aD.ki && abK.push(abO(i1, bg.aYl[1]))
+				} else sV.abI.push(abO(i1, bg.aYl[7])), sV.abI.push(abO(i1, bg.aYl[4])), abK.push(abO(i1 >> 1, bg.aYl[7]))
 			}(this),
-			function(sV, abQ) {
+			function(sV, abU) {
 				var aB, abG = sV.abG,
 					i7 = bA.qt.getContext(abG, !0),
 					f5 = aD.f2,
 					i1 = sV.abH >> 1;
-				i7.imageSmoothingEnabled = !1, i7.setTransform(1, 0, 0, 1, 0, 0), abQ && i7.clearRect(0, 0, abG.width, abG.height);
+				i7.imageSmoothingEnabled = !1, i7.setTransform(1, 0, 0, 1, 0, 0), abU && i7.clearRect(0, 0, abG.width, abG.height);
 				if (9 === aD.ki) {
 					i1 <<= 1;
 					sV = az.kr[5];
@@ -12031,30 +12039,30 @@ function abC() {
 				}
 				for (aB = aD.kQ; aB < f5; aB++) aaR(aB, i7, abK, i1)
 			}(this, null !== (sV = this).abG && sV.abG.width === bS.fG - 2 && sV.abG.height === bS.fH - 2 || (sV.abG = bA.qt.xP(bS.fG - 2, bS.fH - 2), !1)), aD.hT || this.a5P()
-	}, this.aYk = abN, this.a5P = function() {
+	}, this.aYk = abO, this.a5P = function() {
 		for (var f5 = aD.kQ, i1 = this.abH, abI = this.abI, i7 = bA.qt.getContext(this.abG, !0), aB = 0; aB < f5; aB++) aaR(aB, i7, abI, i1)
 	}
 }
 
 function d9() {
-	function abT() {
+	function abX() {
 		8 === aD.ki && 1 === aD.a11 && bR.a0d.a10()
 	}
 
-	function abS(player) {
+	function abW(player) {
 		aD.hT ? (ak.aIj(player), al.aLm(), aD.kk && aD.qF.eY()) : b3.aE0(player)
 	}
 	this.ph = function(player) {
-		aN.a1E(player, player === aD.ep ? 21 : 22), abS(player), abT()
+		aN.a1E(player, player === aD.ep ? 21 : 22), abW(player), abX()
 	}, this.qC = function(player) {
-		1 === aD.a11 && 0 !== ag.mz[player] && 2 !== ag.a4P[player] && abS(player), aD.a14--, aD.a13--, aN.a1E(player, 4), bA.gR.hG(2) && aW.ml(!0), abT()
+		1 === aD.a11 && 0 !== ag.mz[player] && 2 !== ag.a4P[player] && abW(player), aD.a14--, aD.a13--, aN.a1E(player, 4), bA.gR.hG(2) && aW.ml(!0), abX()
 	}
 }
 
 function dJ() {
 	this.aVc = ["rgba(90,90,90,0.88)", "rgba(130,12,12,0.88)", "rgba(12,130,12,0.88)", "rgba(12,12,130,0.88)", "rgba(130,130,12,0.88)", "rgba(130,12,130,0.88)", "rgba(12,130,130,0.88)", "rgba(130,130,130,0.88)", "rgba(0,0,0,0.88)"], this.aBc = [
 		"rgb(210,200,200)", "rgb(255,120,120)", "rgb(0,230,0)", "rgb(150,150,255)", "rgb(240,240,25)", "rgb(255,70,255)", "rgb(25,240,240)", bB.o0, "rgb(170,170,170)"
-	], this.abU = [bB.o0, "rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,255)", "rgb(255,255,0)", "rgb(255,0,255)", "rgb(0,255,255)", bB.o0, bB.nr], this.abV = [bB.nr, bB.o0, bB.o0, bB.o0, bB.nr, bB.nr, bB.nr, bB.nr, bB.o0];
+	], this.abY = [bB.o0, "rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,255)", "rgb(255,255,0)", "rgb(255,0,255)", "rgb(0,255,255)", bB.o0, bB.nr], this.abZ = [bB.nr, bB.o0, bB.o0, bB.o0, bB.nr, bB.nr, bB.nr, bB.nr, bB.o0];
 	var aLw = ["255,255,255", "0,0,0", "255,4,4", "200,4,4", "4,255,4", "4,180,4", "255,195,195", "90,3,3", "200,255,200", "3,84,3"];
 	this.aLF = ["rgba(" + aLw[0] + ",", "rgba(" + aLw[1] + ",", "rgba(" + aLw[2] + ",", "rgba(" + aLw[3] + ",", "rgba(" + aLw[4] + ",", "rgba(" + aLw[5] + ",", "rgba(" + aLw[6] + ",", "rgba(" + aLw[7] + ",", "rgba(" + aLw[8] + ",", "rgba(" + aLw[9] +
 			","
@@ -12084,7 +12092,7 @@ function dJ() {
 		function() {
 			this.a1N = [L(513), L(514), L(515), L(516), L(517), L(518), L(519), L(520), L(521)]
 		}, this.dd = function() {
-			if (this.f3.fill(0), this.aBd.fill(0), this.abW(), aD.hz) {
+			if (this.f3.fill(0), this.aBd.fill(0), this.aba(), aD.hz) {
 				if (9 === aD.ki) {
 					for (var f3 = bg.f3, aB = aD.data.teamPlayerCount[7] - 1; 0 <= aB; aB--) f3[aB] = 1;
 					var f5 = aD.f2;
@@ -12095,27 +12103,27 @@ function dJ() {
 						colorsData = aD.data.colorsData;
 					if (!aD.data.selectableColor)
 						for (var aB = aD.kQ - 1; 0 <= aB; aB--) colorsData[aB] = ay.jh(262144);
-					var abh = 0,
+					var abl = 0,
 						fL = 768,
 						aV6 = [4 * (colorsData[0] >> 12), 4 * (colorsData[0] >> 6 & 63), 4 * (63 & colorsData[0])],
 						teamPlayerCount = aD.data.teamPlayerCount;
 					for (aB = 0; aB < 9; aB++)
 						if (teamPlayerCount[aB]) {
 							for (var f8 = 0, fP = 0; fP < 3; fP++) f8 += Math.abs(aYQ[aB][fP] - aV6[fP]);
-							f8 < fL && (abh = aB, fL = f8)
-						} var abi = new Uint16Array(9);
-					for (aB = 0; aB < 9; aB++) abi[aB] = teamPlayerCount[aB];
+							f8 < fL && (abl = aB, fL = f8)
+						} var abm = new Uint16Array(9);
+					for (aB = 0; aB < 9; aB++) abm[aB] = teamPlayerCount[aB];
 					var kn = bg.kn,
-						abj = new Uint8Array(9),
+						abn = new Uint8Array(9),
 						gY = (kn[0] = 0, 1);
-					for (aB = 1; aB < 9; aB++) abi[aB] && (abj[aB] = gY, kn[gY++] = aB);
+					for (aB = 1; aB < 9; aB++) abm[aB] && (abn[aB] = gY, kn[gY++] = aB);
 					var jg = aD.kQ,
 						f3 = bg.f3;
-					abi[abh] ? (abi[abh]--, f3[0] = abj[abh]) : jg = 0;
+					abm[abl] ? (abm[abl]--, f3[0] = abn[abl]) : jg = 0;
 					var ed = 0;
 					for (aB = jg; aB < aD.y5; aB++) {
 						var hx = kn[ed];
-						if (abi[hx]) abi[hx]--, f3[aB] = abj[hx];
+						if (abm[hx]) abm[hx]--, f3[aB] = abn[hx];
 						else if (aB--, 9 <= ++ed) return console.log("error 325")
 					}
 				}() : this.eY();
@@ -12137,71 +12145,71 @@ function dJ() {
 					9 === aD.ki && aBd.fill(1, f5 - az.kr[5])
 				}()
 			}
-		}, this.abW = function() {
+		}, this.aba = function() {
 			for (var aB = this.kn.length - 1; 0 <= aB; aB--) this.kn[aB] = aB
 		}, this.eY = function() {
 			var a07 = new Uint8Array(aD.kQ),
 				a08 = new Uint8Array(aD.kQ),
-				abb = new Uint16Array(8),
-				abc = new Uint16Array(this.kn.length);
-			this.abd(a07, a08, abb, 1), this.aIA(abb), this.abe(abc, a07, a08), this.abf(a07, a08, abc), this.abg()
-		}, this.abd = function(a07, a08, abi, abk) {
-			for (var fP, e, abl, f5 = this.kn.length - abk, g = new Uint16Array(f5), aYQ = this.aYQ, colorsData = aD.data.colorsData, aB = aD.kQ - 1; 0 <= aB; aB--) {
-				for (fP = f5; abk <= fP; fP--) g[fP - 1] = Math.abs(4 * (colorsData[aB] >> 12) - aYQ[fP][0]) + Math.abs(4 * (colorsData[aB] >> 6 & 63) - aYQ[fP][1]) + Math.abs(4 * (63 & colorsData[aB]) - aYQ[fP][2]);
-				for (abl = 768, fP = f5 - 1; 0 <= fP; fP--) g[e = (fP + aB) % f5] < abl && (abl = g[e], a07[aB] = e);
-				for (abi[a07[aB]] += 4, abl = 768, fP = f5 - 1; 0 <= fP; fP--) g[e = (fP + aB) % f5] < abl && e !== a07[aB] && (abl = g[e], a08[aB] = e);
-				abi[a08[aB]]++
+				abf = new Uint16Array(8),
+				abg = new Uint16Array(this.kn.length);
+			this.abh(a07, a08, abf, 1), this.aIA(abf), this.abi(abg, a07, a08), this.abj(a07, a08, abg), this.abk()
+		}, this.abh = function(a07, a08, abm, abo) {
+			for (var fP, e, abp, f5 = this.kn.length - abo, g = new Uint16Array(f5), aYQ = this.aYQ, colorsData = aD.data.colorsData, aB = aD.kQ - 1; 0 <= aB; aB--) {
+				for (fP = f5; abo <= fP; fP--) g[fP - 1] = Math.abs(4 * (colorsData[aB] >> 12) - aYQ[fP][0]) + Math.abs(4 * (colorsData[aB] >> 6 & 63) - aYQ[fP][1]) + Math.abs(4 * (63 & colorsData[aB]) - aYQ[fP][2]);
+				for (abp = 768, fP = f5 - 1; 0 <= fP; fP--) g[e = (fP + aB) % f5] < abp && (abp = g[e], a07[aB] = e);
+				for (abm[a07[aB]] += 4, abp = 768, fP = f5 - 1; 0 <= fP; fP--) g[e = (fP + aB) % f5] < abp && e !== a07[aB] && (abp = g[e], a08[aB] = e);
+				abm[a08[aB]]++
 			}
-		}, this.aIA = function(abi) {
+		}, this.aIA = function(abm) {
 			for (var fP, lN, f5 = this.kn.length - 1, aB = f5; 0 <= aB; aB--) this.kn[aB] = aB;
-			for (aB = f5 - 1; 0 <= aB; aB--) abi[aB]++;
+			for (aB = f5 - 1; 0 <= aB; aB--) abm[aB]++;
 			for (aB = 1; aB <= f5; aB++) {
-				for (lN = 0, fP = 1; fP < f5; fP++) abi[fP] > abi[lN] && (lN = fP);
-				abi[lN] = 0, this.kn[aB] = lN + 1
+				for (lN = 0, fP = 1; fP < f5; fP++) abm[fP] > abm[lN] && (lN = fP);
+				abm[lN] = 0, this.kn[aB] = lN + 1
 			}
-		}, this.abe = function(abc, a07, a08) {
-			var fP, a1j, ed, f8, e, nc, tb, abm = this.kn.length - 1,
-				rM = new Uint16Array(abm),
-				abn = [],
-				abo = 0,
+		}, this.abi = function(abg, a07, a08) {
+			var fP, a1j, ed, f8, e, nc, tb, abq = this.kn.length - 1,
+				rM = new Uint16Array(abq),
+				abr = [],
+				abt = 0,
 				a1i = [],
-				abp = [];
+				abu = [];
 			loop: for (var aB = 0; aB < aD.kQ; aB++)
 				if (null !== (a1j = bA.rs.a1k(ag.a1h[aB]))) {
 					for (fP = a1i.length - 1; 0 <= fP; fP--)
 						if (a1j === a1i[fP]) {
-							abp[fP].push(aB), abo = Math.max(abo, abp[fP].length);
+							abu[fP].push(aB), abt = Math.max(abt, abu[fP].length);
 							continue loop
-						} a1i.push(a1j), abn.push(!1), abp.push([aB]), abo = Math.max(abo, 1)
+						} a1i.push(a1j), abr.push(!1), abu.push([aB]), abt = Math.max(abt, 1)
 				}
-			for (; 2 < aD.yC && abo > bL.fW(aD.kQ, aD.yC);) aD.yC--, aD.ki--;
+			for (; 2 < aD.yC && abt > bL.fW(aD.kQ, aD.yC);) aD.yC--, aD.ki--;
 			for (fP = a1i.length - 1; 0 <= fP; fP--) {
-				for (f8 = -1, ed = a1i.length - 1; 0 <= ed; ed--) !abn[ed] && (-1 === f8 || abp[ed].length > abp[f8].length) && (f8 = ed);
-				for (ed = abm - 1; 0 <= ed; ed--) rM[ed] = 1;
-				for (ed = abp[f8].length - 1; 0 <= ed; ed--) rM[a07[abp[f8][ed]]] += 3, rM[a08[abp[f8][ed]]]++;
-				for (aB = abm - 1; 0 <= aB; aB--) {
-					for (e = f8 % abm, ed = abm - 1; 0 <= ed; ed--) rM[ed] > rM[e] && (e = ed);
+				for (f8 = -1, ed = a1i.length - 1; 0 <= ed; ed--) !abr[ed] && (-1 === f8 || abu[ed].length > abu[f8].length) && (f8 = ed);
+				for (ed = abq - 1; 0 <= ed; ed--) rM[ed] = 1;
+				for (ed = abu[f8].length - 1; 0 <= ed; ed--) rM[a07[abu[f8][ed]]] += 3, rM[a08[abu[f8][ed]]]++;
+				for (aB = abq - 1; 0 <= aB; aB--) {
+					for (e = f8 % abq, ed = abq - 1; 0 <= ed; ed--) rM[ed] > rM[e] && (e = ed);
 					for (nc = -1, ed = aD.yC; 0 < ed; ed--)
 						if (this.kn[ed] === e + 1) {
 							nc = ed;
 							break
 						} if (rM[e] = 0, -1 !== nc) {
-						for (tb = 0, ed = aD.yC; 0 < ed; ed--) abc[nc] > abc[ed] && tb++;
+						for (tb = 0, ed = aD.yC; 0 < ed; ed--) abg[nc] > abg[ed] && tb++;
 						if (tb !== aD.yC - 1) {
-							for (ed = abp[f8].length - 1; 0 <= ed; ed--) abc[nc]++, this.f3[abp[f8][ed]] = nc;
+							for (ed = abu[f8].length - 1; 0 <= ed; ed--) abg[nc]++, this.f3[abu[f8][ed]] = nc;
 							break
 						}
 					}
 				}
-				abn[f8] = !0
+				abr[f8] = !0
 			}
-		}, this.abf = function(a07, a08, abc) {
-			for (var aB, iO, f5 = this.kn.length - 1, border = bL.fW(aD.kQ, aD.yC), abq = (0 < aD.kQ % aD.yC && border++, new Uint8Array(1 + f5)), fP = f5; 1 <= fP; fP--) abq[this.kn[fP]] = fP;
-			for (aB = 0; aB < aD.kQ; aB++) iO = abq[a07[aB] + 1], 0 === this.f3[aB] && iO <= aD.yC && abc[iO] < border && (abc[iO]++, this.f3[aB] = iO);
-			for (aB = 0; aB < aD.kQ; aB++) iO = abq[a08[aB] + 1], 0 === this.f3[aB] && iO <= aD.yC && abc[iO] < border && (abc[iO]++, this.f3[aB] = iO);
+		}, this.abj = function(a07, a08, abg) {
+			for (var aB, iO, f5 = this.kn.length - 1, border = bL.fW(aD.kQ, aD.yC), abv = (0 < aD.kQ % aD.yC && border++, new Uint8Array(1 + f5)), fP = f5; 1 <= fP; fP--) abv[this.kn[fP]] = fP;
+			for (aB = 0; aB < aD.kQ; aB++) iO = abv[a07[aB] + 1], 0 === this.f3[aB] && iO <= aD.yC && abg[iO] < border && (abg[iO]++, this.f3[aB] = iO);
+			for (aB = 0; aB < aD.kQ; aB++) iO = abv[a08[aB] + 1], 0 === this.f3[aB] && iO <= aD.yC && abg[iO] < border && (abg[iO]++, this.f3[aB] = iO);
 			for (fP = aD.yC; 1 <= fP; fP--)
-				for (aB = aD.kQ - 1; 0 <= aB && !(abc[fP] >= border); aB--) 0 === this.f3[aB] && (abc[fP]++, this.f3[aB] = fP)
-		}, this.abg = function() {
+				for (aB = aD.kQ - 1; 0 <= aB && !(abg[fP] >= border); aB--) 0 === this.f3[aB] && (abg[fP]++, this.f3[aB] = fP)
+		}, this.abk = function() {
 			if (aD.yC < 8) aD.yC++, aD.ki++, aD.yD = 1;
 			else
 				for (var aB = aD.kQ; aB < aD.f2; aB++) this.f3[aB] = 1 + aB % aD.yC
@@ -12230,12 +12238,12 @@ function db() {
 			f5 = gl[player].length,
 			f7 = ac.f7;
 		loop: for (var aB = f5 - 1; 0 <= aB; aB--) {
-			for (var abr = !1, abt = !1, f8 = 3; 0 <= f8; f8--) {
+			for (var abw = !1, abx = !1, f8 = 3; 0 <= f8; f8--) {
 				var gd = gl[player][aB] + f7[f8];
 				if (ac.aIU(gd, player)) continue loop;
-				abr = abr || ac.iJ(gd), abt = abt || ac.aIT(gd)
+				abw = abw || ac.iJ(gd), abx = abx || ac.aIT(gd)
 			}
-			abr ? gm[player].push(gl[player][aB]) : abt ? fU[player].push(gl[player][aB]) : ac.ye(gl[player][aB], player), gl[player][aB] = gl[player][f5 - 1], gl[player].pop(), f5--
+			abw ? gm[player].push(gl[player][aB]) : abx ? fU[player].push(gl[player][aB]) : ac.ye(gl[player][aB], player), gl[player][aB] = gl[player][f5 - 1], gl[player].pop(), f5--
 		}
 	}, this.gj = function() {
 		ag.gt[g0] -= g1
@@ -12301,10 +12309,10 @@ function db() {
 }
 
 function dV() {
-	this.qO = new abu
+	this.qO = new aby
 }
 
-function abu() {
+function aby() {
 	this.hh = function(player) {
 		bA.gR.a4Q(player) && aN.zT(80, L(522), 637, 0, bB.oq, bB.nx, -1, !1)
 	}, this.hk = function(player) {
@@ -12312,106 +12320,106 @@ function abu() {
 	}
 }
 
-function abv() {
-	this.abw = 0, this.eY = function() {
+function abz() {
+	this.ac0 = 0, this.eY = function() {
 		aO.eY(), aZ.eY(), h.eY(), b0.y.eY(), ax.aHg(), bU.eM.eY(), bf.dk && (bf.dk = !1, aa.vY())
 	}
 }
 
-function abx() {
-	this.eT = bf.eT, this.eC = 0, this.abw = 0, this.aHe = 0, this.aby = null, this.abz = 7, this.ac0 = 0, this.dd = function() {
-		this.aHe = 0, this.aby = [], this.eC = 0, this.abw = 0
+function ac1() {
+	this.eT = bf.eT, this.eC = 0, this.ac0 = 0, this.aHe = 0, this.ac2 = null, this.ac3 = 7, this.ac4 = 0, this.dd = function() {
+		this.aHe = 0, this.ac2 = [], this.eC = 0, this.ac0 = 0
 	}, this.aUY = function(aC) {
 		if (aD.hT) this.aCP(aC);
-		else if (this.aby.push(aC), 2 === aD.a11) {
-			for (var aB = 0; aB < this.aby.length; aB++) b8.pK.eY(this.aby[aB]);
-			this.aby = []
+		else if (this.ac2.push(aC), 2 === aD.a11) {
+			for (var aB = 0; aB < this.ac2.length; aB++) b8.pK.eY(this.ac2[aB]);
+			this.ac2 = []
 		}
 	}, this.aCP = function(aC) {
-		2 !== aD.a11 && (b8.pK.eY(aC), b9.eY(), aW.aCP(this.aHe), this.aHe === aD.a5V ? (aD.qF.eY(), this.aHe = 0, this.eC = 0, this.abw = 0, this.eT = bf.eT) : (this.aHe++, af.a5O(), af.ml(!0), bb.aCy()))
+		2 !== aD.a11 && (b8.pK.eY(aC), b9.eY(), aW.aCP(this.aHe), this.aHe === aD.a5V ? (aD.qF.eY(), this.aHe = 0, this.eC = 0, this.ac0 = 0, this.eT = bf.eT) : (this.aHe++, af.a5O(), af.ml(!0), bb.aCy()))
 	}, this.eY = function() {
-		h.eY(), aD.hT ? (bf.dk = aW.aCP(-1) || bf.dk, mn()) : (0 !== this.eC || bf.eT >= this.eT && (this.eT += bf.aCO * Math.floor(1 + (bf.eT - this.eT) / bf.aCO), 2 === aD.a11 ? mc() : this.ac1(), this.eC++, 27 < bf.eT - this.ac0)) && this
-		.ac2(), mi(), bf.dk && (bf.dk = !1, z3()), this.ac0 = bf.eT
-	}, this.ac2 = function() {
+		h.eY(), aD.hT ? (bf.dk = aW.aCP(-1) || bf.dk, mn()) : (0 !== this.eC || bf.eT >= this.eT && (this.eT += bf.aCO * Math.floor(1 + (bf.eT - this.eT) / bf.aCO), 2 === aD.a11 ? mc() : this.ac5(), this.eC++, 27 < bf.eT - this.ac4)) && this
+		.ac6(), mi(), bf.dk && (bf.dk = !1, z3()), this.ac4 = bf.eT
+	}, this.ac6 = function() {
 		bf.dk = !0, mk(), this.eC = 0
-	}, this.ac1 = function() {
+	}, this.ac5 = function() {
 		var wO, aB;
-		if (this.abw !== 7 * this.aHe) me(), bb.aCy();
+		if (this.ac0 !== 7 * this.aHe) me(), bb.aCy();
 		else {
 			wO = !1;
-			loop: for (; this.ac3() && (wO = !0, me(), 2 !== aD.a11) && 0 < this.aby.length;)
-				for (aB = this.abz - 2; 0 <= aB; aB--)
+			loop: for (; this.ac7() && (wO = !0, me(), 2 !== aD.a11) && 0 < this.ac2.length;)
+				for (aB = this.ac3 - 2; 0 <= aB; aB--)
 					if (me(), 2 === aD.a11) break loop;
 			wO ? bb.aCy() : (mc(), bb.a5R())
 		}
-	}, this.ac3 = function() {
-		return 0 < this.aby.length && (this.aHe++, b8.pK.eY(this.aby[0]), this.aby.shift(), !0)
+	}, this.ac7 = function() {
+		return 0 < this.ac2.length && (this.aHe++, b8.pK.eY(this.ac2[0]), this.ac2.shift(), !0)
 	}
 }
 
-function ac4() {
-	var ac5, ac6, ac7, aHe, ac8, eC = 0,
+function ac8() {
+	var ac9, acA, acB, aHe, acC, eC = 0,
 		eT = bf.eT;
 
-	function acB() {
+	function acF() {
 		! function() {
 			if (!aD.hT) return;
 			if (aD.kk) return;
 			if (2 !== aD.a11)
-				if (ac8 % 7 != 0) ac8++;
+				if (acC % 7 != 0) acC++;
 				else if (aHe === aD.a5V) {
-				if (!acE()) return;
+				if (!acI()) return;
 				aW.aCP(aHe), aD.qF.eY()
 			} else {
-				if (!acE()) return;
-				ac8++, aHe++, af.a5O(), af.ml(!0)
+				if (!acI()) return;
+				acC++, aHe++, af.a5O(), af.ml(!0)
 			}
 			return 1
-		}() && acE() && me()
+		}() && acI() && me()
 	}
 
-	function acC() {
-		eC = 0, (aD.hT ? (bf.dk = aW.aCP(aHe - (ac8 % 7 == 0 ? 0 : 1) + ac8 % 7 / 7) || bf.dk, mn) : aM.hF || !bC.a5s ? mn : (bf.dk = !0, mk))()
+	function acG() {
+		eC = 0, (aD.hT ? (bf.dk = aW.aCP(aHe - (acC % 7 == 0 ? 0 : 1) + acC % 7 / 7) || bf.dk, mn) : aM.hF || !bC.a5s ? mn : (bf.dk = !0, mk))()
 	}
 
-	function acE() {
-		var aB, f5, acF = b9.qD.aW2,
+	function acI() {
+		var aB, f5, acJ = b9.qD.aW2,
 			fo = b9.qD.aW3,
 			fq = b9.qD.aW4,
 			fs = b9.qD.aW5,
-			acG = b9.qD.aW6,
-			acH = b9.qD.aW7;
-		if (!(ac5 >= acH.length)) {
-			if (acH = acH[ac5], acG[ac5]) {
-				for (f5 = ac6 + acH, aB = ac6; aB < f5; aB++) b8.pK.q2(acF[aB], fo[aB], fq[aB], fs[aB]);
-				ac6 += acH, ac5++
-			} else ++ac7 >= acH && (ac5++, ac7 = 0);
+			acK = b9.qD.aW6,
+			acL = b9.qD.aW7;
+		if (!(ac9 >= acL.length)) {
+			if (acL = acL[ac9], acK[ac9]) {
+				for (f5 = acA + acL, aB = acA; aB < f5; aB++) b8.pK.q2(acJ[aB], fo[aB], fq[aB], fs[aB]);
+				acA += acL, ac9++
+			} else ++acB >= acL && (ac9++, acB = 0);
 			return 1
 		}
 		aN.a2M("Replay file smaller than expected."), bC.a3B(!1), aD.a11 = 2
 	}
-	this.abw = 0, this.dd = function() {
-		ac8 = aHe = ac7 = ac6 = ac5 = 0
+	this.ac0 = 0, this.dd = function() {
+		acC = aHe = acB = acA = ac9 = 0
 	}, this.eY = function() {
 		var aZv;
-		h.eY(), bC.a9c() < 1.7 ? 0 === eC ? bf.eT >= eT && (aZv = bf.aCO / bC.a9c(), eT += aZv * Math.floor(1 + (bf.eT - eT) / aZv), 2 === aD.a11 || aM.hF || !bC.a5s ? mc() : (acB(), bb.aCy()), eC++) : acC() : function() {
+		h.eY(), bC.a9c() < 1.7 ? 0 === eC ? bf.eT >= eT && (aZv = bf.aCO / bC.a9c(), eT += aZv * Math.floor(1 + (bf.eT - eT) / aZv), 2 === aD.a11 || aM.hF || !bC.a5s ? mc() : (acF(), bb.aCy()), eC++) : acG() : function() {
 			var aZv;
 			if (bf.eT >= eT)
 				if (2 === aD.a11 || aM.hF || !bC.a5s) mc(), eT = bf.eT;
 				else {
-					for (aZv = bf.aCO / bC.a9c(), 16 < (bf.eT - eT) / aZv && (eT = bf.eT - 16 * aZv); bf.eT >= eT && 2 !== aD.a11;) eT += aZv, acB();
+					for (aZv = bf.aCO / bC.a9c(), 16 < (bf.eT - eT) / aZv && (eT = bf.eT - 16 * aZv); bf.eT >= eT && 2 !== aD.a11;) eT += aZv, acF();
 					bb.aCy()
-				} acC()
+				} acG()
 		}(), mi(), bf.dk && (bf.dk = !1, z3())
 	}, this.a1C = function() {
-		b9.qD.aW7.length - ac5 <= 2 || aN.a2M("Replay file larger than expected.")
+		b9.qD.aW7.length - ac9 <= 2 || aN.a2M("Replay file larger than expected.")
 	}
 }
 
-function acI() {
+function acM() {
 	var eC = 0,
 		eT = bf.eT;
-	this.abw = 0, this.eY = function() {
+	this.ac0 = 0, this.eY = function() {
 		h.eY(), aD.hT ? mn() : 0 === eC ? bf.eT >= eT && (eT += bf.aCO * Math.floor(1 + (bf.eT - eT) / bf.aCO), 2 === aD.a11 || aM.hF ? mc() : (me(), bb.aCy()), eC++) : ((aM.hF ? mn : (bf.dk = !0, mk))(), eC = 0), mi(), bf.dk && (bf.dk = !1,
 		z3())
 	}
@@ -12419,62 +12427,62 @@ function acI() {
 
 function dR() {
 	this.a1B = null, this.dk = !1, this.eT = 0, this.aCO = 56;
-	var acJ = 0;
+	var acN = 0;
 
-	function acK() {
-		bf.eT = acJ = performance.now(), bf.a1B.eY(), window.requestAnimationFrame(acK)
+	function acO() {
+		bf.eT = acN = performance.now(), bf.a1B.eY(), window.requestAnimationFrame(acO)
 	}
 	this.dd = function() {
-		this.a5p(), window.requestAnimationFrame(acK), this.eT = performance.now()
+		this.a5p(), window.requestAnimationFrame(acO), this.eT = performance.now()
 	}, this.a5h = function() {
-		aD.hE ? (this.a1B = new ac4, this.a1B.dd()) : aD.kk ? this.a1B = new acI : (this.a1B = new abx, this.a1B.dd())
+		aD.hE ? (this.a1B = new ac8, this.a1B.dd()) : aD.kk ? this.a1B = new acM : (this.a1B = new ac1, this.a1B.dd())
 	}, this.a5p = function() {
-		this.a1B = new abv, this.dk = !0
+		this.a1B = new abz, this.dk = !0
 	}, this.eY = function() {
-		this.a1B.abw++
+		this.a1B.ac0++
 	}, this.kN = function() {
-		return this.a1B.abw
+		return this.a1B.ac0
 	}, this.aUG = function() {
 		var eU = performance.now();
-		eU < acJ + 1e3 || (this.eT = eU, this.a1B.eY())
+		eU < acN + 1e3 || (this.eT = eU, this.a1B.eY())
 	}
 }
 
 function ct() {
 	var aH0 = 0,
-		acL = !0;
+		acP = !0;
 
-	function acM(id) {
+	function acQ(id) {
 		id = [L(524), L(525), L(526), L(527)][id];
 		aN.a7e(id)
 	}
 	this.eY = function() {
 		var eU, a80;
-		bf.eT < aH0 || (aH0 = bf.eT + 3e3, aD.hE) || aD.kk || bA.gR.hH(aD.ep) || (eU = new Date, a80 = eU.getUTCSeconds(), acL ? a80 < 43 && (acL = !1) : a80 < 43 || (aH0 += 52e3, acL = !0, (a80 = (eU.getUTCMinutes() + 2) % 60) % 10 == 0 ? aD
-			.ki < 7 && acM(0) : a80 % 10 == 5 ? 7 !== aD.ki && 10 !== aD.ki || acM(1) : a80 % 10 == 7 ? 8 === aD.ki && acM(2) : a80 % 10 == 2 && 9 === aD.ki && acM(3)))
+		bf.eT < aH0 || (aH0 = bf.eT + 3e3, aD.hE) || aD.kk || bA.gR.hH(aD.ep) || (eU = new Date, a80 = eU.getUTCSeconds(), acP ? a80 < 43 && (acP = !1) : a80 < 43 || (aH0 += 52e3, acP = !0, (a80 = (eU.getUTCMinutes() + 2) % 60) % 10 == 0 ? aD
+			.ki < 7 && acQ(0) : a80 % 10 == 5 ? 7 !== aD.ki && 10 !== aD.ki || acQ(1) : a80 % 10 == 7 ? 8 === aD.ki && acQ(2) : a80 % 10 == 2 && 9 === aD.ki && acQ(3)))
 	}
 }
 
 function cn() {
-	var nQ, nR, nd, ne, acN = 0,
-		acO = 0;
+	var nQ, nR, nd, ne, acR = 0,
+		acS = 0;
 
-	function acQ() {
+	function acU() {
 		return Math.pow(Math.pow(nd - nQ, 2) + Math.pow(ne - nR, 2), .5)
 	}
 
-	function acP(e) {
+	function acT(e) {
 		nQ = h.k * e.touches[0].clientX, nR = h.k * e.touches[0].clientY, nd = h.k * e.touches[1].clientX, ne = h.k * e.touches[1].clientY
 	}
 	this.a2d = function(e) {
-		return 1 < e.touches.length ? (acO = bf.eT, acN = 3, acP(e), aL.sA(), !0) : (acN = 0, !1)
+		return 1 < e.touches.length ? (acS = bf.eT, acR = 3, acT(e), aL.sA(), !0) : (acR = 0, !1)
 	}, this.a2e = function(e) {
 		var aMk, iM, iN;
-		return 0 !== aD.a11 && 1 < e.touches.length && (acN = Math.max(acN - 1, 0), aH.ni() && (aMk = acQ(), acP(e), e = acQ(), iM = Math.floor((nQ + nd) / 2), iN = Math.floor((nR + ne) / 2), aS.aA3(iM, iN, Math.max(.125, e) / Math.max(.125,
+		return 0 !== aD.a11 && 1 < e.touches.length && (acR = Math.max(acR - 1, 0), aH.ni() && (aMk = acU(), acT(e), e = acU(), iM = Math.floor((nQ + nd) / 2), iN = Math.floor((nR + ne) / 2), aS.aA3(iM, iN, Math.max(.125, e) / Math.max(.125,
 			aMk)), bf.dk = !0), !0)
 	}, this.a31 = function() {
 		var fC, fE;
-		return !!(acN && (acN = 0, bf.eT < acO + 500)) && (fC = (nQ + nd) / 2, fE = (nR + ne) / 2, aL.a2v(fC, fE), aL.click(fC, fE, !0) && (bf.dk = !0), !0)
+		return !!(acR && (acR = 0, bf.eT < acS + 500)) && (fC = (nQ + nd) / 2, fE = (nR + ne) / 2, aL.a2v(fC, fE), aL.click(fC, fE, !0) && (bf.dk = !0), !0)
 	}
 }
 
@@ -12489,18 +12497,18 @@ function d2() {
 	}, this.aUg = function(size) {
 		var fP = size >> 1;
 		return (1 << fP) * this.q1(size - fP) + this.q1(fP)
-	}, this.aUh = function(acR) {
-		return this.size === bD.aUf(acR)
-	}, this.aWK = function(xr, acS, acT) {
+	}, this.aUh = function(acV) {
+		return this.size === bD.aUf(acV)
+	}, this.aWK = function(xr, acW, acX) {
 		var gY = this.q1(xr);
 		if (!gY) return null;
-		for (var xr = Math.max(gY, acT), g = new(acS <= 8 ? Uint8Array : acS <= 16 ? Uint16Array : Uint32Array)(xr), aB = 0; aB < gY; aB++) g[aB] = this.q1(acS);
-		acT = g[gY - 1];
-		return acT && g.fill(acT, gY), g
-	}, this.aWL = function(xr, acU, acT) {
+		for (var xr = Math.max(gY, acX), g = new(acW <= 8 ? Uint8Array : acW <= 16 ? Uint16Array : Uint32Array)(xr), aB = 0; aB < gY; aB++) g[aB] = this.q1(acW);
+		acX = g[gY - 1];
+		return acX && g.fill(acX, gY), g
+	}, this.aWL = function(xr, acY, acX) {
 		var gY = this.q1(xr);
 		if (!gY) return null;
-		for (var xr = Math.max(gY, acT), g = new Array(xr), aB = 0; aB < gY; aB++) g[aB] = this.aWI(acU);
+		for (var xr = Math.max(gY, acX), g = new Array(xr), aB = 0; aB < gY; aB++) g[aB] = this.aWI(acY);
 		return g.fill(g[gY - 1], gY), g
 	}, this.aWI = function(xr) {
 		return bG.wy.x2(this.q1(xr))
@@ -12508,9 +12516,9 @@ function d2() {
 		var qa = bF.tG.tH(bF.tG.tI(this.q1(30))),
 			qa = bA.rs.a5J(qa, "_", "/");
 		qa = bA.rs.a5J(qa, "-", "+");
-		for (var acV = "";
-			(qa.length + acV.length) % 4;) acV += "=";
-		qa = "data:image/png;base64," + qa + acV;
+		for (var acZ = "";
+			(qa.length + acZ.length) % 4;) acZ += "=";
+		qa = "data:image/png;base64," + qa + acZ;
 		var aJC = new Image;
 		aJC.onload = function() {
 			b9.aJk.aJl(aJC), aJC.onload = null, aJC = null
@@ -12539,8 +12547,8 @@ function co() {
 function a6() {
 	this.size = 0, this.eC = 0, this.aC = null, this.dd = function(aC) {
 		this.eC = 0, this.aC = aC, this.size = aC.length
-	}, this.a7 = function(acR) {
-		return this.dd(new Uint8Array(this.aUf(acR))), this.aC
+	}, this.a7 = function(acV) {
+		return this.dd(new Uint8Array(this.aUf(acV))), this.aC
 	}, this.ud = function() {
 		this.aC = null
 	}, this.a8 = function(size, a85) {
@@ -12550,12 +12558,12 @@ function a6() {
 		var fP = size >> 1,
 			f8 = 1 << fP;
 		this.a8(size - fP, bL.fW(a85, f8)), this.a8(fP, a85 % f8)
-	}, this.acY = function(size) {
+	}, this.acc = function(size) {
 		for (var aC = this.aC, ni = this.eC + size, aB = this.eC; aB < ni; aB++) aC[aB >> 3] &= 255 ^ 128 >>> (7 & aB)
-	}, this.aUf = function(acR) {
-		return acR + 7 >> 3
-	}, this.acZ = function(g, jg, ni, aca) {
-		for (var aB = jg; aB < ni; aB++) this.a8(aca, g[aB])
+	}, this.aUf = function(acV) {
+		return acV + 7 >> 3
+	}, this.acd = function(g, jg, ni, ace) {
+		for (var aB = jg; aB < ni; aB++) this.a8(ace, g[aB])
 	}
 }
 
@@ -12564,27 +12572,27 @@ function d1() {
 		this.g = [], this.eC = 0
 	}, this.aV3 = function() {
 		return new Uint8Array(this.g)
-	}, this.a8 = function(acb, value) {
-		for (var g = this.g, ni = this.eC + acb - 1, acc = 1 + (ni >> 3); g.length < acc;) g.push(0);
+	}, this.a8 = function(acf, value) {
+		for (var g = this.g, ni = this.eC + acf - 1, acg = 1 + (ni >> 3); g.length < acg;) g.push(0);
 		for (var aB = this.eC; aB <= ni; aB++) g[aB >> 3] |= (value >> ni - aB & 1) << 7 - (7 & aB);
-		this.eC += acb
-	}, this.dj = function(g, xr, acS) {
-		var acd = bA.r1.a3n(g);
-		this.a8(xr, acd);
-		for (var aB = 0; aB < acd; aB++) this.a8(acS, g[aB])
-	}, this.aWc = function(g, xr, acU) {
-		var acd = bA.r1.a3n(g);
-		this.a8(xr, acd);
-		for (var aB = 0; aB < acd; aB++) this.aWa(g[aB], acU)
+		this.eC += acf
+	}, this.dj = function(g, xr, acW) {
+		var ach = bA.r1.a3n(g);
+		this.a8(xr, ach);
+		for (var aB = 0; aB < ach; aB++) this.a8(acW, g[aB])
+	}, this.aWc = function(g, xr, acY) {
+		var ach = bA.r1.a3n(g);
+		this.a8(xr, ach);
+		for (var aB = 0; aB < ach; aB++) this.aWa(g[aB], acY)
 	}, this.aWa = function(qa, xr) {
 		var f5 = qa.length;
 		this.a8(xr, f5);
 		for (var aB = 0; aB < f5; aB++) this.a8(16, qa.charCodeAt(aB))
 	}, this.aWb = function(a3t) {
-		var ace = (a3t = a3t.toDataURL()).split(",");
-		if (ace.length < 2) console.log("error 266");
+		var aci = (a3t = a3t.toDataURL()).split(",");
+		if (aci.length < 2) console.log("error 266");
 		else {
-			a3t = bA.rs.a5J(a3t = ace[ace.length - 1], "/", "_"), a3t = bA.rs.a5J(a3t, "\\+", "-");
+			a3t = bA.rs.a5J(a3t = aci[aci.length - 1], "/", "_"), a3t = bA.rs.a5J(a3t, "\\+", "-");
 			var a3t = bA.rs.a5J(a3t, "=", ""),
 				xB = bG.tG.x8(a3t),
 				f5 = xB.length;
