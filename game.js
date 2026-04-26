@@ -65,7 +65,7 @@ function dG() {
 	this.dp = 1120;
 	this.rVersion = 19, this.dt = 0, this.dd = function() {
 		this.du = 2;
-		this.n = "2.15.19", this.dw = "25 Apr 2026 [" + this.n + "]";
+		this.n = "2.15.20", this.dw = "26 Apr 2026 [" + this.n + "]";
 		var dx = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.dy = 0 <= dx.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -2913,7 +2913,7 @@ function dU() {
 				if (bn.a2A && (4495 === e || 4480 === e) && b0.y.a2B !== a28) return void t.a2C();
 				if (8 !== aa.a2D() && a2E(), 4480 === e) return bj.sL.wh(), void t.u(4, 0, new v(L(42), L(43), !0));
 				var a2G = 0;
-				10 === t.a2H().a2I && (a2G = t.a2H().a2I), t.u(4, a2G, new v(L(40), a2J(e), !0))
+				t.a2H() && 10 === t.a2H().a2I && (a2G = t.a2H().a2I), t.u(4, a2G, new v(L(40), a2J(e), !0))
 			}
 		else {
 			a2G = aa.a2D();
