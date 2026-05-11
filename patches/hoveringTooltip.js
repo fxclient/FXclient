@@ -2,6 +2,8 @@ import ModUtils from "../modUtils.js"
 
 export default (/** @type {ModUtils} */ { insertCode, replaceRawCode, waitForMinification }) => {
 
+    return; // temporary
+
     insertCode(`/* here */
         this.click = function(lK, lL, a1m) {
         var gy = bL.gz(lK);

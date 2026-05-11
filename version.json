@@ -1,9 +1,9 @@
 {
-    "version": "0.6.18.1",
-    "lastUpdated": "Jan 25",
+    "version": "0.6.18.2",
+    "lastUpdated": "May 11",
     "changes": [
-        "Fixes for game update v2.15.3",
-        "The \"What's new\" screen is no longer shown automatically after insignificant updates (such as this one)"
+        "This is a quick temporary update just to get FX working again in a playable state. The hovering tooltip feature doesn't work currently, but will be fixed soon.", 
+        "To get density to display, you must turn on \"Place Balance Above\" in the game's settings if you haven't already."
     ],
-    "isSignificant": false
+    "isSignificant": true
 }

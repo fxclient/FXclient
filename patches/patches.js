@@ -144,11 +144,12 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
     { // Name rendering patches - Display density of other players & Hide bot names features
         const { placeBalanceAbove } = matchRawCode(`,aGH+=Math.floor(.78*fontSize),placeBalanceAbove?aGN(a7,aGJ,aGG,aGH,hT):aGM(hT,a7,aGJ,aGG,aGH,aGI)`);
         // Balance rendering; Renders density when the "Reverse Name/Balance" setting is off
-        replaceRawCode("function a9V(ctx,i,fontSize,x,y,a9S){i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y))}",
-            `function a9V(ctx,i,fontSize,x,y,a9S){
-		var ___id = i;
-		i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y));
-		${placeBalanceAbove} || __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (ctx.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)), ctx.fillText(__fx.utils.getDensity(___id), x, y + fontSize))}`)
+        // temporarily disabled
+        // replaceRawCode("function a9V(ctx,i,fontSize,x,y,a9S){i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y))}",
+        //     `function a9V(ctx,i,fontSize,x,y,a9S){
+		// var ___id = i;
+		// i=ac.jv.formatNumber(playerData.playerBalances[i]);a9S>>1&1?(ctx.lineWidth=.05*fontSize,ctx.strokeStyle=a9U(fontSize,a9S%2),ctx.strokeText(i,x,y)):(1<a9S&&(ctx.lineWidth=.12*fontSize,ctx.strokeStyle=a9U(fontSize,a9S),ctx.strokeText(i,x,y)),ctx.fillText(i,x,y));
+		// ${placeBalanceAbove} || __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (ctx.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)), ctx.fillText(__fx.utils.getDensity(___id), x, y + fontSize))}`)
         // Name rendering; Renders density when the "Reverse Name/Balance" setting is on (default)
         replaceOne(/(function \w+\((?<i>\w+),(?<fontSize>\w+),(?<x>\w+),(?<y>\w+),(?<canvas>\w+)\){)(\6\.fillText\((?<playerData>\w+)\.(?<playerNames>\w+)\[\2\],\4,\5\)),(\2<(?<game>\w+)\.(?<gHumans>\w+)&&2!==\8\.(?<playerStates>\w+)\[[^}]+)}/g,
             `$1 var ___id = $2;
