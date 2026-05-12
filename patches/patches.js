@@ -32,6 +32,10 @@ export default (/** @type {ModUtils} */ modUtils) => {
 		mainCanvas = mainCanvasElement.getContext("2d", { alpha: /* here */ false });`,
     `__fx.makeMainMenuTransparent ? true :`)
 
+	// Reset donation history and leaderboard filter when a new game is started
+	modUtils.insertCode(`/* here */ an.init();ai.a5l();bA.pQ.qC = [];bA.hZ.pT = 1;`,
+	`__fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow();`);
+
     modUtils.waitForMinification(() => applyPatches(modUtils))
 }
 //export const requiredVariables = ["game", "playerId", "playerData", "rawPlayerNames", "gIsSingleplayer", "playerTerritories"];
@@ -135,11 +139,6 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
     // match , 0 !== dG[x]) && fq.hB(x, 800, false, 0),
     replaceOne(/(0!==\w+\.\w+\[(\w+)\])(\)&&\w+\.\w+\(\2,800,!1,0\),)/g,
         `${dict.game}.${dict.gIsTeamGame} && __fx.settings.openDonationHistoryFromLb && __fx.donationsTracker.displayHistory($2, ${rawPlayerNames}, ${gIsSingleplayer}), $1 && !isEmptySpace $3`);
-
-    // Reset donation history and leaderboard filter when a new game is started
-    replaceRawCode(",ab.dP(),ad.a10(),b5.nZ.oJ=[],bc.dP(),this.wE=1,",
-        `,ab.dP(),ad.a10(),b5.nZ.oJ=[],bc.dP(),this.wE=1,
-        __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow(),`)
 
     { // Name rendering patches - Display density of other players & Hide bot names features
         const { placeBalanceAbove } = matchRawCode(`,aGH+=Math.floor(.78*fontSize),placeBalanceAbove?aGN(a7,aGJ,aGG,aGH,hT):aGM(hT,a7,aGJ,aGG,aGH,aGI)`);
