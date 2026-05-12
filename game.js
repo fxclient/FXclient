@@ -65,7 +65,7 @@ function dK() {
 	this.dt = 1122;
 	this.rVersion = 21, this.dx = 0, this.dh = function() {
 		this.dy = 2;
-		this.n = "2.15.23", this.e0 = "10 May 2026 [" + this.n + "]";
+		this.n = "2.15.24", this.e0 = "12 May 2026 [" + this.n + "]";
 		var e1 = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.e2 = 0 <= e1.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -4341,7 +4341,7 @@ function cK() {
 	__fx.keybindFunctions.repaintAttackPercentageBar = function() {
 		a9W(), bh.dp = !0
 	}, this.fI = 0, this.hN = !1, this.dh = function() {
-		hv = !aD.hX && !aD.hI, a8O = !1, il = bl.eU.data[182].value / 1023, a5L = 0, this.hN = !1, this.resize()
+		hv = !aD.hX && !aD.hI, a8O = !1, il = (bl.eU.data[182].value + 1) / 1024, a5L = 0, this.hN = !1, this.resize()
 	}, this.resize = function() {
 		a0.a1.iI() && h.i < .8 * h.j ? (this.j = Math.floor(.066 * h.iJ), i = h.i - 4 * be.gap - this.j) : (i = Math.floor((a0.a1.iI() ? .65 : .389) * h.iJ), i += 12 - i % 12, this.j = Math.floor(i / 12)), a9T = Math.floor(3 * this.j / 2), a6q =
 			bC.r2.sr(1, Math.floor(.5 * this.j)), (canvas = document.createElement("canvas")).width = i, __fx.mobileKeybinds.setSize(i, this.j, vg), canvas.height = this.j, (zH = canvas.getContext("2d", {
