@@ -33,7 +33,7 @@ export default (/** @type {ModUtils} */ modUtils) => {
     `__fx.makeMainMenuTransparent ? true :`)
 
 	// Reset donation history and leaderboard filter when a new game is started
-	modUtils.insertCode(`/* here */ an.init();ai.a5l();bA.pQ.qC = [];bA.hZ.pT = 1;`,
+	modUtils.insertCode(`an.init();ai.a5l();bA.pQ.qC = [];bA.hZ.pT = 1;/* here */`,
 	`__fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow();`);
 
     modUtils.waitForMinification(() => applyPatches(modUtils))
