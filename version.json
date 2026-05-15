@@ -1,9 +1,9 @@
 {
-    "version": "0.6.18.2",
-    "lastUpdated": "May 11",
+    "version": "0.6.18.3",
+    "lastUpdated": "May 15",
     "changes": [
-        "This is a quick temporary update just to get FX working again in a playable state. The hovering tooltip feature doesn't work currently, but will be fixed soon.", 
-        "To get density to display, you must turn on \"Place Balance Above\" in the game's settings if you haven't already."
+        "Density and the hovering tooltip feature are fully working again", 
+        "Fixed clan spawnpoint highlighting not working since the last update"
     ],
     "isSignificant": true
 }
