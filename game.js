@@ -3542,10 +3542,10 @@ function c3() {
 				.isZombieMode ? 9 : this.data.numberTeams - 2, this.zZ = this.data.isContest, this.i3 = this.km < 7 || 9 === this.km, this.km = 10 === this.km && this.ko ? 7 : this.km, this.km = 8 === this.km && 2 !== this.kU ? 7 : this.km, az.dh(),
 				this.yJ = this.data.numberTeams, this.data.teamPlayerCount ? this.yK = +(0 < this.data.teamPlayerCount[0]) : (this.yK = 0, this.i3 && this.ko && (this.data.teamPlayerCount = new Uint16Array(9), this.data.teamPlayerCount.fill(1, 1,
 					this.yJ + 1), aD.a5e.a5j())), this.a5c = this.kU <= 2 ? 30 : this.kU <= 50 ? 40 : 50, this.a5b = this.hX = this.data.selectableSpawn, this.qO = this.hX ? new a5R : null, 1 === l.dy ? this.yC = this.kU : this.yC = this.data
-				.playerCount, this.yH = this.yC, this.kq = this.yC - this.kU, this.a1A = 0, this.et = this.data.selectedPlayer, this.a15 = 0, this.a1D = 0, this.a1Q = 0, this.a10 = 0, ay.a5k(this.data.spawningSeed), ae.dh(), ag.dh(), __fx
-				.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow(), an.dh(), ai.a5l(), bA.pQ.qC = [], bA.hZ.pT = 1, bi.dh(), this.a18 = 1, bf.dh(), a5m(), ac.di(), ap.a5n(), bd
-			.dh(), ac.dh(), at.dh(), bO.dh(), bP.dh(), ao.dh(), bX.a5o(), aE.dh(), ai.a7(), aI.dh(), aJ.dh(), al.a5p(), bB.dh(), bj.dh(), bR.dh(), bg.dh(), a5q.putImageData(a5r, 0, 0), aV.dh(), aS.dh(), aR.dh(), bE.dh(), aw.dh(), aU.dh(), aW.dh(), aM
-				.dh(), aQ.dh(), aN.dh(), aP.dh(), aL.dh(), aX.dh(), aF.dh(), aG.dh(), gC(), ad.dh(), af.dh(), b4.dh(), b5.dh(), b1.dh(), b7.dh(), b8.dh(), this.a1R.dh(), bh.a5o(), aH.nO(), 0 === ag.n4[aD.et] && aX.show(!1, !0), af.mq(!0), av.dh(), bh
+				.playerCount, this.yH = this.yC, this.kq = this.yC - this.kU, this.a1A = 0, this.et = this.data.selectedPlayer, this.a15 = 0, this.a1D = 0, this.a1Q = 0, this.a10 = 0, ay.a5k(this.data.spawningSeed), ae.dh(), ag.dh(), an.dh(), ai
+				.a5l(), bA.pQ.qC = [], bA.hZ.pT = 1, __fx.donationsTracker.reset(), __fx.leaderboardFilter.reset(), __fx.customLobby.isActive() && __fx.customLobby.hideWindow(), bi.dh(), this.a18 = 1, bf.dh(), a5m(), ac.di(), ap.a5n(), bd.dh(), ac
+				.dh(), at.dh(), bO.dh(), bP.dh(), ao.dh(), bX.a5o(), aE.dh(), ai.a7(), aI.dh(), aJ.dh(), al.a5p(), bB.dh(), bj.dh(), bR.dh(), bg.dh(), a5q.putImageData(a5r, 0, 0), aV.dh(), aS.dh(), aR.dh(), bE.dh(), aw.dh(), aU.dh(), aW.dh(), aM
+			.dh(), aQ.dh(), aN.dh(), aP.dh(), aL.dh(), aX.dh(), aF.dh(), aG.dh(), gC(), ad.dh(), af.dh(), b4.dh(), b5.dh(), b1.dh(), b7.dh(), b8.dh(), this.a1R.dh(), bh.a5o(), aH.nO(), 0 === ag.n4[aD.et] && aX.show(!1, !0), af.mq(!0), av.dh(), bh
 				.dp = !0, this.hI || this.ko && this.hX || a0.a1.setState(1), this.a5g = 0
 		}, this.a2X = function(eW) {
 			bB.qM.a5t.length ? this.a5h = bB.qM.a5t : this.a5h = bB.a5u.a0a(), b0.y.a5v(), bs.clear(), this.a18 = 0, bh.a5w(), a0.a1.setState(0), aa.setState(0), bW.eO.show(eW), 2 === this.a5g ? t.y.a5x(0) : 1 === this.a5g ? t.u(19) : t.u(5, 5)
@@ -3616,6 +3616,10 @@ function dW() {
 
 function cE() {
 	var rb, fG, fI, a6G, a6H, a6I, eX, a6J, a6K, a6L, a6M, gap, zoom, q5, a6N;
+
+	function a6b(lj, lk, en) {
+		ac.f4(en) || -1 === (lj = bP.lJ.a6k(lj, lk)) ? aN.a6j(en) : aN.a6l(lj)
+	}
 
 	function a6X(a6J) {
 		for (var aB = q5.length - 1; 0 <= aB; aB--)
@@ -3699,6 +3703,11 @@ function cE() {
 		}(lj, lk), this.sJ(), 2 === lj && (aj.xh.hv = !0), 0 < lj))
 	}, this.a32 = function(lj, lk) {
 		this.hv() || (a6H = lj, a6I = lk, eX = performance.now())
+	}, __fx.hoveringTooltip.display = function(mouseX, mouseY) {
+		var coordX = bO.hP(mouseX),
+			coordY = bO.hR(mouseY),
+			point = bO.ez(bO.fW(coordX, coordY));
+		bO.hS(coordX, coordY) && a6b(mouseX, mouseY, point)
 	}, this.click = function(lj, lk, a39) {
 		var hO = bO.hP(lj),
 			hQ = bO.hR(lk),
@@ -3706,25 +3715,24 @@ function cE() {
 			en = bO.ez(ev),
 			a6a = (a0.a1.iI() ? .025 : .0144) * h.iJ,
 			eY = performance.now();
-		return !(Math.abs(lj - a6H) > a6a || Math.abs(lk - a6I) > a6a || eX + 500 < eY || (eX = eY, bL.rU() && (bL.hE = lj, bL.hF = lk, b7.ec(1), b8.ec(1)), !bO.hS(hO, hQ))) && (a39 ? (function(lj, lk, en) {
-			ac.f4(en) || -1 === (lj = bP.lJ.a6k(lj, lk)) ? aN.a6j(en) : aN.a6l(lj)
-		}(lj, lk, en), !1) : aM.hJ || this.hv() || !bC.gV.hL(aD.et) || aD.hI ? (this.sJ(), !1) : (aD.hX ? 0 <= (a6L = bt.hY(ev)) && (rb[3].hv = !0) : 2 === aD.a18 ? ac.gj(en) && (a6J = ac.f1(en), bC.gV.jr(a6J) || (rb[0].hv = !0, rb[0]
-			.lR = 1, rb[7].hv = !0)) : (bP.hm.hn(aD.et, ev) && (rb[0].hv = !0, rb[0].lR = 1, rb[1].hv = !0, rb[1].lR = 0, rb[9].hv = !0, rb[9].lR = 0), bP.hj.hk(aD.et, ev) && (rb[0].hv = !0, rb[0].lR = 1, rb[1].hv = !0, rb[1].lR = 1,
-			a6L = bQ.fl[7]), ac.fE(en) ? (a6M = am.ek.em(en)) && (a6a = bO.ez(a6M), rb[8].hv = !0, a6J = ac.f0(a6a) ? aD.f6 : ac.f1(a6a)) : (ac.z6(aD.et, en) && (a6K = aD.et, rb[0].hv = !0, rb[0].lR = 1, rb[7].hv = !0), -1 !== (
-			eY = bt.he(ev)) && (ac.f0(eY << 2) ? (a6J = aD.f6, bu.hf(aD.et) ? (rb[0].hv = !0, rb[0].lR = 0) : ad.gG(aD.et) && (rb[0].hv = !0, rb[0].lR = 3)) : (a6J = ac.f1(eY << 2), rb[0].lR = 1, rb[5].hv = function(a6J) {
-			return !bC.gV.jr(a6J) && !a6X(a6J) && b5.a6Y(1, [a6J], !1)
-		}(a6J), rb[7].hv || bC.gV.jr(a6J) || (a6K = a6J, rb[7].hv = !0), rb[4].hv = !bC.gV.jr(a6J) && !af.a6f(a6J) && b5.a6Y(0, [a6J], !1), rb[6].hv = function(a6J) {
-			if (0 === q5.length) return !1;
-			if (performance.now() > a6N + 4e3) return !(q5 = []);
-			return !a6X(a6J) && ! function(a6J) {
-				var aB;
-				if (aD.i3)
-					for (aB = q5.length - 1; 0 <= aB; aB--)
-						if (!bu.f2(a6J, q5[aB])) return 1;
-				return
-			}(a6J)
-		}(a6J), bu.f2(a6J, aD.et) ? (bu.hi(aD.et, a6J) ? (rb[0].lR = 0, rb[0].hv = !0) : ad.gG(aD.et) && (rb[0].lR = 3, rb[0].hv = !0), rb[0].hv = this.a6h()) : (rb[2].hv = !0, an.hn(a6J) ? rb[2].lR = 0 : rb[2].lR = 1,
-			rb[0].hv = !0))))), this.a6c(lj, lk)))
+		return !(Math.abs(lj - a6H) > a6a || Math.abs(lk - a6I) > a6a || eX + 500 < eY || (eX = eY, bL.rU() && (bL.hE = lj, bL.hF = lk, b7.ec(1), b8.ec(1)), !bO.hS(hO, hQ))) && (a39 ? (a6b(lj, lk, en), !1) : aM.hJ || this.hv() || !bC.gV.hL(aD
+			.et) || aD.hI ? (this.sJ(), !1) : (aD.hX ? 0 <= (a6L = bt.hY(ev)) && (rb[3].hv = !0) : 2 === aD.a18 ? ac.gj(en) && (a6J = ac.f1(en), bC.gV.jr(a6J) || (rb[0].hv = !0, rb[0].lR = 1, rb[7].hv = !0)) : (bP.hm.hn(aD.et, ev) && (rb[0]
+					.hv = !0, rb[0].lR = 1, rb[1].hv = !0, rb[1].lR = 0, rb[9].hv = !0, rb[9].lR = 0), bP.hj.hk(aD.et, ev) && (rb[0].hv = !0, rb[0].lR = 1, rb[1].hv = !0, rb[1].lR = 1, a6L = bQ.fl[7]), ac.fE(en) ? (a6M = am.ek.em(en)) &&
+				(a6a = bO.ez(a6M), rb[8].hv = !0, a6J = ac.f0(a6a) ? aD.f6 : ac.f1(a6a)) : (ac.z6(aD.et, en) && (a6K = aD.et, rb[0].hv = !0, rb[0].lR = 1, rb[7].hv = !0), -1 !== (eY = bt.he(ev)) && (ac.f0(eY << 2) ? (a6J = aD.f6, bu.hf(aD
+					.et) ? (rb[0].hv = !0, rb[0].lR = 0) : ad.gG(aD.et) && (rb[0].hv = !0, rb[0].lR = 3)) : (a6J = ac.f1(eY << 2), rb[0].lR = 1, rb[5].hv = function(a6J) {
+					return !bC.gV.jr(a6J) && !a6X(a6J) && b5.a6Y(1, [a6J], !1)
+				}(a6J), rb[7].hv || bC.gV.jr(a6J) || (a6K = a6J, rb[7].hv = !0), rb[4].hv = !bC.gV.jr(a6J) && !af.a6f(a6J) && b5.a6Y(0, [a6J], !1), rb[6].hv = function(a6J) {
+					if (0 === q5.length) return !1;
+					if (performance.now() > a6N + 4e3) return !(q5 = []);
+					return !a6X(a6J) && ! function(a6J) {
+						var aB;
+						if (aD.i3)
+							for (aB = q5.length - 1; 0 <= aB; aB--)
+								if (!bu.f2(a6J, q5[aB])) return 1;
+						return
+					}(a6J)
+				}(a6J), bu.f2(a6J, aD.et) ? (bu.hi(aD.et, a6J) ? (rb[0].lR = 0, rb[0].hv = !0) : ad.gG(aD.et) && (rb[0].lR = 3, rb[0].hv = !0), rb[0].hv = this.a6h()) : (rb[2].hv = !0, an.hn(a6J) ? rb[2].lR = 0 : rb[2].lR = 1,
+					rb[0].hv = !0))))), this.a6c(lj, lk)))
 	}, this.a6c = function(lj, lk) {
 		return fG = lj - Math.floor(a6G / 2), fI = lk - Math.floor(a6G / 2), !!this.hv()
 	}, this.a2g = function(lj, lk) {
@@ -3928,9 +3936,9 @@ function cG() {
 		var qj, a7g, a7f = "(" + bO.fH(en >> 2) + ", " + bO.fJ(en >> 2) + ")",
 			a7L = !1,
 			player = 0;
-		ac.f4(en) ? ac.f0(en) ? a7f = L(59, [a7f]) : (player = ac.f1(en), aD.hI && (aD.et = player), qj = L(60, [bC.zH.a4E(ag.a1o[player], bC.r2.sr(0, 10), 150)]) + "   ", qj = (qj += L(61, [bC.s1.a0P(ag.hB[player])]) + "   ") + L(62, [bC.s1.a0P(
-				ag.gx[player])]) + "   ", aD.i3 && (a7g = bi.a1U[bi.kr[bi.f7[player]]], qj += L(63) + ": " + a7g + "   "), bC.gV.jr(player) && (qj += L(64) + ": " + aE.kf[aE.hs[player]] + "   "), a7f = qj = (qj += L(65, [player]) + "   ") +
-			L(66, [a7f]), a7L = !0) : a7f = ac.fE(en) ? L(67, [a7f]) + "   #" + ac.er(en) : L(68, [a7f]), a7Z(55, 0), a7G(220, a7f, 55, player, bD.o5, bD.o2, -1, a7L, void 0, void 0, !0)
+		ac.f4(en) ? ac.f0(en) ? a7f = L(59, [a7f]) : (player = ac.f1(en), aD.hI && !1 === __fx.hoveringTooltip.active && (aD.et = player), qj = L(60, [bC.zH.a4E(ag.a1o[player], bC.r2.sr(0, 10), 150)]) + "   ", qj = (qj += L(61, [bC.s1.a0P(ag.hB[
+				player])]) + "   ") + L(62, [bC.s1.a0P(ag.gx[player])]) + "   ", aD.i3 && (a7g = bi.a1U[bi.kr[bi.f7[player]]], qj += L(63) + ": " + a7g + "   "), bC.gV.jr(player) && (qj += L(64) + ": " + aE.kf[aE.hs[player]] + "   "), a7f =
+			qj = (qj += L(65, [player]) + "   ") + L(66, [a7f]), a7L = !0) : a7f = ac.fE(en) ? L(67, [a7f]) + "   #" + ac.er(en) : L(68, [a7f]), a7Z(55, 0), a7G(220, a7f, 55, player, bD.o5, bD.o2, -1, a7L, void 0, void 0, !0)
 	}, this.a6l = function(a7h) {
 		var lP = bP.y,
 			player = lP.mO[a7h] >> 3,
@@ -6902,9 +6910,13 @@ function cd() {
 
 	function aLY(iB, aB, fontSize, aLS, aLT, aLU) {
 		var a4f = ag.a4f[aB],
-			aB = bC.s1.a0P(ag.hB[aB] - a4f);
-		a4f ? (a4f = iB.fillStyle, iB.fillStyle = aLX(fontSize, 2 + aLU % 2), iB.fillText(aB, aLS, aLT), iB.fillStyle = a4f) : aLU >> 1 & 1 ? (iB.lineWidth = .05 * fontSize, iB.strokeStyle = aLX(fontSize, aLU % 2), iB.strokeText(aB, aLS, aLT)) : (1 <
-			aLU && (iB.lineWidth = .12 * fontSize, iB.strokeStyle = aLX(fontSize, aLU), iB.strokeText(aB, aLS, aLT)), iB.fillText(aB, aLS, aLT))
+			aLe = bC.s1.a0P(ag.hB[aB] - a4f);
+
+		function drawDensity() {
+			!aLF && __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (iB.fillStyle = __fx.utils.textStyleBasedOnDensity(aB)), iB.fillText(__fx.utils.getDensity(aB), aLS, aLT + fontSize))
+		}
+		a4f ? (a4f = iB.fillStyle, iB.fillStyle = aLX(fontSize, 2 + aLU % 2), iB.fillText(aLe, aLS, aLT), iB.fillStyle = a4f) : aLU >> 1 & 1 ? (iB.lineWidth = .05 * fontSize, iB.strokeStyle = aLX(fontSize, aLU % 2), iB.strokeText(aLe, aLS, aLT)) : (
+			1 < aLU && (iB.lineWidth = .12 * fontSize, iB.strokeStyle = aLX(fontSize, aLU), iB.strokeText(aLe, aLS, aLT)), iB.fillText(aLe, aLS, aLT)), drawDensity()
 	}
 
 	function aLb(aLS, aLT, fontSize, aLf, aLg, iB) {
@@ -10981,9 +10993,9 @@ function cr() {
 	function aXG(aXI) {
 		var i, j, aXK, tR, a9b;
 		if (!(0 < h.sz)) return tR = aXF(document.documentElement.clientWidth), a9b = aXF(window.visualViewport && 2 !== a0.id ? window.visualViewport.height : document.documentElement.clientHeight), i = tR, j = a9b, aXK = 0 !== a0.id || i < j ?
-			700 : 1200, aXK = Math.min(aXK / ((i + j) / 2), 1), aXK = 0 === bl.eU.data[1].value ? 2 * aXK / 3 : Math.min(aXK + (bl.eU.data[1].value - 1) * (1 - aXK) / 2, 1), h.k = (window.devicePixelRatio || 1) * aXK, aXI && !aXB ? (aXB = !0, t
-				.removeChild(document.body, a2f)) : aXB && (aXB = !1, document.body.appendChild(a2f)), i = Math.floor(.5 + tR * h.k), j = Math.floor(.5 + a9b * h.k), i !== h.i || j !== h.j ? (h.i = i, h.j = j, h.min = aCg(i, j), h.max = a7R(i,
-				j), h.iJ = bN.fa(i + j, 2), h.vc = i / j, a2f.width = i, a2f.height = j, a2f.style.width = tR + "px", a2f.style.height = a9b + "px", aXD = bh.eX + 1e3, 1) : void 0
+			700 : 1200, aXK = Math.min(aXK / ((i + j) / 2), 1), aXK = 0 === bl.eU.data[1].value ? 2 * aXK / 3 : Math.min(aXK + (bl.eU.data[1].value - 1) * (1 - aXK) / 2, 1), h.k = (window.devicePixelRatio || 1) * aXK, __fx.hoveringTooltip
+			.canvasPixelScale = h.k, aXI && !aXB ? (aXB = !0, t.removeChild(document.body, a2f)) : aXB && (aXB = !1, document.body.appendChild(a2f)), i = Math.floor(.5 + tR * h.k), j = Math.floor(.5 + a9b * h.k), i !== h.i || j !== h.j ? (h.i =
+				i, h.j = j, h.min = aCg(i, j), h.max = a7R(i, j), h.iJ = bN.fa(i + j, 2), h.vc = i / j, a2f.width = i, a2f.height = j, a2f.style.width = tR + "px", a2f.style.height = a9b + "px", aXD = bh.eX + 1e3, 1) : void 0
 	}
 	this.i = 0, this.j = 0, this.min = 0, this.max = 0, this.iJ = 0, this.vc = 1, this.k = 1, this.sz = 0, this.di = function() {
 		this.i = aXF(document.documentElement.clientWidth) + 2, this.j = aXF(document.documentElement.clientHeight) + 2
