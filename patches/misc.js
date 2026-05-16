@@ -20,6 +20,14 @@ export default definePatch(({ insertCode, modifyCode, replaceCode }) => {
 			return;
 		} ${insert(`if (!__fx.settings.hidePropagandaPopup && !__fx.customLobby.isActive())`)} a.g.h(5);`)
 
+  // Disable built-in Territorial.io error reporting
+  insertCode(
+    `window.removeEventListener("error", err);
+    msg = e.lineno + " " + e.colno + "|" + getStack(e); /* here */`,
+    `__fx.reportError(e, msg);
+    return alert("Error:\\n" + e.filename + " " + e.lineno + " " + e.colno + " " + e.message);`
+  )
+
   // Invalid hostname detection avoidance
   replaceCode(`this.hostnameIsValid = a.indexOf("territorial.io") >= 0;`, `this.hostnameIsValid = true;`)
 

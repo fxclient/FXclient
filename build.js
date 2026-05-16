@@ -77,6 +77,9 @@ async function patchGameCode() {
 	}, {
 		code: `var dt=MenuManager.getState();if(dt===6){if(d===4211){/*...*/}}`,
 		addToDictionary: ["MenuManager", "getState"]
+	}, {
+		code: `if (game.a && sidebar.getTime() < 350) {/*...*/}`,
+		addToDictionary: ["game", "sidebar", "getTime"]
 	}];
 	codeSegments.forEach(({ code, addToDictionary }) => {
 		modUtils.matchCode(code, { addToDictionary })
