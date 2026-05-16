@@ -11984,7 +11984,7 @@ function dT() {
 	}, this.qS = function(player, il) {
 		bC.gV.a4a(player) && (this.n0[0] += il + 1, this.n0[1]++, this.n0[12] += bQ.fg[1])
 	}, this.px = function(player, pa) {
-		__fx.donationsTracker.logDonation(player, pa, bQ.fg[0]);
+		__fx.donationsTracker.logDonation(player, pa, bQ.fg[0], aW.a6C());
 		player === aD.et && (aN.px(bQ.fg[0], bQ.fg[1], pa), this.n0[12] += bQ.fg[1], this.n0[16] += bQ.fg[0]), pa === aD.et && (aN.a7v(bQ.fg[0], player), this.n0[10] += bQ.fg[0])
 	}, this.qW = function(player) {
 		bC.gV.a4a(player) && (this.n0[2]++, this.n0[12] += bQ.fg[1])
