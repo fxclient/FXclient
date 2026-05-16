@@ -1,9 +1,9 @@
 {
-    "version": "0.6.18.3",
-    "lastUpdated": "May 15",
+    "version": "0.6.19",
+    "lastUpdated": "May 16",
     "changes": [
-        "Density and the hovering tooltip feature are fully working again", 
-        "Fixed clan spawnpoint highlighting not working since the last update"
+        "Donation history entries now display the time when the donation occurred",
+        "Fixed the \"Nothing to display\" message being retained if a donation appeared while the window is open"
     ],
     "isSignificant": true
 }
