@@ -4639,13 +4639,14 @@ function cN() {
 		var eg = this.aB3(),
 			aB5 = (this.aB4(), zG.fillStyle = ag.hA[aD.es] >= ae.k9(aD.es) ? bD.ob : bD.o4, bC.s0.a0O(a4f)),
 			aB5 = (zG.fillText(aB5, Math.floor(i / 2), aB0), zG.measureText(aB5).width),
-			eg = (zG.font = aAv, zG.fillStyle = 9 === eg ? bD.pC : bD.o4, ae.aB7),
-			aB8 = "+" + eg,
+			aB6 = (zG.font = aAv, zG.fillStyle = 9 === eg ? bD.pC : bD.o4, ae.aB7),
+			aB8 = "+" + aB6,
 			tR = zG.measureText(aB8).width,
 			aB9 = Math.floor(this.j / 12),
 			aB5 = .5 * (i + aB5) + aB9;
-		(aB5 + tR + aAu <= i || 1e3 <= eg && (aB8 = "+" + Math.floor(eg / 1e3) + "K", aB5 + (tR = zG.measureText(aB8).width) + aAu <= i)) && zG.fillText(aB8, Math.floor(aB5 + .5 * tR), Math.floor(.3 * this.j)), zG.fillStyle = bD.o4, zG.fillRect(
-			0, 0, i, 1), zG.fillRect(0, 0, 1, this.j), zG.fillRect(0, this.j - 1, i, 1), zG.fillRect(i - 1, 0, 1, this.j)
+		(aB5 + tR + aAu <= i || 1e3 <= aB6 && (aB8 = "+" + Math.floor(aB6 / 1e3) + "K", aB5 + (tR = zG.measureText(aB8).width) + aAu <= i)) && zG.fillText(aB8, Math.floor(aB5 + .5 * tR), Math.floor(.3 * this.j)), __fx.settings
+			.displayTickNumber && zG.fillText(9 - eg, Math.floor(2 * aAu + aB9), Math.floor(.3 * this.j)), zG.fillStyle = bD.o4, zG.fillRect(0, 0, i, 1), zG.fillRect(0, 0, 1, this.j), zG.fillRect(0, this.j - 1, i, 1), zG.fillRect(i - 1, 0, 1,
+				this.j)
 	}, this.aB3 = function() {
 		var eg = bh.kQ() % 100,
 			yE = (eg = 9 - bN.fZ(eg -= eg % 10, 10), Math.floor(eg * (this.j - aAu) / 9));
