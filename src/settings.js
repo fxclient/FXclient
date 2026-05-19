@@ -11,6 +11,7 @@ var settings = {
   //"fontName": "Trebuchet MS",
   //"showBotDonations": false,
   displayWinCounter: true,
+  displayTickNumber: true,
   useFullscreenMode: false,
   hoveringTooltip: true,
   //"hideAllLinks": false,
@@ -47,6 +48,11 @@ const settingsManager = new (function () {
       type: "button",
       text: "Reset win counter",
       action: winCounter.removeWins,
+    },
+    {
+      for: "displayTickNumber",
+      type: "checkbox",
+      label: "Display tick number near the balance",
     },
     {
       for: "useFullscreenMode",
