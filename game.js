@@ -66,7 +66,7 @@ function dK() {
 	this.dt = 1126;
 	this.rVersion = 21, this.dx = 0, this.dh = function() {
 		this.dy = 2;
-		this.n = "2.15.32", this.e0 = "31 May 2026 [" + this.n + "]";
+		this.n = "2.15.33", this.e0 = "31 May 2026 [" + this.n + "]";
 		var e1 = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.e2 = 0 <= e1.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -8365,7 +8365,8 @@ function aOv(data) {
 				var aPf = new qe,
 					aPh = (aPf.qh(L(220)), [L(221), L(222), L(223), L(224), "Scout", L(225)]),
 					eE = data.aPu;
-				return aPf.qn(L(219) + (data.aPv / 100).toFixed(2) + "<br>" + L(182) + (eE + 1) + " / " + data.ws + "<br>" + L(183) + aPh[eE < 3 ? 0 : eE < 20 ? 1 : eE < 100 ? 2 : eE < 500 ? 3 : eE < 2e3 ? 4 : 5]), aPf
+				return aPf.qn(L(219) + (data.aPv / 100).toFixed(2) + "<br>" + L(182) + (eE + 1) + " / " + data.ws + "<br>" + L(183) + aPh[eE < 3 ? 0 : eE < 20 ? 1 : eE < 100 ? 2 : eE < 500 ? 3 : eE < 2e3 ? 4 : 5]), aPf.qn(
+					"<a href='https://territorial.fandom.com/wiki/Zombie_mode' target='_blank'>Unofficial Tutorial</a>", "0.75em").style.marginTop = "0.8em", aPf
 			}()),
 			function(qw) {
 				var aPf, qq, aPr, eF, aPs;
