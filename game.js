@@ -63,10 +63,10 @@ function bv(bw) {
 }
 
 function dK() {
-	this.dt = 1127;
+	this.dt = 1128;
 	this.rVersion = 22, this.dx = 0, this.dh = function() {
 		this.dy = 2;
-		this.n = "2.15.34", this.e0 = "31 May 2026 [" + this.n + "]";
+		this.n = "2.16.0", this.e0 = "31 May 2026 [" + this.n + "]";
 		var e1 = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.e2 = 0 <= e1.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -4259,8 +4259,8 @@ function cs() {
 	function a9L() {
 		a9F = -1, a7n = ah.a9M(), aN.a5T(257), aN.a7m(a7n), aw.hu = !0, a8N = !0, a9C = 360;
 		for (var fa, eX = 0, aB = al.kz - 1; 0 <= aB; aB--) bC.gU.jq(al.l4[aB]) || (eX += ag.gw[al.l4[aB]]);
-		a7n ? a9A[0] = Math.max(bN.fZ(3 * eX, 4), 1) : aD.i2 ? (fa = 9 === aD.kl && 8 === bi.kq[bj.l2()] ? 80 : (fa = bN.fZ(100 * bj.l0(), aD.kD), bN.iG(200 - 2 * fa, 40, 100)), fa = bN.fZ(fa * eX, 100), a9A[0] = Math.max(fa, 1)) : 8 === aD.kl ? a9A[
-			0] = Math.max(bN.fZ(3 * eX, 4), 1) : a9A[0] = Math.max(bN.fZ(3 * eX, 5), 1), a9A[1] = Math.max(eX - a9A[0], 1)
+		a7n ? a9A[0] = Math.max(bN.fZ(3 * eX, 4), 1) : aD.i2 ? (fa = 90, fa = bN.fZ(90 * eX, 100), a9A[0] = Math.max(fa, 1)) : 8 === aD.kl ? a9A[0] = Math.max(bN.fZ(3 * eX, 4), 1) : a9A[0] = Math.max(bN.fZ(3 * eX, 5), 1), a9A[1] = Math.max(eX - a9A[
+			0], 1)
 	}
 
 	function a9H() {
