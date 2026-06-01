@@ -63,10 +63,10 @@ function bv(bw) {
 }
 
 function dK() {
-	this.dt = 1128;
+	this.dt = 1129;
 	this.rVersion = 22, this.dx = 0, this.dh = function() {
 		this.dy = 2;
-		this.n = "2.16.0", this.e0 = "31 May 2026 [" + this.n + "]";
+		this.n = "2.16.1", this.e0 = "1 Jun 2026 [" + this.n + "]";
 		var e1 = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.e2 = 0 <= e1.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -4259,8 +4259,8 @@ function cs() {
 	function a9L() {
 		a9F = -1, a7n = ah.a9M(), aN.a5T(257), aN.a7m(a7n), aw.hu = !0, a8N = !0, a9C = 360;
 		for (var fa, eX = 0, aB = al.kz - 1; 0 <= aB; aB--) bC.gU.jq(al.l4[aB]) || (eX += ag.gw[al.l4[aB]]);
-		a7n ? a9A[0] = Math.max(bN.fZ(3 * eX, 4), 1) : aD.i2 ? (fa = 90, fa = bN.fZ(90 * eX, 100), a9A[0] = Math.max(fa, 1)) : 8 === aD.kl ? a9A[0] = Math.max(bN.fZ(3 * eX, 4), 1) : a9A[0] = Math.max(bN.fZ(3 * eX, 5), 1), a9A[1] = Math.max(eX - a9A[
-			0], 1)
+		a7n ? a9A[0] = Math.max(bN.fZ(3 * eX, 4), 1) : aD.i2 ? (fa = 9 === aD.kl ? 8 === bi.kq[bj.l2()] ? 80 : (fa = bN.fZ(100 * bj.l0(), aD.kD), bN.fZ(bN.iG(1550 - 11 * fa, 400, 1e3), 10)) : (fa = bN.fZ(100 * bj.l0(), aD.kD), bN.fZ(bN.iG(1600 - 12 *
+			fa, 400, 1e3), 10)), fa = bN.fZ(fa * eX, 100), a9A[0] = Math.max(fa, 1)) : 8 === aD.kl ? a9A[0] = Math.max(bN.fZ(3 * eX, 4), 1) : a9A[0] = Math.max(bN.fZ(3 * eX, 5), 1), a9A[1] = Math.max(eX - a9A[0], 1)
 	}
 
 	function a9H() {
@@ -5220,11 +5220,11 @@ function aDH() {
 		"A game reload is required to apply the new configuration.", "Custom Scenario", "⚔️ Play", "Map", "Settings", "Game Mode", "Clustered", "Player Names", "Kingdom Names", "Simple Names", "Territorial Income", "Interest Income",
 		"Starting Resources", "More Settings", "Reset Scenario", "Open File...", "Save As File...", "📜 Game Log", "Multiplayer", "My Account", "Game Menu", "Your Kingdom's Name", "Clans", "Clan Members", "Admins", "1v1 Players", "Battle Royale",
 		"Richest Players", "Patreon Members", "Zombie Players", "🏆 Leaderboards", "Previous 10", "Next 10", "1v1 Player Ranking", "Clan Ranking", "Clan Member Ranking", "Admin Ranking", "1v1 Reports", "Admin Election", "Blockchain",
-		"Clan Leader Election", "Bio Reports", "Battle Royale Players", "Zonbie Players", "Index", "Username", "Account", "Ranking", "Player", "Elo", "Clan", "Rating", "Leader", "Time Ago", "Accuser", "Accused", "Voter", "Target Account",
-		"Votes", "Sender", "Receiver", "Amount", "Number", "Gold", "Type", "Elo Deducted", "Bio Removed", "🛠️ List Options", "Clan Name Search", "Username Search", "Quantity", "Account Name Search", "1v1", "Zombie", "Chat", "Ready", "Next Game",
-		"Login", "The only official domain is territorial.io", "If you log in on a different website, your account may be stolen!", "If you play with the official Android or iOS App, you are fine.", "📜 Logs", "Source Account: {0}",
-		"Target Account: {0}", "Gold to be Sent: {10}", "Gold to be Received: {10}", "Procedural Map", "Realistic Map", "Custom Map", "Passable Water", "Passable Mountains", "Maximum Dimension", "Map File", "Select File", "Map Name", "Preview",
-		"Selectable Name", "📰 Propaganda", "Links", "Propaganda Text", "Reset", "Language", "Launch Campaign", "Gold Investment", "Launch", "Account Recovery", "Request Email", "▶️ Replay", "🔲 Select All", "📋 Copy", "🗑️ Clear", "▶️ Launch",
+		"Clan Leader Election", "Bio Reports", "Battle Royale Players", "Index", "Username", "Account", "Ranking", "Player", "Elo", "Clan", "Rating", "Leader", "Time Ago", "Accuser", "Accused", "Voter", "Target Account", "Votes", "Sender",
+		"Receiver", "Amount", "Number", "Gold", "Type", "Elo Deducted", "Bio Removed", "🛠️ List Options", "Clan Name Search", "Username Search", "Quantity", "Account Name Search", "1v1", "Zombie", "Chat", "Ready", "Next Game", "Login",
+		"The only official domain is territorial.io", "If you log in on a different website, your account may be stolen!", "If you play with the official Android or iOS App, you are fine.", "📜 Logs", "Source Account: {0}", "Target Account: {0}",
+		"Gold to be Sent: {10}", "Gold to be Received: {10}", "Procedural Map", "Realistic Map", "Custom Map", "Passable Water", "Passable Mountains", "Maximum Dimension", "Map File", "Select File", "Map Name", "Preview", "Selectable Name",
+		"📰 Propaganda", "Links", "Propaganda Text", "Reset", "Language", "Launch Campaign", "Gold Investment", "Launch", "Account Recovery", "Request Email", "▶️ Replay", "🔲 Select All", "📋 Copy", "🗑️ Clear", "▶️ Launch",
 		"Insert the replay data here!", "⚙️ Settings", "🔄 Reset", "Information", "Increasing resolution, shrinking minimum font size, and speeding up text rendering can strain your system and hinder gameplay responsiveness.", "Resolution",
 		"Low", "Medium", "High", "Very High", "Minimum Font Size", "Small", "Very Small", "Text Rendering Speed", "Slow", "Fast", "Large UI", "Place Balance Above", "Hide Zoom Buttons", "Font", "Message Box", "Keep Closed", "Is Muted",
 		"Multiplayer Connection", "Automatic (recommended)", "Direct", "Via Proxy", "Highlighting", "Intensity", "Shortcut Keys", "Spawning", "Selectable Spawn", "🔑 My Account", "📈 Clan Charts", "🧈 Gold Transfer", "⚔️ Join Lobby 2",
@@ -9149,7 +9149,7 @@ function aBz(data) {
 		})]);
 		var fB = {
 				t1: [],
-				t7: [L(375), L(376), L(377) + " ↗"],
+				t7: [L(374), L(375), L(376) + " ↗"],
 				tE: [12, 50, 38]
 			},
 			a60 = aD.data.a60;
@@ -9183,7 +9183,7 @@ function aBz(data) {
 					tc: data.tc
 				}))
 			})],
-			t7 = [L(364), L(365), L(366), L(367), L(368), L(369), L(370), L(371), L(372), L(373), L(358), L(359), "Audit Log", L(374)];
+			t7 = [L(364), L(365), L(366), L(367), L(368), L(369), L(370), L(371), L(372), L(373), L(358), L(359), "Audit Log", L(360)];
 		aPJ = new vP(t7[data.tc], aSa), ! function() {
 			var aB, fB = {
 					t1: []
@@ -9195,20 +9195,20 @@ function aBz(data) {
 			var ng = [.1, .001, .01, 1, 100, 1, 1, .1, 100, .01, .01, .01, 1, .01][data.tc],
 				a59 = [1, 3, 2, 0, 0, 0, 0, 1, 0, 2, 2, 2, 0, 2][data.tc],
 				eF = [
-					[L(378), L(379) + " ↗", L(380)],
-					[L(378), L(381), L(382), L(383) + " ↗"],
-					[L(378), L(379) + " ↗", L(382)],
-					[L(378), L(379) + " ↗", L(382)],
-					[L(375), L(384), L(385) + " ↗", L(386) + " ↗", L(123)],
-					[L(375), L(384), L(387) + " ↗", L(388) + " ↗", L(389)],
-					[L(375), L(384), L(390) + " ↗", L(391) + " ↗", L(392)],
-					[L(375), L(384), L(387) + " ↗", L(388) + " ↗", L(393)],
-					[L(375), L(384), L(385) + " ↗", L(386) + " ↗", L(123)],
-					[L(378), L(379) + " ↗", L(382)],
-					[L(378), L(379) + " ↗", L(394)],
-					[L(378), L(379) + " ↗", L(382)],
-					[L(375), L(384), L(385) + " ↗", L(386) + " ↗", L(395)],
-					[L(378), L(379) + " ↗", L(382)]
+					[L(377), L(378) + " ↗", L(379)],
+					[L(377), L(380), L(381), L(382) + " ↗"],
+					[L(377), L(378) + " ↗", L(381)],
+					[L(377), L(378) + " ↗", L(381)],
+					[L(374), L(383), L(384) + " ↗", L(385) + " ↗", L(123)],
+					[L(374), L(383), L(386) + " ↗", L(387) + " ↗", L(388)],
+					[L(374), L(383), L(389) + " ↗", L(390) + " ↗", L(391)],
+					[L(374), L(383), L(386) + " ↗", L(387) + " ↗", L(392)],
+					[L(374), L(383), L(384) + " ↗", L(385) + " ↗", L(123)],
+					[L(377), L(378) + " ↗", L(381)],
+					[L(377), L(378) + " ↗", L(393)],
+					[L(377), L(378) + " ↗", L(381)],
+					[L(374), L(383), L(384) + " ↗", L(385) + " ↗", L(394)],
+					[L(377), L(378) + " ↗", L(381)]
 				];
 			if (fB.t7 = eF[data.tc], fB.tE = [
 					[25, 40, 35],
@@ -9280,7 +9280,7 @@ function aBz(data) {
 				else if (4 === data.tc || 5 === data.tc || 6 === data.tc || 7 === data.tc || 8 === data.tc)
 				for (aB = 0; aB < f8; aB++) {
 					var aSl = aSg[aB][5];
-					4 === data.tc || 8 === data.tc ? "100%" === (aSl = (aSl % 64 * 100 / (aSl >> 6)).toFixed(0) + "%") && (4 === data.tc ? aSl += " (" + L(396) + ")" : aSl += " (" + L(397) + ")") : 5 === data.tc ? 32768 <= aSl && (aSl = -(aSl -
+					4 === data.tc || 8 === data.tc ? "100%" === (aSl = (aSl % 64 * 100 / (aSl >> 6)).toFixed(0) + "%") && (4 === data.tc ? aSl += " (" + L(395) + ")" : aSl += " (" + L(396) + ")") : 5 === data.tc ? 32768 <= aSl && (aSl = -(aSl -
 						32768)) : aSl = (ng * aSl).toFixed(a59), t1.push([{
 						fa: "" + aSg[aB][0],
 						eX: 0
@@ -9317,7 +9317,7 @@ function aSe(a4z) {
 		aPJ.resize(), aPK.resize()
 	}, this.a3D = function(eg) {
 		2 === eg && aPJ.vW[0].rI()
-	}, aPJ = new vP(L(398), [new w("⬅️ " + L(40), function() {
+	}, aPJ = new vP(L(397), [new w("⬅️ " + L(40), function() {
 		t.aPH(10)
 	})]), aPK = new qu(aPJ.vV, ((qw = []).push(function() {
 		var aPn, aPf = new qe,
@@ -9348,7 +9348,7 @@ function aSe(a4z) {
 			aRU = new rp(bl.eT.data[133], 0, function() {
 				aRT.e.focus()
 			});
-		return aPf.qh(1 === a4z.tc ? L(399) : L(400)), aPf.qs(aRU), aRU.e.style.marginBottom = "0.8em", aPf.qh(L(401)), aPf.qs(aRT), aPn = new w(L(312), function() {
+		return aPf.qh(1 === a4z.tc ? L(398) : L(399)), aPf.qs(aRU), aRU.e.style.marginBottom = "0.8em", aPf.qh(L(400)), aPf.qs(aRT), aPn = new w(L(312), function() {
 			var aRs = aRU.e.value.slice(0, 20),
 				aRt = Math.abs(Math.floor(aRT.e.value));
 			t.u(8, t.a6C(10).a2O, new tK(22, {
@@ -9365,7 +9365,7 @@ function aSe(a4z) {
 			aRU = new rp(bl.eT.data[151], 0, function() {
 				aRT.e.focus()
 			});
-		return aPf.qh(L(402)), aPf.qs(aRU), aRU.e.style.marginBottom = "0.8em", aPf.qh(L(401)), aPf.qs(aRT), aPn = new w(L(312), function() {
+		return aPf.qh(L(401)), aPf.qs(aRU), aRU.e.style.marginBottom = "0.8em", aPf.qh(L(400)), aPf.qs(aRT), aPn = new w(L(312), function() {
 			var aRs = aRU.e.value.slice(0, 5),
 				aRt = Math.abs(Math.floor(aRT.e.value));
 			t.u(8, t.a6C(10).a2O, new tK(28, {
@@ -9381,7 +9381,7 @@ function aPD() {
 	var aSp, tq, aSs, tp, ts, aSq = [new Array(4), new Array(4), new Array(2), new Array(2)],
 		aSr = new Array(4),
 		aSt = new Array(2),
-		aSu = [L(64), L(357), L(403), L(404)];
+		aSu = [L(64), L(357), L(402), L(403)];
 
 	function aFf() {
 		var aEy;
@@ -9426,7 +9426,7 @@ function aPD() {
 			aT1 = bp.y.s7[aT1],
 			fS = (bU.a7(aT1.eo, aT1.mapSeed), tq.ra),
 			a7t = aT2(aT1.eo, aT1.mapSeed) + aT3(aT1.aEi) + aT4(aT1.aFW),
-			aT1 = L(407) + "   " + aT2(aT1.aGS, aT1.aGT) + aT3(aT1.aGU) + aT4(aT1.aFW, 1);
+			aT1 = L(406) + "   " + aT2(aT1.aGS, aT1.aGT) + aT3(aT1.aGU) + aT4(aT1.aFW, 1);
 		fS[0].button.textContent === a7t && fS[1].button.textContent === aT1 || (fS[0].button.textContent = a7t, fS[1].button.textContent = aT1, tq.resize())
 	}, this.aFT = function() {
 		var aT1 = bp.y.s5[0],
@@ -9466,14 +9466,14 @@ function aPD() {
 	}), new w(aSu[3], function() {
 		return aSv(0, 3), 2
 	})], bD.pJ), tq = new sX([new w("", 0, 2), new w("", 0, 2)], bD.pK, 1);
-	var aSw = new sX([new w(L(405), function() {
+	var aSw = new sX([new w(L(404), function() {
 		return aSv(2, 0), 2
 	}), new w(L(119), function() {
 		return aSv(2, 1), 2
 	})], bD.pJ);
 	ts = new sX([new w(L(26, 0, 0, 1), function() {
 		t.x(), bp.uj(), b0.y.a2V(3240), t.u(5, 5)
-	}), new w(L(406), function() {
+	}), new w(L(405), function() {
 		return aSx(1), 2
 	})], bD.pJ), aSp = new tn(tp, tq, aSw, ts, aFf, bp.up.aGB);
 	for (var aB = 0; aB < 4; aB++) aSq[0][aB] = new ry("0", tp.ra[aB].button), aSq[1][aB] = new ry("0", tp.ra[aB].button, 1);
@@ -9491,7 +9491,7 @@ function aOu() {
 		aPJ.resize(), aPK.resize()
 	}, this.a3D = function(eg) {
 		2 === eg && aPJ.vW[0].rI()
-	}, aPJ = new vP(L(408), [new w("⬅️ " + L(40), function() {
+	}, aPJ = new vP(L(407), [new w("⬅️ " + L(40), function() {
 		t.u(7, t.a6C(7).a2O)
 	}), new w(L(210), function() {
 		bl.pV.pW(105, bI.tM.xD(aPK.qy[0].qf[0].e.value, 5)), bl.pV.pW(106, bI.tM.xD(aPK.qy[1].qf[0].e.value, 15)), t.u(8, t.a6C(7).a2O, new tK(18))
@@ -9512,7 +9512,7 @@ function aOu() {
 		}).button])), aPf
 	}()), qw.push(function() {
 		var aPf = new qe;
-		return aPf.qh(L(194)), aPf.qj(L(409)), aPf.qj(L(410)), aPf.qj(L(411)), aPf
+		return aPf.qh(L(194)), aPf.qj(L(408)), aPf.qj(L(409)), aPf.qj(L(410)), aPf
 	}()), qw))
 }
 
@@ -9544,7 +9544,7 @@ function aP1() {
 		aSZ(12)
 	}, 0, 0, 1)], vQ = [new w("⬅️ " + L(40), function() {
 		t.a2I()
-	})], aPJ = new vP(L(412), vQ), aSX = new rZ(aSY, aPJ.vV)
+	})], aPJ = new vP(L(411), vQ), aSX = new rZ(aSY, aPJ.vV)
 }
 
 function aOl() {
@@ -9581,8 +9581,8 @@ function aOl() {
 	}, this.aPo = function(fa, pT, a7i) {
 		fa = bC.gU.a4w(fa, 1, 1e6);
 		var aTG = Math.max(1, 1 + Math.floor(.01 * (fa - 100))),
-			pT = L(413, [pT]);
-		return (pT += "<br>") + L(414, [a7i]) + "<br>" + L(415, [aTG < 20 ? fa + aTG + "–" + (fa + 20) : fa + aTG]) + "<br>" + L(416, [fa])
+			pT = L(412, [pT]);
+		return (pT += "<br>") + L(413, [a7i]) + "<br>" + L(414, [aTG < 20 ? fa + aTG + "–" + (fa + 20) : fa + aTG]) + "<br>" + L(415, [fa])
 	}
 }
 
@@ -9623,17 +9623,17 @@ function aP4() {
 	}, aQU = new vP(L(334), [new w("⬅️ " + L(40), aQX)]), 2 === aD.data.mapType && b6.dh(), aQV = new qu(aQU.vV, (function(qw) {
 		var aPf = new qe;
 		aPf.qh(L(300)), aPf.qp(new vL({
-			t0: [L(417), L(418), L(419)],
+			t0: [L(416), L(417), L(418)],
 			value: aD.data.mapType
 		}, function(eF) {
 			2 === (aD.data.mapType = eF) ? (b6.dh(), aD.data.canvas = null) : (aD.data.passableWater = aD.data.passableMountains = 1, b6.uj()), t.u(20)
 		})), 2 <= aD.data.mapType && (aPf.qs(new se), aPf.qs(new sQ({
 			value: aD.data.passableWater
-		}, L(420), function(value) {
+		}, L(419), function(value) {
 			aD.data.passableWater = value
 		})), aPf.qs(new sQ({
 			value: aD.data.passableMountains
-		}, L(421), function(value) {
+		}, L(420), function(value) {
 			aD.data.passableMountains = value
 		})));
 		qw.push(aPf)
@@ -9659,12 +9659,12 @@ function aP4() {
 		}
 	}(qw), function(qw) {
 		var aPf;
-		2 === aD.data.mapType && ((aPf = new qe).qh(L(422)), aPf.qs(new rp(bl.eT.data[162], 1)), aPf.qh(L(423), "0.8em"), aPf.qs(new sU([new w(L(424), function() {
+		2 === aD.data.mapType && ((aPf = new qe).qh(L(421)), aPf.qs(new rp(bl.eT.data[162], 1)), aPf.qh(L(422), "0.8em"), aPf.qs(new sU([new w(L(423), function() {
 			return b6.aJC(), !0
 		}).button])), qw.push(aPf))
 	}(qw), function(qw) {
 		var aPf, ro;
-		2 === aD.data.mapType && ((aPf = new qe).qh(L(425)), ro = new rp({
+		2 === aD.data.mapType && ((aPf = new qe).qh(L(424)), ro = new rp({
 			eF: -1,
 			value: aD.data.mapName
 		}, 0, 0, function(e) {
@@ -9683,7 +9683,7 @@ function aP4() {
 			if (aD.data.mapSeed !== aMe) return ro.e.value = aD.data.mapSeed = aMe, aTO(), !0
 		}), aPf.qs(ro), aPf.qs(new sU([aPn.button])), qw.push(aPf))
 	}(qw), function(qw) {
-		(aTH = new qe).qh(L(426)), 2 !== aD.data.mapType ? aTP() : aD.data.canvas && aTQ();
+		(aTH = new qe).qh(L(425)), 2 !== aD.data.mapType ? aTP() : aD.data.canvas && aTQ();
 		qw.push(aTH)
 	}(qw), qw))
 }
@@ -9730,7 +9730,7 @@ function aP7() {
 			aQZ(), aD.data.playerNamesType = eF, t.u(23)
 		})), aPf.qs(new se), aPf.qs(new sQ({
 			value: aD.data.selectableName
-		}, L(427), function(value) {
+		}, L(426), function(value) {
 			aD.data.selectableName = value
 		})), qw.push(aPf)
 	}(qw = []), function(qw) {
@@ -9759,14 +9759,14 @@ function aPF() {
 		aQU.resize(), aQV.resize()
 	}, this.a3D = function(eg) {
 		2 === eg && aQU.vW[0].rI()
-	}, aQU = new vP(L(428), [new w("⬅️ " + L(40), function() {
+	}, aQU = new vP(L(427), [new w("⬅️ " + L(40), function() {
 		t.a2I()
 	})]), aQV = new qu(aQU.vV, ((qw = []).push(function() {
 		var aPf = new qe;
-		return aPf.qh(L(429)), aPf.qn(b0.y.aPg("/wiki/propaganda"), "0.75em").style.marginBottom = "0.8em", aPf.qn("<a href='https://tt-propagandio.vercel.app/' target='_blank'>Unofficial Propaganda Generator</a>", "0.75em"), aPf
+		return aPf.qh(L(428)), aPf.qn(b0.y.aPg("/wiki/propaganda"), "0.75em").style.marginBottom = "0.8em", aPf.qn("<a href='https://tt-propagandio.vercel.app/' target='_blank'>Unofficial Propaganda Generator</a>", "0.75em"), aPf
 	}()), qw.push(function() {
 		var aPf = new qe,
-			ei = (aPf.qh(L(430)), bl.eT.data[174].value),
+			ei = (aPf.qh(L(429)), bl.eT.data[174].value),
 			qk = aPf.qj(ei.length + " / 180"),
 			aQC = (qk.style.textAlign = "center", new vn(0, 1, function(e) {
 				var e = e.target.value,
@@ -9781,22 +9781,22 @@ function aPF() {
 			var iR = aPf.qs(new rp(bl.eT.data[163 + aB]));
 			aB && (iR.e.style.marginTop = "0.6em")
 		}
-		return aPf.qs(new sU([new w(L(431), function() {
+		return aPf.qs(new sU([new w(L(430), function() {
 			for (var data = bl.eT.data, aB = 163; aB < 174; aB++) data[aB] && bl.eT.wA(aB, data[aB].wD);
 			t.a2I(), t.aPI()[31] = null, t.u(31)
 		}).button])), aPf
 	}()), qw.push(function() {
 		var aPf = new qe;
-		return aPf.qh("Targeting"), aPf.qn(L(432)), aPf.qs(new rp(bl.eT.data[175], 0, 0)), aPf
+		return aPf.qh("Targeting"), aPf.qn(L(431)), aPf.qs(new rp(bl.eT.data[175], 0, 0)), aPf
 	}()), qw.push(function() {
 		var aPf = new qe;
-		return aPf.qh(L(426)), aPf.qs(new sU([new w(L(191), function() {
+		return aPf.qh(L(425)), aPf.qs(new sU([new w(L(191), function() {
 			(new eh).show(bl.eT.data[174].value, aTZ(), -1)
 		}).button])), aPf
 	}()), qw.push(function() {
 		var aPf = new qe,
-			aTa = (aPf.qh(L(433)), aPf.qn(L(434)), new rp(bl.eT.data[176], 1, 0)),
-			aTb = (aPf.qs(aTa), new w(L(435), function(e) {
+			aTa = (aPf.qh(L(432)), aPf.qn(L(433)), new rp(bl.eT.data[176], 1, 0)),
+			aTb = (aPf.qs(aTa), new w(L(434), function(e) {
 				return aTc.button.textContent === L(186) && b0.y.ec(0) && (bC.r1.vI(e), aPm(), b0.aGO.aTd(bl.eT.data[176].value, aTZ(), bl.eT.data[175].value, bl.eT.data[174].value)), !0
 			}, 1)),
 			aPm = function() {
@@ -9819,7 +9819,7 @@ function aPG() {
 		aPJ.resize(), aPK.resize()
 	}, this.a3D = function(eg) {
 		2 === eg && aPJ.vW[0].rI()
-	}, aPJ = new vP("🔒 " + L(436), [new w("⬅️ " + L(40), function() {
+	}, aPJ = new vP("🔒 " + L(435), [new w("⬅️ " + L(40), function() {
 		t.a2I()
 	})]), aPK = new qu(aPJ.vV, ((qw = []).push(function() {
 		var aPf = new qe,
@@ -9831,7 +9831,7 @@ function aPG() {
 				value: "",
 				eF: -1
 			}, 0, 0)),
-			aPl = (aQ8.e.type = "email", aQ8.e.autocomplete = "email", aQ8.e.name = "email", aQ8.e.inputMode = "email", aQ8.e.spellcheck = !1, aPf.qs(aQ8), new w(L(437), function(e) {
+			aPl = (aQ8.e.type = "email", aQ8.e.autocomplete = "email", aQ8.e.name = "email", aQ8.e.inputMode = "email", aQ8.e.spellcheck = !1, aPf.qs(aQ8), new w(L(436), function(e) {
 				return bC.r1.vI(e), b0.aGO.aQ9({
 					tL: 4,
 					qi: ro.e.value.trim() + aQ8.e.value.trim().substring(0, 63)
@@ -9859,17 +9859,17 @@ function aOs() {
 		aQU.resize(), vs.resize()
 	}, this.a3D = function(eg) {
 		2 === eg ? aQU.vW[0].rI() : aTf()
-	}, aQU = new vP(L(438), [new w("⬅️ " + L(40), function() {
+	}, aQU = new vP(L(437), [new w("⬅️ " + L(40), function() {
 		t.aPH(1)
-	}), new w(L(439), function() {
+	}), new w(L(438), function() {
 		vs.vw()
-	}), new w(L(440), function() {
+	}), new w(L(439), function() {
 		vs.vx()
-	}), new w(L(441), function() {
+	}), new w(L(440), function() {
 		vs.clear()
-	}), new w(L(442), function() {
+	}), new w(L(441), function() {
 		aTf()
-	})]), vs = new vn(L(443)), aQU.vV.appendChild(vs.e)
+	})]), vs = new vn(L(442)), aQU.vV.appendChild(vs.e)
 }
 
 function aOr() {
@@ -9886,12 +9886,12 @@ function aOr() {
 			aPJ.resize(), aPK.resize()
 		}, this.a3D = function(eg) {
 			2 === eg && aPJ.vW[0].rI()
-		}, aPJ = new vP(L(444), [new w("⬅️ " + L(40), aTl), new w(L(445), function() {
+		}, aPJ = new vP(L(443), [new w("⬅️ " + L(40), aTl), new w(L(444), function() {
 			t.x(), bl.pV.wl(), t.u(2)
-		})]), qw = [], (aPf = new qe).qh(L(446)), aPf.qj(L(447)), qw.push(aPf),
+		})]), qw = [], (aPf = new qe).qh(L(445)), aPf.qj(L(446)), qw.push(aPf),
 		function(qw) {
 			var aPf = new qe,
-				g = (aPf.qh(L(432)), b9.data.aDZ());
+				g = (aPf.qh(L(431)), b9.data.aDZ());
 			aPf.qp(new vL({
 				t0: g,
 				value: b9.data.aDd(g)
@@ -9901,8 +9901,8 @@ function aOr() {
 		}(qw),
 		function(qw) {
 			var aPf = new qe,
-				aTo = (aPf.qh(L(472)), []);
-			aPf.qs(new sU([new w(L(431), function(e) {
+				aTo = (aPf.qh(L(471)), []);
+			aPf.qs(new sU([new w(L(430), function(e) {
 				bZ.aTp();
 				for (var aB = 0; aB < aTo.length; aB++) aTo[aB].e.value = bZ.aCr[aB];
 				return bC.r1.vI(e), !0
@@ -9923,15 +9923,15 @@ function aOr() {
 				}
 			}
 			qw.push(aPf)
-		}(qw), (aPf = new qe).qh(L(448)), bl.eT.data[1].t0 = [L(449), L(450), L(451), L(452)], aPf.qp(new vL(bl.eT.data[1])), qw.push(aPf), (aPf = new qe).qh(L(453)), bl.eT.data[9].t0 = [L(450), L(454), L(455)], aPf.qp(new vL(bl.eT.data[9])), qw
-		.push(aPf), (aPf = new qe).qh(L(456)), bl.eT.data[11].t0 = [L(457), L(9), L(458)], aPf.qp(new vL(bl.eT.data[11])), qw.push(aPf), (aPf = new qe).qh(L(459)), aPf.qs(new sQ(bl.eT.data[2])), qw.push(aPf), (aPf = new qe).qh(L(460)), aPf.qs(new sQ(
-			bl.eT.data[7])), qw.push(aPf), (aPf = new qe).qh(L(461)), aPf.qs(new sQ(bl.eT.data[8])), qw.push(aPf), (aPf = new qe).qh(L(462)), aPf.qs(new rp(bl.eT.data[5])), qw.push(aPf), (aPf = new qe).qh(L(463)), aPf.qs(new sQ(bl.eT.data[13], L(
-			464))), aPf.qs(new sQ(bl.eT.data[14], L(465))), qw.push(aPf), (aPf = new qe).qh(L(466)), aPf.qp(new vL({
-			t0: [L(467), L(468), L(469)],
+		}(qw), (aPf = new qe).qh(L(447)), bl.eT.data[1].t0 = [L(448), L(449), L(450), L(451)], aPf.qp(new vL(bl.eT.data[1])), qw.push(aPf), (aPf = new qe).qh(L(452)), bl.eT.data[9].t0 = [L(449), L(453), L(454)], aPf.qp(new vL(bl.eT.data[9])), qw
+		.push(aPf), (aPf = new qe).qh(L(455)), bl.eT.data[11].t0 = [L(456), L(9), L(457)], aPf.qp(new vL(bl.eT.data[11])), qw.push(aPf), (aPf = new qe).qh(L(458)), aPf.qs(new sQ(bl.eT.data[2])), qw.push(aPf), (aPf = new qe).qh(L(459)), aPf.qs(new sQ(
+			bl.eT.data[7])), qw.push(aPf), (aPf = new qe).qh(L(460)), aPf.qs(new sQ(bl.eT.data[8])), qw.push(aPf), (aPf = new qe).qh(L(461)), aPf.qs(new rp(bl.eT.data[5])), qw.push(aPf), (aPf = new qe).qh(L(462)), aPf.qs(new sQ(bl.eT.data[13], L(
+			463))), aPf.qs(new sQ(bl.eT.data[14], L(464))), qw.push(aPf), (aPf = new qe).qh(L(465)), aPf.qp(new vL({
+			t0: [L(466), L(467), L(468)],
 			value: aZ.aHH
 		}, function(aB) {
 			aZ.aHH = aB
-		})), qw.push(aPf), (aPf = new qe).qh(L(470)), aPf.qs(new sQ(bl.eT.data[15])), aPf.qj(L(471)), aPf.qs(new rp(bl.eT.data[16], 1, 0, function(e) {
+		})), qw.push(aPf), (aPf = new qe).qh(L(469)), aPf.qs(new sQ(bl.eT.data[15])), aPf.qj(L(470)), aPf.qs(new rp(bl.eT.data[16], 1, 0, function(e) {
 			e.target.value = bN.iG(Math.floor(e.target.value), 0, 16)
 		})), qw.push(aPf), aPK = new qu(aPJ.vV, qw)
 }
@@ -9954,7 +9954,7 @@ function aP8() {
 		aQU.resize(), aQV.resize()
 	}, this.a3D = function(eg) {
 		2 === eg && aQU.vW[0].rI()
-	}, aQU = new vP(L(473), [new w("⬅️ " + L(40), aQX)]), aQV = new qu(aQU.vV, (function(qw) {
+	}, aQU = new vP(L(472), [new w("⬅️ " + L(40), aQX)]), aQV = new qu(aQU.vV, (function(qw) {
 		var aPf = new qe,
 			t0 = (aPf.qh(L(300)), [L(325), L(337), L(303)]),
 			value = aD.data.spawningType;
@@ -9966,7 +9966,7 @@ function aP8() {
 			aQZ(), aD.data.spawningType = eF, 0 === aD.data.gameMode && 1 === eF && (aD.data.spawningType = 2), 2 !== aD.data.spawningType || aD.data.spawningData || (aD.data.spawningData = new Uint16Array(2 * aD.f5)), t.u(24)
 		})), aPf.qs(new se), aPf.qs(new sQ({
 			value: aD.data.selectableSpawn
-		}, L(474), function(value) {
+		}, L(473), function(value) {
 			aD.data.selectableSpawn = value
 		})), qw.push(aPf)
 	}(qw = []), function(qw) {
@@ -10001,65 +10001,65 @@ function aOq() {
 			.es) ? aSY[0].rJ === bD.oG && aSY[0].rL(0) : aSY[0].rJ !== bD.oG && aSY[0].rL(bD.oG))
 	}, this.a3D = function(eg) {
 		2 === eg && aPJ.vW[0].rI()
-	}, aSY = [new w(L(475), function() {
+	}, aSY = [new w(L(474), function() {
 		aTt(0)
 	}), new w(L(361), function() {
 		t.u(16)
-	}), new w(L(412), function() {
+	}), new w(L(411), function() {
 		t.u(17)
-	}), new w(L(476), function() {
+	}), new w(L(475), function() {
 		t.y.aRO()
-	}, 0, 0, 1), new w(L(438), function() {
+	}, 0, 0, 1), new w(L(437), function() {
 		t.u(3, 1)
-	}), new w(L(477), function() {
+	}), new w(L(476), function() {
 		t.u(18)
-	}), new w(L(428), function() {
+	}), new w(L(427), function() {
 		t.u(31)
-	}), new w(L(478), function() {
+	}), new w(L(477), function() {
 		t.y.a5w(2)
-	}), new w(L(444), function() {
+	}), new w(L(443), function() {
 		aTt(1)
-	}), new w("🔒 " + L(436), function() {
+	}), new w("🔒 " + L(435), function() {
 		t.u(32)
-	}), new w(L(479), function() {
-		var t7 = ["Patreon", L(488), L(489), "YouTube Tutorial", "Discord", L(490), L(353), L(491), L(356), L(492), "Terms", "Privacy"],
+	}), new w(L(478), function() {
+		var t7 = ["Patreon", L(487), L(488), "YouTube Tutorial", "Discord", L(489), L(353), L(490), L(356), L(491), "Terms", "Privacy"],
 			a4P = [bM.aQS, bM.aDq, bM.a2C, "https://www.youtube.com/watch?v=6QBmA9N1668", bM.aDr, bM.aTz, bM.aU0, bM.aU1, bM.aU2, bM.aU3, bM.aU4, bM.aU5];
 		if (b0.y.aU6(0))
 			for (var aB = 0; aB < a4P.length; aB++) a4P[aB] = a4P[aB].replace("https://territorial.io", "https://game.territorial.io");
-		1 === a0.id ? (t7.splice(2, 1), t7.splice(0, 1), a4P.splice(2, 1), a4P.splice(0, 1)) : 2 === a0.id && (t7.splice(1, 1), t7.splice(0, 1), a4P.splice(1, 1), a4P.splice(0, 1)), t.u(4, 1, new v(L(479), bC.r1.a4O(t7, a4P), !1, [new w(
+		1 === a0.id ? (t7.splice(2, 1), t7.splice(0, 1), a4P.splice(2, 1), a4P.splice(0, 1)) : 2 === a0.id && (t7.splice(1, 1), t7.splice(0, 1), a4P.splice(1, 1), a4P.splice(0, 1)), t.u(4, 1, new v(L(478), bC.r1.a4O(t7, a4P), !1, [new w(
 			"⬅️ " + L(40),
 			function() {
 				t.u(1)
 			})]))
-	}), new w(L(480), function() {
-		t.u(4, 1, new v(L(480), l.e0 + "<br>" + b0.y.aPg("/changelog") + "<br><br><l>FX Client v" + __fx.version +
+	}), new w(L(479), function() {
+		t.u(4, 1, new v(L(479), l.e0 + "<br>" + b0.y.aPg("/changelog") + "<br><br><l>FX Client v" + __fx.version +
 			"<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a><br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></l>", !0, [new w("⬅️ " + L(40),
 				function() {
 					t.u(1)
 				})]))
-	}), new w(L(481), function() {
-		t.u(4, 1, new v(L(481), L(493) + "<br>" + L(494), !1, [new w("⬅️ " + L(40), function() {
+	}), new w(L(480), function() {
+		t.u(4, 1, new v(L(480), L(492) + "<br>" + L(493), !1, [new w("⬅️ " + L(40), function() {
 			t.u(1)
-		}), new w(L(495), function() {
+		}), new w(L(494), function() {
 			a0.a1.a26(), t.u(1)
 		})]))
-	}), new w("👁️ " + L(482), function() {
-		a0.a1.a27(), t.u(4, 1, new v(L(496), L(497) + " " + b0.y.aPg("/privacy"), !1, [new w("⬅️ " + L(40), function() {
+	}), new w("👁️ " + L(481), function() {
+		a0.a1.a27(), t.u(4, 1, new v(L(495), L(496) + " " + b0.y.aPg("/privacy"), !1, [new w("⬅️ " + L(40), function() {
 			t.u(1)
 		})]))
 	})], vQ = [new w("⬅️ " + L(40), function() {
 		t.y.aDW()
 	})], 8 === aa.a2J() && (aSY.unshift(new w(L(348), function() {
 		t.u(30)
-	})), aSY.unshift(new w(L(485), function() {
+	})), aSY.unshift(new w(L(484), function() {
 		2 <= bf.aTy && (t.x(), bg.a3G(), bh.dp = !0)
-	}, 0, 1)), aSY.unshift(new w(L(486), function() {
+	}, 0, 1)), aSY.unshift(new w(L(485), function() {
 		!aD.hH && aM.qc(aD.es) && (bA.hY.pp(), t.x(), aM.hI) && aM.a3G()
-	}, 0, 1)), aSY.unshift(new w(L(487), function() {
+	}, 0, 1)), aSY.unshift(new w(L(486), function() {
 		!aD.hH && aw.hx(aD.es) && (bX.a6Y(2), bA.hY.ht(), t.x(), aM.hI) && aM.a3G()
-	}, 0, 1))), 1 === a0.id && 5 <= a0.e0 && aSY.push(new w(L(483), function() {
+	}, 0, 1))), 1 === a0.id && 5 <= a0.e0 && aSY.push(new w(L(482), function() {
 		a0.a1.a28()
-	})), aPJ = new vP(L(484), vQ), aSX = new rZ(aSY, aPJ.vV)
+	})), aPJ = new vP(L(483), vQ), aSX = new rZ(aSY, aPJ.vV)
 }
 
 function aPC() {
@@ -10154,21 +10154,21 @@ function aP2() {
 		aPJ.resize(), aPK.resize()
 	}, this.a3D = function(eg) {
 		2 === eg && aPJ.vW[0].rI()
-	}, aPJ = new vP(L(477), [new w("⬅️ " + L(40), function() {
+	}, aPJ = new vP(L(476), [new w("⬅️ " + L(40), function() {
 		t.a2I()
 	})]), aPK = new qu(aPJ.vV, ((qw = []).push(function() {
 		function aPm() {
 			aTc.button.textContent = L(185), aU9.e.readOnly = !1, aUA.e.readOnly = !1, aPl.rL(1), aPl.button.style.color = bD.o4
 		}
 		var aPf = new qe,
-			aU8 = (aPf.qn(b0.y.aPg("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", aPf.qh(L(498)), new rp({
+			aU8 = (aPf.qn(b0.y.aPg("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", aPf.qh(L(497)), new rp({
 				value: bl.eT.data[105].value,
 				eF: -1
 			})),
-			aU9 = (aU8.e.readOnly = !0, aPf.qs(aU8), aPf.qh(L(388), "0.8em"), new rp(bl.eT.data[148], 0, void 0, function(e) {
+			aU9 = (aU8.e.readOnly = !0, aPf.qs(aU8), aPf.qh(L(387), "0.8em"), new rp(bl.eT.data[148], 0, void 0, function(e) {
 				aPk(bl.eT.data[149].value, e.target.value)
 			})),
-			aUA = (aPf.qs(aU9), aPf.qh(L(392), "0.8em"), new rp(bl.eT.data[149], 1, void 0, function(e) {
+			aUA = (aPf.qs(aU9), aPf.qh(L(391), "0.8em"), new rp(bl.eT.data[149], 1, void 0, function(e) {
 				aPk(e.target.value, bl.eT.data[148].value)
 			})),
 			aTc = (aPf.qs(aUA), new w(L(185), function(e) {
@@ -10183,7 +10183,7 @@ function aP2() {
 				})), !0
 			}, 1)),
 			qk = aPf.qj(),
-			aPk = (aPf.qj(L(499)).style.fontWeight = "bold", function(fa, qi) {
+			aPk = (aPf.qj(L(498)).style.fontWeight = "bold", function(fa, qi) {
 				qk.innerHTML = t.y.aPo(fa, bl.eT.data[105].value, qi)
 			});
 		return aPf.qs(new sU([aPl.button])), aPk(bl.eT.data[149].value, bl.eT.data[148].value), aPf
@@ -11009,7 +11009,7 @@ function aWl() {
 	var aWw = 0;
 
 	function aX0(qi, id) {
-		aWw || (id ? 1 === id ? aN.a7B = L(501) + ": " + qi : t.u(4, 3, new v(L(502), qi, 1)) : t.u(4, 3, new v("⚠️ " + L(500), qi, 1)))
+		aWw || (id ? 1 === id ? aN.a7B = L(500) + ": " + qi : t.u(4, 3, new v(L(501), qi, 1)) : t.u(4, 3, new v("⚠️ " + L(499), qi, 1)))
 	}
 	this.xO = function(qi, aWx) {
 		var iR, qt;
@@ -11703,7 +11703,7 @@ function aYG() {
 					if (aaG = eu + bO.iC[aB] << 2, ac.f3(aaG) && !ac.ez(aaG) && ac.f0(aaG) === aZV) {
 						fM = !0;
 						break
-					} fM && (aN.a7q(719, 0), hz = hr < 25e3 ? L(503) + " (" + bC.s0.a0O(hr) + ") ⛵" : L(504) + " (" + bC.s0.a0O(hr) + ") 🚢", aN.zZ(180, hz, 719, player, bD.ob, bD.o1, -1, !0, void 0, {
+					} fM && (aN.a7q(719, 0), hz = hr < 25e3 ? L(502) + " (" + bC.s0.a0O(hr) + ") ⛵" : L(503) + " (" + bC.s0.a0O(hr) + ") 🚢", aN.zZ(180, hz, 719, player, bD.ob, bD.o1, -1, !0, void 0, {
 					fS: 1,
 					nR: nR
 				}))
@@ -12026,7 +12026,7 @@ function aYO() {
 }
 
 function dk() {
-	this.aTq = [L(505), L(506), L(507), L(508), L(509), L(510), L(511), L(512), L(513), L(514), L(515), L(516), L(517), L(518), L(519), L(520)];
+	this.aTq = [L(504), L(505), L(506), L(507), L(508), L(509), L(510), L(511), L(512), L(513), L(514), L(515), L(516), L(517), L(518), L(519)];
 	var abN = ["Space", "", "KeyB", "", "KeyW", "", "KeyS", "", "KeyD", "", "KeyA", "", "KeyH", "", "NumpadAdd", "", "NumpadSubtract", "", "ArrowLeft", "", "ArrowRight", "", "ArrowUp", "", "ArrowDown", "", "KeyM", "", "KeyP", "", "KeyI", ""];
 	this.aCr = new Array(abN.length), this.dh = function() {
 		var g = bl.eT.data[155].value.split(";"),
@@ -12128,7 +12128,7 @@ function dT() {
 		self.max[0] = Math.max(self.abe[aB], self.max[0]), self.max[1] = Math.max(self.a4f[aB], self.max[1]), self.max[2] = Math.max(self.aCW[aB], self.max[2])
 	}
 	this.max = [0, 0, 0], this.abg = 0, this.mz = new Array(21), this.abh = null, this.di = function() {
-		this.abh = [L(521), L(522), L(523), L(524), L(525), L(526), L(527), L(528), L(341), L(342), L(529), L(530), L(531), L(532), "", L(533), L(534), L(535), L(299), L(536), L(537)]
+		this.abh = [L(520), L(521), L(522), L(523), L(524), L(525), L(526), L(527), L(341), L(342), L(528), L(529), L(530), L(531), "", L(532), L(533), L(534), L(299), L(535), L(536)]
 	}, this.dh = function() {
 		this.aTy = 0, abf = 1, this.abg = 0, uw = 0, abi(this), this.mz.fill(0)
 	}, this.qR = function(player, ik) {
@@ -12158,7 +12158,7 @@ function dU() {
 	this.i = 0, this.j = 0, this.tQ = 0, this.tR = 0, this.abm = 0, this.abn = 0, this.a9a = 0, this.u9 = 0;
 	var abp = this.abo = 0;
 	this.abq = 0, this.abr = 0, this.abt = 0, this.a8v = 0, this.eF = 0, this.aC7 = null, this.hu = !1, this.abu = -1, this.abv = !1, this.abw = [0, 0], this.di = function() {
-		this.aC7 = [L(538), L(125, 0, "Balance"), L(124, 0, "Interest"), L(539)]
+		this.aC7 = [L(537), L(125, 0, "Balance"), L(124, 0, "Interest"), L(538)]
 	}, this.dh = function() {
 		this.hu = !1, this.abu = -1, this.abv = !1, this.resize()
 	}, this.resize = function() {
@@ -12201,7 +12201,7 @@ function dU() {
 				this.u9), vf.fillStyle = bD.o4, vf.fillRect(0, this.j - this.u9 - .5 * this.a8v, this.i, this.a8v), aB = 1; aB <= 3; aB++) vf.fillRect(aB * eX, this.j - this.u9, this.a8v, this.u9);
 		for (aB = this.aC7.length - 1; 0 <= aB; aB--) vf.fillText(bC.zG.a4D(this.aC7[aB], 0, .9 * eX), (aB + .5) * eX, this.j - .46 * this.u9)
 	}, this.aSV = function() {
-		vf.fillStyle = bD.or, vf.fillRect(0, 0, this.i, this.abq), vf.fillStyle = bD.o4, vf.fillRect(0, this.abq - .5 * this.a8v, this.i, this.a8v), vf.font = bC.r1.sq(1, .39 * this.abq), vf.fillText(bC.zG.a4D(L(540), 0, .8 * this.i), Math.floor(
+		vf.fillStyle = bD.or, vf.fillRect(0, 0, this.i, this.abq), vf.fillStyle = bD.o4, vf.fillRect(0, this.abq - .5 * this.a8v, this.i, this.a8v), vf.font = bC.r1.sq(1, .39 * this.abq), vf.fillText(bC.zG.a4D(L(539), 0, .8 * this.i), Math.floor(
 			this.i / 2), Math.floor(.55 * this.abq))
 	}, this.abz = function(g, fF, fH) {
 		var lO = bf.max[this.eF],
@@ -12379,7 +12379,7 @@ function dN() {
 			[0, 0, 0]
 		], this.kq = [0, 1, 2, 3, 4, 5, 6, 7, 8], this.f6 = new Uint8Array(aD.f5), this.aBn = new Uint8Array(aD.f5), this.yO = new Uint16Array(aD.f5), this.yP = new Uint16Array(this.kq.length + 1), this.yQ = new Uint16Array(this.kq.length), this.di =
 		function() {
-			this.a1T = [L(541), L(542), L(543), L(544), L(545), L(546), L(547), L(548), L(549)]
+			this.a1T = [L(540), L(541), L(542), L(543), L(544), L(545), L(546), L(547), L(548)]
 		}, this.dh = function() {
 			if (this.f6.fill(0), this.aBn.fill(0), this.acT(), aD.i2) {
 				if (9 === aD.kl) {
@@ -12603,9 +12603,9 @@ function dZ() {
 
 function acq() {
 	this.hk = function(player) {
-		bC.gU.a4W(player) && aN.zZ(80, L(550), 637, 0, bD.ou, bD.o1, -1, !1)
+		bC.gU.a4W(player) && aN.zZ(80, L(549), 637, 0, bD.ou, bD.o1, -1, !1)
 	}, this.hn = function(player) {
-		bC.gU.a4W(player) && aN.zZ(80, L(551), 637, 0, bD.ou, bD.o1, -1, !1)
+		bC.gU.a4W(player) && aN.zZ(80, L(550), 637, 0, bD.ou, bD.o1, -1, !1)
 	}
 }
 
@@ -12742,7 +12742,7 @@ function cv() {
 		adH = !0;
 
 	function adI(id) {
-		id = [L(552), L(553), L(554), L(555)][id];
+		id = [L(551), L(552), L(553), L(554)][id];
 		aN.a7l(id)
 	}
 	this.eb = function() {
