@@ -63,10 +63,10 @@ function bv(bw) {
 }
 
 function dK() {
-	this.dt = 1129;
+	this.dt = 1130;
 	this.rVersion = 22, this.dx = 0, this.dh = function() {
 		this.dy = 2;
-		this.n = "2.16.1", this.e0 = "1 Jun 2026 [" + this.n + "]";
+		this.n = "2.16.3", this.e0 = "7 Jun 2026 [" + this.n + "]";
 		var e1 = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.e2 = 0 <= e1.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -3383,7 +3383,7 @@ function a3N() {
 	}, this.qP = function(player, jc) {
 		return (jc = Math.min(jc, aD.f5)) < aD.f5 && 0 === ag.n3[jc] && (jc = aD.f5), (bQ.f4[0] = jc) === aD.f5 || bu.f1(player, jc)
 	}, this.qS = function(player, pZ) {
-		return 0 !== ag.n3[pZ] && (!bu.f1(player, pZ) || 9 === aD.kl)
+		return 0 !== ag.n3[pZ] && !bu.f1(player, pZ)
 	}, this.a4r = function(player, a4s) {
 		for (var gg, f8 = al.kz, a4t = 0, a4u = m4, aB = 0; aB < f8; aB++)
 			if (gg = a4u[aB], !this.jq(gg)) {
@@ -3736,8 +3736,8 @@ function cE() {
 								if (!bu.f1(a6I, q4[aB])) return 1;
 						return
 					}(a6I)
-				}(a6I), bu.f1(a6I, aD.es) ? (bu.hh(aD.es, a6I) ? (ra[0].lQ = 0, ra[0].hu = !0) : ad.gF(aD.es) && (ra[0].lQ = 3, ra[0].hu = !0), ra[0].hu = this.a6g(), 9 === aD.kl && an.hm(a6I) && (ra[0].hu = !0, ra[2].hu = !0,
-					ra[2].lQ = 0)) : (ra[2].hu = !0, an.hm(a6I) ? ra[2].lQ = 0 : ra[2].lQ = 1, ra[0].hu = !0))))), this.a6b(li, lj)))
+				}(a6I), bu.f1(a6I, aD.es) ? (bu.hh(aD.es, a6I) ? (ra[0].lQ = 0, ra[0].hu = !0) : ad.gF(aD.es) && (ra[0].lQ = 3, ra[0].hu = !0), ra[0].hu = this.a6g()) : (ra[2].hu = !0, an.hm(a6I) ? ra[2].lQ = 0 : ra[2].lQ = 1,
+					ra[0].hu = !0))))), this.a6b(li, lj)))
 	}, this.a6b = function(li, lj) {
 		return fF = li - Math.floor(a6F / 2), fH = lj - Math.floor(a6F / 2), !!this.hu()
 	}, this.a2f = function(li, lj) {
@@ -7222,7 +7222,7 @@ function cY() {
 	}
 
 	function aMO(a7i) {
-		return aD.kn || 7 <= aD.kl || 4284 <= bh.kQ() || bC.gU.jq(a7i)
+		return aD.kn || 4284 <= bh.kQ() || bC.gU.jq(a7i)
 	}
 	this.dh = function() {
 		aMK.fill(0), aML = 15
@@ -7247,7 +7247,7 @@ function cg() {
 		aMQ = [], 9 === aD.kl && this.aMR()
 	}, this.aMR = function() {
 		this.ku = [0, 0, 0, 0, 0, 0];
-		for (var aMS = [256, 227, 170, 148, 100, this.kt = 0, 0, 0], aMT = [0, 8, 24, 30, 46, 70, 256, 333], aMU = [0, 0, 3, 7, 14, 22, 256, 179], j = aD.kT, aB = 1; aB < aMS.length; aB++)
+		for (var aMS = [256, 227, 166, 148, 100, this.kt = 0, 0, 0], aMT = [0, 8, 24, 30, 46, 70, 256, 333], aMU = [0, 0, 3, 9, 17, 25, 256, 179], j = aD.kT, aB = 1; aB < aMS.length; aB++)
 			if (j <= aMT[aB]) {
 				this.kt = aMS[aB - 1] - bN.fZ((j - aMT[aB - 1]) * (aMS[aB - 1] - aMS[aB]), aMT[aB] - aMT[aB - 1]), this.ku[5] = aMU[aB - 1] - bN.fZ((j - aMT[aB - 1]) * (aMU[aB - 1] - aMU[aB]), aMT[aB] - aMT[aB - 1]), this.ku[0] = aD.f5 - j - this
 					.kt - this.ku[5];
