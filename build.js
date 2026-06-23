@@ -45,6 +45,8 @@ const buildClientCode = () => /** @type {Promise<void>} */(new Promise((resolve,
 async function patchGameCode() {
 
 	let script = fs.readFileSync('./game/latest.js', { encoding: 'utf8' }).trim();
+	console.log("script start: ", script.slice(0, 500))
+	console.log("script end: ", script.slice(-500))
 
 	const exposeVarsToGlobalScope = true;
 	// need to first remove the iife wrapper so the top-level functions aren't inlined
