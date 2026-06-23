@@ -63,10 +63,10 @@ function bv(bw) {
 }
 
 function dK() {
-	this.dt = 1130;
+	this.dt = 1133;
 	this.rVersion = 22, this.dx = 0, this.dh = function() {
 		this.dy = 2;
-		this.n = "2.16.3", this.e0 = "7 Jun 2026 [" + this.n + "]";
+		this.n = "2.16.5", this.e0 = "22 Jun 2026 [" + this.n + "]";
 		var e1 = window.location.hostname.toLowerCase();
 		this.a9 = !0, this.e2 = 0 <= e1.indexOf("game.territorial.io"), this.aA = function() {
 			try {
@@ -10241,7 +10241,7 @@ function cl() {
 
 function aUI() {
 	var aUa, aUb;
-	this.aHL = 5, this.aUZ = null, this.a2R = 0, this.a2H = 0;
+	this.aHL = 3, this.aUZ = null, this.a2R = 0, this.a2H = 0;
 
 	function aUj() {
 		return 0 === aZ.aHH ? l.e2 ? 1 : 0 : aZ.aHH - 1
@@ -10259,12 +10259,8 @@ function aUI() {
 		aUb[a2E].eW = bh.eW, aUb[a2E].aUd = !1
 	}
 	this.dh = function() {
-		this.aUZ = new Array(this.aHL);
-		this.aUZ[0] = "territorial.io";
-		var aMe = ay.aN0(0);
-		ay.a5j(0);
-		for (var aB = 1; aB < this.aHL; aB++) this.aUZ[aB] = aK.a0f() + ".territorial.io";
-		for (ay.a5j(aMe), aUa = new Array(this.aHL), aUb = new Array(this.aHL), aB = this.aHL - 1; 0 <= aB; aB--) aUb[aB] = {
+		this.aUZ = new Array(this.aHL), this.aUZ[0] = "territorial.io", this.aUZ[1] = "1.territorial.io", this.aUZ[2] = "2.territorial.io", aUa = new Array(this.aHL), aUb = new Array(this.aHL);
+		for (var aB = this.aHL - 1; 0 <= aB; aB--) aUb[aB] = {
 			aUB: !1,
 			eW: 0,
 			aUd: !1
@@ -10292,7 +10288,7 @@ function aUI() {
 		}
 		return aUm(a2E, a2O, aUi), !1
 	}, this.aUq = function(a2E, a2O) {
-		b0.ed.aUr(a2E)
+		console.log("Connection to Server " + a2E), b0.ed.aUr(a2E)
 	}, this.aUh = function(aB) {
 		return this.ec(aB) && aUa[aB].aUh()
 	}, this.aUs = function(aB) {
