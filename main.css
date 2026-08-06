@@ -66,6 +66,23 @@
 	width: 10em;
 }
 
+.reminder-rules-header, .reminder-rule-row {
+	display    : flex;
+	gap        : 6px;
+	align-items: center;
+}
+.reminder-rules-header {
+	font-weight  : bold;
+	margin-bottom: 2px;
+}
+.reminder-rules-header span, .reminder-rule-row select {
+	flex     : 1;
+	min-width: 0;
+}
+.reminder-rule-row button {
+	flex: 0 0 auto;
+}
+
 .flex {
 	display: flex;
 }
@@ -236,6 +253,18 @@ label.checkbox:hover .checkmark {
 label.checkbox input:checked~.checkmark {
 	/*background-color: #2196F3;*/
 	background-color: rgba(0, 255, 0, 0.5);
+}
+
+label.checkbox input:disabled~.checkmark {
+	opacity: 0.5;
+}
+
+label.checkbox input:disabled {
+	cursor: default;
+}
+
+label.checkbox:has(input:disabled) {
+	cursor: default;
 }
 
 .checkmark::after {
