@@ -2767,9 +2767,9 @@ function a08() {
 			if (__fx.settings.customQuickEmojisEnabled && __fx.settings.customQuickEmojis && 9 === __fx.settings.customQuickEmojis.length)
 				for (var q = 0; q < 9; q++) {
 					var qcode = parseInt(__fx.settings.customQuickEmojis[q], 10);
-					zk[q] = {
-						pl: isNaN(qcode) ? 1015 + q : qcode,
-						kZ: 0
+					a0D[q] = {
+						dr: isNaN(qcode) ? 1015 + q : qcode,
+						a0Q: 0
 					}
 				} else {
 					var a8 = fa.fE.data[120].value.split(",");
@@ -7270,9 +7270,9 @@ function a7h() {
 	this.bm = new Array(4), this.kF = [0, 0, 1, 0], this.nM = 0, this.c9 = [0, 0], this.e = function() {
 		for (var q = 0; q < this.bm.length; q++) this.bm[q] = new a8K;
 		this.kF[0] = fa.fE.data[158].value, __fx.lobbyReminders.setRooms(this.bm), __fx.lobbyReminders.setPopupHandler(function(text) {
-			bq.message.aEd({
+			bk.message.cc({
 				id: 7,
-				s: text
+				cX: text
 			})
 		})
 	}, this.c6 = function() {
@@ -10099,7 +10099,7 @@ function a7i() {
 	this.cc = function(aWC) {
 		var en;
 		2 === aWC.id && 3 === aWC.ca ? bk.co.aWD(aWC.cW) : (en = bk.co.kI(aWC, bk.co.kJ(aWC)), (5 !== aWC.id && 6 !== aWC.id || (c4.a73(29).mk().kL(en), 5 === aWC.id)) && (en = bR.eM < aWA + 2e4, aW9 !== aW8.length - 1 && en || (aW9 = aW8
-			.length), aW8.push(aWC), __fx.pingFilter.isMuted(aWC) || (fa.fE.data[14].value || 7 === aWC.id || a5d.play(), aW7 && (aWB && (fa.fE.data[13].value || en) ? aW7.lA(aW8.length) : aWF()))))
+			.length), __fx.pingFilter.isMuted(aWC, "cX") || (aW8.push(aWC), fa.fE.data[14].value || 7 === aWC.id || a5d.play(), aW7 && (aWB && (fa.fE.data[13].value || en) ? aW7.lA(aW8.length) : aWF()))))
 	}, this.show = function() {
 		aWG()
 	}, this.eP = function() {
@@ -12441,8 +12441,8 @@ function a9O(jp) {
 				var kB = document.createElement("span");
 				kB.textContent = (acQ ? "🟢 " : "⚪ ") + bk.co.aaJ(en, acO), kB.style.color = bk.co.aaK(en.rF), 11 === en.rF && (kB.style.textShadow = "-1px -1px 0 lightgray,1px -1px 0 lightgray,-1px 1px 0 lightgray,1px 1px 0 lightgray");
 				kB.style.cursor = "pointer", kB.style.margin = "0.2em 0.2em 0.2em 0.2em", kB.style.width = kB.style.maxWidth = 2 === acO ? "10em" : "9em", kB.style.height = kB.style.maxHeight = "1.4em", kB.style.whiteSpace = "nowrap", kB.style
-					.overflow = "hidden", kB.style.textOverflow = "ellipsis", kB.style.font = "inherit", kB.style.display = "inline-block", __fx.settings.highlightDuplicateIps && (acQ = __fx.utils.getDuplicateIpHighlightColor(en, bk.uT.uU)) && (
-						kB.style.backgroundColor = acQ, kB.style.borderRadius = "0.3em");
+					.overflow = "hidden", kB.style.textOverflow = "ellipsis", kB.style.font = "inherit", kB.style.display = "inline-block", __fx.settings.highlightDuplicateIps && (acQ = __fx.utils.getDuplicateIpHighlightColor(en, bk.bx.n8,
+					"rJ")) && (kB.style.backgroundColor = acQ, kB.style.borderRadius = "0.3em");
 				bk.co.a1T(en) && (kB.style.textDecoration = "underline"), en.rQ && (kB.style.textDecorationLine = "underline", kB.style.textDecorationStyle = "dotted");
 				kB.onclick = function(eL) {
 					jp(eL, en)
