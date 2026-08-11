@@ -83,6 +83,17 @@
 	flex: 0 0 auto;
 }
 
+.nickname-row {
+	display    : flex;
+	gap        : 6px;
+	align-items: center;
+}
+.nickname-row .nickname-account {
+	flex          : 1;
+	min-width     : 0;
+	overflow-wrap : anywhere;
+}
+
 .flex {
 	display: flex;
 }
