@@ -5,7 +5,7 @@ var m, aE, aF, aG, aH, aI, aJ, aK, aL, aM, aN, aO, aP, aQ, aR, aS, aT, aU, aV, a
 		"click", "undefined", "middle", "break-word", "50%", "0.6em", "underline", "text", "scroll", "pointer", "function", "bold", "Value", "Escape", "Enter", "1.5em", "0.4em", "' target='_blank'>", "string", "rgba(0,0,0,0.8)", "pre-wrap", "orange",
 		"number", "nowrap", "mouseleave", "inline-block", "game.territorial.io", "focus", "fixed", "blur", "Space", "Redacted ", "Player ", "Gold Seizure", "<a href='", "</a>", "100,100,100", "1.2em", "1.0em", "0px", "0.3em", "0.0em 0.9em",
 		" voted with ", "  • ", "   Gold: ", "🔄 Reload", "⚠️ ", "wheel", "translate(-50%, -50%)", "top", "tls7", "system-ui", "rgba(140,10,10,0.75)", "rgba(100,0,0,0.8)", "rgba(10,140,10,0.75)", "rgba(0,100,0,0.8)", "rgba(0,", "rgb(10,220,10)",
-		"placeholder", "mouseover", "mouseout", "long", "logo", "loading", "keydown", "italic ", "file", "error", "en-US", "dotted", "data:image/png;base64,", "column", "break-all", "blur(4px)", "block", "arena", "account", "accept", "_blank",
+		"placeholder", "mouseover", "mouseout", "long", "logo", "loading", "keydown", "italic ", "file", "error", "en-US", "dotted", "data:image/png;base64,", "column", "break-all", "blur(4px)", "arena", "account", "accept", "_blank",
 		"[Redacted Message]", "Zombie", "Seed", "Remove Punishments", "Reload", "Patreon", "Interest", "False Reporter", "Cheater", "Bot ", "Block Account", "Battle Royale", "Ban IP", "Back", "Audit Log", "Arial Black, system-ui", "@room",
 		"255,255,255", "1v1", "1px 1px 0 lightgray", "1px -1px 0 lightgray,", "1 Minute", "1 Hour", "1 Day", "0em", "000", "0.4em 0em", "0.2em", "0,0,0", "/wiki/transactions", "/wiki/clans", "/privacy", ". Duration: x", "-1px 1px 0 lightgray,",
 		"-1px -1px 0 lightgray,", ",0,0.85)", " solid white;}", " Rank: ", " / 180", " / 160", " -> ", "   Contest"
@@ -68,7 +68,7 @@ function dL() {
 	this.du = 1758;
 	this.rVersion = 25, this.dy = 0, this.di = function() {
 		this.dz = 2;
-		this.o = "2.16.27", this.e1 = "12 Aug 2026 [" + this.o + "]";
+		this.o = "2.16.33", this.e1 = "12 Aug 2026 [" + this.o + "]";
 		var e2 = window.location.hostname.toLowerCase();
 		this.aA = 0 <= e2.indexOf("territorial.io"), this.e3 = 0 <= e2.indexOf("github.io"), this.e4 = 0 <= e2.indexOf("game.territorial.io"), this.aB = function() {
 			try {
@@ -168,23 +168,13 @@ function eT() {
 			er = 1, console.log("turnstile onload"), bX.turnstile.eu()
 		}, document.head.appendChild(et))
 	}, this.eu = function() {
-		return !(!er || (window.turnstile ? en ? (console.log("turnstile error 246"), 1) : ev(30) || (ep = "", en = 1, eo = performance.now(), (es = document.createElement("div")).style.position = "fixed", es.style.left = "0%", es.style.top =
-			"0%", es.style.zIndex = "100", es.style.display = "block", es.style.visibility = "visible", es.style.opacity = "1", es.style.width = "300px", es.style.height = "100px", document.body.appendChild(es), console.log(
-				"turnstile render"), em = window.turnstile.render(es, {
+		return !(!er || (window.turnstile ? en ? (console.log("turnstile error 246"), 1) : ev(30) || (ep = "", en = 1, eo = performance.now(), (es = document.createElement("div")).style.position = "fixed", es.style.left = "0", es.style.top = "0",
+			es.style.zIndex = "100", document.body.appendChild(es), console.log("turnstile render"), em = window.turnstile.render(es, {
 				sitekey: "0x4AAAAAAEI8HZoG8nJMzxt1",
 				action: "enter_lobby",
 				appearance: "interaction-only",
 				callback: function(ew) {
 					console.log("turnstile success " + Math.floor(performance.now() - eo)), ep = ew, eq = performance.now(), bX.turnstile.ex(), ey()
-				},
-				"timeout-callback": function() {
-					console.log("turnstile TIMEOUT")
-				},
-				"unsupported-callback": function() {
-					console.log("UNSUPPORTED")
-				},
-				"before-interactive-callback": function() {
-					console.log("BEFORE INTERACTIVE")
 				},
 				"expired-callback": function() {
 					ey(), console.log("turnstile expired " + Math.floor(performance.now() - eo))
@@ -194,7 +184,7 @@ function eT() {
 				}
 			}), 0) : (console.log("turnstile error 245"), 1)))
 	}, this.ex = function() {
-		console.log("sendTokenToLobby 0"), ev(8) && (console.log("sendTokenToLobby 1"), bq.ez) && (console.log("sendTokenToLobby 2"), b1.z.ef(b1.z.f0)) && (console.log("sendTokenToLobby success"), b1.eg.f1(ep), ep = "")
+		ev(8) && bq.ez && b1.z.ef(b1.z.f0) && (console.log("sendTokenToLobby success"), b1.eg.f1(ep), ep = "")
 	}
 }
 
