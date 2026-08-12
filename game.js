@@ -1,14 +1,15 @@
 var m, aE, aF, aG, aH, aI, aJ, aK, aL, aM, aN, aO, aP, aQ, aR, aS, aT, aU, aV, aW, aX, aY, aZ, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, an, ao, ap, aq, ar, at, au, av, aw, ax, ay, i, az, b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bA, bB, bC,
 	bD, bE, bF, bG, bH, bI, bJ, bK, bL, bM, bN, bO, bP, bQ, bR, bS, bT, bU, bV, bW, u, bX, bY, bZ, ba, bb, bc, bd, be, bf, bg, bh, bi, bj, bk, a1, bl, bm, bn, p, bo, bp, bq, br, bs, bt, bu, bv, gH, gI, gJ, gK, gL, gM, gN, gO, gP, gQ, gR, gS, gT, ic,
 	j5, j6, a9J, mN, kX, a2s, vv, zU, aDN, a63, a64, S = ["div", "100%", "⬅️ ", "absolute", "canvas", "0.75em", "none", "<br>", "inherit", "0.8em", "rgb(", "center", "auto", "rgba(", "   ", "flex", "hidden", "1em", "span", "0.5em", "email", "Data",
-		" / ", "territorial.io", "pre", "password", "input", "iVBORw0KGgoAAAANSUhEUgAAADAAAAAKAQMAAADILU8PAAAABlBMVEUAAAD///+l2Z/dAAAAOklEQVQI12P48efPH5v/DEDyT81/hjMHDhxIkWA4AqV+/PgBpf5JgOWA1B0gdUyC4cefA3+A1AcwBQAlGyu1reW1ZgAAAABJRU5ErkJggg==",
-		"click", "undefined", "middle", "break-word", "50%", "0.6em", "underline", "text", "scroll", "pointer", "function", "bold", "Value", "Escape", "Enter", "1.5em", "0.4em", "' target='_blank'>", "string", "rgba(0,0,0,0.8)", "pre-wrap", "orange",
-		"number", "nowrap", "mouseleave", "inline-block", "game.territorial.io", "focus", "blur", "Space", "Redacted ", "Player ", "Gold Seizure", "<a href='", "</a>", "100,100,100", "1.2em", "1.0em", "0px", "0.3em", "0.0em 0.9em", " voted with ",
-		"  • ", "   Gold: ", "🔄 Reload", "⚠️ ", "wheel", "translate(-50%, -50%)", "top", "tls7", "system-ui", "rgba(140,10,10,0.75)", "rgba(100,0,0,0.8)", "rgba(10,140,10,0.75)", "rgba(0,100,0,0.8)", "rgba(0,", "rgb(10,220,10)", "placeholder",
-		"mouseover", "mouseout", "long", "logo", "loading", "keydown", "italic ", "fixed", "file", "error", "en-US", "dotted", "data:image/png;base64,", "column", "break-all", "blur(4px)", "arena", "account", "accept", "_blank", "[Redacted Message]",
-		"Zombie", "Seed", "Remove Punishments", "Reload", "Patreon", "Interest", "False Reporter", "Cheater", "Bot ", "Block Account", "Battle Royale", "Ban IP", "Back", "Audit Log", "Arial Black, system-ui", "@room", "255,255,255", "1v1",
-		"1px 1px 0 lightgray", "1px -1px 0 lightgray,", "1 Minute", "1 Hour", "1 Day", "0em", "000", "0.4em 0em", "0.2em", "0,0,0", "/wiki/transactions", "/wiki/clans", "/privacy", ". Duration: x", "-1px 1px 0 lightgray,", "-1px -1px 0 lightgray,",
-		",0,0.85)", " solid white;}", " Rank: ", " / 180", " / 160", " -> ", "   Contest"
+		" / ", "territorial.io", "50%", "pre", "password", "input",
+		"iVBORw0KGgoAAAANSUhEUgAAADAAAAAKAQMAAADILU8PAAAABlBMVEUAAAD///+l2Z/dAAAAOklEQVQI12P48efPH5v/DEDyT81/hjMHDhxIkWA4AqV+/PgBpf5JgOWA1B0gdUyC4cefA3+A1AcwBQAlGyu1reW1ZgAAAABJRU5ErkJggg==", "click", "undefined", "middle", "break-word", "0.6em",
+		"underline", "text", "scroll", "pointer", "function", "bold", "Value", "Escape", "Enter", "1.5em", "0.4em", "' target='_blank'>", "translate(-50%, -50%)", "string", "rgba(0,0,0,0.8)", "pre-wrap", "orange", "number", "nowrap", "mouseleave",
+		"inline-block", "game.territorial.io", "focus", "fixed", "blur", "Space", "Redacted ", "Player ", "Gold Seizure", "<a href='", "</a>", "100,100,100", "1.2em", "1.0em", "0px", "0.3em", "0.0em 0.9em", " voted with ", "  • ", "   Gold: ",
+		"🔄 Reload", "⚠️ ", "wheel", "top", "tls7", "system-ui", "rgba(140,10,10,0.75)", "rgba(100,0,0,0.8)", "rgba(10,140,10,0.75)", "rgba(0,100,0,0.8)", "rgba(0,", "rgb(10,220,10)", "placeholder", "mouseover", "mouseout", "long", "logo", "loading",
+		"keydown", "italic ", "file", "error", "en-US", "dotted", "data:image/png;base64,", "column", "break-all", "blur(4px)", "arena", "account", "accept", "_blank", "[Redacted Message]", "Zombie", "Seed", "Remove Punishments", "Reload", "Patreon",
+		"Interest", "False Reporter", "Cheater", "Bot ", "Block Account", "Battle Royale", "Ban IP", "Back", "Audit Log", "Arial Black, system-ui", "@room", "255,255,255", "1v1", "1px 1px 0 lightgray", "1px -1px 0 lightgray,", "1 Minute", "1 Hour",
+		"1 Day", "0em", "000", "0.4em 0em", "0.2em", "0,0,0", "/wiki/transactions", "/wiki/clans", "/privacy", ". Duration: x", "-1px 1px 0 lightgray,", "-1px -1px 0 lightgray,", ",0,0.85)", " solid white;}", " Rank: ", " / 180", " / 160", " -> ",
+		"   Contest"
 	];
 
 function a() {
@@ -68,7 +69,7 @@ function dL() {
 	this.du = 1758;
 	this.rVersion = 25, this.dy = 0, this.di = function() {
 		this.dz = 2;
-		this.o = "2.16.16", this.e1 = "12 Aug 2026 [" + this.o + "]";
+		this.o = "2.16.17", this.e1 = "12 Aug 2026 [" + this.o + "]";
 		var e2 = window.location.hostname.toLowerCase();
 		this.aA = 0 <= e2.indexOf("territorial.io"), this.e3 = 0 <= e2.indexOf("github.io"), this.e4 = 0 <= e2.indexOf("game.territorial.io"), this.aB = function() {
 			try {
@@ -164,8 +165,8 @@ function eT() {
 		}, document.head.appendChild(es))
 	}, this.et = function() {
 		var ev;
-		return !!er && !(!window.turnstile || en || eu(30) || (ep = "", en = 1, eo = performance.now(), null !== em ? window.turnstile.reset(em) : (ev = document.createElement("div"), document.body.appendChild(ev), em = window.turnstile.render(
-			ev, {
+		return !!er && !(!window.turnstile || en || eu(30) || (ep = "", en = 1, eo = performance.now(), null !== em ? window.turnstile.reset(em) : ((ev = document.createElement("div")).style.position = "fixed", ev.style.left = "50%", ev.style
+			.top = "50%", ev.style.transform = "translate(-50%, -50%)", ev.style.zIndex = "2147483647", document.body.appendChild(ev), em = window.turnstile.render(ev, {
 				sitekey: "0x4AAAAAAEI8HZoG8nJMzxt1",
 				action: "enter_lobby",
 				appearance: "interaction-only",
