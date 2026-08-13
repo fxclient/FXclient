@@ -1549,8 +1549,8 @@ function tI(rF, data, tJ) {
 					return aC % 2 == 1 ? bD.color.oI(130, 130, 130, .35) : bE.oN
 				}(aC), tO[aC].style.width = "100%", tO[aC].style.display = "flex", rG[aC] = new Array(li);
 				for (var fl = 0; fl < li; fl++) rG[aC][fl] = fV = document.createElement("div"), fV.style.display = "flex", fV.style.justifyContent = "center", fV.style.wordBreak = "break-all", fV.style.padding = "0.4em 0em", fV.style.width = data
-					.tX[fl] + "%", fV.innerHTML = tK[aC][fl].fu, 1 === tK[aC][fl].ea && (fV.name = "" + aC, fV.style.color = bE.pO, fV.style.backgroundColor = tR, fV.addEventListener("mouseover", rq), fV.addEventListener("mouseout", tY), function(fV,
-						ta, tb) {
+					.tX[fl] + "%", fV.textContent = tK[aC][fl].fu, 1 === tK[aC][fl].ea && (fV.name = "" + aC, fV.style.color = bE.pO, fV.style.backgroundColor = tR, fV.addEventListener("mouseover", rq), fV.addEventListener("mouseout", tY), function(
+						fV, ta, tb) {
 						2147483647 !== tb && fV.addEventListener("click", function() {
 							bG.a8(30), bG.a9(30, ta), bK.di(bG.aD), this.style.backgroundColor = tR, u.v(8, u.tc, new td(25, {
 								action: 0,
@@ -1690,8 +1690,8 @@ function uN(s3) {
 				var sJ = document.createElement("span");
 				sJ.textContent = (uo ? "🟢 " : "⚪ ") + bq.lc.up(rD, uj), sJ.style.color = bq.lc.uq(rD.ur), 11 === rD.ur && (sJ.style.textShadow = "-1px -1px 0 lightgray,1px -1px 0 lightgray,-1px 1px 0 lightgray,1px 1px 0 lightgray");
 				sJ.style.cursor = "pointer", sJ.style.margin = "0.2em 0.2em 0.2em 0.2em", sJ.style.width = sJ.style.maxWidth = 2 === uj ? "10em" : "9em", sJ.style.height = sJ.style.maxHeight = "1.4em", sJ.style.whiteSpace = "nowrap", sJ.style
-					.overflow = "hidden", sJ.style.textOverflow = "ellipsis", sJ.style.font = "inherit", sJ.style.display = "inline-block", __fx.settings.highlightDuplicateIps && (uo = __fx.utils.getDuplicateIpHighlightColor(rD, bq.uk.ul,
-					"aER")) && (sJ.style.backgroundColor = uo, sJ.style.borderRadius = "0.3em");
+					.overflow = "hidden", sJ.style.textOverflow = "ellipsis", sJ.style.font = "inherit", sJ.style.display = "inline-block", __fx.settings.highlightDuplicateIps && (uo = __fx.utils.getDuplicateIpHighlightColor(rD, bq.uk.ul[uj],
+						"aER")) && (sJ.style.backgroundColor = uo, sJ.style.borderRadius = "0.3em");
 				bq.lc.us(rD) && (sJ.style.textDecoration = "underline"), rD.ut && (sJ.style.textDecorationLine = "underline", sJ.style.textDecorationStyle = "dotted");
 				sJ.onclick = function(e) {
 					s3(e, rD)
