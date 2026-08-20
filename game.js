@@ -68,7 +68,7 @@ function dL() {
 	this.du = 1759;
 	this.rVersion = 25, this.dy = 0, this.di = function() {
 		this.dz = 2;
-		this.o = "2.16.36", this.e1 = "20 Aug 2026 [" + this.o + "]";
+		this.o = "2.16.38", this.e1 = "20 Aug 2026 [" + this.o + "]";
 		var e2 = window.location.hostname.toLowerCase();
 		this.aA = 0 <= e2.indexOf("territorial.io"), this.e3 = 0 <= e2.indexOf("github.io"), this.e4 = 0 <= e2.indexOf("game.territorial.io"), this.aB = function() {
 			try {
@@ -181,7 +181,7 @@ function eT() {
 					ey(), console.log("turnstile expired " + Math.floor(performance.now() - eo))
 				},
 				"error-callback": function() {
-					ey(), console.log("turnstile error " + Math.floor(performance.now() - eo))
+					ey(), console.log("turnstile callback error " + Math.floor(performance.now() - eo)), bX.turnstile.er = -1
 				}
 			}), 0) : (console.log("turnstile error 245"), 1)))
 	}, this.ex = function() {
