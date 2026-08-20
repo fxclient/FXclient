@@ -68,7 +68,7 @@ function dL() {
 	this.du = 1759;
 	this.rVersion = 25, this.dy = 0, this.di = function() {
 		this.dz = 2;
-		this.o = "2.16.35", this.e1 = "20 Aug 2026 [" + this.o + "]";
+		this.o = "2.16.36", this.e1 = "20 Aug 2026 [" + this.o + "]";
 		var e2 = window.location.hostname.toLowerCase();
 		this.aA = 0 <= e2.indexOf("territorial.io"), this.e3 = 0 <= e2.indexOf("github.io"), this.e4 = 0 <= e2.indexOf("game.territorial.io"), this.aB = function() {
 			try {
@@ -152,8 +152,7 @@ function eT() {
 		en = 0,
 		ep = "",
 		eq = 0,
-		er = 0,
-		es = null;
+		es = (this.er = 0, null);
 
 	function ey() {
 		null !== es && null !== em && (en = 0, window.turnstile.remove(em), es.remove(), em = es = null)
@@ -164,12 +163,14 @@ function eT() {
 	}
 	this.di = function() {
 		var et;
-		m.dy || !m.aA && !m.e3 || ((et = document.createElement("script")).src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit", et.async = !0, et.onload = function() {
-			er = 1, console.log("turnstile onload"), bX.turnstile.eu()
+		m.dy || !m.aA && !m.e3 ? this.er = -1 : ((et = document.createElement("script")).src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit", et.async = !0, et.onload = function() {
+			bX.turnstile.er = 1, console.log("turnstile onload"), bX.turnstile.eu()
+		}, et.onerror = function() {
+			bX.turnstile.er = -1, console.log("turnstile onerror")
 		}, document.head.appendChild(et))
 	}, this.eu = function() {
-		return !(!er || (window.turnstile ? en ? (console.log("turnstile error 246"), 1) : ev(30) || (ep = "", en = 1, eo = performance.now(), (es = document.createElement("div")).style.position = "fixed", es.style.left = "0", es.style.top = "0",
-			es.style.zIndex = "100", document.body.appendChild(es), console.log("turnstile render"), em = window.turnstile.render(es, {
+		return !(1 !== this.er || (window.turnstile ? en ? (console.log("turnstile error 246"), 1) : ev(30) || (ep = "", en = 1, eo = performance.now(), (es = document.createElement("div")).style.position = "fixed", es.style.left = "0", es.style
+			.top = "0", es.style.zIndex = "100", document.body.appendChild(es), console.log("turnstile render"), em = window.turnstile.render(es, {
 				sitekey: "0x4AAAAAAEI8HZoG8nJMzxt1",
 				action: "enter_lobby",
 				appearance: "interaction-only",
@@ -9680,7 +9681,7 @@ function aP0() {
 	this.eW = {}, this.ty = new Array(8), this.aPE = null, this.aPB = null, this.tG = 0, this.tU = [0, 0], this.a0 = function() {
 		u.v(5, 5)
 	}, this.a6C = function(aTZ) {
-		m.aA || m.e3 ? (aTZ && (aa.aHV = aTZ), u.y(), aa.di()) : p.a2k()
+		-1 === bX.turnstile.er ? p.a2k() : (aTZ && (aa.aHV = aTZ), u.y(), aa.di())
 	}, this.aDl = function() {
 		u.v(0 === ab.a2Y() ? 5 : 0)
 	}, this.aRg = function() {
