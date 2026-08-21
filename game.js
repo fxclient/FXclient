@@ -68,7 +68,7 @@ function dL() {
 	this.du = 1759;
 	this.rVersion = 25, this.dy = 0, this.di = function() {
 		this.dz = 2;
-		this.o = "2.16.40", this.e1 = "21 Aug 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e2 = 0 <= this.hostname.indexOf("github.io"), this.e3 =
+		this.o = "2.16.41", this.e1 = "21 Aug 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e2 = 0 <= this.hostname.indexOf("github.io"), this.e3 =
 			0 <= this.hostname.indexOf("game.territorial.io"), this.aB = function() {
 				try {
 					return window.self !== window.top
@@ -2923,14 +2923,14 @@ function a2I() {
 		1 === a1.id && 5 <= a1.e1 && a1.we.setState(a2Q)
 	}, this.a3 = function() {
 		var a2R;
-		1 === a1.id && 7 <= a1.e1 ? a1.we.setState(5) : ((a2R = new URL(window.location)).searchParams.set("v", "" + Math.floor(1e3 * Math.random())), window.location.href = a2R.toString())
+		1 === a1.id && 7 <= a1.e1 ? a1.we.setState(5) : ((a2R = new URL(40)).searchParams.set("v", "" + Math.floor(1e3 * Math.random())), window.location.href = a2R.toString())
 	}, this.eT = function() {
 		0 !== a1.id && (1 === a1.id ? a1.we.prepareAd("8646194357") : 2 === a1.id && (0 === a1.e1 ? a1.wl.postMessage("prepare ad 2904813909") : a1.wl.postMessage("loadAds 2904813909")))
 	}, this.ea = function(eZ) {
 		return 0 !== a1.id && (1 === a1.id ? 12 <= a1.e1 && (a1.we.presentAd(eZ), !0) : 2 === a1.id && 0 !== a1.e1 && (a1.wl.postMessage("showAd"), !0))
 	}, this.ds = function() {
 		2 === a1.id && a1.e1 < 23 && u.v(4, 1, new w("App Update Required", "A new iOS app version with bug fixes was published.<br>Please download the new Territorial.io app version for iOS:<br><a href='" + bN.a2S + "' target='_blank'>" + bN
-			.a2S + "</a>", !0, [new x("⬅️ " + L(40), function() {
+			.a2S + "</a>", !0, [new x("⬅️ " + L(41), function() {
 				u.v(0)
 			}, bE.p3)]))
 	}
@@ -2940,7 +2940,7 @@ function dZ() {
 	function a2V(e) {
 		m6(e), u.v(4, 5, new w("🚀 New Game Update", "The game was updated! Please reload the game." +
 			"<div style='border: white; border-width: 1px; border-style: solid; margin: 10px; padding: 5px;'><h2>FX Client is not yet compatible with the latest version of the game.</h2><p>Updates should normally be available within a few hours.<br>You can still use FX to play in singleplayer mode.</p></div>",
-			!0, [new x("⬅️ " + L(40), function() {
+			!0, [new x("⬅️ " + L(41), function() {
 				u.a2W()
 			}), new x("🔄 Reload", function() {
 				a1.a2.a3()
@@ -2948,7 +2948,7 @@ function dZ() {
 	}
 
 	function a2h(e) {
-		m6(e), u.v(4, 5, new w(L(41), a2d(e), !0))
+		m6(e), u.v(4, 5, new w(L(42), a2d(e), !0))
 	}
 
 	function a2d(e) {
@@ -2972,9 +2972,9 @@ function dZ() {
 			if (4211 === e) a2V(e);
 			else {
 				if (bq.ey && (4495 === e || 4480 === e) && b1.z.ez !== a2U) return void u.a2W();
-				if (8 !== ab.a2X() && a2Y(), 4480 === e) return bm.po.x3(), void u.v(4, 0, new w(L(43), L(44), !0));
+				if (8 !== ab.a2X() && a2Y(), 4480 === e) return bm.po.x3(), void u.v(4, 0, new w(L(44), L(45), !0));
 				var a2a = 0;
-				u.a2b() && 10 === u.a2b().a2c && (a2a = u.a2b().a2c), u.v(4, a2a, new w(L(41), a2d(e), !0))
+				u.a2b() && 10 === u.a2b().a2c && (a2a = u.a2b().a2c), u.v(4, a2a, new w(L(42), a2d(e), !0))
 			}
 		else {
 			a2a = ab.a2X();
@@ -2984,13 +2984,13 @@ function dZ() {
 			} else if (bq.ey) {
 				if (a2U !== b1.z.ez) return
 			} else {
-				if (8 === a2a) return void(a2U !== b1.z.a2f || aE.l6 || 1 !== aE.a1N || aE.ha || aO.a2g(L(42, [e])));
+				if (8 === a2a) return void(a2U !== b1.z.a2f || aE.l6 || 1 !== aE.a1N || aE.ha || aO.a2g(L(43, [e])));
 				if (!(4579 <= e && e <= 4589)) return
 			}
 			a2h(e)
 		}
 	}, this.a2i = function(e) {
-		this.q.push(e), 8 === ab.a2X() ? aE.l6 || 1 !== aE.a1N || aO.a2g(L(42, [e])) : a2h(e)
+		this.q.push(e), 8 === ab.a2X() ? aE.l6 || 1 !== aE.a1N || aO.a2g(L(43, [e])) : a2h(e)
 	}, this.t = function() {
 		this.q.push(3268), m6(3268)
 	}, this.a2j = function() {
@@ -3875,9 +3875,9 @@ function cG() {
 		var j;
 		this.hb ? (j = Math.floor(5.5 * k), vw.setTransform(1, 0, 0, 1, bf.gap, aS.fa), vw.fillStyle = bE.oJ, vw.fillRect(0, 0, j, k), 0 === a75 ? (vw.fillStyle = bE.oO, vw.fillRect(0, 0, 4 * k, k)) : 1 === a75 && (vw.fillStyle = bE.oO, vw
 				.fillRect(4 * k, 0, Math.floor(1.5 * k), k)), vw.fillStyle = bE.oN, vw.fillRect(0, 0, j, 1), vw.fillRect(0, 0, 1, k), vw.fillRect(4 * k, 0, 1, k), vw.fillRect(0, k - 1, j, 1), vw.fillRect(j - 1, 0, 1, k), vw.font = a74, bD.rK
-			.textBaseline(vw, 1), bD.rK.textAlign(vw, 1), vw.fillText(L(45), 2 * k, .54 * k), j = .4 * k, aN.a7G(bf.gap + 4 * k + (1.5 * k - j) / 2, aS.fa + .3 * k, j), j = 1, vw.setTransform(1, 0, 0, 1, bf.gap, aS.fa - j * a76 * bf.gap - j *
+			.textBaseline(vw, 1), bD.rK.textAlign(vw, 1), vw.fillText(L(46), 2 * k, .54 * k), j = .4 * k, aN.a7G(bf.gap + 4 * k + (1.5 * k - j) / 2, aS.fa + .3 * k, j), j = 1, vw.setTransform(1, 0, 0, 1, bf.gap, aS.fa - j * a76 * bf.gap - j *
 				k), vw.fillStyle = bE.oJ, vw.fillRect(0, 0, 4 * k, k), a75 === j + 1 && (vw.fillStyle = bE.oO, vw.fillRect(0, 0, 4 * k, k)), vw.fillStyle = bE.oN, vw.fillRect(0, 0, 4 * k, 1), vw.fillRect(0, 0, 1, k), vw.fillRect(4 * k, 0, 1,
-				k), vw.fillRect(0, k - 1, 4 * k, 1), vw.fillText(L(0 === j ? 45 : 46), 2 * k, .54 * k), vw.setTransform(1, 0, 0, 1, 0, 0)) : vw.drawImage(canvas, bf.gap, aS.fa)
+				k), vw.fillRect(0, k - 1, 4 * k, 1), vw.fillText(L(0 === j ? 46 : 47), 2 * k, .54 * k), vw.setTransform(1, 0, 0, 1, 0, 0)) : vw.drawImage(canvas, bf.gap, aS.fa)
 	}, this.qv = function(player) {
 		return 0 !== ah.nM[player] && 2 !== aE.a1N && !bD.gn.k9(player)
 	}, this.a7G = function(fY, fa, fR) {
@@ -3946,10 +3946,10 @@ function cH() {
 				ne: [220, 180, 180],
 				vu: [0, 0, 0],
 				ei: [0, 0, 0]
-			}, a7I = [], this.resize(), aE.hp && this.a1a(0, 18), bV.xj.xk[bV.f7].name.length && a8A(L(89, [bV.xj.xk[bV.f7].name])), bV.xj.xk[bV.f7].a8B && a8A(L(90, [bV.xj.xk[bV.f7].a8B])), a8A(L(91, [bV.fc - 2 + "x" + (bV.fd - 2)])), a8A(L(92,
-				[bD.sJ.a0e(aq.a8C)])), aq.a8C !== aq.a8D && a8A(L(93, [bD.sJ.a0e(aq.a8D) + " (" + bD.sJ.a5S(100 * aq.a8D / aq.a8C, 1) + ")"])), 0 < aq.a8E && a8A(L(69, [bD.sJ.a0e(aq.a8E) + " (" + bD.sJ.a5S(100 * aq.a8E / aq.a8C, 1) + ")"])), 0 <
-			aq.a8F && a8A(L(94, [bD.sJ.a0e(aq.a8F) + " (" + bD.sJ.a5S(100 * aq.a8F / aq.a8C, 1) + ")"])), 10 === aE.l4 && a7U(120, L(95), 6, 0, a7V(235, 255, 120), bE.oK, -1, !1), 0 !== (self = this).a7Q.length && (a7U(200, self.a7Q, 0, 0, bE.oN,
-				bE.oK, -1, !1), self.a7Q = ""), aE.zo && a7U(340, L(47), 6, 0, a7V(255, 200, 0), bE.oK, -1, !1)
+			}, a7I = [], this.resize(), aE.hp && this.a1a(0, 18), bV.xj.xk[bV.f7].name.length && a8A(L(90, [bV.xj.xk[bV.f7].name])), bV.xj.xk[bV.f7].a8B && a8A(L(91, [bV.xj.xk[bV.f7].a8B])), a8A(L(92, [bV.fc - 2 + "x" + (bV.fd - 2)])), a8A(L(93,
+				[bD.sJ.a0e(aq.a8C)])), aq.a8C !== aq.a8D && a8A(L(94, [bD.sJ.a0e(aq.a8D) + " (" + bD.sJ.a5S(100 * aq.a8D / aq.a8C, 1) + ")"])), 0 < aq.a8E && a8A(L(70, [bD.sJ.a0e(aq.a8E) + " (" + bD.sJ.a5S(100 * aq.a8E / aq.a8C, 1) + ")"])), 0 <
+			aq.a8F && a8A(L(95, [bD.sJ.a0e(aq.a8F) + " (" + bD.sJ.a5S(100 * aq.a8F / aq.a8C, 1) + ")"])), 10 === aE.l4 && a7U(120, L(96), 6, 0, a7V(235, 255, 120), bE.oK, -1, !1), 0 !== (self = this).a7Q.length && (a7U(200, self.a7Q, 0, 0, bE.oN,
+				bE.oK, -1, !1), self.a7Q = ""), aE.zo && a7U(340, L(48), 6, 0, a7V(255, 200, 0), bE.oK, -1, !1)
 	}, this.resize = function() {
 		var a7W, aC;
 		if (k = (k = Math.floor((a1.a2.ia() ? .031 : .0249) * i.ib)) < 10 ? 10 : k, this.fontSize = Math.floor(2 * k / 3), this.a74 = bD.rK.t8(1, this.fontSize), a7J = bf.gap, a7K = Math.floor(k / 5), 0 < a7I.length)
@@ -3957,7 +3957,7 @@ function cH() {
 		this.a7c()
 	}, this.a7c = function() {
 		a7P = document.createElement("canvas");
-		var r1 = L(48),
+		var r1 = L(49),
 			zW = (a7L = aR.measureText(r1, this.a74) + 5 * a7K, a7P.height = k, a7P.width = a7L, a7P.getContext("2d", {
 				alpha: !0
 			}));
@@ -3981,41 +3981,41 @@ function cH() {
 	}, this.a5i = function(id) {
 		for (var aC = a7I.length - 1; 0 <= aC; aC--) a7I[aC].id === id && (a7I[aC].eY = 1)
 	}, this.a1a = function(player, id) {
-		0 === id ? (aR.eh(player, 0), a7n(423, 2), a7U(160, L(49, [ah.zq[player]]), 423, player, "rgb(10,220,10)", bE.oK, -1, !1)) : 1 === id ? (a7o(50, aE.fO), aR.eh(player, 1), a7U(360, L(50, [ah.zq[player]]), 0, player, bE.p4, bE.oK, -1, !0),
-			aI.ni(player, 2700, !1, 0)) : 2 === id ? (aR.eh(player, 2), a7U(0, L(51), 0, player, "rgb(10,255,255)", bE.oK, -1, !0), aI.ni(player, 2700, !1, 0)) : 3 === id ? (aR.eh(player, 2), a7U(0, L(52, [ah.zq[player]]), 0, player, bE.oN,
+		0 === id ? (aR.eh(player, 0), a7n(423, 2), a7U(160, L(50, [ah.zq[player]]), 423, player, "rgb(10,220,10)", bE.oK, -1, !1)) : 1 === id ? (a7o(50, aE.fO), aR.eh(player, 1), a7U(360, L(51, [ah.zq[player]]), 0, player, bE.p4, bE.oK, -1, !0),
+			aI.ni(player, 2700, !1, 0)) : 2 === id ? (aR.eh(player, 2), a7U(0, L(52), 0, player, "rgb(10,255,255)", bE.oK, -1, !0), aI.ni(player, 2700, !1, 0)) : 3 === id ? (aR.eh(player, 2), a7U(0, L(53, [ah.zq[player]]), 0, player, bE.oN,
 			bE.oK, -1, !0), aI.ni(player, 2700, !1, 0)) : 4 === id ? this.a7p(1, player, player) : 5 === id ? bD.gn.k9(aE.fB) || (function(id, nH) {
 			var aC, a7z = 0,
 				fR = a7I.length;
 			for (aC = 0; aC < fR; aC++)
 				if (a7I[aC].id === id && nH <= ++a7z) return a7I.splice(aC, 1)
-		}(1, 5), ag.a7r(player) && a7U(180, L(53, [ah.zq[player]]), 1, player, a7V(255, 200, 180), bE.oK, -1, !0), bD.gn.a4p(player, 10) && (a7n(573, 0), a7U(180, L(54, [ah.zq[player]]), 573, player, bE.p4, bE.oK, -1, !0))) : 18 === id ? a7U(
-			255, L(55), 18, 0, bE.oN, bE.oK, -1, !1) : 21 === id ? a7U(220, L(56), id, 0, bE.oN, bE.oK, -1, !1) : 22 === id ? this.a7p(2, player, player) : 59 === id && a7U(0, L(57), id, 0, bE.pO, bE.oK, 0, !1)
+		}(1, 5), ag.a7r(player) && a7U(180, L(54, [ah.zq[player]]), 1, player, a7V(255, 200, 180), bE.oK, -1, !0), bD.gn.a4p(player, 10) && (a7n(573, 0), a7U(180, L(55, [ah.zq[player]]), 573, player, bE.p4, bE.oK, -1, !0))) : 18 === id ? a7U(
+			255, L(56), 18, 0, bE.oN, bE.oK, -1, !1) : 21 === id ? a7U(220, L(57), id, 0, bE.oN, bE.oK, -1, !1) : 22 === id ? this.a7p(2, player, player) : 59 === id && a7U(0, L(58), id, 0, bE.pO, bE.oK, 0, !1)
 	}, this.a2g = function(s) {
-		a7U(200, L(58, [s]), 94, 0, bE.oN, bE.p0, -1, !1)
+		a7U(200, L(59, [s]), 94, 0, bE.oN, bE.p0, -1, !1)
 	}, this.a1m = function(a7s) {
 		if (aE.fB === a7s && !aE.l6 && !aE.eh)
 			__fx.wins.count++, window.localStorage.setItem("fx_winCount", __fx.wins.count),
 			a7U(0, "Your Win Count is now " + __fx.wins.count, 3, a7s, bE.oN, bE.oK, -1, !0);
-		ah.hF[a7s] && (aR.eh(a7s, 2), aE.km < 100 ? a7U(0, L(52, [ah.zq[a7s]]), 3, a7s, bE.oN, bE.oK, -1, !0) : a7U(0, L(59, [ah.zq[a7s]]), 3, a7s, bE.oN, bE.oK, -1, !0))
+		ah.hF[a7s] && (aR.eh(a7s, 2), aE.km < 100 ? a7U(0, L(53, [ah.zq[a7s]]), 3, a7s, bE.oN, bE.oK, -1, !0) : a7U(0, L(60, [ah.zq[a7s]]), 3, a7s, bE.oN, bE.oK, -1, !0))
 	}, this.a6x = function(f5) {
 		var r1, a7u, a7t = "(" + bP.fZ(f5 >> 2) + ", " + bP.fb(f5 >> 2) + ")",
 			a7Z = !1,
 			player = 0;
-		ad.fM(f5) ? ad.fI(f5) ? a7t = L(60, [a7t]) : (player = ad.fJ(f5), aE.ha && !1 === __fx.hoveringTooltip.active && (aE.fB = player), r1 = L(61, [bD.zW.a4S(ah.a23[player], bD.rK.t8(0, 10), 150)]) + "   ", r1 = (r1 += L(62, [bD.sJ.a0e(ah.hT[
-				player])]) + "   ") + L(63, [bD.sJ.a0e(ah.hF[player])]) + "   ", aE.iL && (a7u = bj.a1j[bj.l9[bj.fP[player]]], r1 += L(64) + ": " + a7u + "   "), bD.gn.k9(player) && (r1 += L(65) + ": " + aF.kx[aF.iA[player]] + "   "), a7t =
-			r1 = (r1 += L(66, [player]) + "   ") + L(67, [a7t]), a7Z = !0) : a7t = ad.fW(f5) ? L(68, [a7t]) + "   #" + ad.f9(f5) : L(69, [a7t]), a7n(55, 0), a7U(220, a7t, 55, player, bE.oN, bE.oK, -1, a7Z, void 0, void 0, !0)
+		ad.fM(f5) ? ad.fI(f5) ? a7t = L(61, [a7t]) : (player = ad.fJ(f5), aE.ha && !1 === __fx.hoveringTooltip.active && (aE.fB = player), r1 = L(62, [bD.zW.a4S(ah.a23[player], bD.rK.t8(0, 10), 150)]) + "   ", r1 = (r1 += L(63, [bD.sJ.a0e(ah.hT[
+				player])]) + "   ") + L(64, [bD.sJ.a0e(ah.hF[player])]) + "   ", aE.iL && (a7u = bj.a1j[bj.l9[bj.fP[player]]], r1 += L(65) + ": " + a7u + "   "), bD.gn.k9(player) && (r1 += L(66) + ": " + aF.kx[aF.iA[player]] + "   "), a7t =
+			r1 = (r1 += L(67, [player]) + "   ") + L(68, [a7t]), a7Z = !0) : a7t = ad.fW(f5) ? L(69, [a7t]) + "   #" + ad.f9(f5) : L(70, [a7t]), a7n(55, 0), a7U(220, a7t, 55, player, bE.oN, bE.oK, -1, a7Z, void 0, void 0, !0)
 	}, this.a6z = function(a7v) {
 		var lh = bQ.z,
 			player = lh.mg[a7v] >> 3,
-			r1 = (bi.dq = !0, a7n(55, 0), L(70, [ah.zq[player]]) + "   ");
-		a7U(220, r1 += L(62, [bD.sJ.a0e(lh.a7w[a7v])]), 55, player, bE.oN, bE.oK, -1, !0)
+			r1 = (bi.dq = !0, a7n(55, 0), L(71, [ah.zq[player]]) + "   ");
+		a7U(220, r1 += L(63, [bD.sJ.a0e(lh.a7w[a7v])]), 55, player, bE.oN, bE.oK, -1, !0)
 	}, this.q2 = function(pm, a7x, q3) {
-		pm === aE.fB ? a7U(175, " " + L(71, [ah.zq[a7x]]) + ": ", 1001, a7x, a7V(200, 255, 210), bE.oK, -1, !0, q3) : this.a7y(pm, q3)
+		pm === aE.fB ? a7U(175, " " + L(72, [ah.zq[a7x]]) + ": ", 1001, a7x, a7V(200, 255, 210), bE.oK, -1, !0, q3) : this.a7y(pm, q3)
 	}, this.a7y = function(pm, q3) {
 		a7n(1e3, 0), a7U(175, ah.zq[pm] + ": ", 1e3, pm, bE.oN, "rgba(5,60,25,0.9)", -1, !0, q3)
 	}, this.a1l = function() {
 		var s;
-		aE.a1S ? (s = L(72), aR.a1k(L(73), 2, 1, 12), a7U(0, s, 40, 0, "rgb(10,220,10)", bE.oK, -1, !1)) : (s = L(74), aR.a1k(L(75), 2, 0, 16), a7U(0, s, 41, 0, bE.oN, bE.oK, -1, !1))
+		aE.a1S ? (s = L(73), aR.a1k(L(74), 2, 1, 12), a7U(0, s, 40, 0, "rgb(10,220,10)", bE.oK, -1, !1)) : (s = L(75), aR.a1k(L(76), 2, 0, 16), a7U(0, s, 41, 0, bE.oN, bE.oK, -1, !1))
 	}, this.zd = function() {
 		var gu = ah.zq,
 			fU = aE.data;
@@ -4023,19 +4023,19 @@ function cH() {
 	}, this.a80 = function(s) {
 		a7U(350, s, 0, 0, "rgb(40,255,200)", "rgba(10,60,40,0.9)", -1, !1)
 	}, this.a81 = function(a82) {
-		a7U(0, L(a82 ? 76 : 77), 247, 0, bE.pN, bE.oK, -1, !1)
+		a7U(0, L(a82 ? 77 : 78), 247, 0, bE.pN, bE.oK, -1, !1)
 	}, this.zl = function(zi, zk, a83) {
 		var fU = aE.data,
 			gu = ah.zq;
 		a7U(0, gu[0] + ": " + aE.a1g.zj(fU.elo[0]) + " -> " + zi, 66, 0, bE.oN, a83[0], -1, !1), a7U(0, gu[1] + ": " + aE.a1g.zj(fU.elo[1]) + " -> " + zk, 66, 1, bE.oN, a83[1], -1, !1)
 	}, this.qK = function(player, id) {
-		0 === id ? a7o(50, player) ? (a7U(128, L(78, [ah.zq[player]]), 52, player, a7V(180, 255, 180), bE.oK, -1, !0), ag.qt(player, 2, 255)) : a7U(384, L(79, [ah.zq[player]]), 51, player, a7V(210, 210, 255), bE.oK, -1, !0) : a7o(51, player) ? (
-			a7U(128, L(80, [ah.zq[player]]), 52, player, bE.oN, "rgba(60,120,10,0.9)", -1, !0), ag.qt(player, 2, 255)) : (a7U(384, L(81, [ah.zq[player]]), 50, player, bE.oN, "rgba(90,90,90,0.9)", -1, !0), ag.qt(player, 2, 96))
+		0 === id ? a7o(50, player) ? (a7U(128, L(79, [ah.zq[player]]), 52, player, a7V(180, 255, 180), bE.oK, -1, !0), ag.qt(player, 2, 255)) : a7U(384, L(80, [ah.zq[player]]), 51, player, a7V(210, 210, 255), bE.oK, -1, !0) : a7o(51, player) ? (
+			a7U(128, L(81, [ah.zq[player]]), 52, player, bE.oN, "rgba(60,120,10,0.9)", -1, !0), ag.qt(player, 2, 255)) : (a7U(384, L(82, [ah.zq[player]]), 50, player, bE.oN, "rgba(90,90,90,0.9)", -1, !0), ag.qt(player, 2, 96))
 	}, this.qO = function(a1B, target) {
 		var color = a7V(210, 255, 210);
-		1 < a1B.length ? a7U(230, L(82, [a1B.length, ah.zq[target]]), 66, target, color, bE.oK, -1, !0) : a7U(230, L(83, [ah.zq[a1B[0]], ah.zq[target]]), 66, a1B[0], color, bE.oK, target, !0)
+		1 < a1B.length ? a7U(230, L(83, [a1B.length, ah.zq[target]]), 66, target, color, bE.oK, -1, !0) : a7U(230, L(84, [ah.zq[a1B[0]], ah.zq[target]]), 66, a1B[0], color, bE.oK, target, !0)
 	}, this.a84 = function(player, target) {
-		a7U(230, L(84, [ah.zq[player], ah.zq[target]]), 66, player, bE.oN, "rgba(75,65,5,0.9)", target, !0)
+		a7U(230, L(85, [ah.zq[player], ah.zq[target]]), 66, player, bE.oN, "rgba(75,65,5,0.9)", target, !0)
 	}, this.a85 = function(id, gu) {
 		a7n(id, gu)
 	}, this.a1V = function(id, player) {
@@ -4045,16 +4045,16 @@ function cH() {
 			if (a7I[aC].id === id) return a7I[aC];
 		return null
 	}, this.qF = function(a6N, a87, player) {
-		2 !== ah.a4k[aE.fB] && a7U(200, 1 === a6N ? L(85, [ah.zq[player]]) : L(86, [bD.sJ.a0e(a6N), ah.zq[player]]), 30, player, "rgb(190,255,190)", bE.oK, -1, !0)
+		2 !== ah.a4k[aE.fB] && a7U(200, 1 === a6N ? L(86, [ah.zq[player]]) : L(87, [bD.sJ.a0e(a6N), ah.zq[player]]), 30, player, "rgb(190,255,190)", bE.oK, -1, !0)
 	}, this.a89 = function(a6N, player) {
-		2 !== ah.a4k[aE.fB] && (a7n(31, 0), a6N = " (" + bD.sJ.a0e(a6N) + ") 💸", a7U(150, a6N = bD.gn.k9(player) ? L(87) + a6N : L(88, [ah.zq[player]]) + a6N, 31, player, bE.oE, "rgba(205,205,205,0.9)", -1, !0))
+		2 !== ah.a4k[aE.fB] && (a7n(31, 0), a6N = " (" + bD.sJ.a0e(a6N) + ") 💸", a7U(150, a6N = bD.gn.k9(player) ? L(88) + a6N : L(89, [ah.zq[player]]) + a6N, 31, player, bE.oE, "rgba(205,205,205,0.9)", -1, !0))
 	}, this.a1U = function(bx) {
 		for (var ei = bi.kj(), aC = 2; 0 <= aC; aC--) 0 < a7M.vu[aC] && (bx || a7M.ei[aC] < ei - 220) && this.a8G(aC)
 	}, this.a8G = function(id) {
 		var r1, fR = a7M.vu[id],
 			player = a7M.a1B[id];
-		a7M.vu[id] = 0, 1 === fR ? (0 === id ? r1 = L(96, [ah.zq[player], ah.zq[a7M.a7R[0]]]) : 1 === id ? r1 = L(97, [ah.zq[player]]) : 2 === id ? r1 = L(98, [ah.zq[player]]) : 3 === id && (r1 = L(99, [ah.zq[player]])), a7n(7, 0), a7U(a7M.ne[
-			id], r1, 7, a7M.a7R[id], bE.oN, bE.oK, -1, !0)) : (r1 = L(0 === id ? 100 : 1 === id ? 101 : 102, [fR]), a7n(7, 0), a7U(a7M.ne[id], r1, 7, player, bE.oN, bE.oK, -1, !1))
+		a7M.vu[id] = 0, 1 === fR ? (0 === id ? r1 = L(97, [ah.zq[player], ah.zq[a7M.a7R[0]]]) : 1 === id ? r1 = L(98, [ah.zq[player]]) : 2 === id ? r1 = L(99, [ah.zq[player]]) : 3 === id && (r1 = L(100, [ah.zq[player]])), a7n(7, 0), a7U(a7M.ne[
+			id], r1, 7, a7M.a7R[id], bE.oN, bE.oK, -1, !0)) : (r1 = L(0 === id ? 101 : 1 === id ? 102 : 103, [fR]), a7n(7, 0), a7U(a7M.ne[id], r1, 7, player, bE.oN, bE.oK, -1, !1))
 	}, this.a7p = function(id, ht, lP) {
 		var ei = bi.kj(),
 			fR = a7M.vu[id] + 1;
@@ -4065,14 +4065,14 @@ function cH() {
 		! function() {
 			var gu, aC;
 			if (128 !== a7O && !(++a7O < 128))
-				for (gu = 5, aC = am.lI - 1; 0 <= aC; aC--) 1 === ah.a4k[am.lN[aC]] && 0 < gu-- && a7U(240, L(99, [ah.zq[am.lN[aC]]]), 1, am.lN[aC], bE.oE, "rgba(255,255,255,0.75)", -1, !0)
+				for (gu = 5, aC = am.lI - 1; 0 <= aC; aC--) 1 === ah.a4k[am.lN[aC]] && 0 < gu-- && a7U(240, L(100, [ah.zq[am.lN[aC]]]), 1, am.lN[aC], bE.oE, "rgba(255,255,255,0.75)", -1, !0)
 		}(), this.a1U(!1)
 	}, this.vv = function() {
 		for (var yU, fa = zS(), aC = a7I.length - 1; 0 <= aC; aC--) yU = fa - (aC + 1) * k, 50 === a7I[aC].id ? (vw.drawImage(a7I[aC].canvas, i.j - a7I[aC].j - a7L - a7J, yU), vw.drawImage(a7P, i.j - a7L - a7J, yU)) : vw.drawImage(a7I[aC].canvas,
 			i.j - a7I[aC].j - a7J, yU)
 	}, this.a8I = function(id, iA) {
 		var a7t, a8J = bE.oX;
-		0 === id ? a7t = L(103) : 1 === id ? (a7t = L(104), a8J = bE.pJ) : 2 === id ? a7t = L(105) : 3 === id ? a7t = L(106) : (a7t = bD.sJ.a0e(iA), a8J = 5 === id ? bE.pJ : bE.oK), a7n(74, 0), a7U(0, a7t, 74, 0, bE.oN, a8J, -1, !1, void 0,
+		0 === id ? a7t = L(104) : 1 === id ? (a7t = L(105), a8J = bE.pJ) : 2 === id ? a7t = L(106) : 3 === id ? a7t = L(107) : (a7t = bD.sJ.a0e(iA), a8J = 5 === id ? bE.pJ : bE.oK), a7n(74, 0), a7U(0, a7t, 74, 0, bE.oN, a8J, -1, !1, void 0,
 			void 0, !0)
 	}
 }
@@ -4096,7 +4096,7 @@ function cI() {
 		return a8U < 10 ? "0" + a8U : String(a8U)
 	}
 	this.di = function() {
-		a8M = L(107)
+		a8M = L(108)
 	}, this.resize = function() {
 		yF = Math.floor((a1.a2.ia() ? .53 : .36) * i.ib), yG = Math.floor(.065 * yF), a8L = bD.rK.t8(1, Math.floor(.9 * yG)), a8K += 1e3, a8N()
 	}, this.ed = function() {
@@ -4251,7 +4251,7 @@ function cK() {
 	var a7I, kr, a96, a97, k, a74, fontSize, a98, a99, a9A, a9B, canvas, zW, nZ, a9C;
 
 	function wC(aC) {
-		return L(0 === aC ? 108 : 1 === aC ? 109 : 2 === aC ? 110 : 111)
+		return L(0 === aC ? 109 : 1 === aC ? 110 : 2 === aC ? 111 : 112)
 	}
 
 	function a9J() {
@@ -4350,11 +4350,11 @@ function ct() {
 				(1 === am.lI || (aE.iL ? bk.lJ() : ah.hF[mN[0]]) >= bO.fs(96 * aE.kW, 100)) && (a9V = a9d + 535)
 			}
 			return
-		}() && 0 <= a9U && (aO.zp(250, L(112, [ah.zq[a9U]]), 673, a9U, bE.oN, bE.oK, -1, !0), a9a())
+		}() && 0 <= a9U && (aO.zp(250, L(113, [ah.zq[a9U]]), 673, a9U, bE.oN, bE.oK, -1, !0), a9a())
 	}, this.a1O = function() {
 		this.iD && a9O[0] < a9P[0] && a9W()
 	}, this.qu = function(player, a9e) {
-		var a9f = L(a9e ? 113 : 114, [ah.zq[player]]),
+		var a9f = L(a9e ? 114 : 115, [ah.zq[player]]),
 			a9f = (aO.zp(450, a9f, 257, player, a9e ? bE.og : bE.ov, bE.oK, -1, !0), a9Q.push(player), a8c = !0, aE.l6 ? Math.max(a9P[0], a9P[1]) : ah.hF[player]),
 			a9f = Math.max(a9f, 1);
 		a9e ? a9O[0] += a9f : a9O[1] += a9f, player === aE.fB && (a9N = a9e ? 1 : -1)
@@ -4684,7 +4684,7 @@ function cN() {
 				month: "long"
 			}).format(eZ), aB2 = new Intl.DateTimeFormat("en-US", {
 				weekday: "long"
-			}).format(eZ)), aB2 = aB2 + ", " + eZ.getUTCDate() + " " + month + " " + eZ.getFullYear(), month = 1 === h[aAh] ? L(115) : L(116), month = bD.sJ.a0e(h[aAh]) + " " + month, eZ = Math.floor(vw.measureText(aB2).width), ti = Math
+			}).format(eZ)), aB2 = aB2 + ", " + eZ.getUTCDate() + " " + month + " " + eZ.getFullYear(), month = 1 === h[aAh] ? L(116) : L(117), month = bD.sJ.a0e(h[aAh]) + " " + month, eZ = Math.floor(vw.measureText(aB2).width), ti = Math
 			.floor(vw.measureText(month).width), aB5 = Math.floor(.5 * (eZ + aAi)), aB6 = (aB6 = aAb + i.j - (aAh + 1) * aAd) < aB5 ? aB5 : aB6 > i.j - aB5 ? i.j - aB5 : aB6, no = i.k - Math.floor(aAe * Math.pow(h[aAh], aAk)), aB7 = Math
 			.floor(1.1 * aAi), aB8 = no > i.k - aB7 ? i.k - aB7 : no, vw.fillStyle = bE.oK, vw.fillRect(i.j - ti - aAi, aB8 - aB7, ti + aAi, aB7), vw.fillRect(aB6 - aB5, i.k - aB7, eZ + aAi, aB7), vw.fillStyle = bE.oN, bD.rK.textAlign(vw, 2),
 			vw.fillText(month, Math.floor(i.j - .5 * aAi), aB8), bD.rK.textAlign(vw, 1), vw.fillText(aB2, aB6, i.k), vw.strokeStyle = bE.oR, vw.lineWidth = 1, vw.beginPath(), vw.moveTo(0, no), vw.lineTo(i.j, no), vw.closePath(), vw.stroke())
@@ -4887,7 +4887,7 @@ function cP() {
 			for (var aC = aE.fO - 1; 0 <= aC; aC--) aBf[aC] = Math.floor(aBV.measureText(ah.zq[aC]).width);
 			aBu()
 		}
-		aBs = bD.zW.a4S(L(117), aBQ, .96 * aBP)
+		aBs = bD.zW.a4S(L(118), aBQ, .96 * aBP)
 	}, this.aBH = function() {
 		return aBP
 	}, this.n8 = function(bx, aBv) {
@@ -4982,7 +4982,7 @@ function cQ() {
 		ah.hF[aE.fB] !== aCO[6] && (aCO[6] = ah.hF[aE.fB], aCL++)
 	}
 	this.di = function() {
-		aCR = aCS = 0, (aCM = new Array(8))[0] = L(118), aCM[1] = aE.l6 ? L(119) : L(120), aCM[2] = L(121), aCM[3] = L(122), aCM[4] = L(123), aCM[5] = L(124, 0, "Interest"), aCM[6] = L(125), aCM[7] = L(126),
+		aCR = aCS = 0, (aCM = new Array(8))[0] = L(119), aCM[1] = aE.l6 ? L(120) : L(121), aCM[2] = L(122), aCM[3] = L(123), aCM[4] = L(124), aCM[5] = L(125, 0, "Interest"), aCM[6] = L(126), aCM[7] = L(127),
 			aCM.push("Max Troops", "Density"), // add aCM
 			(aCN = new Array(aCM.length)).fill(""), (aCO = new Array(aCM.length))[0] = aE.l6 ? 0 : aE.km, aCO[1] = aE.l6 ? am.lI : aE.l8, aCO[2] = aE.a1P, aCO[3] = 0, aCO[4] = bO.fs(1e4 * ah.hF[0], Math.max(aE.kW, 1)), aCO[5] = 0 === aE.data
 			.iIncomeType ? 700 : 1 === aE.data.iIncomeType ? bO.fs(700 * aE.data.iIncomeValue, 64) : bO.fs(700 * aE.data.iIncomeData[aE.fB], 64), aCO[6] = 0, aCU(), aCO[7] = 0, aCQ = aCV(6), (aCP = new Array(aCM.length)).fill(!0), aCT = 0, aCT =
@@ -5072,7 +5072,7 @@ function dS() {
 	this.aD4 = new aD5, this.di = function() {
 		for (var ft = bm.eV.data[119].value, aC = 0; aC < aD2.length; aC++) aD2[aC] = (ft >> 2 * aC) % 4
 	}, this.a62 = function() {
-		aD1 = [L(127), "", L(128, [ba.aD6[28]]), L(129, [ba.aD6[26]]), L(130, [ba.aD6[0]])], this.aD4.di()
+		aD1 = [L(128), "", L(129, [ba.aD6[28]]), L(130, [ba.aD6[26]]), L(131, [ba.aD6[0]])], this.aD4.di()
 	}, this.ed = function() {
 		this.aD4.ed()
 	}, this.a6n = function(id) {
@@ -5130,12 +5130,12 @@ function aD5() {
 					aO.a85(957, 0)
 				}
 				return
-			}() : (aO.zp(0, L(131, [ah.zq[gz]]), 956, gz, bE.oN, bE.oK, -1, !0), 0)))) {
+			}() : (aO.zp(0, L(132, [ah.zq[gz]]), 956, gz, bE.oN, bE.oK, -1, !0), 0)))) {
 			var fR = ap.jQ.lw;
 			if (0 !== fR)
 				for (var eV = ap.jQ.eV, aC = 0; aC < fR; aC++) {
 					var fD = eV[aC];
-					if (ad.fI(fD << 2)) return void aO.zp(0, L(132, [bP.fZ(fD), bP.fb(fD)]), 957, 0, bE.oN, bE.oK, -1, !0, void 0, {
+					if (ad.fI(fD << 2)) return void aO.zp(0, L(133, [bP.fZ(fD), bP.fb(fD)]), 957, 0, bE.oN, bE.oK, -1, !0, void 0, {
 						fk: 1,
 						fD: fD
 					})
@@ -5299,10 +5299,10 @@ function aDW() {
 	this.L84 = ["No Admin", "Helper", "Junior Moderator", "Moderator", "Senior Moderator", "Lead Moderator", "Head Admin", "Very Easy", "Easy", "Normal", "Hard", "Very Hard", "Impossible", "Type your message here...", "Send", "Activated", "Top Clan",
 		"Best Clan Member", "Top Admin", "Best 1v1 Player", "Best Battle Royale Player", "Richest Player", "Top Patreon", "Best Zombie Player", "Lobby", "Propaganda", "Close {button}", "Report Abuse", "You earned {10} gold!",
 		"{0} earned {11} gold!", "Team {0}", "Team {0} won the game!", "You earned a participation reward of {10} gold.", "The prize money was distributed as follows:", "and {10} more", "You earned {10} gold.", "You earned {10} points!",
-		"Clan {0} gained {11} points. ✨", "You earned {10} clan points!", "You earned an additional {10} gold because you played for {1}.", "Back", "Error", "Error {10}", "Not Enough Gold!", "You need more gold to perform this action.",
-		"Quit Game", "More", "This is a contest!", "Accept", "You conquered {0}. 🔥", "You were conquered by {0}.", "Congratulations! You won the game.", "{0} won the game.", "{0} broke the non-aggression pact.", "{0} attacks you! ⚔️",
-		"Choose your start position!", "You surrendered! 🏳️", "The game ended in a stalemate!", "Error: {10}", "{0} was immortalized!", "Neutral Land: {0}", "Player: {0}", "Strength: {10}", "Territory: {10}", "Team", "Bot Difficulty",
-		"Index: {10}", "Coordinates: {10}", "Mountain: {10}", "Water: {10}", "Ship Owner: {0}", "Message to {0}", "Humanity triumphs! The undead were defeated.", "The Resistance",
+		"Clan {0} gained {11} points. ✨", "You earned {10} clan points!", "You earned an additional {10} gold because you played for {1}.", "https://territorial.io/", "Back", "Error", "Error {10}", "Not Enough Gold!",
+		"You need more gold to perform this action.", "Quit Game", "More", "This is a contest!", "Accept", "You conquered {0}. 🔥", "You were conquered by {0}.", "Congratulations! You won the game.", "{0} won the game.",
+		"{0} broke the non-aggression pact.", "{0} attacks you! ⚔️", "Choose your start position!", "You surrendered! 🏳️", "The game ended in a stalemate!", "Error: {10}", "{0} was immortalized!", "Neutral Land: {0}", "Player: {0}",
+		"Strength: {10}", "Territory: {10}", "Team", "Bot Difficulty", "Index: {10}", "Coordinates: {10}", "Mountain: {10}", "Water: {10}", "Ship Owner: {0}", "Message to {0}", "Humanity triumphs! The undead were defeated.", "The Resistance",
 		"Mankind's era ends, overrun by the relentless tide of the undead.", "The Virus", "If peace is agreed upon, the game ends in a stalemate.", "If peace is agreed upon, the largest territory holder wins the game.",
 		"You signed a non-aggression pact with {0}.", "You asked {0} to sign a non-aggression pact.", "{0} accepted the non-aggression pact.", "{0} requests a non-aggression pact.", "You asked {10} players to attack {1}.",
 		"You asked {0} to attack {1}.", "{0} suggests you attack {1}. 🎯", "You exported 1 resource to {0}.", "You exported {10} resources to {1}.", "Incoming Bot Support!", "{0} supported you!", "Map: {0}", "Creator: {0}", "Dimension: {10}",
@@ -5370,7 +5370,7 @@ function dn() {
 			aDz) / 2) / i.l) + "px")
 	}, this.vv = function() {
 		this.iD && (vw.fillStyle = bE.oK, vw.fillRect(fY, fa + uY, j, k - uY), vw.fillStyle = bE.pX, vw.fillRect(fY, fa, j, uY), vw.fillStyle = bE.oN, vw.lineWidth = bf.a0L, vw.strokeStyle = bE.oN, vw.strokeRect(fY, fa, j, k), vw.fillRect(fY,
-			fa + uY, j, bf.a0L), vw.font = bD.rK.t8(1, .48 * uY), bD.rK.textAlign(vw, 1), bD.rK.textBaseline(vw, 1), vw.fillText(L(133), Math.floor(fY + (j - .5 * uY) / 2), Math.floor(fa + .55 * uY)), aN.a7G(Math.floor(fY + j - .8 * uY),
+			fa + uY, j, bf.a0L), vw.font = bD.rK.t8(1, .48 * uY), bD.rK.textAlign(vw, 1), bD.rK.textBaseline(vw, 1), vw.fillText(L(134), Math.floor(fY + (j - .5 * uY) / 2), Math.floor(fa + .55 * uY)), aN.a7G(Math.floor(fY + j - .8 * uY),
 			Math.floor(fa + .25 * uY), Math.floor(.5 * uY)), vw.setTransform(1, 0, 0, 1, 0, 0))
 	}
 }
@@ -5400,7 +5400,7 @@ function dm() {
 	}, this.he = function(ik, il) {
 		if (ei && this.iD())
 			for (var aC = ft.length - 1; 0 <= aC; aC--)
-				if (ft[aC] && this.gE[aC] && fY[aC] < ik && fa[aC] < il && ik < fY[aC] + nz[aC] * ei[aC].width && il < fa[aC] + nz[aC] * ei[aC].height) return u.v(9, u.tb, new aE8(L(134), bD.rK.a4f(aCM[aC]))), !0;
+				if (ft[aC] && this.gE[aC] && fY[aC] < ik && fa[aC] < il && ik < fY[aC] + nz[aC] * ei[aC].width && il < fa[aC] + nz[aC] * ei[aC].height) return u.v(9, u.tb, new aE8(L(135), bD.rK.a4f(aCM[aC]))), !0;
 		return !1
 	}, this.vv = function() {
 		if (ei && this.iD()) {
@@ -5856,7 +5856,7 @@ function aEI() {
 		aGL.show(fY, fa, v8), bq.ug.show(aGL.fY, aGL.fa, aGM, 1)
 	}
 	this.aGQ = function(e, rC) {
-		aGN = 1, aGM = rC, aGL = new v2([new x(L(135), aGR, 0 === rC.uq ? 1 : 0), new x(L(136), aGS, aGT()), new x(L(137), aGU, 0)]), aGV((aGP = {
+		aGN = 1, aGM = rC, aGL = new v2([new x(L(136), aGR, 0 === rC.uq ? 1 : 0), new x(L(137), aGS, aGT()), new x(L(138), aGU, 0)]), aGV((aGP = {
 			clientX: e.clientX,
 			clientY: e.clientY
 		}).clientX, aGP.clientY, 1)
@@ -6183,12 +6183,12 @@ function cT() {
 				function(aHk, fa) {
 					bD.rK.textAlign(vw, 1), bD.rK.textBaseline(vw, 1), vw.font = a8W, vw.fillStyle = bE.oN, vw.fillText(aHk, Math.floor(.5 * i.j), Math.floor(fa + .58 * a8X))
 				}(title, fa)
-		}(L(138), fa, 3, aHH / 100),
+		}(L(139), fa, 3, aHH / 100),
 		function(fY, fa, j, k, aFD) {
 			vw.fillStyle = bE.oI, vw.fillRect(fY, fa, j, k), vw.lineWidth = 3, vw.strokeStyle = bE.oN, vw.strokeRect(fY, fa, j, k);
 			var fR = Math.floor(.3 * k);
 			bD.rK.textAlign(vw, 1), bD.rK.textBaseline(vw, 1), vw.font = bD.rK.t8(0, fR), vw.fillStyle = bE.oN, vw.fillText(aFD, Math.floor(fY + j / 2), Math.floor(fa + k / 2 + .1 * fR))
-		}(fY, fa + a8X + bf.gap, aHK, aHL, L(40))
+		}(fY, fa + a8X + bf.gap, aHK, aHL, L(41))
 	}
 }
 
@@ -6576,7 +6576,7 @@ function cX() {
 					for (aC = aJJ.length - 1; 1 <= aC; aC--) ah.hF[aJJ[aC]] > ah.hF[aJJ[eG]] && (eG = aC);
 					return eG
 				}(aJJ)];
-				9 === aE.l4 && (1 === bj.fP[player] ? az.ke(8) && b0.aJP(aJO) : aF.iA[player] && (aO.a85(765, 0), aO.zp(280, L(139, [ah.zq[aJO], ah.zq[player]]), 765, aJO, bE.oE, bE.pa, -1, !0)));
+				9 === aE.l4 && (1 === bj.fP[player] ? az.ke(8) && b0.aJP(aJO) : aF.iA[player] && (aO.a85(765, 0), aO.zp(280, L(140, [ah.zq[aJO], ah.zq[player]]), 765, aJO, bE.oE, bE.pa, -1, !0)));
 				if (bD.gn.a4l(player)) aJK(), aO.a1a(aJO, 1);
 				else {
 					for (var aC = aJJ.length - 1; 0 <= aC; aC--)
@@ -7671,7 +7671,7 @@ function aMu() {
 
 function aMo() {
 	this.xk = null, this.aNs = null, this.aNt = null, this.di = function() {
-		this.aNu = [L(140), L(141), L(142), L(143), L(144), L(145), L(146), L(147), L(148), L(149), L(150), L(151), L(152), L(153), L(154), L(155), L(156), L(157), L(158), L(159), L(160), L(161), L(162), L(163), "Mare Nostrum"];
+		this.aNu = [L(141), L(142), L(143), L(144), L(145), L(146), L(147), L(148), L(149), L(150), L(151), L(152), L(153), L(154), L(155), L(156), L(157), L(158), L(159), L(160), L(161), L(162), L(163), L(164), "Mare Nostrum"];
 		var aNv = [120, 105, 92],
 			cos = [12, 12, 60],
 			aNw = [300, 300, 9827, 26, 18, 36, 36, 8, 32, 3, 9],
@@ -8119,28 +8119,28 @@ function aPA(data) {
 			}
 			var aQO, aPu = new qx,
 				aQM = 1e5 <= data.x9,
-				aQN = aPu.r0(aQL ? (aQM ? "⚠️ " : "") + L(255) : L(256)),
-				aQQ = (aQM && (aQN.style.color = "yellow"), aQL ? aPu.r2(L(257, [bD.sJ.a5V(data.x9, .01, 0)])) : ((aQO = new s8({
+				aQN = aPu.r0(aQL ? (aQM ? "⚠️ " : "") + L(256) : L(257)),
+				aQQ = (aQM && (aQN.style.color = "yellow"), aQL ? aPu.r2(L(258, [bD.sJ.a5V(data.x9, .01, 0)])) : ((aQO = new s8({
 					value: data.aQP,
 					eG: -1
-				})).e.readOnly = !0, aQO.e.type = "password", aPu.rB(aQO), aPu.rB(new sm([new x(L(191), function(e) {
-					return e.textContent === L(191) ? (e.textContent = L(192), aQO.e.type = "text") : (e.textContent = L(191), aQO.e.type = "password"), !0
-				}).button, new x(L(188), function(e) {
+				})).e.readOnly = !0, aQO.e.type = "password", aPu.rB(aQO), aPu.rB(new sm([new x(L(192), function(e) {
+					return e.textContent === L(192) ? (e.textContent = L(193), aQO.e.type = "text") : (e.textContent = L(192), aQO.e.type = "password"), !0
+				}).button, new x(L(189), function(e) {
 					return bD.rK.a4h(aQO.e), bD.rK.vZ(e), !0
-				}).button]))), aPu.r6(L(aQL ? 256 : 258)).style.marginTop = "0.75em", new s8({
+				}).button]))), aPu.r6(L(aQL ? 257 : 259)).style.marginTop = "0.75em", new s8({
 					value: "",
 					eG: -1
 				}, 0, 0)),
-				aQS = (aQQ.e.type = "email", aQQ.e.autocomplete = "email", aQQ.e.name = "email", aQQ.e.inputMode = "email", aQQ.e.spellcheck = !1, aPu.rB(aQQ), aPu.rB(new sm([new x(L(259), function(e) {
+				aQS = (aQQ.e.type = "email", aQQ.e.autocomplete = "email", aQQ.e.name = "email", aQQ.e.inputMode = "email", aQQ.e.spellcheck = !1, aPu.rB(aQQ), aPu.rB(new sm([new x(L(260), function(e) {
 					return b1.aGd.aQR({
 						action: 3,
 						r1: aQQ.e.value.trim().substring(0, 63)
 					}), bD.rK.vZ(e), !0
-				}).button])), aQL && aPu.r2(L(260)), aPu.r6(L(261)).style.marginTop = "0.75em", new s8({
+				}).button])), aQL && aPu.r2(L(261)), aPu.r6(L(262)).style.marginTop = "0.75em", new s8({
 					value: "",
 					eG: -1
 				}, 1));
-			aPu.rB(aQS), aPu.rB(new sm([new x(L(262), function() {
+			aPu.rB(aQS), aPu.rB(new sm([new x(L(263), function() {
 				b1.aGd.aGe({
 					action: 4,
 					tZ: "",
@@ -8157,9 +8157,9 @@ function aPA(data) {
 		aPY.resize(), aPZ.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg(data.username, [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg(data.username, [new x("⬅️ " + L(41), function() {
 		bL.clear(), u.a2W()
-	}), new x(data.aPa ? "🔄 " + L(164) : L(165), function() {
+	}), new x(data.aPa ? "🔄 " + L(165) : L(166), function() {
 		u.v(8, data.aPa ? u.a2b().a2c : void 0, new tc(25, {
 			action: 0,
 			tZ: data.tZ,
@@ -8169,35 +8169,35 @@ function aPA(data) {
 		var rF = [];
 		aPc(rF, 1), rF.push(function() {
 				var aPu = new qx;
-				aPu.r0(L(228)), data.aQE && (aPu.r6("✅ " + L(229)).style.marginBottom = "0.75em");
+				aPu.r0(L(229)), data.aQE && (aPu.r6("✅ " + L(230)).style.marginBottom = "0.75em");
 				var a27 = data.aQF;
-				a27 < 1 ? (aPu.r6(L(230)), 0 === data.aQG ? aPu.r2(L(231)) : 1 === data.aQG ? aPu.r2(L(232)) : 2 === data.aQG ? aPu.r2(L(233)) : 3 === data.aQG ? aPu.r2(L(234)) : 4 === data.aQG ? aPu.r2(L(235)) : 5 === data.aQG ? aPu.r2(
-					L(236)) : 6 === data.aQG ? aPu.r2(L(237)) : aPu.r2(L(238))) : (aPu.r6(L(239)), a27 = a27 < 2 ? L(240) : a27 < 61 ? 2 === a27 ? L(241) : L(242, [a27 - 1]) : a27 < 84 ? 61 === a27 ? L(243) : L(244, [a27 - 60]) :
-					a27 < 255 ? 84 === a27 ? L(245) : L(246, [a27 - 83]) : L(247), aPu.r2(a27));
+				a27 < 1 ? (aPu.r6(L(231)), 0 === data.aQG ? aPu.r2(L(232)) : 1 === data.aQG ? aPu.r2(L(233)) : 2 === data.aQG ? aPu.r2(L(234)) : 3 === data.aQG ? aPu.r2(L(235)) : 4 === data.aQG ? aPu.r2(L(236)) : 5 === data.aQG ? aPu.r2(
+					L(237)) : 6 === data.aQG ? aPu.r2(L(238)) : aPu.r2(L(239))) : (aPu.r6(L(240)), a27 = a27 < 2 ? L(241) : a27 < 61 ? 2 === a27 ? L(242) : L(243, [a27 - 1]) : a27 < 84 ? 61 === a27 ? L(244) : L(245, [a27 - 60]) :
+					a27 < 255 ? 84 === a27 ? L(246) : L(247, [a27 - 83]) : L(248), aPu.r2(a27));
 				{
 					var r3, aPz;
-					aPu.rB(new sw), data.aPa && (r3 = aPu.r2(), aPu.rB(new sm([new x(bm.wK.us(data.tZ) ? L(248) : L(249), function(e) {
-						return bm.wK.wX(data.tZ) ? (e.textContent = L(248), aPz(1)) : (e.textContent = L(249), aPz(0)), !0
+					aPu.rB(new sw), data.aPa && (r3 = aPu.r2(), aPu.rB(new sm([new x(bm.wK.us(data.tZ) ? L(249) : L(250), function(e) {
+						return bm.wK.wX(data.tZ) ? (e.textContent = L(249), aPz(1)) : (e.textContent = L(250), aPz(0)), !0
 					}).button])), aPz = function(ft) {
-						r3.textContent = ft ? L(250) : ""
+						r3.textContent = ft ? L(251) : ""
 					}, bm.wK.us(data.tZ) && aPz(1), aPu.rB(new sw))
 				}
 				var rO, s7 = new s8({
 					value: data.username,
 					eG: -1
 				});
-				s7.e.readOnly = !0, aPu.rB(s7), aPu.rB(new sm([new x(L(188), function(e) {
+				s7.e.readOnly = !0, aPu.rB(s7), aPu.rB(new sm([new x(L(189), function(e) {
 					return bD.rK.a4h(s7.e), bD.rK.vZ(e), !0
-				}).button])), data.aPa || aPu.r2(L(251));
-				(data.aQH || data.aQI || data.aQJ) && (aPu.rB(new sw), aPu.r2(L(252)), data.aQH && (aPu.r2("• Account Timeout").style.color = "orange"), data.aQI && ((rO = aPu.r2("• Muted")).style.color = "orange", rO.style.marginTop =
+				}).button])), data.aPa || aPu.r2(L(252));
+				(data.aQH || data.aQI || data.aQJ) && (aPu.rB(new sw), aPu.r2(L(253)), data.aQH && (aPu.r2("• Account Timeout").style.color = "orange"), data.aQI && ((rO = aPu.r2("• Muted")).style.color = "orange", rO.style.marginTop =
 					"0.5em"), data.aQJ) && ((rO = aPu.r2("• Redacted")).style.color = "orange", rO.style.marginTop = "0.5em");
-				data.aPa && (aPu.rB(new sw), aPu.r6(b1.z.aPv("/wiki/reports"), "0.75em").style.marginBottom = "0.8em", aPu.rB(new sm([new x(L(253), function(e) {
+				data.aPa && (aPu.rB(new sw), aPu.r6(b1.z.aPv("/wiki/reports"), "0.75em").style.marginBottom = "0.8em", aPu.rB(new sm([new x(L(254), function(e) {
 					return b1.aGd.aGe({
 						action: 3,
 						tZ: data.tZ,
 						value: 0
 					}), bD.rK.vZ(e), !0
-				}, bE.p3).button])), aPu.rB(new sm([new x(L(254), function(e) {
+				}, bE.p3).button])), aPu.rB(new sm([new x(L(255), function(e) {
 					return b1.aGd.aGe({
 						action: 3,
 						tZ: data.tZ,
@@ -8244,39 +8244,39 @@ function aPA(data) {
 			}()),
 			function(rF) {
 				var aPu, r3, aDf, aQU, aQ0, aQ2, aQ1;
-				data.aPa || ((aPu = new qx).r0(L(263)), (r3 = aPu.r2(data.aQT.length + " / 160")).style.textAlign = "center", aDf = !0, (aQU = new w4(0, 1, function(e) {
+				data.aPa || ((aPu = new qx).r0(L(264)), (r3 = aPu.r2(data.aQT.length + " / 160")).style.textAlign = "center", aDf = !0, (aQU = new w4(0, 1, function(e) {
 					e = e.target.value.length;
 					r3.textContent = e + " / 160", 160 < e ? aDf && (aDf = !1, aQ2.re(1)) : aDf || (aDf = !0, aQ2.re(0))
-				})).e.rows = 6, aQU.e.style.fontSize = "1em", aQU.wB(data.aQT), aPu.rB(aQU), 0 !== data.aQV ? (aQ2 = new x(L(264), function() {
+				})).e.rows = 6, aQU.e.style.fontSize = "1em", aQU.wB(data.aQT), aPu.rB(aQU), 0 !== data.aQV ? (aQ2 = new x(L(265), function() {
 					if (!aDf) return !0;
 					u.v(8, u.a2b().a2c, new tc(29, {
 						action: 1,
 						r1: aQU.wC().substring(0, 160)
 					}))
-				}, 0, 0, 1), aPu.rB(new sm([aQ2.button])), aPu.rB(new sm([new x(1 === data.aQV ? L(265) : L(266), function() {
+				}, 0, 0, 1), aPu.rB(new sm([aQ2.button])), aPu.rB(new sm([new x(1 === data.aQV ? L(266) : L(267), function() {
 					u.v(8, u.a2b().a2c, new tc(29, {
 						action: 0,
 						r1: ""
 					}))
-				}, 0, 0, 1).button])), aPu.r2(1 === data.aQV ? L(267, [data.aQW - 1]) : L(268, [data.aQW - 1])), aPu.r2(L(269, [data.aQX]))) : (aQ0 = new x(L(270), function() {
+				}, 0, 0, 1).button])), aPu.r2(1 === data.aQV ? L(268, [data.aQW - 1]) : L(269, [data.aQW - 1])), aPu.r2(L(270, [data.aQX]))) : (aQ0 = new x(L(271), function() {
 					if (!aQU.e.readOnly) return !0;
 					u.v(8, u.a2b().a2c, new tc(29, {
 						action: 1,
 						r1: aQU.wC().substring(0, 160)
 					}))
-				}, 1), aQ2 = new x(L(185), function(e) {
-					if (e.textContent === L(185)) {
+				}, 1), aQ2 = new x(L(186), function(e) {
+					if (e.textContent === L(186)) {
 						if (!aDf) return !0;
-						e.textContent = L(186), aQU.e.readOnly = !0, aQ0.re(0), aQ0.button.style.color = bE.pN
+						e.textContent = L(187), aQU.e.readOnly = !0, aQ0.re(0), aQ0.button.style.color = bE.pN
 					} else aQ1();
 					return !0
-				}), aPu.rB(new sm([aQ2.button])), aPu.r2(L(269, [data.aQX])), aQ1 = function() {
-					aQ2.button.textContent = L(185), aQU.e.readOnly = !1, aQ0.re(1), aQ0.button.style.color = bE.oN
+				}), aPu.rB(new sm([aQ2.button])), aPu.r2(L(270, [data.aQX])), aQ1 = function() {
+					aQ2.button.textContent = L(186), aQU.e.readOnly = !1, aQ0.re(1), aQ0.button.style.color = bE.oN
 				}, aPu.rB(new sm([aQ0.button]))), rF.push(aPu))
 			}(rF),
 			function(rF) {
 				var aPu;
-				data.aPa && 0 !== data.aQV && ((aPu = new qx).r0(L(271)), aPu.r4(data.aQT), aPu.rB(new sm([new x(L(272, 0, "Report"), function(e) {
+				data.aPa && 0 !== data.aQV && ((aPu = new qx).r0(L(272)), aPu.r4(data.aQT), aPu.rB(new sm([new x(L(273, 0, "Report"), function(e) {
 					return b1.z.ee(0) && (bD.rK.vZ(e), b1.aGd.aQY({
 						action: 5,
 						tZ: data.tZ
@@ -8284,9 +8284,9 @@ function aPA(data) {
 				}, 0, 0, 1).button])), rF.push(aPu))
 			}(rF), rF.push(function() {
 				var aPu = new qx,
-					aPw = (aPu.r0(L(166)), aPu.r6(b1.z.aPv("/wiki/gold"), "0.75em").style.marginBottom = "0.8em", [L(167), L(168), L(169), L(170), L(171), L(172), L(173), L(174), L(175), L(176), L(177), L(178), L(179), L(180)]),
+					aPw = (aPu.r0(L(167)), aPu.r6(b1.z.aPv("/wiki/gold"), "0.75em").style.marginBottom = "0.8em", [L(168), L(169), L(170), L(171), L(172), L(173), L(174), L(175), L(176), L(177), L(178), L(179), L(180), L(181)]),
 					eF = data.aPx;
-				return aPu.r6(L(181) + bD.sJ.a5V(data.x9, .01, 2) + "<br>" + L(182) + (eF + 1) + " / " + data.x8 + "<br>" + L(183) + aPw[function(eF, x9) {
+				return aPu.r6(L(182) + bD.sJ.a5V(data.x9, .01, 2) + "<br>" + L(183) + (eF + 1) + " / " + data.x8 + "<br>" + L(184) + aPw[function(eF, x9) {
 					if (eF < 10) return 0;
 					if (eF < 30) return 1;
 					if (eF < 60) return 2;
@@ -8304,7 +8304,7 @@ function aPA(data) {
 				}(eF, data.x9)]), aPu
 			}()), data.aPa && rF.push(function() {
 				var aPu = new qx,
-					s7 = (aPu.r0(L(184)), aPu.r6(b1.z.aPv("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", new s8({
+					s7 = (aPu.r0(L(185)), aPu.r6(b1.z.aPv("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", new s8({
 						value: bm.eV.data[147].value,
 						eG: -1
 					}, 1, void 0, function(e) {
@@ -8317,31 +8317,31 @@ function aPA(data) {
 							value: parseInt(bm.eV.data[147].value, 10)
 						})), !0
 					}, 1)),
-					aQ2 = new x(L(185), function(e) {
-						return e.textContent === L(185) ? (e.textContent = L(186), s7.e.readOnly = !0, aQ0.re(0), aQ0.button.style.color = bE.pN, bm.po.pp(147, s7.e.value), aPz(bm.eV.data[147].value)) : aQ1(), !0
+					aQ2 = new x(L(186), function(e) {
+						return e.textContent === L(186) ? (e.textContent = L(187), s7.e.readOnly = !0, aQ0.re(0), aQ0.button.style.color = bE.pN, bm.po.pp(147, s7.e.value), aPz(bm.eV.data[147].value)) : aQ1(), !0
 					}),
 					r3 = (aPu.rB(new sm([aQ2.button])), aPu.r2()),
 					aPz = function(ft) {
 						r3.innerHTML = u.z.aQ3(ft, bm.eV.data[105].value, data.tZ)
 					},
 					aQ1 = function() {
-						aQ2.button.textContent = L(185), s7.e.readOnly = !1, aQ0.re(1), aQ0.button.style.color = bE.oN
+						aQ2.button.textContent = L(186), s7.e.readOnly = !1, aQ0.re(1), aQ0.button.style.color = bE.oN
 					};
 				return aPz(bm.eV.data[147].value), aPu.rB(new sm([aQ0.button])), aPu
 			}());
 		rF.push(function() {
 			var aPu = new qx,
-				s7 = (aPu.r0(L(187)), new s8({
+				s7 = (aPu.r0(L(188)), new s8({
 					value: data.tZ,
 					eG: -1
 				})),
-				aQ4 = (s7.e.readOnly = !0, aPu.rB(s7), aPu.rB(new sm([new x(L(188), function(e) {
+				aQ4 = (s7.e.readOnly = !0, aPu.rB(s7), aPu.rB(new sm([new x(L(189), function(e) {
 					return bD.rK.a4h(s7.e), bD.rK.vZ(e), !0
 				}).button])), aPu.rB(new sw), new s8({
 					value: data.tZ,
 					eG: -1
 				}));
-			return aPu.rB(aQ4), aPu.rB(new sm([new x(L(189), function(e) {
+			return aPu.rB(aQ4), aPu.rB(new sm([new x(L(190), function(e) {
 				u.v(8, u.a2b().a2c, new tc(25, {
 					action: 0,
 					tZ: aQ4.e.value,
@@ -8350,22 +8350,22 @@ function aPA(data) {
 			}).button])), aPu
 		}()), data.aPa || (rF.push(function() {
 			var aPu = new qx,
-				aQ5 = (aPu.r0(L(190)), new s8(bm.eV.data[106]));
-			return aQ5.e.readOnly = !0, aQ5.e.type = "password", aPu.rB(aQ5), aPu.rB(new sm([new x(L(191), function(e) {
-				return e.textContent === L(191) ? (e.textContent = L(192), aQ5.e.type = "text") : (e.textContent = L(191), aQ5.e.type = "password"), !0
-			}).button, new x(L(188), function(e) {
+				aQ5 = (aPu.r0(L(191)), new s8(bm.eV.data[106]));
+			return aQ5.e.readOnly = !0, aQ5.e.type = "password", aPu.rB(aQ5), aPu.rB(new sm([new x(L(192), function(e) {
+				return e.textContent === L(192) ? (e.textContent = L(193), aQ5.e.type = "text") : (e.textContent = L(192), aQ5.e.type = "password"), !0
+			}).button, new x(L(189), function(e) {
 				return bD.rK.a4h(aQ5.e), bD.rK.vZ(e), !0
-			}).button])), aPu.rB(new sm([new x(L(193), function() {
+			}).button])), aPu.rB(new sm([new x(L(194), function() {
 				u.v(8, u.a2b().a2c, new tc(15))
-			}).button])), aPu.r0(L(194), "0.8em"), aPu.r2(L(195)), aPu.r2(L(196)), aPu.r2(L(197)), aPu
+			}).button])), aPu.r0(L(195), "0.8em"), aPu.r2(L(196)), aPu.r2(L(197)), aPu.r2(L(198)), aPu
 		}()), rF.push(function() {
 			var aPu = new qx;
-			return aPu.r0(L(198)), aPu.rB(new sm([new x(L(199), function() {
+			return aPu.r0(L(199)), aPu.rB(new sm([new x(L(200), function() {
 				u.v(6, u.a2b().a2c)
-			}).button])), aPu.rB(new sm([new x(L(200), function() {
+			}).button])), aPu.rB(new sm([new x(L(201), function() {
 				bm.po.pp(105, ""), u.v(8, u.a2b().a2c, new tc(18))
-			}).button])), aPu.rB(new sm([new x(L(201) + bm.eV.data[105].value, function() {
-				u.v(4, 0, new w(L(202), L(203), !0, [new x("⬅️ " + L(40), function() {
+			}).button])), aPu.rB(new sm([new x(L(202) + bm.eV.data[105].value, function() {
+				u.v(4, 0, new w(L(203), L(204), !0, [new x("⬅️ " + L(41), function() {
 					u.v(7, u.a6R(7).a2c)
 				})]))
 			}, bE.p3).button])), aPu
@@ -8374,11 +8374,11 @@ function aPA(data) {
 				aQ6[0].re(0 === eG ? bE.oZ : bE.ol), aQ6[1].re(0 === eG ? bE.oZ : bE.p3)
 			}
 			var r9, aQ6, aPu = new qx;
-			aPu.r0(L(207)), aPu.r2(L(208)), bm.z.ws();
-			return aQ6 = [new x(L(209), function() {
+			aPu.r0(L(208)), aPu.r2(L(209)), bm.z.ws();
+			return aQ6 = [new x(L(210), function() {
 				var eG = Math.min(bm.eV.data[117].value, r9.rA.length - 1);
 				eG < 1 || (eG = bm.z.ww(eG), bm.po.pp(105, eG.tZ), bm.po.pp(106, eG.password), u.v(8, u.a2b().a2c, new tc(18)))
-			}, bE.oZ, 1), new x(L(206), function() {
+			}, bE.oZ, 1), new x(L(207), function() {
 				var eG = Math.min(bm.eV.data[117].value, r9.rA.length - 1);
 				if (!(eG < 1)) {
 					r9.rA[eG].remove(), r9.rA.splice(eG, 1);
@@ -8389,25 +8389,25 @@ function aPA(data) {
 		}()));
 		return rF.push(function() {
 				var aPu = new qx,
-					aPw = (aPu.r0(L(213)), [L(214), L(215), L(216), L(217)]),
+					aPw = (aPu.r0(L(214)), [L(215), L(216), L(217), L(218)]),
 					eF = data.aQ8;
-				return aPu.r6(L(218) + (data.a1q / 100).toFixed(2) + "<br>" + L(182) + (eF + 1) + " / " + data.x8 + "<br>" + L(183) + aPw[eF < 10 ? 0 : eF < 50 ? 1 : eF < 200 ? 2 : 3]), aPu
+				return aPu.r6(L(219) + (data.a1q / 100).toFixed(2) + "<br>" + L(183) + (eF + 1) + " / " + data.x8 + "<br>" + L(184) + aPw[eF < 10 ? 0 : eF < 50 ? 1 : eF < 200 ? 2 : 3]), aPu
 			}()), rF.push(function() {
 				var aPu = new qx;
-				return aPu.r0(L(210)), aPu.r6(L(211) + bD.sJ.a5V(data.x5, .1, 1) + "<br>" + L(182) + (data.x6 + 1) + " / " + data.x8 + "<br>" + L(212) + data.x7), aPu
+				return aPu.r0(L(211)), aPu.r6(L(212) + bD.sJ.a5V(data.x5, .1, 1) + "<br>" + L(183) + (data.x6 + 1) + " / " + data.x8 + "<br>" + L(213) + data.x7), aPu
 			}()),
 			function(rF) {
 				var aPu = new qx,
 					aQZ = data.xC,
-					aQa = (aPu.r0(L(273)), aPu.r6(L(274, [data.xA.length ? "[" + data.xA + "]" : "-"])), aPu.r6(L(275, [bD.sJ.a5V(aQZ, .01, 2)])), aPu.r6(L(276, [data.xE + 1 + " / " + data.x8])), data.xF),
-					aQb = (aPu.r6(L(277, [bD.sJ.a5V(aQa, .1, 1)])), data.xH);
-				aPu.r6(L(278, [aQb])), aPu.r6(L(279, [bD.sJ.a5V(aQa / Math.max(aQb, 1), .1, 2)])), aQZ = data.xD, aPu.r0(L(280), "0.8em"), aPu.r6(L(274, [data.xB.length ? "[" + data.xB + "]" : "-"])), aPu.r6(L(275, [bD.sJ.a5V(aQZ, .01, 2)])),
-					aQa = data.xG, aPu.r6(L(277, [bD.sJ.a5V(aQa, .1, 1)])), aQb = data.xI, aPu.r6(L(278, [aQb])), aPu.r6(L(279, [bD.sJ.a5V(aQa / Math.max(aQb, 1), .1, 2)])), aPu.r6(b1.z.aPv("/wiki/clans"), "0.75em").style.marginTop = "0.8em",
+					aQa = (aPu.r0(L(274)), aPu.r6(L(275, [data.xA.length ? "[" + data.xA + "]" : "-"])), aPu.r6(L(276, [bD.sJ.a5V(aQZ, .01, 2)])), aPu.r6(L(277, [data.xE + 1 + " / " + data.x8])), data.xF),
+					aQb = (aPu.r6(L(278, [bD.sJ.a5V(aQa, .1, 1)])), data.xH);
+				aPu.r6(L(279, [aQb])), aPu.r6(L(280, [bD.sJ.a5V(aQa / Math.max(aQb, 1), .1, 2)])), aQZ = data.xD, aPu.r0(L(281), "0.8em"), aPu.r6(L(275, [data.xB.length ? "[" + data.xB + "]" : "-"])), aPu.r6(L(276, [bD.sJ.a5V(aQZ, .01, 2)])),
+					aQa = data.xG, aPu.r6(L(278, [bD.sJ.a5V(aQa, .1, 1)])), aQb = data.xI, aPu.r6(L(279, [aQb])), aPu.r6(L(280, [bD.sJ.a5V(aQa / Math.max(aQb, 1), .1, 2)])), aPu.r6(b1.z.aPv("/wiki/clans"), "0.75em").style.marginTop = "0.8em",
 					rF.push(aPu)
 			}(rF),
 			function(rF) {
 				var aPu = new qx;
-				aPu.r0(L(281)), aPu.r6(L(218) + (data.aQc / 10).toFixed(1) + "<br>" + L(183) + (data.aQd.length ? L(282, [data.aQd]) : L(283))), data.aPa && aPu.rB(new sm([new x(L(284), function(e) {
+				aPu.r0(L(282)), aPu.r6(L(219) + (data.aQc / 10).toFixed(1) + "<br>" + L(184) + (data.aQd.length ? L(283, [data.aQd]) : L(284))), data.aPa && aPu.rB(new sm([new x(L(285), function(e) {
 					return b1.z.ee(0) && (bD.rK.vZ(e), b1.aGd.aQY({
 						action: 4,
 						tZ: data.tZ
@@ -8416,15 +8416,15 @@ function aPA(data) {
 				aPu.r6(b1.z.aPv("/wiki/clans"), "0.75em").style.marginTop = "0.8em", rF.push(aPu)
 			}(rF), rF.push(function() {
 				var aPu = new qx;
-				if (aPu.r0(L(225)), aPu.r6(L(226) + data.aQB + "<br>" + L(182) + (data.aQC + 1) + " / " + data.x8 + "<br>" + L(183) + br.eI(data.aQC)), data.aPa) {
+				if (aPu.r0(L(226)), aPu.r6(L(227) + data.aQB + "<br>" + L(183) + (data.aQC + 1) + " / " + data.x8 + "<br>" + L(184) + br.eI(data.aQC)), data.aPa) {
 					var s7 = new s8({
 							value: bm.eV.data[157].value,
 							eG: -1
 						}, 1, void 0, function(e) {
 							bm.po.pp(157, aPz(e.target.value))
 						}),
-						aQ2 = (s7.e.style.marginTop = "0.6em", aPu.rB(s7), new x(L(185), function(e) {
-							return e.textContent === L(185) ? (e.textContent = L(186), s7.e.readOnly = !0, aQD[0].re(0), aQD[1].re(0), aQD[0].button.style.color = bE.pN, aQD[1].button.style.color = bE.pN, aPz(bm.eV.data[157]
+						aQ2 = (s7.e.style.marginTop = "0.6em", aPu.rB(s7), new x(L(186), function(e) {
+							return e.textContent === L(186) ? (e.textContent = L(187), s7.e.readOnly = !0, aQD[0].re(0), aQD[1].re(0), aQD[0].button.style.color = bE.pN, aQD[1].button.style.color = bE.pN, aPz(bm.eV.data[157]
 								.value)) : aQ1(), !0
 						})),
 						aQD = (aPu.rB(new sm([aQ2.button])), [new x("−", function(e) {
@@ -8442,12 +8442,12 @@ function aPA(data) {
 						}, 1)]),
 						r3 = aPu.r2(),
 						aPz = function(ft) {
-							return ft = bD.gn.a5B(ft, 3, 32767), r3.textContent = L(227, [ft - 1, ft, bm.eV.data[105].value]), ft
+							return ft = bD.gn.a5B(ft, 3, 32767), r3.textContent = L(228, [ft - 1, ft, bm.eV.data[105].value]), ft
 						};
 					aPu.rB(new sm([aQD[0].button, aQD[1].button]));
 					for (var aC = 0; aC < 2; aC++) aQD[aC].button.style.fontSize = "1.6em";
 					var aQ1 = function() {
-						aQ2.button.textContent = L(185), s7.e.readOnly = !1, aQD[0].re(1), aQD[1].re(1), aQD[0].button.style.color = bE.oN, aQD[1].button.style.color = bE.oN
+						aQ2.button.textContent = L(186), s7.e.readOnly = !1, aQD[0].re(1), aQD[1].re(1), aQD[0].button.style.color = bE.oN, aQD[1].button.style.color = bE.oN
 					};
 					aPz(bm.eV.data[157].value)
 				}
@@ -8455,46 +8455,46 @@ function aPA(data) {
 			}()),
 			function(rF) {
 				var aPu, a4g;
-				data.aPa && !data.aQe || (0 === a1.id || data.aPa || data.aQe) && ((aPu = new qx).r0("Patreon"), !data.aPa && data.aQf ? aPu.rB(new sm([new x(L(191), function() {
+				data.aPa && !data.aQe || (0 === a1.id || data.aPa || data.aQe) && ((aPu = new qx).r0("Patreon"), !data.aPa && data.aQf ? aPu.rB(new sm([new x(L(192), function() {
 					b1.aGd.aQY({
 						action: 7,
 						tZ: data.tZ
 					}), data.aQf = 0, u.v(7)
-				}).button])) : data.aQe ? (aPu.r6(L(285, [(data.aQg / 100).toFixed(2)]) + "<br>" + L(286, [1 + data.aQh + " / " + data.aQi]) + "<br>" + L(287, [data.aQj ? L(288) : L(289)])), data.aPa || aPu.rB(new sm([new x(L(290),
+				}).button])) : data.aQe ? (aPu.r6(L(286, [(data.aQg / 100).toFixed(2)]) + "<br>" + L(287, [1 + data.aQh + " / " + data.aQi]) + "<br>" + L(288, [data.aQj ? L(289) : L(290)])), data.aPa || aPu.rB(new sm([new x(L(291),
 					function() {
 						b1.aGd.aQY({
 							action: 8,
 							tZ: data.tZ
 						}), data.aQe = 0, bm.po.pp(160, 0), u.v(7)
-					}).button]))) : (aPu.r6(L(291), "0.75em").style.marginBottom = "0.3em", aPu.r6("  • " + L(292), "0.75em").style.whiteSpace = "pre", aPu.r6("  • " + L(293), "0.75em").style.whiteSpace = "pre", aPu.r6("  • " + L(
-						294), "0.75em").style.whiteSpace = "pre", aPu.r6(L(295), "0.75em").style.marginTop = "1.0em", aPu.r6(L(296), "0.75em").style.marginTop = "1.0em", aPu.r6("<a href='" + bN.aQk +
+					}).button]))) : (aPu.r6(L(292), "0.75em").style.marginBottom = "0.3em", aPu.r6("  • " + L(293), "0.75em").style.whiteSpace = "pre", aPu.r6("  • " + L(294), "0.75em").style.whiteSpace = "pre", aPu.r6("  • " + L(
+						295), "0.75em").style.whiteSpace = "pre", aPu.r6(L(296), "0.75em").style.marginTop = "1.0em", aPu.r6(L(297), "0.75em").style.marginTop = "1.0em", aPu.r6("<a href='" + bN.aQk +
 						"' target='_blank'>patreon.com/c/territorial</a>", "0.75em").style.marginTop = "0.3em", a4g = "https://www.patreon.com/oauth2/authorize?state=" + data.tZ +
-					"&response_type=code&client_id=wWuOlDVZwn1sxSN9Wm4I9sJA3Ewfw7Zz4MjTMf9el2v3lviVkDwFtr92n7Tdlrhc&redirect_uri=https://" + b1.z.a1n() + "/", aPu.r6(L(297), "0.75em").style.marginTop = "1.0em", aPu.r6("<a href='" +
-						a4g + "' target='_blank'>patreon.com/oauth2/...</a>", "0.75em").style.marginTop = "0.3em", data.aPa || (aPu.rB(new sw), aPu.rB(new sm([new x(L(192), function() {
+					"&response_type=code&client_id=wWuOlDVZwn1sxSN9Wm4I9sJA3Ewfw7Zz4MjTMf9el2v3lviVkDwFtr92n7Tdlrhc&redirect_uri=https://" + b1.z.a1n() + "/", aPu.r6(L(298), "0.75em").style.marginTop = "1.0em", aPu.r6("<a href='" +
+						a4g + "' target='_blank'>patreon.com/oauth2/...</a>", "0.75em").style.marginTop = "0.3em", data.aPa || (aPu.rB(new sw), aPu.rB(new sm([new x(L(193), function() {
 						b1.aGd.aQY({
 							action: 6,
 							tZ: data.tZ
 						}), data.aQf = 1, u.v(7)
-					}).button])), aPu.r6(L(298), "0.75em").style.marginTop = "0.75em")), rF.push(aPu))
+					}).button])), aPu.r6(L(299), "0.75em").style.marginTop = "0.75em")), rF.push(aPu))
 			}(rF), rF.push(function() {
 				var aPu = new qx,
-					aPw = (aPu.r0(L(219)), [L(220), L(221), L(222), L(223), "Scout", L(224)]),
+					aPw = (aPu.r0(L(220)), [L(221), L(222), L(223), L(224), "Scout", L(225)]),
 					eF = data.aQ9;
-				return aPu.r6(L(218) + (data.aQA / 100).toFixed(2) + "<br>" + L(182) + (eF + 1) + " / " + data.x8 + "<br>" + L(183) + aPw[eF < 3 ? 0 : eF < 20 ? 1 : eF < 100 ? 2 : eF < 500 ? 3 : eF < 2e3 ? 4 : 5]), aPu.r6(
+				return aPu.r6(L(219) + (data.aQA / 100).toFixed(2) + "<br>" + L(183) + (eF + 1) + " / " + data.x8 + "<br>" + L(184) + aPw[eF < 3 ? 0 : eF < 20 ? 1 : eF < 100 ? 2 : eF < 500 ? 3 : eF < 2e3 ? 4 : 5]), aPu.r6(
 					"<a href='https://territorial.fandom.com/wiki/Zombie_mode' target='_blank'>Unofficial Tutorial</a>", "0.75em").style.marginTop = "0.8em", aPu
 			}()),
 			function(rF) {
 				var aPu, r9, aQ6, eG, aQ7;
-				data.aPa || bm.wK.get().length && ((aPu = new qx).r0(L(204)), eG = 0, aQ7 = function() {
+				data.aPa || bm.wK.get().length && ((aPu = new qx).r0(L(205)), eG = 0, aQ7 = function() {
 					var aDK = bm.wK.get().length;
 					aQ6[0].re(eG === aDK ? bE.oZ : bE.ol), aQ6[1].re(eG === aDK ? bE.oZ : bE.p3)
-				}, aQ6 = [new x(L(205), function() {
+				}, aQ6 = [new x(L(206), function() {
 					u.v(8, void 0, new tc(25, {
 						action: 0,
 						tZ: bm.wK.get()[eG],
 						ta: 0
 					}))
-				}, bE.oZ, 1), new x(L(206), function() {
+				}, bE.oZ, 1), new x(L(207), function() {
 					bm.wK.wZ(eG), r9.rA[eG].remove(), r9.rA.splice(eG, 1);
 					for (var aC = eG; aC < r9.rA.length; aC++) r9.rA[aC].name = "" + aC;
 					bm.wK.get().length && (eG = Math.max(eG - 1, 0), r9.rA[eG].textContent = r9.rA[eG].textContent.replace("⚪", "🟢")), aQ7()
@@ -8523,10 +8523,10 @@ function aPL() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(299), [new x("⬅️ " + L(40), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
+	}, aQm = new vg(L(300), [new x("⬅️ " + L(41), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(300)), aPu.r8(new vc({
-			tI: [L(301), L(302), L(303)],
+		aPu.r0(L(301)), aPu.r8(new vc({
+			tI: [L(302), L(303), L(304)],
 			value: aE.data.aIncomeType
 		}, function(eG) {
 			aQr(), 2 !== eG || aE.data.aIncomeData || (aE.data.aIncomeData = new Uint8Array(aE.fO)), aE.data.aIncomeType = eG, u.v(22)
@@ -8559,7 +8559,7 @@ function aPO() {
 
 	function aQw(rF, eG) {
 		var aPu = new qx,
-			value = (aPu.r0(eG < 0 ? L(65) : L(64) + " " + bj.a1j[eG % 9]), 0 <= eG && (aPu.r6(L(306) + ": " + aE.data.teamPlayerCount[eG]).style.marginBottom = "1em"), eG < 0 ? aE.data.botDifficultyValue : aE.data.botDifficultyTeam[eG]);
+			value = (aPu.r0(eG < 0 ? L(66) : L(65) + " " + bj.a1j[eG % 9]), 0 <= eG && (aPu.r6(L(307) + ": " + aE.data.teamPlayerCount[eG]).style.marginBottom = "1em"), eG < 0 ? aE.data.botDifficultyValue : aE.data.botDifficultyTeam[eG]);
 		aPu.r8(new vc({
 			tI: aF.kx,
 			value: value
@@ -8575,11 +8575,11 @@ function aPO() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(65), [new x("⬅️ " + L(40), aQp)]), aQn = new rD(aQm.vm, function() {
+	}, aQm = new vg(L(66), [new x("⬅️ " + L(41), aQp)]), aQn = new rD(aQm.vm, function() {
 		var rF = [];
 		if (function(rF) {
 				var aPu = new qx,
-					tI = (aPu.r0(L(300)), [L(302), L(304), L(305), L(303)]),
+					tI = (aPu.r0(L(301)), [L(303), L(305), L(306), L(304)]),
 					value = aE.data.botDifficultyType;
 				0 === aE.data.gameMode && (value = Math.min(value, 2), tI.splice(2, 1));
 				aPu.r8(new vc({
@@ -8693,10 +8693,10 @@ function aQx(data) {
 			eZ = eZ.getUTCMonth() + 1;
 		aR5 = eZ < 12 ? new Date(Date.UTC(aRI, eZ) - a4W) : new Date(Date.UTC(aRI + 1, 0) - a4W)
 	}(eZ, a4W) : (a4W = 6e4 * aRA[data.aRF], aR5 = data.aRF <= 4 ? new Date(iJ + a4W - eZ.getTime() % a4W) : new Date(iJ + a4W - (eZ.getTime() + 2592e5) % a4W)), iJ = bD.color, colors = [bE.oN, iJ.oF(255, 0, 0), iJ.oF(0, 200, 0), iJ.oF(80, 80,
-		255), iJ.oF(255, 255, 0), iJ.oF(255, 0, 255), iJ.oF(0, 255, 255), iJ.oF(255, 140, 0), iJ.oF(128, 128, 128), iJ.oF(0, 255, 140)], aPY = new vg(L(307) + ", " + ["M1", "M5", "H1", "H4", "D1", "W1", "MN"][data.aRF] + ", " + bD.a3j.a4V(aR4), [
-		new x("⬅️ " + L(40), function() {
+		255), iJ.oF(255, 255, 0), iJ.oF(255, 0, 255), iJ.oF(0, 255, 255), iJ.oF(255, 140, 0), iJ.oF(128, 128, 128), iJ.oF(0, 255, 140)], aPY = new vg(L(308) + ", " + ["M1", "M5", "H1", "H4", "D1", "W1", "MN"][data.aRF] + ", " + bD.a3j.a4V(aR4), [
+		new x("⬅️ " + L(41), function() {
 			u.v(1)
-		}), new x(L(308), function() {
+		}), new x(L(309), function() {
 			u.v(14)
 		})
 	], !1)
@@ -8712,11 +8712,11 @@ function aPD() {
 		aPY.resize(), aPZ.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg(L(309), [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg(L(310), [new x("⬅️ " + L(41), function() {
 		aRf !== bm.eV.data[125].value ? u.z.aRg() : u.aPW(13)
 	})]), aPZ = new rD(aPY.vm, ((rF = []).push(function() {
 		var aPu = new qx,
-			aQ2 = (aPu.r0(L(310)), aPu.r2(L(311)), new x(L(312), function() {
+			aQ2 = (aPu.r0(L(311)), aPu.r2(L(312)), new x(L(313), function() {
 				bm.po.pp(130, 0), u.z.aRg()
 			}, 0, 0, 1)),
 			s7 = new s8(bm.eV.data[126], 0, function() {
@@ -8725,7 +8725,7 @@ function aPD() {
 		return aPu.rB(s7), s7.e.placeholder = "a,b,c", s7.e.style.marginTop = "0.5em", aPu.rB(new sm([aQ2.button])), aPu
 	}()), rF.push(function() {
 		var aPu = new qx,
-			aQ2 = new x(L(312), function() {
+			aQ2 = new x(L(313), function() {
 				bm.po.pp(130, 1), u.z.aRg()
 			}, 0, 0, 1),
 			aRl = new s8(bm.eV.data[129], 1, function() {
@@ -8734,13 +8734,13 @@ function aPD() {
 			aRm = new s8(bm.eV.data[128], 1, function() {
 				aQ2.button.click()
 			});
-		return aPu.r0(L(313)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.5em", aPu.r0(L(314)), aPu.rB(aRl), aPu.rB(new sm([aQ2.button])), aPu
+		return aPu.r0(L(314)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.5em", aPu.r0(L(315)), aPu.rB(aRl), aPu.rB(new sm([aQ2.button])), aPu
 	}()), rF.push(function() {
 		var aPu = new qx;
-		return aPu.r0(L(315)), bm.eV.data[125].tI = ["M1", "M5", "H1", "H4", "D1", "W1", "MN"], aPu.r8(new vc(bm.eV.data[125])), aPu
+		return aPu.r0(L(316)), bm.eV.data[125].tI = ["M1", "M5", "H1", "H4", "D1", "W1", "MN"], aPu.r8(new vc(bm.eV.data[125])), aPu
 	}()), rF.push(function() {
 		var aPu = new qx;
-		return aPu.r0(L(316)), aPu.rB(new si(bm.eV.data[127], L(317))), aPu
+		return aPu.r0(L(317)), aPu.rB(new si(bm.eV.data[127], L(318))), aPu
 	}()), rF))
 }
 
@@ -8751,7 +8751,7 @@ function aPC() {
 	function aRu(aC) {
 		var aRv = aRn.fa + aC * (bf.gap + aRq);
 		vw.fillStyle = "rgb(" + (0 === aC ? 150 : 2 === aC ? 30 : 0) + "," + (1 === aC ? 130 : 2 === aC ? 30 : 0) + "," + (2 === aC ? 220 : 0) + ")", vw.fillRect(aRo, aRv, colors[aC] * aRp, aRq), vw.strokeStyle = bE.oN, vw.strokeRect(aRo, aRv, aRp,
-			aRq), vw.fillStyle = bE.oN, vw.font = bD.rK.t8(0, .32 * aRq), bD.rK.textBaseline(vw, 1), bD.rK.textAlign(vw, 0), vw.fillText(L(0 === aC ? 320 : 1 === aC ? 321 : 322) + aRs(aC), aRo + bf.gap, aRv + .53 * aRq)
+			aRq), vw.fillStyle = bE.oN, vw.font = bD.rK.t8(0, .32 * aRq), bD.rK.textBaseline(vw, 1), bD.rK.textAlign(vw, 0), vw.fillText(L(0 === aC ? 321 : 1 === aC ? 322 : 323) + aRs(aC), aRo + bf.gap, aRv + .53 * aRq)
 	}
 
 	function aRs(aC, aRw) {
@@ -8775,7 +8775,7 @@ function aPC() {
 	}, this.vv = function() {
 		var eF, tz, fl;
 		aPY.vv(), vw.lineWidth = bf.a0L, eF = aRs(0), tz = aRs(1), fl = aRs(2), vw.fillStyle = "rgb(" + eF + "," + tz + "," + fl + ")", vw.fillRect(aRn.fY, aRn.fa, aR0, aRn.k), vw.strokeStyle = bE.oN, vw.strokeRect(aRn.fY, aRn.fa, aR0, aRn.k), vw
-			.fillStyle = eF + tz + fl < 306 && tz < 150 ? bE.oN : bE.oE, bD.rK.textBaseline(vw, 1), bD.rK.textAlign(vw, 1), vw.font = bD.rK.t8(0, .1 * aRn.k), vw.rotate(-Math.PI / 2), vw.fillText(L(319), -aRn.fa - .5 * aRn.k, aRn.fY + .5 * aR0),
+			.fillStyle = eF + tz + fl < 306 && tz < 150 ? bE.oN : bE.oE, bD.rK.textBaseline(vw, 1), bD.rK.textAlign(vw, 1), vw.font = bD.rK.t8(0, .1 * aRn.k), vw.rotate(-Math.PI / 2), vw.fillText(L(320), -aRn.fa - .5 * aRn.k, aRn.fY + .5 * aR0),
 			vw.setTransform(1, 0, 0, 1, 0, 0), aRu(0), aRu(1), aRu(2)
 	}, this.he = function(m1, m2) {
 		a3O(m1, m2) && (aRr = bO.iZ(Math.floor((m2 - aRn.fa) / (aRq + .75 * bf.gap)), 0, 2), colors[aRr] = bO.iZ((m1 - aRo) / aRp, 0, 1), bi.dq = !0)
@@ -8787,7 +8787,7 @@ function aPC() {
 		0 <= aRr && (aRr = -1, bi.dq = !0)
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg(L(318), [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg(L(319), [new x("⬅️ " + L(41), function() {
 		u.z.aDl()
 	})], !1), aRn = new rv([.5, .25], [.5, .5], 1)
 }
@@ -8814,10 +8814,10 @@ function aPK() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, rt = [new x("⬅️ " + L(40), aQp)], 1 === aE.data.gameMode && rt.push(new x(L(323), aRx, 1, 1)), aQm = new vg(L(324), rt), aQn = new rD(aQm.vm, (rt = [], 0 === aE.data.gameMode ? (function(rF) {
+	}, rt = [new x("⬅️ " + L(41), aQp)], 1 === aE.data.gameMode && rt.push(new x(L(324), aRx, 1, 1)), aQm = new vg(L(325), rt), aQn = new rD(aQm.vm, (rt = [], 0 === aE.data.gameMode ? (function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(300)), aPu.r8(new vc({
-			tI: [L(325), L(303)],
+		aPu.r0(L(301)), aPu.r8(new vc({
+			tI: [L(326), L(304)],
 			value: aE.data.colorsType
 		}, function(eG) {
 			aQr(), aE.data.colorsType = eG, 1 !== aE.data.colorsType || aE.data.colorsData && aE.data.colorsData.length === aE.fO || (aE.data.colorsData = new Uint32Array(aE.fO)), u.v(21)
@@ -8827,7 +8827,7 @@ function aPK() {
 		aPu.r0("Data"), (aQo = new w4(0, 1, 0, 1)).wB(bD.sJ.a5b(aE.data.colorsData, 1)), aPu.rB(aQo), rF.push(aPu)
 	}(rt)) : (aE.a5s.a5x(), rt.push(function() {
 		var aPu = new qx;
-		aPu.r0(L(306));
+		aPu.r0(L(307));
 		for (var aC = 0; aC < bj.a1j.length; aC++) {
 			var iJ = (aC + 1) % bj.a1j.length,
 				e = aPu.r6((0 == iJ ? "" : "Team ") + bj.a1j[iJ]);
@@ -8842,7 +8842,7 @@ function aPK() {
 		}
 		return aPu
 	}()), function(rF) {
-		for (var aPu = new qx, tI = (aPu.r0(L(326)), []), aC = 0; aC < bj.a1j.length; aC++) {
+		for (var aPu = new qx, tI = (aPu.r0(L(327)), []), aC = 0; aC < bj.a1j.length; aC++) {
 			var iJ = (aC + 1) % bj.a1j.length;
 			tI.push(bj.a1j[iJ])
 		}
@@ -8863,12 +8863,12 @@ function tc(id, a5E, aS3) {
 	var aPY, aS4;
 
 	function aS9() {
-		aS4.rG.innerHTML += "<br>" + L(329)
+		aS4.rG.innerHTML += "<br>" + L(330)
 	}
 
 	function aSI() {
 		var fl = 1;
-		u.v(4, 1, new w(L(330), L(331), !1, [new x("🔄 Reload", function() {
+		u.v(4, 1, new w(L(331), L(332), !1, [new x("🔄 Reload", function() {
 			fl && (setTimeout(function() {
 				u.v(1)
 			}, 5e3), a1.a2.a3()), fl = 0
@@ -8899,9 +8899,9 @@ function tc(id, a5E, aS3) {
 		aPY.resize(), aS4.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg(L(327), [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg(L(328), [new x("⬅️ " + L(41), function() {
 		aS3 ? u.v(29) : u.z.aDl()
-	})]), aS4 = new sl(aPY.vm, L(328))
+	})]), aS4 = new sl(aPY.vm, L(329))
 }
 
 function aPI() {
@@ -8933,23 +8933,23 @@ function aPI() {
 
 	function aSS() {
 		var aSc, aPu = new qx;
-		return aPu.r0(L(324)), aSc = 0 === aE.data.gameMode ? [L(325), L(303)][aE.data.colorsType] : aE.data.numberTeams + " Team" + (1 === aE.data.numberTeams ? "" : "s"), aPu.r6(aSc), aPu.rB(new sm([new x(L(335), function() {
+		return aPu.r0(L(325)), aSc = 0 === aE.data.gameMode ? [L(326), L(304)][aE.data.colorsType] : aE.data.numberTeams + " Team" + (1 === aE.data.numberTeams ? "" : "s"), aPu.r6(aSc), aPu.rB(new sm([new x(L(336), function() {
 			u.v(21)
 		}).button])), aPu
 	}
 
 	function aST() {
 		var aPu = new qx,
-			h = (aPu.r0(L(65)), [L(302) + ": " + aF.kx[aE.data.botDifficultyValue], L(304), L(305), L(303)]);
-		return aPu.r6(h[aE.data.botDifficultyType]), aPu.rB(new sm([new x(L(335), function() {
+			h = (aPu.r0(L(66)), [L(303) + ": " + aF.kx[aE.data.botDifficultyValue], L(305), L(306), L(304)]);
+		return aPu.r6(h[aE.data.botDifficultyType]), aPu.rB(new sm([new x(L(336), function() {
 			u.v(25)
 		}).button])), aPu
 	}
 
 	function aSU() {
 		var aPu = new qx,
-			h = (aPu.r0("Spawning"), [L(325), L(337), L(303)]);
-		return aPu.r6(h[aE.data.spawningType]), aPu.rB(new sm([new x(L(335), function() {
+			h = (aPu.r0("Spawning"), [L(326), L(338), L(304)]);
+		return aPu.r6(h[aE.data.spawningType]), aPu.rB(new sm([new x(L(336), function() {
 			u.v(24)
 		}).button])), aPu
 	}
@@ -8961,18 +8961,18 @@ function aPI() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg("🔧 " + L(332), [new x("⬅️ " + L(40), aQp), new x(L(333), aSL)]), aSN(), aE.data.canvas || (2 === aE.data.mapType ? aE.data.canvas = bV.xt : 1 === aE.data.mapType ? aE.data.canvas = bV.aMy(bV.a6I(aE.data), 0).xt : (aE.data
+	}, aQm = new vg("🔧 " + L(333), [new x("⬅️ " + L(41), aQp), new x(L(334), aSL)]), aSN(), aE.data.canvas || (2 === aE.data.mapType ? aE.data.canvas = bV.xt : 1 === aE.data.mapType ? aE.data.canvas = bV.aMy(bV.a6I(aE.data), 0).xt : (aE.data
 		.mapType = 0, aE.data.passableWater = aE.data.passableMountains = 1, aE.data.canvas = bV.aMy(bV.a6I(aE.data), aE.data.mapSeed).xt)), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx,
-			a4E = (aPu.r0(L(334)), aE.data.canvas);
+			a4E = (aPu.r0(L(335)), aE.data.canvas);
 		a4E.style.width = "100%", aPu.rB({
 			e: a4E
-		}), aPu.rB(new sm([new x(L(335), function() {
+		}), aPu.rB(new sm([new x(L(336), function() {
 			u.v(20)
 		}).button])), rF.push(aPu)
 	}(rF = []), function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(306)), aPu.rB(new s8({
+		aPu.r0(L(307)), aPu.rB(new s8({
 			eG: -1,
 			value: aE.data.playerCount
 		}, 1, 0, function(e) {
@@ -8981,7 +8981,7 @@ function aPI() {
 		})), rF.push(aPu)
 	}(rF), function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(336)), aPu.r8(new vc({
+		aPu.r0(L(337)), aPu.r8(new vc({
 			tI: ["Battle Royale", "Teams"],
 			value: aE.data.gameMode
 		}, function(eG) {
@@ -8989,41 +8989,41 @@ function aPI() {
 		})), rF.push(aPu)
 	}(rF), rF.push(aSS()), rF.push(aST()), rF.push(aSU()), function(rF) {
 		var aPu = new qx,
-			h = (aPu.r0(L(338)), [L(339), L(340), L(303)]);
-		aPu.r6(h[aE.data.playerNamesType]), aPu.rB(new sm([new x(L(335), function() {
+			h = (aPu.r0(L(339)), [L(340), L(341), L(304)]);
+		aPu.r6(h[aE.data.playerNamesType]), aPu.rB(new sm([new x(L(336), function() {
 			u.v(23)
 		}).button])), rF.push(aPu)
 	}(rF), function(rF) {
 		var aPu = new qx,
-			h = (aPu.r0(L(299)), [L(301), L(302) + ": " + aE.data.aIncomeValue, L(303)]);
-		aPu.r6(h[aE.data.aIncomeType]), aPu.rB(new sm([new x(L(335), function() {
+			h = (aPu.r0(L(300)), [L(302), L(303) + ": " + aE.data.aIncomeValue, L(304)]);
+		aPu.r6(h[aE.data.aIncomeType]), aPu.rB(new sm([new x(L(336), function() {
 			u.v(22)
 		}).button])), rF.push(aPu)
 	}(rF), function(rF) {
 		var aPu = new qx,
-			h = (aPu.r0(L(341)), [L(301), L(302) + ": " + aE.data.tIncomeValue, L(303)]);
-		aPu.r6(h[aE.data.tIncomeType]), aPu.rB(new sm([new x(L(335), function() {
+			h = (aPu.r0(L(342)), [L(302), L(303) + ": " + aE.data.tIncomeValue, L(304)]);
+		aPu.r6(h[aE.data.tIncomeType]), aPu.rB(new sm([new x(L(336), function() {
 			u.v(26)
 		}).button])), rF.push(aPu)
 	}(rF), function(rF) {
 		var aPu = new qx,
-			h = (aPu.r0(L(342)), [L(301), L(302) + ": " + aE.data.iIncomeValue, L(303)]);
-		aPu.r6(h[aE.data.iIncomeType]), aPu.rB(new sm([new x(L(335), function() {
+			h = (aPu.r0(L(343)), [L(302), L(303) + ": " + aE.data.iIncomeValue, L(304)]);
+		aPu.r6(h[aE.data.iIncomeType]), aPu.rB(new sm([new x(L(336), function() {
 			u.v(27)
 		}).button])), rF.push(aPu)
 	}(rF), function(rF) {
 		var aPu = new qx,
-			h = (aPu.r0(L(343)), [L(301), L(302) + ": " + aE.data.sResourcesValue, L(303)]);
-		aPu.r6(h[aE.data.sResourcesType]), aPu.rB(new sm([new x(L(335), function() {
+			h = (aPu.r0(L(344)), [L(302), L(303) + ": " + aE.data.sResourcesValue, L(304)]);
+		aPu.r6(h[aE.data.sResourcesType]), aPu.rB(new sm([new x(L(336), function() {
 			u.v(28)
 		}).button])), rF.push(aPu)
 	}(rF), function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(344)), aPu.rB(new sm([new x(L(345), function() {
+		aPu.r0(L(345)), aPu.rB(new sm([new x(L(346), function() {
 			u.y(), aE.a5s.a6L(), u.z.tT[0] = 0, u.v(19)
-		}).button])), aPu.rB(new sm([new x(L(346), function() {
-			bp.aKC()
 		}).button])), aPu.rB(new sm([new x(L(347), function() {
+			bp.aKC()
+		}).button])), aPu.rB(new sm([new x(L(348), function() {
 			return bp.aKE(), !0
 		}).button])), rF.push(aPu)
 	}(rF), rF))
@@ -9064,7 +9064,7 @@ function aPT() {
 	}, this.zp = function(a6P) {
 		var sS = document.createDocumentFragment();
 		sT(sS, a6P), aQm.vm.appendChild(sS), sW()
-	}, (aQm = new vg(L(348), [new x("⬅️ " + L(40), function() {
+	}, (aQm = new vg(L(349), [new x("⬅️ " + L(41), function() {
 		u.aPW(1)
 	})])).vm.style.overflowY = "auto", aQm.vm.addEventListener("scroll", function() {
 		sD = aQm.vm.scrollTop >= aQm.vm.scrollHeight - aQm.vm.clientHeight - 2
@@ -9089,10 +9089,10 @@ function aPQ() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(342), [new x("⬅️ " + L(40), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
+	}, aQm = new vg(L(343), [new x("⬅️ " + L(41), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(300)), aPu.r8(new vc({
-			tI: [L(301), L(302), L(303)],
+		aPu.r0(L(301)), aPu.r8(new vc({
+			tI: [L(302), L(303), L(304)],
 			value: aE.data.iIncomeType
 		}, function(eG) {
 			aQr(), 2 !== eG || aE.data.iIncomeData || (aE.data.iIncomeData = new Uint8Array(aE.fO), aE.data.iIncomeData.fill(32)), aE.data.iIncomeType = eG, u.v(27)
@@ -9114,13 +9114,13 @@ function aPQ() {
 
 function aP8() {
 	var aSh, aSi, aRn, s7, aSj, t3 = 0;
-	this.aIK = new tj, aRn = new rv([.45, .27], [.5, .5], 2 / 3), aSi = [new x("⚔️<br>" + L(349), function() {
+	this.aIK = new tj, aRn = new rv([.45, .27], [.5, .5], 2 / 3), aSi = [new x("⚔️<br>" + L(350), function() {
 			__fx.isCustomLobbyVersion ? alert("This version is for use with custom lobbies only. For normal multiplayer, use the version at https://fxclient.github.io/FXclient/") : aSk(0)
-		}, __fx.isCustomLobbyVersion ? "rgba(50, 50, 50, 0.6)" : bE.or), new x("🗡️<br>" + L(332), function() {
+		}, __fx.isCustomLobbyVersion ? "rgba(50, 50, 50, 0.6)" : bE.or), new x("🗡️<br>" + L(333), function() {
 			aSk(1)
-		}, bE.p9), new x("🔑<br>" + L(350), function() {
+		}, bE.p9), new x("🔑<br>" + L(351), function() {
 			aSk(2)
-		}, bE.pS), new x("☰<br>" + L(351), function() {
+		}, bE.pS), new x("☰<br>" + L(352), function() {
 			aSk(3)
 		}, bE.oa), new x("", function() {
 			u.v(12)
@@ -9138,7 +9138,7 @@ function aP8() {
 		a1.a2.setState(10), ac.u3() || ac.aIB(), 0 === eG ? u.z.a6B(1) : 1 === eG ? (bC.aKW.xe(bm.eV.data[156].value, 1) || aE.a5s.a6L(), u.v(19)) : 2 === eG ? 0 !== a1.id || bm.eV.data[140].value ? u.v(8, u.tb, new tc(16)) : u.z.aSl(u.tb, 16) :
 			3 === eG && u.v(1)
 	}
-	s7.e.style.position = "absolute", s7.e.style.textAlign = "center", s7.e.placeholder = L(352), this.show = function() {
+	s7.e.style.position = "absolute", s7.e.style.textAlign = "center", s7.e.placeholder = L(353), this.show = function() {
 		ab.setState(0), a1.a2.setState(12), this.aIK.show(), aSi[4].re(bD.color.a4L(bm.eV.data[121].value)), this.resize(), document.body.appendChild(s7.e);
 		for (var aC = 0; aC < aSi.length; aC++) document.body.appendChild(aSi[aC].button);
 		1 !== a1.id || a1.e1 < 5 || (aSj && bi.eY > aSj + 144e5 ? a1.we.setState(14) : aSj = bi.eY)
@@ -9199,25 +9199,25 @@ function aPF() {
 		aPY.resize(), aSs.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aSt = [new x(L(353), function() {
+	}, aSt = [new x(L(354), function() {
 		aSu(1)
-	}, 0, 0, 1), new x(L(354), function() {
-		aSu(2)
 	}, 0, 0, 1), new x(L(355), function() {
-		aSu(3)
+		aSu(2)
 	}, 0, 0, 1), new x(L(356), function() {
-		aSu(0)
+		aSu(3)
 	}, 0, 0, 1), new x(L(357), function() {
-		aSu(9)
+		aSu(0)
 	}, 0, 0, 1), new x(L(358), function() {
-		aSu(10)
+		aSu(9)
 	}, 0, 0, 1), new x(L(359), function() {
-		aSu(11)
+		aSu(10)
 	}, 0, 0, 1), new x(L(360), function() {
+		aSu(11)
+	}, 0, 0, 1), new x(L(361), function() {
 		aSu(13)
-	}, 0, 0, 1)], vh = [new x("⬅️ " + L(40), function() {
+	}, 0, 0, 1)], vh = [new x("⬅️ " + L(41), function() {
 		u.a2W()
-	})], aPY = new vg(L(361), vh), aSs = new rs(aSt, aPY.vm)
+	})], aPY = new vg(L(362), vh), aSs = new rs(aSt, aPY.vm)
 }
 
 function aE8(title, r7, aSv) {
@@ -9230,7 +9230,7 @@ function aE8(title, r7, aSv) {
 		aPY.resize(), aS4.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aSv = aSv || [new x("⬅️ " + L(40), function() {
+	}, aSv = aSv || [new x("⬅️ " + L(41), function() {
 		u.a2W()
 	}, bE.p3)], aPY = new vg(title, aSv), aS4 = new sl(aPY.vm, r7), bD.rK.textAlign(aPY.vm.style, 1)
 }
@@ -9265,12 +9265,12 @@ function aCE(data) {
 		}, this.a3S = function(ei) {
 			2 === ei && aPY.vn[0].rb()
 		}, data.aCF) {
-		aPY = new vg(L(119), [new x("⬅️ " + L(40), function() {
+		aPY = new vg(L(120), [new x("⬅️ " + L(41), function() {
 			u.a2W()
 		})]);
 		var fU = {
 				tJ: [],
-				tP: [L(374), L(375), L(376) + " ↗"],
+				tP: [L(375), L(376), L(377) + " ↗"],
 				tW: [12, 50, 38]
 			},
 			a6F = aE.data.a6F;
@@ -9293,18 +9293,18 @@ function aCE(data) {
 		} else aSw = new tH(aPY.vm, fU)
 	} else {
 		var fU = data.data.length ? 0 : 1,
-			aSv = [new x("⬅️ " + L(40), function() {
+			aSv = [new x("⬅️ " + L(41), function() {
 				u.a2W()
-			}), new x(L(362), function() {
+			}), new x(L(363), function() {
 				aSy(-10)
-			}, fU, 0, 1), new x(L(363), function() {
+			}, fU, 0, 1), new x(L(364), function() {
 				aSy(10)
-			}, fU, 0, 1), new x(L(308), function() {
+			}, fU, 0, 1), new x(L(309), function() {
 				u.v(11, 10, new aSz({
 					tu: data.tu
 				}))
 			})],
-			tP = [L(364), L(365), L(366), L(367), L(368), L(369), L(370), L(371), L(372), L(373), L(358), L(359), "Audit Log", L(360)];
+			tP = [L(365), L(366), L(367), L(368), L(369), L(370), L(371), L(372), L(373), L(374), L(359), L(360), "Audit Log", L(361)];
 		aPY = new vg(tP[data.tu], aSv), ! function() {
 			var aC, fU = {
 					tJ: []
@@ -9316,20 +9316,20 @@ function aCE(data) {
 			var nz = [.1, .001, .01, 1, 100, 1, 1, .1, 100, .01, .01, .01, 1, .01][data.tu],
 				a5O = [1, 3, 2, 0, 0, 0, 0, 1, 0, 2, 2, 2, 0, 2][data.tu],
 				eG = [
-					[L(377), L(378) + " ↗", L(379)],
-					[L(377), L(380), L(381), L(382) + " ↗"],
-					[L(377), L(378) + " ↗", L(381)],
-					[L(377), L(378) + " ↗", L(381)],
-					[L(374), L(383), L(384) + " ↗", L(385) + " ↗", L(123)],
-					[L(374), L(383), L(386) + " ↗", L(387) + " ↗", L(388)],
-					[L(374), L(383), L(389) + " ↗", L(390) + " ↗", L(391)],
-					[L(374), L(383), L(386) + " ↗", L(387) + " ↗", L(392)],
-					[L(374), L(383), L(384) + " ↗", L(385) + " ↗", L(123)],
-					[L(377), L(378) + " ↗", L(381)],
-					[L(377), L(378) + " ↗", L(393)],
-					[L(377), L(378) + " ↗", L(381)],
-					[L(374), L(383), L(384) + " ↗", L(385) + " ↗", L(394)],
-					[L(377), L(378) + " ↗", L(381)]
+					[L(378), L(379) + " ↗", L(380)],
+					[L(378), L(381), L(382), L(383) + " ↗"],
+					[L(378), L(379) + " ↗", L(382)],
+					[L(378), L(379) + " ↗", L(382)],
+					[L(375), L(384), L(385) + " ↗", L(386) + " ↗", L(124)],
+					[L(375), L(384), L(387) + " ↗", L(388) + " ↗", L(389)],
+					[L(375), L(384), L(390) + " ↗", L(391) + " ↗", L(392)],
+					[L(375), L(384), L(387) + " ↗", L(388) + " ↗", L(393)],
+					[L(375), L(384), L(385) + " ↗", L(386) + " ↗", L(124)],
+					[L(378), L(379) + " ↗", L(382)],
+					[L(378), L(379) + " ↗", L(394)],
+					[L(378), L(379) + " ↗", L(382)],
+					[L(375), L(384), L(385) + " ↗", L(386) + " ↗", L(395)],
+					[L(378), L(379) + " ↗", L(382)]
 				];
 			if (fU.tP = eG[data.tu], fU.tW = [
 					[25, 40, 35],
@@ -9401,7 +9401,7 @@ function aCE(data) {
 				else if (4 === data.tu || 5 === data.tu || 6 === data.tu || 7 === data.tu || 8 === data.tu)
 				for (aC = 0; aC < fR; aC++) {
 					var aT6 = aT1[aC][5];
-					4 === data.tu || 8 === data.tu ? "100%" === (aT6 = (aT6 % 64 * 100 / (aT6 >> 6)).toFixed(0) + "%") && (4 === data.tu ? aT6 += " (" + L(395) + ")" : aT6 += " (" + L(396) + ")") : 5 === data.tu ? 32768 <= aT6 && (aT6 = -(aT6 -
+					4 === data.tu || 8 === data.tu ? "100%" === (aT6 = (aT6 % 64 * 100 / (aT6 >> 6)).toFixed(0) + "%") && (4 === data.tu ? aT6 += " (" + L(396) + ")" : aT6 += " (" + L(397) + ")") : 5 === data.tu ? 32768 <= aT6 && (aT6 = -(aT6 -
 						32768)) : aT6 = (nz * aT6).toFixed(a5O), tJ.push([{
 						ft: "" + aT1[aC][0],
 						eZ: 0
@@ -9438,7 +9438,7 @@ function aSz(a5E) {
 		aPY.resize(), aPZ.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg(L(397), [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg(L(398), [new x("⬅️ " + L(41), function() {
 		u.aPW(10)
 	})]), aPZ = new rD(aPY.vm, ((rF = []).push(function() {
 		var aQ2, aPu = new qx,
@@ -9448,8 +9448,8 @@ function aSz(a5E) {
 			aRm = new s8(bm.eV.data[131], 1, function() {
 				aRl.e.focus()
 			});
-		aPu.r0(L(313)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.8em", aPu.r0(L(314)), aPu.rB(aRl);
-		return aQ2 = new x(L(312), function() {
+		aPu.r0(L(314)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.8em", aPu.r0(L(315)), aPu.rB(aRl);
+		return aQ2 = new x(L(313), function() {
 			tv = Math.floor(aRm.e.value), tw = Math.floor(aRl.e.value);
 			var tw, tv = {
 				a3w: Math.min(tv, tw),
@@ -9469,7 +9469,7 @@ function aSz(a5E) {
 			aRm = new s8(bm.eV.data[133], 0, function() {
 				aRl.e.focus()
 			});
-		return aPu.r0(1 === a5E.tu ? L(398) : L(399)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.8em", aPu.r0(L(400)), aPu.rB(aRl), aQ2 = new x(L(312), function() {
+		return aPu.r0(1 === a5E.tu ? L(399) : L(400)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.8em", aPu.r0(L(401)), aPu.rB(aRl), aQ2 = new x(L(313), function() {
 			var aSD = aRm.e.value.slice(0, 20),
 				aSE = Math.abs(Math.floor(aRl.e.value));
 			u.v(8, u.a6R(10).a2c, new tc(22, {
@@ -9486,7 +9486,7 @@ function aSz(a5E) {
 			aRm = new s8(bm.eV.data[151], 0, function() {
 				aRl.e.focus()
 			});
-		return aPu.r0(L(401)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.8em", aPu.r0(L(400)), aPu.rB(aRl), aQ2 = new x(L(312), function() {
+		return aPu.r0(L(402)), aPu.rB(aRm), aRm.e.style.marginBottom = "0.8em", aPu.r0(L(401)), aPu.rB(aRl), aQ2 = new x(L(313), function() {
 			var aSD = aRm.e.value.slice(0, 5),
 				aSE = Math.abs(Math.floor(aRl.e.value));
 			u.v(8, u.a6R(10).a2c, new tc(28, {
@@ -9502,7 +9502,7 @@ function aPS() {
 	var aTA, u7, aTD, u6, u9, aTB = [new Array(4), new Array(4), new Array(2), new Array(2)],
 		aTC = new Array(4),
 		aTE = new Array(2),
-		aTF = [L(64), L(357), L(402), L(403)];
+		aTF = [L(65), L(358), L(403), L(404)];
 
 	function aFu() {
 		var aFD;
@@ -9547,7 +9547,7 @@ function aPS() {
 			aTM = bq.z.sP[aTM],
 			fl = (bV.a8(aTM.f7, aTM.mapSeed), u7.rt),
 			a88 = aTN(aTM.f7, aTM.mapSeed) + aTO(aTM.aEx) + aTP(aTM.aFl),
-			aTM = L(406) + "   " + aTN(aTM.aGh, aTM.aGi) + aTO(aTM.aGj) + aTP(aTM.aFl, 1);
+			aTM = L(407) + "   " + aTN(aTM.aGh, aTM.aGi) + aTO(aTM.aGj) + aTP(aTM.aFl, 1);
 		fl[0].button.textContent === a88 && fl[1].button.textContent === aTM || (fl[0].button.textContent = a88, fl[1].button.textContent = aTM, u7.resize())
 	}, this.aFi = function() {
 		var aTM = bq.z.sN[0],
@@ -9587,19 +9587,19 @@ function aPS() {
 	}), new x(aTF[3], function() {
 		return aTG(0, 3), 2
 	})], bE.pc), u7 = new sp([new x("", 0, 2), new x("", 0, 2)], bE.pd, 1);
-	var aTH = new sp([new x(L(404), function() {
+	var aTH = new sp([new x(L(405), function() {
 		return aTG(2, 0), 2
-	}), new x(L(119), function() {
+	}), new x(L(120), function() {
 		return aTG(2, 1), 2
 	})], bE.pc);
 	u9 = new sp([new x(L(26, 0, 0, 1), function() {
 		u.y(), bq.v0(), b1.z.a2k(3240), u.v(5, 5)
-	}), new x(L(405), function() {
+	}), new x(L(406), function() {
 		return aTI(1), 2
 	})], bE.pc), aTA = new u5(u6, u7, aTH, u9, aFu, bq.v6.aGQ);
 	for (var aC = 0; aC < 4; aC++) aTB[0][aC] = new sH("0", u6.rt[aC].button), aTB[1][aC] = new sH("0", u6.rt[aC].button, 1);
 	aTB[2][1] = new sH("0", aTH.rt[1].button), aTB[3][1] = new sH("0", u9.rt[1].button), (aTD = [new sH("", aTH.rt[1].button, 1, 1), new sH("", u9.rt[1].button, 1, 1)])[0].sI.style.bottom = "0em", aTD[1].sI.style.bottom = "0em", aTJ(0, bq.z.sN[0],
-		1), aTJ(2, bq.z.sN[2], 1), (aTE = [new sH(L(306), aTA.uV(), 1, 0), new sH("", aTA.uV(), 1, 1)])[0].sI.style.fontSize = "0.4em", aTE[1].sI.style.fontSize = "0.4em"
+		1), aTJ(2, bq.z.sN[2], 1), (aTE = [new sH(L(307), aTA.uV(), 1, 0), new sH("", aTA.uV(), 1, 1)])[0].sI.style.fontSize = "0.4em", aTE[1].sI.style.fontSize = "0.4em"
 }
 
 function aP9() {
@@ -9612,28 +9612,28 @@ function aP9() {
 		aPY.resize(), aPZ.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg(L(407), [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg(L(408), [new x("⬅️ " + L(41), function() {
 		u.v(7, u.a6R(7).a2c)
-	}), new x(L(209), function() {
+	}), new x(L(210), function() {
 		bm.po.pp(105, bJ.td.xT(aPZ.rH[0].qy[0].e.value, 5)), bm.po.pp(106, bJ.td.xT(aPZ.rH[1].qy[0].e.value, 15)), u.v(8, u.a6R(7).a2c, new tc(18))
 	})]), aPZ = new rD(aPY.vm, ((rF = []).push(function() {
 		var aPu = new qx;
-		return aPu.r0(L(187)), aPu.rB(new s8({
+		return aPu.r0(L(188)), aPu.rB(new s8({
 			value: "",
 			eG: -1
 		})), aPu
 	}()), rF.push(function() {
 		var aPu = new qx,
-			aQ5 = (aPu.r0(L(190)), new s8({
+			aQ5 = (aPu.r0(L(191)), new s8({
 				value: "",
 				eG: -1
 			}));
-		return aQ5.e.type = "password", aPu.rB(aQ5), aPu.rB(new sm([new x(L(191), function(e) {
-			return e.textContent === L(191) ? (e.textContent = L(192), aQ5.e.type = "text") : (e.textContent = L(191), aQ5.e.type = "password"), !0
+		return aQ5.e.type = "password", aPu.rB(aQ5), aPu.rB(new sm([new x(L(192), function(e) {
+			return e.textContent === L(192) ? (e.textContent = L(193), aQ5.e.type = "text") : (e.textContent = L(192), aQ5.e.type = "password"), !0
 		}).button])), aPu
 	}()), rF.push(function() {
 		var aPu = new qx;
-		return aPu.r0(L(194)), aPu.r2(L(408)), aPu.r2(L(409)), aPu.r2(L(410)), aPu
+		return aPu.r0(L(195)), aPu.r2(L(409)), aPu.r2(L(410)), aPu.r2(L(411)), aPu
 	}()), rF))
 }
 
@@ -9655,17 +9655,17 @@ function aPG() {
 		aPY.resize(), aSs.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aSt = [new x(L(369), function() {
+	}, aSt = [new x(L(370), function() {
 		aSu(5)
-	}, 0, 0, 1), new x(L(370), function() {
-		aSu(6)
 	}, 0, 0, 1), new x(L(371), function() {
+		aSu(6)
+	}, 0, 0, 1), new x(L(372), function() {
 		aSu(7)
 	}, 0, 0, 1), new x("Audit Log", function() {
 		aSu(12)
-	}, 0, 0, 1)], vh = [new x("⬅️ " + L(40), function() {
+	}, 0, 0, 1)], vh = [new x("⬅️ " + L(41), function() {
 		u.a2W()
-	})], aPY = new vg(L(411), vh), aSs = new rs(aSt, aPY.vm)
+	})], aPY = new vg(L(412), vh), aSs = new rs(aSt, aPY.vm)
 }
 
 function aP0() {
@@ -9691,7 +9691,7 @@ function aP0() {
 	}, this.aSl = function(a2c, target) {
 		u.v(4, a2c, new w("Data Usage Information",
 			"Do you want your username and other data to be remembered for the next session?<br>The app might not function correctly if you decline data usage.<br>Please read our privacy policy for more information: " + b1.z.aPv(
-				"/privacy"), !1, [new x("⬅️ " + L(40), function() {
+				"/privacy"), !1, [new x("⬅️ " + L(41), function() {
 				u.v(a2c)
 			}), new x("✅ Accept", function() {
 				bm.po.pp(140, 1), 0 === target ? u.v(2, a2c) : u.v(8, a2c, new tc(target))
@@ -9701,8 +9701,8 @@ function aP0() {
 		this.tx[1] = "[" + this.tx[1] + "]", 5 === u.tb && (u.a2b().aIK.pp(this.tx), u.a2b().resize())
 	}, this.aQ3 = function(ft, pm, a7x) {
 		ft = bD.gn.a5B(ft, 1, 1e6);
-		pm = L(412, [pm]);
-		return (pm += "<br>") + L(413, [a7x]) + "<br>" + L(414, [ft + "–" + (ft + 2)]) + "<br>" + L(415, [ft])
+		pm = L(413, [pm]);
+		return (pm += "<br>") + L(414, [a7x]) + "<br>" + L(415, [ft + "–" + (ft + 2)]) + "<br>" + L(416, [ft])
 	}
 }
 
@@ -9740,26 +9740,26 @@ function aPJ() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(334), [new x("⬅️ " + L(40), aQp)]), 2 === aE.data.mapType && b7.di(), aQn = new rD(aQm.vm, (function(rF) {
+	}, aQm = new vg(L(335), [new x("⬅️ " + L(41), aQp)]), 2 === aE.data.mapType && b7.di(), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(300)), aPu.r8(new vc({
-			tI: [L(416), L(417), L(418)],
+		aPu.r0(L(301)), aPu.r8(new vc({
+			tI: [L(417), L(418), L(419)],
 			value: aE.data.mapType
 		}, function(eG) {
 			2 === (aE.data.mapType = eG) ? (b7.di(), aE.data.canvas = null) : (aE.data.passableWater = aE.data.passableMountains = 1, b7.v0()), u.v(20)
 		})), 2 <= aE.data.mapType && (aPu.rB(new sw), aPu.rB(new si({
 			value: aE.data.passableWater
-		}, L(419), function(value) {
+		}, L(420), function(value) {
 			aE.data.passableWater = value
 		})), aPu.rB(new si({
 			value: aE.data.passableMountains
-		}, L(420), function(value) {
+		}, L(421), function(value) {
 			aE.data.passableMountains = value
 		})));
 		rF.push(aPu)
 	}(rF = []), function(rF) {
 		if (0 === aE.data.mapType) {
-			for (var aPu = new qx, tI = (aPu.r0(L(334)), []), aC = 0; aC < bV.xj.aNs.length; aC++) tI.push(bV.xj.xk[bV.xj.aNs[aC]].name);
+			for (var aPu = new qx, tI = (aPu.r0(L(335)), []), aC = 0; aC < bV.xj.aNs.length; aC++) tI.push(bV.xj.xk[bV.xj.aNs[aC]].name);
 			aPu.r8(new vc({
 				tI: tI,
 				value: aE.data.mapProceduralIndex
@@ -9769,7 +9769,7 @@ function aPJ() {
 		}
 	}(rF), function(rF) {
 		if (1 === aE.data.mapType) {
-			for (var aPu = new qx, tI = (aPu.r0(L(334)), []), aC = 0; aC < bV.xj.aNt.length; aC++) tI.push(bV.xj.xk[bV.xj.aNt[aC]].name);
+			for (var aPu = new qx, tI = (aPu.r0(L(335)), []), aC = 0; aC < bV.xj.aNt.length; aC++) tI.push(bV.xj.xk[bV.xj.aNt[aC]].name);
 			aPu.r8(new vc({
 				tI: tI,
 				value: aE.data.mapRealisticIndex
@@ -9779,12 +9779,12 @@ function aPJ() {
 		}
 	}(rF), function(rF) {
 		var aPu;
-		2 === aE.data.mapType && ((aPu = new qx).r0(L(421)), aPu.rB(new s8(bm.eV.data[162], 1)), aPu.r0(L(422), "0.8em"), aPu.rB(new sm([new x(L(423), function() {
+		2 === aE.data.mapType && ((aPu = new qx).r0(L(422)), aPu.rB(new s8(bm.eV.data[162], 1)), aPu.r0(L(423), "0.8em"), aPu.rB(new sm([new x(L(424), function() {
 			return b7.aJR(), !0
 		}).button])), rF.push(aPu))
 	}(rF), function(rF) {
 		var aPu, s7;
-		2 === aE.data.mapType && ((aPu = new qx).r0(L(424)), s7 = new s8({
+		2 === aE.data.mapType && ((aPu = new qx).r0(L(425)), s7 = new s8({
 			eG: -1,
 			value: aE.data.mapName
 		}, 0, 0, function(e) {
@@ -9798,12 +9798,12 @@ function aPJ() {
 		}, 1, 0, function(e) {
 			e = Math.abs(Math.floor(e.target.value)) % 16384;
 			aE.data.mapSeed !== e && (aE.data.mapSeed = e, aTi())
-		}), aQ2 = new x(L(325), function(e) {
+		}), aQ2 = new x(L(326), function(e) {
 			var aMt = Math.floor(16384 * Math.random());
 			if (aE.data.mapSeed !== aMt) return s7.e.value = aE.data.mapSeed = aMt, aTi(), !0
 		}), aPu.rB(s7), aPu.rB(new sm([aQ2.button])), rF.push(aPu))
 	}(rF), function(rF) {
-		(aTb = new qx).r0(L(425)), 2 !== aE.data.mapType ? aTj() : aE.data.canvas && aTk();
+		(aTb = new qx).r0(L(426)), 2 !== aE.data.mapType ? aTj() : aE.data.canvas && aTk();
 		rF.push(aTb)
 	}(rF), rF))
 }
@@ -9818,7 +9818,7 @@ function w(title, r7, aTn, aSv) {
 		aPY.resize(), aS4.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aSv = aSv || [new x("⬅️ " + L(40), function() {
+	}, aSv = aSv || [new x("⬅️ " + L(41), function() {
 		u.a2W()
 	})], aPY = new vg(title, aSv), aS4 = new sl(aPY.vm, r7), aTn && bD.rK.textAlign(aPY.vm.style, 1)
 }
@@ -9841,16 +9841,16 @@ function aPM() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(338), [new x("⬅️ " + L(40), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
+	}, aQm = new vg(L(339), [new x("⬅️ " + L(41), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(300)), aPu.r8(new vc({
-			tI: [L(339), L(340), L(303)],
+		aPu.r0(L(301)), aPu.r8(new vc({
+			tI: [L(340), L(341), L(304)],
 			value: aE.data.playerNamesType
 		}, function(eG) {
 			aQr(), aE.data.playerNamesType = eG, u.v(23)
 		})), aPu.rB(new sw), aPu.rB(new si({
 			value: aE.data.selectableName
-		}, L(426), function(value) {
+		}, L(427), function(value) {
 			aE.data.selectableName = value
 		})), rF.push(aPu)
 	}(rF = []), function(rF) {
@@ -9879,14 +9879,14 @@ function aPU() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(427), [new x("⬅️ " + L(40), function() {
+	}, aQm = new vg(L(428), [new x("⬅️ " + L(41), function() {
 		u.a2W()
 	})]), aQn = new rD(aQm.vm, ((rF = []).push(function() {
 		var aPu = new qx;
-		return aPu.r0(L(428)), aPu.r6(b1.z.aPv("/wiki/propaganda"), "0.75em").style.marginBottom = "0.8em", aPu.r6("<a href='https://tt-propagandio.vercel.app/' target='_blank'>Unofficial Propaganda Generator</a>", "0.75em"), aPu
+		return aPu.r0(L(429)), aPu.r6(b1.z.aPv("/wiki/propaganda"), "0.75em").style.marginBottom = "0.8em", aPu.r6("<a href='https://tt-propagandio.vercel.app/' target='_blank'>Unofficial Propaganda Generator</a>", "0.75em"), aPu
 	}()), rF.push(function() {
 		var aPu = new qx,
-			ek = (aPu.r0(L(429)), bm.eV.data[174].value),
+			ek = (aPu.r0(L(430)), bm.eV.data[174].value),
 			r3 = aPu.r2(ek.length + " / 180"),
 			aQU = (r3.style.textAlign = "center", new w4(0, 1, function(e) {
 				var e = e.target.value,
@@ -9896,34 +9896,34 @@ function aPU() {
 		return aQU.e.rows = 6, aQU.e.style.fontSize = "1em", aQU.wB(ek), aPu.rB(aQU), aPu
 	}()), rF.push(function() {
 		var aPu = new qx;
-		aPu.r0(L(324));
+		aPu.r0(L(325));
 		for (var aC = 0; aC < 11; aC++) {
 			var im = aPu.rB(new s8(bm.eV.data[163 + aC]));
 			aC && (im.e.style.marginTop = "0.6em")
 		}
-		return aPu.rB(new sm([new x(L(430), function() {
+		return aPu.rB(new sm([new x(L(431), function() {
 			for (var data = bm.eV.data, aC = 163; aC < 174; aC++) data[aC] && bm.eV.wR(aC, data[aC].wU);
 			u.a2W(), u.aPX()[31] = null, u.v(31)
 		}).button])), aPu
 	}()), rF.push(function() {
 		var aPu = new qx;
-		return aPu.r0("Targeting"), aPu.r6(L(431)), aPu.rB(new s8(bm.eV.data[175], 0, 0)), aPu
+		return aPu.r0("Targeting"), aPu.r6(L(432)), aPu.rB(new s8(bm.eV.data[175], 0, 0)), aPu
 	}()), rF.push(function() {
 		var aPu = new qx;
-		return aPu.r0(L(425)), aPu.rB(new sm([new x(L(191), function() {
+		return aPu.r0(L(426)), aPu.rB(new sm([new x(L(192), function() {
 			(new ej).show(bm.eV.data[174].value, aTt(), -1)
 		}).button])), aPu
 	}()), rF.push(function() {
 		var aPu = new qx,
-			aTu = (aPu.r0(L(432)), aPu.r6(L(433)), new s8(bm.eV.data[176], 1, 0)),
-			aTv = (aPu.rB(aTu), new x(L(434), function(e) {
-				return aTw.button.textContent === L(186) && b1.z.ee(0) && (bD.rK.vZ(e), aQ1(), b1.aGd.aTx(bm.eV.data[176].value, aTt(), bm.eV.data[175].value, bm.eV.data[174].value)), !0
+			aTu = (aPu.r0(L(433)), aPu.r6(L(434)), new s8(bm.eV.data[176], 1, 0)),
+			aTv = (aPu.rB(aTu), new x(L(435), function(e) {
+				return aTw.button.textContent === L(187) && b1.z.ee(0) && (bD.rK.vZ(e), aQ1(), b1.aGd.aTx(bm.eV.data[176].value, aTt(), bm.eV.data[175].value, bm.eV.data[174].value)), !0
 			}, 1)),
 			aQ1 = function() {
-				aTw.button.textContent = L(185), aTv.re(1), aTv.button.style.color = bE.oN
+				aTw.button.textContent = L(186), aTv.re(1), aTv.button.style.color = bE.oN
 			},
-			aTw = new x(L(185), function(e) {
-				return e.textContent === L(185) ? (e.textContent = L(186), aTv.re(0), aTv.button.style.color = bE.pN) : aQ1(), !0
+			aTw = new x(L(186), function(e) {
+				return e.textContent === L(186) ? (e.textContent = L(187), aTv.re(0), aTv.button.style.color = bE.pN) : aQ1(), !0
 			});
 		return aPu.rB(new sm([aTw.button, aTv.button])), aPu
 	}()), rF))
@@ -9939,19 +9939,19 @@ function aPV() {
 		aPY.resize(), aPZ.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg("🔒 " + L(435), [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg("🔒 " + L(436), [new x("⬅️ " + L(41), function() {
 		u.a2W()
 	})]), aPZ = new rD(aPY.vm, ((rF = []).push(function() {
 		var aPu = new qx,
-			s7 = (aPu.r6(b1.z.aPv("/wiki/faq"), "0.75em").style.marginBottom = "0.8em", aPu.r0(L(187)), new s8({
+			s7 = (aPu.r6(b1.z.aPv("/wiki/faq"), "0.75em").style.marginBottom = "0.8em", aPu.r0(L(188)), new s8({
 				value: "",
 				eG: -1
 			})),
-			aQQ = (aPu.rB(s7), aPu.r0(L(256), "0.8em"), new s8({
+			aQQ = (aPu.rB(s7), aPu.r0(L(257), "0.8em"), new s8({
 				value: "",
 				eG: -1
 			}, 0, 0)),
-			aQ0 = (aQQ.e.type = "email", aQQ.e.autocomplete = "email", aQQ.e.name = "email", aQQ.e.inputMode = "email", aQQ.e.spellcheck = !1, aPu.rB(aQQ), new x(L(436), function(e) {
+			aQ0 = (aQQ.e.type = "email", aQQ.e.autocomplete = "email", aQQ.e.name = "email", aQQ.e.inputMode = "email", aQQ.e.spellcheck = !1, aPu.rB(aQQ), new x(L(437), function(e) {
 				return bD.rK.vZ(e), b1.aGd.aQR({
 					action: 4,
 					r1: s7.e.value.trim() + aQQ.e.value.trim().substring(0, 63)
@@ -9979,17 +9979,17 @@ function aP7() {
 		aQm.resize(), w9.resize()
 	}, this.a3S = function(ei) {
 		2 === ei ? aQm.vn[0].rb() : aTz()
-	}, aQm = new vg(L(437), [new x("⬅️ " + L(40), function() {
+	}, aQm = new vg(L(438), [new x("⬅️ " + L(41), function() {
 		u.aPW(1)
-	}), new x(L(438), function() {
-		w9.wD()
 	}), new x(L(439), function() {
-		w9.wE()
+		w9.wD()
 	}), new x(L(440), function() {
-		w9.clear()
+		w9.wE()
 	}), new x(L(441), function() {
+		w9.clear()
+	}), new x(L(442), function() {
 		aTz()
-	})]), w9 = new w4(L(442)), aQm.vm.appendChild(w9.e)
+	})]), w9 = new w4(L(443)), aQm.vm.appendChild(w9.e)
 }
 
 function aP6() {
@@ -10006,12 +10006,12 @@ function aP6() {
 			aPY.resize(), aPZ.resize()
 		}, this.a3S = function(ei) {
 			2 === ei && aPY.vn[0].rb()
-		}, aPY = new vg(L(443), [new x("⬅️ " + L(40), aU5), new x(L(444), function() {
+		}, aPY = new vg(L(444), [new x("⬅️ " + L(41), aU5), new x(L(445), function() {
 			u.y(), bm.po.x1(), u.v(2)
-		})]), rF = [], (aPu = new qx).r0(L(445)), aPu.r2(L(446)), rF.push(aPu),
+		})]), rF = [], (aPu = new qx).r0(L(446)), aPu.r2(L(447)), rF.push(aPu),
 		function(rF) {
 			var aPu = new qx,
-				h = (aPu.r0(L(431)), bA.data.aDo());
+				h = (aPu.r0(L(432)), bA.data.aDo());
 			aPu.r8(new vc({
 				tI: h,
 				value: bA.data.aDs(h)
@@ -10021,8 +10021,8 @@ function aP6() {
 		}(rF),
 		function(rF) {
 			var aPu = new qx,
-				aU8 = (aPu.r0(L(471)), []);
-			aPu.rB(new sm([new x(L(430), function(e) {
+				aU8 = (aPu.r0(L(472)), []);
+			aPu.rB(new sm([new x(L(431), function(e) {
 				ba.aU9();
 				for (var aC = 0; aC < aU8.length; aC++) aU8[aC].e.value = ba.aD6[aC];
 				return bD.rK.vZ(e), !0
@@ -10043,15 +10043,15 @@ function aP6() {
 				}
 			}
 			rF.push(aPu)
-		}(rF), (aPu = new qx).r0(L(447)), bm.eV.data[1].tI = [L(448), L(449), L(450), L(451)], aPu.r8(new vc(bm.eV.data[1])), rF.push(aPu), (aPu = new qx).r0(L(452)), bm.eV.data[9].tI = [L(449), L(453), L(454)], aPu.r8(new vc(bm.eV.data[9])), rF
-		.push(aPu), (aPu = new qx).r0(L(455)), bm.eV.data[11].tI = [L(456), L(9), L(457)], aPu.r8(new vc(bm.eV.data[11])), rF.push(aPu), (aPu = new qx).r0(L(458)), aPu.rB(new si(bm.eV.data[2])), rF.push(aPu), (aPu = new qx).r0(L(459)), aPu.rB(new si(
-			bm.eV.data[7])), rF.push(aPu), (aPu = new qx).r0(L(460)), aPu.rB(new si(bm.eV.data[8])), rF.push(aPu), (aPu = new qx).r0(L(461)), aPu.rB(new s8(bm.eV.data[5])), rF.push(aPu), (aPu = new qx).r0(L(462)), aPu.rB(new si(bm.eV.data[13], L(
-			463))), aPu.rB(new si(bm.eV.data[14], L(464))), rF.push(aPu), (aPu = new qx).r0(L(465)), aPu.r8(new vc({
-			tI: [L(466), L(467), L(468)],
+		}(rF), (aPu = new qx).r0(L(448)), bm.eV.data[1].tI = [L(449), L(450), L(451), L(452)], aPu.r8(new vc(bm.eV.data[1])), rF.push(aPu), (aPu = new qx).r0(L(453)), bm.eV.data[9].tI = [L(450), L(454), L(455)], aPu.r8(new vc(bm.eV.data[9])), rF
+		.push(aPu), (aPu = new qx).r0(L(456)), bm.eV.data[11].tI = [L(457), L(9), L(458)], aPu.r8(new vc(bm.eV.data[11])), rF.push(aPu), (aPu = new qx).r0(L(459)), aPu.rB(new si(bm.eV.data[2])), rF.push(aPu), (aPu = new qx).r0(L(460)), aPu.rB(new si(
+			bm.eV.data[7])), rF.push(aPu), (aPu = new qx).r0(L(461)), aPu.rB(new si(bm.eV.data[8])), rF.push(aPu), (aPu = new qx).r0(L(462)), aPu.rB(new s8(bm.eV.data[5])), rF.push(aPu), (aPu = new qx).r0(L(463)), aPu.rB(new si(bm.eV.data[13], L(
+			464))), aPu.rB(new si(bm.eV.data[14], L(465))), rF.push(aPu), (aPu = new qx).r0(L(466)), aPu.r8(new vc({
+			tI: [L(467), L(468), L(469)],
 			value: aa.aHW
 		}, function(aC) {
 			aa.aHW = aC
-		})), rF.push(aPu), (aPu = new qx).r0(L(469)), aPu.rB(new si(bm.eV.data[15])), aPu.r2(L(470)), aPu.rB(new s8(bm.eV.data[16], 1, 0, function(e) {
+		})), rF.push(aPu), (aPu = new qx).r0(L(470)), aPu.rB(new si(bm.eV.data[15])), aPu.r2(L(471)), aPu.rB(new s8(bm.eV.data[16], 1, 0, function(e) {
 			e.target.value = bO.iZ(Math.floor(e.target.value), 0, 16)
 		})), rF.push(aPu), aPZ = new rD(aPY.vm, rF)
 }
@@ -10074,9 +10074,9 @@ function aPN() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(472), [new x("⬅️ " + L(40), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
+	}, aQm = new vg(L(473), [new x("⬅️ " + L(41), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx,
-			tI = (aPu.r0(L(300)), [L(325), L(337), L(303)]),
+			tI = (aPu.r0(L(301)), [L(326), L(338), L(304)]),
 			value = aE.data.spawningType;
 		0 === aE.data.gameMode && (tI.splice(1, 1), 0 < value) && (value = 1);
 		aPu.r8(new vc({
@@ -10089,7 +10089,7 @@ function aPN() {
 		var aPu = new qx;
 		aPu.r0("My Spawn"), aPu.rB(new si({
 			value: aE.data.selectableSpawn
-		}, L(473), function(value) {
+		}, L(474), function(value) {
 			aE.data.selectableSpawn = value
 		})), rF.push(aPu)
 	}(rF), function(rF) {
@@ -10101,7 +10101,7 @@ function aPN() {
 				var value = Math.abs(Math.floor(e.target.value)) % 16384;
 				e.target.value = aE.data.spawningSeed = value
 			}));
-		aPu.rB(aUE), aPu.rB(new sm([new x(L(325), function() {
+		aPu.rB(aUE), aPu.rB(new sm([new x(L(326), function() {
 			aUE.e.value = aE.data.spawningSeed = Math.floor(16384 * Math.random())
 		}).button])), rF.push(aPu)
 	}(rF), function(rF) {
@@ -10127,64 +10127,64 @@ function aP5() {
 			.fB) ? aSt[0].rc === bE.oZ && aSt[0].re(0) : aSt[0].rc !== bE.oZ && aSt[0].re(bE.oZ))
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aSt = [new x(L(474), function() {
+	}, aSt = [new x(L(475), function() {
 		aUF(0)
-	}), new x(L(361), function() {
+	}), new x(L(362), function() {
 		u.v(16)
-	}), new x(L(411), function() {
+	}), new x(L(412), function() {
 		u.v(17)
-	}), new x(L(475), function() {
-		u.z.aRg()
-	}, 0, 0, 1), new x(L(437), function() {
-		u.v(3, 1)
 	}), new x(L(476), function() {
-		u.v(18)
-	}), new x(L(427), function() {
-		u.v(31)
+		u.z.aRg()
+	}, 0, 0, 1), new x(L(438), function() {
+		u.v(3, 1)
 	}), new x(L(477), function() {
-		u.z.a6B(2)
-	}), new x(L(443), function() {
-		aUF(1)
-	}), new x("🔒 " + L(435), function() {
-		u.v(32)
+		u.v(18)
+	}), new x(L(428), function() {
+		u.v(31)
 	}), new x(L(478), function() {
+		u.z.a6B(2)
+	}), new x(L(444), function() {
+		aUF(1)
+	}), new x("🔒 " + L(436), function() {
+		u.v(32)
+	}), new x(L(479), function() {
 		var a4e, rO;
 		(a4e = []).push(["Wiki", (rO = "https://territorial.io/") + "wiki/gold"]), a4e.push(["Team Games", rO + "log/team"]), a4e.push(["Battle Royale Games", rO + "log/br"]), a4e.push(["1v1 Games", rO + "log/1v1"]), a4e.push([
 			"Zombie Games", rO + "log/zombies"
 		]), a4e.push(["Transactions", rO + "log/transactions"]), a4e.push(["Changelog", rO + "changelog"]), 2 !== a1.id && a4e.push(["Android App", bN.aE5]), 1 !== a1.id && a4e.push(["iOS App", bN.a2S]), 0 === a1.id && a4e.push([
 			"Patreon", bN.aQk
-		]), a4e.push(["Terms", bN.aUL]), a4e.push(["Privacy", bN.aUM]), u.v(4, 1, new w(L(478), bD.rK.a4d(a4e), !1, [new x("⬅️ " + L(40), function() {
+		]), a4e.push(["Terms", bN.aUL]), a4e.push(["Privacy", bN.aUM]), u.v(4, 1, new w(L(479), bD.rK.a4d(a4e), !1, [new x("⬅️ " + L(41), function() {
 			u.v(1)
 		})]))
-	}), new x(L(479), function() {
-		u.v(4, 1, new w(L(479), m.e1 + "<br>" + b1.z.aPv("/changelog") + "<br><br><m>FX Client v" + __fx.version +
-			"<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a><br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></m>", !0, [new x("⬅️ " + L(40),
+	}), new x(L(480), function() {
+		u.v(4, 1, new w(L(480), m.e1 + "<br>" + b1.z.aPv("/changelog") + "<br><br><m>FX Client v" + __fx.version +
+			"<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a><br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></m>", !0, [new x("⬅️ " + L(41),
 				function() {
 					u.v(1)
 				})]))
-	}), new x(L(480), function() {
-		u.v(4, 1, new w(L(480), L(487) + "<br>" + L(488), !1, [new x("⬅️ " + L(40), function() {
+	}), new x(L(481), function() {
+		u.v(4, 1, new w(L(481), L(488) + "<br>" + L(489), !1, [new x("⬅️ " + L(41), function() {
 			u.v(1)
-		}), new x(L(489), function() {
+		}), new x(L(490), function() {
 			a1.a2.a2M(), u.v(1)
 		})]))
-	}), new x("👁️ " + L(481), function() {
-		a1.a2.a2N(), u.v(4, 1, new w(L(490), L(491) + " " + b1.z.aPv("/privacy"), !1, [new x("⬅️ " + L(40), function() {
+	}), new x("👁️ " + L(482), function() {
+		a1.a2.a2N(), u.v(4, 1, new w(L(491), L(492) + " " + b1.z.aPv("/privacy"), !1, [new x("⬅️ " + L(41), function() {
 			u.v(1)
 		})]))
-	})], vh = [new x("⬅️ " + L(40), function() {
+	})], vh = [new x("⬅️ " + L(41), function() {
 		u.z.aDl()
-	})], 8 === ab.a2X() && (aSt.unshift(new x(L(348), function() {
+	})], 8 === ab.a2X() && (aSt.unshift(new x(L(349), function() {
 		u.v(30)
-	})), aSt.unshift(new x(L(484), function() {
+	})), aSt.unshift(new x(L(485), function() {
 		2 <= bg.aUK && (u.y(), bh.a3V(), bi.dq = !0)
-	}, 0, 1)), aSt.unshift(new x(L(485), function() {
-		!aE.ha && aN.qv(aE.fB) && (bB.hr.q8(), u.y(), aN.hb) && aN.a3V()
 	}, 0, 1)), aSt.unshift(new x(L(486), function() {
+		!aE.ha && aN.qv(aE.fB) && (bB.hr.q8(), u.y(), aN.hb) && aN.a3V()
+	}, 0, 1)), aSt.unshift(new x(L(487), function() {
 		!aE.ha && ax.iG(aE.fB) && (bY.a6n(2), bB.hr.iC(), u.y(), aN.hb) && aN.a3V()
-	}, 0, 1))), 1 === a1.id && 5 <= a1.e1 && aSt.push(new x(L(482), function() {
+	}, 0, 1))), 1 === a1.id && 5 <= a1.e1 && aSt.push(new x(L(483), function() {
 		a1.a2.a2O()
-	})), aPY = new vg(L(483), vh), aSs = new rs(aSt, aPY.vm)
+	})), aPY = new vg(L(484), vh), aSs = new rs(aSt, aPY.vm)
 }
 
 function aPR() {
@@ -10205,10 +10205,10 @@ function aPR() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(343), [new x("⬅️ " + L(40), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
+	}, aQm = new vg(L(344), [new x("⬅️ " + L(41), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(300)), aPu.r8(new vc({
-			tI: [L(301), L(302), L(303)],
+		aPu.r0(L(301)), aPu.r8(new vc({
+			tI: [L(302), L(303), L(304)],
 			value: aE.data.sResourcesType
 		}, function(eG) {
 			aQr(), 2 !== eG || aE.data.sResourcesData || (aE.data.sResourcesData = new Uint16Array(aE.fO)), aE.data.sResourcesType = eG, u.v(28)
@@ -10246,10 +10246,10 @@ function aPP() {
 		aQm.resize(), aQn.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aQm.vn[0].rb()
-	}, aQm = new vg(L(341), [new x("⬅️ " + L(40), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
+	}, aQm = new vg(L(342), [new x("⬅️ " + L(41), aQp)]), aQn = new rD(aQm.vm, (function(rF) {
 		var aPu = new qx;
-		aPu.r0(L(300)), aPu.r8(new vc({
-			tI: [L(301), L(302), L(303)],
+		aPu.r0(L(301)), aPu.r8(new vc({
+			tI: [L(302), L(303), L(304)],
 			value: aE.data.tIncomeType
 		}, function(eG) {
 			aQr(), 2 !== eG || aE.data.tIncomeData || (aE.data.tIncomeData = new Uint8Array(aE.fO), aE.data.tIncomeData.fill(32)), aE.data.tIncomeType = eG, u.v(26)
@@ -10279,25 +10279,25 @@ function aPH() {
 		aPY.resize(), aPZ.resize()
 	}, this.a3S = function(ei) {
 		2 === ei && aPY.vn[0].rb()
-	}, aPY = new vg(L(476), [new x("⬅️ " + L(40), function() {
+	}, aPY = new vg(L(477), [new x("⬅️ " + L(41), function() {
 		u.a2W()
 	})]), aPZ = new rD(aPY.vm, ((rF = []).push(function() {
 		function aQ1() {
-			aTw.button.textContent = L(185), aUP.e.readOnly = !1, aUQ.e.readOnly = !1, aQ0.re(1), aQ0.button.style.color = bE.oN
+			aTw.button.textContent = L(186), aUP.e.readOnly = !1, aUQ.e.readOnly = !1, aQ0.re(1), aQ0.button.style.color = bE.oN
 		}
 		var aPu = new qx,
-			aUO = (aPu.r6(b1.z.aPv("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", aPu.r0(L(492)), new s8({
+			aUO = (aPu.r6(b1.z.aPv("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", aPu.r0(L(493)), new s8({
 				value: bm.eV.data[105].value,
 				eG: -1
 			})),
-			aUP = (aUO.e.readOnly = !0, aPu.rB(aUO), aPu.r0(L(387), "0.8em"), new s8(bm.eV.data[148], 0, void 0, function(e) {
+			aUP = (aUO.e.readOnly = !0, aPu.rB(aUO), aPu.r0(L(388), "0.8em"), new s8(bm.eV.data[148], 0, void 0, function(e) {
 				aPz(bm.eV.data[149].value, e.target.value)
 			})),
-			aUQ = (aPu.rB(aUP), aPu.r0(L(391), "0.8em"), new s8(bm.eV.data[149], 1, void 0, function(e) {
+			aUQ = (aPu.rB(aUP), aPu.r0(L(392), "0.8em"), new s8(bm.eV.data[149], 1, void 0, function(e) {
 				aPz(e.target.value, bm.eV.data[148].value)
 			})),
-			aTw = (aPu.rB(aUQ), new x(L(185), function(e) {
-				return e.textContent === L(185) ? (e.textContent = L(186), aUP.e.readOnly = !0, aUQ.e.readOnly = !0, aQ0.re(0), aQ0.button.style.color = bE.pN, bm.po.pp(149, aUQ.e.value), aPz(bm.eV.data[149].value, bm.eV.data[
+			aTw = (aPu.rB(aUQ), new x(L(186), function(e) {
+				return e.textContent === L(186) ? (e.textContent = L(187), aUP.e.readOnly = !0, aUQ.e.readOnly = !0, aQ0.re(0), aQ0.button.style.color = bE.pN, bm.po.pp(149, aUQ.e.value), aPz(bm.eV.data[149].value, bm.eV.data[
 					148].value)) : aQ1(), !0
 			})),
 			aQ0 = (aPu.rB(new sm([aTw.button])), new x(L(14), function(e) {
@@ -10308,7 +10308,7 @@ function aPH() {
 				})), !0
 			}, 1)),
 			r3 = aPu.r2(),
-			aPz = (aPu.r2(L(493)).style.fontWeight = "bold", function(ft, r1) {
+			aPz = (aPu.r2(L(494)).style.fontWeight = "bold", function(ft, r1) {
 				r3.innerHTML = u.z.aQ3(ft, bm.eV.data[105].value, r1)
 			});
 		return aPu.rB(new sm([aQ0.button])), aPz(bm.eV.data[149].value, bm.eV.data[148].value), aPu
@@ -11131,7 +11131,7 @@ function aX1() {
 	var aXC = 0;
 
 	function aXG(r1, id) {
-		console.log(r1), aXC || (id ? 1 === id ? aO.a7Q = L(495) + ": " + r1 : u.v(4, 3, new w(L(496), r1, 1)) : u.v(4, 3, new w("⚠️ " + L(494), r1, 1)))
+		console.log(r1), aXC || (id ? 1 === id ? aO.a7Q = L(496) + ": " + r1 : u.v(4, 3, new w(L(497), r1, 1)) : u.v(4, 3, new w("⚠️ " + L(495), r1, 1)))
 	}
 	this.xe = function(r1, aXD) {
 		var im, rC;
@@ -11820,7 +11820,7 @@ function aYW() {
 					if (aaU = fD + bP.iV[aC] << 2, ad.fM(aaU) && !ad.fI(aaU) && ad.fJ(aaU) === aZk) {
 						ff = !0;
 						break
-					} ff && (aO.a85(719, 0), iI = iA < 25e3 ? L(497) + " (" + bD.sJ.a0e(iA) + ") ⛵" : L(498) + " (" + bD.sJ.a0e(iA) + ") 🚢", aO.zp(180, iI, 719, player, bE.ov, bE.oK, -1, !0, void 0, {
+					} ff && (aO.a85(719, 0), iI = iA < 25e3 ? L(498) + " (" + bD.sJ.a0e(iA) + ") ⛵" : L(499) + " (" + bD.sJ.a0e(iA) + ") 🚢", aO.zp(180, iI, 719, player, bE.ov, bE.oK, -1, !0, void 0, {
 					fl: 1,
 					nk: nk
 				}))
@@ -12143,7 +12143,7 @@ function aYe() {
 }
 
 function dl() {
-	this.aUA = [L(499), L(500), L(501), L(502), L(503), L(504), L(505), L(506), L(507), L(508), L(509), L(510), L(511), L(512), L(513), L(514)];
+	this.aUA = [L(500), L(501), L(502), L(503), L(504), L(505), L(506), L(507), L(508), L(509), L(510), L(511), L(512), L(513), L(514), L(515)];
 	var abb = ["Space", "", "KeyB", "", "KeyW", "", "KeyS", "", "KeyD", "", "KeyA", "", "KeyH", "", "NumpadAdd", "", "NumpadSubtract", "", "ArrowLeft", "", "ArrowRight", "", "ArrowUp", "", "ArrowDown", "", "KeyM", "", "KeyP", "", "KeyI", ""];
 	this.aD6 = new Array(abb.length), this.di = function() {
 		var h = bm.eV.data[155].value.split(";"),
@@ -12247,7 +12247,7 @@ function dU() {
 		self.max[0] = Math.max(self.abt[aC], self.max[0]), self.max[1] = Math.max(self.a4u[aC], self.max[1]), self.max[2] = Math.max(self.aCl[aC], self.max[2])
 	}
 	this.max = [0, 0, 0], this.abv = 0, this.nI = new Array(21), this.abw = null, this.dj = function() {
-		this.abw = [L(515), L(516), L(517), L(518), L(519), L(520), L(521), L(522), L(341), L(342), L(523), L(524), L(525), L(526), "", L(527), L(528), L(529), L(299), L(530), L(531)]
+		this.abw = [L(516), L(517), L(518), L(519), L(520), L(521), L(522), L(523), L(342), L(343), L(524), L(525), L(526), L(527), "", L(528), L(529), L(530), L(300), L(531), L(532)]
 	}, this.di = function() {
 		this.aUK = 0, abu = 1, this.abv = 0, vD = 0, abx(this), this.nI.fill(0)
 	}, this.qk = function(player, j4) {
@@ -12277,7 +12277,7 @@ function dV() {
 	this.j = 0, this.k = 0, this.th = 0, this.ti = 0, this.ac1 = 0, this.ac2 = 0, this.a9p = 0, this.uQ = 0;
 	var ac4 = this.ac3 = 0;
 	this.ac5 = 0, this.ac6 = 0, this.ac7 = 0, this.a9A = 0, this.eG = 0, this.aCM = null, this.iD = !1, this.ac8 = -1, this.ac9 = !1, this.acA = [0, 0], this.dj = function() {
-		this.aCM = [L(532), L(125, 0, "Balance"), L(124, 0, "Interest"), L(533)]
+		this.aCM = [L(533), L(126, 0, "Balance"), L(125, 0, "Interest"), L(534)]
 	}, this.di = function() {
 		this.iD = !1, this.ac8 = -1, this.ac9 = !1, this.resize()
 	}, this.resize = function() {
@@ -12320,7 +12320,7 @@ function dV() {
 				this.uQ), vw.fillStyle = bE.oN, vw.fillRect(0, this.k - this.uQ - .5 * this.a9A, this.j, this.a9A), aC = 1; aC <= 3; aC++) vw.fillRect(aC * eZ, this.k - this.uQ, this.a9A, this.uQ);
 		for (aC = this.aCM.length - 1; 0 <= aC; aC--) vw.fillText(bD.zW.a4S(this.aCM[aC], 0, .9 * eZ), (aC + .5) * eZ, this.k - .46 * this.uQ)
 	}, this.aSq = function() {
-		vw.fillStyle = bE.pA, vw.fillRect(0, 0, this.j, this.ac5), vw.fillStyle = bE.oN, vw.fillRect(0, this.ac5 - .5 * this.a9A, this.j, this.a9A), vw.font = bD.rK.t8(1, .39 * this.ac5), vw.fillText(bD.zW.a4S(L(534), 0, .8 * this.j), Math.floor(
+		vw.fillStyle = bE.pA, vw.fillRect(0, 0, this.j, this.ac5), vw.fillStyle = bE.oN, vw.fillRect(0, this.ac5 - .5 * this.a9A, this.j, this.a9A), vw.font = bD.rK.t8(1, .39 * this.ac5), vw.fillText(bD.zW.a4S(L(535), 0, .8 * this.j), Math.floor(
 			this.j / 2), Math.floor(.55 * this.ac5))
 	}, this.acD = function(h, fY, fa) {
 		var lh = bg.max[this.eG],
@@ -12498,7 +12498,7 @@ function dO() {
 			[0, 0, 0]
 		], this.l9 = [0, 1, 2, 3, 4, 5, 6, 7, 8], this.fP = new Uint8Array(aE.fO), this.aC2 = new Uint8Array(aE.fO), this.ye = new Uint16Array(aE.fO), this.yf = new Uint16Array(this.l9.length + 1), this.yg = new Uint16Array(this.l9.length), this.dj =
 		function() {
-			this.a1j = [L(535), L(536), L(537), L(538), L(539), L(540), L(541), L(542), L(543)]
+			this.a1j = [L(536), L(537), L(538), L(539), L(540), L(541), L(542), L(543), L(544)]
 		}, this.di = function() {
 			if (this.fP.fill(0), this.aC2.fill(0), this.acm(), aE.iL) {
 				if (9 === aE.l4) {
@@ -12722,9 +12722,9 @@ function da() {
 
 function ad9() {
 	this.i3 = function(player) {
-		bD.gn.a4l(player) && aO.zp(80, L(544), 637, 0, bE.pD, bE.oK, -1, !1)
-	}, this.i6 = function(player) {
 		bD.gn.a4l(player) && aO.zp(80, L(545), 637, 0, bE.pD, bE.oK, -1, !1)
+	}, this.i6 = function(player) {
+		bD.gn.a4l(player) && aO.zp(80, L(546), 637, 0, bE.pD, bE.oK, -1, !1)
 	}
 }
 
@@ -12870,7 +12870,7 @@ function cw() {
 		ada = !0;
 
 	function adb(id) {
-		id = [L(546), L(547), L(548), L(549)][id];
+		id = [L(547), L(548), L(549), L(550)][id];
 		aO.a80(id)
 	}
 	this.ed = function() {
