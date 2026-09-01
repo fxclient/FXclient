@@ -39,6 +39,17 @@ export default definePatch(({ insertCode, modifyCode, replaceCode }) => {
 			return;
 		} ${insert(`if (!__fx.settings.hidePropagandaPopup && !__fx.customLobby.isActive())`)} a.g.h(5);`)
 
+  // Don't reload FX users to main terri page.
+  replaceCode(
+    `var url = new URL("https://territorial.io/");
+    url.searchParams.set("v", "" + Math.floor(Math.random() * 1000));
+    window.location.href = url.toString();`,
+
+    `var url = new URL(window.location);
+    url.searchParams.set("v", "" + Math.floor(Math.random() * 1000));
+    window.location.href = url.toString();`
+  )
+
   // Disable built-in Territorial.io error reporting
   insertCode(
     `window.removeEventListener("error", err);
