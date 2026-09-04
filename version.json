@@ -1,8 +1,8 @@
 {
-    "version": "0.6.29",
-    "lastUpdated": "August 13",
+    "version": "0.6.29.1",
+    "lastUpdated": "September 4",
     "changes": [
-        "Merged PR #30 by QZxV4: Added gamemode filtering to the IP highlighting feature (now it only checks for IP hash overlap in within the same lobby room)"
+        "Patches for the recent game updates (Merged PR #32 by QZxV4)"
     ],
-    "isSignificant": true
+    "isSignificant": false
 }
