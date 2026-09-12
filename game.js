@@ -69,7 +69,7 @@ function dM() {
 	this.dw = 1761;
 	this.rVersion = 25, this.e0 = 0, this.dk = function() {
 		this.e1 = 2;
-		this.o = "2.16.47", this.e3 = "11 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
+		this.o = "2.16.48", this.e3 = "12 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
 			0 <= this.hostname.indexOf("game.territorial.io"), this.aB = function() {
 				try {
 					return window.self !== window.top
@@ -185,6 +185,8 @@ function eU() {
 					ey(), console.log("turnstile callback error " + Math.floor(performance.now() - eo)), bX.turnstile.er = -1
 				}
 			}), 0) : (console.log("turnstile error 245"), 1)))
+	}, this.close = function() {
+		ey()
 	}, this.ex = function() {
 		ev(8) && bq.ez && b1.z.ef(b1.z.f0) && (console.log("sendTokenToLobby success"), b1.eg.f1(ep), ep = "")
 	}
@@ -5636,7 +5638,7 @@ function aEy() {
 		for (var aC = 0; aC < aFq; aC++) fV.colorsData[aC] = aFi[aC].color, fV.playerNamesData[aC] = aFi[aC].username, fV.a70[aC] = aFi[aC].uR;
 		if (2 === fV.battleRoyaleMode)
 			for (fV.elo = new Uint16Array(aFq), aC = 0; aC < aFq; aC++) fV.elo[aC] = aFi[aC].elo;
-		bw.close(), ab.setState(8), bV.a8(tG.f8, fV.mapSeed), aE.a6h(), aE.a6f = 2
+		bw.close(), bX.turnstile.close(), ab.setState(8), bV.a8(tG.f8, fV.mapSeed), aE.a6h(), aE.a6f = 2
 	}
 }
 
