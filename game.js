@@ -69,7 +69,7 @@ function dM() {
 	this.dw = 1761;
 	this.rVersion = 25, this.e0 = 0, this.dk = function() {
 		this.e1 = 2;
-		this.o = "2.16.51", this.e3 = "13 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
+		this.o = "2.16.52", this.e3 = "22 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
 			0 <= this.hostname.indexOf("game.territorial.io"), this.aB = function() {
 				try {
 					return window.self !== window.top
@@ -5429,36 +5429,35 @@ function aEL() {
 		"If you lose your password or account name, you may lose access to your account. In such a case, we are unable to recover it. Please ensure that you store your account name and password in a safe place.", "Account Options",
 		"Log in to a Different Account", "Create New Account", "Delete Account: ", "🗑️ Account Deletion", "Accounts without gold will be deleted automatically after 8 days. To initiate this process, deplete all your gold.", "Followed Accounts",
 		"➡️ Show", "🗑️ Remove", "Saved Accounts", "Listed accounts may have been removed in the meantime due to insufficient funds.", "➡️ Login", "1v1 Rating", "Elo: ", "Played Games: ", "Battle Royale Rating", "Commander", "Strategist",
-		"Soldier", "Recruit", "Rating: ", "Zombie Rating", "Savior", "Veteran", "Hunter", "Defender", "Refugee", "Admin Statistics", "Votes: ", "You are about to purchase {10} votes for {11} Gold with your Account {2}.", "User", "Email Verified",
-		"🟢 Online", "Browsing the menus.", "Watching a replay.", "Playing a team game.", "Playing a battle royale game.", "Playing a 1v1 match.", "Fighting zombies.", "In the lobby.", "Playing in single player.", "🔴 Offline",
+		"Soldier", "Recruit", "Rating: ", "Zombie Rating", "Savior", "Veteran", "Hunter", "Defender", "Refugee", "Admin Statistics", "Votes: ", "Elect", "You are about to purchase {10} votes for {11} Gold with your Account {2}.", "User",
+		"Email Verified", "🟢 Online", "Browsing the menus.", "Watching a replay.", "Playing a team game.", "Playing a battle royale game.", "Playing a 1v1 match.", "Fighting zombies.", "In the lobby.", "Playing in single player.", "🔴 Offline",
 		"Last active some seconds ago.", "Last active 1 minute ago.", "Last active {10} minutes ago.", "Last active 1 hour ago.", "Last active {10} hours ago.", "Last active 1 day ago.", "Last active {10} days ago.",
 		"Last active a long time ago.", "🚫 Unfollow", "📥 Follow", "You are following this user. ✅", "Please choose a respectful username.", "Active punishments:", "Offensive Name", "Hate Speech", "Email Verification", "Email",
 		"You already have {10} gold. Secure your account to prevent account loss.", "New Email", "Request Code", "Make sure to also check your spam folder.", "Code", "Submit Code", "Bio", "Upload Bio", "Enable Auto Renew", "Disable Auto Renew",
 		"Auto Renew is off. The subscription will end in {10} day(s).", "Auto Renew is on. The subscription will renew in {10} day(s).", "The monthly fee is currently {10} gold.", "Buy", "Description", "Report Player", "Primary Clan Stats",
-		"Clan: {0}", "Monthly Points: {0}", "Rank: {0}", "Total Points: {0}", "Won Games: {0}", "Avg. Points per Game: {0}", "Secondary Clan Stats", "Clan Leader Statistics", "Clan Leader of {0}", "No Clan Leader", "Elect", "Rating: {10}",
-		"Rank: {10}", "Status: {10}", "Active", "Inactive", "Unlink Account", "Benefits:", "No Ads", "Separate Leaderboard", "Exclusive Username Color", "Status: Not Linked", "Join Territorial.io on Patreon:",
-		"Once you have joined, connect your account:", "If you hide Patreon, no one can transfer a membership to your account.", "Additional Income", "Options", "Default", "Uniform", "Customized", "Mixed", "Team dependent", "Player Count",
-		"Clan Chart", "🛠️ Options", "🛠️ Chart Options", "Search Terms", "Separate search terms with a comma.", "Load Data", "Start Index", "End Index", "Timeframe", "More Options", "Y-Axis Compression", "Choose Your Nation's Color!",
-		"National Color", "Red: ", "Green: ", "Blue: ", "Adjust", "Colors", "Random", "My Color", "⏳ Connecting...", "Find Server...", "New Connection...", "Reload Required", "A game reload is required to apply the new configuration.",
-		"Custom Scenario", "⚔️ Play", "Map", "Settings", "Game Mode", "Clustered", "Player Names", "Kingdom Names", "Simple Names", "Territorial Income", "Interest Income", "Starting Resources", "More Settings", "Reset Scenario", "Open File...",
-		"Save As File...", "📜 Game Log", "Multiplayer", "My Account", "Game Menu", "Your Kingdom's Name", "Clans", "Clan Members", "Admins", "1v1 Players", "Battle Royale", "Richest Players", "Patreon Members", "Zombie Players",
-		"🏆 Leaderboards", "Previous 10", "Next 10", "1v1 Player Ranking", "Clan Ranking", "Clan Member Ranking", "Admin Ranking", "1v1 Reports", "Admin Election", "Blockchain", "Clan Leader Election", "Bio Reports", "Battle Royale Players",
-		"Index", "Username", "Account", "Ranking", "Player", "Elo", "Clan", "Rating", "Leader", "Time Ago", "Accuser", "Accused", "Voter", "Target Account", "Votes", "Sender", "Receiver", "Amount", "Number", "Gold", "Type", "Elo Deducted",
-		"Bio Removed", "🛠️ List Options", "Clan Name Search", "Username Search", "Quantity", "Account Name Search", "1v1", "Zombie", "Chat", "Ready", "Next Game", "Login", "The only official domain is territorial.io",
-		"If you log in on a different website, your account may be stolen!", "If you play with the official Android or iOS App, you are fine.", "📜 Logs", "Source Account: {0}", "Target Account: {0}", "Gold to be Sent: {10}",
-		"Gold to be Received: {10}", "Procedural Map", "Realistic Map", "Custom Map", "Passable Water", "Passable Mountains", "Maximum Dimension", "Map File", "Select File", "Map Name", "Preview", "Selectable Name", "📰 Propaganda", "Links",
-		"Propaganda Text", "Reset", "Language", "Launch Campaign", "Gold Investment", "Launch", "Account Recovery", "Request Email", "▶️ Replay", "🔲 Select All", "📋 Copy", "🗑️ Clear", "▶️ Launch", "Insert the replay data here!", "⚙️ Settings",
-		"🔄 Reset", "Information", "Increasing resolution, shrinking minimum font size, and speeding up text rendering can strain your system and hinder gameplay responsiveness.", "Resolution", "Low", "Medium", "High", "Very High",
-		"Minimum Font Size", "Small", "Very Small", "Text Rendering Speed", "Slow", "Fast", "Large UI", "Place Balance Above", "Hide Zoom Buttons", "Font", "Message Box", "Keep Closed", "Is Muted", "Multiplayer Connection",
-		"Automatic (recommended)", "Direct", "Via Proxy", "Highlighting", "Intensity", "Shortcut Keys", "Spawning", "Manual Spawn", "🔑 My Account", "📈 Clan Charts", "🧈 Gold Transfer", "⚔️ Join Lobby 2", "🔗 Links", "ℹ️ Game Version",
-		"🗑️ Delete Data", "Privacy Settings", "Force Restart Game", "☰ Game Menu", "📊 Game Statistics", "🏳️ Surrender", "🕊️ Call Peace Vote",
-		"Do you want to delete all locally stored data, like usernames, setting data and account data like passwords and account names?", "Please make sure to safely store passwords before performing this action.", "🗑️ Delete", "User Privacy",
-		"Check out our Privacy Policy at:", "Source Account", "Send gold only to trusted accounts!", "Replay Error", "Warning", "Loading...", "Incoming Boat!", "Incoming Ship!", "Initiate Land Attack At Mouse Pointer",
-		"Launch Ship Towards Mouse Pointer", "Increase Percentage Bar", "Decrease Percentage Bar", "Slightly Increase Percentage Bar", "Slightly Decrease Percentage Bar", "Switch UI Visibility", "Zoom In", "Zoom Out", "Camera Left",
-		"Camera Right", "Camera Up", "Camera Down", "Add To Weakest Attack", "Call Peace Vote", "Intercept Ship At Mouse Pointer", "Avg. Attack Strength", "Land Attacks", "Ships launched", "Bots conquered", "Humans conquered", "Attacked by Bots",
-		"Attacked by Humans", "Territorial Loss", "Received Support", "Overall Income", "Additional Costs", "Land War Losses", "Naval Losses", "Transmitted Support", "Overall Expenses", "Mountain Attacks", "Ships landed", "Territory", "Numbers",
-		"Statistics", "Neutral", "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "White", "Black", "Ship launched!", "Ship intercepted!", "Upcoming Team Contest!", "Upcoming Battle Royale Contest!", "Upcoming 1v1 Contest!",
-		"Upcoming Zombie Contest!"
+		"Clan: {0}", "Monthly Points: {0}", "Rank: {0}", "Total Points: {0}", "Won Games: {0}", "Avg. Points per Game: {0}", "Secondary Clan Stats", "Clan Leader Statistics", "Clan Leader of {0}", "No Clan Leader", "Rating: {10}", "Rank: {10}",
+		"Status: {10}", "Active", "Inactive", "Unlink Account", "Benefits:", "No Ads", "Separate Leaderboard", "Exclusive Username Color", "Status: Not Linked", "Join Territorial.io on Patreon:", "Once you have joined, connect your account:",
+		"If you hide Patreon, no one can transfer a membership to your account.", "Additional Income", "Options", "Default", "Uniform", "Customized", "Mixed", "Team dependent", "Player Count", "Clan Chart", "🛠️ Options", "🛠️ Chart Options",
+		"Search Terms", "Separate search terms with a comma.", "Load Data", "Start Index", "End Index", "Timeframe", "More Options", "Y-Axis Compression", "Choose Your Nation's Color!", "National Color", "Red: ", "Green: ", "Blue: ", "Adjust",
+		"Colors", "Random", "My Color", "⏳ Connecting...", "Find Server...", "New Connection...", "Reload Required", "A game reload is required to apply the new configuration.", "Custom Scenario", "⚔️ Play", "Map", "Settings", "Game Mode",
+		"Clustered", "Player Names", "Kingdom Names", "Simple Names", "Territorial Income", "Interest Income", "Starting Resources", "More Settings", "Reset Scenario", "Open File...", "Save As File...", "📜 Game Log", "Multiplayer", "My Account",
+		"Game Menu", "Your Kingdom's Name", "Clans", "Clan Members", "Admins", "1v1 Players", "Battle Royale", "Richest Players", "Patreon Members", "Zombie Players", "🏆 Leaderboards", "Previous 10", "Next 10", "1v1 Player Ranking",
+		"Clan Ranking", "Clan Member Ranking", "Admin Ranking", "1v1 Reports", "Admin Election", "Blockchain", "Clan Leader Election", "Bio Reports", "Battle Royale Players", "Index", "Username", "Account", "Ranking", "Player", "Elo", "Clan",
+		"Rating", "Leader", "Time Ago", "Accuser", "Accused", "Voter", "Target Account", "Votes", "Sender", "Receiver", "Amount", "Number", "Gold", "Type", "Elo Deducted", "Bio Removed", "🛠️ List Options", "Clan Name Search", "Username Search",
+		"Quantity", "Account Name Search", "1v1", "Zombie", "Chat", "Ready", "Next Game", "Login", "The only official domain is territorial.io", "If you log in on a different website, your account may be stolen!",
+		"If you play with the official Android or iOS App, you are fine.", "📜 Logs", "Source Account: {0}", "Target Account: {0}", "Gold to be Sent: {10}", "Gold to be Received: {10}", "Procedural Map", "Realistic Map", "Custom Map",
+		"Passable Water", "Passable Mountains", "Maximum Dimension", "Map File", "Select File", "Map Name", "Preview", "Selectable Name", "📰 Propaganda", "Links", "Propaganda Text", "Reset", "Language", "Launch Campaign", "Gold Investment",
+		"Launch", "Account Recovery", "Request Email", "▶️ Replay", "🔲 Select All", "📋 Copy", "🗑️ Clear", "▶️ Launch", "Insert the replay data here!", "⚙️ Settings", "🔄 Reset", "Information",
+		"Increasing resolution, shrinking minimum font size, and speeding up text rendering can strain your system and hinder gameplay responsiveness.", "Resolution", "Low", "Medium", "High", "Very High", "Minimum Font Size", "Small",
+		"Very Small", "Text Rendering Speed", "Slow", "Fast", "Large UI", "Place Balance Above", "Hide Zoom Buttons", "Font", "Message Box", "Keep Closed", "Is Muted", "Multiplayer Connection", "Automatic (recommended)", "Direct", "Via Proxy",
+		"Highlighting", "Intensity", "Shortcut Keys", "Spawning", "Manual Spawn", "🔑 My Account", "📈 Clan Charts", "🧈 Gold Transfer", "⚔️ Join Lobby 2", "🔗 Links", "ℹ️ Game Version", "🗑️ Delete Data", "Privacy Settings",
+		"Force Restart Game", "☰ Game Menu", "📊 Game Statistics", "🏳️ Surrender", "🕊️ Call Peace Vote", "Do you want to delete all locally stored data, like usernames, setting data and account data like passwords and account names?",
+		"Please make sure to safely store passwords before performing this action.", "🗑️ Delete", "User Privacy", "Check out our Privacy Policy at:", "Source Account", "Send gold only to trusted accounts!", "Replay Error", "Warning",
+		"Loading...", "Incoming Boat!", "Incoming Ship!", "Initiate Land Attack At Mouse Pointer", "Launch Ship Towards Mouse Pointer", "Increase Percentage Bar", "Decrease Percentage Bar", "Slightly Increase Percentage Bar",
+		"Slightly Decrease Percentage Bar", "Switch UI Visibility", "Zoom In", "Zoom Out", "Camera Left", "Camera Right", "Camera Up", "Camera Down", "Add To Weakest Attack", "Call Peace Vote", "Intercept Ship At Mouse Pointer",
+		"Avg. Attack Strength", "Land Attacks", "Ships launched", "Bots conquered", "Humans conquered", "Attacked by Bots", "Attacked by Humans", "Territorial Loss", "Received Support", "Overall Income", "Additional Costs", "Land War Losses",
+		"Naval Losses", "Transmitted Support", "Overall Expenses", "Mountain Attacks", "Ships landed", "Territory", "Numbers", "Statistics", "Neutral", "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "White", "Black", "Ship launched!",
+		"Ship intercepted!", "Upcoming Team Contest!", "Upcoming Battle Royale Contest!", "Upcoming 1v1 Contest!", "Upcoming Zombie Contest!"
 	]
 }
 
@@ -8229,28 +8228,28 @@ function aPx(data) {
 			}
 			var aRB, aQh = new rx,
 				aR9 = 1e5 <= data.y4,
-				aRA = aQh.s0(aR8 ? (aR9 ? "⚠️ " : "") + L(255) : L(256)),
-				aRD = (aR9 && (aRA.style.color = "yellow"), aR8 ? aQh.s2(L(257, [bD.tI.a6L(data.y4, .01, 0)])) : ((aRB = new t7({
+				aRA = aQh.s0(aR8 ? (aR9 ? "⚠️ " : "") + L(256) : L(257)),
+				aRD = (aR9 && (aRA.style.color = "yellow"), aR8 ? aQh.s2(L(258, [bD.tI.a6L(data.y4, .01, 0)])) : ((aRB = new t7({
 					value: data.aRC,
 					eI: -1
 				})).e.readOnly = !0, aRB.e.type = "password", aQh.sB(aRB), aQh.sB(new tl([new x(L(191), function(e) {
 					return e.textContent === L(191) ? (e.textContent = L(192), aRB.e.type = "text") : (e.textContent = L(191), aRB.e.type = "password"), !0
 				}).button, new x(L(188), function(e) {
 					return bD.sK.a5Y(aRB.e), bD.sK.wV(e), !0
-				}).button]))), aQh.s6(L(aR8 ? 256 : 258)).style.marginTop = "0.75em", new t7({
+				}).button]))), aQh.s6(L(aR8 ? 257 : 259)).style.marginTop = "0.75em", new t7({
 					value: "",
 					eI: -1
 				}, 0, 0)),
-				aRF = (aRD.e.type = "email", aRD.e.autocomplete = "email", aRD.e.name = "email", aRD.e.inputMode = "email", aRD.e.spellcheck = !1, aQh.sB(aRD), aQh.sB(new tl([new x(L(259), function(e) {
+				aRF = (aRD.e.type = "email", aRD.e.autocomplete = "email", aRD.e.name = "email", aRD.e.inputMode = "email", aRD.e.spellcheck = !1, aQh.sB(aRD), aQh.sB(new tl([new x(L(260), function(e) {
 					return b1.aHS.aRE({
 						action: 3,
 						s1: aRD.e.value.trim().substring(0, 63)
 					}), bD.sK.wV(e), !0
-				}).button])), aR8 && aQh.s2(L(260)), aQh.s6(L(261)).style.marginTop = "0.75em", new t7({
+				}).button])), aR8 && aQh.s2(L(261)), aQh.s6(L(262)).style.marginTop = "0.75em", new t7({
 					value: "",
 					eI: -1
 				}, 1));
-			aQh.sB(aRF), aQh.sB(new tl([new x(L(262), function() {
+			aQh.sB(aRF), aQh.sB(new tl([new x(L(263), function() {
 				b1.aHS.aHT({
 					action: 4,
 					uY: "",
@@ -8279,17 +8278,17 @@ function aPx(data) {
 		var sF = [];
 		aQP(sF, 1), sF.push(function() {
 				var aQh = new rx;
-				aQh.s0(L(228)), data.aR1 && (aQh.s6("✅ " + L(229)).style.marginBottom = "0.75em");
+				aQh.s0(L(229)), data.aR1 && (aQh.s6("✅ " + L(230)).style.marginBottom = "0.75em");
 				var a30 = data.aR2;
-				a30 < 1 ? (aQh.s6(L(230)), 0 === data.aR3 ? aQh.s2(L(231)) : 1 === data.aR3 ? aQh.s2(L(232)) : 2 === data.aR3 ? aQh.s2(L(233)) : 3 === data.aR3 ? aQh.s2(L(234)) : 4 === data.aR3 ? aQh.s2(L(235)) : 5 === data.aR3 ? aQh.s2(
-					L(236)) : 6 === data.aR3 ? aQh.s2(L(237)) : aQh.s2(L(238))) : (aQh.s6(L(239)), a30 = a30 < 2 ? L(240) : a30 < 61 ? 2 === a30 ? L(241) : L(242, [a30 - 1]) : a30 < 84 ? 61 === a30 ? L(243) : L(244, [a30 - 60]) :
-					a30 < 255 ? 84 === a30 ? L(245) : L(246, [a30 - 83]) : L(247), aQh.s2(a30));
+				a30 < 1 ? (aQh.s6(L(231)), 0 === data.aR3 ? aQh.s2(L(232)) : 1 === data.aR3 ? aQh.s2(L(233)) : 2 === data.aR3 ? aQh.s2(L(234)) : 3 === data.aR3 ? aQh.s2(L(235)) : 4 === data.aR3 ? aQh.s2(L(236)) : 5 === data.aR3 ? aQh.s2(
+					L(237)) : 6 === data.aR3 ? aQh.s2(L(238)) : aQh.s2(L(239))) : (aQh.s6(L(240)), a30 = a30 < 2 ? L(241) : a30 < 61 ? 2 === a30 ? L(242) : L(243, [a30 - 1]) : a30 < 84 ? 61 === a30 ? L(244) : L(245, [a30 - 60]) :
+					a30 < 255 ? 84 === a30 ? L(246) : L(247, [a30 - 83]) : L(248), aQh.s2(a30));
 				{
 					var s3, aQm;
-					aQh.sB(new tw), data.aQN && (s3 = aQh.s2(), aQh.sB(new tl([new x(bm.xF.vp(data.uY) ? L(248) : L(249), function(e) {
-						return bm.xF.xS(data.uY) ? (e.textContent = L(248), aQm(1)) : (e.textContent = L(249), aQm(0)), !0
+					aQh.sB(new tw), data.aQN && (s3 = aQh.s2(), aQh.sB(new tl([new x(bm.xF.vp(data.uY) ? L(249) : L(250), function(e) {
+						return bm.xF.xS(data.uY) ? (e.textContent = L(249), aQm(1)) : (e.textContent = L(250), aQm(0)), !0
 					}).button])), aQm = function(g1) {
-						s3.textContent = g1 ? L(250) : ""
+						s3.textContent = g1 ? L(251) : ""
 					}, bm.xF.vp(data.uY) && aQm(1), aQh.sB(new tw))
 				}
 				var sO, t6 = new t7({
@@ -8298,16 +8297,16 @@ function aPx(data) {
 				});
 				t6.e.readOnly = !0, aQh.sB(t6), aQh.sB(new tl([new x(L(188), function(e) {
 					return bD.sK.a5Y(t6.e), bD.sK.wV(e), !0
-				}).button])), data.aQN || aQh.s2(L(251));
-				(data.aR4 || data.aR5 || data.aR6) && (aQh.sB(new tw), aQh.s2(L(252)), data.aR4 && (aQh.s2("• Account Timeout").style.color = "orange"), data.aR5 && ((sO = aQh.s2("• Muted")).style.color = "orange", sO.style.marginTop =
+				}).button])), data.aQN || aQh.s2(L(252));
+				(data.aR4 || data.aR5 || data.aR6) && (aQh.sB(new tw), aQh.s2(L(253)), data.aR4 && (aQh.s2("• Account Timeout").style.color = "orange"), data.aR5 && ((sO = aQh.s2("• Muted")).style.color = "orange", sO.style.marginTop =
 					"0.5em"), data.aR6) && ((sO = aQh.s2("• Redacted")).style.color = "orange", sO.style.marginTop = "0.5em");
-				data.aQN && (aQh.sB(new tw), aQh.s6(b1.z.aQi("/wiki/reports"), "0.75em").style.marginBottom = "0.8em", aQh.sB(new tl([new x(L(253), function(e) {
+				data.aQN && (aQh.sB(new tw), aQh.s6(b1.z.aQi("/wiki/reports"), "0.75em").style.marginBottom = "0.8em", aQh.sB(new tl([new x(L(254), function(e) {
 					return b1.aHS.aHT({
 						action: 3,
 						uY: data.uY,
 						value: 0
 					}), bD.sK.wV(e), !0
-				}, bE.q3).button])), aQh.sB(new tl([new x(L(254), function(e) {
+				}, bE.q3).button])), aQh.sB(new tl([new x(L(255), function(e) {
 					return b1.aHS.aHT({
 						action: 3,
 						uY: data.uY,
@@ -8354,21 +8353,21 @@ function aPx(data) {
 			}()),
 			function(sF) {
 				var aQh, s3, aEU, aRH, aQn, aQp, aQo;
-				data.aQN || ((aQh = new rx).s0(L(263)), (s3 = aQh.s2(data.aRG.length + " / 160")).style.textAlign = "center", aEU = !0, (aRH = new x0(0, 1, function(e) {
+				data.aQN || ((aQh = new rx).s0(L(264)), (s3 = aQh.s2(data.aRG.length + " / 160")).style.textAlign = "center", aEU = !0, (aRH = new x0(0, 1, function(e) {
 					e = e.target.value.length;
 					s3.textContent = e + " / 160", 160 < e ? aEU && (aEU = !1, aQp.se(1)) : aEU || (aEU = !0, aQp.se(0))
-				})).e.rows = 6, aRH.e.style.fontSize = "1em", aRH.x6(data.aRG), aQh.sB(aRH), 0 !== data.aRI ? (aQp = new x(L(264), function() {
+				})).e.rows = 6, aRH.e.style.fontSize = "1em", aRH.x6(data.aRG), aQh.sB(aRH), 0 !== data.aRI ? (aQp = new x(L(265), function() {
 					if (!aEU) return !0;
 					u.v(8, u.a3T().a3U, new ub(29, {
 						action: 1,
 						s1: aRH.x7().substring(0, 160)
 					}))
-				}, 0, 0, 1), aQh.sB(new tl([aQp.button])), aQh.sB(new tl([new x(1 === data.aRI ? L(265) : L(266), function() {
+				}, 0, 0, 1), aQh.sB(new tl([aQp.button])), aQh.sB(new tl([new x(1 === data.aRI ? L(266) : L(267), function() {
 					u.v(8, u.a3T().a3U, new ub(29, {
 						action: 0,
 						s1: ""
 					}))
-				}, 0, 0, 1).button])), aQh.s2(1 === data.aRI ? L(267, [data.aRJ - 1]) : L(268, [data.aRJ - 1])), aQh.s2(L(269, [data.aRK]))) : (aQn = new x(L(270), function() {
+				}, 0, 0, 1).button])), aQh.s2(1 === data.aRI ? L(268, [data.aRJ - 1]) : L(269, [data.aRJ - 1])), aQh.s2(L(270, [data.aRK]))) : (aQn = new x(L(271), function() {
 					if (!aRH.e.readOnly) return !0;
 					u.v(8, u.a3T().a3U, new ub(29, {
 						action: 1,
@@ -8380,13 +8379,13 @@ function aPx(data) {
 						e.textContent = L(186), aRH.e.readOnly = !0, aQn.se(0), aQn.button.style.color = bE.qN
 					} else aQo();
 					return !0
-				}), aQh.sB(new tl([aQp.button])), aQh.s2(L(269, [data.aRK])), aQo = function() {
+				}), aQh.sB(new tl([aQp.button])), aQh.s2(L(270, [data.aRK])), aQo = function() {
 					aQp.button.textContent = L(185), aRH.e.readOnly = !1, aQn.se(1), aQn.button.style.color = bE.pO
 				}, aQh.sB(new tl([aQn.button]))), sF.push(aQh))
 			}(sF),
 			function(sF) {
 				var aQh;
-				data.aQN && 0 !== data.aRI && ((aQh = new rx).s0(L(271)), aQh.s4(data.aRG), aQh.sB(new tl([new x(L(272, 0, "Report"), function(e) {
+				data.aQN && 0 !== data.aRI && ((aQh = new rx).s0(L(272)), aQh.s4(data.aRG), aQh.sB(new tl([new x(L(273, 0, "Report"), function(e) {
 					return b1.z.ef(0) && (bD.sK.wV(e), b1.aHS.aRL({
 						action: 5,
 						uY: data.uY
@@ -8509,15 +8508,15 @@ function aPx(data) {
 			function(sF) {
 				var aQh = new rx,
 					aRM = data.y7,
-					aRN = (aQh.s0(L(273)), aQh.s6(L(274, [data.y5.length ? "[" + data.y5 + "]" : "-"])), aQh.s6(L(275, [bD.tI.a6L(aRM, .01, 2)])), aQh.s6(L(276, [data.y9 + 1 + " / " + data.y3])), data.yA),
-					aRO = (aQh.s6(L(277, [bD.tI.a6L(aRN, .1, 1)])), data.yC);
-				aQh.s6(L(278, [aRO])), aQh.s6(L(279, [bD.tI.a6L(aRN / Math.max(aRO, 1), .1, 2)])), aRM = data.y8, aQh.s0(L(280), "0.8em"), aQh.s6(L(274, [data.y6.length ? "[" + data.y6 + "]" : "-"])), aQh.s6(L(275, [bD.tI.a6L(aRM, .01, 2)])),
-					aRN = data.yB, aQh.s6(L(277, [bD.tI.a6L(aRN, .1, 1)])), aRO = data.yD, aQh.s6(L(278, [aRO])), aQh.s6(L(279, [bD.tI.a6L(aRN / Math.max(aRO, 1), .1, 2)])), aQh.s6(b1.z.aQi("/wiki/clans"), "0.75em").style.marginTop = "0.8em",
+					aRN = (aQh.s0(L(274)), aQh.s6(L(275, [data.y5.length ? "[" + data.y5 + "]" : "-"])), aQh.s6(L(276, [bD.tI.a6L(aRM, .01, 2)])), aQh.s6(L(277, [data.y9 + 1 + " / " + data.y3])), data.yA),
+					aRO = (aQh.s6(L(278, [bD.tI.a6L(aRN, .1, 1)])), data.yC);
+				aQh.s6(L(279, [aRO])), aQh.s6(L(280, [bD.tI.a6L(aRN / Math.max(aRO, 1), .1, 2)])), aRM = data.y8, aQh.s0(L(281), "0.8em"), aQh.s6(L(275, [data.y6.length ? "[" + data.y6 + "]" : "-"])), aQh.s6(L(276, [bD.tI.a6L(aRM, .01, 2)])),
+					aRN = data.yB, aQh.s6(L(278, [bD.tI.a6L(aRN, .1, 1)])), aRO = data.yD, aQh.s6(L(279, [aRO])), aQh.s6(L(280, [bD.tI.a6L(aRN / Math.max(aRO, 1), .1, 2)])), aQh.s6(b1.z.aQi("/wiki/clans"), "0.75em").style.marginTop = "0.8em",
 					sF.push(aQh)
 			}(sF),
 			function(sF) {
 				var aQh = new rx;
-				aQh.s0(L(281)), aQh.s6(L(218) + (data.aRP / 10).toFixed(1) + "<br>" + L(183) + (data.aRQ.length ? L(282, [data.aRQ]) : L(283))), data.aQN && aQh.sB(new tl([new x(L(284), function(e) {
+				aQh.s0(L(282)), aQh.s6(L(218) + (data.aRP / 10).toFixed(1) + "<br>" + L(183) + (data.aRQ.length ? L(283, [data.aRQ]) : L(284))), data.aQN && aQh.sB(new tl([new x(L(227), function(e) {
 					return b1.z.ef(0) && (bD.sK.wV(e), b1.aHS.aRL({
 						action: 4,
 						uY: data.uY
@@ -8526,40 +8525,26 @@ function aPx(data) {
 				aQh.s6(b1.z.aQi("/wiki/clans"), "0.75em").style.marginTop = "0.8em", sF.push(aQh)
 			}(sF), sF.push(function() {
 				var aQh = new rx;
-				if (aQh.s0(L(225)), aQh.s6(L(226) + data.aQy + "<br>" + L(182) + (data.aQz + 1) + " / " + data.y3 + "<br>" + L(183) + br.eK(data.aQz)), data.aQN) {
-					var t6 = new t7({
-							value: bm.buffer.data[157].value,
-							eI: -1
-						}, 1, void 0, function(e) {
-							bm.qo.qp(157, aQm(e.target.value))
-						}),
-						aQp = (t6.e.style.marginTop = "0.6em", aQh.sB(t6), new x(L(185), function(e) {
-							return e.textContent === L(185) ? (e.textContent = L(186), t6.e.readOnly = !0, aR0[0].se(0), aR0[1].se(0), aR0[0].button.style.color = bE.qN, aR0[1].button.style.color = bE.qN, aQm(bm.buffer.data[157]
-								.value)) : aQo(), !0
-						})),
-						aR0 = (aQh.sB(new tl([aQp.button])), [new x("−", function(e) {
-							return t6.e.readOnly && b1.z.ef(0) && (bD.sK.wV(e), aQo(), b1.aHS.aHT({
-								action: 2,
-								uY: data.uY,
-								value: bO.ij(parseInt(bm.buffer.data[157].value, 10), 3, 32767)
-							})), !0
-						}, 1), new x("+", function(e) {
-							return t6.e.readOnly && b1.z.ef(0) && (bD.sK.wV(e), aQo(), b1.aHS.aHT({
-								action: 1,
-								uY: data.uY,
-								value: bO.ij(parseInt(bm.buffer.data[157].value, 10), 3, 32767)
-							})), !0
-						}, 1)]),
-						s3 = aQh.s2(),
-						aQm = function(g1) {
-							return g1 = bD.gv.a61(g1, 3, 32767), s3.textContent = L(227, [g1 - 1, g1, bm.buffer.data[105].value]), g1
-						};
-					aQh.sB(new tl([aR0[0].button, aR0[1].button]));
-					for (var aC = 0; aC < 2; aC++) aR0[aC].button.style.fontSize = "1.6em";
-					var aQo = function() {
-						aQp.button.textContent = L(185), t6.e.readOnly = !1, aR0[0].se(1), aR0[1].se(1), aR0[0].button.style.color = bE.pO, aR0[1].button.style.color = bE.pO
-					};
-					aQm(bm.buffer.data[157].value)
+				{
+					var t6, aQp, aR0, s3, aQm, aQo;
+					aQh.s0(L(225)), aQh.s6(L(226) + data.aQy + "<br>" + L(182) + (data.aQz + 1) + " / " + data.y3 + "<br>" + L(183) + br.eK(data.aQz)), data.aQN && ((t6 = new t7({
+						value: bm.buffer.data[157].value,
+						eI: -1
+					}, 1, void 0, function(e) {
+						bm.qo.qp(157, aQm(e.target.value))
+					})).e.style.marginTop = "0.6em", aQh.sB(t6), aQp = new x(L(185), function(e) {
+						return e.textContent === L(185) ? (e.textContent = L(186), t6.e.readOnly = !0, aR0[0].se(0), aR0[0].button.style.color = bE.qN, aQm(bm.buffer.data[157].value)) : aQo(), !0
+					}), aQh.sB(new tl([aQp.button])), aR0 = [new x(L(227), function(e) {
+						return t6.e.readOnly && b1.z.ef(0) && (bD.sK.wV(e), aQo(), b1.aHS.aHT({
+							action: 1,
+							uY: data.uY,
+							value: bO.ij(parseInt(bm.buffer.data[157].value, 10), 2, 3e4)
+						})), !0
+					}, 1)], s3 = aQh.s2(), aQm = function(g1) {
+						return g1 = bD.gv.a61(g1, 2, 3e4), s3.textContent = L(228, [g1 - 1, g1, bm.buffer.data[105].value]), g1
+					}, aQh.sB(new tl([aR0[0].button])), aQo = function() {
+						aQp.button.textContent = L(185), t6.e.readOnly = !1, aR0[0].se(1), aR0[0].button.style.color = bE.pO
+					}, aQm(bm.buffer.data[157].value))
 				}
 				return aQh
 			}()),
@@ -10057,7 +10042,7 @@ function aQI() {
 				value: "",
 				eI: -1
 			})),
-			aRD = (aQh.sB(t6), aQh.s0(L(256), "0.8em"), new t7({
+			aRD = (aQh.sB(t6), aQh.s0(L(257), "0.8em"), new t7({
 				value: "",
 				eI: -1
 			}, 0, 0)),
