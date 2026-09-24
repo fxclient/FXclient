@@ -69,7 +69,7 @@ function dM() {
 	this.dw = 1761;
 	this.rVersion = 25, this.e0 = 0, this.dk = function() {
 		this.e1 = 2;
-		this.o = "2.16.52", this.e3 = "22 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
+		this.o = "2.16.53", this.e3 = "24 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
 			0 <= this.hostname.indexOf("game.territorial.io"), this.aB = function() {
 				try {
 					return window.self !== window.top
@@ -159,7 +159,15 @@ function eU() {
 		ev = 0;
 
 	function f5() {
-		null !== es && null !== en && (eo = 0, window.turnstile.remove(en), es.remove(), en = es = null)
+		if (null !== es && null !== en) {
+			eo = 0;
+			try {
+				window.turnstile.remove(en), es.remove()
+			} catch (e) {
+				console.log("turnstile remove failed " + e)
+			}
+			en = es = null
+		}
 	}
 
 	function ez(f9) {
