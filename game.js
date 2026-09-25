@@ -43,8 +43,8 @@ function a() {
 				for (var match, a6 = new RegExp(":([0-9]+):([0-9]+)", "g"), result = []; null !== (match = a6.exec(stack));) result.push(parseInt(match[1], 10)), result.push(parseInt(match[2], 10));
 				return result.length ? result.join(" ") : 0
 			}(e);
-			return 0 === f || e.lineno < 2 ? void console.log("Error: External Code") : (window.removeEventListener("error", d), c = e.lineno + " " + e.colno + "|" + f, __fx.reportError(e, c), alert("Error:\n" + e.filename + " " + e.lineno +
-				" " + e.colno + " " + e.message))
+			return 0 === f || e.lineno <= 3 ? void console.log("Error: External Code | " + f) : (window.removeEventListener("error", d), c = e.lineno + " " + e.colno + "|" + f, __fx.reportError(e, c), alert("Error:\n" + e.filename + " " + e
+				.lineno + " " + e.colno + " " + e.message))
 		} catch (e) {
 			c = "SE|" + c + "|" + e, console.log(c), alert(c)
 		}
@@ -69,7 +69,7 @@ function dM() {
 	this.dw = 1761;
 	this.rVersion = 25, this.e0 = 0, this.dk = function() {
 		this.e1 = 2;
-		this.o = "2.16.53", this.e3 = "24 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
+		this.o = "2.16.54", this.e3 = "25 Sep 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
 			0 <= this.hostname.indexOf("game.territorial.io"), this.aB = function() {
 				try {
 					return window.self !== window.top
