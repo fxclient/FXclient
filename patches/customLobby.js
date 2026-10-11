@@ -2,7 +2,6 @@ import ModUtils, { insert } from '../modUtils.js';
 
 // Custom lobby patches
 export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceCode, replaceRawCode, safeDictionary: dict, waitForMinification }) => {
-    return; // temporarily disabled
 
     // set player id correctly
     insertCode(`function aBG(aBE) {
@@ -14,9 +13,14 @@ export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceCode, r
 		return -1;
 	}`, `if (__fx.customLobby.isActive()) return __fx.customLobby.getPlayerId();`);
 
-    insertCode(`this.y___ = function() { s___.t(5, 5); };
-	    this.a3a = function() { s___.w___(); aY.init(); }; /* here */`,
-        `__fx.customLobby.setJoinFunction(() => { s___.w___(); aY.init(); });`)
+    modifyCode(`this.a0 = function() { u.v(5, 5); };
+	this.a71 = function(aUM) {
+		if (aUM) { aa.f2 = aUM; }
+		u.y___();
+		aa.dk();
+	};
+    ${insert(`__fx.customLobby.setJoinFunction(() => this.a71(1));`)}`)
+
     modifyCode(`var l;
         ${insert(`if (__fx.customLobby.isActive()) l = __fx.customLobby.getSocketURL();
         else`)} if (b.c) { l = "ws://localhost:" + (7130 + d) + "/"; }`)
@@ -44,6 +48,11 @@ export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceCode, r
 		${insert(`if (!__fx.customLobby.isActive()) `)} k.l.m(n);
 		${insert(`if (__fx.customLobby.isActive()) __fx.customLobby.rejoinLobby();
             else`)} if (this.o === 2) {/*...*/}`)
+    
+    // map info (for the map selection menu)
+    modifyCode(`this.ye = new Array(bV.aNY + 1);
+        ${insert(`__fx.customLobby.setMapInfo(this.ye);`)}
+		this.ye[0] = { j: 230, k: 230 /*...*/ }`)
 
     waitForMinification(() => {
         replaceRawCode("b7.dH(a0),0===b7.size?aq.kt.aJJ(wR,3205):",
@@ -64,9 +73,6 @@ export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceCode, r
         const errors = { 3249: "No servers found", 4705: "Lobby not found", 4730: "Kicked from lobby" };
         replaceRawCode(`m.n___(4,5,new o(__L(),xT(e),!0))`,
             `m.n___(4,5,new o(__L(),${JSON.stringify(errors)}[e] ?? xT(e),!0))`)
-        // map info (for the map selection menu)
-        replaceRawCode("this.info=new Array(Maps.totalMapCount+1),this.info[0]={name:__L(),",
-            "this.info=new Array(Maps.totalMapCount+1),__fx.customLobby.setMapInfo(this.info),this.info[0]={name:__L(),")
         // to not set custom lobby games as singleplayer
         replaceRawCode("this.vK=this.jS=this.data.a0f,this.gameIsSingleplayer=1===this.vK,",
             "this.vK=this.jS=this.data.a0f,this.gameIsSingleplayer=1===this.vK&&!__fx.customLobby.isActive(),")
