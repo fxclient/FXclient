@@ -1,7 +1,7 @@
 import WindowManager from "./windowManager.js";
 
-const customLobbiesUnavailable = true;
-// const socketURL = "ws://localhost:8080/";
+const customLobbiesUnavailable = false;
+//const socketURL = "ws://localhost:8080/";
 const socketURL = "wss://fx-lobbies.peshomir.workers.dev/";
 const customMessageMarker = 120;
 let isActive = false;
