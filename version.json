@@ -1,8 +1,8 @@
 {
-    "version": "0.6.29.1",
-    "lastUpdated": "September 4",
+    "version": "0.6.30",
+    "lastUpdated": "October 12",
     "changes": [
-        "Patches for the recent game updates (Merged PR #32 by QZxV4)"
+        "Custom lobbies have been updated to work in the latest version"
     ],
-    "isSignificant": false
+    "isSignificant": true
 }
