@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test": "node --test",
+    "start": "node scripts/serve.js",
     "build": "node index.js",
     "build-only": "node build.js",
     "build-client": "node build.js --skip-patching",

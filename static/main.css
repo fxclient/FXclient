@@ -2,6 +2,46 @@
 	overflow-y: auto;
 }
 
+#openingControl {
+	position: fixed;
+	left: 8px;
+	top: 30%;
+	width: min(270px, 38vw);
+	max-height: 38vh;
+	overflow: auto;
+	z-index: 4;
+	padding: 8px;
+	border: 1px solid white;
+	border-radius: 5px;
+	background: rgba(0, 0, 0, .8);
+	color: white;
+	font: 13px 'Trebuchet MS', sans-serif;
+}
+.opening-header, .opening-presets, .opening-action {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	flex-wrap: wrap;
+}
+.opening-header { justify-content: space-between; }
+#openingControl button {
+	background: rgba(0, 0, 0, .7);
+	color: white;
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 3px 0;
+	cursor: pointer;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+}
+#openingControl button[aria-pressed="true"] { background: #245884; border-color: white; }
+.automation-editor label { display: inline-block; margin: 5px; }
+.automation-editor input[type="number"] { width: 7em; }
+.automation-editor input[type="checkbox"] { appearance: auto; position: static; opacity: 1; width: auto; height: auto; }
+.opening-action { padding: 5px 0; border-bottom: 1px solid #555; }
+.automation-editor [role="alert"] { color: #ffcf80; }
+
 ::-webkit-scrollbar {
 	width: 10px;
 }

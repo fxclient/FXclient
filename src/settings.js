@@ -6,6 +6,7 @@ import { displayChangelog } from './changelog.js';
 import replayHistory from './replayHistory.js'
 import { LobbyReminderRulesInput } from './lobbyReminderRulesInput.js';
 import { FollowedAccountNicknames } from './followedAccounts.js';
+import { OpeningSettings } from './automationUI.js';
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
@@ -533,6 +534,7 @@ const settingsManager = new (function () {
     SectionHeader("Muted lobby pings"),
     MutePingSection,
     SectionHeader("Other"),
+    OpeningSettings,
     {
       for: "hideInappropriateNames",
       type: "checkbox",
@@ -604,6 +606,7 @@ const settingsManager = new (function () {
     settingsContainer.append(label, document.createElement("br"));
   });
   this.save = function () {
+    if (customElements.some(element => element.validate?.() === false)) return;
     Object.keys(inputFields).forEach(function (key) {
       settings[key] = inputFields[key].value.trim();
     });

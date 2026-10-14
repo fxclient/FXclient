@@ -53,6 +53,52 @@ This will install the dependencies, download the game and build the client.
 
 To build from an already downloaded copy of the game, use `npm run build-only`.
 
+## Local Opening Scheduler and Smart Bot Attack
+
+Use Node.js 22.18 or later. After building, run:
+
+```powershell
+npm test
+npm start
+```
+
+Open **http://127.0.0.1:8080** in your browser. The server binds to this computer only.
+Stop it with Ctrl+C. Both gameplay helpers are disabled initially and only dispatch
+commands in an active, unpaused **singleplayer** game. Multiplayer, replays, spawn
+selection, eliminated players and ended games cannot dispatch attacks.
+
+The **Opening Control** panel is available before a match. Choose **Edit / Settings**
+and scroll to **Opening** to create, name, duplicate or delete presets. Each action has
+an absolute simulation tick (starting at 1), Troops/Percent mode, value and enable
+checkbox. Actions are validated and sorted when saved. Choose an active preset and
+enable Scheduler, then click **Apply Opening / Smart Attack** to save without reloading.
+The main **Save Settings** button also saves these settings and reloads as usual.
+
+Each saved preset appears as a panel button. Selecting it enables its remaining
+schedule; **OFF** cancels future automatic actions immediately. Switching during a
+game never catches up elapsed ticks or repeats a consumed action. A new game resets
+execution history. The panel shows the active preset and next tick and can collapse
+with **−**. Presets, selection and collapse state persist in `localStorage.fx_automation`.
+This separate key is not included in the existing FX settings JSON export/reset.
+
+Under **Smart Attack**, enable the feature and set its hotkey (default **.**), maximum
+debit (1–50%), safety multiplier (default 1.10) and panel notifications. One press
+attempts at most one attack, with an additional one-per-tick guard. Text fields, FX
+windows, native dialogs, key repeat and conflicting native/FX shortcuts block it.
+Targets are real land neighbors, ordered by fewest troops, largest territory, then
+smallest ID. Only your own active attacks exclude a bot.
+
+Smart Attack uses a **conservative snapshot estimate**, not a guaranteed minimum
+winning force: future income, reinforcements, bot expansion and other battles are
+not predictable from a snapshot. Native combat and fraction rounding are verified
+at build time. The 50% cap includes the native sending fee. Unsupported combat
+costs and special mode 10 skip Smart Attack. See [implementation and validation notes](docs/opening-and-smart-attack.md)
+for the formulas, native functions, test coverage and remaining manual checks.
+
+Territorial.io's [terms](https://territorial.io/terms) permit mods that preserve game
+integrity and prohibit cheating. This implementation deliberately confines these
+helpers to local singleplayer; it does not assume permission for multiplayer automation.
+
 ## Contact Us
 
 Join the FX Client Discord server: https://discord.gg/JEwYWGraj7

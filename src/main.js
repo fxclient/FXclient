@@ -19,6 +19,8 @@ import lobbyReminders from './lobbyReminders.js';
 import pingFilter from './pingFilter.js';
 import nameFilter from './nameFilter.js';
 import followedAccounts from './followedAccounts.js';
+import automation from './automation.js';
+import { initAutomationUI } from './automationUI.js';
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
@@ -51,5 +53,7 @@ __fx.lobbyReminders = lobbyReminders;
 __fx.pingFilter = pingFilter;
 __fx.nameFilter = nameFilter;
 __fx.followedAccounts = followedAccounts;
+__fx.automation = automation;
+initAutomationUI();
 
 console.log('Successfully loaded FX Client');
