@@ -55,8 +55,8 @@ selection. Main settings save validates before closing. The dedicated Apply butt
 persists without reload. Buttons use `textContent`, including user-provided names.
 
 `Opening Control` lives inside the existing window container and uses the FX font,
-dark background and bordered buttons. It is visible before play, has one button per
-preset in compact strategy/horizon selectors, explicit Activate, OFF, next-action
+dark background and bordered buttons. It is visible before play and uses compact
+strategy/horizon selectors, explicit Activate, OFF, next-action
 status and persisted collapse state.
 Its size is bounded with scrolling for large collections. Its placement still needs
 visual checking against the game's controls on the user's viewport.

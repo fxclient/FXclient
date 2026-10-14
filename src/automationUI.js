@@ -191,7 +191,7 @@ export function initAutomationUI() {
         const chosen = options.find(p => p.id === selectedPreset);
         const activate = button(presets, 'Activate', () => automation.select(selectedPreset)); activate.disabled = !chosen;
         activate.setAttribute('aria-pressed', String(automation.config.enabled && automation.config.activeId === selectedPreset));
-        if (chosen) element('small', `${chosen.name} · ${presetStatus(chosen)}`, presets);
+        if (chosen) element('small', `${chosen.name}${chosen.targetCycle ? ` · C${chosen.targetCycle}` : ''} · ${presetStatus(chosen)}`, presets);
     };
     const render = () => {
         const config = automation.config, preset = automation.preset();
@@ -203,7 +203,7 @@ export function initAutomationUI() {
         if (key !== buttonsKey) {
             buttonsKey = key; renderSelectors();
         }
-        active.textContent = config.enabled ? `Active: ${preset?.name} · ${presetStatus(preset)}` : 'Opening: OFF';
+        active.textContent = config.enabled ? `Active: ${preset?.name}${preset?.targetCycle ? ` · C${preset.targetCycle}` : ''} · ${presetStatus(preset)}` : 'Opening: OFF';
         const action = config.enabled && automation.scheduler.next(preset);
         const state = automation.hooks?.snapshot();
         const time = openingTime(state?.nativeTick);
