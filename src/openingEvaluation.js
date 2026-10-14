@@ -1,4 +1,4 @@
-import { exportPreset, externalTime, safeData } from './openingPresets.js';
+import { exportPreset, externalTime, safeData, evaluationCycleFor } from './openingPresets.js';
 
 export const EXACT_CONFORMANCE_TESTS = Object.freeze(['interest-order-rounding', 'territory-bonus-order', 'density-cap',
     'frontier-expansion', 'attack-completion', 'fraction-quantization']);
@@ -16,7 +16,7 @@ export function prepareOpeningEvaluation(preset, scenario) {
     return { schemaVersion: 1, type: 'territorial-opening-evaluation', presetId: portable.id,
         status: 'experimental_unvalidated', exactSimulator: false, scenario: input, presetFingerprint: JSON.stringify(portable),
         targetNativeTick: (portable.targetCycle - 1) * 100,
-        evaluationNativeTick: ((portable.evaluationCycle ?? portable.targetCycle) - 1) * 100,
+        evaluationNativeTick: (evaluationCycleFor(portable) - 1) * 100,
         actions: portable.actions.map(action => ({ ...action, nativeTick: externalTime(action.cycle, action.tickInCycle) * 10 })),
         requiredConformanceTests: [...EXACT_CONFORMANCE_TESTS],
         blockers: ['No exact native simulator is implemented; geometric frontier/attack completion and economic step ordering must be tested'],

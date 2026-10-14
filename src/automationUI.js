@@ -4,7 +4,8 @@ import WindowManager from './windowManager.js';
 import { createSmartAttackKeyHandler } from './smartAttackInput.js';
 import { formatOpeningTick, openingTime } from './attackPlanning.js';
 import { openingTransferUI } from './openingTransferUI.js';
-import { STRATEGIES, presetStatus, presetGroup, groupedPresets } from './openingPresets.js';
+import { STRATEGIES, presetStatus, presetGroup, groupedPresets, evaluationCycleFor } from './openingPresets.js';
+import { makePanelDraggable } from './draggablePanel.js';
 
 const element = (tag, text, parent) => {
     const node = document.createElement(tag);
@@ -74,7 +75,7 @@ export function OpeningSettings(container) {
         });
         const preset = draft.presets.find(p => p.id === selected);
         if (preset) {
-            element('p', `${presetStatus(preset)} · ${STRATEGIES[preset.strategy] ?? 'Custom'}${preset.targetCycle ? ` · Target: start of C${preset.targetCycle}` : ''}${preset.evaluationCycle ? ` · Evaluation: C${preset.evaluationCycle}` : ''}`, body);
+            element('p', `${presetStatus(preset)} · ${STRATEGIES[preset.strategy] ?? 'Custom'}${preset.targetCycle ? ` · Target: start of C${preset.targetCycle}` : ''}${evaluationCycleFor(preset) ? ` · Evaluation: C${evaluationCycleFor(preset)}` : ''}`, body);
             if (preset.notes) element('p', preset.notes, body);
             const edited = () => { preset.status = 'experimental_unvalidated'; };
             const name = element('input', undefined, body);
@@ -144,6 +145,7 @@ export function initAutomationUI() {
     panel.id = 'openingControl';
     panel.setAttribute('aria-label', 'Opening Control');
     const header = element('div', undefined, panel); header.className = 'opening-header';
+    header.title = 'Drag to move Opening Control';
     const title = element('span', 'OPENING CONTROL', header);
     const collapse = button(header, '−', () => automation.update({ ...automation.config, collapsed: !automation.config.collapsed }));
     collapse.setAttribute('aria-label', 'Collapse or expand Opening Control');
@@ -218,6 +220,9 @@ export function initAutomationUI() {
     };
     automation.listeners.add(render);
     render();
+    makePanelDraggable(panel, header, { position: automation.config.panelPosition,
+        save: panelPosition => automation.update({ ...automation.config, panelPosition }),
+        onError: error => { automation.message = 'Panel position was not saved: ' + error.message; automation.changed(); } });
     // Refresh waiting/end state even when the native simulation is paused.
     setInterval(render, 500);
     document.addEventListener('keydown', createSmartAttackKeyHandler(automation, getSettings, document), true);

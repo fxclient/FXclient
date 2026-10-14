@@ -63,6 +63,23 @@ test('Rename preview commits stable reviewed IDs and preserves original preset; 
     assert.equal(ui.root.all().some(element => element.tag === 'img' || element.tag === 'script'), false);
 });
 
+test('capture v2 ZIP selected through Import Presets previews and saves all 35', async () => {
+    const ui = setup();
+    const bytes = fs.readFileSync(new URL('./fixtures/territorial_capture_v2_presets.zip', import.meta.url));
+    const input = ui.root.all().find(element => element.tag === 'input');
+    input.files = [{ name: 'territorial_capture_v2_presets.zip', size: bytes.length,
+        arrayBuffer: async () => Uint8Array.from(bytes).buffer }];
+    input.events.change(); await new Promise(resolve => setImmediate(resolve));
+    assert.deepEqual(ui.errors, []);
+    assert.equal(ui.root.all().filter(element => element.tag === 'li').length, 35);
+    assert.equal(ui.counts().writes, 0);
+    ui.button('Import reviewed presets').click();
+    assert.equal(ui.automation.config.presets.length, 35);
+    assert.ok(ui.automation.config.presets.every(preset => preset.status === 'delayed_capture_model_unvalidated'));
+    assert.equal(ui.automation.config.enabled, false);
+    assert.deepEqual(ui.counts(), { writes: 1, imported: 1 });
+});
+
 test('UI refuses partial imports and refuses to apply a stale preview', async () => {
     const ui = setup(); await ui.loadJSON([source('good'), { ...source('bad'), schemaVersion: 2 }]);
     assert.equal(ui.button('Import reviewed presets'), undefined); assert.equal(ui.counts().writes, 0);

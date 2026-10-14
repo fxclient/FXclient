@@ -28,6 +28,17 @@ test('default OFF, configuration roundtrip, malformed data rejection', () => {
         assert.throws(() => validateConfig({ ...defaultConfig(), smart }));
 });
 
+test('panel position persists without changing automation selection; invalid coordinates reset only the position', () => {
+    const config = { ...defaultConfig(), presets: [p], activeId: 'p', enabled: true, panelPosition: { x: 120.4, y: 250.6 } };
+    assert.deepEqual(validateConfig(config).panelPosition, { x: 120, y: 251 });
+    assert.deepEqual(validateConfig(JSON.parse(JSON.stringify(validateConfig(config)))), validateConfig(config));
+    for (const position of [{ x: -1, y: 5 }, { x: NaN, y: 0 }, { x: '20', y: 0 }, { x: 100001, y: 0 }, {}]) {
+        const validated = validateConfig({ ...config, panelPosition: position });
+        assert.equal(validated.panelPosition, null);
+        assert.equal(validated.activeId, 'p'); assert.equal(validated.enabled, true);
+    }
+});
+
 test('game lifecycle resets schedule and OFF cancels immediately', () => {
     const { automation: a, engine, calls, step } = fixture();
     step(); assert.equal(calls.length, 1);

@@ -29,6 +29,19 @@ uses Strategy and End cycle selectors plus Activate and OFF. Custom presets and
 duplicate variants remain separately selectable. Changing a selector never starts
 attacks. Active preset and next cycle/tick remain visible.
 
+Opening Control can be moved by dragging its header with a mouse or touch. Its
+position is saved locally on release and kept within the viewport when the window
+or panel size changes. Header buttons still work independently.
+
+**Import Presets** also accepts `territorial_capture_v2_presets.zip`: its 35
+schema-version-1 presets use `delayed_capture_model_unvalidated` and omit
+`evaluationCycle`. The evaluation horizon defaults to the target cycle (target + 3
+for Long-term), while the original absent field and `modeledResults` are preserved
+on export. These model results remain Experimental. An explicitly supplied wrong
+evaluation horizon is still rejected. This archive shares IDs with the bundled
+pack: choose Rename to retain both versions or Replace to update them; the default
+Skip policy leaves existing presets intact.
+
 ## Timing adapter
 
 Version 1 of the supplied schema is explicitly **one-based slots**: `cycle >= 1`,

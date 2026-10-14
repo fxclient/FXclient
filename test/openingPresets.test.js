@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { zipSync, strToU8 } from 'fflate';
 import { parsePresetFile, importPreset, exportPreset, exportPresetCollection, previewPresetImport, configAfterImport,
-    readPresetZip, PRESET_LIMITS, groupedPresets, externalTime, parsePresetJSON, presetStatus } from '../src/openingPresets.js';
+    readPresetZip, PRESET_LIMITS, groupedPresets, externalTime, parsePresetJSON, presetStatus, evaluationCycleFor } from '../src/openingPresets.js';
 import { OpeningScheduler, openingTime, validatePresets } from '../src/attackPlanning.js';
 
 const archive = new Uint8Array(fs.readFileSync(new URL('../static/opening/territorial_opening_presets_35.zip', import.meta.url)));
@@ -11,6 +11,26 @@ const pack = () => parsePresetFile(archive, 'pack.zip');
 const raw = (id = 'custom-1', changes = {}) => ({ schemaVersion: 1, type: 'territorial-opening-preset', id, name: id,
     strategy: 'custom', status: 'experimental_unvalidated', actions: [{ cycle: 1, tickInCycle: 6, mode: 'percent', value: 28, enabled: true }], ...changes });
 const jsonFile = value => parsePresetFile(strToU8(JSON.stringify(value)), 'presets.json');
+
+test('capture v2 archive imports all 35, preserves modeled data and remains experimental', () => {
+    const bytes = new Uint8Array(fs.readFileSync(new URL('./fixtures/territorial_capture_v2_presets.zip', import.meta.url)));
+    const presets = parsePresetFile(bytes, 'territorial_capture_v2_presets.zip');
+    assert.equal(presets.length, 35);
+    const files = readPresetZip(bytes);
+    for (const p of presets) {
+        const source = [...files.values()].map(bytes => JSON.parse(new TextDecoder().decode(bytes))).find(data => data.id === p.id);
+        assert.equal(p.status, 'delayed_capture_model_unvalidated');
+        assert.equal(presetStatus(p), 'Experimental');
+        assert.equal(Object.hasOwn(p, 'evaluationCycle'), false);
+        assert.equal(evaluationCycleFor(p), p.targetCycle + (p.strategy === 'long_term' ? 3 : 0));
+        assert.deepEqual(p.modeledResults, source.modeledResults);
+        for (const [key, value] of Object.entries(source)) if (key !== 'actions') assert.deepEqual(exportPreset(p)[key], value);
+    }
+    assert.deepEqual(parsePresetFile(strToU8(exportPresetCollection(presets)), 'all.json'), presets);
+    assert.equal(previewPresetImport(pack(), presets).skipped, 35);
+    assert.equal(previewPresetImport(pack(), presets, 'replace').replaced, 35);
+    assert.throws(() => importPreset({ ...exportPreset(presets[0]), evaluationCycle: 99 }), /evaluationCycle/);
+});
 
 test('single JSON, arrays and embedded manifests import without changing metadata', () => {
     const source = raw('one', { objective: 'custom', notes: '<img src=x onerror=alert(1)>', extra: { labels: ['one', 'two'], example: 7 } });

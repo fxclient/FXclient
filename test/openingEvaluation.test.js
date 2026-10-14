@@ -7,6 +7,16 @@ import { EXACT_CONFORMANCE_TESTS, evaluateOpening, exportRecalculatedPreset } fr
 const presets = parsePresetFile(new Uint8Array(fs.readFileSync(new URL('../static/opening/territorial_opening_presets_35.zip', import.meta.url))), 'pack.zip');
 const scenario = JSON.parse(fs.readFileSync(new URL('../docs/opening-scenario.example.json', import.meta.url), 'utf8'));
 
+test('capture v2 missing evaluationCycle uses the strategy horizon without trusting modeled results', async () => {
+    const capture = parsePresetFile(new Uint8Array(fs.readFileSync(new URL('./fixtures/territorial_capture_v2_presets.zip', import.meta.url))), 'pack.zip');
+    for (const preset of capture) {
+        const report = await evaluateOpening(preset, scenario);
+        assert.equal(report.evaluationNativeTick, (preset.targetCycle + (preset.strategy === 'long_term' ? 3 : 0) - 1) * 100);
+        assert.equal(report.exactSimulator, false);
+        assert.ok(Object.values(report.metrics).every(value => value === null));
+    }
+});
+
 test('all 35 prepare explicit evaluation requests without fabricated metrics or validated labels', async () => {
     for (const preset of presets) {
         const report = await evaluateOpening(preset, scenario);

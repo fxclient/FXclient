@@ -1,6 +1,6 @@
 import { OpeningScheduler, smartPlan, validatePresets, openingTime } from './attackPlanning.js';
 
-export const defaultConfig = () => ({ timingVersion: 'hud-v1', presets: [], activeId: null, enabled: false, collapsed: false,
+export const defaultConfig = () => ({ timingVersion: 'hud-v1', presets: [], activeId: null, enabled: false, collapsed: false, panelPosition: null,
     smart: { enabled: false, key: '.', maxPercentage: 50, safetyMultiplier: 1.10, notifications: true } });
 
 export function validateConfig(value) {
@@ -13,6 +13,9 @@ export function validateConfig(value) {
     if (value?.presets?.length && value.timingVersion !== 'hud-v1') config.enabled = false;
     config.timingVersion = 'hud-v1';
     config.collapsed = config.collapsed === true;
+    const position = config.panelPosition;
+    config.panelPosition = position && [position.x, position.y].every(value => Number.isFinite(value) && value >= 0 && value <= 100000)
+        ? { x: Math.round(position.x), y: Math.round(position.y) } : null;
     const s = config.smart;
     s.enabled = s.enabled === true;
     s.notifications = s.notifications === true;

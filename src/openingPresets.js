@@ -47,6 +47,10 @@ export function externalTime(cycle, tickInCycle) {
     return (cycle - 1) * 10 + tickInCycle - 1;
 }
 
+export function evaluationCycleFor(preset) {
+    return preset.evaluationCycle ?? (preset.strategy === 'long_term' ? preset.targetCycle + 3 : preset.targetCycle);
+}
+
 export function importPreset(input) {
     const preset = safeData(input);
     requireValue(object(preset), 'Preset must be an object');
@@ -57,9 +61,9 @@ export function importPreset(input) {
     if (preset.strategy !== 'custom') {
         integer(preset.targetCycle, 2, 8, 'targetCycle (C2..C8)');
         const expectedEvaluation = preset.strategy === 'long_term' ? preset.targetCycle + 3 : preset.targetCycle;
-        requireValue(preset.evaluationCycle === expectedEvaluation, 'evaluationCycle does not match the strategy horizon');
+        requireValue(preset.evaluationCycle === undefined || preset.evaluationCycle === expectedEvaluation, 'evaluationCycle does not match the strategy horizon');
     } else if (preset.targetCycle !== undefined) integer(preset.targetCycle, 1, 100000, 'targetCycle');
-    requireValue(['experimental_unvalidated', 'validated'].includes(preset.status), 'Invalid preset status');
+    requireValue(['experimental_unvalidated', 'delayed_capture_model_unvalidated', 'validated'].includes(preset.status), 'Invalid preset status');
     requireValue(Array.isArray(preset.actions) && preset.actions.length > 0 && preset.actions.length <= PRESET_LIMITS.actions, 'Preset must contain 1–500 actions');
     const times = new Set(), ids = new Set();
     const actions = preset.actions.map((action, index) => {

@@ -23,7 +23,9 @@
 	gap: 5px;
 	flex-wrap: wrap;
 }
-.opening-header { justify-content: space-between; }
+.opening-header { justify-content: space-between; cursor: grab; touch-action: none; user-select: none; }
+.opening-header.dragging { cursor: grabbing; }
+.opening-header button { cursor: pointer; touch-action: manipulation; }
 #openingControl button {
 	background: rgba(0, 0, 0, .7);
 	color: white;
