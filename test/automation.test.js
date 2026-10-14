@@ -60,3 +60,15 @@ test('changing presets cannot replay elapsed actions, including switch back', ()
     a.onTick(); assert.equal(calls.length, 2);
     a.select('p'); a.onTick(); assert.equal(calls.length, 2);
 });
+
+test('disabled, uninitialized and ineligible Smart Attack report why they cannot run', () => {
+    const { automation: a, engine, calls } = fixture();
+    a.update({ ...a.config, smart: { ...a.config.smart, enabled: false } });
+    assert.equal(a.smartAttack(), false); assert.match(a.message, /Disabled/);
+    a.update({ ...a.config, smart: { ...a.config.smart, enabled: true } });
+    const hooks = a.hooks; a.hooks = null;
+    assert.equal(a.smartAttack(), false); assert.match(a.message, /Waiting/);
+    a.hooks = hooks; engine.allowed = false; engine.blockedReason = 'Game is paused';
+    assert.equal(a.smartAttack(), false); assert.equal(a.message, 'Game is paused');
+    assert.equal(calls.length, 0);
+});

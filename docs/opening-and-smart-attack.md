@@ -139,6 +139,21 @@ promises victory from the estimate.
 
 ## Tests and remaining checks
 
+Follow-up Smart Attack fix: the keyboard router no longer treats a focused panel
+button or the nonmodal update banner as a reason to ignore the key. The default
+physical Period key also works when `event.key` is Russian `ю`. The panel now has a
+Smart ON/OFF toggle, an Attack bot button and diagnostic reasons for disabled or
+ineligible attempts. Local service workers immediately activate, claim clients and
+leave requests to the network so rebuilds cannot keep serving an older cached bundle.
+Regression tests exercise these routes and preserve text/modal/native-shortcut guards.
+
+An additional diagnostic against constructors extracted from the currently built
+native engine verified: a real land neighbor was selected; the native sender and
+command handler deducted 1,659 troops (488 sent plus 1,171 fee) from a 100,000 balance;
+the native attack registry then reported that target as under our attack. Map data,
+render/notification dependencies and frontier setup were fixture data. This verifies
+the bridge on a local state, not an entire live match or visual browser behavior.
+
 `npm test` covers validation/sorting, duplicate IDs, fraction quantization, fees,
 hard debit caps, current-balance percentages, duplicate ticks, disabled actions,
 missed ticks, failed commands, OFF, switching/backtracking, new-match reset, default

@@ -88,6 +88,13 @@ windows, native dialogs, key repeat and conflicting native/FX shortcuts block it
 Targets are real land neighbors, ordered by fewest troops, largest territory, then
 smallest ID. Only your own active attacks exclude a bot.
 
+You can also enable **Smart: ON** directly on the panel and click **Attack bot**.
+The default physical Period key works with a Russian keyboard layout too. Blocked
+attempts show a reason on the panel (disabled, waiting for a match, pause, shortcut
+conflict, no eligible bot or insufficient troops). An update banner and keyboard
+focus on a panel button do not block the shortcut. On localhost, updated service
+workers activate immediately and do not cache rebuilt assets; reload after rebuilding.
+
 Smart Attack uses a **conservative snapshot estimate**, not a guaranteed minimum
 winning force: future income, reinforcements, bot expansion and other battles are
 not predictable from a snapshot. Native combat and fraction rounding are verified

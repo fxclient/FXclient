@@ -59,10 +59,16 @@ export class Automation {
             (plan, target) => this.hooks.send(plan.code, target));
         this.changed();
     }
+    notifySmart(message) {
+        this.message = message;
+        this.log('[SmartAttack] ' + message);
+        this.changed();
+    }
     smartAttack() {
-        if (!this.config.smart.enabled || !this.hooks) return false;
+        if (!this.config.smart.enabled) { this.notifySmart('Disabled: enable Smart Attack in settings or on the panel'); return false; }
+        if (!this.hooks) { this.notifySmart('Waiting for an active singleplayer match'); return false; }
         const state = this.hooks.snapshot();
-        if (!state.allowed) return false;
+        if (!state.allowed) { this.notifySmart(state.blockedReason || 'Unavailable: requires an active, unpaused singleplayer match'); return false; }
         if (this.lastSmartTick === this.tick) return false;
         this.lastSmartTick = this.tick; // One dispatch per simulation tick, including rapid key presses.
         const bots = state.bots();

@@ -1,6 +1,7 @@
 import automation, { validateConfig } from './automation.js';
 import { getSettings } from './settings.js';
 import WindowManager from './windowManager.js';
+import { createSmartAttackKeyHandler } from './smartAttackInput.js';
 
 const element = (tag, text, parent) => {
     const node = document.createElement(tag);
@@ -135,7 +136,11 @@ export function initAutomationUI() {
     const presets = element('div', undefined, content); presets.className = 'opening-presets';
     const active = element('div', undefined, content);
     const next = element('div', undefined, content);
-    const notification = element('div', '', content); notification.setAttribute('role', 'status');
+    const smartControls = element('div', undefined, panel); smartControls.className = 'opening-presets';
+    const smartToggle = button(smartControls, 'Smart: OFF', () => automation.update({ ...automation.config,
+        smart: { ...automation.config.smart, enabled: !automation.config.smart.enabled } }));
+    const smartSend = button(smartControls, 'Attack bot', () => automation.smartAttack());
+    const notification = element('div', '', panel); notification.setAttribute('role', 'status');
     button(content, 'Edit / Settings', () => WindowManager.openWindow('settings'));
     let buttonsKey = '';
     const render = () => {
@@ -160,20 +165,14 @@ export function initAutomationUI() {
         next.textContent = !allowed ? 'Waiting · singleplayer only' : action
             ? `Next: Tick ${action.tick} — ${action.value}${action.mode === 'percent' ? '%' : ' troops'}` : 'No future actions';
         notification.textContent = config.smart.notifications ? automation.message : '';
+        smartToggle.textContent = `Smart: ${config.smart.enabled ? 'ON' : 'OFF'}`;
+        smartToggle.setAttribute('aria-pressed', String(config.smart.enabled));
+        smartSend.textContent = `Attack bot [${config.smart.key}]`;
+        smartSend.disabled = !config.smart.enabled;
     };
     automation.listeners.add(render);
     render();
     // Refresh waiting/end state even when the native simulation is paused.
     setInterval(render, 500);
-    document.addEventListener('keydown', event => {
-        const target = event.target;
-        if (!automation.config.smart.enabled || event.key !== automation.config.smart.key || event.repeat
-            || event.ctrlKey || event.metaKey || event.altKey || event.isComposing
-            || target?.closest?.('input,textarea,select,button,[contenteditable]:not([contenteditable="false"])')
-            || [...document.querySelectorAll('.window,[role="dialog"],dialog[open]')].some(node => node.getClientRects().length > 0)
-            || automation.hooks?.keyConflict?.(event.code)
-            || automation.hooks?.inputBlocked?.()
-            || getSettings().attackPercentageKeybinds.some(binding => binding.key === event.key)) return;
-        if (automation.smartAttack()) { event.preventDefault(); event.stopImmediatePropagation(); }
-    }, true);
+    document.addEventListener('keydown', createSmartAttackKeyHandler(automation, getSettings, document), true);
 }

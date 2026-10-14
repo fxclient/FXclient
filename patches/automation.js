@@ -97,6 +97,10 @@ export default definePatch(mod => {
         const hooks = `{
             snapshot: () => ({
                 allowed: ${g}.${v.single} && !${g}.${v.replay} && !${v.escapeMenu}.${v.isOpen} && ${r}.${v.phase}(1) && ${r}.${v.live}(${p}),
+                blockedReason: !${g}.${v.single} ? 'Singleplayer only' : ${g}.${v.replay} ? 'Disabled in replays'
+                    : ${v.escapeMenu}.${v.isOpen} ? 'Game is paused; close the escape menu'
+                    : !${r}.${v.phase}(1) ? 'Waiting for active play (spawn selection or match ended)'
+                    : !${r}.${v.live}(${p}) ? 'Player is no longer active' : '',
                 playerId: ${p}, balance: ${pd}.${v.balances}[${p}], neutralId: ${g}.${v.maxPlayers},
                 tileCost: ${g}.${v.mode} === 10 ? null : ${g}.${v.tileCost},
                 getBalance: () => ${pd}.${v.balances}[${p}],
