@@ -1,6 +1,6 @@
-import { OpeningScheduler, smartPlan, validatePresets } from './attackPlanning.js';
+import { OpeningScheduler, smartPlan, validatePresets, openingTime } from './attackPlanning.js';
 
-export const defaultConfig = () => ({ presets: [], activeId: null, enabled: false, collapsed: false,
+export const defaultConfig = () => ({ timingVersion: 'hud-v1', presets: [], activeId: null, enabled: false, collapsed: false,
     smart: { enabled: false, key: '.', maxPercentage: 50, safetyMultiplier: 1.10, notifications: true } });
 
 export function validateConfig(value) {
@@ -8,6 +8,10 @@ export function validateConfig(value) {
     config.presets = validatePresets(config.presets);
     if (config.activeId !== null && !config.presets.some(p => p.id === config.activeId)) config.activeId = null;
     config.enabled = config.enabled === true && config.activeId !== null;
+    // Old presets used simulation steps. Keep their numbers for review, but do
+    // not automatically run an old enabled schedule under the new HUD units.
+    if (value?.presets?.length && value.timingVersion !== 'hud-v1') config.enabled = false;
+    config.timingVersion = 'hud-v1';
     config.collapsed = config.collapsed === true;
     const s = config.smart;
     s.enabled = s.enabled === true;
@@ -55,7 +59,10 @@ export class Automation {
     onTick() {
         if (!this.hooks) return;
         const state = this.hooks.snapshot();
-        this.scheduler.advance(++this.tick, this.preset(), this.config.enabled, state,
+        const time = openingTime(state.nativeTick);
+        if (!time) return; // Missing/invalid native clock must never send early.
+        this.tick = state.nativeTick;
+        this.scheduler.advance(time.absolute, this.preset(), this.config.enabled, state,
             (plan, target) => this.hooks.send(plan.code, target));
         this.changed();
     }

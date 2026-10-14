@@ -9,13 +9,14 @@ const p = { id: 'p', name: 'Test', actions: [action('a', 1), action('b', 3)] };
 
 function fixture(allowed = true) {
     const calls = []; let active = false;
-    const engine = { allowed, balance: 10000, getBalance: () => 10000, playerId: 0, neutralId: 512, tileCost: 2,
+    const engine = { allowed, nativeTick: 0, balance: 10000, getBalance: () => 10000, playerId: 0, neutralId: 512, tileCost: 2,
         bots: () => [{ id: 1, bot: true, neighbor: true, attackable: true, underMyAttack: active, troops: 10, territory: 10, counterTroops: 0 }] };
     const config = { ...defaultConfig(), presets: [p], activeId: 'p', enabled: true };
     config.smart.enabled = true;
     const automation = new Automation(config, () => {}, () => {});
     automation.install({ snapshot: () => engine, send: (code, target) => { calls.push([code, target]); active = target !== 512; return true; } });
-    return { automation, engine, calls, finish: () => active = false };
+    return { automation, engine, calls, finish: () => active = false,
+        step: () => { engine.nativeTick += 10; automation.onTick(); } };
 }
 
 test('default OFF, configuration roundtrip, malformed data rejection', () => {
@@ -28,11 +29,11 @@ test('default OFF, configuration roundtrip, malformed data rejection', () => {
 });
 
 test('game lifecycle resets schedule and OFF cancels immediately', () => {
-    const { automation: a, calls } = fixture();
-    a.onTick(); assert.equal(calls.length, 1);
-    a.select(null); a.onTick(); a.onTick(); assert.equal(calls.length, 1);
-    a.select('p'); a.onTick(); assert.equal(calls.length, 1);
-    a.reset(); a.onTick(); assert.equal(calls.length, 2);
+    const { automation: a, engine, calls, step } = fixture();
+    step(); assert.equal(calls.length, 1);
+    a.select(null); step(); step(); assert.equal(calls.length, 1);
+    a.select('p'); step(); assert.equal(calls.length, 1);
+    a.reset(); engine.nativeTick = 0; step(); assert.equal(calls.length, 2);
 });
 
 test('replay, multiplayer, pause, dead player and ended game dispatch nothing', () => {
@@ -44,21 +45,21 @@ test('replay, multiplayer, pause, dead player and ended game dispatch nothing', 
 });
 
 test('smart press limit and native active attack eligibility after completion', () => {
-    const { automation: a, calls, finish } = fixture();
+    const { automation: a, calls, finish, step } = fixture();
     a.select(null);
     assert.equal(a.smartAttack(), true); assert.equal(calls.length, 1);
     assert.equal(a.smartAttack(), false); assert.equal(calls.length, 1);
-    a.onTick(); a.smartAttack(); assert.equal(calls.length, 1); // own active attack excluded
-    finish(); a.onTick(); a.smartAttack(); assert.equal(calls.length, 2);
+    step(); a.smartAttack(); assert.equal(calls.length, 1); // own active attack excluded
+    finish(); step(); a.smartAttack(); assert.equal(calls.length, 2);
 });
 
 test('changing presets cannot replay elapsed actions, including switch back', () => {
-    const { automation: a, calls } = fixture();
-    a.onTick(); a.onTick();
+    const { automation: a, calls, step } = fixture();
+    step(); step();
     a.update({ ...a.config, presets: [...a.config.presets, { id: 'q', name: 'Other', actions: [action('a', 1), action('b', 4)] }] });
-    a.select('q'); a.onTick(); assert.equal(calls.length, 1);
-    a.onTick(); assert.equal(calls.length, 2);
-    a.select('p'); a.onTick(); assert.equal(calls.length, 2);
+    a.select('q'); step(); assert.equal(calls.length, 1);
+    step(); assert.equal(calls.length, 2);
+    a.select('p'); step(); assert.equal(calls.length, 2);
 });
 
 test('disabled, uninitialized and ineligible Smart Attack report why they cannot run', () => {
@@ -71,4 +72,37 @@ test('disabled, uninitialized and ineligible Smart Attack report why they cannot
     a.hooks = hooks; engine.allowed = false; engine.blockedReason = 'Game is paused';
     assert.equal(a.smartAttack(), false); assert.equal(a.message, 'Game is paused');
     assert.equal(calls.length, 0);
+});
+
+test('opening follows the balance HUD: no send during HUD 0, exactly once at HUD 7', () => {
+    const { automation: a, engine, calls } = fixture();
+    a.update({ ...a.config, presets: [{ ...p, actions: [action('hud7', 7), action('nextCycle', 10)] }] });
+    for (let native = 0; native < 70; native++) {
+        engine.nativeTick = native;
+        a.onTick(); a.onTick(); // More callbacks do not accelerate native time.
+        assert.equal(calls.length, 0, `sent early at native tick ${native}`);
+    }
+    engine.nativeTick = 70; a.onTick(); a.onTick(); assert.equal(calls.length, 1);
+    for (let native = 71; native < 100; native++) { engine.nativeTick = native; a.onTick(); }
+    assert.equal(calls.length, 1);
+    engine.nativeTick = 100; a.onTick(); a.onTick(); assert.equal(calls.length, 2);
+});
+
+test('native time jumps do not catch up missed HUD ticks; missing clock cannot send', () => {
+    const { automation: a, engine, calls } = fixture();
+    engine.nativeTick = undefined;
+    for (let i = 0; i < 50; i++) a.onTick();
+    assert.equal(calls.length, 0);
+    engine.nativeTick = 0; a.onTick();
+    engine.nativeTick = 20; a.onTick(); // Missed tick 1.
+    assert.equal(calls.length, 0);
+    engine.nativeTick = 30; a.onTick(); assert.equal(calls.length, 1);
+});
+
+test('old simulation-step presets are preserved but disarmed until reviewed', () => {
+    const config = defaultConfig(); delete config.timingVersion;
+    const migrated = validateConfig({ ...config, presets: [p], activeId: 'p', enabled: true });
+    assert.equal(migrated.enabled, false); assert.equal(migrated.presets[0].actions[0].tick, 1);
+    assert.equal(migrated.timingVersion, 'hud-v1');
+    assert.equal(validateConfig({ ...migrated, enabled: true }).enabled, true);
 });

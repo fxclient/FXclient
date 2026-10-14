@@ -69,13 +69,17 @@ selection, eliminated players and ended games cannot dispatch attacks.
 
 The **Opening Control** panel is available before a match. Choose **Edit / Settings**
 and scroll to **Opening** to create, name, duplicate or delete presets. Each action has
-an absolute simulation tick (starting at 1), Troops/Percent mode, value and enable
+an opening cycle (starting at 1), HUD tick (0–9), Troops/Percent mode, value and enable
 checkbox. Actions are validated and sorted when saved. Choose an active preset and
 enable Scheduler, then click **Apply Opening / Smart Attack** to save without reloading.
 The main **Save Settings** button also saves these settings and reloads as usual.
 
 Each saved preset appears as a panel button. Selecting it enables its remaining
-schedule; **OFF** cancels future automatic actions immediately. Switching during a
+schedule; **OFF** cancels future automatic actions immediately. The tick is the number
+beside your troop balance: Cycle 1 / Tick 7 waits for the first displayed 7,
+Cycle 2 / Tick 0 waits for the next rollover to 0. The panel shows current and next
+cycle/tick. Old simulation-step presets are preserved but disabled once after this
+timing update; review their Cycle/Tick fields and select a preset again. Switching during a
 game never catches up elapsed ticks or repeats a consumed action. A new game resets
 execution history. The panel shows the active preset and next tick and can collapse
 with **−**. Presets, selection and collapse state persist in `localStorage.fx_automation`.

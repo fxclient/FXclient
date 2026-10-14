@@ -86,6 +86,13 @@ export default definePatch(mod => {
             if (menuManager.menuState() === 0) { return; }
             event.preventDefault();
         }`));
+        // Same clock and arithmetic used by the balance HUD's recurring 0–9 tick.
+        Object.assign(v, matchCode(`this.drawTickBars = function() {
+            var hudTick = clock.nativeTick() % 100;
+            hudTick -= hudTick % 10;
+            hudTick = 9 - clockMath.divide(hudTick, 10);
+            /*...*/
+        };`));
         v.keybinds = mod.matchOne(new RegExp(`(\\w+)\\.${v.matchesKey}\\(\\w+,8\\)`, 'g'))[1];
         Object.assign(v, matchCode(`return (this.replay ? (escapeMenu.isOpen || !replayPanel.playing)
             : (this.single && (escapeMenu.isOpen || this.spawn)));`,
@@ -96,6 +103,7 @@ export default definePatch(mod => {
         const r = `${v.utils}.${v.rules}`, g = v.game, p = `${g}.${v.player}`, a = v.attacks, pd = v.data;
         const hooks = `{
             snapshot: () => ({
+                nativeTick: ${v.clock}.${v.nativeTick}(),
                 allowed: ${g}.${v.single} && !${g}.${v.replay} && !${v.escapeMenu}.${v.isOpen} && ${r}.${v.phase}(1) && ${r}.${v.live}(${p}),
                 blockedReason: !${g}.${v.single} ? 'Singleplayer only' : ${g}.${v.replay} ? 'Disabled in replays'
                     : ${v.escapeMenu}.${v.isOpen} ? 'Game is paused; close the escape menu'

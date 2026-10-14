@@ -48,6 +48,18 @@ export function smartPlan(state, options) {
     return send ? { bot, required, recommended, send } : { bot, required, recommended, reason: `Required troops and fee exceed ${percentage}%` };
 }
 
+// Native balance HUD: 9 - (9 - floor((simulationTick % 100) / 10)).
+// Use the authoritative engine clock, not the number of callbacks we observed.
+export function openingTime(nativeTick) {
+    if (!Number.isSafeInteger(nativeTick) || nativeTick < 0) return null;
+    const absolute = Math.floor(nativeTick / 10);
+    return { absolute, cycle: Math.floor(absolute / 10) + 1, tick: absolute % 10 };
+}
+
+export function formatOpeningTick(absolute) {
+    return `Cycle ${Math.floor(absolute / 10) + 1}, Tick ${absolute % 10}`;
+}
+
 export function validatePresets(presets) {
     if (!Array.isArray(presets)) throw new Error('Opening presets must be an array');
     const ids = new Set();
@@ -59,10 +71,10 @@ export function validatePresets(presets) {
         const actions = new Set();
         return { id: preset.id, name: preset.name.trim(), actions: preset.actions.map(action => {
             if (!action || typeof action.id !== 'string' || !action.id || actions.has(action.id)
-                || !Number.isSafeInteger(action.tick) || action.tick < 1 || typeof action.enabled !== 'boolean'
+                || !Number.isSafeInteger(action.tick) || action.tick < 0 || typeof action.enabled !== 'boolean'
                 || !['troops', 'percent'].includes(action.mode) || !Number.isFinite(action.value) || action.value <= 0
                 || (action.mode === 'percent' ? action.value > 100 : !Number.isSafeInteger(action.value)))
-                throw new Error('Actions require tick >= 1, positive whole troops or a percentage in (0, 100]');
+                throw new Error('Actions require cycle >= 1, HUD tick 0–9, positive whole troops or a percentage in (0, 100]');
             actions.add(action.id);
             return { ...action };
         }).sort((a, b) => a.tick - b.tick) };
@@ -71,7 +83,7 @@ export function validatePresets(presets) {
 
 export class OpeningScheduler {
     constructor(log = () => {}) { this.log = log; this.reset(); }
-    reset() { this.tick = 0; this.seen = new Set(); }
+    reset() { this.tick = -1; this.seen = new Set(); }
     next(preset) {
         return preset?.actions.find(action => action.enabled && action.tick > this.tick
             && !this.seen.has(`${preset.id}/${action.id}`));
@@ -88,7 +100,7 @@ export class OpeningScheduler {
             const amount = action.mode === 'percent' ? Math.floor(balance * action.value / 100) : Math.min(balance, action.value);
             const plan = planSend(balance, amount);
             const result = plan && send(plan, state.neutralId);
-            this.log(`Tick ${tick}: ${result ? `sending ${plan.troops} troops${action.mode === 'percent' ? ` (${action.value}%)` : ''}` : 'skipped, attack unavailable or insufficient troops'}`);
+            this.log(`${formatOpeningTick(tick)}: ${result ? `sending ${plan.troops} troops${action.mode === 'percent' ? ` (${action.value}%)` : ''}` : 'skipped, attack unavailable or insufficient troops'}`);
         }
     }
 }

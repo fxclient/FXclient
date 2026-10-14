@@ -1,10 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { planSend, combatCost, estimateTroops, selectBot, smartPlan, validatePresets, OpeningScheduler } from '../src/attackPlanning.js';
+import { planSend, combatCost, estimateTroops, selectBot, smartPlan, validatePresets, OpeningScheduler, openingTime, formatOpeningTick } from '../src/attackPlanning.js';
 
 const action = (id, tick, mode = 'troops', value = 100) => ({ id, tick, mode, value, enabled: true });
 const preset = (id, actions) => ({ id, name: id, actions });
 const bot = (id, extra = {}) => ({ id, bot: true, neighbor: true, attackable: true, underMyAttack: false, troops: 100, territory: 20, counterTroops: 0, ...extra });
+
+test('opening clock uses the same 0–9 ticks and rollover as the native balance HUD', () => {
+    for (const [native, expected] of [[0, [0, 1, 0]], [9, [0, 1, 0]], [10, [1, 1, 1]],
+        [69, [6, 1, 6]], [70, [7, 1, 7]], [99, [9, 1, 9]], [100, [10, 2, 0]], [140, [14, 2, 4]]]) {
+        const t = openingTime(native); assert.deepEqual([t.absolute, t.cycle, t.tick], expected);
+    }
+    assert.equal(openingTime(undefined), null); assert.equal(openingTime(-1), null);
+    assert.equal(formatOpeningTick(14), 'Cycle 2, Tick 4');
+});
+
+test('explicit cycle 1 / tick 0 executes at the start, not again on repeated callbacks', () => {
+    const scheduler = new OpeningScheduler(); let calls = 0;
+    const p = preset('zero', [action('start', 0)]);
+    validatePresets([p]);
+    for (let i = 0; i < 10; i++) scheduler.advance(0, p, true, { allowed: true, getBalance: () => 1000 }, () => { calls++; return true; });
+    assert.equal(calls, 1);
+});
 
 test('presets validate, sort and preserve IDs; reject invalid input', () => {
     assert.deepEqual(validatePresets([preset('p', [action('b', 7), action('a', 2)])])[0].actions.map(a => a.tick), [2, 7]);

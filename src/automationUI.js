@@ -2,6 +2,7 @@ import automation, { validateConfig } from './automation.js';
 import { getSettings } from './settings.js';
 import WindowManager from './windowManager.js';
 import { createSmartAttackKeyHandler } from './smartAttackInput.js';
+import { formatOpeningTick, openingTime } from './attackPlanning.js';
 
 const element = (tag, text, parent) => {
     const node = document.createElement(tag);
@@ -52,7 +53,7 @@ export function OpeningSettings(container) {
     const render = () => {
         body.replaceChildren();
         element('h3', 'Opening', body);
-        element('p', 'Singleplayer only. Absolute game ticks start at 1. Apply Opening / Smart Attack saves immediately; no reload needed.', body);
+        element('p', 'Singleplayer only. Ticks match the 0–9 counter beside your troop balance. Cycle 1 starts at Tick 0; the next 0 is Cycle 2. Apply saves immediately.', body);
         check(body, 'Enable Scheduler', draft.enabled, value => draft.enabled = value);
         const picker = element('select', undefined, body);
         picker.setAttribute('aria-label', 'Opening preset');
@@ -86,7 +87,11 @@ export function OpeningSettings(container) {
             preset.actions.forEach(action => {
                 const row = element('div', undefined, rows); row.className = 'opening-action';
                 check(row, 'On', action.enabled, value => action.enabled = value);
-                readNumber(row, 'Tick', action.tick, 1, null, 1, value => action.tick = value);
+                let cycle = Math.floor(action.tick / 10) + 1, hudTick = action.tick % 10;
+                const updateTime = () => { action.tick = Number.isSafeInteger(cycle) && cycle >= 1
+                    && Number.isInteger(hudTick) && hudTick >= 0 && hudTick <= 9 ? (cycle - 1) * 10 + hudTick : NaN; };
+                readNumber(row, 'Cycle', cycle, 1, null, 1, value => { cycle = value; updateTime(); });
+                readNumber(row, 'Tick (HUD)', hudTick, 0, 9, 1, value => { hudTick = value; updateTime(); });
                 const mode = element('select', undefined, row);
                 mode.setAttribute('aria-label', 'Send mode');
                 element('option', 'Troops', mode).value = 'troops';
@@ -135,6 +140,7 @@ export function initAutomationUI() {
     const content = element('div', undefined, panel);
     const presets = element('div', undefined, content); presets.className = 'opening-presets';
     const active = element('div', undefined, content);
+    const current = element('div', undefined, content);
     const next = element('div', undefined, content);
     const smartControls = element('div', undefined, panel); smartControls.className = 'opening-presets';
     const smartToggle = button(smartControls, 'Smart: OFF', () => automation.update({ ...automation.config,
@@ -161,9 +167,11 @@ export function initAutomationUI() {
         }
         active.textContent = config.enabled ? `Active: ${preset?.name}` : 'Opening: OFF';
         const action = config.enabled && automation.scheduler.next(preset);
-        const allowed = automation.hooks?.snapshot().allowed;
-        next.textContent = !allowed ? 'Waiting · singleplayer only' : action
-            ? `Next: Tick ${action.tick} — ${action.value}${action.mode === 'percent' ? '%' : ' troops'}` : 'No future actions';
+        const state = automation.hooks?.snapshot();
+        const time = openingTime(state?.nativeTick);
+        current.textContent = state?.allowed && time ? `Now: ${formatOpeningTick(time.absolute)}` : 'Waiting · singleplayer only';
+        next.textContent = action
+            ? `Next: ${formatOpeningTick(action.tick)} — ${action.value}${action.mode === 'percent' ? '%' : ' troops'}` : 'No future actions';
         notification.textContent = config.smart.notifications ? automation.message : '';
         smartToggle.textContent = `Smart: ${config.smart.enabled ? 'ON' : 'OFF'}`;
         smartToggle.setAttribute('aria-pressed', String(config.smart.enabled));

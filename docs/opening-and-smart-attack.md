@@ -23,20 +23,32 @@ no remote branch or Draft PR was published.
 ## Scheduler and settings
 
 `patches/automation.js` hooks native `n8()` at the start of each simulation step.
-The opening counter starts at 1 and follows simulation progress, not a wall-clock
-timer. The existing HUD displays a recurring sub-counter, but no separate opening
-turn counter was established. Presets therefore use absolute simulation ticks.
-Spawn selection does not advance the singleplayer simulation.
+The clock is now read directly from native `bi.kr()`, the same clock used by the
+balance HUD. Its bar-rendering method computes `9 - floor((nativeTick % 100) / 10)`;
+FX draws `9 - thatValue`. Thus the displayed HUD tick is
+`floor((nativeTick % 100) / 10)`, in 0–9. Opening cycles start at 1 and increment
+each 100 native simulation steps. Internally actions keep a linear HUD index
+`(cycle - 1) * 10 + tick`; the scheduler reads `floor(nativeTick / 10)` rather than
+counting callbacks. For example, Cycle 1 / Tick 7 is native step 70, not step 7.
+Cycle 2 / Tick 0 is native step 100. Spawn selection does not advance the singleplayer
+simulation. An explicit Cycle 1 / Tick 0 action is permitted at the start.
+
+The former callback counter sent early while the HUD still displayed 0. A follow-up
+fix adds Cycle and HUD Tick inputs, current/next cycle status, native-clock structural
+validation, and regression tests for the initial 0, 7, 9-to-0 rollover, repeated
+callbacks and missed ticks. Schedules saved with the old simulation-step timing are
+preserved but disabled once until reviewed and selected again (`timingVersion: hud-v1`).
+Missing or invalid native clock data cannot dispatch an opening attack.
 
 The existing new-game reset patch calls `automation.reset()`. The scheduler tracks
 consumed actions by preset ID and action ID. Only actions exactly matching the current
-tick run. Consumption precedes dispatch, even for rejected commands. A switch changes
+HUD index run. Consumption precedes dispatch, even for rejected commands. A switch changes
 the selected preset synchronously; no timers or queued scheduler callbacks survive it.
 Switching back keeps consumed IDs. OFF still advances the time cursor while disabling
 dispatch, so re-enabling cannot catch up. A new match clears the cursor and history.
 
 `OpeningSettings` plugs into the settings manager's custom element API. The editor
-validates IDs, names, finite values, positive integer troops/ticks and percentages
+validates IDs, names, finite values, positive integer troops/cycles, HUD ticks 0–9 and percentages
 in (0,100], sorting by tick when saved. New IDs prevent duplicates from sharing execution
 history. It supports create/rename/edit/delete/duplicate, enable flags and active
 selection. Main settings save validates before closing. The dedicated Apply button
