@@ -3,6 +3,8 @@ import { getSettings } from './settings.js';
 import WindowManager from './windowManager.js';
 import { createSmartAttackKeyHandler } from './smartAttackInput.js';
 import { formatOpeningTick, openingTime } from './attackPlanning.js';
+import { openingTransferUI } from './openingTransferUI.js';
+import { STRATEGIES, presetStatus, presetGroup, groupedPresets } from './openingPresets.js';
 
 const element = (tag, text, parent) => {
     const node = document.createElement(tag);
@@ -54,11 +56,16 @@ export function OpeningSettings(container) {
         body.replaceChildren();
         element('h3', 'Opening', body);
         element('p', 'Singleplayer only. Ticks match the 0–9 counter beside your troop balance. Cycle 1 starts at Tick 0; the next 0 is Cycle 2. Apply saves immediately.', body);
+        openingTransferUI(body, { automation,
+            hasPendingChanges: () => JSON.stringify(draft) !== JSON.stringify(automation.config),
+            selectedId: () => selected,
+            onImported: () => { draft = copy(automation.config); error.textContent = 'Presets imported; activation unchanged. Choose a preset explicitly to run it.'; render(); },
+            showError: message => { error.textContent = message; error.scrollIntoView({ block: 'nearest' }); } });
         check(body, 'Enable Scheduler', draft.enabled, value => draft.enabled = value);
         const picker = element('select', undefined, body);
         picker.setAttribute('aria-label', 'Opening preset');
         element('option', 'Select preset', picker).value = '';
-        draft.presets.forEach(preset => element('option', preset.name, picker).value = preset.id);
+        draft.presets.forEach(preset => element('option', `${preset.name} · ${preset.targetCycle ? `C${preset.targetCycle} · ` : ''}${presetStatus(preset)}`, picker).value = preset.id);
         picker.value = selected ?? '';
         picker.addEventListener('change', () => { selected = picker.value; render(); });
         button(body, 'New preset', () => {
@@ -67,6 +74,9 @@ export function OpeningSettings(container) {
         });
         const preset = draft.presets.find(p => p.id === selected);
         if (preset) {
+            element('p', `${presetStatus(preset)} · ${STRATEGIES[preset.strategy] ?? 'Custom'}${preset.targetCycle ? ` · Target: start of C${preset.targetCycle}` : ''}${preset.evaluationCycle ? ` · Evaluation: C${preset.evaluationCycle}` : ''}`, body);
+            if (preset.notes) element('p', preset.notes, body);
+            const edited = () => { preset.status = 'experimental_unvalidated'; };
             const name = element('input', undefined, body);
             name.setAttribute('aria-label', 'Preset name'); name.value = preset.name;
             name.addEventListener('input', () => preset.name = name.value);
@@ -86,10 +96,10 @@ export function OpeningSettings(container) {
             const rows = element('div', undefined, body);
             preset.actions.forEach(action => {
                 const row = element('div', undefined, rows); row.className = 'opening-action';
-                check(row, 'On', action.enabled, value => action.enabled = value);
+                check(row, 'On', action.enabled, value => { action.enabled = value; edited(); });
                 let cycle = Math.floor(action.tick / 10) + 1, hudTick = action.tick % 10;
                 const updateTime = () => { action.tick = Number.isSafeInteger(cycle) && cycle >= 1
-                    && Number.isInteger(hudTick) && hudTick >= 0 && hudTick <= 9 ? (cycle - 1) * 10 + hudTick : NaN; };
+                    && Number.isInteger(hudTick) && hudTick >= 0 && hudTick <= 9 ? (cycle - 1) * 10 + hudTick : NaN; edited(); };
                 readNumber(row, 'Cycle', cycle, 1, null, 1, value => { cycle = value; updateTime(); });
                 readNumber(row, 'Tick (HUD)', hudTick, 0, 9, 1, value => { hudTick = value; updateTime(); });
                 const mode = element('select', undefined, row);
@@ -97,13 +107,13 @@ export function OpeningSettings(container) {
                 element('option', 'Troops', mode).value = 'troops';
                 element('option', 'Percent', mode).value = 'percent';
                 mode.value = action.mode;
-                mode.addEventListener('change', () => { action.mode = mode.value; render(); });
-                readNumber(row, 'Value', action.value, 0.01, action.mode === 'percent' ? 100 : null,
-                    action.mode === 'percent' ? 0.01 : 1, value => action.value = value);
-                button(row, 'Delete action', () => { preset.actions = preset.actions.filter(a => a.id !== action.id); render(); });
+                mode.addEventListener('change', () => { action.mode = mode.value; edited(); render(); });
+                readNumber(row, 'Value', action.value, action.mode === 'percent' ? 0 : 0.01, action.mode === 'percent' ? 100 : null,
+                    0.01, value => { action.value = value; edited(); });
+                button(row, 'Delete action', () => { preset.actions = preset.actions.filter(a => a.id !== action.id); edited(); render(); });
             });
             button(body, 'Add action', () => {
-                preset.actions.push({ id: id(), tick: (preset.actions.at(-1)?.tick ?? 0) + 1, mode: 'percent', value: 20, enabled: true }); render();
+                preset.actions.push({ id: id(), tick: (preset.actions.at(-1)?.tick ?? 0) + 1, mode: 'percent', value: 20, enabled: true }); edited(); render();
             });
         }
         element('h3', 'Smart Attack', body);
@@ -149,23 +159,51 @@ export function initAutomationUI() {
     const notification = element('div', '', panel); notification.setAttribute('role', 'status');
     button(content, 'Edit / Settings', () => WindowManager.openWindow('settings'));
     let buttonsKey = '';
+    let selectedStrategy = '', selectedCycle = '', selectedPreset = '';
+    const renderSelectors = () => {
+        const groups = groupedPresets(automation.config.presets);
+        const saved = automation.preset();
+        if (!selectedStrategy && saved) { selectedStrategy = presetGroup(saved); selectedCycle = String(saved.targetCycle ?? 'custom'); selectedPreset = saved.id; }
+        presets.replaceChildren();
+        const off = button(presets, 'OFF', () => automation.select(null));
+        off.setAttribute('aria-pressed', String(!automation.config.enabled));
+        if (!groups.length) { element('span', 'No presets saved', presets); return; }
+        if (!groups.some(group => group.strategy === selectedStrategy)) selectedStrategy = groups[0].strategy;
+        const strategyLabel = element('label', 'Strategy ', presets), strategy = element('select', undefined, strategyLabel);
+        strategy.setAttribute('aria-label', 'Opening strategy');
+        groups.forEach(group => element('option', group.label, strategy).value = group.strategy);
+        strategy.value = selectedStrategy;
+        strategy.addEventListener('change', () => { selectedStrategy = strategy.value; selectedCycle = ''; selectedPreset = ''; renderSelectors(); });
+        const group = groups.find(item => item.strategy === selectedStrategy);
+        const cycles = [...new Set(group.presets.map(p => p.targetCycle ?? 'custom'))];
+        if (!cycles.some(cycle => String(cycle) === selectedCycle)) selectedCycle = String(cycles[0]);
+        const cycleLabel = element('label', 'End cycle ', presets), cycle = element('select', undefined, cycleLabel);
+        cycle.setAttribute('aria-label', 'Opening end cycle');
+        cycles.forEach(value => element('option', value === 'custom' ? 'Custom' : `C${value}`, cycle).value = String(value));
+        cycle.value = selectedCycle; cycleLabel.hidden = selectedStrategy === 'custom' && cycles.length === 1;
+        cycle.addEventListener('change', () => { selectedCycle = cycle.value; selectedPreset = ''; renderSelectors(); });
+        const options = group.presets.filter(p => String(p.targetCycle ?? 'custom') === selectedCycle);
+        if (!options.some(p => p.id === selectedPreset)) selectedPreset = options[0]?.id ?? '';
+        const variants = element('select', undefined, presets); variants.setAttribute('aria-label', 'Opening preset variant');
+        options.forEach(p => element('option', p.name, variants).value = p.id);
+        variants.value = selectedPreset; variants.hidden = options.length === 1 && selectedStrategy !== 'custom';
+        variants.addEventListener('change', () => { selectedPreset = variants.value; renderSelectors(); });
+        const chosen = options.find(p => p.id === selectedPreset);
+        const activate = button(presets, 'Activate', () => automation.select(selectedPreset)); activate.disabled = !chosen;
+        activate.setAttribute('aria-pressed', String(automation.config.enabled && automation.config.activeId === selectedPreset));
+        if (chosen) element('small', `${chosen.name} · ${presetStatus(chosen)}`, presets);
+    };
     const render = () => {
         const config = automation.config, preset = automation.preset();
         content.hidden = config.collapsed;
         title.textContent = config.collapsed ? `Opening: ${config.enabled ? preset?.name : 'OFF'}` : 'OPENING CONTROL';
         collapse.textContent = config.collapsed ? '+' : '−';
         collapse.setAttribute('aria-expanded', String(!config.collapsed));
-        const key = JSON.stringify([config.presets.map(p => [p.id, p.name]), config.enabled, config.activeId]);
+        const key = JSON.stringify([config.presets.map(p => [p.id, p.name, p.strategy, p.targetCycle, p.status]), config.enabled, config.activeId]);
         if (key !== buttonsKey) {
-            buttonsKey = key; presets.replaceChildren();
-            const off = button(presets, 'OFF', () => automation.select(null));
-            off.setAttribute('aria-pressed', String(!config.enabled));
-            config.presets.forEach(p => {
-                const node = button(presets, p.name, () => automation.select(p.id));
-                node.setAttribute('aria-pressed', String(config.enabled && config.activeId === p.id));
-            });
+            buttonsKey = key; renderSelectors();
         }
-        active.textContent = config.enabled ? `Active: ${preset?.name}` : 'Opening: OFF';
+        active.textContent = config.enabled ? `Active: ${preset?.name} · ${presetStatus(preset)}` : 'Opening: OFF';
         const action = config.enabled && automation.scheduler.next(preset);
         const state = automation.hooks?.snapshot();
         const time = openingTime(state?.nativeTick);

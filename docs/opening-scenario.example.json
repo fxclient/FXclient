@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "type": "territorial-opening-scenario",
+  "mode": "singleplayer",
+  "startArmy": 512,
+  "startTerritory": 84,
+  "map": { "id": "replace-with-your-test-map", "sha256": null },
+  "opponents": [],
+  "availableNeutralLand": null,
+  "gameSourceSha256": "3a5e4b6464cd25245212bee3e546b4b2e4aa38d3f1a83757a7af315d86fe7fdf",
+  "notes": "Example configured inputs, not an assertion about default starts. Supply exact map geometry/hash, opponent setup, neutral land and game options before validation.",
+  "gameOptions": { "interestIncome": "native", "territoryIncome": "native", "additionalIncome": "native", "densityCap": "native" }
+}

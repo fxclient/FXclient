@@ -25,7 +25,7 @@ test('explicit cycle 1 / tick 0 executes at the start, not again on repeated cal
 
 test('presets validate, sort and preserve IDs; reject invalid input', () => {
     assert.deepEqual(validatePresets([preset('p', [action('b', 7), action('a', 2)])])[0].actions.map(a => a.tick), [2, 7]);
-    for (const invalid of [action('a', -1), action('a', 1, 'percent', 101), action('a', 1, 'troops', -5), action('a', 1, 'troops', 1.5), action('a', 1, 'percent', NaN)])
+    for (const invalid of [action('a', -1), action('a', 1, 'percent', 101), action('a', 1, 'troops', -5), action('a', 1, 'troops', Infinity), action('a', 1, 'percent', NaN)])
         assert.throws(() => validatePresets([preset('p', [invalid])]));
     assert.throws(() => validatePresets([preset('p', []), preset('p', [])]));
     assert.throws(() => validatePresets([preset('p', [action('a', 1), action('a', 2)])]));

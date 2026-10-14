@@ -68,14 +68,20 @@ export function validatePresets(presets) {
             || typeof preset.name !== 'string' || !preset.name.trim() || !Array.isArray(preset.actions))
             throw new Error('Each preset needs a unique ID, a name and actions');
         ids.add(preset.id);
-        const actions = new Set();
-        return { id: preset.id, name: preset.name.trim(), actions: preset.actions.map(action => {
+        const actions = new Set(), importedTimes = new Set();
+        return { ...preset, id: preset.id, name: preset.name.trim(), actions: preset.actions.map(action => {
             if (!action || typeof action.id !== 'string' || !action.id || actions.has(action.id)
                 || !Number.isSafeInteger(action.tick) || action.tick < 0 || typeof action.enabled !== 'boolean'
-                || !['troops', 'percent'].includes(action.mode) || !Number.isFinite(action.value) || action.value <= 0
-                || (action.mode === 'percent' ? action.value > 100 : !Number.isSafeInteger(action.value)))
+                || !['troops', 'percent'].includes(action.mode) || !Number.isFinite(action.value)
+                || (action.mode === 'percent' ? action.value < 0 || action.value > 100 : action.value <= 0))
                 throw new Error('Actions require cycle >= 1, HUD tick 0–9, positive whole troops or a percentage in (0, 100]');
             actions.add(action.id);
+            if (preset.type === 'territorial-opening-preset') {
+                if (importedTimes.has(action.tick) || preset.targetCycle !== undefined
+                    && (!Number.isSafeInteger(preset.targetCycle) || preset.targetCycle < 1 || action.tick >= (preset.targetCycle - 1) * 10))
+                    throw new Error('Imported preset actions must be unique in time and strictly before targetCycle');
+                importedTimes.add(action.tick);
+            }
             return { ...action };
         }).sort((a, b) => a.tick - b.tick) };
     });
@@ -98,6 +104,7 @@ export class OpeningScheduler {
             this.seen.add(key); // Consume before dispatch; failures are never retried.
             const balance = state.getBalance();
             const amount = action.mode === 'percent' ? Math.floor(balance * action.value / 100) : Math.min(balance, action.value);
+            if (action.mode === 'percent' && action.value === 0) { this.log(`${formatOpeningTick(tick)}: 0%, no troops sent`); continue; }
             const plan = planSend(balance, amount);
             const result = plan && send(plan, state.neutralId);
             this.log(`${formatOpeningTick(tick)}: ${result ? `sending ${plan.troops} troops${action.mode === 'percent' ? ` (${action.value}%)` : ''}` : 'skipped, attack unavailable or insufficient troops'}`);

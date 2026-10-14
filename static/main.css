@@ -36,6 +36,11 @@
 	overflow-wrap: anywhere;
 }
 #openingControl button[aria-pressed="true"] { background: #245884; border-color: white; }
+#openingControl select { max-width: 100%; min-width: 0; background: #101820; color: white; border: 1px solid #aaa; padding: 4px; }
+#openingControl small { width: 100%; overflow-wrap: anywhere; }
+.opening-transfer { display: flex; flex-wrap: wrap; gap: 6px; }
+.opening-import-preview { border-left: 3px solid #78b5dd; margin: 8px 0; padding-left: 10px; }
+.opening-import-list { max-height: 12em; overflow: auto; }
 .automation-editor label { display: inline-block; margin: 5px; }
 .automation-editor input[type="number"] { width: 7em; }
 .automation-editor input[type="checkbox"] { appearance: auto; position: static; opacity: 1; width: auto; height: auto; }

@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
+    "evaluate-openings": "node scripts/evaluate-openings.js",
     "start": "node scripts/serve.js",
     "build": "node index.js",
     "build-only": "node build.js",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/fxclient/FXclient#readme",
   "dependencies": {
     "core-js": "^3.44.0",
+    "fflate": "^0.8.3",
     "js-beautify": "^1.14.11",
     "obscenity": "^0.4.6",
     "uglify-js": "^3.19.2"

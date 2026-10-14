@@ -74,8 +74,10 @@ checkbox. Actions are validated and sorted when saved. Choose an active preset a
 enable Scheduler, then click **Apply Opening / Smart Attack** to save without reloading.
 The main **Save Settings** button also saves these settings and reloads as usual.
 
-Each saved preset appears as a panel button. Selecting it enables its remaining
-schedule; **OFF** cancels future automatic actions immediately. The tick is the number
+Opening Control uses compact **Strategy**, **End cycle** and **Activate** controls.
+Custom presets have a separate selection, and duplicate strategy/horizon variants
+remain individually selectable. Only **Activate** enables a selected schedule;
+**OFF** cancels future automatic actions immediately. The tick is the number
 beside your troop balance: Cycle 1 / Tick 7 waits for the first displayed 7,
 Cycle 2 / Tick 0 waits for the next rollover to 0. The panel shows current and next
 cycle/tick. Old simulation-step presets are preserved but disabled once after this
@@ -84,6 +86,30 @@ game never catches up elapsed ticks or repeats a consumed action. A new game res
 execution history. The panel shows the active preset and next tick and can collapse
 with **−**. Presets, selection and collapse state persist in `localStorage.fx_automation`.
 This separate key is not included in the existing FX settings JSON export/reset.
+
+### Portable presets and the C2–C8 experimental pack
+
+In Opening settings choose **Import Presets** for a local `.json` or `.zip`, or
+**Load experimental pack (35)** for the included Army, Expansion, Economy, Balanced
+and Long-term presets at C2–C8. Review the counts and conflict policy before clicking
+**Import reviewed presets**. Skip is the default; Rename keeps both; Replace requires
+an explicit choice. Import never activates a new preset. Replacing the active preset
+turns its Scheduler OFF; importing other presets preserves your existing selection.
+Apply pending edits before importing. **Export Selected Preset** downloads one JSON;
+**Export Presets** downloads a self-contained JSON collection for another browser.
+These controls are separate from the general FX settings Import/Export.
+
+The portable schema uses cycle 1-based and `tickInCycle` 1–10; the current game HUD
+shows 0–9, so **file tick 1 → HUD 0**, **file tick 10 → HUD 9**. Native time is
+`((cycle - 1) * 10 + tickInCycle - 1) * 10`. The preview explains this mapping.
+Target C6 means the start of cycle 6: actions must end in cycle 5 or earlier.
+
+All 35 supplied sequences are **Experimental**, not proven optima. The original ZIP,
+its source-version warning and all preset metadata are preserved. Imported validated
+claims are displayed as such and are not locally verified. `npm run evaluate-openings`
+prepares scenario-specific requests and an unvalidated report in
+`build/opening-evaluation-report.json`; it does not run an exact simulator or optimizer.
+See [import, security and offline evaluation notes](docs/opening-presets.md).
 
 Under **Smart Attack**, enable the feature and set its hotkey (default **.**), maximum
 debit (1–50%), safety multiplier (default 1.10) and panel notifications. One press

@@ -47,8 +47,9 @@ export class Automation {
     }
     changed() { this.listeners.forEach(callback => callback()); }
     update(config) {
-        this.config = validateConfig(config);
-        this.save(this.config);
+        const next = validateConfig(config);
+        this.save(next); // Storage failure must leave the in-memory config untouched.
+        this.config = next;
         this.changed();
     }
     select(id) {
@@ -100,6 +101,6 @@ try {
 } catch (error) { console.warn('[Automation] Invalid saved settings; disabled:', error.message); }
 const automation = new Automation(config, value => {
     try { localStorage.setItem('fx_automation', JSON.stringify(value)); }
-    catch (error) { console.warn('[Automation] Could not save settings:', error.message); }
+    catch (error) { throw new Error('[Automation] Could not save settings: ' + error.message); }
 });
 export default automation;

@@ -17,8 +17,8 @@ patches and rebuilds the bundle. A changed native interface stops the build with
 Automated tests and repeated full patch/bundle builds passed. Local HTTP serving
 was checked. Live browser verification was blocked by Computer Use: URL policy
 enforcement is unsupported for the installed Yandex browser. No visual or live
-gameplay success is claimed. No multiplayer game was entered. Changes remain local;
-no remote branch or Draft PR was published.
+gameplay success is claimed. No multiplayer game was entered. See
+[preset import and evaluation notes](opening-presets.md) for the later collection work.
 
 ## Scheduler and settings
 
@@ -56,7 +56,8 @@ persists without reload. Buttons use `textContent`, including user-provided name
 
 `Opening Control` lives inside the existing window container and uses the FX font,
 dark background and bordered buttons. It is visible before play, has one button per
-preset, aria-pressed selection, OFF, next-action status and persisted collapse state.
+preset in compact strategy/horizon selectors, explicit Activate, OFF, next-action
+status and persisted collapse state.
 Its size is bounded with scrolling for large collections. Its placement still needs
 visual checking against the game's controls on the user's viewport.
 

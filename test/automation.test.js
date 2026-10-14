@@ -106,3 +106,10 @@ test('old simulation-step presets are preserved but disarmed until reviewed', ()
     assert.equal(migrated.timingVersion, 'hud-v1');
     assert.equal(validateConfig({ ...migrated, enabled: true }).enabled, true);
 });
+
+test('storage failure leaves the saved and in-memory preset collection unchanged', () => {
+    const config = { ...defaultConfig(), presets: [p] };
+    const a = new Automation(config, () => { throw new Error('QuotaExceeded'); }, () => {});
+    assert.throws(() => a.update({ ...a.config, presets: [] }), /QuotaExceeded/);
+    assert.deepEqual(a.config.presets, config.presets);
+});
