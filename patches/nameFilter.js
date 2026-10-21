@@ -24,10 +24,11 @@ export default definePatch(({ replaceCode }) => {
         for (i = 0; i < humanCount; i++) { displayNames[i] = rawNames[i] = __fx.nameFilter.filter(playerNamesData[i]); }
     }`)
 
-    replaceCode(`lobbyPlayers.createEntry = function (playerId, playerUsername, rankValue, levelValue, badgeValue, eloValue, colorValue, goldValue, ipHashValue) {
+    replaceCode(`lobbyPlayers.createEntry = function (playerId, playerUsername, rankValue, levelValue, badgeValue, eloValue, colorValue, goldValue, ipHashValue, nameCode) {
         return {
             playerId: playerId,
-            playerUsername: playerUsername,
+            playerUsername: nameCode ? playerUsername : "Player " + utils.base64.encode(playerId, 2),
+            rawUsername: playerUsername,
             rankValue: rankValue,
             levelValue: levelValue,
             badgeValue: badgeValue,
@@ -36,10 +37,11 @@ export default definePatch(({ replaceCode }) => {
             goldValue: goldValue,
             ipHashValue: ipHashValue
         };
-    }`, `lobbyPlayers.createEntry = function (playerId, playerUsername, rankValue, levelValue, badgeValue, eloValue, colorValue, goldValue, ipHashValue) {
+    }`, `lobbyPlayers.createEntry = function (playerId, playerUsername, rankValue, levelValue, badgeValue, eloValue, colorValue, goldValue, ipHashValue, nameCode) {
         return {
             playerId: playerId,
-            playerUsername: __fx.nameFilter.filter(playerUsername),
+            playerUsername: nameCode ? __fx.nameFilter.filter(playerUsername) : "Player " + utils.base64.encode(playerId, 2),
+            rawUsername: __fx.nameFilter.filter(playerUsername),
             rankValue: rankValue,
             levelValue: levelValue,
             badgeValue: badgeValue,
