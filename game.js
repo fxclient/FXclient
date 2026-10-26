@@ -6276,9 +6276,9 @@ function fK() {
 		be.length && (aGb = be.split(";"))
 	}, this.get = function() {
 		return aGb
-	}, __fx.followedAccounts.setSource(this.get), this.aGc = function() {
+	}, this.aGc = function() {
 		return {
-			ot: __fx.followedAccounts.decorate(aGb),
+			ot: aGb,
 			value: 0
 		}
 	}, this.qz = function(hT) {
@@ -8918,13 +8918,17 @@ function aIB(data) {
 			}).button])), f2
 		}()), data.aQQ || (ey.push(function() {
 			var f2 = new f3,
-				f8 = (f2.f4(L(31)), new f6(ep.buffer.data[106]));
-			return f8.cc.readOnly = !0, f8.cc.type = "password", f2.f5(f8), f2.f5(new f9([new eG(L(32), function(cc) {
-				return cc.textContent === L(32) ? (cc.textContent = L(33), f8.cc.type = "text") : (cc.textContent = L(32), f8.cc.type = "password"), !0
-			}).button, new eG(L(333), function(cc) {
-				return aa.ab.aQl(f8.cc), aa.ab.xO(cc), !0
-			}).button])), f2.f5(new f9([new eG(L(335), function() {
-				dx.ej(8, dx.jg().el, new ex(15))
+				f8 = (f2.f4(L(31)), new f6(ep.buffer.data[106])),
+				customPasswordInput = (f8.cc.readOnly = !0, f8.cc.type = "password", f2.f5(f8), f2.f5(new f9([new eG(L(32), function(cc) {
+					return cc.textContent === L(32) ? (cc.textContent = L(33), f8.cc.type = "text") : (cc.textContent = L(32), f8.cc.type = "password"), !0
+				}).button, new eG(L(333), function(cc) {
+					return aa.ab.aQl(f8.cc), aa.ab.xO(cc), !0
+				}).button])), new f6({
+					value: "",
+					f7: -1
+				}));
+			return customPasswordInput.cc.placeholder = "Custom new password (optional)", f2.f5(customPasswordInput), f2.f5(new f9([new eG(L(335), function() {
+				__fx.passwordReset.setCustomPassword(customPasswordInput.cc.value) && dx.ej(8, dx.jg().el, new ex(15))
 			}).button])), f2.f4(L(34), "0.8em"), f2.fA(L(336)), f2.fA(L(337)), f2.fA(L(338)), f2
 		}()), ey.push(function() {
 			var f2 = new f3;
@@ -8953,7 +8957,11 @@ function aIB(data) {
 					for (var ai = f7; ai < vy.r5.length; ai++) vy.r5[ai].name = "" + ai;
 					ep.fH.aEd(f7), f7 = ep.buffer.data[117].value, vy.r5[f7].textContent = vy.r5[f7].textContent.replace("⚪", "🟢"), aQo(f7)
 				}
-			}, v.iN, 1)], vy = new r2(ep.buffer.data[117], aQo), aQo(0), vy.r5[0].style.marginTop = "0.5em", f2.vx(vy), f2.f5(new f9([aQn[0].button])), f2.f5(new f9([aQn[1].button])), f2
+			}, v.iN, 1)], vy = new r2(ep.buffer.data[117], aQo), __fx.savedAccounts.decorate(vy.r5, ep.buffer.data[117].ot), aQo(0), vy.r5[0].style.marginTop = "0.5em", f2.vx(vy), f2.f5(new f9([aQn[0].button])), f2.f5(new f9([
+				new eG("✏️ Edit Label", function() {
+					__fx.savedAccounts.edit(ep.buffer.data[117].value)
+				}).button
+			])), f2.f5(new f9([aQn[1].button])), f2
 		}()));
 		return ey.push(function() {
 				var aQr, f2 = new f3;
@@ -9055,9 +9063,11 @@ function aIB(data) {
 					ep.fJ.aGf(f7), vy.r5[f7].remove(), vy.r5.splice(f7, 1);
 					for (var ai = f7; ai < vy.r5.length; ai++) vy.r5[ai].name = "" + ai;
 					ep.fJ.get().length && (f7 = Math.max(f7 - 1, 0), vy.r5[f7].textContent = vy.r5[f7].textContent.replace("⚪", "🟢")), aQo()
-				}, v.iN, 1)], aQo(), (vy = new r2(ep.fJ.aGc(), function(ai) {
+				}, v.iN, 1)], aQo(), vy = new r2(ep.fJ.aGc(), function(ai) {
 					f7 = ai, aQo()
-				})).r5[0].style.marginTop = "0.5em", f2.vx(vy), f2.f5(new f9([aQn[0].button])), f2.f5(new f9([aQn[1].button])), ey.push(f2))
+				}), __fx.followedAccounts.decorate(vy.r5, ep.fJ.get()), vy.r5[0].style.marginTop = "0.5em", f2.vx(vy), f2.f5(new f9([aQn[0].button])), f2.f5(new f9([new eG("✏️ Edit Nickname", function() {
+					__fx.followedAccounts.edit(f7)
+				}).button])), f2.f5(new f9([aQn[1].button])), ey.push(f2))
 			}(ey), aQR(ey, 0), ey
 	}())
 }
@@ -9739,7 +9749,8 @@ function ex(id, un, aUd) {
 	}
 
 	function aUh() {
-		jX.kX(90), jX.mD(30, Math.floor(q.pow(30) * Math.random())), jX.mD(30, Math.floor(q.pow(30) * Math.random())), jX.mD(30, Math.floor(q.pow(30) * Math.random())), jW.b(jX.lf), ep.eq.er(110, hS.et.aA8(hS.et.aA9(15))), jZ.mn.aO2()
+		jX.kX(90), jX.mD(30, Math.floor(q.pow(30) * Math.random())), jX.mD(30, Math.floor(q.pow(30) * Math.random())), jX.mD(30, Math.floor(q.pow(30) * Math.random())), jW.b(jX.lf), ep.eq.er(110, __fx.passwordReset.getCustomPassword() || hS.et.aA8(hS
+			.et.aA9(15))), jZ.mn.aO2()
 	}
 	this.aUe = !0, this.aUf = id, this.show = function() {
 		eh.show(), this.resize(), 15 === id ? (jZ.fH.aUg(id) ? aUh : aUi)() : 16 === id ? jZ.fH.aUg(id) ? jZ.rs.vV(2) : aUi() : 17 === id ? jZ.fH.aUg(id) ? jZ.rs.vV(3) : aUi() : 18 === id ? (jZ.fH.close(0, 3253), jZ.fH.tP(0, id, 0), aUi()) :
