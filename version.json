@@ -1,8 +1,12 @@
 {
-    "version": "0.6.30",
-    "lastUpdated": "October 12",
+    "version": "0.6.31",
+    "lastUpdated": "October 26",
     "changes": [
-        "Custom lobbies have been updated to work in the latest version"
+        "Merged pull request #39 by antimmdev, implementing the following changes:",
+        "Add Saved Account Labels",
+        "Add Custom Password Support",
+        "Reorganize Settings Page",
+        "Improve Followed Nickname Management"
     ],
     "isSignificant": true
 }

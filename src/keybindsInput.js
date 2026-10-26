@@ -3,7 +3,9 @@ const truncate = n => parseFloat(n.toFixed(12));
 export function KeybindsInput(/** @type {HTMLElement} */ containerElement) {
 
     const header = document.createElement("p");
-    header.innerText = "Attack Percentage Keybinds";
+    const heading = document.createElement("b");
+    heading.innerText = "Attack Percentage Keybinds";
+    header.append(heading);
     const keybindContainer = document.createElement("div");
     keybindContainer.className = "arrayinput";
     const keybindAddButton = document.createElement("button");

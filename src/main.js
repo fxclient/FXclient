@@ -19,6 +19,8 @@ import lobbyReminders from './lobbyReminders.js';
 import pingFilter from './pingFilter.js';
 import nameFilter from './nameFilter.js';
 import followedAccounts from './followedAccounts.js';
+import passwordReset from './passwordReset.js';
+import savedAccounts from './savedAccounts.js';
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
@@ -51,5 +53,7 @@ __fx.lobbyReminders = lobbyReminders;
 __fx.pingFilter = pingFilter;
 __fx.nameFilter = nameFilter;
 __fx.followedAccounts = followedAccounts;
+__fx.passwordReset = passwordReset;
+__fx.savedAccounts = savedAccounts;
 
 console.log('Successfully loaded FX Client');

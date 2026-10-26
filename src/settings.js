@@ -5,7 +5,6 @@ import versionData from '../version.json';
 import { displayChangelog } from './changelog.js';
 import replayHistory from './replayHistory.js'
 import { LobbyReminderRulesInput } from './lobbyReminderRulesInput.js';
-import { FollowedAccountNicknames } from './followedAccounts.js';
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
@@ -44,7 +43,9 @@ var settings = {
   mutePingLanguage: false,
   mutePingDirect: false,
   hideInappropriateNames: false,
-  followedAccountNicknames: {}
+  followedAccountNicknames: {},
+  followedAccountColors: {},
+  savedAccountLabels: {}
 };
 __fx.settings = settings;
 const discontinuedSettings = ["hideAllLinks", "fontName"];
@@ -265,10 +266,12 @@ function StartingPercentageInput(container) {
   input.step = "0.1";
   input.placeholder = "50";
   inputRow.append("Percentage (%): ", input);
-  container.append(inputRow, document.createElement("br"));
+  const spacer = document.createElement("br");
+  container.append(inputRow, spacer);
 
   function updateVisibility() {
     inputRow.style.display = checkbox.checked ? "block" : "none";
+    spacer.style.display = checkbox.checked ? "" : "none";
   }
   checkbox.addEventListener("change", () => {
     if (checkbox.checked && input.value.trim() === "") input.value = "50";
@@ -289,10 +292,9 @@ function StartingPercentageInput(container) {
 
 function SectionHeader(text) {
   return function (container) {
-    const title = document.createElement("p");
-    const heading = document.createElement("b");
-    heading.innerText = text;
-    title.append(heading);
+    const title = document.createElement("h2");
+    title.className = "settings-section-title";
+    title.innerText = text;
     container.append(title);
   };
 }
@@ -322,6 +324,12 @@ function MutePingSection(container) {
     { key: "mutePingLanguage", label: "Mute language pings (@en, @de, ...)" },
     { key: "mutePingDirect", label: "Mute pings of your username" }
   ];
+
+  const header = document.createElement("p");
+  const heading = document.createElement("b");
+  heading.innerText = "Muted lobby pings";
+  header.append(heading);
+  container.append(header);
 
   const master = createCheckboxRow("Mute all pings");
   container.append(master.label, document.createElement("br"));
@@ -424,6 +432,28 @@ function ReplayHistoryList(container) {
 
 const settingsManager = new (function () {
   const settingsStructure = [
+    SectionHeader("General"),
+    {
+      for: "useFullscreenMode",
+      type: "checkbox",
+      label: "Use fullscreen mode",
+      note: "Note: fullscreen mode will trigger after you click anywhere on the page due to browser policy restrictions.",
+    },
+    {
+      for: "customBackgroundUrl",
+      type: "textInput",
+      label: "Custom main menu background:",
+      placeholder: "Enter an image URL here",
+      tooltip:
+        "A custom image to be shown as the main menu background instead of the currently selected map.",
+    },
+    {
+      for: "hidePropagandaPopup",
+      type: "checkbox",
+      label: "Hide propaganda popup"
+    },
+    //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
+    SectionHeader("In-game display"),
     {
       for: "displayWinCounter",
       type: "checkbox",
@@ -441,20 +471,29 @@ const settingsManager = new (function () {
       label: "Display tick number near the balance",
     },
     {
-      for: "useFullscreenMode",
-      type: "checkbox",
-      label: "Use fullscreen mode",
-      note: "Note: fullscreen mode will trigger after you click anywhere on the page due to browser policy restrictions.",
-    },
-    {
       for: "hoveringTooltip",
       type: "checkbox",
       label: "Hovering tooltip",
       note: "Display map territory info constantly (on mouse hover) instead of only when right clicking on the map",
     },
-    //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
-    { for: "realisticNames", type: "checkbox", label: "Realistic Bot Names" },
-    CustomQuickEmojis,
+    {
+      for: "highlightClanSpawns",
+      type: "checkbox",
+      label: "Highlight clan spawnpoints",
+      note: "Increases the spawnpoint glow size for members of your clan",
+    },
+    {
+      for: "detailedTeamPercentage", type: "checkbox",
+      label: "Detailed team pie chart percentage",
+      note: "For example: this would show 25.82% instead of 26% on the pie chart in team games"
+    },
+    {
+      for: "openDonationHistoryFromLb",
+      type: "checkbox",
+      label: "Open donation history from the leaderboard",
+      note: "Changes whether or not clicking on a player's name in the in-game leaderboard in team games will open their donation history",
+    },
+    SectionHeader("Density"),
     {
       for: "showPlayerDensity",
       type: "checkbox",
@@ -479,68 +518,41 @@ const settingsManager = new (function () {
         },
       ],
     },
+    SectionHeader("Names"),
+    { for: "realisticNames", type: "checkbox", label: "Realistic Bot Names" },
     { for: "hideBotNames", type: "checkbox", label: "Hide bot names" },
-    {
-      for: "highlightClanSpawns",
-      type: "checkbox",
-      label: "Highlight clan spawnpoints",
-      note: "Increases the spawnpoint glow size for members of your clan",
-    },
-    {
-      for: "highlightDuplicateIps",
-      type: "checkbox",
-      label: "Duplicate IP highlighting",
-      note: "Highlights players in the lobby's team list who share the same IP hash (the same one shown when hovering over a player's name). Each group of matching IPs gets its own color, so distinct duplicates are easy to tell apart at a glance.",
-    },
-    {
-      for: "hidePropagandaPopup",
-      type: "checkbox",
-      label: "Hide propaganda popup"
-    },
-    {
-      for: "detailedTeamPercentage", type: "checkbox",
-      label: "Detailed team pie chart percentage",
-      note: "For example: this would show 25.82% instead of 26% on the pie chart in team games"
-    },
-    {
-      for: "openDonationHistoryFromLb",
-      type: "checkbox",
-      label: "Open donation history from the leaderboard",
-      note: "Changes whether or not clicking on a player's name in the in-game leaderboard in team games will open their donation history",
-    },
-    {
-      for: "customBackgroundUrl",
-      type: "textInput",
-      label: "Custom main menu background:",
-      placeholder: "Enter an image URL here",
-      tooltip:
-        "A custom image to be shown as the main menu background instead of the currently selected map.",
-    },
-    KeybindsInput,
-    {
-      for: "keybindButtons", type: "checkbox",
-      label: "Keybind buttons", note: "Show keybind buttons above the troop selector (max 6)"
-    },
-    StartingPercentageInput,
-    {
-      for: "showReplayTimebar",
-      type: "checkbox",
-      label: "Replay timebar",
-      note: "Show a seek bar when watching replays, allowing you to skip to any point of the replay. Seeking backward re-simulates the replay from the start, which can take a few seconds.",
-    },
-    SectionHeader("Lobby game reminders"),
-    LobbyReminderRulesInput,
-    SectionHeader("Muted lobby pings"),
-    MutePingSection,
-    SectionHeader("Other"),
     {
       for: "hideInappropriateNames",
       type: "checkbox",
       label: "Inappropriate name hider",
       note: "Replaces player names that contain common offensive or inappropriate words with \"Hidden Name\".",
     },
-    FollowedAccountNicknames,
+    SectionHeader("Controls"),
+    KeybindsInput,
+    {
+      for: "keybindButtons", type: "checkbox",
+      label: "Keybind buttons", note: "Show keybind buttons above the troop selector (max 6)"
+    },
+    StartingPercentageInput,
+    CustomQuickEmojis,
+    SectionHeader("Lobby"),
+    {
+      for: "highlightDuplicateIps",
+      type: "checkbox",
+      label: "Duplicate IP highlighting",
+      note: "Highlights players in the lobby's team list who share the same IP hash (the same one shown when hovering over a player's name). Each group of matching IPs gets its own color, so distinct duplicates are easy to tell apart at a glance.",
+    },
+    LobbyReminderRulesInput,
+    MutePingSection,
+    SectionHeader("Replays"),
+    {
+      for: "showReplayTimebar",
+      type: "checkbox",
+      label: "Replay timebar",
+      note: "Show a seek bar when watching replays, allowing you to skip to any point of the replay. Seeking backward re-simulates the replay from the start, which can take a few seconds.",
+    },
     ReplayHistoryList,
+    SectionHeader("About"),
     function Footer(container) {
       const versionInfo = document.createElement("p");
       versionInfo.innerText = `FX Client v${versionData.version}`;
@@ -750,4 +762,7 @@ settingsManager.applySettings();
 export default settingsManager;
 export function getSettings() {
   return settings;
+}
+export function saveSettings() {
+  localStorage.setItem("fx_settings", JSON.stringify(settings));
 }
