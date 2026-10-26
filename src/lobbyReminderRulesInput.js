@@ -2,7 +2,9 @@ import { gameOptions, mapOptions, contestOptions, refreshMapOptions, ANY, NONE }
 
 export function LobbyReminderRulesInput(containerElement) {
     const header = document.createElement("p");
-    header.innerText = "Reminder rules";
+    const heading = document.createElement("b");
+    heading.innerText = "Reminder rules";
+    header.append(heading);
     const note = document.createElement("small");
     note.innerText = "You'll get a notification in lobby whenever a game matching one of these rules is about to start.";
     containerElement.append(header, note, document.createElement("br"));

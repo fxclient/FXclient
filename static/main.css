@@ -59,6 +59,19 @@
 	margin: 0px;
 }
 
+.settings-section-title {
+	font-size     : 1.2em;
+	margin        : 1.2em 0 0.6em;
+	padding-bottom: 0.2em;
+	border-bottom : 1px solid rgba(255, 255, 255, 0.5);
+}
+.settings .scrollable > :first-child > .settings-section-title {
+	margin-top: 0;
+}
+.window.settings small {
+	opacity: 0.75;
+}
+
 .keybinds-input {
 	margin-bottom: 1em;
 }
@@ -81,17 +94,6 @@
 }
 .reminder-rule-row button {
 	flex: 0 0 auto;
-}
-
-.nickname-row {
-	display    : flex;
-	gap        : 6px;
-	align-items: center;
-}
-.nickname-row .nickname-account {
-	flex          : 1;
-	min-width     : 0;
-	overflow-wrap : anywhere;
 }
 
 .flex {
