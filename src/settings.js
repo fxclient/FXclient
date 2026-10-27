@@ -23,6 +23,7 @@ var settings = {
   hideBotNames: false,
   highlightClanSpawns: false,
   highlightDuplicateIps: false,
+  highlightSameClan: false,
   detailedTeamPercentage: false,
   openDonationHistoryFromLb: true,
   //"customMapFileBtn": true
@@ -50,6 +51,19 @@ var settings = {
 __fx.settings = settings;
 const discontinuedSettings = ["hideAllLinks", "fontName"];
 __fx.makeMainMenuTransparent = false;
+
+async function clearCacheAndReload() {
+  if (!confirm("Clear the cached client files and reload the page?")) return;
+  if ("serviceWorker" in navigator) {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    await Promise.all(registrations.map(registration => registration.unregister()));
+  }
+  if ("caches" in window) {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(key => caches.delete(key)));
+  }
+  window.location.reload();
+}
 
 // https://stackoverflow.com/a/34156339
 function saveFile(content, fileName, contentType) {
@@ -542,6 +556,12 @@ const settingsManager = new (function () {
       label: "Duplicate IP highlighting",
       note: "Highlights players in the lobby's team list who share the same IP hash (the same one shown when hovering over a player's name). Each group of matching IPs gets its own color, so distinct duplicates are easy to tell apart at a glance.",
     },
+    {
+      for: "highlightSameClan",
+      type: "checkbox",
+      label: "Same clan highlighting",
+      note: "Highlights you and every player in the lobby's team list who has the same clan tag as you in red. When duplicate IP highlighting is also on players matching both get a red outline around their IP color.",
+    },
     LobbyReminderRulesInput,
     MutePingSection,
     SectionHeader("Replays"),
@@ -562,7 +582,10 @@ const settingsManager = new (function () {
       const changelogButton = document.createElement("button");
       changelogButton.innerText = "Changelog";
       changelogButton.addEventListener("click", displayChangelog);
-      container.append(versionInfo, links, changelogButton);
+      const clearCacheButton = document.createElement("button");
+      clearCacheButton.innerText = "Clear cache";
+      clearCacheButton.addEventListener("click", clearCacheAndReload);
+      container.append(versionInfo, links, changelogButton, " ", clearCacheButton);
     }
   ];
   const settingsContainer = document.querySelector(".settings .scrollable");
