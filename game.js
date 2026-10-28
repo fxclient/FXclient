@@ -3253,7 +3253,7 @@ function a21() {
 	}, this.a2G = function(hB, rn, rw) {
 		hB = bK.dl.a2H(hB, 1, 1e6);
 		rn = L(57, [rn]);
-		return (rn += "<br>") + L(58, [rw]) + "<br>" + L(59, [hB + "–" + (hB + 2)]) + "<br>" + L(60, [hB])
+		return (rn += "<br>") + L(58, [__fx.utils.escapeHtml("" + rw)]) + "<br>" + L(59, [hB + "–" + (hB + 2)]) + "<br>" + L(60, [hB])
 	}
 }
 
@@ -6042,11 +6042,11 @@ function aGc() {
 		if (! function() {
 				var value = aGe("account");
 				if (!value && !(value = aGe("a"))) return void aGf.clear();
-				return aGf.clear(), h.gQ(8, h.l2, new l3(1e3, {
+				return (value = __fx.utils.parseAccountId(value)) ? (aGf.clear(), h.gQ(8, h.l2, new l3(1e3, {
 					action: 0,
 					bC: value,
 					qA: 0
-				})), 1
+				})), !0) : (aGf.clear(), !1)
 			}()) {
 			var value = aGe("replay");
 			if (!this.clear()) return !1;
@@ -9497,6 +9497,8 @@ function sP(sB) {
 				au.style.cursor = "pointer", au.style.margin = "0.2em 0.2em 0.2em 0.2em", au.style.width = au.style.maxWidth = 2 === aTu ? "10em" : "9em", au.style.height = au.style.maxHeight = "1.4em", au.style.whiteSpace = "nowrap", au.style
 					.overflow = "hidden", au.style.textOverflow = "ellipsis", au.style.font = "inherit", au.style.display = "inline-block", __fx.settings.highlightDuplicateIps && (aTw = __fx.utils.getDuplicateIpHighlightColor(aX, an.bG.aCG[aTu],
 						"aRg")) && (au.style.backgroundColor = aTw, au.style.borderRadius = "0.3em");
+				__fx.settings.highlightSameClan && (aTu = __fx.utils.getSameClanHighlightColor(aX, an.be, "username")) && (au.style.backgroundColor ? au.style.boxShadow = "inset 0 0 0 2px " + aTu : au.style.backgroundColor = aTu, au.style
+					.borderRadius = "0.3em");
 				an.ao.ax(aX) && (au.style.textDecoration = "underline"), aX.ay && (au.style.textDecorationLine = "underline", au.style.textDecorationStyle = "dotted");
 				au.onclick = function(k) {
 					sB(k, aX)
