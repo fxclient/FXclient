@@ -67,6 +67,35 @@ export default definePatch(({ insertCode, modifyCode, replaceCode }) => {
     cell.textContent = rows[rowIndex][columnIndex].content;`
   )
 
+  replaceCode(
+    `d0 = a.b.c(d0, 1, 1000000);
+    var rW = __L([tQ]);
+    rW += "<br>";
+    rW += __L([lp]);`,
+
+    `d0 = a.b.c(d0, 1, 1000000);
+    var rW = __L([tQ]);
+    rW += "<br>";
+    rW += __L([__fx.utils.escapeHtml("" + lp)]);`
+  )
+
+  insertCode(
+    `var value = getParam("account");
+    if (!value) {
+      value = getParam("a");
+      if (!value) {
+        b.clear();
+        return false;
+      }
+    } /* here */
+    b.clear();`,
+    `value = __fx.utils.parseAccountId(value);
+    if (!value) {
+      b.clear();
+      return false;
+    }`
+  )
+
   // for the custom lobby version
   try {
     modifyCode(`new a("⚔️<br>" + __L(), function() {

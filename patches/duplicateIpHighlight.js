@@ -5,12 +5,16 @@ export default definePatch(({ replaceRawCode, matchRawCode }) => {
         `var frag=document.createDocumentFragment();var idx=container.firstIndexHolder.firstIndexProp[0];var group=container.grouping.teamsArray[idx];var perGroupCount=container.grouping.perGroupCountProp[idx];for(var g=0;g<group.length;g++){handler(frag,group[g],g<perGroupCount,idx)}`
     );
 
-    const { ipField } = matchRawCode(
+    const { ipField, username } = matchRawCode(
         `text=entry.username;text+="   "+container2.ecObj.formatOne(entry.ef,entry.a4k,entry.aG1);text+=formatTwo(entry);text+="   IP: "+hasher.hqObj.maskFn(entry.ipField,2);text+="   "+["🟥 Offline","🟩 Online"][flag?state:checkOnline(entry,arg)];return text}`
     );
 
     const { roomIndex } = matchRawCode(
         `function handler(frag,entry,isOnline,roomIndex){var row=document.createElement("span");row.textContent=(isOnline?"🟢 ":"⚪ ")+container3.lb2.formatFn(entry,roomIndex);`
+    );
+
+    const { ownEntry } = matchRawCode(
+        `this.isSelf=function(entry){if(!state.ownEntry){return false}return entry.idField===state.ownEntry.idField};`
     );
 
     replaceRawCode(
@@ -20,7 +24,15 @@ export default definePatch(({ replaceRawCode, matchRawCode }) => {
             var __fxDupColor = __fx.utils.getDuplicateIpHighlightColor(qu, bq.uT.uU[roomIndex], "ipField");
             if (__fxDupColor) { s0.style.backgroundColor = __fxDupColor; s0.style.borderRadius = "0.3em"; }
         }
+        if (__fx.settings.highlightSameClan) {
+            var __fxClanColor = __fx.utils.getSameClanHighlightColor(qu, bq.ownEntry, "username");
+            if (__fxClanColor) {
+                if (s0.style.backgroundColor) s0.style.boxShadow = "inset 0 0 0 2px " + __fxClanColor;
+                else s0.style.backgroundColor = __fxClanColor;
+                s0.style.borderRadius = "0.3em";
+            }
+        }
         bq.lJ.ub(qu)&&(s0.style.textDecoration="underline");`,
-        { uT: grouping, uU: teamsArray, ipField, roomIndex }
+        { uT: grouping, uU: teamsArray, ipField, username, roomIndex, ownEntry }
     );
 });
