@@ -127,11 +127,28 @@
         </select>
       </div>
     </div>
-    <div class="window scrollable selectable" id="playerlist" style="display: none;">
-      <h1>Player List</h1>
-      <table>
-        <tbody id="playerlist_content"></tbody>
-      </table>
+    <div class="window flex-column selectable player-list-window" id="playerlist" style="display: none;">
+      <div class="playerlist-toolbar">
+        <div class="playerlist-title">
+          <h1>Player List</h1>
+          <span id="playerlist_summary" class="playerlist-summary"></span>
+        </div>
+        <div class="playerlist-controls">
+          <input id="playerlist_search" type="search" placeholder="Search players..." aria-label="Search players">
+          <select id="playerlist_sort" aria-label="Sort players">
+            <option value="number">Join order</option>
+            <option value="name">Name</option>
+          </select>
+        </div>
+      </div>
+      <div class="playerlist-table-wrapper">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Player</th><th>Type</th></tr>
+          </thead>
+          <tbody id="playerlist_content"></tbody>
+        </table>
+      </div>
     </div>
     <div class="window scrollable selectable" id="donationhistory" style="display:none">
       <h1>Donation history for </h1>
@@ -148,6 +165,7 @@
   </span>
   <script src="variables.js?buildTimestamp"></script>
   <script src="fx.bundle.js?buildTimestamp"></script>
+  <script src="lobbyEnhancements.js?buildTimestamp"></script>
   <script src="game.js?buildTimestamp"></script>
 </body>
 
