@@ -9,6 +9,16 @@
       && element.textContent.trim().length > 1;
   }
 
+  function isFollowedPlayer(row) {
+    const accountName = row.dataset.fxAccountName;
+    const isUnderlined = getComputedStyle(row).textDecorationLine.includes("underline");
+    return row.dataset.fxFollowed === "true"
+      || row.classList.contains("fx-followed-player")
+      || row.querySelector(".fx-followed-player") !== null
+      || isUnderlined
+      || (typeof accountName === "string" && window.__fx?.followedAccounts?.isFollowed(accountName) === true);
+  }
+
   function enhanceRoster(list) {
     if (list.dataset.fxLobbyEnhanced === "true") return;
     list.dataset.fxLobbyEnhanced = "true";
@@ -73,8 +83,7 @@
         const matchesReadiness = readyFilter.value === "all"
           || (readyFilter.value === "ready" && /^\u{1F7E2}/u.test(text))
           || (readyFilter.value === "not-ready" && /^\u26AA/u.test(text))
-        const isFollowed = row.classList.contains("fx-followed-player") || row.dataset.fxFollowed === "true"
-          || row.querySelector(".fx-followed-player") !== null;
+        const isFollowed = isFollowedPlayer(row);
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
         const visible = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed;
         if (visible) shown++;
@@ -85,6 +94,16 @@
           visible ? "inline-block" : "none",
           "important"
         );
+      }
+      if (sortFollowedFirst) {
+        const orderedRows = Array.from(list.children).filter(isPlayerRow);
+        orderedRows.sort((a, b) => Number(isFollowedPlayer(b)) - Number(isFollowedPlayer(a)));
+        for (let index = 0; index < orderedRows.length; index++) {
+          const currentRows = Array.from(list.children).filter(isPlayerRow);
+          if (currentRows[index] !== orderedRows[index]) {
+            list.insertBefore(orderedRows[index], currentRows[index] ?? null);
+          }
+        }
       }
       playerCount.textContent = translate("showingPlayers")
         .replace("{shown}", String(shown))

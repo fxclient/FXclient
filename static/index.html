@@ -70,8 +70,20 @@
     document.addEventListener("DOMContentLoaded", function () {
       if (!("serviceWorker" in navigator)) return;
       if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-        navigator.serviceWorker.getRegistrations().then(registrations => {
-          registrations.forEach(registration => registration.unregister());
+        const hadController = Boolean(navigator.serviceWorker.controller);
+        Promise.all([
+          navigator.serviceWorker.getRegistrations().then(registrations =>
+            Promise.all(registrations.map(registration => registration.unregister()))
+          ),
+          caches.keys().then(keys => Promise.all(keys.map(key => caches.delete(key))))
+        ]).then(() => {
+          const reloadKey = "fx-local-service-worker-reset";
+          if (hadController && !sessionStorage.getItem(reloadKey)) {
+            sessionStorage.setItem(reloadKey, "true");
+            location.reload();
+          } else {
+            sessionStorage.removeItem(reloadKey);
+          }
         });
         return;
       }
