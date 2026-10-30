@@ -2,7 +2,7 @@
     "version": "0.6.33",
     "lastUpdated": "October 30",
     "changes": [
-        "Fix the rivals leaderboard breaking after the latest update (Merged pull request #42 by QZxV4)",
+        "Fix the rivals leaderboard breaking after the latest update (Merged pull request #42 by QZxV4)"
     ],
     "isSignificant": true
 }
