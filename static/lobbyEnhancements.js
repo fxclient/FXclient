@@ -71,14 +71,15 @@
         total++;
         const text = row.textContent.trim();
         const matchesReadiness = readyFilter.value === "all"
-          || (readyFilter.value === "ready" && text.startsWith("🟢"))
-          || (readyFilter.value === "not-ready" && text.startsWith("⚪"));
-        const isFollowed = row.classList.contains("fx-followed-player")
+          || (readyFilter.value === "ready" && /^\u{1F7E2}/u.test(text))
+          || (readyFilter.value === "not-ready" && /^\u26AA/u.test(text))
+        const isFollowed = row.classList.contains("fx-followed-player") || row.dataset.fxFollowed === "true"
           || row.querySelector(".fx-followed-player") !== null;
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
         const visible = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed;
         if (visible) shown++;
-        row.style.order = sortFollowedFirst && isFollowed ? "-1" : "0";
+        row.style.order = sortFollowedFirst ? (isFollowed ? "-1" : "0") : "";
+        row.style.fontSize = ".58em";
         row.style.setProperty(
           "display",
           visible ? "inline-block" : "none",
@@ -106,12 +107,26 @@
     });
     const controls = document.createElement("div");
     controls.style.cssText = "position:sticky;top:0;z-index:5;box-sizing:border-box;display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em;padding:.25em .15em;background:transparent";
-    search.style.cssText += ";flex:1 1 10em;width:auto;min-width:6em";
-    readyFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";
-    followedFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";
+    search.style.cssText += ";flex:1 1 10em;width:auto;min-width:6em;font-size:.55em;border-width:.5px";
+    readyFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em;font-size:.55em;border-width:.5px";
+    followedFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em;font-size:.55em;border-width:.5px";
+    resetFilters.style.fontSize = followedFirst.style.fontSize = ".55em";
+    resetFilters.style.borderWidth = followedFirst.style.borderWidth = ".5px";
+    playerCount.style.fontSize = ".48em";
     controls.append(search, readyFilter, followedFilter, followedFirst, resetFilters, playerCount);
     list.parentElement.insertBefore(controls, list);
-    new MutationObserver(applyFilter).observe(list, { childList: true });
+    for (let ancestor = list.parentElement, depth = 0; ancestor && depth < 3; ancestor = ancestor.parentElement, depth++) {
+      for (const button of ancestor.querySelectorAll("button")) {
+        button.style.fontSize = ".55em";
+      }
+      for (const element of ancestor.querySelectorAll("*")) {
+        const style = getComputedStyle(element);
+        if ([style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].some(width => parseFloat(width) > 0)) {
+          element.style.borderWidth = ".5px";
+        }
+      }
+    }
+    new MutationObserver(applyFilter).observe(list, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "data-fx-followed"] });
   }
 
   function scan() {

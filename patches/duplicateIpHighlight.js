@@ -21,10 +21,6 @@ export default definePatch(({ replaceRawCode, matchRawCode, matchCode }) => {
             index = i;
             updateButtons()
         });`);
-    const { iU, iV, cs, jQ: accountId } = matchRawCode(
-        `f1.g9(8,29,new gA(25,{action:0,jQ:iU.iV.cs(a5X.jQ,5),a5i:0},29))`
-    );
-
     replaceRawCode(
         `s0.style.width=s0.style.maxWidth=uS===2?"10em":"9em";s0.style.height=s0.style.maxHeight="1.4em";s0.style.whiteSpace="nowrap";s0.style.overflow="hidden";s0.style.textOverflow="ellipsis";s0.style.font="inherit";s0.style.display="inline-block";bq.lJ.ub(qu)&&(s0.style.textDecoration="underline");`,
         `if (__fx.settings.enhancedLobbyLayout) { s0.style.width=s0.style.maxWidth=uS===2?"10.5em":"9.5em";s0.style.height=s0.style.maxHeight="1.35em";s0.style.lineHeight="normal";s0.style.verticalAlign="middle"; }
@@ -32,7 +28,7 @@ export default definePatch(({ replaceRawCode, matchRawCode, matchCode }) => {
         const __fxAccountName = qu.${username};
         s0.dataset.fxAccountName = __fxAccountName;
         __fx.followedAccounts.syncAccountNames(${storage}.${followList}.get());
-        const __fxIsFollowed = ${storage}.${followList}.kz(${iU}.${iV}.${cs}(qu.${accountId},5));
+        const __fxIsFollowed = __fx.followedAccounts.isFollowed(__fxAccountName);
         const __fxFollowed = __fx.followedAccounts.getLobbyDetails(__fxAccountName);
         const __fxNickname = __fxFollowed.nickname;
         s0.dataset.fxFollowed = __fxIsFollowed ? "true" : "false";
