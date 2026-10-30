@@ -38,6 +38,12 @@ function decorate(listEntries, listAccountNames) {
   render();
 }
 
+function isFollowed(accountName) {
+  if (typeof accountName !== "string") return false;
+  const normalizedName = accountName.trim().toLocaleLowerCase();
+  return accountNames.some(name => name.trim().toLocaleLowerCase() === normalizedName);
+}
+
 function edit(selectedIndex) {
   const accountName = accountNames[selectedIndex];
   if (accountName === undefined) return;
@@ -57,4 +63,4 @@ function edit(selectedIndex) {
   });
 }
 
-export default { decorate, edit };
+export default { decorate, edit, isFollowed };

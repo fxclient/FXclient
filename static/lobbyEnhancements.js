@@ -34,6 +34,16 @@
       option.textContent = translate(key);
       readyFilter.appendChild(option);
     }
+    const followedFilter = document.createElement("select");
+    followedFilter.className = "fx-lobby-followed-filter";
+    followedFilter.setAttribute("aria-label", translate("filterFollowed"));
+    followedFilter.style.cssText = "box-sizing:border-box;width:30%;height:2em;margin:.2em 0;padding:.2em .45em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;font-size:clamp(12px,.9em,18px)";
+    for (const [value, key] of [["all", "allPlayers"], ["followed", "followedOnly"]]) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = translate(key);
+      followedFilter.appendChild(option);
+    }
 
     const applyFilter = () => {
       const query = search.value.trim().toLocaleLowerCase();
@@ -43,14 +53,19 @@
         const matchesReadiness = readyFilter.value === "all"
           || (readyFilter.value === "ready" && text.startsWith("🟢"))
           || (readyFilter.value === "not-ready" && text.startsWith("⚪"));
-        row.style.display = text.toLocaleLowerCase().includes(query) && matchesReadiness ? "inline-block" : "none";
+        const matchesFollowed = followedFilter.value !== "followed" || row.dataset.fxFollowed === "true";
+        row.style.display = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed ? "inline-block" : "none";
       }
     };
     search.addEventListener("input", applyFilter);
     readyFilter.addEventListener("change", applyFilter);
+    followedFilter.addEventListener("change", applyFilter);
     const controls = document.createElement("div");
     controls.style.cssText = "display:flex;align-items:center;gap:.25em;width:100%;max-height:2.5em";
-    controls.append(search, readyFilter);
+    search.style.width = "48%";
+    readyFilter.style.width = "24%";
+    followedFilter.style.width = "24%";
+    controls.append(search, readyFilter, followedFilter);
     list.parentElement.insertBefore(controls, list);
     new MutationObserver(applyFilter).observe(list, { childList: true });
   }
