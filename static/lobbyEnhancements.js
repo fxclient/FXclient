@@ -2,6 +2,9 @@
   const searchClass = "fx-lobby-roster-search";
   if (window.__fx?.settings?.enhancedLobbyLayout === false) return;
   const translate = key => window.__fx?.translateFX?.(key) ?? key;
+  const fontScale = () => Math.max(0.75, Math.min(1.25, Number(window.__fx?.settings?.lobbyFontScale ?? 100) / 100));
+  const filterFontSize = () => `clamp(11px, ${0.4 * fontScale()}em, 14px)`;
+  const normalizeClan = clan => typeof clan === "string" ? clan.trim().toLocaleUpperCase() : null;
   function isPlayerRow(element) {
     if (!(element instanceof HTMLSpanElement)) return false;
     return element.style.width !== ""
@@ -33,11 +36,11 @@
     search.type = "search";
     search.placeholder = translate("searchLobbyPlayers");
     search.setAttribute("aria-label", translate("searchLobbyPlayers"));
-    search.style.cssText = "box-sizing:border-box;width:65%;height:2em;margin:.2em .35em;padding:.25em .55em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.45);color:white;font:inherit;font-size:clamp(12px,.9em,18px)";
+    search.style.cssText = "box-sizing:border-box;width:65%;height:1.65em;margin:.2em .35em;padding:.15em .45em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.45);color:white;font:inherit";
     const readyFilter = document.createElement("select");
     readyFilter.className = "fx-lobby-ready-filter";
     readyFilter.setAttribute("aria-label", translate("filterReadiness"));
-    readyFilter.style.cssText = "box-sizing:border-box;width:30%;height:2em;margin:.2em 0;padding:.2em .45em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;font-size:clamp(12px,.9em,18px)";
+    readyFilter.style.cssText = "box-sizing:border-box;width:30%;height:1.65em;margin:.2em 0;padding:.1em .4em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit";
     for (const [value, key] of [["all", "allPlayers"], ["ready", "ready"], ["not-ready", "notReady"]]) {
       const option = document.createElement("option");
       option.value = value;
@@ -47,19 +50,29 @@
     const followedFilter = document.createElement("select");
     followedFilter.className = "fx-lobby-followed-filter";
     followedFilter.setAttribute("aria-label", translate("filterFollowed"));
-    followedFilter.style.cssText = "box-sizing:border-box;width:30%;height:2em;margin:.2em 0;padding:.2em .45em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;font-size:clamp(12px,.9em,18px)";
+    followedFilter.style.cssText = "box-sizing:border-box;width:30%;height:1.65em;margin:.2em 0;padding:.1em .4em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit";
     for (const [value, key] of [["all", "allPlayers"], ["followed", "followedOnly"]]) {
       const option = document.createElement("option");
       option.value = value;
       option.textContent = translate(key);
       followedFilter.appendChild(option);
     }
+    const clanFilter = document.createElement("select");
+    clanFilter.className = "fx-lobby-clan-filter";
+    clanFilter.setAttribute("aria-label", translate("filterClan"));
+    clanFilter.style.cssText = "box-sizing:border-box;height:1.65em;margin:.2em 0;padding:.1em .4em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit";
+    for (const [value, key] of [["all", "allPlayers"], ["clan", "clanMembersOnly"], ["my-clan", "myClanOnly"]]) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = translate(key);
+      clanFilter.appendChild(option);
+    }
 
     const resetFilters = document.createElement("button");
     resetFilters.type = "button";
     resetFilters.textContent = translate("resetLobbyFilters");
     resetFilters.setAttribute("aria-label", translate("resetLobbyFilters"));
-    resetFilters.style.cssText = "box-sizing:border-box;min-height:2em;padding:.2em .55em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;font-size:clamp(12px,.9em,18px);white-space:nowrap;cursor:pointer";
+    resetFilters.style.cssText = "box-sizing:border-box;min-height:1.65em;padding:.1em .45em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;white-space:nowrap;cursor:pointer";
 
     const followedFirst = document.createElement("button");
     followedFirst.type = "button";
@@ -69,11 +82,15 @@
 
     const playerCount = document.createElement("span");
     playerCount.setAttribute("aria-live", "polite");
-    playerCount.style.cssText = "flex:0 0 auto;white-space:nowrap;font-size:.55em;opacity:.8;margin:.05em .35em 0 auto";
+    playerCount.style.cssText = "flex:0 0 auto;white-space:nowrap;opacity:.8;margin:.05em .35em 0 auto";
     let sortFollowedFirst = false;
 
     const applyFilter = () => {
       const query = search.value.trim().toLocaleLowerCase();
+      const parseClan = window.__fx?.leaderboardFilter?.parseClanFromPlayerName;
+      const playerId = window.__fx?.getGameVar?.("playerId");
+      const ownName = window.__fx?.getGameVar?.("rawPlayerNames")?.[playerId];
+      const ownClan = normalizeClan(window.__fx?.lobbyOwnClan ?? (parseClan && ownName ? parseClan(ownName) : null));
       let total = 0;
       let shown = 0;
       for (const row of Array.from(list.children)) {
@@ -85,10 +102,14 @@
           || (readyFilter.value === "not-ready" && /^\u26AA/u.test(text))
         const isFollowed = isFollowedPlayer(row);
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
-        const visible = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed;
+        const clan = normalizeClan(parseClan && row.dataset.fxAccountName ? parseClan(row.dataset.fxAccountName) : null);
+        const matchesClan = clanFilter.value === "all"
+          || (clanFilter.value === "clan" && clan != null)
+          || (clanFilter.value === "my-clan" && ownClan != null && clan === ownClan);
+        const visible = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed && matchesClan;
         if (visible) shown++;
         row.style.order = sortFollowedFirst ? (isFollowed ? "-1" : "0") : "";
-        row.style.fontSize = ".58em";
+        row.style.fontSize = `${0.58 * fontScale()}em`;
         row.style.setProperty(
           "display",
           visible ? "inline-block" : "none",
@@ -112,10 +133,12 @@
     search.addEventListener("input", applyFilter);
     readyFilter.addEventListener("change", applyFilter);
     followedFilter.addEventListener("change", applyFilter);
+    clanFilter.addEventListener("change", applyFilter);
     resetFilters.addEventListener("click", () => {
       search.value = "";
       readyFilter.value = "all";
       followedFilter.value = "all";
+      clanFilter.value = "all";
       applyFilter();
     });
     followedFirst.addEventListener("click", () => {
@@ -126,32 +149,40 @@
     });
     const controls = document.createElement("div");
     controls.style.cssText = "position:sticky;top:0;z-index:5;box-sizing:border-box;display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em;padding:.25em .15em;background:transparent";
-    search.style.cssText += ";flex:1 1 10em;width:auto;min-width:6em;font-size:.55em;border-width:.5px";
-    readyFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em;font-size:.55em;border-width:.5px";
-    followedFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em;font-size:.55em;border-width:.5px";
-    resetFilters.style.fontSize = followedFirst.style.fontSize = ".55em";
+    search.style.cssText += `;flex:1 1 10em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
+    readyFilter.style.cssText += `;flex:1 1 7em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
+    followedFilter.style.cssText += `;flex:1 1 7em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
+    clanFilter.style.cssText += `;flex:1 1 7em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
+    resetFilters.style.fontSize = followedFirst.style.fontSize = filterFontSize();
     resetFilters.style.borderWidth = followedFirst.style.borderWidth = ".5px";
-    playerCount.style.fontSize = ".48em";
-    controls.append(search, readyFilter, followedFilter, followedFirst, resetFilters, playerCount);
+    playerCount.style.fontSize = `clamp(10px, ${0.34 * fontScale()}em, 12px)`;
+    controls.append(search, readyFilter, followedFilter, clanFilter, followedFirst, resetFilters, playerCount);
     list.parentElement.insertBefore(controls, list);
-    for (let ancestor = list.parentElement, depth = 0; ancestor && depth < 3; ancestor = ancestor.parentElement, depth++) {
-      for (const button of ancestor.querySelectorAll("button")) {
-        button.style.fontSize = ".55em";
-      }
-      for (const element of ancestor.querySelectorAll("*")) {
+    let lobbyRoot = list.parentElement;
+    for (let depth = 0; lobbyRoot.parentElement && depth < 2; depth++) lobbyRoot = lobbyRoot.parentElement;
+    const thinLobbyBorders = () => {
+      for (const element of [lobbyRoot, ...lobbyRoot.querySelectorAll("*")]) {
         const style = getComputedStyle(element);
-        if ([style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].some(width => parseFloat(width) > 0)) {
+        if ([style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].some(width => parseFloat(width) > 0)
+          && element.style.borderWidth !== ".5px") {
           element.style.borderWidth = ".5px";
         }
       }
-    }
+    };
+    thinLobbyBorders();
+    new MutationObserver(thinLobbyBorders).observe(lobbyRoot, {
+      attributes: true,
+      attributeFilter: ["class", "style"],
+      childList: true,
+      subtree: true
+    });
     new MutationObserver(applyFilter).observe(list, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "data-fx-followed"] });
   }
 
   function scan() {
     for (const element of document.querySelectorAll("span")) {
       if (/^[^:]{1,12}:\s*\d+$/.test(element.textContent.trim())) {
-        element.style.fontSize = "0.62em";
+        element.style.fontSize = `${0.62 * fontScale()}em`;
         element.style.whiteSpace = "nowrap";
       }
     }

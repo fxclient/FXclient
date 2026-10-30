@@ -13,9 +13,14 @@ const fxText = {
   en: {
     enhancedLobbyLayout: "Enhanced lobby layout",
     enhancedLobbyLayoutNote: "Adds player search and readiness filters, a compact five-column roster, and a shorter lobby header.",
+    lobbyFontScale: "Lobby UI font size",
+    lobbyFontScaleNote: "Adjusts the text size in the lobby. Save settings to apply.",
     searchLobbyPlayers: "Search lobby players...",
     filterReadiness: "Filter players by readiness",
     filterFollowed: "Filter followed players",
+    filterClan: "Filter by clan",
+    clanMembersOnly: "Clan members",
+    myClanOnly: "My clan only",
     resetLobbyFilters: "Reset filters",
     followedFirst: "Followed first",
     showingPlayers: "Showing {shown} of {total}",
@@ -26,11 +31,16 @@ const fxText = {
   },
   de: {
     enhancedLobbyLayout: "Verbessertes Lobby-Layout",
-    enhancedLobbyLayoutNote: "Ergänzt Spielersuche und Bereitschaftsfilter, eine kompakte Liste mit fünf Spalten und einen flacheren Lobby-Kopfbereich.",
+    lobbyFontScale: "Schriftgr\u00f6\u00dfe der Lobby",
+    lobbyFontScaleNote: "Passt die Textgr\u00f6\u00dfe in der Lobby an. Zum \u00dcbernehmen Einstellungen speichern.",
+    enhancedLobbyLayoutNote: "Erg\u00e4nzt Spielersuche und Bereitschaftsfilter, eine kompakte Liste mit f\u00fcnf Spalten und einen flacheren Lobby-Kopfbereich.",
     searchLobbyPlayers: "Lobby-Spieler suchen...",
     filterReadiness: "Spieler nach Bereitschaft filtern",
     filterFollowed: "Gefolgte Spieler filtern",
-    resetLobbyFilters: "Filter zurücksetzen",
+    filterClan: "Nach Clan filtern",
+    clanMembersOnly: "Spieler mit Clan",
+    myClanOnly: "Nur mein Clan",
+    resetLobbyFilters: "Filter zur\u00fccksetzen",
     followedFirst: "Gefolgte zuerst",
     showingPlayers: "{shown} von {total} angezeigt",
     allPlayers: "Alle Spieler",
@@ -70,6 +80,7 @@ var settings = {
   customQuickEmojis: [],
   lobbyReminderRules: [],
   enhancedLobbyLayout: true,
+  lobbyFontScale: 100,
   mutePingAll: false,
   mutePingEveryone: false,
   mutePingRoom: false,
@@ -590,6 +601,15 @@ const settingsManager = new (function () {
       note: __fx.translateFX("enhancedLobbyLayoutNote"),
     },
     {
+      for: "lobbyFontScale",
+      type: "rangeInput",
+      label: __fx.translateFX("lobbyFontScale"),
+      note: __fx.translateFX("lobbyFontScaleNote"),
+      min: 75,
+      max: 125,
+      step: 5,
+    },
+    {
       for: "highlightDuplicateIps",
       type: "checkbox",
       label: "Duplicate IP highlighting",
@@ -630,6 +650,7 @@ const settingsManager = new (function () {
   const settingsContainer = document.querySelector(".settings .scrollable");
   var inputFields = {}; // (includes select menus)
   var checkboxFields = {};
+  var rangeOutputs = {};
   var customElements = [];
   settingsStructure.forEach((item) => {
     if (typeof item === "function") {
@@ -648,6 +669,13 @@ const settingsManager = new (function () {
         : "button"
     );
     if (item.type === "textInput") element.type = "text";
+    if (item.type === "rangeInput") {
+      element.type = "range";
+      element.min = item.min;
+      element.max = item.max;
+      element.step = item.step;
+      element.style.width = "min(100%, 320px)";
+    }
     if (item.placeholder) element.placeholder = item.placeholder;
     if (isValueInput || item.type === "selectMenu")
       inputFields[item.for] = element;
@@ -667,6 +695,13 @@ const settingsManager = new (function () {
         element.append(optionElement);
       });
     label.append(element);
+    if (item.type === "rangeInput") {
+      const output = document.createElement("output");
+      output.value = element.value + "%";
+      element.addEventListener("input", () => { output.value = element.value + "%"; });
+      rangeOutputs[item.for] = output;
+      label.append(" ", output);
+    }
     if (item.type === "checkbox") {
       element.type = "checkbox";
       const checkmark = document.createElement("span");
@@ -679,7 +714,9 @@ const settingsManager = new (function () {
   });
   this.save = function () {
     Object.keys(inputFields).forEach(function (key) {
-      settings[key] = inputFields[key].value.trim();
+      settings[key] = inputFields[key].type === "range"
+        ? Number(inputFields[key].value)
+        : inputFields[key].value.trim();
     });
     Object.keys(checkboxFields).forEach(function (key) {
       settings[key] = checkboxFields[key].checked;
@@ -738,6 +775,7 @@ const settingsManager = new (function () {
   this.syncFields = function () {
     Object.keys(inputFields).forEach(function (key) {
       inputFields[key].value = settings[key];
+      if (rangeOutputs[key]) rangeOutputs[key].value = inputFields[key].value + "%";
     });
     Object.keys(checkboxFields).forEach(function (key) {
       checkboxFields[key].checked = settings[key];
@@ -755,6 +793,10 @@ const settingsManager = new (function () {
     window.location.reload();
   };
   this.applySettings = function () {
+    document.documentElement.style.setProperty(
+      "--fx-lobby-font-scale",
+      String(Math.max(0.75, Math.min(1.25, Number(settings.lobbyFontScale ?? 100) / 100)))
+    );
     if (settings.customBackgroundUrl !== "") {
       document.body.style.backgroundImage =
         "url(" + settings.customBackgroundUrl + ")";
