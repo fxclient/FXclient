@@ -38,10 +38,35 @@ function decorate(listEntries, listAccountNames) {
   render();
 }
 
+function syncAccountNames(listAccountNames) {
+  if (Array.isArray(listAccountNames)) accountNames = listAccountNames;
+}
+
 function isFollowed(accountName) {
   if (typeof accountName !== "string") return false;
-  const normalizedName = accountName.trim().toLocaleLowerCase();
-  return accountNames.some(name => name.trim().toLocaleLowerCase() === normalizedName);
+  const normalize = name => (typeof name === "string" ? name : "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/^\s*\[[^\]]+\]\s*/, "")
+    .replace(/[^\p{L}\p{N}]/gu, "")
+    .toLocaleLowerCase();
+  const normalizedName = normalize(accountName);
+  if (!normalizedName) return false;
+  const knownNames = new Set([
+    ...accountNames,
+    ...Object.keys(getStored("followedAccountNicknames")),
+    ...Object.keys(getStored("followedAccountColors")),
+  ].map(normalize).filter(Boolean));
+  return knownNames.has(normalizedName);
+}
+
+function getLobbyDetails(accountName) {
+  const followed = isFollowed(accountName);
+  return {
+    followed,
+    nickname: followed ? getNickname(accountName) : "",
+    color: followed ? getColor(accountName) : "",
+  };
 }
 
 function edit(selectedIndex) {
@@ -63,4 +88,4 @@ function edit(selectedIndex) {
   });
 }
 
-export default { decorate, edit, isFollowed };
+export default { decorate, syncAccountNames, edit, isFollowed, getLobbyDetails };

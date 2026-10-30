@@ -53,8 +53,14 @@
         const matchesReadiness = readyFilter.value === "all"
           || (readyFilter.value === "ready" && text.startsWith("🟢"))
           || (readyFilter.value === "not-ready" && text.startsWith("⚪"));
-        const matchesFollowed = followedFilter.value !== "followed" || row.dataset.fxFollowed === "true";
-        row.style.display = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed ? "inline-block" : "none";
+        const isFollowed = row.classList.contains("fx-followed-player")
+          || row.querySelector(".fx-followed-player") !== null;
+        const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
+        row.style.setProperty(
+          "display",
+          text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed ? "inline-block" : "none",
+          "important"
+        );
       }
     };
     search.addEventListener("input", applyFilter);

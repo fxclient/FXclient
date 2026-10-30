@@ -1,6 +1,6 @@
 import { definePatch } from "../modUtils.js";
 
-export default definePatch(({ replaceRawCode, matchRawCode }) => {
+export default definePatch(({ replaceRawCode, matchRawCode, matchCode }) => {
     const { grouping, teamsArray } = matchRawCode(
         `var frag=document.createDocumentFragment();var idx=container.firstIndexHolder.firstIndexProp[0];var group=container.grouping.teamsArray[idx];var perGroupCount=container.grouping.perGroupCountProp[idx];for(var g=0;g<group.length;g++){handler(frag,group[g],g<perGroupCount,idx)}`
     );
@@ -17,11 +17,32 @@ export default definePatch(({ replaceRawCode, matchRawCode }) => {
         `this.isSelf=function(entry){if(!state.ownEntry){return false}return entry.idField===state.ownEntry.idField};`
     );
 
+    const { storage, followList } = matchCode(`accountList = new RadioList(storage.followList.getListData(), function(i) {
+            index = i;
+            updateButtons()
+        });`);
+    const { iU, iV, cs, jQ: accountId } = matchRawCode(
+        `f1.g9(8,29,new gA(25,{action:0,jQ:iU.iV.cs(a5X.jQ,5),a5i:0},29))`
+    );
+
     replaceRawCode(
         `s0.style.width=s0.style.maxWidth=uS===2?"10em":"9em";s0.style.height=s0.style.maxHeight="1.4em";s0.style.whiteSpace="nowrap";s0.style.overflow="hidden";s0.style.textOverflow="ellipsis";s0.style.font="inherit";s0.style.display="inline-block";bq.lJ.ub(qu)&&(s0.style.textDecoration="underline");`,
         `if (__fx.settings.enhancedLobbyLayout) { s0.style.width=s0.style.maxWidth=uS===2?"10.5em":"9.5em";s0.style.height=s0.style.maxHeight="1.35em";s0.style.lineHeight="normal";s0.style.verticalAlign="middle"; }
         else { s0.style.width=s0.style.maxWidth=uS===2?"10em":"9em";s0.style.height=s0.style.maxHeight="1.4em"; }
-        s0.dataset.fxFollowed = __fx.followedAccounts.isFollowed(qu.${username}) ? "true" : "false";
+        const __fxAccountName = qu.${username};
+        s0.dataset.fxAccountName = __fxAccountName;
+        __fx.followedAccounts.syncAccountNames(${storage}.${followList}.get());
+        const __fxIsFollowed = ${storage}.${followList}.kz(${iU}.${iV}.${cs}(qu.${accountId},5));
+        const __fxFollowed = __fx.followedAccounts.getLobbyDetails(__fxAccountName);
+        const __fxNickname = __fxFollowed.nickname;
+        s0.dataset.fxFollowed = __fxIsFollowed ? "true" : "false";
+        s0.classList.toggle("fx-followed-player", __fxIsFollowed);
+        if (__fxNickname) {
+            const __fxStatus = s0.textContent.match(/^(?:🟢|⚪)\\s*/)?.[0] ?? "";
+            s0.title = s0.textContent.slice(__fxStatus.length);
+            s0.textContent = __fxStatus + __fxNickname;
+            if (__fxFollowed.color) s0.style.color = __fxFollowed.color;
+        }
         s0.style.whiteSpace="nowrap";s0.style.overflow="hidden";s0.style.textOverflow="ellipsis";s0.style.font="inherit";s0.style.display="inline-block";
         if (__fx.settings.highlightDuplicateIps) {
             var __fxDupColor = __fx.utils.getDuplicateIpHighlightColor(qu, bq.uT.uU[roomIndex], "ipField");
@@ -35,7 +56,7 @@ export default definePatch(({ replaceRawCode, matchRawCode }) => {
                 s0.style.borderRadius = "0.3em";
             }
         }
-        bq.lJ.ub(qu)&&(s0.style.textDecoration="underline");`,
+        __fxIsFollowed&&(s0.style.textDecoration="underline");`,
         { uT: grouping, uU: teamsArray, ipField, username, roomIndex, ownEntry }
     );
 });
