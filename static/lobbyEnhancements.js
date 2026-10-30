@@ -51,10 +51,24 @@
     resetFilters.setAttribute("aria-label", translate("resetLobbyFilters"));
     resetFilters.style.cssText = "box-sizing:border-box;min-height:2em;padding:.2em .55em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;font-size:clamp(12px,.9em,18px);white-space:nowrap;cursor:pointer";
 
+    const followedFirst = document.createElement("button");
+    followedFirst.type = "button";
+    followedFirst.textContent = translate("followedFirst");
+    followedFirst.setAttribute("aria-pressed", "false");
+    followedFirst.style.cssText = resetFilters.style.cssText;
+
+    const playerCount = document.createElement("span");
+    playerCount.setAttribute("aria-live", "polite");
+    playerCount.style.cssText = "flex:0 0 100%;font-size:.75em;opacity:.8;margin:.05em .35em";
+    let sortFollowedFirst = false;
+
     const applyFilter = () => {
       const query = search.value.trim().toLocaleLowerCase();
+      let total = 0;
+      let shown = 0;
       for (const row of Array.from(list.children)) {
         if (!isPlayerRow(row)) continue;
+        total++;
         const text = row.textContent.trim();
         const matchesReadiness = readyFilter.value === "all"
           || (readyFilter.value === "ready" && text.startsWith("🟢"))
@@ -62,12 +76,18 @@
         const isFollowed = row.classList.contains("fx-followed-player")
           || row.querySelector(".fx-followed-player") !== null;
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
+        const visible = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed;
+        if (visible) shown++;
+        row.style.order = sortFollowedFirst && isFollowed ? "-1" : "0";
         row.style.setProperty(
           "display",
-          text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed ? "inline-block" : "none",
+          visible ? "inline-block" : "none",
           "important"
         );
       }
+      playerCount.textContent = translate("showingPlayers")
+        .replace("{shown}", String(shown))
+        .replace("{total}", String(total));
     };
     search.addEventListener("input", applyFilter);
     readyFilter.addEventListener("change", applyFilter);
@@ -78,12 +98,18 @@
       followedFilter.value = "all";
       applyFilter();
     });
+    followedFirst.addEventListener("click", () => {
+      sortFollowedFirst = !sortFollowedFirst;
+      followedFirst.setAttribute("aria-pressed", String(sortFollowedFirst));
+      followedFirst.style.backgroundColor = sortFollowedFirst ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
+      applyFilter();
+    });
     const controls = document.createElement("div");
     controls.style.cssText = "display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em";
     search.style.cssText += ";flex:1 1 10em;width:auto;min-width:6em";
     readyFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";
     followedFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";
-    controls.append(search, readyFilter, followedFilter, resetFilters);
+    controls.append(search, readyFilter, followedFilter, followedFirst, resetFilters, playerCount);
     list.parentElement.insertBefore(controls, list);
     new MutationObserver(applyFilter).observe(list, { childList: true });
   }
