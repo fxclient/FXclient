@@ -1,6 +1,6 @@
 import { definePatch, insert } from "../modUtils.js";
 
-export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinification, matchCode, replaceOne, replaceRawCode }) => {
+export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinification, matchCode, matchRawCode, replaceOne, replaceRawCode }) => {
 
 	// Player list and leaderboard filter tabs
 
@@ -117,6 +117,7 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
             "$1($6 + $<topBarHeight> - 22) / 2), $7; __fx.playerList.drawButton($<canvas>, 12, 12, $<topBarHeight> - 22);")
 
         { // Leaderboard filter
+            const { windowHeight } = matchRawCode("var hZ,eh=leaderboardPositionsById[game.playerId]<position+windowHeight-1?1:2;");
             // for the leaderboard draw function:
             replaceRawCode("function drawFunction(){a0A.clearRect(0,0,a04,y9),a0A.fillStyle=aYq?aZ.a4s:aZ.a4o,a0A.fillRect(0,0,a04,a0F),a0A.fillStyle=aZ.kZ,a0A.fillRect(0,a0F,a04,y9-a0F),leaderboardPositionsById[game.playerId]>=position&&a0Z(leaderboardPositionsById[game.playerId]-position,aZ.kw),0!==leaderboardPositionsById[game.playerId]&&0===position&&a0Z(0,aZ.lJ),-1!==a0P&&a0Z(a0P,aZ.kd),a0A.fillStyle=aZ.gF,a0A.fillRect(0,a0F,a04,1),a0A.fillRect(0,0,a04,b0.ur),a0A.fillRect(0,0,b0.ur,y9),a0A.fillRect(a04-b0.ur,0,b0.ur,y9),a0A.fillRect(0,y9-b0.ur,a04,b0.ur),",
 
@@ -141,16 +142,22 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 			__fx.leaderboardFilter.computeRivals();
 			leaderboardHasChanged = false;
 		}
+		if (__fx.leaderboardFilter.showingRivals) {
+			let rivalsCount = __fx.leaderboardFilter.rivalsData.length;
+			if (position !== 0 && position >= rivalsCount - windowHeight)
+				position = (rivalsCount > windowHeight ? rivalsCount : windowHeight) - windowHeight;
+		}
 		var playerPos = (__fx.leaderboardFilter.enabled
 			? this.playerPos
 			: leaderboardPositionsById[game.playerId]
 		);
 		if (__fx.leaderboardFilter.hoveringOverTabs) a0P = -1;
 		if (__fx.leaderboardFilter.enabled && a0P >= __fx.leaderboardFilter.filteredLeaderboard.length) a0P = -1;
+		if (__fx.leaderboardFilter.showingRivals && a0P + position >= __fx.leaderboardFilter.rivalsData.length) a0P = -1;
 		(__fx.leaderboardFilter.showingRivals
 			? (function() {
 				var ownClanIndex = __fx.leaderboardFilter.getOwnClanIndex();
-				if (ownClanIndex >= 0 && ownClanIndex >= position) a0Z(ownClanIndex - position, aZ.kw);
+				if (ownClanIndex >= position && ownClanIndex < position + windowHeight) a0Z(ownClanIndex - position, aZ.kw);
 			})()
 			: (playerPos >= position && a0Z(playerPos - position, aZ.kw),
 				0 !== leaderboardPositionsById[game.playerId] && 0 === position && a0Z(0, aZ.lJ))
@@ -167,25 +174,22 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 		a0A.fillRect(0, 0, a04, b0.ur),
 		a0A.fillRect(0, 0, b0.ur, y9),
 		a0A.fillRect(a04 - b0.ur, 0, b0.ur, y9),
-		a0A.fillRect(0, y9 - b0.ur, a04, b0.ur),`)
+		a0A.fillRect(0, y9 - b0.ur, a04, b0.ur),`, { windowHeight })
             replaceRawCode("var hZ,eh=leaderboardPositionsById[game.playerId]<position+windowHeight-1?1:2;for(a0A.font=a07,aY.g0.textAlign(a0A,0),hZ=windowHeight-eh;0<=hZ;hZ--)a0a(leaderboardArray[hZ+position]),a0b(hZ,hZ+position,leaderboardArray[hZ+position]);for(aY.g0.textAlign(a0A,2),hZ=windowHeight-eh;0<=hZ;hZ--)a0a(leaderboardArray[hZ+position]),a0c(hZ,leaderboardArray[hZ+position]);",
                 `var hZ, eh = playerPos < position + windowHeight - 1 ? 1 : 2;
 		if (__fx.leaderboardFilter.showingRivals) eh = 1;
 
 		if (__fx.leaderboardFilter.showingRivals) {
-			let rivalsCount = __fx.leaderboardFilter.rivalsData.length;
-			if (position !== 0 && position >= rivalsCount - windowHeight)
-				position = (rivalsCount > windowHeight ? rivalsCount : windowHeight) - windowHeight;
 			var rivalsRestore = [];
 			try {
 				for (var rivalsRow = 0; rivalsRow < windowHeight; rivalsRow++) {
 					var rivalsEntry = __fx.leaderboardFilter.rivalsData[rivalsRow + position];
 					if (rivalsEntry === undefined) break;
 					var repId = rivalsEntry.representativeId;
-					rivalsRestore.push([repId, ${playerTerritories}[repId], ${cachedDisplayName}[repId], ${playerState}[repId]]);
-					${playerTerritories}[repId] = rivalsEntry.territory;
-					${cachedDisplayName}[repId] = "[" + rivalsEntry.clan + "]";
-					${playerState}[repId] = 0;
+					rivalsRestore.push([repId, rivalsTerritories[repId], rivalsNames[repId], rivalsStates[repId]]);
+					rivalsTerritories[repId] = rivalsEntry.territory;
+					rivalsNames[repId] = "[" + rivalsEntry.clan + "]";
+					rivalsStates[repId] = 0;
 				}
 				for (a0A.font = a07, aY.g0.textAlign(a0A, 0), hZ = windowHeight - eh; 0 <= hZ; hZ--) {
 					const rivalsEntryLeft = __fx.leaderboardFilter.rivalsData[hZ + position];
@@ -199,9 +203,9 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 				}
 			} finally {
 				rivalsRestore.forEach(function(entry) {
-					${playerTerritories}[entry[0]] = entry[1];
-					${cachedDisplayName}[entry[0]] = entry[2];
-					${playerState}[entry[0]] = entry[3];
+					rivalsTerritories[entry[0]] = entry[1];
+					rivalsNames[entry[0]] = entry[2];
+					rivalsStates[entry[0]] = entry[3];
 				});
 			}
 		} else if (__fx.leaderboardFilter.enabled) {
@@ -224,7 +228,8 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 				a0a(leaderboardArray[hZ + position]), a0b(hZ, hZ + position, leaderboardArray[hZ + position]);
 			for (aY.g0.textAlign(a0A, 2), hZ = windowHeight - eh; 0 <= hZ; hZ--)
 				a0a(leaderboardArray[hZ + position]), a0c(hZ, leaderboardArray[hZ + position]);
-		}`)
+		}`,
+                { rivalsTerritories: playerTerritories, rivalsNames: cachedDisplayName, rivalsStates: playerState })
             // in the leaderboard resize handler: make space for the tab buttons at the bottom of the leaderboard
             replaceRawCode(",a09.height=y9,a09_ctx=a09.getContext(\"2d\",{alpha:!0}),a0D=.025*a04,a06=.16*a04,a0E=0*a04,a0F=Math.floor(.45*a0D+a06),a0G=(y9-a06-2*a0D-a0E)/a08,a05=aY.g0.g1(1,Math.floor(.55*a06)),",
                 `,a09.height=y9,a09_ctx=a09.getContext("2d",{alpha:!0}),a0D=.025*a04,a06=.16*a04,a0E=0*a04,a0F=Math.floor(.45*a0D+a06),a0G=(y9-a06-2*a0D-a0E)/a08,
