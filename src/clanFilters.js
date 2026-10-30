@@ -22,15 +22,34 @@ export const leaderboardFilter = new (function() {
     this.showingRivals = false;
 
     this.rivalsData = [];
+    this.lastRivalsComputedAt = 0;
     this.computeRivals = () => {
+        const now = performance.now();
+        // Drawing can be triggered repeatedly while leaderboard packets arrive.
+        // Reuse the last snapshot for short bursts instead of sorting clans on every frame.
+        if (now - this.lastRivalsComputedAt < 750) return;
+        this.lastRivalsComputedAt = now;
         const rawNames = getVar("rawPlayerNames");
         const playerTerritories = getVar("playerTerritories");
         const gHumans = getVar("gHumans");
+        if (!rawNames || !playerTerritories || !Number.isFinite(gHumans)) {
+            this.rivalsData = [];
+            return;
+        }
         const totals = new Map();
-        for (let id = 0; id < gHumans; id++) {
-            const clan = this.parseClanFromPlayerName(rawNames[id]);
-            if (clan === null) continue;
-            const territory = playerTerritories[id] || 0;
+        const playerCount = Math.min(Math.max(0, gHumans), rawNames.length, playerTerritories.length, 10000);
+        for (let id = 0; id < playerCount; id++) {
+            const name = rawNames[id];
+            if (typeof name !== "string") continue;
+            let clan;
+            try {
+                clan = this.parseClanFromPlayerName(name);
+            } catch {
+                continue;
+            }
+            if (typeof clan !== "string" || clan.length === 0) continue;
+            const territoryValue = Number(playerTerritories[id]);
+            const territory = Number.isFinite(territoryValue) && territoryValue > 0 ? territoryValue : 0;
             const entry = totals.get(clan) || { territory: 0, representativeId: id, representativeTerritory: -1 };
             entry.territory += territory;
             if (territory > entry.representativeTerritory) {
@@ -45,8 +64,11 @@ export const leaderboardFilter = new (function() {
     };
     this.getOwnClanIndex = () => {
         const playerId = getVar("playerId");
-        const ownClan = this.parseClanFromPlayerName(getVar("rawPlayerNames")[playerId]);
-        if (ownClan === null) return -1;
+        const rawNames = getVar("rawPlayerNames");
+        const ownName = rawNames?.[playerId];
+        if (typeof ownName !== "string") return -1;
+        const ownClan = this.parseClanFromPlayerName(ownName);
+        if (typeof ownClan !== "string" || ownClan.length === 0) return -1;
         return this.rivalsData.findIndex((entry) => entry.clan === ownClan);
     };
 
@@ -110,9 +132,11 @@ export const leaderboardFilter = new (function() {
     this.filterByOwnClan = () => {
         this.playersToInclude = [];
         const playerId = getVar("playerId");
-        const ownClan = this.parseClanFromPlayerName(getVar("rawPlayerNames")[playerId]);
-        getVar("rawPlayerNames").forEach((name, id) => {
-            if (id === playerId || this.parseClanFromPlayerName(name) === ownClan) this.playersToInclude.push(id);
+        const rawNames = getVar("rawPlayerNames") || [];
+        const ownName = rawNames[playerId];
+        const ownClan = typeof ownName === "string" ? this.parseClanFromPlayerName(ownName) : null;
+        rawNames.forEach((name, id) => {
+            if (id === playerId || (ownClan && typeof name === "string" && this.parseClanFromPlayerName(name) === ownClan)) this.playersToInclude.push(id);
         });
         this.enabled = true;
         this.scrollToTop();

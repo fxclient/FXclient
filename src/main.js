@@ -21,6 +21,7 @@ import nameFilter from './nameFilter.js';
 import followedAccounts from './followedAccounts.js';
 import passwordReset from './passwordReset.js';
 import savedAccounts from './savedAccounts.js';
+import { getVar } from "./gameInterface.js";
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
@@ -55,5 +56,6 @@ __fx.nameFilter = nameFilter;
 __fx.followedAccounts = followedAccounts;
 __fx.passwordReset = passwordReset;
 __fx.savedAccounts = savedAccounts;
+__fx.getPlayerTerritories = () => getVar("playerTerritories");
 
 console.log('Successfully loaded FX Client');

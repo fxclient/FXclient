@@ -6,7 +6,6 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 
     const uiOffset = dict.uiSizes + "." + dict.gap
     const rawPlayerNames = dict.playerData + "." + dict.rawPlayerNames
-    const playerTerritories = dict.playerData + "." + dict.playerTerritories
 
 	const { topBarHeight } = matchCode(`aAn = 0.000 * aAd; topBarHeight = Math.floor(0.45 * aAm + aAf);`)
 	const buttonBoundsCheck = `__fx.utils.isPointInRectangle(x, y, ${uiOffset} + 12, ${uiOffset} + 12, ${topBarHeight} - 22, ${topBarHeight} - 22)`
@@ -177,13 +176,14 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 			if (position !== 0 && position >= rivalsCount - windowHeight)
 				position = (rivalsCount > windowHeight ? rivalsCount : windowHeight) - windowHeight;
 			var rivalsRestore = [];
+			var rivalsTerritories = __fx.getPlayerTerritories();
 			try {
 				for (var rivalsRow = 0; rivalsRow < windowHeight; rivalsRow++) {
 					var rivalsEntry = __fx.leaderboardFilter.rivalsData[rivalsRow + position];
 					if (rivalsEntry === undefined) break;
 					var repId = rivalsEntry.representativeId;
-					rivalsRestore.push([repId, ${playerTerritories}[repId], ${cachedDisplayName}[repId], ${playerState}[repId]]);
-					${playerTerritories}[repId] = rivalsEntry.territory;
+					rivalsRestore.push([repId, rivalsTerritories[repId], ${cachedDisplayName}[repId], ${playerState}[repId]]);
+					rivalsTerritories[repId] = rivalsEntry.territory;
 					${cachedDisplayName}[repId] = "[" + rivalsEntry.clan + "]";
 					${playerState}[repId] = 0;
 				}
@@ -199,7 +199,7 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 				}
 			} finally {
 				rivalsRestore.forEach(function(entry) {
-					${playerTerritories}[entry[0]] = entry[1];
+					rivalsTerritories[entry[0]] = entry[1];
 					${cachedDisplayName}[entry[0]] = entry[2];
 					${playerState}[entry[0]] = entry[3];
 				});
