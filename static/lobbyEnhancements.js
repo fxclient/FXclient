@@ -45,6 +45,12 @@
       followedFilter.appendChild(option);
     }
 
+    const resetFilters = document.createElement("button");
+    resetFilters.type = "button";
+    resetFilters.textContent = translate("resetLobbyFilters");
+    resetFilters.setAttribute("aria-label", translate("resetLobbyFilters"));
+    resetFilters.style.cssText = "box-sizing:border-box;min-height:2em;padding:.2em .55em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;font-size:clamp(12px,.9em,18px);white-space:nowrap;cursor:pointer";
+
     const applyFilter = () => {
       const query = search.value.trim().toLocaleLowerCase();
       for (const row of Array.from(list.children)) {
@@ -66,12 +72,18 @@
     search.addEventListener("input", applyFilter);
     readyFilter.addEventListener("change", applyFilter);
     followedFilter.addEventListener("change", applyFilter);
+    resetFilters.addEventListener("click", () => {
+      search.value = "";
+      readyFilter.value = "all";
+      followedFilter.value = "all";
+      applyFilter();
+    });
     const controls = document.createElement("div");
-    controls.style.cssText = "display:flex;align-items:center;gap:.25em;width:100%;max-height:2.5em";
-    search.style.width = "48%";
-    readyFilter.style.width = "24%";
-    followedFilter.style.width = "24%";
-    controls.append(search, readyFilter, followedFilter);
+    controls.style.cssText = "display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em";
+    search.style.cssText += ";flex:1 1 10em;width:auto;min-width:6em";
+    readyFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";
+    followedFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";
+    controls.append(search, readyFilter, followedFilter, resetFilters);
     list.parentElement.insertBefore(controls, list);
     new MutationObserver(applyFilter).observe(list, { childList: true });
   }
