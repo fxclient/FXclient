@@ -1353,16 +1353,22 @@ function q7() {
 			__fx.leaderboardFilter.computeRivals();
 			leaderboardHasChanged = false;
 		}
+		if (__fx.leaderboardFilter.showingRivals) {
+			let rivalsCount = __fx.leaderboardFilter.rivalsData.length;
+			if (position !== 0 && position >= rivalsCount - qC)
+				position = (rivalsCount > qC ? rivalsCount : qC) - qC;
+		}
 		var playerPos = (__fx.leaderboardFilter.enabled ?
 			this.playerPos :
 			fD[cr.gJ]
 		);
 		if (__fx.leaderboardFilter.hoveringOverTabs) qT = -1;
 		if (__fx.leaderboardFilter.enabled && qT >= __fx.leaderboardFilter.filteredLeaderboard.length) qT = -1;
+		if (__fx.leaderboardFilter.showingRivals && qT + position >= __fx.leaderboardFilter.rivalsData.length) qT = -1;
 		(__fx.leaderboardFilter.showingRivals ?
 			(function() {
 				var ownClanIndex = __fx.leaderboardFilter.getOwnClanIndex();
-				if (ownClanIndex >= 0 && ownClanIndex >= position) qj(ownClanIndex - position, dZ.db);
+				if (ownClanIndex >= position && ownClanIndex < position + qC) qj(ownClanIndex - position, dZ.db);
 			})() :
 			(playerPos >= position && qj(playerPos - position, dZ.db),
 				0 !== fD[cr.gJ] && 0 === position && qj(0, dZ.qk))
@@ -1385,17 +1391,14 @@ function q7() {
 		if (__fx.leaderboardFilter.showingRivals) dp = 1;
 
 		if (__fx.leaderboardFilter.showingRivals) {
-			let rivalsCount = __fx.leaderboardFilter.rivalsData.length;
-			if (position !== 0 && position >= rivalsCount - qC)
-				position = (rivalsCount > qC ? rivalsCount : qC) - qC;
 			var rivalsRestore = [];
 			try {
 				for (var rivalsRow = 0; rivalsRow < qC; rivalsRow++) {
 					var rivalsEntry = __fx.leaderboardFilter.rivalsData[rivalsRow + position];
 					if (rivalsEntry === undefined) break;
 					var repId = rivalsEntry.representativeId;
-					rivalsRestore.push([repId, f4.d1[repId], f4.f5[repId], f4.fu[repId]]);
-					f4.d1[repId] = rivalsEntry.territory;
+					rivalsRestore.push([repId, f4.g0[repId], f4.f5[repId], f4.fu[repId]]);
+					f4.g0[repId] = rivalsEntry.territory;
 					f4.f5[repId] = "[" + rivalsEntry.clan + "]";
 					f4.fu[repId] = 0;
 				}
@@ -1411,7 +1414,7 @@ function q7() {
 				}
 			} finally {
 				rivalsRestore.forEach(function(entry) {
-					f4.d1[entry[0]] = entry[1];
+					f4.g0[entry[0]] = entry[1];
 					f4.f5[entry[0]] = entry[2];
 					f4.fu[entry[0]] = entry[3];
 				});
