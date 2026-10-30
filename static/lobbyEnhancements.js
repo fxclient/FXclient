@@ -69,12 +69,14 @@
     }
 
     const resetFilters = document.createElement("button");
+    resetFilters.className = "fx-lobby-filter-action";
     resetFilters.type = "button";
     resetFilters.textContent = translate("resetLobbyFilters");
     resetFilters.setAttribute("aria-label", translate("resetLobbyFilters"));
     resetFilters.style.cssText = "box-sizing:border-box;min-height:1.65em;padding:.1em .45em;border:1px solid rgba(255,255,255,.3);border-radius:5px;background:rgba(0,0,0,.65);color:white;font:inherit;white-space:nowrap;cursor:pointer";
 
     const followedFirst = document.createElement("button");
+    followedFirst.className = "fx-lobby-filter-action";
     followedFirst.type = "button";
     followedFirst.textContent = translate("followedFirst");
     followedFirst.setAttribute("aria-pressed", "false");
@@ -109,7 +111,7 @@
         const visible = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed && matchesClan;
         if (visible) shown++;
         row.style.order = sortFollowedFirst ? (isFollowed ? "-1" : "0") : "";
-        row.style.fontSize = `${0.58 * fontScale()}em`;
+        row.style.fontSize = ".58em";
         row.style.setProperty(
           "display",
           visible ? "inline-block" : "none",
@@ -163,6 +165,12 @@
     const thinLobbyBorders = () => {
       for (const element of [lobbyRoot, ...lobbyRoot.querySelectorAll("*")]) {
         const style = getComputedStyle(element);
+        if (!element.classList.contains("fx-lobby-filter-action")
+          && element.matches("button, [role='button'], h1, h2, h3")) {
+          const baseSize = element.matches("h1, h2, h3") ? 0.72 : 0.56;
+          const scaledSize = `clamp(12px, ${baseSize * fontScale()}em, 22px)`;
+          if (element.style.fontSize !== scaledSize) element.style.fontSize = scaledSize;
+        }
         if ([style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].some(width => parseFloat(width) > 0)
           && element.style.borderWidth !== ".5px") {
           element.style.borderWidth = ".5px";
