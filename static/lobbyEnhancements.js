@@ -173,12 +173,23 @@
     });
     followedFirst.addEventListener("click", () => {
       sortFollowedFirst = !sortFollowedFirst;
+      if (sortFollowedFirst) {
+        rankSortDirection = 0;
+        rankSort.setAttribute("aria-pressed", "false");
+        rankSort.textContent = translate("rankBestFirst");
+        rankSort.style.backgroundColor = "rgba(0,0,0,.65)";
+      }
       followedFirst.setAttribute("aria-pressed", String(sortFollowedFirst));
       followedFirst.style.backgroundColor = sortFollowedFirst ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
       applyFilter();
     });
     rankSort.addEventListener("click", () => {
       rankSortDirection = rankSortDirection === 0 ? 1 : rankSortDirection === 1 ? -1 : 0;
+      if (rankSortDirection !== 0) {
+        sortFollowedFirst = false;
+        followedFirst.setAttribute("aria-pressed", "false");
+        followedFirst.style.backgroundColor = "rgba(0,0,0,.65)";
+      }
       rankSort.setAttribute("aria-pressed", String(rankSortDirection !== 0));
       rankSort.textContent = translate(rankSortDirection === -1 ? "rankWorstFirst" : "rankBestFirst");
       rankSort.style.backgroundColor = rankSortDirection ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
