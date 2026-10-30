@@ -53,13 +53,13 @@ This will install the dependencies, download the game and build the client.
 
 To build from an already downloaded copy of the game, use `npm run build-only`.
 
-To test the generated client locally in a browser, start the preview server after building:
+To preview the generated client over HTTP, you can start the optional preview server after building:
 
 ```
 npm run serve
 ```
 
-Then open http://localhost:4173. Do not open `build/index.html` directly with `file://`, because the client uses JavaScript modules and a service worker that require an HTTP server.
+Then open http://localhost:4173. The preview server is optional; you can also open `build/index.html` directly with `file://`.
 
 For a one-command build and preview, use:
 

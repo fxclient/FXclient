@@ -2,6 +2,7 @@ import versionData from '../version.json';
 const { version, lastUpdated, isSignificant } = versionData;
 
 import settingsManager from './settings.js';
+import "./lobbyEnhancements.js";
 import { clanFilter, leaderboardFilter } from "./clanFilters.js";
 import WindowManager from "./windowManager.js";
 import donationsTracker from "./donationsTracker.js";
