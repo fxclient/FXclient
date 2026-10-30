@@ -13,9 +13,9 @@
     if (list.dataset.fxLobbyEnhanced === "true") return;
     list.dataset.fxLobbyEnhanced = "true";
     list.style.display = "grid";
-    list.style.gridTemplateColumns = "repeat(auto-fit, minmax(min(100%, 10em), 1fr))";
+    list.style.gridTemplateColumns = "repeat(auto-fit, minmax(max(10em, calc((100% - .8em) / 5)), 1fr))";
     list.style.alignItems = "center";
-    list.style.gap = "0.02em 0.45em";
+    list.style.gap = "0.02em 0.2em";
     list.style.margin = "0.2em 0.35em";
 
     const search = document.createElement("input");
@@ -59,7 +59,7 @@
 
     const playerCount = document.createElement("span");
     playerCount.setAttribute("aria-live", "polite");
-    playerCount.style.cssText = "flex:0 0 100%;font-size:.75em;opacity:.8;margin:.05em .35em";
+    playerCount.style.cssText = "flex:0 0 auto;white-space:nowrap;font-size:.55em;opacity:.8;margin:.05em .35em 0 auto";
     let sortFollowedFirst = false;
 
     const applyFilter = () => {
@@ -105,7 +105,7 @@
       applyFilter();
     });
     const controls = document.createElement("div");
-    controls.style.cssText = "display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em";
+    controls.style.cssText = "position:sticky;top:0;z-index:5;box-sizing:border-box;display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em;padding:.25em .15em;background:transparent";
     search.style.cssText += ";flex:1 1 10em;width:auto;min-width:6em";
     readyFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";
     followedFilter.style.cssText += ";flex:1 1 7em;width:auto;min-width:6em";

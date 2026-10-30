@@ -53,7 +53,7 @@ const server = http.createServer((request, response) => {
     }
 
     const contentType = mimeTypes[path.extname(filePath).toLowerCase()] ?? "application/octet-stream";
-    response.writeHead(200, { "Content-Type": contentType });
+    response.writeHead(200, { "Content-Type": contentType, "Cache-Control": "no-store" });
     fs.createReadStream(filePath).pipe(response);
   });
 });
