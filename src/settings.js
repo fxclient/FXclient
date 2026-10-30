@@ -9,6 +9,28 @@ import { LobbyReminderRulesInput } from './lobbyReminderRulesInput.js';
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
 
+const fxText = {
+  en: {
+    enhancedLobbyLayout: "Enhanced lobby layout",
+    enhancedLobbyLayoutNote: "Adds player search and readiness filters, a compact five-column roster, and a shorter lobby header.",
+    searchLobbyPlayers: "Search lobby players...",
+    filterReadiness: "Filter players by readiness",
+    allPlayers: "All players",
+    ready: "Ready",
+    notReady: "Not ready",
+  },
+  de: {
+    enhancedLobbyLayout: "Verbessertes Lobby-Layout",
+    enhancedLobbyLayoutNote: "Ergänzt Spielersuche und Bereitschaftsfilter, eine kompakte Liste mit fünf Spalten und einen flacheren Lobby-Kopfbereich.",
+    searchLobbyPlayers: "Lobby-Spieler suchen...",
+    filterReadiness: "Spieler nach Bereitschaft filtern",
+    allPlayers: "Alle Spieler",
+    ready: "Bereit",
+    notReady: "Nicht bereit",
+  },
+};
+__fx.translateFX = key => fxText[(navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en"][key] ?? key;
+
 var settings = {
   //"showBotDonations": false,
   displayWinCounter: true,
@@ -37,6 +59,7 @@ var settings = {
   customQuickEmojisEnabled: false,
   customQuickEmojis: [],
   lobbyReminderRules: [],
+  enhancedLobbyLayout: true,
   mutePingAll: false,
   mutePingEveryone: false,
   mutePingRoom: false,
@@ -550,6 +573,12 @@ const settingsManager = new (function () {
     StartingPercentageInput,
     CustomQuickEmojis,
     SectionHeader("Lobby"),
+    {
+      for: "enhancedLobbyLayout",
+      type: "checkbox",
+      label: __fx.translateFX("enhancedLobbyLayout"),
+      note: __fx.translateFX("enhancedLobbyLayoutNote"),
+    },
     {
       for: "highlightDuplicateIps",
       type: "checkbox",

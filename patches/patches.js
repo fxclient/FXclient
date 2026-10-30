@@ -41,6 +41,11 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
     const rawPlayerNames = `${dict.playerData}.${dict.rawPlayerNames}`;
     const gIsSingleplayer = `${dict.game}.${dict.gIsSingleplayer}`;
 
+    // Compact the HTML based lobby header: title, mode tiles, and secondary
+    // navigation rows. Keep the map/player area allocation intact.
+    replaceRawCode(".05*aSB),aSC=bN.au>bN.aV,aSD=bQ.bR.lV(.06*aSB+.03*aSC),aSE=bQ.bR.lV(.08*aSB+.03*aSC),aSF=bQ.bR.lV(.04+.02*aSC),aSC=bQ.bR.lV(.02*aSB+.01*aSC)",
+        "(__fx.settings.enhancedLobbyLayout ? .033 : .05)*aSB),aSC=bN.au>bN.aV,aSD=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .04 : .06)*aSB+(__fx.settings.enhancedLobbyLayout ? .02 : .03)*aSC),aSE=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .055 : .08)*aSB+(__fx.settings.enhancedLobbyLayout ? .02 : .03)*aSC),aSF=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .028 : .04)+(__fx.settings.enhancedLobbyLayout ? .014 : .02)*aSC),aSC=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .016 : .02)*aSB+(__fx.settings.enhancedLobbyLayout ? .007 : .01)*aSC)");
+
     // Replace assets
     replaceOne(/(\(4,"crown",4,")[^"]+"\),/g, "$1" + assets.crownIcon + "\"),");
     replaceOne(/(\(6,"territorial\.io",6,")[^"]+"\),/g, "$1" + assets.fxClientLogo + "\"),");
