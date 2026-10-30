@@ -82,10 +82,18 @@
     followedFirst.setAttribute("aria-pressed", "false");
     followedFirst.style.cssText = resetFilters.style.cssText;
 
+    const rankSort = document.createElement("button");
+    rankSort.className = "fx-lobby-filter-action";
+    rankSort.type = "button";
+    rankSort.setAttribute("aria-pressed", "false");
+    rankSort.textContent = translate("rankBestFirst");
+    rankSort.style.cssText = resetFilters.style.cssText;
+
     const playerCount = document.createElement("span");
     playerCount.setAttribute("aria-live", "polite");
     playerCount.style.cssText = "flex:0 0 auto;white-space:nowrap;opacity:.8;margin:.05em .35em 0 auto";
     let sortFollowedFirst = false;
+    let rankSortDirection = 0;
 
     const applyFilter = () => {
       const query = search.value.trim().toLocaleLowerCase();
@@ -118,9 +126,22 @@
           "important"
         );
       }
-      if (sortFollowedFirst) {
+      if (sortFollowedFirst || rankSortDirection !== 0) {
         const orderedRows = Array.from(list.children).filter(isPlayerRow);
-        orderedRows.sort((a, b) => Number(isFollowedPlayer(b)) - Number(isFollowedPlayer(a)));
+        orderedRows.sort((a, b) => {
+          if (sortFollowedFirst) {
+            const followedDifference = Number(isFollowedPlayer(b)) - Number(isFollowedPlayer(a));
+            if (followedDifference) return followedDifference;
+          }
+          if (!rankSortDirection) return 0;
+          const rankA = Number(a.dataset.fxRank);
+          const rankB = Number(b.dataset.fxRank);
+          const validA = Number.isFinite(rankA) && rankA > 0;
+          const validB = Number.isFinite(rankB) && rankB > 0;
+          if (validA !== validB) return validA ? -1 : 1;
+          if (!validA) return 0;
+          return (rankA - rankB) * rankSortDirection;
+        });
         for (let index = 0; index < orderedRows.length; index++) {
           const currentRows = Array.from(list.children).filter(isPlayerRow);
           if (currentRows[index] !== orderedRows[index]) {
@@ -141,6 +162,13 @@
       readyFilter.value = "all";
       followedFilter.value = "all";
       clanFilter.value = "all";
+      sortFollowedFirst = false;
+      followedFirst.setAttribute("aria-pressed", "false");
+      followedFirst.style.backgroundColor = "rgba(0,0,0,.65)";
+      rankSortDirection = 0;
+      rankSort.setAttribute("aria-pressed", "false");
+      rankSort.textContent = translate("rankBestFirst");
+      rankSort.style.backgroundColor = "rgba(0,0,0,.65)";
       applyFilter();
     });
     followedFirst.addEventListener("click", () => {
@@ -149,16 +177,23 @@
       followedFirst.style.backgroundColor = sortFollowedFirst ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
       applyFilter();
     });
+    rankSort.addEventListener("click", () => {
+      rankSortDirection = rankSortDirection === 0 ? 1 : rankSortDirection === 1 ? -1 : 0;
+      rankSort.setAttribute("aria-pressed", String(rankSortDirection !== 0));
+      rankSort.textContent = translate(rankSortDirection === -1 ? "rankWorstFirst" : "rankBestFirst");
+      rankSort.style.backgroundColor = rankSortDirection ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
+      applyFilter();
+    });
     const controls = document.createElement("div");
     controls.style.cssText = "position:sticky;top:0;z-index:5;box-sizing:border-box;display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em;padding:.25em .15em;background:transparent";
     search.style.cssText += `;flex:1 1 10em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
     readyFilter.style.cssText += `;flex:1 1 7em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
     followedFilter.style.cssText += `;flex:1 1 7em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
     clanFilter.style.cssText += `;flex:1 1 7em;width:auto;min-width:6em;font-size:${filterFontSize()};border-width:.5px`;
-    resetFilters.style.fontSize = followedFirst.style.fontSize = filterFontSize();
-    resetFilters.style.borderWidth = followedFirst.style.borderWidth = ".5px";
+    resetFilters.style.fontSize = followedFirst.style.fontSize = rankSort.style.fontSize = filterFontSize();
+    resetFilters.style.borderWidth = followedFirst.style.borderWidth = rankSort.style.borderWidth = ".5px";
     playerCount.style.fontSize = `clamp(10px, ${0.34 * fontScale()}em, 12px)`;
-    controls.append(search, readyFilter, followedFilter, clanFilter, followedFirst, resetFilters, playerCount);
+    controls.append(search, readyFilter, followedFilter, clanFilter, followedFirst, rankSort, resetFilters, playerCount);
     list.parentElement.insertBefore(controls, list);
     let lobbyRoot = list.parentElement;
     for (let depth = 0; lobbyRoot.parentElement && depth < 2; depth++) lobbyRoot = lobbyRoot.parentElement;
@@ -184,7 +219,7 @@
       childList: true,
       subtree: true
     });
-    new MutationObserver(applyFilter).observe(list, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "data-fx-followed"] });
+    new MutationObserver(applyFilter).observe(list, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "data-fx-followed", "data-fx-rank"] });
   }
 
   function scan() {
