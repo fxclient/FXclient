@@ -67,12 +67,38 @@ import { createFrameScheduler } from "./frameScheduler.js";
 
   function isFollowedPlayer(row) {
     const accountName = row.dataset.fxAccountName;
+    const followedAccounts = window.__fx?.followedAccounts;
     const isUnderlined = getComputedStyle(row).textDecorationLine.includes("underline");
     return row.dataset.fxFollowed === "true"
       || row.classList.contains("fx-followed-player")
       || row.querySelector(".fx-followed-player") !== null
       || isUnderlined
-      || (typeof accountName === "string" && window.__fx?.followedAccounts?.isFollowed(accountName) === true);
+      || (typeof accountName === "string" && followedAccounts?.isFollowed?.(accountName) === true);
+  }
+
+  function setReadyLabelWeight(button, readyLabel, isReady) {
+    let label = button.querySelector(".fx-ready-label");
+    if (!label) {
+      const walker = document.createTreeWalker(button, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const textNode = walker.currentNode;
+        const index = textNode.textContent.toLocaleLowerCase().indexOf(readyLabel);
+        if (index < 0) continue;
+        const before = textNode.textContent.slice(0, index);
+        const word = textNode.textContent.slice(index, index + readyLabel.length);
+        const after = textNode.textContent.slice(index + readyLabel.length);
+        label = document.createElement("span");
+        label.className = "fx-ready-label";
+        label.textContent = word;
+        const fragment = document.createDocumentFragment();
+        if (before) fragment.appendChild(document.createTextNode(before));
+        fragment.appendChild(label);
+        if (after) fragment.appendChild(document.createTextNode(after));
+        textNode.replaceWith(fragment);
+        break;
+      }
+    }
+    if (label) label.style.setProperty("font-weight", isReady ? "700" : "inherit", "important");
   }
 
   function enhanceRoster(list) {
@@ -145,8 +171,39 @@ import { createFrameScheduler } from "./frameScheduler.js";
     const playerCount = document.createElement("span");
     playerCount.setAttribute("aria-live", "polite");
     playerCount.style.cssText = "flex:0 0 auto;white-space:nowrap;opacity:.8;margin:.05em .35em 0 auto";
+    const filterStorageKey = "fxclient:lobby-filters:v1";
     let sortFollowedFirst = false;
     let rankSortDirection = 0;
+    try {
+      const saved = JSON.parse(localStorage.getItem(filterStorageKey) ?? "null");
+      if (saved && typeof saved === "object") {
+        if (typeof saved.search === "string") search.value = saved.search;
+        if (["all", "ready", "not-ready"].includes(saved.readiness)) readyFilter.value = saved.readiness;
+        if (["all", "followed"].includes(saved.followed)) followedFilter.value = saved.followed;
+        if (["all", "clan", "my-clan"].includes(saved.clan)) clanFilter.value = saved.clan;
+        if (saved.rankSortDirection === -1 || saved.rankSortDirection === 0 || saved.rankSortDirection === 1) {
+          rankSortDirection = saved.rankSortDirection;
+        }
+        sortFollowedFirst = saved.sortFollowedFirst === true && rankSortDirection === 0;
+      }
+    } catch {}
+    const persistFilterState = () => {
+      try {
+        localStorage.setItem(filterStorageKey, JSON.stringify({
+          search: search.value,
+          readiness: readyFilter.value,
+          followed: followedFilter.value,
+          clan: clanFilter.value,
+          sortFollowedFirst,
+          rankSortDirection,
+        }));
+      } catch {}
+    };
+    followedFirst.setAttribute("aria-pressed", String(sortFollowedFirst));
+    followedFirst.style.backgroundColor = sortFollowedFirst ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
+    rankSort.setAttribute("aria-pressed", String(rankSortDirection !== 0));
+    rankSort.textContent = translate(rankSortDirection === -1 ? "rankWorstFirst" : "rankBestFirst");
+    rankSort.style.backgroundColor = rankSortDirection ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
 
     const applyFilterNow = () => {
       const query = search.value.trim().toLocaleLowerCase();
@@ -162,6 +219,7 @@ import { createFrameScheduler } from "./frameScheduler.js";
         clan: getClan(row.dataset.fxAccountName, parseClan),
       }));
       const selfRow = rows.find(({ row }) => row.dataset.fxSelf === "true");
+      const selfIsReady = selfRow?.readiness === "ready";
       const ownClan = getClan(ownName, parseClan) ?? selfRow?.clan ?? null;
       let total = 0;
       let shown = 0;
@@ -229,6 +287,7 @@ import { createFrameScheduler } from "./frameScheduler.js";
         if (button.dataset.fxReadyButton !== "true"
           && !buttonLabel.startsWith(readyLabel)) continue;
         button.dataset.fxReadyButton = "true";
+        setReadyLabelWeight(button, readyLabel, selfIsReady);
         let badge = button.querySelector(".fx-ready-clan-badge");
         if (readyClanmate && ownClan) {
           if (!badge) {
@@ -253,10 +312,10 @@ import { createFrameScheduler } from "./frameScheduler.js";
     const scheduleApplyFilter = createFrameScheduler(() => {
       if (active) applyFilterNow();
     });
-    search.addEventListener("input", scheduleApplyFilter);
-    readyFilter.addEventListener("change", scheduleApplyFilter);
-    followedFilter.addEventListener("change", scheduleApplyFilter);
-    clanFilter.addEventListener("change", scheduleApplyFilter);
+    search.addEventListener("input", () => { persistFilterState(); scheduleApplyFilter(); });
+    readyFilter.addEventListener("change", () => { persistFilterState(); scheduleApplyFilter(); });
+    followedFilter.addEventListener("change", () => { persistFilterState(); scheduleApplyFilter(); });
+    clanFilter.addEventListener("change", () => { persistFilterState(); scheduleApplyFilter(); });
     resetFilters.addEventListener("click", () => {
       search.value = "";
       readyFilter.value = "all";
@@ -269,6 +328,7 @@ import { createFrameScheduler } from "./frameScheduler.js";
       rankSort.setAttribute("aria-pressed", "false");
       rankSort.textContent = translate("rankBestFirst");
       rankSort.style.backgroundColor = "rgba(0,0,0,.65)";
+      persistFilterState();
       scheduleApplyFilter();
     });
     followedFirst.addEventListener("click", () => {
@@ -281,6 +341,7 @@ import { createFrameScheduler } from "./frameScheduler.js";
       }
       followedFirst.setAttribute("aria-pressed", String(sortFollowedFirst));
       followedFirst.style.backgroundColor = sortFollowedFirst ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
+      persistFilterState();
       scheduleApplyFilter();
     });
     rankSort.addEventListener("click", () => {
@@ -293,6 +354,7 @@ import { createFrameScheduler } from "./frameScheduler.js";
       rankSort.setAttribute("aria-pressed", String(rankSortDirection !== 0));
       rankSort.textContent = translate(rankSortDirection === -1 ? "rankWorstFirst" : "rankBestFirst");
       rankSort.style.backgroundColor = rankSortDirection ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
+      persistFilterState();
       scheduleApplyFilter();
     });
     const controls = document.createElement("div");

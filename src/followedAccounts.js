@@ -6,6 +6,7 @@ const NICKNAME_MAX_LENGTH = 20;
 
 let entries = [];
 let accountNames = [];
+let accountNamesProvider = null;
 const followedIndex = createFollowedAccountIndex();
 const EMPTY_ACCOUNT_SETTINGS = Object.freeze({});
 
@@ -52,8 +53,17 @@ function syncAccountNames(listAccountNames) {
   followedIndex.invalidate();
 }
 
+function setAccountNamesProvider(provider) {
+  if (typeof provider === "function") accountNamesProvider = provider;
+}
+
 function isFollowed(accountName) {
   if (typeof accountName !== "string") return false;
+  if (accountNamesProvider) {
+    try {
+      syncAccountNames(accountNamesProvider());
+    } catch {}
+  }
   followedIndex.update(
     accountNames,
     getStored("followedAccountNicknames"),
@@ -90,4 +100,4 @@ function edit(selectedIndex) {
   });
 }
 
-export default { decorate, syncAccountNames, edit, isFollowed, getLobbyDetails };
+export default { decorate, syncAccountNames, setAccountNamesProvider, edit, isFollowed, getLobbyDetails };
