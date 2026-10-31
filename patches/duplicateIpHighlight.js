@@ -27,11 +27,12 @@ export default definePatch(({ replaceRawCode, matchRawCode, matchCode }) => {
         else { s0.style.width=s0.style.maxWidth=uS===2?"10em":"9em";s0.style.height=s0.style.maxHeight="1.4em"; }
         const __fxAccountName = qu.${username};
         s0.dataset.fxAccountName = __fxAccountName;
+        s0.dataset.fxSelf = bq.lJ.ub(qu) ? "true" : "false";
         s0.dataset.fxLobbyPlayer = "true";
         s0.dataset.fxRank = Number.isFinite(qu.qw) && qu.qw >= 0 ? String(qu.qw + 1) : "";
         __fx.followedAccounts.syncAccountNames(${storage}.${followList}.get());
-        const __fxIsFollowed = __fx.followedAccounts.isFollowed(__fxAccountName);
         const __fxFollowed = __fx.followedAccounts.getLobbyDetails(__fxAccountName);
+        const __fxIsFollowed = __fxFollowed.followed;
         const __fxNickname = __fxFollowed.nickname;
         s0.dataset.fxFollowed = __fxIsFollowed ? "true" : "false";
         s0.classList.toggle("fx-followed-player", __fxIsFollowed);

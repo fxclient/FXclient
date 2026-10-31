@@ -8,8 +8,62 @@ import { createFrameScheduler } from "./frameScheduler.js";
   const fontScale = () => Math.max(0.75, Math.min(1.25, Number(window.__fx?.settings?.lobbyFontScale ?? 100) / 100));
   const filterFontSize = () => `clamp(11px, ${0.4 * fontScale()}em, 14px)`;
   const normalizeClan = clan => typeof clan === "string" ? clan.trim().toLocaleUpperCase() : null;
+  const getClan = (name, parser) => {
+    if (typeof name !== "string") return null;
+    if (typeof parser === "function") {
+      try {
+        const parsed = normalizeClan(parser(name));
+        if (parsed) return parsed;
+      } catch {}
+    }
+    return normalizeClan(name.match(/\[([^\]]{1,16})\]/)?.[1] ?? null);
+  };
   const isPlayerRow = element => element instanceof HTMLSpanElement && isLobbyPlayerRow(element);
   const activeRosterObservers = new Set();
+
+  function decorateLobbyTabIcons(root) {
+    const icons = {
+      chat: '<path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.7 8.7 0 0 1-3.6-.8L4 20l1.5-3.6A7.2 7.2 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5Z"/><path d="M8 11h8M8 14h5"/>',
+      players: '<circle cx="12" cy="8" r="3"/><path d="M5.5 19a6.5 6.5 0 0 1 13 0"/>',
+    };
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    for (const textNode of textNodes) {
+      const element = textNode.parentElement;
+      if (!element || element.closest("[data-fx-lobby-tab-icon='true']")) continue;
+      const match = /^(\s*)(Chat|Spieler|Players)(?=\s|$|\d)/i.exec(textNode.textContent);
+      const iconType = match?.[2].toLocaleLowerCase() === "chat" ? "chat"
+        : match ? "players" : null;
+      const paths = textNode.textContent.length <= 100 && iconType ? icons[iconType] : null;
+      if (!paths) continue;
+      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      icon.setAttribute("viewBox", "0 0 24 24");
+      icon.setAttribute("width", "23");
+      icon.setAttribute("height", "23");
+      icon.setAttribute("fill", "none");
+      icon.setAttribute("stroke", "currentColor");
+      icon.setAttribute("stroke-width", "1.65");
+      icon.setAttribute("stroke-linecap", "round");
+      icon.setAttribute("stroke-linejoin", "round");
+      icon.setAttribute("aria-hidden", "true");
+      icon.style.setProperty("width", "23px", "important");
+      icon.style.setProperty("height", "23px", "important");
+      icon.style.setProperty("min-width", "23px", "important");
+      icon.style.setProperty("min-height", "23px", "important");
+      icon.style.setProperty("flex", "0 0 23px", "important");
+      icon.innerHTML = paths;
+      const wrapper = document.createElement("span");
+      wrapper.dataset.fxLobbyTabIcon = "true";
+      wrapper.style.cssText = "display:inline-flex;align-items:center;gap:.35em;vertical-align:middle";
+      textNode.parentNode.insertBefore(wrapper, textNode);
+      if (match[1]) textNode.parentNode.insertBefore(document.createTextNode(match[1]), wrapper);
+      wrapper.append(icon, document.createTextNode(match[2]));
+      const trailingText = textNode.textContent.slice(match[0].length);
+      if (trailingText) textNode.parentNode.insertBefore(document.createTextNode(trailingText), textNode);
+      textNode.remove();
+    }
+  }
 
   function isFollowedPlayer(row) {
     const accountName = row.dataset.fxAccountName;
@@ -99,26 +153,28 @@ import { createFrameScheduler } from "./frameScheduler.js";
       const parseClan = window.__fx?.leaderboardFilter?.parseClanFromPlayerName;
       const playerId = window.__fx?.getGameVar?.("playerId");
       const ownName = window.__fx?.getGameVar?.("rawPlayerNames")?.[playerId];
-      const ownClan = normalizeClan(parseClan && ownName ? parseClan(ownName) : null);
       const originalChildren = Array.from(list.children);
       const rows = originalChildren.filter(isPlayerRow).map(row => ({
         row,
         isFollowed: isFollowedPlayer(row),
         readiness: syncLobbyReadiness(row),
         rank: Number(row.dataset.fxRank),
+        clan: getClan(row.dataset.fxAccountName, parseClan),
       }));
+      const selfRow = rows.find(({ row }) => row.dataset.fxSelf === "true");
+      const ownClan = getClan(ownName, parseClan) ?? selfRow?.clan ?? null;
       let total = 0;
       let shown = 0;
       let readyClanmate = false;
-      for (const { row, isFollowed, readiness, rank } of rows) {
+      for (const { row, isFollowed, readiness, rank, clan } of rows) {
         total++;
         const text = row.textContent.trim();
         const matchesReadiness = readyFilter.value === "all"
           || (readyFilter.value === "ready" && readiness === "ready")
           || (readyFilter.value === "not-ready" && readiness === "not-ready");
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
-        const clan = normalizeClan(parseClan && row.dataset.fxAccountName ? parseClan(row.dataset.fxAccountName) : null);
-        if (ownClan && clan === ownClan && row.dataset.fxAccountName !== ownName && readiness === "ready") {
+        const isSelf = row.dataset.fxSelf === "true" || row.dataset.fxAccountName === ownName;
+        if (ownClan && clan === ownClan && !isSelf && readiness === "ready") {
           readyClanmate = true;
         }
         const matchesClan = clanFilter.value === "all"
@@ -164,10 +220,14 @@ import { createFrameScheduler } from "./frameScheduler.js";
       playerCount.textContent = translate("showingPlayers")
         .replace("{shown}", String(shown))
         .replace("{total}", String(total));
+      if (clanFilter.value === "my-clan" && !ownClan) {
+        playerCount.textContent += ` · ${translate("myClanUnavailable")}`;
+      }
       const readyLabel = translate("ready").trim().toLocaleLowerCase();
-      for (const button of list.parentElement.querySelectorAll("button")) {
+      for (const button of document.querySelectorAll("button, [role='button']")) {
+        const buttonLabel = button.textContent.replace(/\s+/g, " ").trim().toLocaleLowerCase();
         if (button.dataset.fxReadyButton !== "true"
-          && button.textContent.trim().toLocaleLowerCase() !== readyLabel) continue;
+          && !buttonLabel.startsWith(readyLabel)) continue;
         button.dataset.fxReadyButton = "true";
         let badge = button.querySelector(".fx-ready-clan-badge");
         if (readyClanmate && ownClan) {
@@ -178,10 +238,10 @@ import { createFrameScheduler } from "./frameScheduler.js";
             button.appendChild(badge);
           }
           badge.textContent = `[${ownClan}]`;
-          button.style.boxShadow = "inset 0 0 0 2px #55d98b";
+          button.style.setProperty("box-shadow", "inset 0 0 0 2px #55d98b", "important");
         } else {
           badge?.remove();
-          button.style.boxShadow = "";
+          button.style.removeProperty("box-shadow");
         }
       }
     };
@@ -244,6 +304,7 @@ import { createFrameScheduler } from "./frameScheduler.js";
     list.parentElement.insertBefore(controls, list);
     let lobbyRoot = list.parentElement;
     for (let depth = 0; lobbyRoot.parentElement && depth < 2; depth++) lobbyRoot = lobbyRoot.parentElement;
+    decorateLobbyTabIcons(lobbyRoot);
     const thinLobbyBorders = () => {
       for (const element of [lobbyRoot, ...lobbyRoot.querySelectorAll("*")]) {
         const style = getComputedStyle(element);
@@ -253,9 +314,12 @@ import { createFrameScheduler } from "./frameScheduler.js";
           const scaledSize = `clamp(12px, ${baseSize * fontScale()}em, 22px)`;
           if (element.style.fontSize !== scaledSize) element.style.fontSize = scaledSize;
         }
-        if ([style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].some(width => parseFloat(width) > 0)
-          && parseFloat(element.style.borderWidth) !== 0.5) {
-          element.style.borderWidth = ".5px";
+        const hasBorder = [style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth]
+          .some(width => parseFloat(width) > 0);
+        const inlineBorderWidth = element.style.getPropertyValue("border-width");
+        const inlineBorderPriority = element.style.getPropertyPriority("border-width");
+        if (hasBorder && (parseFloat(inlineBorderWidth) !== 0.5 || inlineBorderPriority !== "important")) {
+          element.style.setProperty("border-width", ".5px", "important");
         }
       }
     };
@@ -288,7 +352,7 @@ import { createFrameScheduler } from "./frameScheduler.js";
       delete list.dataset.fxLobbyEnhanced;
       activeRosterObservers.delete(observerRecord);
     };
-    observerRecord = { list, dispose };
+    observerRecord = { list, root: lobbyRoot, dispose };
     activeRosterObservers.add(observerRecord);
     scheduleApplyFilter();
   }
@@ -322,7 +386,11 @@ import { createFrameScheduler } from "./frameScheduler.js";
 
   new MutationObserver(records => {
     for (const observerRecord of activeRosterObservers) {
-      if (!observerRecord.list.isConnected) observerRecord.dispose();
+      if (!observerRecord.list.isConnected
+        || !observerRecord.root.isConnected
+        || !observerRecord.root.contains(observerRecord.list)) {
+        observerRecord.dispose();
+      }
     }
     for (const record of records) {
       if (record.type === "attributes" && record.target instanceof Element) {
