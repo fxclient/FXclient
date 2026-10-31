@@ -10,6 +10,7 @@
     "build-client": "node build.js --skip-patching",
     "patch": "node build.js --patch-only",
     "serve": "node serve.js",
+    "test": "node --test",
     "start": "npm run build && npm run serve"
   },
   "repository": {
