@@ -1,78 +1,208 @@
 import UglifyJS from "uglify-js";
 
-const hasNumber = (values, target) => values.some(value => Math.abs(value - target) < 1e-9);
+const AST = UglifyJS;
+const sameNumber = (left, right) => Math.abs(left - right) < 1e-9;
+const setting = "__fx.settings.enhancedLobbyLayout";
 
-function getNumbers(node) {
+function parseExpression(source) {
+    return AST.parse(source).body[0].body;
+}
+
+function walkWithoutNestedFunctions(root, visit) {
+    root.walk(new AST.TreeWalker(node => {
+        if (node !== root && ["Function", "Arrow"].includes(node.TYPE)) return true;
+        return visit(node);
+    }));
+}
+
+function numberValues(node) {
     const values = [];
-    node.walk(new UglifyJS.TreeWalker(current => {
+    node.walk(new AST.TreeWalker(current => {
         if (current.TYPE === "Number") values.push(current.value);
     }));
     return values;
 }
 
-function replaceNumber(node, oldValue, expression) {
-    let replaced = 0;
-    const transformed = node.transform(new UglifyJS.TreeTransformer(current => {
-        if (current.TYPE !== "Number" || Math.abs(current.value - oldValue) >= 1e-9) return;
-        replaced++;
-        return UglifyJS.parse(expression).body[0].body;
-    }));
-    if (replaced !== 1) throw new Error(`Expected one ${oldValue} literal, found ${replaced}`);
-    return transformed;
+function assertSingleNumber(node, value) {
+    const count = numberValues(node).filter(number => sameNumber(number, value)).length;
+    if (count !== 1) throw new Error(`Expected one ${value} literal, found ${count}`);
 }
 
-/** Find and compact the lobby resize formulas without relying on minifier variable names. */
-export function compactLobbyHeights(script) {
-    const ast = UglifyJS.parse(script);
-    const resizeFunctions = [];
-    ast.walk(new UglifyJS.TreeWalker(node => {
-        if (node.TYPE === "Assign" && node.operator === "="
-            && node.left.TYPE === "Dot" && node.left.property === "resize"
-            && node.left.expression.TYPE === "This" && node.right.TYPE === "Function") {
-            resizeFunctions.push(node.right);
+function replaceNumber(node, oldValue, expression) {
+    const matches = [];
+    node.walk(new AST.TreeWalker(current => {
+        if (current.TYPE === "Number" && sameNumber(current.value, oldValue)) matches.push(current);
+    }));
+    if (matches.length !== 1) throw new Error(`Expected one ${oldValue} literal, found ${matches.length}`);
+
+    let replaced = false;
+    return node.transform(new AST.TreeTransformer(current => {
+        if (!replaced && current === matches[0]) {
+            replaced = true;
+            return parseExpression(expression);
         }
     }));
+}
 
+function assignments(ast, predicate) {
+    const matches = [];
+    ast.walk(new AST.TreeWalker(node => {
+        if (node.TYPE === "Assign" && predicate(node)) matches.push(node);
+    }));
+    return matches;
+}
+
+function isStyleAssignment(node, property) {
+    return node.left?.TYPE === "Dot"
+        && node.left.property === property
+        && node.left.expression?.TYPE === "Dot"
+        && node.left.expression.property === "style";
+}
+
+function getLobbyResize(ast) {
     const candidates = [];
-    for (const resizeFunction of resizeFunctions) {
+    ast.walk(new AST.TreeWalker(node => {
+        if (node.TYPE !== "Assign" || node.operator !== "="
+            || node.left.TYPE !== "Dot" || node.left.property !== "resize"
+            || node.left.expression.TYPE !== "This" || node.right.TYPE !== "Function") return;
+
         const definitions = [];
-        resizeFunction.walk(new UglifyJS.TreeWalker(node => {
-            if (node !== resizeFunction && ["Function", "Arrow"].includes(node.TYPE)) return true;
-            if (node.TYPE === "VarDef" && node.value?.TYPE === "Call") {
-                definitions.push({ node, numbers: getNumbers(node.value) });
+        walkWithoutNestedFunctions(node.right, child => {
+            if (child.TYPE === "VarDef" && child.value?.TYPE === "Call") {
+                definitions.push({ node: child, values: numberValues(child.value) });
             }
-        }));
+        });
         const one = predicate => {
-            const matches = definitions.filter(({ numbers }) => predicate(numbers));
-            return matches.length === 1 ? matches[0].node : null;
+            const found = definitions.filter(({ values }) => predicate(values));
+            return found.length === 1 ? found[0].node : null;
         };
         const targets = {
-            title: one(numbers => hasNumber(numbers, 0.05)),
-            teamRow: one(numbers => hasNumber(numbers, 0.06) && hasNumber(numbers, 0.03)),
-            mapRow: one(numbers => hasNumber(numbers, 0.08) && hasNumber(numbers, 0.03)),
-            footer: one(numbers => hasNumber(numbers, 0.02) && hasNumber(numbers, 0.01)),
+            title: one(values => values.some(value => sameNumber(value, 0.05))),
+            teamRow: one(values => values.some(value => sameNumber(value, 0.06)) && values.some(value => sameNumber(value, 0.03))),
+            mapRow: one(values => values.some(value => sameNumber(value, 0.08)) && values.some(value => sameNumber(value, 0.03))),
+            footer: one(values => values.some(value => sameNumber(value, 0.02)) && values.some(value => sameNumber(value, 0.01))),
         };
         if (Object.values(targets).every(Boolean)) candidates.push(targets);
-    }
+    }));
+    if (candidates.length !== 1) throw new Error(`Expected one lobby resize function, found ${candidates.length}`);
+    return candidates[0];
+}
 
-    if (candidates.length !== 1) {
-        throw new Error(`Expected one lobby resize function, found ${candidates.length}`);
-    }
-    const targets = candidates[0];
-    targets.title.value = replaceNumber(targets.title.value, 0.05,
-        "__fx.settings.enhancedLobbyLayout ? .034 : .05");
-    targets.teamRow.value = replaceNumber(targets.teamRow.value, 0.06,
-        "__fx.settings.enhancedLobbyLayout ? .04 : .06");
-    targets.teamRow.value = replaceNumber(targets.teamRow.value, 0.03,
-        "__fx.settings.enhancedLobbyLayout ? .02 : .03");
-    targets.mapRow.value = replaceNumber(targets.mapRow.value, 0.08,
-        "__fx.settings.enhancedLobbyLayout ? .04 : .08");
-    targets.mapRow.value = replaceNumber(targets.mapRow.value, 0.03,
-        "__fx.settings.enhancedLobbyLayout ? .02 : .03");
-    targets.footer.value = replaceNumber(targets.footer.value, 0.02,
-        "__fx.settings.enhancedLobbyLayout ? .016 : .02");
-    targets.footer.value = replaceNumber(targets.footer.value, 0.01,
-        "__fx.settings.enhancedLobbyLayout ? .007 : .01");
+function patchHeights(ast) {
+    const targets = getLobbyResize(ast);
+    assertSingleNumber(targets.title.value, 0.05);
+    assertSingleNumber(targets.teamRow.value, 0.06);
+    assertSingleNumber(targets.teamRow.value, 0.03);
+    assertSingleNumber(targets.mapRow.value, 0.08);
+    assertSingleNumber(targets.mapRow.value, 0.03);
+    assertSingleNumber(targets.footer.value, 0.02);
+    assertSingleNumber(targets.footer.value, 0.01);
+    targets.title.value = replaceNumber(targets.title.value, 0.05, `${setting} ? .034 : .05`);
+    targets.teamRow.value = replaceNumber(targets.teamRow.value, 0.06, `${setting} ? .04 : .06`);
+    targets.teamRow.value = replaceNumber(targets.teamRow.value, 0.03, `${setting} ? .02 : .03`);
+    targets.mapRow.value = replaceNumber(targets.mapRow.value, 0.08, `${setting} ? .04 : .08`);
+    targets.mapRow.value = replaceNumber(targets.mapRow.value, 0.03, `${setting} ? .02 : .03`);
+    targets.footer.value = replaceNumber(targets.footer.value, 0.02, `${setting} ? .016 : .02`);
+    targets.footer.value = replaceNumber(targets.footer.value, 0.01, `${setting} ? .007 : .01`);
+}
 
-    return ast.print_to_string();
+function patchPlayerCardSpacing(ast) {
+    const matches = assignments(ast, node => isStyleAssignment(node, "margin")
+        && node.right.TYPE === "String"
+        && node.right.value === "0.2em 0.2em 0.2em 0.2em");
+    if (matches.length !== 1) throw new Error(`Expected one player card margin, found ${matches.length}`);
+    const original = matches[0].right.print_to_string();
+    matches[0].right = parseExpression(`${setting} ? "0.05em 0.1em" : ${original}`);
+}
+
+function patchPlayerCardWidth(ast) {
+    const matches = assignments(ast, node => {
+        if (!isStyleAssignment(node, "width") || node.right.TYPE !== "Assign") return false;
+        const maxWidth = node.right;
+        if (!isStyleAssignment(maxWidth, "maxWidth") || maxWidth.right.TYPE !== "Conditional") return false;
+        const strings = [];
+        maxWidth.right.walk(new AST.TreeWalker(child => {
+            if (child.TYPE === "String") strings.push(child.value);
+        }));
+        return strings.includes("10em") && strings.includes("9em");
+    });
+    if (matches.length !== 1) throw new Error(`Expected one responsive player card width, found ${matches.length}`);
+    const maxWidth = matches[0].right;
+    maxWidth.right = parseExpression(`${setting} ? "100%" : ${maxWidth.right.print_to_string()}`);
+}
+
+function patchSummaryFont(ast) {
+    const matches = assignments(ast, node => {
+        if (!isStyleAssignment(node, "fontSize")) return false;
+        const values = numberValues(node.right);
+        return values.some(value => sameNumber(value, 0.02)) && values.some(value => sameNumber(value, 0.3));
+    });
+    if (matches.length !== 1) throw new Error(`Expected one lobby summary font size, found ${matches.length}`);
+    matches[0].right = replaceNumber(matches[0].right, 0.02, `${setting} ? .018 : .02`);
+}
+
+function containsString(node, value) {
+    let found = false;
+    node.walk(new AST.TreeWalker(child => {
+        if (child.TYPE === "String" && child.value === value) found = true;
+    }));
+    return found;
+}
+
+function patchSummaryText(ast) {
+    const matches = [];
+    ast.walk(new AST.TreeWalker(node => {
+        if (node.TYPE !== "SimpleStatement" || node.body.TYPE !== "Assign") return;
+        const assignment = node.body;
+        if (assignment.left.TYPE !== "Dot" || assignment.left.property !== "textContent") return;
+        if (["MP: ", "   SP: ", "   Lobby: "].every(label => containsString(assignment.right, label))) {
+            matches.push({ statement: node, assignment });
+        }
+    }));
+    if (matches.length !== 1) throw new Error(`Expected one lobby summary text assignment, found ${matches.length}`);
+    const { statement, assignment } = matches[0];
+    const firstSlot = assignment.left.clone(true);
+    const slotIndices = [];
+    firstSlot.walk(new AST.TreeWalker(node => {
+        if (node.TYPE === "Sub" && node.property.TYPE === "Number" && node.property.value === 1) slotIndices.push(node.property);
+    }));
+    if (slotIndices.length !== 1) throw new Error(`Expected one summary slot index, found ${slotIndices.length}`);
+    slotIndices[0].value = 0;
+
+    const firstTarget = firstSlot.print_to_string();
+    const summaryTarget = assignment.left.print_to_string();
+    const summaryValue = assignment.right.print_to_string();
+    statement.body = parseExpression(
+        `${setting} ? (${firstTarget}=${summaryValue},${summaryTarget}="") : (${firstTarget}="Lobby",${summaryTarget}=${summaryValue})`
+    );
+}
+
+function patchChatSpacing(ast) {
+    const matches = assignments(ast, node => isStyleAssignment(node, "margin")
+        && node.right.TYPE === "String" && node.right.value === "0.6em 0.6em");
+    if (matches.length !== 1) throw new Error(`Expected one chat message margin, found ${matches.length}`);
+    matches[0].right.value = "0.3em 0.6em";
+}
+
+/** Apply independently guarded lobby AST transforms; identifiers can change between minified builds. */
+export function patchLobbyLayout(script) {
+    const ast = AST.parse(script);
+    const results = [];
+    const apply = (id, transform) => {
+        try {
+            transform(ast);
+            results.push({ id, applied: true });
+        } catch (error) {
+            results.push({ id, applied: false, reason: error.message });
+        }
+    };
+
+    apply("lobby-heights-ast", patchHeights);
+    apply("player-card-spacing-ast", patchPlayerCardSpacing);
+    apply("player-card-width-ast", patchPlayerCardWidth);
+    apply("lobby-summary-font-ast", patchSummaryFont);
+    apply("lobby-summary-text-ast", patchSummaryText);
+    apply("chat-message-spacing-ast", patchChatSpacing);
+
+    return { script: ast.print_to_string(), results };
 }
