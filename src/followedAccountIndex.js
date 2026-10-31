@@ -7,15 +7,6 @@ export function normalizeAccountName(name) {
     .toLocaleLowerCase();
 }
 
-function getNameVariant(name) {
-  return (typeof name === "string" ? name : "")
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/^\s*\[[^\]]+\]\s*/, "")
-    .trim()
-    .toLocaleLowerCase();
-}
-
 export function createFollowedAccountIndex() {
   let accountNames = [];
   let accountNamesSource;
@@ -32,21 +23,11 @@ export function createFollowedAccountIndex() {
     accountNames = nextAccountNames.slice();
     nicknameSource = nextNicknames;
     colorSource = nextColors;
-    const variantsByName = new Map();
-    for (const name of new Set([
+    names = new Set([
       ...accountNames,
       ...Object.keys(nicknameSource),
       ...Object.keys(colorSource),
-    ])) {
-      const normalized = normalizeAccountName(name);
-      if (!normalized) continue;
-      const variants = variantsByName.get(normalized) ?? new Set();
-      variants.add(getNameVariant(name));
-      variantsByName.set(normalized, variants);
-    }
-    names = new Set([...variantsByName]
-      .filter(([, variants]) => variants.size === 1)
-      .map(([normalized]) => normalized));
+    ].map(normalizeAccountName).filter(Boolean));
     invalidated = false;
   }
 

@@ -237,8 +237,12 @@ import { createFrameScheduler } from "./frameScheduler.js";
             badge.style.cssText = "display:inline-block;margin-left:.35em;padding:.05em .3em;border-radius:.3em;background:rgba(55,190,105,.22);color:#9af0b8;font-size:.72em;vertical-align:middle";
             button.appendChild(badge);
           }
-          badge.textContent = `[${ownClan}]`;
-          button.style.setProperty("box-shadow", "inset 0 0 0 2px #55d98b", "important");
+          const badgeText = `[${ownClan}]`;
+          if (badge.textContent !== badgeText) badge.textContent = badgeText;
+          if (button.style.getPropertyValue("box-shadow") !== "inset 0 0 0 2px #55d98b"
+            || button.style.getPropertyPriority("box-shadow") !== "important") {
+            button.style.setProperty("box-shadow", "inset 0 0 0 2px #55d98b", "important");
+          }
         } else {
           badge?.remove();
           button.style.removeProperty("box-shadow");
@@ -324,14 +328,18 @@ import { createFrameScheduler } from "./frameScheduler.js";
       }
     };
     thinLobbyBorders();
-    const scheduleThinLobbyBorders = createFrameScheduler(() => {
-      if (active) thinLobbyBorders();
+    const scheduleLobbyRefresh = createFrameScheduler(() => {
+      if (!active) return;
+      decorateLobbyTabIcons(lobbyRoot);
+      thinLobbyBorders();
+      scheduleApplyFilter();
     });
-    const borderObserver = new MutationObserver(scheduleThinLobbyBorders);
+    const borderObserver = new MutationObserver(scheduleLobbyRefresh);
     borderObserver.observe(lobbyRoot, {
       attributes: true,
       attributeFilter: ["class", "style"],
       childList: true,
+      characterData: true,
       subtree: true
     });
     const filterObserver = new MutationObserver(scheduleApplyFilter);
