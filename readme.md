@@ -53,6 +53,26 @@ This will install the dependencies, download the game and build the client.
 
 To build from an already downloaded copy of the game, use `npm run build-only`.
 
+To preview the generated client over HTTP, you can start the optional preview server after building:
+
+```
+npm run serve
+```
+
+Then open http://localhost:4173. The preview server is optional; you can also open `build/index.html` directly with `file://`.
+
+For a one-command build and preview, use:
+
+```
+npm start
+```
+
+The preview port can be changed on Windows PowerShell with:
+
+```
+$env:FXCLIENT_PORT=8080; npm run serve
+```
+
 ## Contact Us
 
 Join the FX Client Discord server: https://discord.gg/JEwYWGraj7

@@ -69,6 +69,24 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       if (!("serviceWorker" in navigator)) return;
+      if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+        const hadController = Boolean(navigator.serviceWorker.controller);
+        Promise.all([
+          navigator.serviceWorker.getRegistrations().then(registrations =>
+            Promise.all(registrations.map(registration => registration.unregister()))
+          ),
+          caches.keys().then(keys => Promise.all(keys.map(key => caches.delete(key))))
+        ]).then(() => {
+          const reloadKey = "fx-local-service-worker-reset";
+          if (hadController && !sessionStorage.getItem(reloadKey)) {
+            sessionStorage.setItem(reloadKey, "true");
+            location.reload();
+          } else {
+            sessionStorage.removeItem(reloadKey);
+          }
+        });
+        return;
+      }
       navigator.serviceWorker.addEventListener("controllerchange", () => {
         console.log("Controlling service worker changed, refreshing page");
         window.location.reload();
@@ -127,11 +145,28 @@
         </select>
       </div>
     </div>
-    <div class="window scrollable selectable" id="playerlist" style="display: none;">
-      <h1>Player List</h1>
-      <table>
-        <tbody id="playerlist_content"></tbody>
-      </table>
+    <div class="window flex-column selectable player-list-window" id="playerlist" style="display: none;">
+      <div class="playerlist-toolbar">
+        <div class="playerlist-title">
+          <h1>Player List</h1>
+          <span id="playerlist_summary" class="playerlist-summary"></span>
+        </div>
+        <div class="playerlist-controls">
+          <input id="playerlist_search" type="search" placeholder="Search players..." aria-label="Search players">
+          <select id="playerlist_sort" aria-label="Sort players">
+            <option value="number">Join order</option>
+            <option value="name">Name</option>
+          </select>
+        </div>
+      </div>
+      <div class="playerlist-table-wrapper">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Player</th><th>Type</th></tr>
+          </thead>
+          <tbody id="playerlist_content"></tbody>
+        </table>
+      </div>
     </div>
     <div class="window scrollable selectable" id="donationhistory" style="display:none">
       <h1>Donation history for </h1>

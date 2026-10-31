@@ -1,6 +1,6 @@
 import { definePatch } from "../modUtils.js";
 
-export default definePatch(({ replaceRawCode, matchRawCode }) => {
+export default definePatch(({ replaceRawCode, matchRawCode, matchCode }) => {
     const { grouping, teamsArray } = matchRawCode(
         `var frag=document.createDocumentFragment();var idx=container.firstIndexHolder.firstIndexProp[0];var group=container.grouping.teamsArray[idx];var perGroupCount=container.grouping.perGroupCountProp[idx];for(var g=0;g<group.length;g++){handler(frag,group[g],g<perGroupCount,idx)}`
     );
@@ -17,9 +17,33 @@ export default definePatch(({ replaceRawCode, matchRawCode }) => {
         `this.isSelf=function(entry){if(!state.ownEntry){return false}return entry.idField===state.ownEntry.idField};`
     );
 
+    const { storage, followList } = matchCode(`accountList = new RadioList(storage.followList.getListData(), function(i) {
+            index = i;
+            updateButtons()
+        });`);
     replaceRawCode(
         `s0.style.width=s0.style.maxWidth=uS===2?"10em":"9em";s0.style.height=s0.style.maxHeight="1.4em";s0.style.whiteSpace="nowrap";s0.style.overflow="hidden";s0.style.textOverflow="ellipsis";s0.style.font="inherit";s0.style.display="inline-block";bq.lJ.ub(qu)&&(s0.style.textDecoration="underline");`,
-        `s0.style.width=s0.style.maxWidth=uS===2?"10em":"9em";s0.style.height=s0.style.maxHeight="1.4em";s0.style.whiteSpace="nowrap";s0.style.overflow="hidden";s0.style.textOverflow="ellipsis";s0.style.font="inherit";s0.style.display="inline-block";
+        `if (__fx.settings.enhancedLobbyLayout) { s0.style.width=s0.style.maxWidth="100%";s0.style.height="auto";s0.style.maxHeight="2.4em";s0.style.lineHeight="1.15";s0.style.verticalAlign="middle"; }
+        else { s0.style.width=s0.style.maxWidth="100%";s0.style.height="auto";s0.style.maxHeight="2.4em";s0.style.lineHeight="1.15"; }
+        const __fxAccountName = qu.${username};
+        s0.dataset.fxAccountName = __fxAccountName;
+        s0.dataset.fxSelf = bq.lJ.ub(qu) ? "true" : "false";
+        s0.dataset.fxLobbyPlayer = "true";
+        s0.dataset.fxRank = Number.isFinite(qu.qw) && qu.qw >= 0 ? String(qu.qw + 1) : "";
+        __fx.followedAccounts.setAccountNamesProvider(() => ${storage}.${followList}.get());
+        __fx.followedAccounts.syncAccountNames(${storage}.${followList}.get());
+        const __fxFollowed = __fx.followedAccounts.getLobbyDetails(__fxAccountName);
+        const __fxIsFollowed = __fxFollowed.followed;
+        const __fxNickname = __fxFollowed.nickname;
+        s0.dataset.fxFollowed = __fxIsFollowed ? "true" : "false";
+        s0.classList.toggle("fx-followed-player", __fxIsFollowed);
+        if (__fxNickname) {
+            const __fxStatus = s0.textContent.match(/^(?:🟢|⚪)\\s*/)?.[0] ?? "";
+            s0.title = s0.textContent.slice(__fxStatus.length);
+            s0.textContent = __fxStatus + __fxNickname;
+            if (__fxFollowed.color) s0.style.color = __fxFollowed.color;
+        }
+        s0.style.whiteSpace="normal";s0.style.overflow="hidden";s0.style.textOverflow="clip";s0.style.overflowWrap="anywhere";s0.style.font="inherit";s0.style.display="inline-block";
         if (__fx.settings.highlightDuplicateIps) {
             var __fxDupColor = __fx.utils.getDuplicateIpHighlightColor(qu, bq.uT.uU[roomIndex], "ipField");
             if (__fxDupColor) { s0.style.backgroundColor = __fxDupColor; s0.style.borderRadius = "0.3em"; }
@@ -32,7 +56,7 @@ export default definePatch(({ replaceRawCode, matchRawCode }) => {
                 s0.style.borderRadius = "0.3em";
             }
         }
-        bq.lJ.ub(qu)&&(s0.style.textDecoration="underline");`,
+        __fxIsFollowed&&(s0.style.textDecoration="underline");`,
         { uT: grouping, uU: teamsArray, ipField, username, roomIndex, ownEntry }
     );
 });

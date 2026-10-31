@@ -9,6 +9,54 @@ import { LobbyReminderRulesInput } from './lobbyReminderRulesInput.js';
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
 
+const fxText = {
+  en: {
+    enhancedLobbyLayout: "Enhanced lobby layout",
+    enhancedLobbyLayoutNote: "Adds player search and readiness filters, a compact six-column roster, and a shorter lobby header.",
+    lobbyFontScale: "Lobby UI font size",
+    lobbyFontScaleNote: "Adjusts the text size in the lobby. Save settings to apply.",
+    searchLobbyPlayers: "Search lobby players...",
+    filterReadiness: "Filter players by readiness",
+    filterFollowed: "Filter followed players",
+    filterClan: "Filter by clan",
+    clanMembersOnly: "Clan members",
+    myClanOnly: "My clan only",
+    myClanUnavailable: "Your clan could not be detected",
+    resetLobbyFilters: "Reset filters",
+    followedFirst: "Followed first",
+    rankBestFirst: "Rank: best first",
+    rankWorstFirst: "Rank: worst first",
+    showingPlayers: "Showing {shown} of {total}",
+    allPlayers: "All players",
+    followedOnly: "Followed only",
+    ready: "Ready",
+    notReady: "Not ready",
+  },
+  de: {
+    enhancedLobbyLayout: "Verbessertes Lobby-Layout",
+    lobbyFontScale: "Schriftgr\u00f6\u00dfe der Lobby",
+    lobbyFontScaleNote: "Passt die Textgr\u00f6\u00dfe in der Lobby an. Zum \u00dcbernehmen Einstellungen speichern.",
+    enhancedLobbyLayoutNote: "Erg\u00e4nzt Spielersuche und Bereitschaftsfilter, eine kompakte Liste mit sechs Spalten und einen flacheren Lobby-Kopfbereich.",
+    searchLobbyPlayers: "Lobby-Spieler suchen...",
+    filterReadiness: "Spieler nach Bereitschaft filtern",
+    filterFollowed: "Gefolgte Spieler filtern",
+    filterClan: "Nach Clan filtern",
+    clanMembersOnly: "Spieler mit Clan",
+    myClanOnly: "Nur mein Clan",
+    myClanUnavailable: "Dein Clan konnte nicht erkannt werden",
+    resetLobbyFilters: "Filter zur\u00fccksetzen",
+    followedFirst: "Gefolgte zuerst",
+    rankBestFirst: "Rang: beste zuerst",
+    rankWorstFirst: "Rang: schlechteste zuerst",
+    showingPlayers: "{shown} von {total} angezeigt",
+    allPlayers: "Alle Spieler",
+    followedOnly: "Nur gefolgte",
+    ready: "Bereit",
+    notReady: "Nicht bereit",
+  },
+};
+__fx.translateFX = key => fxText[(navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en"][key] ?? key;
+
 var settings = {
   //"showBotDonations": false,
   displayWinCounter: true,
@@ -37,6 +85,8 @@ var settings = {
   customQuickEmojisEnabled: false,
   customQuickEmojis: [],
   lobbyReminderRules: [],
+  enhancedLobbyLayout: true,
+  lobbyFontScale: 100,
   mutePingAll: false,
   mutePingEveryone: false,
   mutePingRoom: false,
@@ -551,6 +601,21 @@ const settingsManager = new (function () {
     CustomQuickEmojis,
     SectionHeader("Lobby"),
     {
+      for: "enhancedLobbyLayout",
+      type: "checkbox",
+      label: __fx.translateFX("enhancedLobbyLayout"),
+      note: __fx.translateFX("enhancedLobbyLayoutNote"),
+    },
+    {
+      for: "lobbyFontScale",
+      type: "rangeInput",
+      label: __fx.translateFX("lobbyFontScale"),
+      note: __fx.translateFX("lobbyFontScaleNote"),
+      min: 75,
+      max: 125,
+      step: 5,
+    },
+    {
       for: "highlightDuplicateIps",
       type: "checkbox",
       label: "Duplicate IP highlighting",
@@ -591,6 +656,7 @@ const settingsManager = new (function () {
   const settingsContainer = document.querySelector(".settings .scrollable");
   var inputFields = {}; // (includes select menus)
   var checkboxFields = {};
+  var rangeOutputs = {};
   var customElements = [];
   settingsStructure.forEach((item) => {
     if (typeof item === "function") {
@@ -609,6 +675,13 @@ const settingsManager = new (function () {
         : "button"
     );
     if (item.type === "textInput") element.type = "text";
+    if (item.type === "rangeInput") {
+      element.type = "range";
+      element.min = item.min;
+      element.max = item.max;
+      element.step = item.step;
+      element.style.width = "min(100%, 320px)";
+    }
     if (item.placeholder) element.placeholder = item.placeholder;
     if (isValueInput || item.type === "selectMenu")
       inputFields[item.for] = element;
@@ -628,6 +701,13 @@ const settingsManager = new (function () {
         element.append(optionElement);
       });
     label.append(element);
+    if (item.type === "rangeInput") {
+      const output = document.createElement("output");
+      output.value = element.value + "%";
+      element.addEventListener("input", () => { output.value = element.value + "%"; });
+      rangeOutputs[item.for] = output;
+      label.append(" ", output);
+    }
     if (item.type === "checkbox") {
       element.type = "checkbox";
       const checkmark = document.createElement("span");
@@ -640,7 +720,9 @@ const settingsManager = new (function () {
   });
   this.save = function () {
     Object.keys(inputFields).forEach(function (key) {
-      settings[key] = inputFields[key].value.trim();
+      settings[key] = inputFields[key].type === "range"
+        ? Number(inputFields[key].value)
+        : inputFields[key].value.trim();
     });
     Object.keys(checkboxFields).forEach(function (key) {
       settings[key] = checkboxFields[key].checked;
@@ -699,6 +781,7 @@ const settingsManager = new (function () {
   this.syncFields = function () {
     Object.keys(inputFields).forEach(function (key) {
       inputFields[key].value = settings[key];
+      if (rangeOutputs[key]) rangeOutputs[key].value = inputFields[key].value + "%";
     });
     Object.keys(checkboxFields).forEach(function (key) {
       checkboxFields[key].checked = settings[key];
@@ -716,6 +799,10 @@ const settingsManager = new (function () {
     window.location.reload();
   };
   this.applySettings = function () {
+    document.documentElement.style.setProperty(
+      "--fx-lobby-font-scale",
+      String(Math.max(0.75, Math.min(1.25, Number(settings.lobbyFontScale ?? 100) / 100)))
+    );
     if (settings.customBackgroundUrl !== "") {
       document.body.style.backgroundImage =
         "url(" + settings.customBackgroundUrl + ")";

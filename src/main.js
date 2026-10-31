@@ -2,6 +2,7 @@ import versionData from '../version.json';
 const { version, lastUpdated, isSignificant } = versionData;
 
 import settingsManager from './settings.js';
+import "./lobbyEnhancements.js";
 import { clanFilter, leaderboardFilter } from "./clanFilters.js";
 import WindowManager from "./windowManager.js";
 import donationsTracker from "./donationsTracker.js";
@@ -21,6 +22,7 @@ import nameFilter from './nameFilter.js';
 import followedAccounts from './followedAccounts.js';
 import passwordReset from './passwordReset.js';
 import savedAccounts from './savedAccounts.js';
+import { getVar } from "./gameInterface.js";
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
@@ -55,5 +57,6 @@ __fx.nameFilter = nameFilter;
 __fx.followedAccounts = followedAccounts;
 __fx.passwordReset = passwordReset;
 __fx.savedAccounts = savedAccounts;
+__fx.getGameVar = getVar;
 
 console.log('Successfully loaded FX Client');
