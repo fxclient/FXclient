@@ -1,4 +1,5 @@
 import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
+import { createFrameScheduler } from "./frameScheduler.js";
 
 (() => {
   const searchClass = "fx-lobby-roster-search";
@@ -8,6 +9,7 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
   const filterFontSize = () => `clamp(11px, ${0.4 * fontScale()}em, 14px)`;
   const normalizeClan = clan => typeof clan === "string" ? clan.trim().toLocaleUpperCase() : null;
   const isPlayerRow = element => element instanceof HTMLSpanElement && isLobbyPlayerRow(element);
+  const activeRosterObservers = new Set();
 
   function isFollowedPlayer(row) {
     const accountName = row.dataset.fxAccountName;
@@ -92,24 +94,28 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
     let sortFollowedFirst = false;
     let rankSortDirection = 0;
 
-    const applyFilter = () => {
+    const applyFilterNow = () => {
       const query = search.value.trim().toLocaleLowerCase();
       const parseClan = window.__fx?.leaderboardFilter?.parseClanFromPlayerName;
       const playerId = window.__fx?.getGameVar?.("playerId");
       const ownName = window.__fx?.getGameVar?.("rawPlayerNames")?.[playerId];
       const ownClan = normalizeClan(parseClan && ownName ? parseClan(ownName) : null);
+      const originalChildren = Array.from(list.children);
+      const rows = originalChildren.filter(isPlayerRow).map(row => ({
+        row,
+        isFollowed: isFollowedPlayer(row),
+        readiness: syncLobbyReadiness(row),
+        rank: Number(row.dataset.fxRank),
+      }));
       let total = 0;
       let shown = 0;
       let readyClanmate = false;
-      for (const row of Array.from(list.children)) {
-        if (!isPlayerRow(row)) continue;
+      for (const { row, isFollowed, readiness, rank } of rows) {
         total++;
         const text = row.textContent.trim();
-        const readiness = syncLobbyReadiness(row);
         const matchesReadiness = readyFilter.value === "all"
           || (readyFilter.value === "ready" && readiness === "ready")
           || (readyFilter.value === "not-ready" && readiness === "not-ready");
-        const isFollowed = isFollowedPlayer(row);
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
         const clan = normalizeClan(parseClan && row.dataset.fxAccountName ? parseClan(row.dataset.fxAccountName) : null);
         if (ownClan && clan === ownClan && row.dataset.fxAccountName !== ownName && readiness === "ready") {
@@ -120,35 +126,39 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
           || (clanFilter.value === "my-clan" && ownClan != null && clan === ownClan);
         const visible = text.toLocaleLowerCase().includes(query) && matchesReadiness && matchesFollowed && matchesClan;
         if (visible) shown++;
-        row.style.order = sortFollowedFirst ? (isFollowed ? "-1" : "0") : "";
-        row.style.fontSize = ".58em";
-        row.style.setProperty(
-          "display",
-          visible ? "inline-block" : "none",
-          "important"
-        );
+        const desiredOrder = sortFollowedFirst ? (isFollowed ? "-1" : "0") : "";
+        if (row.style.order !== desiredOrder) row.style.order = desiredOrder;
+        if (row.style.fontSize !== ".58em") row.style.fontSize = ".58em";
+        const desiredDisplay = visible ? "inline-block" : "none";
+        if (row.style.getPropertyValue("display") !== desiredDisplay
+          || row.style.getPropertyPriority("display") !== "important") {
+          row.style.setProperty("display", desiredDisplay, "important");
+        }
       }
       if (sortFollowedFirst || rankSortDirection !== 0) {
-        const orderedRows = Array.from(list.children).filter(isPlayerRow);
+        const orderedRows = rows.slice();
         orderedRows.sort((a, b) => {
           if (sortFollowedFirst) {
-            const followedDifference = Number(isFollowedPlayer(b)) - Number(isFollowedPlayer(a));
+            const followedDifference = Number(b.isFollowed) - Number(a.isFollowed);
             if (followedDifference) return followedDifference;
           }
           if (!rankSortDirection) return 0;
-          const rankA = Number(a.dataset.fxRank);
-          const rankB = Number(b.dataset.fxRank);
-          const validA = Number.isFinite(rankA) && rankA > 0;
-          const validB = Number.isFinite(rankB) && rankB > 0;
+          const validA = Number.isFinite(a.rank) && a.rank > 0;
+          const validB = Number.isFinite(b.rank) && b.rank > 0;
           if (validA !== validB) return validA ? -1 : 1;
           if (!validA) return 0;
-          return (rankA - rankB) * rankSortDirection;
+          return (a.rank - b.rank) * rankSortDirection;
         });
-        for (let index = 0; index < orderedRows.length; index++) {
-          const currentRows = Array.from(list.children).filter(isPlayerRow);
-          if (currentRows[index] !== orderedRows[index]) {
-            list.insertBefore(orderedRows[index], currentRows[index] ?? null);
+        const sorted = orderedRows.every((entry, index) => entry === rows[index]);
+        if (!sorted) {
+          const orderedElements = orderedRows.map(entry => entry.row);
+          const rowSet = new Set(rows.map(entry => entry.row));
+          const fragment = document.createDocumentFragment();
+          let rowIndex = 0;
+          for (const child of originalChildren) {
+            fragment.appendChild(rowSet.has(child) ? orderedElements[rowIndex++] : child);
           }
+          list.appendChild(fragment);
         }
       }
       playerCount.textContent = translate("showingPlayers")
@@ -175,10 +185,14 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
         }
       }
     };
-    search.addEventListener("input", applyFilter);
-    readyFilter.addEventListener("change", applyFilter);
-    followedFilter.addEventListener("change", applyFilter);
-    clanFilter.addEventListener("change", applyFilter);
+    let active = true;
+    const scheduleApplyFilter = createFrameScheduler(() => {
+      if (active) applyFilterNow();
+    });
+    search.addEventListener("input", scheduleApplyFilter);
+    readyFilter.addEventListener("change", scheduleApplyFilter);
+    followedFilter.addEventListener("change", scheduleApplyFilter);
+    clanFilter.addEventListener("change", scheduleApplyFilter);
     resetFilters.addEventListener("click", () => {
       search.value = "";
       readyFilter.value = "all";
@@ -191,7 +205,7 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
       rankSort.setAttribute("aria-pressed", "false");
       rankSort.textContent = translate("rankBestFirst");
       rankSort.style.backgroundColor = "rgba(0,0,0,.65)";
-      applyFilter();
+      scheduleApplyFilter();
     });
     followedFirst.addEventListener("click", () => {
       sortFollowedFirst = !sortFollowedFirst;
@@ -203,7 +217,7 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
       }
       followedFirst.setAttribute("aria-pressed", String(sortFollowedFirst));
       followedFirst.style.backgroundColor = sortFollowedFirst ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
-      applyFilter();
+      scheduleApplyFilter();
     });
     rankSort.addEventListener("click", () => {
       rankSortDirection = rankSortDirection === 0 ? 1 : rankSortDirection === 1 ? -1 : 0;
@@ -215,7 +229,7 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
       rankSort.setAttribute("aria-pressed", String(rankSortDirection !== 0));
       rankSort.textContent = translate(rankSortDirection === -1 ? "rankWorstFirst" : "rankBestFirst");
       rankSort.style.backgroundColor = rankSortDirection ? "rgba(20,90,45,.85)" : "rgba(0,0,0,.65)";
-      applyFilter();
+      scheduleApplyFilter();
     });
     const controls = document.createElement("div");
     controls.style.cssText = "position:sticky;top:0;z-index:5;box-sizing:border-box;display:flex;align-items:center;gap:.25em;width:100%;flex-wrap:wrap;margin-bottom:.15em;padding:.25em .15em;background:transparent";
@@ -246,28 +260,37 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
       }
     };
     thinLobbyBorders();
-    let borderUpdateScheduled = false;
-    const scheduleThinLobbyBorders = () => {
-      if (borderUpdateScheduled) return;
-      borderUpdateScheduled = true;
-      requestAnimationFrame(() => {
-        borderUpdateScheduled = false;
-        thinLobbyBorders();
-      });
-    };
-    new MutationObserver(scheduleThinLobbyBorders).observe(lobbyRoot, {
+    const scheduleThinLobbyBorders = createFrameScheduler(() => {
+      if (active) thinLobbyBorders();
+    });
+    const borderObserver = new MutationObserver(scheduleThinLobbyBorders);
+    borderObserver.observe(lobbyRoot, {
       attributes: true,
       attributeFilter: ["class", "style"],
       childList: true,
       subtree: true
     });
-    new MutationObserver(applyFilter).observe(list, {
+    const filterObserver = new MutationObserver(scheduleApplyFilter);
+    filterObserver.observe(list, {
       childList: true,
       subtree: true,
       characterData: true,
       attributes: true,
       attributeFilter: ["class", "data-fx-followed", "data-fx-lobby-ready", "data-fx-rank"]
     });
+    let observerRecord;
+    const dispose = () => {
+      if (!active) return;
+      active = false;
+      borderObserver.disconnect();
+      filterObserver.disconnect();
+      controls.remove();
+      delete list.dataset.fxLobbyEnhanced;
+      activeRosterObservers.delete(observerRecord);
+    };
+    observerRecord = { list, dispose };
+    activeRosterObservers.add(observerRecord);
+    scheduleApplyFilter();
   }
 
   function scan(root) {
@@ -298,6 +321,9 @@ import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
   }
 
   new MutationObserver(records => {
+    for (const observerRecord of activeRosterObservers) {
+      if (!observerRecord.list.isConnected) observerRecord.dispose();
+    }
     for (const record of records) {
       if (record.type === "attributes" && record.target instanceof Element) {
         scan(record.target.parentElement ?? record.target);
