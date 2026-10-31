@@ -26,7 +26,7 @@
     if (list.dataset.fxLobbyEnhanced === "true") return;
     list.dataset.fxLobbyEnhanced = "true";
     list.style.display = "grid";
-    list.style.gridTemplateColumns = "repeat(auto-fit, minmax(max(10em, calc((100% - .8em) / 5)), 1fr))";
+    list.style.gridTemplateColumns = "repeat(auto-fit, minmax(max(10em, calc((100% - 1em) / 6)), 1fr))";
     list.style.alignItems = "center";
     list.style.gap = "0.02em 0.2em";
     list.style.margin = "0.2em 0.35em";
@@ -100,9 +100,10 @@
       const parseClan = window.__fx?.leaderboardFilter?.parseClanFromPlayerName;
       const playerId = window.__fx?.getGameVar?.("playerId");
       const ownName = window.__fx?.getGameVar?.("rawPlayerNames")?.[playerId];
-      const ownClan = normalizeClan(window.__fx?.lobbyOwnClan ?? (parseClan && ownName ? parseClan(ownName) : null));
+      const ownClan = normalizeClan(parseClan && ownName ? parseClan(ownName) : null);
       let total = 0;
       let shown = 0;
+      let readyClanmate = false;
       for (const row of Array.from(list.children)) {
         if (!isPlayerRow(row)) continue;
         total++;
@@ -113,6 +114,9 @@
         const isFollowed = isFollowedPlayer(row);
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
         const clan = normalizeClan(parseClan && row.dataset.fxAccountName ? parseClan(row.dataset.fxAccountName) : null);
+        if (ownClan && clan === ownClan && row.dataset.fxAccountName !== ownName && /^\u{1F7E2}/u.test(text)) {
+          readyClanmate = true;
+        }
         const matchesClan = clanFilter.value === "all"
           || (clanFilter.value === "clan" && clan != null)
           || (clanFilter.value === "my-clan" && ownClan != null && clan === ownClan);
@@ -152,6 +156,26 @@
       playerCount.textContent = translate("showingPlayers")
         .replace("{shown}", String(shown))
         .replace("{total}", String(total));
+      const readyLabel = translate("ready").trim().toLocaleLowerCase();
+      for (const button of list.parentElement.querySelectorAll("button")) {
+        if (button.dataset.fxReadyButton !== "true"
+          && button.textContent.trim().toLocaleLowerCase() !== readyLabel) continue;
+        button.dataset.fxReadyButton = "true";
+        let badge = button.querySelector(".fx-ready-clan-badge");
+        if (readyClanmate && ownClan) {
+          if (!badge) {
+            badge = document.createElement("span");
+            badge.className = "fx-ready-clan-badge";
+            badge.style.cssText = "display:inline-block;margin-left:.35em;padding:.05em .3em;border-radius:.3em;background:rgba(55,190,105,.22);color:#9af0b8;font-size:.72em;vertical-align:middle";
+            button.appendChild(badge);
+          }
+          badge.textContent = `[${ownClan}]`;
+          button.style.boxShadow = "inset 0 0 0 2px #55d98b";
+        } else {
+          badge?.remove();
+          button.style.boxShadow = "";
+        }
+      }
     };
     search.addEventListener("input", applyFilter);
     readyFilter.addEventListener("change", applyFilter);
@@ -218,13 +242,22 @@
           if (element.style.fontSize !== scaledSize) element.style.fontSize = scaledSize;
         }
         if ([style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth].some(width => parseFloat(width) > 0)
-          && element.style.borderWidth !== ".5px") {
+          && parseFloat(element.style.borderWidth) !== 0.5) {
           element.style.borderWidth = ".5px";
         }
       }
     };
     thinLobbyBorders();
-    new MutationObserver(thinLobbyBorders).observe(lobbyRoot, {
+    let borderUpdateScheduled = false;
+    const scheduleThinLobbyBorders = () => {
+      if (borderUpdateScheduled) return;
+      borderUpdateScheduled = true;
+      requestAnimationFrame(() => {
+        borderUpdateScheduled = false;
+        thinLobbyBorders();
+      });
+    };
+    new MutationObserver(scheduleThinLobbyBorders).observe(lobbyRoot, {
       attributes: true,
       attributeFilter: ["class", "style"],
       childList: true,
@@ -233,20 +266,35 @@
     new MutationObserver(applyFilter).observe(list, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "data-fx-followed", "data-fx-rank"] });
   }
 
-  function scan() {
-    for (const element of document.querySelectorAll("span")) {
+  function scan(root) {
+    const spans = [];
+    const divs = [];
+    if (root instanceof Element) {
+      if (root.matches("span")) spans.push(root);
+      if (root.matches("div")) divs.push(root);
+      spans.push(...root.querySelectorAll("span"));
+      divs.push(...root.querySelectorAll("div"));
+    }
+    for (const element of spans) {
       if (/^[^:]{1,12}:\s*\d+$/.test(element.textContent.trim())) {
-        element.style.fontSize = `${0.62 * fontScale()}em`;
-        element.style.whiteSpace = "nowrap";
+        const size = `${0.62 * fontScale()}em`;
+        if (element.style.fontSize !== size) element.style.fontSize = size;
+        if (element.style.whiteSpace !== "nowrap") element.style.whiteSpace = "nowrap";
       }
     }
-    for (const element of document.querySelectorAll("div")) {
+    for (const element of divs) {
       if (element.children.length < 8) continue;
       const rows = Array.from(element.children).filter(isPlayerRow);
       if (rows.length >= 8) enhanceRoster(element);
     }
   }
 
-  new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true });
-  scan();
+  new MutationObserver(records => {
+    for (const record of records) {
+      for (const node of record.addedNodes) {
+        if (node instanceof Element) scan(node);
+      }
+    }
+  }).observe(document.documentElement, { childList: true, subtree: true });
+  scan(document.documentElement);
 })();

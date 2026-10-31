@@ -12,7 +12,7 @@ const __fx = window.__fx;
 const fxText = {
   en: {
     enhancedLobbyLayout: "Enhanced lobby layout",
-    enhancedLobbyLayoutNote: "Adds player search and readiness filters, a compact five-column roster, and a shorter lobby header.",
+    enhancedLobbyLayoutNote: "Adds player search and readiness filters, a compact six-column roster, and a shorter lobby header.",
     lobbyFontScale: "Lobby UI font size",
     lobbyFontScaleNote: "Adjusts the text size in the lobby. Save settings to apply.",
     searchLobbyPlayers: "Search lobby players...",
@@ -35,7 +35,7 @@ const fxText = {
     enhancedLobbyLayout: "Verbessertes Lobby-Layout",
     lobbyFontScale: "Schriftgr\u00f6\u00dfe der Lobby",
     lobbyFontScaleNote: "Passt die Textgr\u00f6\u00dfe in der Lobby an. Zum \u00dcbernehmen Einstellungen speichern.",
-    enhancedLobbyLayoutNote: "Erg\u00e4nzt Spielersuche und Bereitschaftsfilter, eine kompakte Liste mit f\u00fcnf Spalten und einen flacheren Lobby-Kopfbereich.",
+    enhancedLobbyLayoutNote: "Erg\u00e4nzt Spielersuche und Bereitschaftsfilter, eine kompakte Liste mit sechs Spalten und einen flacheren Lobby-Kopfbereich.",
     searchLobbyPlayers: "Lobby-Spieler suchen...",
     filterReadiness: "Spieler nach Bereitschaft filtern",
     filterFollowed: "Gefolgte Spieler filtern",

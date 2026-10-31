@@ -41,38 +41,6 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
     const rawPlayerNames = `${dict.playerData}.${dict.rawPlayerNames}`;
     const gIsSingleplayer = `${dict.game}.${dict.gIsSingleplayer}`;
 
-    // Compact the HTML based lobby header while preserving room for the chat/player summary row.
-    replaceRawCode(".05*aSB),aSC=bN.au>bN.aV,aSD=bQ.bR.lV(.06*aSB+.03*aSC),aSE=bQ.bR.lV(.08*aSB+.03*aSC),aSF=bQ.bR.lV(.04+.02*aSC),aSC=bQ.bR.lV(.02*aSB+.01*aSC)",
-        "(__fx.settings.enhancedLobbyLayout ? .034 : .05)*aSB),aSC=bN.au>bN.aV,aSD=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .04 : .06)*aSB+(__fx.settings.enhancedLobbyLayout ? .02 : .03)*aSC),aSE=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .04 : .08)*aSB+(__fx.settings.enhancedLobbyLayout ? .02 : .03)*aSC),aSF=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .04 : .04)+(__fx.settings.enhancedLobbyLayout ? .02 : .02)*aSC),aSC=bQ.bR.lV((__fx.settings.enhancedLobbyLayout ? .016 : .02)*aSB+(__fx.settings.enhancedLobbyLayout ? .007 : .01)*aSC)");
-
-    replaceRawCode(
-        "aIg.resize(aRx),aIa.resize(aRx),aRv.resize(aRx),aIh.resize(aRx),aSA?this.aIr.resize(aS0):this.aIu.resize()",
-        "aIg.resize(aRx),aIg.ft&&aIg.ft.forEach(tab=>__fx.settings.enhancedLobbyLayout?tab.button.style.fontSize='0.72em':tab.r3(0)),aIg.ft&&aIg.ft.forEach((tab,index)=>index>0&&(tab.button.style.borderLeftWidth=__fx.settings.enhancedLobbyLayout?'0.5px':'')),aIa.resize(aRx),aRv.resize(aRx),aRv.ft&&aRv.ft.forEach(tab=>__fx.settings.enhancedLobbyLayout?tab.button.style.fontSize='0.72em':tab.r3(0)),aRv.ft&&aRv.ft.forEach((tab,index)=>index>0&&(tab.button.style.borderLeftWidth=__fx.settings.enhancedLobbyLayout?'0.5px':'')),aIh.resize(aRx),aIh.ft&&aIh.ft.forEach(tab=>__fx.settings.enhancedLobbyLayout?tab.button.style.fontSize='0.72em':tab.r3(0)),aIh.ft&&aIh.ft.forEach((tab,index)=>index>0&&(tab.button.style.borderLeftWidth=__fx.settings.enhancedLobbyLayout?'0.5px':'')),aSA?this.aIr.resize(aS0):this.aIu.resize()"
-    );
-
-    replaceRawCode('gI.style.margin="0.2em 0.2em 0.2em 0.2em"', 'gI.style.margin=__fx.settings.enhancedLobbyLayout?"0.05em 0.1em":"0.2em 0.2em 0.2em 0.2em"');
-    replaceRawCode('gI.style.width=gI.style.maxWidth=2===aak?"10.5em":"9.5em"', 'gI.style.width=gI.style.maxWidth="100%"');
-    replaceRawCode('aS0.style.fontSize=bQ.bR.fy(bQ.bR.lV(.02,.3))', 'aS0.style.fontSize=bQ.bR.fy(bQ.bR.lV(__fx.settings.enhancedLobbyLayout ? .018 : .02,.3))');
-
-    replaceRawCode(
-        'aIe[1].gI.textContent="MP: "+jl.d9.aJE[0]+"   SP: "+jl.d9.aJE[1]+"   Lobby: "+bQ.oY.aJF(jl.jm.jk)',
-        `__fx.settings.enhancedLobbyLayout?(aIe[0].gI.textContent="MP: "+jl.d9.aJE[0]+"   SP: "+jl.d9.aJE[1]+"   Lobby: "+bQ.oY.aJF(jl.jm.jk),aIe[1].gI.textContent=""):(aIe[0].gI.textContent="Lobby",aIe[1].gI.textContent="MP: "+jl.d9.aJE[0]+"   SP: "+jl.d9.aJE[1]+"   Lobby: "+bQ.oY.aJF(jl.jm.jk)),(()=>{var parseClan=__fx.leaderboardFilter?.parseClanFromPlayerName,ownClan=or.a65&&parseClan?parseClan(or.a65.username):null;window.__fx.lobbyOwnClan=ownClan;var members=or.ox.oy[aMU]||[],readyCount=or.ox.oz[aMU]||0,clanmateReady=!!ownClan&&members.slice(0,readyCount).some(member=>member.aE!==or.a64&&parseClan(member.username)===ownClan),readyButton=aMC.aFC[1].button,badge=readyButton.querySelector('.fx-ready-clan-badge');if(clanmateReady){if(!badge){badge=document.createElement('span');badge.className='fx-ready-clan-badge';badge.style.cssText='display:inline-block;margin-left:.35em;padding:.05em .3em;border-radius:.3em;background:rgba(55,190,105,.22);color:#9af0b8;font-size:.72em;vertical-align:middle';readyButton.appendChild(badge)}badge.textContent='['+ownClan+']';readyButton.style.boxShadow='inset 0 0 0 2px #55d98b'}else{badge&&badge.remove();readyButton.style.boxShadow=''}})()`
-    );
-
-    // Reduce vertical spacing between chat messages.
-    replaceRawCode('kp.style.margin="0.6em 0.6em"', 'kp.style.margin="0.3em 0.6em"');
-
-    // Use compact, recognizable icons for the chat and player tabs.
-    replaceRawCode(
-        'for(var aL=0;aL<a8l.length;aL++)a8l[aL].r2(qx),a8l[aL].button.style.height="100%",a8l[aL].button.style.padding="0.0em 0.9em",a8l[aL].button.style.whiteSpace="pre",qj.kp.appendChild(a8l[aL].button)',
-        'for(var aL=0;aL<a8l.length;aL++){var tabButton=a8l[aL].button,tabLabel=tabButton.textContent.trim();a8l[aL].r2(qx),tabButton.style.height="100%",tabButton.style.padding="0.0em 0.9em",tabButton.style.whiteSpace="pre";if(tabLabel==="Chat"||tabLabel==="Players"||tabLabel==="Spieler"){tabButton.setAttribute("aria-label",tabLabel);tabButton.title=tabLabel;tabButton.style.fontSize=".85em";var icon=document.createElementNS("http://www.w3.org/2000/svg","svg");icon.setAttribute("viewBox","0 0 24 24");icon.setAttribute("aria-hidden","true");icon.style.width=icon.style.height="1.1em";icon.style.fill="none";icon.style.stroke="currentColor";icon.style.strokeWidth="2";icon.style.strokeLinecap=icon.style.strokeLinejoin="round";var shape;if(tabLabel==="Chat"){shape=document.createElementNS("http://www.w3.org/2000/svg","path");shape.setAttribute("d","M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.7 8.7 0 0 1-4-.95L3 21l1.95-5.5A8.7 8.7 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3h.5a8.5 8.5 0 0 1 8 8.5Z")}else{shape=document.createElementNS("http://www.w3.org/2000/svg","g");var head=document.createElementNS("http://www.w3.org/2000/svg","circle");head.setAttribute("cx","9");head.setAttribute("cy","8");head.setAttribute("r","3.5");shape.appendChild(head);var bodies=document.createElementNS("http://www.w3.org/2000/svg","path");bodies.setAttribute("d","M2.5 20v-1.5A4.5 4.5 0 0 1 7 14h4a4.5 4.5 0 0 1 4.5 4.5V20M16 4.8a3.5 3.5 0 0 1 0 6.7M17 14h.5a4 4 0 0 1 4 4v2");shape.appendChild(bodies)}icon.appendChild(shape);var label=document.createElement("span");label.textContent=tabLabel;tabButton.replaceChildren(icon,document.createTextNode(" "),label)}qj.kp.appendChild(tabButton)}'
-    );
-
-    replaceRawCode(
-        'a5M.style.fontFamily="Arial Black, system-ui",a5M.style.fontSize="inherit",a5M.style.fontWeight="inherit"',
-        'a5M.style.fontFamily="Arial Black, system-ui",a5M.style.fontSize=__fx.settings.enhancedLobbyLayout?"0.72em":"inherit",a5M.style.fontWeight="inherit"'
-    );
-
     // Replace assets
     replaceOne(/(\(4,"crown",4,")[^"]+"\),/g, "$1" + assets.crownIcon + "\"),");
     replaceOne(/(\(6,"territorial\.io",6,")[^"]+"\),/g, "$1" + assets.fxClientLogo + "\"),");
