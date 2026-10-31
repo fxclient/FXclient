@@ -1,3 +1,5 @@
+import { isLobbyPlayerRow, syncLobbyReadiness } from "./lobbyRoster.js";
+
 (() => {
   const searchClass = "fx-lobby-roster-search";
   if (window.__fx?.settings?.enhancedLobbyLayout === false) return;
@@ -5,12 +7,7 @@
   const fontScale = () => Math.max(0.75, Math.min(1.25, Number(window.__fx?.settings?.lobbyFontScale ?? 100) / 100));
   const filterFontSize = () => `clamp(11px, ${0.4 * fontScale()}em, 14px)`;
   const normalizeClan = clan => typeof clan === "string" ? clan.trim().toLocaleUpperCase() : null;
-  function isPlayerRow(element) {
-    if (!(element instanceof HTMLSpanElement)) return false;
-    return element.style.width !== ""
-      && element.style.maxWidth !== ""
-      && element.textContent.trim().length > 1;
-  }
+  const isPlayerRow = element => element instanceof HTMLSpanElement && isLobbyPlayerRow(element);
 
   function isFollowedPlayer(row) {
     const accountName = row.dataset.fxAccountName;
@@ -108,13 +105,14 @@
         if (!isPlayerRow(row)) continue;
         total++;
         const text = row.textContent.trim();
+        const readiness = syncLobbyReadiness(row);
         const matchesReadiness = readyFilter.value === "all"
-          || (readyFilter.value === "ready" && /^\u{1F7E2}/u.test(text))
-          || (readyFilter.value === "not-ready" && /^\u26AA/u.test(text))
+          || (readyFilter.value === "ready" && readiness === "ready")
+          || (readyFilter.value === "not-ready" && readiness === "not-ready");
         const isFollowed = isFollowedPlayer(row);
         const matchesFollowed = followedFilter.value !== "followed" || isFollowed;
         const clan = normalizeClan(parseClan && row.dataset.fxAccountName ? parseClan(row.dataset.fxAccountName) : null);
-        if (ownClan && clan === ownClan && row.dataset.fxAccountName !== ownName && /^\u{1F7E2}/u.test(text)) {
+        if (ownClan && clan === ownClan && row.dataset.fxAccountName !== ownName && readiness === "ready") {
           readyClanmate = true;
         }
         const matchesClan = clanFilter.value === "all"
@@ -263,7 +261,13 @@
       childList: true,
       subtree: true
     });
-    new MutationObserver(applyFilter).observe(list, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "data-fx-followed", "data-fx-rank"] });
+    new MutationObserver(applyFilter).observe(list, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ["class", "data-fx-followed", "data-fx-lobby-ready", "data-fx-rank"]
+    });
   }
 
   function scan(root) {
@@ -276,6 +280,10 @@
       divs.push(...root.querySelectorAll("div"));
     }
     for (const element of spans) {
+      if (element.dataset.fxAccountName && element.dataset.fxLobbyPlayer !== "true") {
+        element.dataset.fxLobbyPlayer = "true";
+      }
+      if (isPlayerRow(element)) syncLobbyReadiness(element);
       if (/^[^:]{1,12}:\s*\d+$/.test(element.textContent.trim())) {
         const size = `${0.62 * fontScale()}em`;
         if (element.style.fontSize !== size) element.style.fontSize = size;
@@ -291,10 +299,18 @@
 
   new MutationObserver(records => {
     for (const record of records) {
+      if (record.type === "attributes" && record.target instanceof Element) {
+        scan(record.target.parentElement ?? record.target);
+      }
       for (const node of record.addedNodes) {
         if (node instanceof Element) scan(node);
       }
     }
-  }).observe(document.documentElement, { childList: true, subtree: true });
+  }).observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["data-fx-account-name"]
+  });
   scan(document.documentElement);
 })();
