@@ -1,10 +1,8 @@
 {
-    "version": "0.6.32",
-    "lastUpdated": "October 28",
+    "version": "0.6.33.1",
+    "lastUpdated": "November 2",
     "changes": [
-        "Merged pull request #40 by QZxV4, implementing the following changes:",
-        "Added same clan highlighting which highlights all users in the lobby with the color red along with a red outline if someone has both IP highlighting and the Clan highlighting turned on.",
-        "Added a cache deletion feature, a quick workaround in cases where somebody can't update the client (especially the app version of the client) due to some issue."
+        "Fixed broken patch for v2.16.67 (Merged pull request #44 by QZxV4)"
     ],
-    "isSignificant": true
+    "isSignificant": false
 }
