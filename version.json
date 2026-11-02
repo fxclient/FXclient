@@ -1,8 +1,8 @@
 {
-    "version": "0.6.33",
-    "lastUpdated": "October 30",
+    "version": "0.6.33.1",
+    "lastUpdated": "November 2",
     "changes": [
-        "Fix the rivals leaderboard breaking after the latest update (Merged pull request #42 by QZxV4)"
+        "Fixed broken patch for v2.16.67 (Merged pull request #44 by QZxV4)"
     ],
-    "isSignificant": true
+    "isSignificant": false
 }
