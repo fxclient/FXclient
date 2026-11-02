@@ -15,9 +15,11 @@ function getDensity(playerID, playerBalances = getVar("playerBalances"), playerT
 const estimatedAttackFormatter = new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 });
 function getEstimatedEliminationAttack(playerID, remainingBalance) {
     if (playerID === getVar("playerId")) return "";
+    const playerData = getVar("playerData");
+    const committedAttack = playerData?.a4f?.[playerID] ?? 0;
     const balance = Number.isFinite(remainingBalance)
         ? Math.max(0, remainingBalance)
-        : getVar("playerBalances")?.[playerID];
+        : Math.max(0, (getVar("playerBalances")?.[playerID] ?? 0) - committedAttack);
     if (!Number.isFinite(balance) || balance <= 0) return "";
     // Approximate the attack force as twice the target's current balance; border defense is not included.
     return `\u2248${estimatedAttackFormatter.format(Math.ceil(balance * 2))}`;
