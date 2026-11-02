@@ -4,9 +4,9 @@ import ModUtils, { insert } from "../modUtils.js"
 
 export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, matchCode, replaceOne }) => {
 
-  matchCode(`var playerCommitted = playerData.playerCommitted[playerID];
+  const playerDataFieldNames = matchCode(`var playerCommitted = playerData.playerCommitted[playerID];
     var balanceText = formatter.one.two(playerData.playerBalance[playerID] - playerCommitted);`, {
-    addToDictionary: ["playerData", "playerCommitted"],
+    addToDictionary: ["playerData", "playerCommitted", "playerBalance"],
   })
 
   const { placeBalanceAbove } = matchCode(`aLT += Math.floor(0.78 * fontSize);
@@ -15,8 +15,8 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
   // Balance rendering; Renders density when the "Reverse Name/Balance" setting is off (default)
   modifyCode(
     `function aLY(ctx, i, fontSize, x, y, aLU) {
-    var a4f = playerData.a4f[i];
-    var aLe = Util.s1.formatNumber(playerData.playerBalances[i] - a4f);
+    var committedAttack = playerData.playerCommitted[i];
+    var aLe = Util.s1.formatNumber(playerData.playerBalance[i] - committedAttack);
     ${insert(`function drawDensity() {
       if (!placeBalanceAbove && __fx.settings.showPlayerDensity) {
         __fx.settings.coloredDensity && (ctx.fillStyle = __fx.utils.textStyleBasedOnDensity(i));
@@ -27,7 +27,7 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
         eliminationEstimate && ctx.fillText(eliminationEstimate, x, y + 2 * fontSize);
       }
     }`)}
-    if (a4f) {
+    if (committedAttack) {
       var eY = ctx.fillStyle;
       ctx.fillStyle = aLX(fontSize, 2 + aLU % 2);
       ctx.fillText(aLe, x, y);
@@ -50,7 +50,7 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
     ctx.fillText(aLe, x, y);
     ${insert(`drawDensity();`)}
   }`,
-    { dictionary: { placeBalanceAbove } },
+    { dictionary: { playerData: playerDataFieldNames.playerData, playerCommitted: playerDataFieldNames.playerCommitted, playerBalance: playerDataFieldNames.playerBalance, placeBalanceAbove } },
   )
 
   waitForMinification(() => {
