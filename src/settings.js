@@ -532,14 +532,13 @@ const settingsManager = new (function () {
     },
     {
       for: "estimatedAttackGreenThreshold",
-      type: "selectMenu",
+      type: "rangeInput",
       label: (navigator.language || "en").toLowerCase().startsWith("de")
         ? "Gr\u00fcn ab Truppenanteil"
         : "Green at troop share",
-      options: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 75].map(value => ({
-        value: String(value),
-        label: `${value}%`,
-      })),
+      min: 5,
+      max: 75,
+      step: 1,
     },
     {
       for: "coloredDensity",
