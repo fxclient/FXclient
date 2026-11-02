@@ -43,7 +43,11 @@ function getEstimatedEliminationAttack(playerID, remainingBalance, remainingTerr
 function getEstimatedEliminationAttackColor(playerID, remainingBalance, remainingTerritories) {
     const estimate = getEstimatedEliminationAttackData(playerID, remainingBalance, remainingTerritories);
     if (!Number.isFinite(estimate?.ownShare)) return null;
-    const redProgress = Math.max(0, Math.min(1, (estimate.ownShare - 25) / 75));
+    const configuredThreshold = Number(getSettings().estimatedAttackGreenThreshold);
+    const greenThreshold = Number.isFinite(configuredThreshold)
+        ? Math.max(5, Math.min(75, configuredThreshold))
+        : 25;
+    const redProgress = Math.max(0, Math.min(1, (estimate.ownShare - greenThreshold) / (100 - greenThreshold)));
     const hue = Math.round(120 * (1 - redProgress));
     return `hsl(${hue}, 85%, 55%)`;
 }

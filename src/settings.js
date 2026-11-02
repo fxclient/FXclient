@@ -11,11 +11,11 @@ const __fx = window.__fx;
 const eliminationEstimateText = (navigator.language || "en").toLowerCase().startsWith("de")
   ? {
       label: "Gesch\u00e4tzte Angriffsmenge anzeigen",
-      note: "Basis: etwa das Doppelte der gegnerischen Resttruppen plus 2 Einheiten je verbleibendem Gebietspunkt. Der Klammerwert ist der Anteil deiner verf\u00fcgbaren Truppen: 25% gr\u00fcn, ab 100% rot. Grenzverteidigung und weitere Frontkosten fehlen.",
+      note: "Basis: etwa das Doppelte der gegnerischen Resttruppen plus 2 Einheiten je verbleibendem Gebietspunkt. Der Klammerwert ist der Anteil deiner verf\u00fcgbaren Truppen: ab dem einstellbaren Gr\u00fcnwert bis 100% rot. Grenzverteidigung und weitere Frontkosten fehlen.",
     }
   : {
       label: "Show estimated attack units",
-      note: "Baseline: about twice the enemy's remaining troops plus 2 units per remaining territory tile. The parenthetical value is the share of your available troops: green at 25%, red at 100%. Border defense and other front costs are not included.",
+      note: "Baseline: about twice the enemy's remaining troops plus 2 units per remaining territory tile. The parenthetical value is the share of your available troops: green at the configurable threshold, red at 100%. Border defense and other front costs are not included.",
     };
 
 var settings = {
@@ -28,6 +28,7 @@ var settings = {
   realisticNames: false,
   showPlayerDensity: true,
   showEstimatedEliminationAttack: true,
+  estimatedAttackGreenThreshold: 25,
   coloredDensity: true,
   densityDisplayStyle: "absoluteQuotient",
   hideBotNames: false,
@@ -528,6 +529,17 @@ const settingsManager = new (function () {
       type: "checkbox",
       label: eliminationEstimateText.label,
       note: eliminationEstimateText.note,
+    },
+    {
+      for: "estimatedAttackGreenThreshold",
+      type: "selectMenu",
+      label: (navigator.language || "en").toLowerCase().startsWith("de")
+        ? "Gr\u00fcn ab Truppenanteil"
+        : "Green at troop share",
+      options: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 75].map(value => ({
+        value: String(value),
+        label: `${value}%`,
+      })),
     },
     {
       for: "coloredDensity",
