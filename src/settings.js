@@ -525,22 +525,6 @@ const settingsManager = new (function () {
       label: "Show player density",
     },
     {
-      for: "showEstimatedEliminationAttack",
-      type: "checkbox",
-      label: eliminationEstimateText.label,
-      note: eliminationEstimateText.note,
-    },
-    {
-      for: "estimatedAttackGreenThreshold",
-      type: "rangeInput",
-      label: (navigator.language || "en").toLowerCase().startsWith("de")
-        ? "Gr\u00fcn ab Truppenanteil"
-        : "Green at troop share",
-      min: 5,
-      max: 75,
-      step: 1,
-    },
-    {
       for: "coloredDensity",
       type: "checkbox",
       label: "Colored density",
@@ -558,6 +542,25 @@ const settingsManager = new (function () {
           label: "Value from 0 to 150 (BetterTT style)",
         },
       ],
+    },
+    SectionHeader((navigator.language || "en").toLowerCase().startsWith("de")
+      ? "Angriffssch\u00e4tzung"
+      : "Attack estimate"),
+    {
+      for: "showEstimatedEliminationAttack",
+      type: "checkbox",
+      label: eliminationEstimateText.label,
+      note: eliminationEstimateText.note,
+    },
+    {
+      for: "estimatedAttackGreenThreshold",
+      type: "rangeInput",
+      label: (navigator.language || "en").toLowerCase().startsWith("de")
+        ? "Gr\u00fcn ab Truppenanteil"
+        : "Green at troop share",
+      min: 5,
+      max: 75,
+      step: 1,
     },
     SectionHeader("Names"),
     { for: "realisticNames", type: "checkbox", label: "Realistic Bot Names" },
