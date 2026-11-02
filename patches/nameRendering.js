@@ -24,7 +24,7 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
         const eliminationEstimate = __fx.settings.showEstimatedEliminationAttack
           ? __fx.utils.getEstimatedEliminationAttack(i)
           : "";
-        eliminationEstimate && ctx.fillText(eliminationEstimate, x, y + 2 * fontSize);
+        eliminationEstimate && __fx.utils.drawEstimatedEliminationAttack(ctx, i, eliminationEstimate, x, y + 2 * fontSize);
       }
     }`)}
     if (committedAttack) {
@@ -67,7 +67,7 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
         ${placeBalanceAbove} && __fx.settings.showPlayerDensity && (
             __fx.settings.coloredDensity && ($<canvas>.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)),
             $<canvas>.fillText(__fx.utils.getDensity(___id), $<x>, showName ? $<y> + $<fontSize> : $<y>),
-            eliminationEstimate && $<canvas>.fillText(eliminationEstimate, $<x>, showName ? $<y> + 2 * $<fontSize> : $<y> + $<fontSize>)
+            eliminationEstimate && __fx.utils.drawEstimatedEliminationAttack($<canvas>, ___id, eliminationEstimate, $<x>, showName ? $<y> + 2 * $<fontSize> : $<y> + $<fontSize>)
         ); }`,
     )
   })

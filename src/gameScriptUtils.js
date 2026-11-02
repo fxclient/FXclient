@@ -13,15 +13,46 @@ function getDensity(playerID, playerBalances = getVar("playerBalances"), playerT
     else return (playerBalances[playerID] / (playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID])).toFixed(1);
 };
 const estimatedAttackFormatter = new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 });
-function getEstimatedEliminationAttack(playerID, remainingBalance) {
-    if (playerID === getVar("playerId")) return "";
+function getEstimatedEliminationAttackData(playerID, remainingBalance, remainingTerritories) {
+    if (playerID === getVar("playerId")) return null;
     const committedAttack = getVar("playerCommitted")?.[playerID] ?? 0;
     const balance = Number.isFinite(remainingBalance)
         ? Math.max(0, remainingBalance)
         : Math.max(0, (getVar("playerBalances")?.[playerID] ?? 0) - committedAttack);
-    if (!Number.isFinite(balance) || balance <= 0) return "";
-    // Approximate the attack force as twice the target's current balance; border defense is not included.
-    return `\u2248${estimatedAttackFormatter.format(Math.ceil(balance * 2))}`;
+    if (!Number.isFinite(balance) || balance <= 0) return null;
+    const territoryCount = Number.isFinite(remainingTerritories)
+        ? Math.max(0, remainingTerritories)
+        : getVar("playerTerritories")?.[playerID];
+    // The game model uses a 2:1 defender ratio and a base cost of two units per conquered tile.
+    const estimatedAttack = Math.ceil(balance * 2 + (Number.isFinite(territoryCount) ? territoryCount * 2 : 0));
+    const ownPlayerID = getVar("playerId");
+    const ownBalance = getVar("playerBalances")?.[ownPlayerID];
+    const ownCommitted = getVar("playerCommitted")?.[ownPlayerID];
+    const ownAvailable = ownBalance - ownCommitted;
+    const ownShare = Number.isFinite(ownCommitted) && Number.isFinite(ownAvailable) && ownAvailable > 0
+        ? estimatedAttack / ownAvailable * 100
+        : null;
+    return { estimatedAttack, ownShare };
+}
+function getEstimatedEliminationAttack(playerID, remainingBalance, remainingTerritories) {
+    const estimate = getEstimatedEliminationAttackData(playerID, remainingBalance, remainingTerritories);
+    if (!estimate) return "";
+    const ownShare = Number.isFinite(estimate.ownShare) ? ` (${Math.ceil(estimate.ownShare)}%)` : "";
+    return `\u2248${estimatedAttackFormatter.format(estimate.estimatedAttack)}${ownShare}`;
+}
+function getEstimatedEliminationAttackColor(playerID, remainingBalance, remainingTerritories) {
+    const estimate = getEstimatedEliminationAttackData(playerID, remainingBalance, remainingTerritories);
+    if (!Number.isFinite(estimate?.ownShare)) return null;
+    const redProgress = Math.max(0, Math.min(1, (estimate.ownShare - 25) / 75));
+    const hue = Math.round(120 * (1 - redProgress));
+    return `hsl(${hue}, 85%, 55%)`;
+}
+function drawEstimatedEliminationAttack(ctx, playerID, text, x, y) {
+    const previousFillStyle = ctx.fillStyle;
+    const estimateColor = getEstimatedEliminationAttackColor(playerID);
+    if (estimateColor) ctx.fillStyle = estimateColor;
+    ctx.fillText(text, x, y);
+    ctx.fillStyle = previousFillStyle;
 }
 function isPointInRectangle(x, y, rectangleStartX, rectangleStartY, width, height) {
     return x >= rectangleStartX && x <= rectangleStartX + width && y >= rectangleStartY && y <= rectangleStartY + height;
@@ -126,4 +157,4 @@ function parseAccountId(value) {
     return match ? match[0] : null;
 }
 
-export default { getMaxTroops, getDensity, getEstimatedEliminationAttack, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId }
+export default { getMaxTroops, getDensity, getEstimatedEliminationAttack, drawEstimatedEliminationAttack, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId }

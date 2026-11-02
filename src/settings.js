@@ -10,12 +10,12 @@ window.__fx = window.__fx || {};
 const __fx = window.__fx;
 const eliminationEstimateText = (navigator.language || "en").toLowerCase().startsWith("de")
   ? {
-      label: "Geschätzte Angriffsmenge anzeigen",
-      note: "Zeigt unter der gegnerischen Dichte eine grobe Truppen-Schätzung zum Ausschalten. Grenzverteidigung ist nicht berücksichtigt.",
+      label: "Gesch\u00e4tzte Angriffsmenge anzeigen",
+      note: "Basis: etwa das Doppelte der gegnerischen Resttruppen plus 2 Einheiten je verbleibendem Gebietspunkt. Der Klammerwert ist der Anteil deiner verf\u00fcgbaren Truppen: 25% gr\u00fcn, ab 100% rot. Grenzverteidigung und weitere Frontkosten fehlen.",
     }
   : {
       label: "Show estimated attack units",
-      note: "Shows a rough troop estimate under enemy density; border defense is not included.",
+      note: "Baseline: about twice the enemy's remaining troops plus 2 units per remaining territory tile. The parenthetical value is the share of your available troops: green at 25%, red at 100%. Border defense and other front costs are not included.",
     };
 
 var settings = {
