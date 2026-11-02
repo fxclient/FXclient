@@ -524,6 +524,9 @@ const settingsManager = new (function () {
       type: "checkbox",
       label: "Show player density",
     },
+    SectionHeader((navigator.language || "en").toLowerCase().startsWith("de")
+      ? "Angriffssch\u00e4tzung"
+      : "Attack estimate"),
     {
       for: "showEstimatedEliminationAttack",
       type: "checkbox",
