@@ -15,8 +15,7 @@ function getDensity(playerID, playerBalances = getVar("playerBalances"), playerT
 const estimatedAttackFormatter = new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 });
 function getEstimatedEliminationAttack(playerID, remainingBalance) {
     if (playerID === getVar("playerId")) return "";
-    const playerData = getVar("playerData");
-    const committedAttack = playerData?.a4f?.[playerID] ?? 0;
+    const committedAttack = getVar("playerCommitted")?.[playerID] ?? 0;
     const balance = Number.isFinite(remainingBalance)
         ? Math.max(0, remainingBalance)
         : Math.max(0, (getVar("playerBalances")?.[playerID] ?? 0) - committedAttack);

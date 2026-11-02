@@ -4,6 +4,11 @@ import ModUtils, { insert } from "../modUtils.js"
 
 export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, matchCode, replaceOne }) => {
 
+  matchCode(`var playerCommitted = playerData.playerCommitted[playerID];
+    var balanceText = formatter.one.two(playerData.playerBalance[playerID] - playerCommitted);`, {
+    addToDictionary: ["playerData", "playerCommitted"],
+  })
+
   const { placeBalanceAbove } = matchCode(`aLT += Math.floor(0.78 * fontSize);
     if (placeBalanceAbove) {/*...*/}`)
 
