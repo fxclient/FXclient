@@ -8,6 +8,15 @@ import { LobbyReminderRulesInput } from './lobbyReminderRulesInput.js';
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
+const eliminationEstimateText = (navigator.language || "en").toLowerCase().startsWith("de")
+  ? {
+      label: "Geschätzte Angriffsmenge anzeigen",
+      note: "Zeigt unter der gegnerischen Dichte eine grobe Truppen-Schätzung zum Ausschalten. Grenzverteidigung ist nicht berücksichtigt.",
+    }
+  : {
+      label: "Show estimated attack units",
+      note: "Shows a rough troop estimate under enemy density; border defense is not included.",
+    };
 
 var settings = {
   //"showBotDonations": false,
@@ -18,6 +27,7 @@ var settings = {
   //"hideAllLinks": false,
   realisticNames: false,
   showPlayerDensity: true,
+  showEstimatedEliminationAttack: true,
   coloredDensity: true,
   densityDisplayStyle: "absoluteQuotient",
   hideBotNames: false,
@@ -512,6 +522,12 @@ const settingsManager = new (function () {
       for: "showPlayerDensity",
       type: "checkbox",
       label: "Show player density",
+    },
+    {
+      for: "showEstimatedEliminationAttack",
+      type: "checkbox",
+      label: eliminationEstimateText.label,
+      note: eliminationEstimateText.note,
     },
     {
       for: "coloredDensity",

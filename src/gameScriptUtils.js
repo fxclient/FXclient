@@ -12,6 +12,16 @@ function getDensity(playerID, playerBalances = getVar("playerBalances"), playerT
     if (getSettings().densityDisplayStyle === "percentage") return (((playerBalances[playerID] / ((playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID]) * 150)) * 100).toFixed(1) + "%");
     else return (playerBalances[playerID] / (playerTerritories[playerID] === 0 ? 1 : playerTerritories[playerID])).toFixed(1);
 };
+const estimatedAttackFormatter = new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 });
+function getEstimatedEliminationAttack(playerID, remainingBalance) {
+    if (playerID === getVar("playerId")) return "";
+    const balance = Number.isFinite(remainingBalance)
+        ? Math.max(0, remainingBalance)
+        : getVar("playerBalances")?.[playerID];
+    if (!Number.isFinite(balance) || balance <= 0) return "";
+    // Approximate the attack force as twice the target's current balance; border defense is not included.
+    return `\u2248${estimatedAttackFormatter.format(Math.ceil(balance * 2))}`;
+}
 function isPointInRectangle(x, y, rectangleStartX, rectangleStartY, width, height) {
     return x >= rectangleStartX && x <= rectangleStartX + width && y >= rectangleStartY && y <= rectangleStartY + height;
 };
@@ -115,4 +125,4 @@ function parseAccountId(value) {
     return match ? match[0] : null;
 }
 
-export default { getMaxTroops, getDensity, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId }
+export default { getMaxTroops, getDensity, getEstimatedEliminationAttack, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId }
