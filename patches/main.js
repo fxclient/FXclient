@@ -19,6 +19,7 @@ function runSafely(name, modUtils, callback) {
         for (const key of Object.keys(modUtils.dictionary)) delete modUtils.dictionary[key];
         Object.assign(modUtils.dictionary, previousDictionary);
         modUtils.postMinifyHandlers.length = previousHandlerCount;
+        if (name === "lobbyLayout.js") throw error;
         console.warn(`[FXClient] Disabled game patch "${name}" for this game build.`, error);
     }
 }

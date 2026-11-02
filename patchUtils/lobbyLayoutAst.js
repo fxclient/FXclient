@@ -288,12 +288,8 @@ export function patchLobbyLayout(script) {
     const ast = AST.parse(script);
     const results = [];
     const apply = (id, transform) => {
-        try {
-            transform(ast);
-            results.push({ id, applied: true });
-        } catch (error) {
-            results.push({ id, applied: false, reason: error.message });
-        }
+        transform(ast);
+        results.push({ id, applied: true });
     };
 
     apply("lobby-heights-ast", patchHeights);
