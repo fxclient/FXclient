@@ -22,7 +22,10 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
         __fx.settings.coloredDensity && (ctx.fillStyle = __fx.utils.textStyleBasedOnDensity(i));
         ctx.fillText(__fx.utils.getDensity(i), x, y + fontSize);
         const eliminationEstimate = __fx.settings.showEstimatedEliminationAttack
-          ? __fx.utils.getEstimatedEliminationAttack(i)
+          ? __fx.utils.getEstimatedEliminationAttack(
+              i,
+              playerData[${JSON.stringify(playerDataFieldNames.playerBalance)}]?.[i] - committedAttack
+            )
           : "";
         eliminationEstimate && __fx.utils.drawEstimatedEliminationAttack(ctx, i, eliminationEstimate, x, y + 2 * fontSize);
       }
@@ -61,7 +64,11 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
       `$1 var ___id = $2;
         var showName = $<i> < $<game>.$<gHumans> || !__fx.settings.hideBotNames;
         var eliminationEstimate = __fx.settings.showEstimatedEliminationAttack
-            ? __fx.utils.getEstimatedEliminationAttack(___id)
+            ? __fx.utils.getEstimatedEliminationAttack(
+                ___id,
+                $<playerData>[${JSON.stringify(playerDataFieldNames.playerBalance)}]?.[___id] -
+                  $<playerData>[${JSON.stringify(playerDataFieldNames.playerCommitted)}]?.[___id]
+              )
             : "";
         if (showName) $7, $10;
         ${placeBalanceAbove} && __fx.settings.showPlayerDensity && (
