@@ -1,8 +1,8 @@
 {
-    "version": "0.6.33.1",
-    "lastUpdated": "November 2",
+    "version": "0.6.34",
+    "lastUpdated": "November 3",
     "changes": [
-        "Fixed broken patch for v2.16.67 (Merged pull request #44 by QZxV4)"
+        "You can now see an estimate for the number of troops required for the complete annhililation of a player with a single attack, displayed under the density. The feature can be enabled in the FX Client settings. (Merged pull request #46 by lordfox)"
     ],
-    "isSignificant": false
+    "isSignificant": true
 }
