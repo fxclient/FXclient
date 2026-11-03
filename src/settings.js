@@ -10,12 +10,12 @@ window.__fx = window.__fx || {};
 const __fx = window.__fx;
 const eliminationEstimateText = (navigator.language || "en").toLowerCase().startsWith("de")
   ? {
-      label: "Gesch\u00e4tzte Angriffsmenge anzeigen",
-      note: "Basis: etwa das Doppelte der gegnerischen Resttruppen plus 2 Einheiten je verbleibendem Gebietspunkt. Der Klammerwert ist der Anteil deiner verf\u00fcgbaren Truppen: ab dem einstellbaren Gr\u00fcnwert bis 100% rot. Grenzverteidigung und weitere Frontkosten fehlen.",
+      label: "Gesch\u00e4tzte Angriffsmenge f\u00fcr vollst\u00e4ndige Vernichtung anzeigen",
+      note: "Grobe Sch\u00e4tzung: etwa das Doppelte der gegnerischen Resttruppen plus 2 Einheiten je verbleibendem Gebietspunkt. Der Prozentwert zeigt den Anteil deiner verf\u00fcgbaren Truppen; die Farbe wechselt ab dem einstellbaren Gr\u00fcnwert bis 100% zu Rot. Grenzverteidigung und weitere Frontkosten fehlen.",
     }
   : {
-      label: "Show estimated attack units",
-      note: "Baseline: about twice the enemy's remaining troops plus 2 units per remaining territory tile. The parenthetical value is the share of your available troops: green at the configurable threshold, red at 100%. Border defense and other front costs are not included.",
+      label: "Show estimated attack size for complete annihilation of a player",
+      note: "Rough estimate: about twice the enemy's remaining troops plus 2 units per remaining territory tile. The percentage shows the share of your available troops; the color shifts from the configurable green threshold to red at 100%. Border defense and other front costs are not included.",
     };
 
 var settings = {
@@ -27,7 +27,7 @@ var settings = {
   //"hideAllLinks": false,
   realisticNames: false,
   showPlayerDensity: true,
-  showEstimatedEliminationAttack: true,
+  showEstimatedEliminationAttack: false,
   estimatedAttackGreenThreshold: 25,
   coloredDensity: true,
   densityDisplayStyle: "absoluteQuotient",
