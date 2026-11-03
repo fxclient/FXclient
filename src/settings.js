@@ -10,11 +10,11 @@ window.__fx = window.__fx || {};
 const __fx = window.__fx;
 const eliminationEstimateText = (navigator.language || "en").toLowerCase().startsWith("de")
   ? {
-      label: "Geschätzte Angriffsmenge anzeigen",
+      label: "Geschätzte Angriffsmenge für vollständige Vernichtung anzeigen",
       note: "Zeigt unter der gegnerischen Dichte eine grobe Truppen-Schätzung zum Ausschalten. Grenzverteidigung ist nicht berücksichtigt.",
     }
   : {
-      label: "Show estimated attack units",
+      label: "Show estimated attack size for complete annihilation of a player",
       note: "Shows a rough troop estimate under enemy density; border defense is not included.",
     };
 
@@ -27,7 +27,7 @@ var settings = {
   //"hideAllLinks": false,
   realisticNames: false,
   showPlayerDensity: true,
-  showEstimatedEliminationAttack: true,
+  showEstimatedEliminationAttack: false,
   coloredDensity: true,
   densityDisplayStyle: "absoluteQuotient",
   hideBotNames: false,
