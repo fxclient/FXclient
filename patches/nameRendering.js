@@ -2,13 +2,13 @@ import ModUtils, { insert } from "../modUtils.js"
 
 // Name rendering patches - Display density of other players & Hide bot names features
 
-export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, matchCode, replaceOne }) => {
+export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, matchCode, replaceOne, safeDictionary: dict }) => {
 
   const { placeBalanceAbove } = matchCode(`aLT += Math.floor(0.78 * fontSize);
     if (placeBalanceAbove) {/*...*/}`)
 
   // Balance rendering; Renders density when the "Reverse Name/Balance" setting is off (default)
-  modifyCode(
+  const { a4f: somethingIdk } = modifyCode(
     `function aLY(ctx, i, fontSize, x, y, aLU) {
     var a4f = playerData.a4f[i];
     var aLe = Util.s1.formatNumber(playerData.playerBalances[i] - a4f);
@@ -17,7 +17,7 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
         __fx.settings.coloredDensity && (ctx.fillStyle = __fx.utils.textStyleBasedOnDensity(i));
         ctx.fillText(__fx.utils.getDensity(i), x, y + fontSize);
         const eliminationEstimate = __fx.settings.showEstimatedEliminationAttack
-          ? __fx.utils.getEstimatedEliminationAttack(i, playerData?.playerBalances?.[i] - a4f)
+          ? __fx.utils.getEstimatedEliminationAttack(i, playerData.playerBalances[i] - a4f)
           : "";
         eliminationEstimate && ctx.fillText(eliminationEstimate, x, y + 2 * fontSize);
       }
@@ -56,7 +56,7 @@ export default (/** @type {ModUtils} */ { modifyCode, waitForMinification, match
       `$1 var ___id = $2;
         var showName = $<i> < $<game>.$<gHumans> || !__fx.settings.hideBotNames;
         var eliminationEstimate = __fx.settings.showEstimatedEliminationAttack
-            ? __fx.utils.getEstimatedEliminationAttack(___id, $<playerData>?.playerBalances?.[___id] - $<playerData>.a4f[___id])
+            ? __fx.utils.getEstimatedEliminationAttack(___id, $<playerData>.${dict.playerBalances}[___id] - $<playerData>.${somethingIdk}[___id])
             : "";
         if (showName) $7, $10;
         ${placeBalanceAbove} && __fx.settings.showPlayerDensity && (
