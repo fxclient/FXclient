@@ -68,8 +68,8 @@ function bx(by) {
 function dM() {
 	this.dw = 2, this.dx = 1764, this.dy = 0;
 	this.rVersion = 25, this.dk = function() {
-		this.o = "2.16.67", this.e3 = "🎃 31 Oct 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 =
-			0 <= this.hostname.indexOf("game.territorial.io"), this.aB = function() {
+		this.o = "2.16.68", this.e3 = "3 Nov 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 = 0 <=
+			this.hostname.indexOf("game.territorial.io"), this.aB = function() {
 				try {
 					return window.self !== window.top
 				} catch (e) {
@@ -2906,7 +2906,7 @@ function a22() {
 	this.ee = function() {
 		var a2j;
 		0 === bU.result.a2h || 0 === bU.result.a25.length || 8 === aE.lC ? bD.gv.hl(aE.fJ) && a2i() : (function(a2j) {
-			7 !== aE.lC && 10 !== aE.lC && 9 !== aE.lC || 0 !== aE.a2L && a2j && aO.a0i(600, L(36, [a2j.toFixed(2)]), 40, 0, bE.pO, bE.pL, -1, !1)
+			7 !== aE.lC && 10 !== aE.lC && 9 !== aE.lC || 0 !== aE.a2L && a2j && (9 === aE.lC ? aO.a0i(600, L(36, [100 * (1 + aE.a0h)]), 40, 0, bE.pO, bE.pL, -1, !1) : aO.a0i(600, L(36, [a2j.toFixed(2)]), 40, 0, bE.pO, bE.pL, -1, !1))
 		}(a2j = function() {
 			aO.a0i(520, L(33), 40, 0, bE.pO, bE.pL, -1, !1);
 			for (var a25 = bU.result.a25, fZ = a25.length, hN = ah.hN, h = [], aC = 0; aC < fZ; aC++) {
@@ -2925,7 +2925,7 @@ function a22() {
 			for (aC = 0; aC < fZ; aC++) {
 				var iJ = h[aC].ea * uw / (100 * ea),
 					a2u = a2c[h[aC].h7] + ": " + iJ.toFixed(2) + "   ";
-				h[aC].h7 === aE.fJ && (a2j = iJ), 2 < aC && 4 !== fZ ? 3 === aC && (s1 += "(" + L(34, [fZ - 3]) + ")") : s1 += a2u
+				h[aC].h7 === aE.fJ && (a2j = iJ, 9 === aE.lC) && 0 !== aC && (a2j = 0), 2 < aC && 4 !== fZ ? 3 === aC && (s1 += "(" + L(34, [fZ - 3]) + ")") : s1 += a2u
 			}
 			aO.a0i(560, bD.tI.a2v(s1), 40, 0, bE.pg, bE.pL, -1, !1), a2j ? aO.a0i(580, L(35, [a2j.toFixed(2) + " + " + a2q().toFixed(2)]), 40, 0, bE.pg, bE.pL, -1, !1) : bD.gv.hl(aE.fJ) && a2i();
 			return a2j
@@ -5431,31 +5431,31 @@ function aEK() {
 function aEM() {
 	this.L84 = ["No Admin", "Helper", "Junior Moderator", "Moderator", "Senior Moderator", "Lead Moderator", "Head Admin", "Very Easy", "Easy", "Normal", "Hard", "Very Hard", "Impossible", "Type your message here...", "Send", "Activated", "Top Clan",
 		"Best Clan Member", "Top Admin", "Best 1v1 Player", "Best Battle Royale Player", "Richest Player", "Top Patreon", "Best Zombie Player", "Lobby", "Propaganda", "Close {button}", "Report Abuse", "You earned {10} gold!",
-		"{0} earned {11} gold!", "Team {0}", "Team {0} won the game!", "You earned a participation reward of {10} gold.", "The prize money was distributed as follows:", "and {10} more", "You earned {10} gold.", "You earned {10} points!",
-		"Clan {0} gained {11} points. ✨", "You earned {10} clan points!", "You earned an additional {10} gold because you played for {1}.", "Back", "Error", "Error {10}", "Not Enough Gold!", "You need more gold to perform this action.",
+		"{0} earned {11} gold!", "Team {0}", "Team {0} won the game!", "You earned a participation reward of {10} gold.", "The prize money was distributed as follows:", "and {10} more", "You earned {10} gold.", "You earned {10} points.",
+		"Clan {0} gained {11} points. ✨", "You earned {10} clan points.", "You earned an additional {10} gold because you played for {1}.", "Back", "Error", "Error {10}", "Not Enough Gold!", "You need more gold to perform this action.",
 		"Quit Game", "More", "This is a contest!", "Accept", "You conquered {0}. 🔥", "You were conquered by {0}.", "Congratulations! You won the game.", "{0} won the game.", "{0} broke the non-aggression pact.", "{0} attacks you! ⚔️",
 		"Choose your start position!", "You surrendered! 🏳️", "The game ended in a stalemate!", "Error: {10}", "{0} was immortalized!", "Neutral Land: {0}", "Player: {0}", "Strength: {10}", "Territory: {10}", "Team", "Bot Difficulty",
-		"Index: {10}", "Coordinates: {10}", "Mountain: {10}", "Water: {10}", "Ship Owner: {0}", "Message to {0}", "Humanity triumphs! The undead were defeated.", "The Resistance",
-		"Mankind's era ends, overrun by the relentless tide of the undead.", "The Virus", "If peace is agreed upon, the game ends in a stalemate.", "If peace is agreed upon, the largest territory holder wins the game.",
-		"You signed a non-aggression pact with {0}.", "You asked {0} to sign a non-aggression pact.", "{0} accepted the non-aggression pact.", "{0} requests a non-aggression pact.", "You asked {10} players to attack {1}.",
-		"You asked {0} to attack {1}.", "{0} suggests you attack {1}. 🎯", "You exported 1 resource to {0}.", "You exported {10} resources to {1}.", "Incoming Bot Support!", "{0} supported you!", "Map: {0}", "Creator: {0}", "Dimension: {10}",
-		"Overall Pixels: {10}", "Land: {10}", "Mountains: {10}", "Full sending is disabled.", "{0} was conquered by {1}.", "{0} left the game.", "{0} surrendered.", "{0} joined the game.", "{10} players were conquered.",
-		"{10} players left the game.", "{10} players surrendered.", "Outside", "Water", "Mountains", "Neutral Land", "Contest", "YOU CONQUERED", "YOU WERE CONQUERED BY", "THE GAME WAS WON BY", "MAP:", "{0} called the peace vote.",
-		"{0} voted for peace.", "{0} rejected peace.", "second played", "seconds played", "LEADERBOARD", "Humans", "Players", "Bots", "Spectators", "Threshold", "Percentage", "Growth", "Income", "Time",
-		"Hint: The top 9 emojis are ordered by usage.", "Hint: Call the peace vote by pressing {0}.", "Hint: Add troops to your weakest ongoing attack with {0}.", "Hint: Hover with the mouse over a player and press {0} to attack them.",
-		"{0} still needs to be conquered!", "A neutral pixel at position ({10}, {11}) still needs to be conquered!", "You are leaving Territorial.io!", "You are leaving Territorial.io.", "🔑 Show Account", "🚩 Report Abuse", "💬 Mention",
-		"Loading", "{0} defeated {1}!", "White Arena", "Black Arena", "Island", "Mountains 1", "Desert", "Swamp", "White Plains", "Cliffs", "Pond", "Halo", "Europe", "World 1", "Caucasia", "Africa", "Middle East", "Scandinavia", "North America",
-		"South America", "Asia", "Australia", "Island Kingdom", "Mountains 2", "World 2", "British Isles", "Refresh", "Public Profile", "🧈 Gold", "Large Bank", "Medium Bank", "Small Bank", "Capitalist", "Rich Person", "Landowner", "Merchant",
-		"Taxpayer", "Worker", "Peasant", "Serf", "Daylaborer", "Nomad", "Beggar", "Account Balance: ", "Rank: ", "Status: ", "Gold Transfer", "Confirm", "Cancel", "Sell Account", "Asking Price:", "Account to receive the gold:", "Publish Offer",
-		"Buy This Account", "Buy", "If you successfully buy this account, it will be assigned the same password as your currently logged-in account.", "Account Name", "Copy", "Search", "Password", "Show", "Hide", "Request New Password",
-		"Security Tip", "To safeguard your account, never disclose your password to anyone. We will never ask for your password, as we do not require it for any service.",
+		"Index: {10}", "Coordinates: {10}", "Mountain: {10}", "Water: {10}", "Ship Owner: {0}", "Message to {0}", "Humans won.", "The Resistance", "The zombies won.", "The Virus", "If peace is agreed upon, the game ends in a stalemate.",
+		"If peace is agreed upon, the largest territory holder wins the game.", "You signed a non-aggression pact with {0}.", "You asked {0} to sign a non-aggression pact.", "{0} accepted the non-aggression pact.",
+		"{0} requests a non-aggression pact.", "You asked {10} players to attack {1}.", "You asked {0} to attack {1}.", "{0} suggests you attack {1}. 🎯", "You exported 1 resource to {0}.", "You exported {10} resources to {1}.",
+		"Incoming Bot Support!", "{0} supported you!", "Map: {0}", "Creator: {0}", "Dimension: {10}", "Overall Pixels: {10}", "Land: {10}", "Mountains: {10}", "Full sending is disabled.", "{0} was conquered by {1}.", "{0} left the game.",
+		"{0} surrendered.", "{0} joined the game.", "{10} players were conquered.", "{10} players left the game.", "{10} players surrendered.", "Outside", "Water", "Mountains", "Neutral Land", "Contest", "YOU CONQUERED", "YOU WERE CONQUERED BY",
+		"THE GAME WAS WON BY", "MAP:", "{0} called the peace vote.", "{0} voted for peace.", "{0} rejected peace.", "second played", "seconds played", "LEADERBOARD", "Humans", "Players", "Bots", "Spectators", "Threshold", "Percentage", "Growth",
+		"Income", "Time", "Hint: The top 9 emojis are ordered by usage.", "Hint: Call the peace vote by pressing {0}.", "Hint: Add troops to your weakest ongoing attack with {0}.",
+		"Hint: Hover with the mouse over a player and press {0} to attack them.", "{0} still needs to be conquered!", "A neutral pixel at position ({10}, {11}) still needs to be conquered!", "You are leaving Territorial.io!",
+		"You are leaving Territorial.io.", "🔑 Show Account", "🚩 Report Abuse", "💬 Mention", "Loading", "{0} defeated {1}!", "White Arena", "Black Arena", "Island", "Mountains 1", "Desert", "Swamp", "White Plains", "Cliffs", "Pond", "Halo",
+		"Europe", "World 1", "Caucasia", "Africa", "Middle East", "Scandinavia", "North America", "South America", "Asia", "Australia", "Island Kingdom", "Mountains 2", "World 2", "British Isles", "Refresh", "Public Profile", "🧈 Gold",
+		"Large Bank", "Medium Bank", "Small Bank", "Capitalist", "Rich Person", "Landowner", "Merchant", "Taxpayer", "Worker", "Peasant", "Serf", "Daylaborer", "Nomad", "Beggar", "Account Balance: ", "Rank: ", "Status: ", "Gold Transfer",
+		"Confirm", "Cancel", "Sell Account", "Asking Price:", "Account to receive the gold:", "Publish Offer", "Buy This Account", "Buy",
+		"If you successfully buy this account, it will be assigned the same password as your currently logged-in account.", "Account Name", "Copy", "Search", "Password", "Show", "Hide", "Request New Password", "Security Tip",
+		"To safeguard your account, never disclose your password to anyone. We will never ask for your password, as we do not require it for any service.",
 		"If you have accessed your account through unofficial webpages or apps, your security may be compromised. We recommend changing your password.",
 		"If you lose your password or account name, you may lose access to your account. In such a case, we are unable to recover it. Please ensure that you store your account name and password in a safe place.", "Account Options",
 		"Log in to a Different Account", "Create New Account", "Delete Account: ", "🗑️ Account Deletion", "Accounts without gold will be deleted automatically after 8 days. To initiate this process, deplete all your gold.", "Followed Accounts",
 		"➡️ Show", "🗑️ Remove", "Saved Accounts", "Listed accounts may have been removed in the meantime due to insufficient funds.", "➡️ Login", "1v1 Rating", "Elo: ", "Played Games: ", "Battle Royale Rating", "Commander", "Strategist",
-		"Soldier", "Recruit", "Rating: ", "Zombie Rating", "Savior", "Veteran", "Hunter", "Defender", "Refugee", "Admin Statistics", "Votes: ", "Elect", "You are about to purchase {10} votes for {11} Gold with your Account {2}.", "User",
-		"Email Verified", "🟢 Online", "Browsing the menus.", "Watching a replay.", "Playing a team game.", "Playing a battle royale game.", "Playing a 1v1 match.", "Fighting zombies.", "In the lobby.", "Playing in single player.", "🔴 Offline",
-		"Last active some seconds ago.", "Last active 1 minute ago.", "Last active {10} minutes ago.", "Last active 1 hour ago.", "Last active {10} hours ago.", "Last active 1 day ago.", "Last active {10} days ago.",
+		"Soldier", "Recruit", "Rating: ", "Zombie Rating", "Savior", "Veteran", "Hunter", "Defender", "Refugee", "Win Streak: ", "Admin Statistics", "Votes: ", "Elect", "You are about to purchase {10} votes for {11} Gold with your Account {2}.",
+		"User", "Email Verified", "🟢 Online", "Browsing the menus.", "Watching a replay.", "Playing a team game.", "Playing a battle royale game.", "Playing a 1v1 match.", "Fighting zombies.", "In the lobby.", "Playing in single player.",
+		"🔴 Offline", "Last active some seconds ago.", "Last active 1 minute ago.", "Last active {10} minutes ago.", "Last active 1 hour ago.", "Last active {10} hours ago.", "Last active 1 day ago.", "Last active {10} days ago.",
 		"Last active a long time ago.", "🚫 Unfollow", "📥 Follow", "You are following this user. ✅", "Please choose a respectful username.", "Active punishments:", "Offensive Name", "Hate Speech", "Email Verification", "Email",
 		"You already have {10} gold. Secure your account to prevent account loss.", "New Email", "Request Code", "Make sure to also check your spam folder.", "Code", "Submit Code", "Bio", "Upload Bio", "Enable Auto Renew", "Disable Auto Renew",
 		"Auto Renew is off. The subscription will end in {10} day(s).", "Auto Renew is on. The subscription will renew in {10} day(s).", "The monthly fee is currently {10} gold.", "Description", "Report Player", "Primary Clan Stats", "Clan: {0}",
@@ -8260,28 +8260,28 @@ function aPz(data) {
 			}
 			var aRH, aQl = new rx,
 				aRF = aRE && 1e5 <= data.y4,
-				aRG = aQl.s0(aRE ? (aRF ? "⚠️ " : "") + L(263) : L(264)),
-				aRJ = (aRF && (aRG.style.color = "yellow"), aRE ? aQl.s2(L(265, [bD.tI.a6M(data.y4, .01, 0)])) : ((aRH = new t7({
+				aRG = aQl.s0(aRE ? (aRF ? "⚠️ " : "") + L(264) : L(265)),
+				aRJ = (aRF && (aRG.style.color = "yellow"), aRE ? aQl.s2(L(266, [bD.tI.a6M(data.y4, .01, 0)])) : ((aRH = new t7({
 					value: data.aRI,
 					eI: -1
 				})).e.readOnly = !0, aRH.e.type = "password", aQl.sB(aRH), aQl.sB(new tl([new x(L(198), function(e) {
 					return e.textContent === L(198) ? (e.textContent = L(199), aRH.e.type = "text") : (e.textContent = L(198), aRH.e.type = "password"), !0
 				}).button, new x(L(195), function(e) {
 					return bD.sK.a5Y(aRH.e), bD.sK.wV(e), !0
-				}).button]))), aQl.s6(L(aRE ? 264 : 266)).style.marginTop = "0.75em", new t7({
+				}).button]))), aQl.s6(L(aRE ? 265 : 267)).style.marginTop = "0.75em", new t7({
 					value: "",
 					eI: -1
 				}, 0, 0)),
-				aRL = (aRJ.e.type = "email", aRJ.e.autocomplete = "email", aRJ.e.name = "email", aRJ.e.inputMode = "email", aRJ.e.spellcheck = !1, aQl.sB(aRJ), aQl.sB(new tl([new x(L(267), function(e) {
+				aRL = (aRJ.e.type = "email", aRJ.e.autocomplete = "email", aRJ.e.name = "email", aRJ.e.inputMode = "email", aRJ.e.spellcheck = !1, aQl.sB(aRJ), aQl.sB(new tl([new x(L(268), function(e) {
 					return b1.aHS.aRK({
 						action: 3,
 						s1: aRJ.e.value.trim().substring(0, 63)
 					}), bD.sK.wV(e), !0
-				}).button])), aRE && aQl.s2(L(268)), aQl.s6(L(269)).style.marginTop = "0.75em", new t7({
+				}).button])), aRE && aQl.s2(L(269)), aQl.s6(L(270)).style.marginTop = "0.75em", new t7({
 					value: "",
 					eI: -1
 				}, 1));
-			aQl.sB(aRL), aQl.sB(new tl([new x(L(270), function() {
+			aQl.sB(aRL), aQl.sB(new tl([new x(L(271), function() {
 				b1.aHS.aHT({
 					action: 4,
 					uY: "",
@@ -8310,17 +8310,17 @@ function aPz(data) {
 		var sF = [];
 		aQR(sF, 1), sF.push(function() {
 				var aQl = new rx;
-				aQl.s0(L(236)), data.aR7 && (aQl.s6("✅ " + L(237)).style.marginBottom = "0.75em");
+				aQl.s0(L(237)), data.aR7 && (aQl.s6("✅ " + L(238)).style.marginBottom = "0.75em");
 				var a30 = data.aR8;
-				a30 < 1 ? (aQl.s6(L(238)), 0 === data.aR9 ? aQl.s2(L(239)) : 1 === data.aR9 ? aQl.s2(L(240)) : 2 === data.aR9 ? aQl.s2(L(241)) : 3 === data.aR9 ? aQl.s2(L(242)) : 4 === data.aR9 ? aQl.s2(L(243)) : 5 === data.aR9 ? aQl.s2(
-					L(244)) : 6 === data.aR9 ? aQl.s2(L(245)) : aQl.s2(L(246))) : (aQl.s6(L(247)), a30 = a30 < 2 ? L(248) : a30 < 61 ? 2 === a30 ? L(249) : L(250, [a30 - 1]) : a30 < 84 ? 61 === a30 ? L(251) : L(252, [a30 - 60]) :
-					a30 < 255 ? 84 === a30 ? L(253) : L(254, [a30 - 83]) : L(255), aQl.s2(a30));
+				a30 < 1 ? (aQl.s6(L(239)), 0 === data.aR9 ? aQl.s2(L(240)) : 1 === data.aR9 ? aQl.s2(L(241)) : 2 === data.aR9 ? aQl.s2(L(242)) : 3 === data.aR9 ? aQl.s2(L(243)) : 4 === data.aR9 ? aQl.s2(L(244)) : 5 === data.aR9 ? aQl.s2(
+					L(245)) : 6 === data.aR9 ? aQl.s2(L(246)) : aQl.s2(L(247))) : (aQl.s6(L(248)), a30 = a30 < 2 ? L(249) : a30 < 61 ? 2 === a30 ? L(250) : L(251, [a30 - 1]) : a30 < 84 ? 61 === a30 ? L(252) : L(253, [a30 - 60]) :
+					a30 < 255 ? 84 === a30 ? L(254) : L(255, [a30 - 83]) : L(256), aQl.s2(a30));
 				{
 					var s3, aQq;
-					aQl.sB(new tw), data.aQP && (s3 = aQl.s2(), aQl.sB(new tl([new x(bm.xF.vp(data.uY) ? L(256) : L(257), function(e) {
-						return bm.xF.xS(data.uY) ? (e.textContent = L(256), aQq(1)) : (e.textContent = L(257), aQq(0)), !0
+					aQl.sB(new tw), data.aQP && (s3 = aQl.s2(), aQl.sB(new tl([new x(bm.xF.vp(data.uY) ? L(257) : L(258), function(e) {
+						return bm.xF.xS(data.uY) ? (e.textContent = L(257), aQq(1)) : (e.textContent = L(258), aQq(0)), !0
 					}).button])), aQq = function(g1) {
-						s3.textContent = g1 ? L(258) : ""
+						s3.textContent = g1 ? L(259) : ""
 					}, bm.xF.vp(data.uY) && aQq(1), aQl.sB(new tw))
 				}
 				var sO, t6 = new t7({
@@ -8329,16 +8329,16 @@ function aPz(data) {
 				});
 				t6.e.readOnly = !0, aQl.sB(t6), aQl.sB(new tl([new x(L(195), function(e) {
 					return bD.sK.a5Y(t6.e), bD.sK.wV(e), !0
-				}).button])), data.aQP || aQl.s2(L(259));
-				(data.aRA || data.aRB || data.aRC) && (aQl.sB(new tw), aQl.s2(L(260)), data.aRA && (aQl.s2("• Account Timeout").style.color = "orange"), data.aRB && ((sO = aQl.s2("• Muted")).style.color = "orange", sO.style.marginTop =
+				}).button])), data.aQP || aQl.s2(L(260));
+				(data.aRA || data.aRB || data.aRC) && (aQl.sB(new tw), aQl.s2(L(261)), data.aRA && (aQl.s2("• Account Timeout").style.color = "orange"), data.aRB && ((sO = aQl.s2("• Muted")).style.color = "orange", sO.style.marginTop =
 					"0.5em"), data.aRC) && ((sO = aQl.s2("• Redacted")).style.color = "orange", sO.style.marginTop = "0.5em");
-				data.aQP && (aQl.sB(new tw), aQl.s6(b1.z.aQm("/wiki/reports"), "0.75em").style.marginBottom = "0.8em", aQl.sB(new tl([new x(L(261), function(e) {
+				data.aQP && (aQl.sB(new tw), aQl.s6(b1.z.aQm("/wiki/reports"), "0.75em").style.marginBottom = "0.8em", aQl.sB(new tl([new x(L(262), function(e) {
 					return b1.aHS.aHT({
 						action: 3,
 						uY: data.uY,
 						value: 0
 					}), bD.sK.wV(e), !0
-				}, bE.q3).button])), aQl.sB(new tl([new x(L(262), function(e) {
+				}, bE.q3).button])), aQl.sB(new tl([new x(L(263), function(e) {
 					return b1.aHS.aHT({
 						action: 3,
 						uY: data.uY,
@@ -8401,21 +8401,21 @@ function aPz(data) {
 			}(sF),
 			function(sF) {
 				var aQl, s3, aEV, aRN, aQr, aQt, aQs;
-				data.aQP || ((aQl = new rx).s0(L(271)), (s3 = aQl.s2(data.aRM.length + " / 160")).style.textAlign = "center", aEV = !0, (aRN = new x0(0, 1, function(e) {
+				data.aQP || ((aQl = new rx).s0(L(272)), (s3 = aQl.s2(data.aRM.length + " / 160")).style.textAlign = "center", aEV = !0, (aRN = new x0(0, 1, function(e) {
 					e = e.target.value.length;
 					s3.textContent = e + " / 160", 160 < e ? aEV && (aEV = !1, aQt.se(1)) : aEV || (aEV = !0, aQt.se(0))
-				})).e.rows = 6, aRN.e.style.fontSize = "1em", aRN.x6(data.aRM), aQl.sB(aRN), 0 !== data.aRO ? (aQt = new x(L(272), function() {
+				})).e.rows = 6, aRN.e.style.fontSize = "1em", aRN.x6(data.aRM), aQl.sB(aRN), 0 !== data.aRO ? (aQt = new x(L(273), function() {
 					if (!aEV) return !0;
 					u.v(8, u.a3T().a3U, new ub(29, {
 						action: 1,
 						s1: aRN.x7().substring(0, 160)
 					}))
-				}, 0, 0, 1), aQl.sB(new tl([aQt.button])), aQl.sB(new tl([new x(1 === data.aRO ? L(273) : L(274), function() {
+				}, 0, 0, 1), aQl.sB(new tl([aQt.button])), aQl.sB(new tl([new x(1 === data.aRO ? L(274) : L(275), function() {
 					u.v(8, u.a3T().a3U, new ub(29, {
 						action: 0,
 						s1: ""
 					}))
-				}, 0, 0, 1).button])), aQl.s2(1 === data.aRO ? L(275, [data.aRP - 1]) : L(276, [data.aRP - 1])), aQl.s2(L(277, [data.aRQ]))) : (aQr = new x(L(192), function() {
+				}, 0, 0, 1).button])), aQl.s2(1 === data.aRO ? L(276, [data.aRP - 1]) : L(277, [data.aRP - 1])), aQl.s2(L(278, [data.aRQ]))) : (aQr = new x(L(192), function() {
 					if (!aRN.e.readOnly) return !0;
 					u.v(8, u.a3T().a3U, new ub(29, {
 						action: 1,
@@ -8427,13 +8427,13 @@ function aPz(data) {
 						e.textContent = L(186), aRN.e.readOnly = !0, aQr.se(0), aQr.button.style.color = bE.qN
 					} else aQs();
 					return !0
-				}), aQl.sB(new tl([aQt.button])), aQl.s2(L(277, [data.aRQ])), aQs = function() {
+				}), aQl.sB(new tl([aQt.button])), aQl.s2(L(278, [data.aRQ])), aQs = function() {
 					aQt.button.textContent = L(185), aRN.e.readOnly = !1, aQr.se(1), aQr.button.style.color = bE.pO
 				}, aQl.sB(new tl([aQr.button]))), sF.push(aQl))
 			}(sF),
 			function(sF) {
 				var aQl;
-				data.aQP && 0 !== data.aRO && ((aQl = new rx).s0(L(278)), aQl.s4(data.aRM), aQl.sB(new tl([new x(L(279, 0, "Report"), function(e) {
+				data.aQP && 0 !== data.aRO && ((aQl = new rx).s0(L(279)), aQl.s4(data.aRM), aQl.sB(new tl([new x(L(280, 0, "Report"), function(e) {
 					return b1.z.ef(0) && (bD.sK.wV(e), b1.aHS.aQx({
 						action: 5,
 						uY: data.uY
@@ -8563,15 +8563,15 @@ function aPz(data) {
 			function(sF) {
 				var aQl = new rx,
 					aRR = data.y7,
-					aRS = (aQl.s0(L(280)), aQl.s6(L(281, [data.y5.length ? "[" + data.y5 + "]" : "-"])), aQl.s6(L(282, [bD.tI.a6M(aRR, .01, 2)])), aQl.s6(L(283, [data.y9 + 1 + " / " + data.y3])), data.yA),
-					aRT = (aQl.s6(L(284, [bD.tI.a6M(aRS, .1, 1)])), data.yC);
-				aQl.s6(L(285, [aRT])), aQl.s6(L(286, [bD.tI.a6M(aRS / Math.max(aRT, 1), .1, 2)])), aRR = data.y8, aQl.s0(L(287), "0.8em"), aQl.s6(L(281, [data.y6.length ? "[" + data.y6 + "]" : "-"])), aQl.s6(L(282, [bD.tI.a6M(aRR, .01, 2)])),
-					aRS = data.yB, aQl.s6(L(284, [bD.tI.a6M(aRS, .1, 1)])), aRT = data.yD, aQl.s6(L(285, [aRT])), aQl.s6(L(286, [bD.tI.a6M(aRS / Math.max(aRT, 1), .1, 2)])), aQl.s6(b1.z.aQm("/wiki/clans"), "0.75em").style.marginTop = "0.8em",
+					aRS = (aQl.s0(L(281)), aQl.s6(L(282, [data.y5.length ? "[" + data.y5 + "]" : "-"])), aQl.s6(L(283, [bD.tI.a6M(aRR, .01, 2)])), aQl.s6(L(284, [data.y9 + 1 + " / " + data.y3])), data.yA),
+					aRT = (aQl.s6(L(285, [bD.tI.a6M(aRS, .1, 1)])), data.yC);
+				aQl.s6(L(286, [aRT])), aQl.s6(L(287, [bD.tI.a6M(aRS / Math.max(aRT, 1), .1, 2)])), aRR = data.y8, aQl.s0(L(288), "0.8em"), aQl.s6(L(282, [data.y6.length ? "[" + data.y6 + "]" : "-"])), aQl.s6(L(283, [bD.tI.a6M(aRR, .01, 2)])),
+					aRS = data.yB, aQl.s6(L(285, [bD.tI.a6M(aRS, .1, 1)])), aRT = data.yD, aQl.s6(L(286, [aRT])), aQl.s6(L(287, [bD.tI.a6M(aRS / Math.max(aRT, 1), .1, 2)])), aQl.s6(b1.z.aQm("/wiki/clans"), "0.75em").style.marginTop = "0.8em",
 					sF.push(aQl)
 			}(sF),
 			function(sF) {
 				var aQl = new rx;
-				aQl.s0(L(288)), aQl.s6(L(225) + (data.aRU / 10).toFixed(1) + "<br>" + L(183) + (data.aRV.length ? L(289, [data.aRV]) : L(290))), data.aQP && aQl.sB(new tl([new x(L(234), function(e) {
+				aQl.s0(L(289)), aQl.s6(L(225) + (data.aRU / 10).toFixed(1) + "<br>" + L(183) + (data.aRV.length ? L(290, [data.aRV]) : L(291))), data.aQP && aQl.sB(new tl([new x(L(235), function(e) {
 					return b1.z.ef(0) && (bD.sK.wV(e), b1.aHS.aQx({
 						action: 4,
 						uY: data.uY
@@ -8582,21 +8582,21 @@ function aPz(data) {
 				var aQl = new rx;
 				{
 					var t6, aQt, aR6, s3, aQq, aQs;
-					aQl.s0(L(232)), aQl.s6(L(233) + data.aR4 + "<br>" + L(182) + (data.aR5 + 1) + " / " + data.y3 + "<br>" + L(183) + br.eK(data.aR5)), data.aQP && ((t6 = new t7({
+					aQl.s0(L(233)), aQl.s6(L(234) + data.aR4 + "<br>" + L(182) + (data.aR5 + 1) + " / " + data.y3 + "<br>" + L(183) + br.eK(data.aR5)), data.aQP && ((t6 = new t7({
 						value: bm.buffer.data[157].value,
 						eI: -1
 					}, 1, void 0, function(e) {
 						bm.qo.qp(157, aQq(e.target.value))
 					})).e.style.marginTop = "0.6em", aQl.sB(t6), aQt = new x(L(185), function(e) {
 						return e.textContent === L(185) ? (e.textContent = L(186), t6.e.readOnly = !0, aR6[0].se(0), aR6[0].button.style.color = bE.qN, aQq(bm.buffer.data[157].value)) : aQs(), !0
-					}), aQl.sB(new tl([aQt.button])), aR6 = [new x(L(234), function(e) {
+					}), aQl.sB(new tl([aQt.button])), aR6 = [new x(L(235), function(e) {
 						return t6.e.readOnly && b1.z.ef(0) && (bD.sK.wV(e), aQs(), b1.aHS.aHT({
 							action: 1,
 							uY: data.uY,
 							value: bO.ij(parseInt(bm.buffer.data[157].value, 10), 2, 3e4)
 						})), !0
 					}, 1)], s3 = aQl.s2(), aQq = function(g1) {
-						return g1 = bD.gv.a62(g1, 2, 3e4), s3.textContent = L(235, [g1 - 1, g1, bm.buffer.data[105].value]), g1
+						return g1 = bD.gv.a62(g1, 2, 3e4), s3.textContent = L(236, [g1 - 1, g1, bm.buffer.data[105].value]), g1
 					}, aQl.sB(new tl([aR6[0].button])), aQs = function() {
 						aQt.button.textContent = L(185), t6.e.readOnly = !1, aR6[0].se(1), aR6[0].button.style.color = bE.pO
 					}, aQq(bm.buffer.data[157].value))
@@ -8610,27 +8610,27 @@ function aPz(data) {
 						action: 7,
 						uY: data.uY
 					}), data.aRX = 0, u.v(7)
-				}).button])) : data.aRW ? (aQl.s6(L(291, [(data.aRY / 100).toFixed(2)]) + "<br>" + L(292, [1 + data.aRZ + " / " + data.aRa]) + "<br>" + L(293, [data.aRb ? L(294) : L(295)])), data.aQP || aQl.sB(new tl([new x(L(296),
+				}).button])) : data.aRW ? (aQl.s6(L(292, [(data.aRY / 100).toFixed(2)]) + "<br>" + L(293, [1 + data.aRZ + " / " + data.aRa]) + "<br>" + L(294, [data.aRb ? L(295) : L(296)])), data.aQP || aQl.sB(new tl([new x(L(297),
 					function() {
 						b1.aHS.aQx({
 							action: 8,
 							uY: data.uY
 						}), data.aRW = 0, bm.qo.qp(160, 0), u.v(7)
-					}).button]))) : (aQl.s6(L(297), "0.75em").style.marginBottom = "0.3em", aQl.s6("  • " + L(298), "0.75em").style.whiteSpace = "pre", aQl.s6("  • " + L(299), "0.75em").style.whiteSpace = "pre", aQl.s6("  • " + L(
-						300), "0.75em").style.whiteSpace = "pre", aQl.s6(L(301), "0.75em").style.marginTop = "1.0em", aQl.s6(L(302), "0.75em").style.marginTop = "1.0em", aQl.s6("<a href='" + bN.aRc +
+					}).button]))) : (aQl.s6(L(298), "0.75em").style.marginBottom = "0.3em", aQl.s6("  • " + L(299), "0.75em").style.whiteSpace = "pre", aQl.s6("  • " + L(300), "0.75em").style.whiteSpace = "pre", aQl.s6("  • " + L(
+						301), "0.75em").style.whiteSpace = "pre", aQl.s6(L(302), "0.75em").style.marginTop = "1.0em", aQl.s6(L(303), "0.75em").style.marginTop = "1.0em", aQl.s6("<a href='" + bN.aRc +
 						"' target='_blank'>patreon.com/c/territorial</a>", "0.75em").style.marginTop = "0.3em", a5X = "https://www.patreon.com/oauth2/authorize?state=" + data.uY +
-					"&response_type=code&client_id=wWuOlDVZwn1sxSN9Wm4I9sJA3Ewfw7Zz4MjTMf9el2v3lviVkDwFtr92n7Tdlrhc&redirect_uri=https://" + b1.z.a2g() + "/", aQl.s6(L(303), "0.75em").style.marginTop = "1.0em", aQl.s6("<a href='" +
+					"&response_type=code&client_id=wWuOlDVZwn1sxSN9Wm4I9sJA3Ewfw7Zz4MjTMf9el2v3lviVkDwFtr92n7Tdlrhc&redirect_uri=https://" + b1.z.a2g() + "/", aQl.s6(L(304), "0.75em").style.marginTop = "1.0em", aQl.s6("<a href='" +
 						a5X + "' target='_blank'>patreon.com/oauth2/...</a>", "0.75em").style.marginTop = "0.3em", data.aQP || (aQl.sB(new tw), aQl.sB(new tl([new x(L(199), function() {
 						b1.aHS.aQx({
 							action: 6,
 							uY: data.uY
 						}), data.aRX = 1, u.v(7)
-					}).button])), aQl.s6(L(304), "0.75em").style.marginTop = "0.75em")), sF.push(aQl))
+					}).button])), aQl.s6(L(305), "0.75em").style.marginTop = "0.75em")), sF.push(aQl))
 			}(sF), sF.push(function() {
 				var aQl = new rx,
 					aQn = (aQl.s0(L(226)), [L(227), L(228), L(229), L(230), "Scout", L(231)]),
 					eH = data.aR2;
-				return aQl.s6(L(225) + (data.aR3 / 100).toFixed(2) + "<br>" + L(182) + (eH + 1) + " / " + data.y3 + "<br>" + L(183) + aQn[eH < 3 ? 0 : eH < 20 ? 1 : eH < 100 ? 2 : eH < 500 ? 3 : eH < 2e3 ? 4 : 5]), aQl.s6(
+				return aQl.s6(L(232) + (data.aR3 / 100).toFixed(2) + "<br>" + L(182) + (eH + 1) + " / " + data.y3 + "<br>" + L(183) + aQn[eH < 3 ? 0 : eH < 20 ? 1 : eH < 100 ? 2 : eH < 500 ? 3 : eH < 2e3 ? 4 : 5]), aQl.s6(
 					"<a href='https://territorial.fandom.com/wiki/Zombie_mode' target='_blank'>Unofficial Tutorial</a>", "0.75em").style.marginTop = "0.8em", aQl
 			}()),
 			function(sF) {
@@ -8699,10 +8699,10 @@ function aQA() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(305), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
+	}, aRe = new wc(L(306), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(306)), aQl.s8(new wY({
-			oM: [L(307), L(308), L(309)],
+		aQl.s0(L(307)), aQl.s8(new wY({
+			oM: [L(308), L(309), L(310)],
 			value: aE.data.aIncomeType
 		}, function(eI) {
 			aRj(), 2 !== eI || aE.data.aIncomeData || (aE.data.aIncomeData = new Uint8Array(aE.fW)), aE.data.aIncomeType = eI, u.v(22)
@@ -8735,7 +8735,7 @@ function aQD() {
 
 	function aRo(sF, eI) {
 		var aQl = new rx,
-			value = (aQl.s0(eI < 0 ? L(65) : L(64) + " " + bj.a2c[eI % 9]), 0 <= eI && (aQl.s6(L(312) + ": " + aE.data.teamPlayerCount[eI]).style.marginBottom = "1em"), eI < 0 ? aE.data.botDifficultyValue : aE.data.botDifficultyTeam[eI]);
+			value = (aQl.s0(eI < 0 ? L(65) : L(64) + " " + bj.a2c[eI % 9]), 0 <= eI && (aQl.s6(L(313) + ": " + aE.data.teamPlayerCount[eI]).style.marginBottom = "1em"), eI < 0 ? aE.data.botDifficultyValue : aE.data.botDifficultyTeam[eI]);
 		aQl.s8(new wY({
 			oM: aF.l5,
 			value: value
@@ -8755,7 +8755,7 @@ function aQD() {
 		var sF = [];
 		if (function(sF) {
 				var aQl = new rx,
-					oM = (aQl.s0(L(306)), [L(308), L(310), L(311), L(309)]),
+					oM = (aQl.s0(L(307)), [L(309), L(311), L(312), L(310)]),
 					value = aE.data.botDifficultyType;
 				0 === aE.data.gameMode && (value = Math.min(value, 2), oM.splice(2, 1));
 				aQl.s8(new wY({
@@ -8869,10 +8869,10 @@ function aRp(data) {
 			ea = ea.getUTCMonth() + 1;
 		aRx = ea < 12 ? new Date(Date.UTC(aSA, ea) - a5N) : new Date(Date.UTC(aSA + 1, 0) - a5N)
 	}(ea, a5N) : (a5N = 6e4 * aS2[data.aS7], aRx = data.aS7 <= 4 ? new Date(iR + a5N - ea.getTime() % a5N) : new Date(iR + a5N - (ea.getTime() + 2592e5) % a5N)), iR = bD.color, colors = [bE.pO, iR.pG(255, 0, 0), iR.pG(0, 200, 0), iR.pG(80, 80,
-		255), iR.pG(255, 255, 0), iR.pG(255, 0, 255), iR.pG(0, 255, 255), iR.pG(255, 140, 0), iR.pG(128, 128, 128), iR.pG(0, 255, 140)], aQN = new wc(L(313) + ", " + ["M1", "M5", "H1", "H4", "D1", "W1", "MN"][data.aS7] + ", " + bD.a4a.a5M(aRw), [
+		255), iR.pG(255, 255, 0), iR.pG(255, 0, 255), iR.pG(0, 255, 255), iR.pG(255, 140, 0), iR.pG(128, 128, 128), iR.pG(0, 255, 140)], aQN = new wc(L(314) + ", " + ["M1", "M5", "H1", "H4", "D1", "W1", "MN"][data.aS7] + ", " + bD.a4a.a5M(aRw), [
 		new x("⬅️ " + L(40), function() {
 			u.v(1)
-		}), new x(L(314), function() {
+		}), new x(L(315), function() {
 			u.v(14)
 		})
 	], !1)
@@ -8888,11 +8888,11 @@ function aQ2() {
 		aQN.resize(), aQO.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aQN = new wc(L(315), [new x("⬅️ " + L(40), function() {
+	}, aQN = new wc(L(316), [new x("⬅️ " + L(40), function() {
 		aSX !== bm.buffer.data[125].value ? u.z.aSY() : u.aQL(13)
 	})]), aQO = new sD(aQN.wi, ((sF = []).push(function() {
 		var aQl = new rx,
-			aQt = (aQl.s0(L(316)), aQl.s2(L(317)), new x(L(318), function() {
+			aQt = (aQl.s0(L(317)), aQl.s2(L(318)), new x(L(319), function() {
 				bm.qo.qp(130, 0), u.z.aSY()
 			}, 0, 0, 1)),
 			t6 = new t7(bm.buffer.data[126], 0, function() {
@@ -8901,7 +8901,7 @@ function aQ2() {
 		return aQl.sB(t6), t6.e.placeholder = "a,b,c", t6.e.style.marginTop = "0.5em", aQl.sB(new tl([aQt.button])), aQl
 	}()), sF.push(function() {
 		var aQl = new rx,
-			aQt = new x(L(318), function() {
+			aQt = new x(L(319), function() {
 				bm.qo.qp(130, 1), u.z.aSY()
 			}, 0, 0, 1),
 			aSd = new t7(bm.buffer.data[129], 1, function() {
@@ -8910,13 +8910,13 @@ function aQ2() {
 			aSe = new t7(bm.buffer.data[128], 1, function() {
 				aQt.button.click()
 			});
-		return aQl.s0(L(319)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.5em", aQl.s0(L(320)), aQl.sB(aSd), aQl.sB(new tl([aQt.button])), aQl
+		return aQl.s0(L(320)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.5em", aQl.s0(L(321)), aQl.sB(aSd), aQl.sB(new tl([aQt.button])), aQl
 	}()), sF.push(function() {
 		var aQl = new rx;
-		return aQl.s0(L(321)), bm.buffer.data[125].oM = ["M1", "M5", "H1", "H4", "D1", "W1", "MN"], aQl.s8(new wY(bm.buffer.data[125])), aQl
+		return aQl.s0(L(322)), bm.buffer.data[125].oM = ["M1", "M5", "H1", "H4", "D1", "W1", "MN"], aQl.s8(new wY(bm.buffer.data[125])), aQl
 	}()), sF.push(function() {
 		var aQl = new rx;
-		return aQl.s0(L(322)), aQl.sB(new th(bm.buffer.data[127], L(323))), aQl
+		return aQl.s0(L(323)), aQl.sB(new th(bm.buffer.data[127], L(324))), aQl
 	}()), sF))
 }
 
@@ -8927,7 +8927,7 @@ function aQ1() {
 	function aSm(aC) {
 		var aSn = aSf.fi + aC * (bf.gap + aSi);
 		ws.fillStyle = "rgb(" + (0 === aC ? 150 : 2 === aC ? 30 : 0) + "," + (1 === aC ? 130 : 2 === aC ? 30 : 0) + "," + (2 === aC ? 220 : 0) + ")", ws.fillRect(aSg, aSn, colors[aC] * aSh, aSi), ws.strokeStyle = bE.pO, ws.strokeRect(aSg, aSn, aSh,
-			aSi), ws.fillStyle = bE.pO, ws.font = bD.sK.u8(0, .32 * aSi), bD.sK.textBaseline(ws, 1), bD.sK.textAlign(ws, 0), ws.fillText(L(0 === aC ? 326 : 1 === aC ? 327 : 328) + aSk(aC), aSg + bf.gap, aSn + .53 * aSi)
+			aSi), ws.fillStyle = bE.pO, ws.font = bD.sK.u8(0, .32 * aSi), bD.sK.textBaseline(ws, 1), bD.sK.textAlign(ws, 0), ws.fillText(L(0 === aC ? 327 : 1 === aC ? 328 : 329) + aSk(aC), aSg + bf.gap, aSn + .53 * aSi)
 	}
 
 	function aSk(aC, aSo) {
@@ -8951,7 +8951,7 @@ function aQ1() {
 	}, this.wr = function() {
 		var eH, uw, ft;
 		aQN.wr(), ws.lineWidth = bf.a1E, eH = aSk(0), uw = aSk(1), ft = aSk(2), ws.fillStyle = "rgb(" + eH + "," + uw + "," + ft + ")", ws.fillRect(aSf.fg, aSf.fi, aRs, aSf.k), ws.strokeStyle = bE.pO, ws.strokeRect(aSf.fg, aSf.fi, aRs, aSf.k), ws
-			.fillStyle = eH + uw + ft < 306 && uw < 150 ? bE.pO : bE.pF, bD.sK.textBaseline(ws, 1), bD.sK.textAlign(ws, 1), ws.font = bD.sK.u8(0, .1 * aSf.k), ws.rotate(-Math.PI / 2), ws.fillText(L(325), -aSf.fi - .5 * aSf.k, aSf.fg + .5 * aRs),
+			.fillStyle = eH + uw + ft < 306 && uw < 150 ? bE.pO : bE.pF, bD.sK.textBaseline(ws, 1), bD.sK.textAlign(ws, 1), ws.font = bD.sK.u8(0, .1 * aSf.k), ws.rotate(-Math.PI / 2), ws.fillText(L(326), -aSf.fi - .5 * aSf.k, aSf.fg + .5 * aRs),
 			ws.setTransform(1, 0, 0, 1, 0, 0), aSm(0), aSm(1), aSm(2)
 	}, this.hm = function(m9, mA) {
 		a4G(m9, mA) && (aSj = bO.ij(Math.floor((mA - aSf.fi) / (aSi + .75 * bf.gap)), 0, 2), colors[aSj] = bO.ij((m9 - aSg) / aSh, 0, 1), bi.ds = !0)
@@ -8963,7 +8963,7 @@ function aQ1() {
 		0 <= aSj && (aSj = -1, bi.ds = !0)
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aQN = new wc(L(324), [new x("⬅️ " + L(40), function() {
+	}, aQN = new wc(L(325), [new x("⬅️ " + L(40), function() {
 		u.z.aEb()
 	})], !1), aSf = new su([.5, .25], [.5, .5], 1)
 }
@@ -8990,10 +8990,10 @@ function aQ9() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, oy = [new x("⬅️ " + L(40), aRh)], 1 === aE.data.gameMode && oy.push(new x(L(329), aSp, 1, 1)), aRe = new wc(L(330), oy), aRf = new sD(aRe.wi, (oy = [], 0 === aE.data.gameMode ? (function(sF) {
+	}, oy = [new x("⬅️ " + L(40), aRh)], 1 === aE.data.gameMode && oy.push(new x(L(330), aSp, 1, 1)), aRe = new wc(L(331), oy), aRf = new sD(aRe.wi, (oy = [], 0 === aE.data.gameMode ? (function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(306)), aQl.s8(new wY({
-			oM: [L(331), L(309)],
+		aQl.s0(L(307)), aQl.s8(new wY({
+			oM: [L(332), L(310)],
 			value: aE.data.colorsType
 		}, function(eI) {
 			aRj(), aE.data.colorsType = eI, 1 !== aE.data.colorsType || aE.data.colorsData && aE.data.colorsData.length === aE.fW || (aE.data.colorsData = new Uint32Array(aE.fW)), u.v(21)
@@ -9003,7 +9003,7 @@ function aQ9() {
 		aQl.s0("Data"), (aRg = new x0(0, 1, 0, 1)).x6(bD.tI.a6S(aE.data.colorsData, 1)), aQl.sB(aRg), sF.push(aQl)
 	}(oy)) : (aE.a6j.a6o(), oy.push(function() {
 		var aQl = new rx;
-		aQl.s0(L(312));
+		aQl.s0(L(313));
 		for (var aC = 0; aC < bj.a2c.length; aC++) {
 			var iR = (aC + 1) % bj.a2c.length,
 				e = aQl.s6((0 == iR ? "" : "Team ") + bj.a2c[iR]);
@@ -9018,7 +9018,7 @@ function aQ9() {
 		}
 		return aQl
 	}()), function(sF) {
-		for (var aQl = new rx, oM = (aQl.s0(L(332)), []), aC = 0; aC < bj.a2c.length; aC++) {
+		for (var aQl = new rx, oM = (aQl.s0(L(333)), []), aC = 0; aC < bj.a2c.length; aC++) {
 			var iR = (aC + 1) % bj.a2c.length;
 			oM.push(bj.a2c[iR])
 		}
@@ -9039,12 +9039,12 @@ function ub(id, a65, aSv) {
 	var aQN, aSw;
 
 	function aT1() {
-		aSw.sG.innerHTML += "<br>" + L(335)
+		aSw.sG.innerHTML += "<br>" + L(336)
 	}
 
 	function aTA() {
 		var ft = 1;
-		u.v(4, 1, new w(L(336), L(337), !1, [new x("🔄 Reload", function() {
+		u.v(4, 1, new w(L(337), L(338), !1, [new x("🔄 Reload", function() {
 			ft && (setTimeout(function() {
 				u.v(1)
 			}, 5e3), a1.a2.a3()), ft = 0
@@ -9076,9 +9076,9 @@ function ub(id, a65, aSv) {
 		aQN.resize(), aSw.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aQN = new wc(L(333), [new x("⬅️ " + L(40), function() {
+	}, aQN = new wc(L(334), [new x("⬅️ " + L(40), function() {
 		aSv ? u.v(29) : u.z.aEb()
-	})]), aSw = new tk(aQN.wi, L(334))
+	})]), aSw = new tk(aQN.wi, L(335))
 }
 
 function aQ7() {
@@ -9110,23 +9110,23 @@ function aQ7() {
 
 	function aTK() {
 		var aTU, aQl = new rx;
-		return aQl.s0(L(330)), aTU = 0 === aE.data.gameMode ? [L(331), L(309)][aE.data.colorsType] : aE.data.numberTeams + " Team" + (1 === aE.data.numberTeams ? "" : "s"), aQl.s6(aTU), aQl.sB(new tl([new x(L(341), function() {
+		return aQl.s0(L(331)), aTU = 0 === aE.data.gameMode ? [L(332), L(310)][aE.data.colorsType] : aE.data.numberTeams + " Team" + (1 === aE.data.numberTeams ? "" : "s"), aQl.s6(aTU), aQl.sB(new tl([new x(L(342), function() {
 			u.v(21)
 		}).button])), aQl
 	}
 
 	function aTL() {
 		var aQl = new rx,
-			h = (aQl.s0(L(65)), [L(308) + ": " + aF.l5[aE.data.botDifficultyValue], L(310), L(311), L(309)]);
-		return aQl.s6(h[aE.data.botDifficultyType]), aQl.sB(new tl([new x(L(341), function() {
+			h = (aQl.s0(L(65)), [L(309) + ": " + aF.l5[aE.data.botDifficultyValue], L(311), L(312), L(310)]);
+		return aQl.s6(h[aE.data.botDifficultyType]), aQl.sB(new tl([new x(L(342), function() {
 			u.v(25)
 		}).button])), aQl
 	}
 
 	function aTM() {
 		var aQl = new rx,
-			h = (aQl.s0("Spawning"), [L(331), L(343), L(309)]);
-		return aQl.s6(h[aE.data.spawningType]), aQl.sB(new tl([new x(L(341), function() {
+			h = (aQl.s0("Spawning"), [L(332), L(344), L(310)]);
+		return aQl.s6(h[aE.data.spawningType]), aQl.sB(new tl([new x(L(342), function() {
 			u.v(24)
 		}).button])), aQl
 	}
@@ -9138,18 +9138,18 @@ function aQ7() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc("🔧 " + L(338), [new x("⬅️ " + L(40), aRh), new x(L(339), aTD)]), aTF(), aE.data.canvas || (2 === aE.data.mapType ? aE.data.canvas = bV.yn : 1 === aE.data.mapType ? aE.data.canvas = bV.aNn(bV.a79(aE.data), 0).yn : (aE.data
+	}, aRe = new wc("🔧 " + L(339), [new x("⬅️ " + L(40), aRh), new x(L(340), aTD)]), aTF(), aE.data.canvas || (2 === aE.data.mapType ? aE.data.canvas = bV.yn : 1 === aE.data.mapType ? aE.data.canvas = bV.aNn(bV.a79(aE.data), 0).yn : (aE.data
 		.mapType = 0, aE.data.passableWater = aE.data.passableMountains = 1, aE.data.canvas = bV.aNn(bV.a79(aE.data), aE.data.mapSeed).yn)), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx,
-			a55 = (aQl.s0(L(340)), aE.data.canvas);
+			a55 = (aQl.s0(L(341)), aE.data.canvas);
 		a55.style.width = "100%", aQl.sB({
 			e: a55
-		}), aQl.sB(new tl([new x(L(341), function() {
+		}), aQl.sB(new tl([new x(L(342), function() {
 			u.v(20)
 		}).button])), sF.push(aQl)
 	}(sF = []), function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(312)), aQl.sB(new t7({
+		aQl.s0(L(313)), aQl.sB(new t7({
 			eI: -1,
 			value: aE.data.playerCount
 		}, 1, 0, function(e) {
@@ -9158,7 +9158,7 @@ function aQ7() {
 		})), sF.push(aQl)
 	}(sF), function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(342)), aQl.s8(new wY({
+		aQl.s0(L(343)), aQl.s8(new wY({
 			oM: ["Battle Royale", "Teams"],
 			value: aE.data.gameMode
 		}, function(eI) {
@@ -9166,41 +9166,41 @@ function aQ7() {
 		})), sF.push(aQl)
 	}(sF), sF.push(aTK()), sF.push(aTL()), sF.push(aTM()), function(sF) {
 		var aQl = new rx,
-			h = (aQl.s0(L(344)), [L(345), L(346), L(309)]);
-		aQl.s6(h[aE.data.playerNamesType]), aQl.sB(new tl([new x(L(341), function() {
+			h = (aQl.s0(L(345)), [L(346), L(347), L(310)]);
+		aQl.s6(h[aE.data.playerNamesType]), aQl.sB(new tl([new x(L(342), function() {
 			u.v(23)
 		}).button])), sF.push(aQl)
 	}(sF), function(sF) {
 		var aQl = new rx,
-			h = (aQl.s0(L(305)), [L(307), L(308) + ": " + aE.data.aIncomeValue, L(309)]);
-		aQl.s6(h[aE.data.aIncomeType]), aQl.sB(new tl([new x(L(341), function() {
+			h = (aQl.s0(L(306)), [L(308), L(309) + ": " + aE.data.aIncomeValue, L(310)]);
+		aQl.s6(h[aE.data.aIncomeType]), aQl.sB(new tl([new x(L(342), function() {
 			u.v(22)
 		}).button])), sF.push(aQl)
 	}(sF), function(sF) {
 		var aQl = new rx,
-			h = (aQl.s0(L(347)), [L(307), L(308) + ": " + aE.data.tIncomeValue, L(309)]);
-		aQl.s6(h[aE.data.tIncomeType]), aQl.sB(new tl([new x(L(341), function() {
+			h = (aQl.s0(L(348)), [L(308), L(309) + ": " + aE.data.tIncomeValue, L(310)]);
+		aQl.s6(h[aE.data.tIncomeType]), aQl.sB(new tl([new x(L(342), function() {
 			u.v(26)
 		}).button])), sF.push(aQl)
 	}(sF), function(sF) {
 		var aQl = new rx,
-			h = (aQl.s0(L(348)), [L(307), L(308) + ": " + aE.data.iIncomeValue, L(309)]);
-		aQl.s6(h[aE.data.iIncomeType]), aQl.sB(new tl([new x(L(341), function() {
+			h = (aQl.s0(L(349)), [L(308), L(309) + ": " + aE.data.iIncomeValue, L(310)]);
+		aQl.s6(h[aE.data.iIncomeType]), aQl.sB(new tl([new x(L(342), function() {
 			u.v(27)
 		}).button])), sF.push(aQl)
 	}(sF), function(sF) {
 		var aQl = new rx,
-			h = (aQl.s0(L(349)), [L(307), L(308) + ": " + aE.data.sResourcesValue, L(309)]);
-		aQl.s6(h[aE.data.sResourcesType]), aQl.sB(new tl([new x(L(341), function() {
+			h = (aQl.s0(L(350)), [L(308), L(309) + ": " + aE.data.sResourcesValue, L(310)]);
+		aQl.s6(h[aE.data.sResourcesType]), aQl.sB(new tl([new x(L(342), function() {
 			u.v(28)
 		}).button])), sF.push(aQl)
 	}(sF), function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(350)), aQl.sB(new tl([new x(L(351), function() {
+		aQl.s0(L(351)), aQl.sB(new tl([new x(L(352), function() {
 			u.y(), aE.a6j.a7C(), u.z.uS[0] = 0, u.v(19)
-		}).button])), aQl.sB(new tl([new x(L(352), function() {
-			bp.aL1()
 		}).button])), aQl.sB(new tl([new x(L(353), function() {
+			bp.aL1()
+		}).button])), aQl.sB(new tl([new x(L(354), function() {
 			return bp.aL3(), !0
 		}).button])), sF.push(aQl)
 	}(sF), sF))
@@ -9241,7 +9241,7 @@ function aQI() {
 	}, this.a0i = function(a7G) {
 		var tR = document.createDocumentFragment();
 		tS(tR, a7G), aRe.wi.appendChild(tR), tV()
-	}, (aRe = new wc(L(354), [new x("⬅️ " + L(40), function() {
+	}, (aRe = new wc(L(355), [new x("⬅️ " + L(40), function() {
 		u.aQL(1)
 	})])).wi.style.overflowY = "auto", aRe.wi.addEventListener("scroll", function() {
 		tC = aRe.wi.scrollTop >= aRe.wi.scrollHeight - aRe.wi.clientHeight - 2
@@ -9266,10 +9266,10 @@ function aQF() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(348), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
+	}, aRe = new wc(L(349), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(306)), aQl.s8(new wY({
-			oM: [L(307), L(308), L(309)],
+		aQl.s0(L(307)), aQl.s8(new wY({
+			oM: [L(308), L(309), L(310)],
 			value: aE.data.iIncomeType
 		}, function(eI) {
 			aRj(), 2 !== eI || aE.data.iIncomeData || (aE.data.iIncomeData = new Uint8Array(aE.fW), aE.data.iIncomeData.fill(32)), aE.data.iIncomeType = eI, u.v(27)
@@ -9291,13 +9291,13 @@ function aQF() {
 
 function aPx() {
 	var aTZ, aTa, aSf, t6, aTb, u3 = 0;
-	this.aJ9 = new uh, aSf = new su([.45, .27], [.5, .5], 2 / 3), aTa = [new x("⚔️<br>" + L(355), function() {
+	this.aJ9 = new uh, aSf = new su([.45, .27], [.5, .5], 2 / 3), aTa = [new x("⚔️<br>" + L(356), function() {
 			__fx.isCustomLobbyVersion ? alert("This version is for use with custom lobbies only. For normal multiplayer, use the version at https://fxclient.github.io/FXclient/") : aTc(0)
-		}, __fx.isCustomLobbyVersion ? "rgba(50, 50, 50, 0.6)" : bE.pr), new x("🗡️<br>" + L(338), function() {
+		}, __fx.isCustomLobbyVersion ? "rgba(50, 50, 50, 0.6)" : bE.pr), new x("🗡️<br>" + L(339), function() {
 			aTc(1)
-		}, bE.q9), new x("🔑<br>" + L(356), function() {
+		}, bE.q9), new x("🔑<br>" + L(357), function() {
 			aTc(2)
-		}, bE.qS), new x("☰<br>" + L(357), function() {
+		}, bE.qS), new x("☰<br>" + L(358), function() {
 			aTc(3)
 		}, bE.pb), new x("", function() {
 			u.v(12)
@@ -9315,7 +9315,7 @@ function aPx() {
 		a1.a2.setState(10), ac.v0() || ac.aJ0(), 0 === eI ? u.z.a72(1) : 1 === eI ? (bC.aLL.yY(bm.buffer.data[156].value, 1) || aE.a6j.a7C(), u.v(19)) : 2 === eI ? 0 !== a1.id || bm.buffer.data[140].value ? u.v(8, u.ua, new ub(16)) : u.z.aTd(u.ua,
 			16) : 3 === eI && u.v(1)
 	}
-	t6.e.style.position = "absolute", t6.e.style.textAlign = "center", t6.e.placeholder = L(358), this.show = function() {
+	t6.e.style.position = "absolute", t6.e.style.textAlign = "center", t6.e.placeholder = L(359), this.show = function() {
 		ab.setState(0), a1.a2.setState(12), this.aJ9.show(), aTa[4].se(bD.color.a5C(bm.buffer.data[121].value)), this.resize(), document.body.appendChild(t6.e);
 		for (var aC = 0; aC < aTa.length; aC++) document.body.appendChild(aTa[aC].button);
 		1 !== a1.id || a1.e3 < 5 || (aTb && bi.eZ > aTb + 144e5 ? a1.xZ.setState(14) : aTb = bi.eZ)
@@ -9376,25 +9376,25 @@ function aQ4() {
 		aQN.resize(), aTk.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aTl = [new x(L(359), function() {
+	}, aTl = [new x(L(360), function() {
 		aTm(1)
-	}, 0, 0, 1), new x(L(360), function() {
-		aTm(2)
 	}, 0, 0, 1), new x(L(361), function() {
-		aTm(3)
+		aTm(2)
 	}, 0, 0, 1), new x(L(362), function() {
-		aTm(0)
+		aTm(3)
 	}, 0, 0, 1), new x(L(363), function() {
-		aTm(9)
+		aTm(0)
 	}, 0, 0, 1), new x(L(364), function() {
-		aTm(10)
+		aTm(9)
 	}, 0, 0, 1), new x(L(365), function() {
-		aTm(11)
+		aTm(10)
 	}, 0, 0, 1), new x(L(366), function() {
+		aTm(11)
+	}, 0, 0, 1), new x(L(367), function() {
 		aTm(13)
 	}, 0, 0, 1)], wd = [new x("⬅️ " + L(40), function() {
 		u.a3O()
-	})], aQN = new wc(L(367), wd), aTk = new ss(aTl, aQN.wi)
+	})], aQN = new wc(L(368), wd), aTk = new ss(aTl, aQN.wi)
 }
 
 function aEy(title, s7, aTn) {
@@ -9447,7 +9447,7 @@ function aD4(data) {
 		})]);
 		var fc = {
 				uI: [],
-				uO: [L(380), L(381), L(382) + " ↗"],
+				uO: [L(381), L(382), L(383) + " ↗"],
 				uV: [12, 50, 38]
 			},
 			a76 = aE.data.a76;
@@ -9472,16 +9472,16 @@ function aD4(data) {
 		var fc = data.data.length ? 0 : 1,
 			aTn = [new x("⬅️ " + L(40), function() {
 				u.a3O()
-			}), new x(L(368), function() {
+			}), new x(L(369), function() {
 				aTq(-10)
-			}, fc, 0, 1), new x(L(369), function() {
+			}, fc, 0, 1), new x(L(370), function() {
 				aTq(10)
-			}, fc, 0, 1), new x(L(314), function() {
+			}, fc, 0, 1), new x(L(315), function() {
 				u.v(11, 10, new aTr({
 					ur: data.ur
 				}))
 			})],
-			uO = [L(370), L(371), L(372), L(373), L(374), L(375), L(376), L(377), L(378), L(379), L(364), L(365), "Audit Log", L(366)];
+			uO = [L(371), L(372), L(373), L(374), L(375), L(376), L(377), L(378), L(379), L(380), L(365), L(366), "Audit Log", L(367)];
 		aQN = new wc(uO[data.ur], aTn), ! function() {
 			var aC, fc = {
 					uI: []
@@ -9493,20 +9493,20 @@ function aD4(data) {
 			var o7 = [.1, .001, .01, 1, 100, 1, 1, .1, 100, .01, .01, .01, 1, .01][data.ur],
 				a6F = [1, 3, 2, 0, 0, 0, 0, 1, 0, 2, 2, 2, 0, 2][data.ur],
 				eI = [
-					[L(383), L(384) + " ↗", L(385)],
-					[L(383), L(386), L(387), L(388) + " ↗"],
-					[L(383), L(384) + " ↗", L(387)],
-					[L(383), L(384) + " ↗", L(387)],
-					[L(380), L(389), L(390) + " ↗", L(391) + " ↗", L(123)],
-					[L(380), L(389), L(392) + " ↗", L(393) + " ↗", L(394)],
-					[L(380), L(389), L(395) + " ↗", L(396) + " ↗", L(397)],
-					[L(380), L(389), L(392) + " ↗", L(393) + " ↗", L(398)],
-					[L(380), L(389), L(390) + " ↗", L(391) + " ↗", L(123)],
-					[L(383), L(384) + " ↗", L(387)],
-					[L(383), L(384) + " ↗", L(399)],
-					[L(383), L(384) + " ↗", L(387)],
-					[L(380), L(389), L(390) + " ↗", L(391) + " ↗", L(400)],
-					[L(383), L(384) + " ↗", L(387)]
+					[L(384), L(385) + " ↗", L(386)],
+					[L(384), L(387), L(388), L(389) + " ↗"],
+					[L(384), L(385) + " ↗", L(388)],
+					[L(384), L(385) + " ↗", L(388)],
+					[L(381), L(390), L(391) + " ↗", L(392) + " ↗", L(123)],
+					[L(381), L(390), L(393) + " ↗", L(394) + " ↗", L(395)],
+					[L(381), L(390), L(396) + " ↗", L(397) + " ↗", L(398)],
+					[L(381), L(390), L(393) + " ↗", L(394) + " ↗", L(399)],
+					[L(381), L(390), L(391) + " ↗", L(392) + " ↗", L(123)],
+					[L(384), L(385) + " ↗", L(388)],
+					[L(384), L(385) + " ↗", L(400)],
+					[L(384), L(385) + " ↗", L(388)],
+					[L(381), L(390), L(391) + " ↗", L(392) + " ↗", L(401)],
+					[L(384), L(385) + " ↗", L(388)]
 				];
 			if (fc.uO = eI[data.ur], fc.uV = [
 					[25, 40, 35],
@@ -9578,7 +9578,7 @@ function aD4(data) {
 				else if (4 === data.ur || 5 === data.ur || 6 === data.ur || 7 === data.ur || 8 === data.ur)
 				for (aC = 0; aC < fZ; aC++) {
 					var aTy = aTt[aC][5];
-					4 === data.ur || 8 === data.ur ? "100%" === (aTy = (aTy % 64 * 100 / (aTy >> 6)).toFixed(0) + "%") && (4 === data.ur ? aTy += " (" + L(401) + ")" : aTy += " (" + L(402) + ")") : 5 === data.ur ? 32768 <= aTy && (aTy = -(aTy -
+					4 === data.ur || 8 === data.ur ? "100%" === (aTy = (aTy % 64 * 100 / (aTy >> 6)).toFixed(0) + "%") && (4 === data.ur ? aTy += " (" + L(402) + ")" : aTy += " (" + L(403) + ")") : 5 === data.ur ? 32768 <= aTy && (aTy = -(aTy -
 						32768)) : aTy = (o7 * aTy).toFixed(a6F), uI.push([{
 						g1: "" + aTt[aC][0],
 						ea: 0
@@ -9615,7 +9615,7 @@ function aTr(a65) {
 		aQN.resize(), aQO.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aQN = new wc(L(403), [new x("⬅️ " + L(40), function() {
+	}, aQN = new wc(L(404), [new x("⬅️ " + L(40), function() {
 		u.aQL(10)
 	})]), aQO = new sD(aQN.wi, ((sF = []).push(function() {
 		var aQt, aQl = new rx,
@@ -9625,8 +9625,8 @@ function aTr(a65) {
 			aSe = new t7(bm.buffer.data[131], 1, function() {
 				aSd.e.focus()
 			});
-		aQl.s0(L(319)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.8em", aQl.s0(L(320)), aQl.sB(aSd);
-		return aQt = new x(L(318), function() {
+		aQl.s0(L(320)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.8em", aQl.s0(L(321)), aQl.sB(aSd);
+		return aQt = new x(L(319), function() {
 			us = Math.floor(aSe.e.value), ut = Math.floor(aSd.e.value);
 			var ut, us = {
 				a4n: Math.min(us, ut),
@@ -9646,7 +9646,7 @@ function aTr(a65) {
 			aSe = new t7(bm.buffer.data[133], 0, function() {
 				aSd.e.focus()
 			});
-		return aQl.s0(1 === a65.ur ? L(404) : L(405)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.8em", aQl.s0(L(406)), aQl.sB(aSd), aQt = new x(L(318), function() {
+		return aQl.s0(1 === a65.ur ? L(405) : L(406)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.8em", aQl.s0(L(407)), aQl.sB(aSd), aQt = new x(L(319), function() {
 			var aT5 = aSe.e.value.slice(0, 20),
 				aT6 = Math.abs(Math.floor(aSd.e.value));
 			u.v(8, u.a7I(10).a3U, new ub(22, {
@@ -9663,7 +9663,7 @@ function aTr(a65) {
 			aSe = new t7(bm.buffer.data[151], 0, function() {
 				aSd.e.focus()
 			});
-		return aQl.s0(L(407)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.8em", aQl.s0(L(406)), aQl.sB(aSd), aQt = new x(L(318), function() {
+		return aQl.s0(L(408)), aQl.sB(aSe), aSe.e.style.marginBottom = "0.8em", aQl.s0(L(407)), aQl.sB(aSd), aQt = new x(L(319), function() {
 			var aT5 = aSe.e.value.slice(0, 5),
 				aT6 = Math.abs(Math.floor(aSd.e.value));
 			u.v(8, u.a7I(10).a3U, new ub(28, {
@@ -9679,7 +9679,7 @@ function aQH() {
 	var aU2, v4, aU5, v3, v6, aU3 = [new Array(4), new Array(4), new Array(2), new Array(2)],
 		aU4 = new Array(4),
 		aU6 = new Array(2),
-		aU7 = [L(64), L(363), L(408), L(409)];
+		aU7 = [L(64), L(364), L(409), L(410)];
 
 	function aGm() {
 		var aG5;
@@ -9724,7 +9724,7 @@ function aQH() {
 			aUE = bq.z.tO[aUE],
 			ft = (bV.a8(aUE.fF, aUE.mapSeed), v4.oy),
 			a8y = aUF(aUE.fF, aUE.mapSeed) + aUG(aUE.aFp) + aUH(aUE.aGd),
-			aUE = L(412) + "   " + aUF(aUE.aHY, aUE.aHZ) + aUG(aUE.aHa) + aUH(aUE.aGd, 1);
+			aUE = L(413) + "   " + aUF(aUE.aHY, aUE.aHZ) + aUG(aUE.aHa) + aUH(aUE.aGd, 1);
 		ft[0].button.textContent === a8y && ft[1].button.textContent === aUE || (ft[0].button.textContent = a8y, ft[1].button.textContent = aUE, v4.resize())
 	}, this.aGa = function() {
 		var aUE = bq.z.tM[0],
@@ -9764,7 +9764,7 @@ function aQH() {
 	}), new x(aU7[3], function() {
 		return aU8(0, 3), 2
 	})], bE.qc), (v4 = new tp([new x("", 0, 2), new x("", 0, 2)], bE.qd, 1)).rz.translate = !1;
-	var aU9 = new tp([new x(L(410), function() {
+	var aU9 = new tp([new x(L(411), function() {
 		return aU8(2, 0), 2
 	}), new x(L(119), function() {
 		return aU8(2, 1), 2
@@ -9774,12 +9774,12 @@ function aQH() {
 		}),
 		function() {
 			u.y(), bq.vx(), b1.z.a3c(3240), __fx.customLobby.setActive(false), u.v(5, 5)
-		})), new x(L(411), function() {
+		})), new x(L(412), function() {
 		return aUA(1), 2
 	})], bE.qc), aU2 = new v2(v3, v4, aU9, v6, aGm, bq.w3.aHI);
 	for (var aC = 0; aC < 4; aC++) aU3[0][aC] = new tG("0", v3.oy[aC].button), aU3[1][aC] = new tG("0", v3.oy[aC].button, 1);
 	aU3[2][1] = new tG("0", aU9.oy[1].button), aU3[3][1] = new tG("0", v6.oy[1].button), (aU5 = [new tG("", aU9.oy[1].button, 1, 1), new tG("", v6.oy[1].button, 1, 1)])[0].tH.style.bottom = "0em", aU5[1].tH.style.bottom = "0em", aU5[0].tH
-		.translate = !1, aU5[1].tH.translate = !1, aUB(0, bq.z.tM[0], 1), aUB(2, bq.z.tM[2], 1), (aU6 = [new tG(L(312), aU2.vS(), 1, 0), new tG("", aU2.vS(), 1, 1)])[0].tH.style.fontSize = "0.4em", aU6[1].tH.style.fontSize = "0.4em"
+		.translate = !1, aU5[1].tH.translate = !1, aUB(0, bq.z.tM[0], 1), aUB(2, bq.z.tM[2], 1), (aU6 = [new tG(L(313), aU2.vS(), 1, 0), new tG("", aU2.vS(), 1, 1)])[0].tH.style.fontSize = "0.4em", aU6[1].tH.style.fontSize = "0.4em"
 }
 
 function aPy() {
@@ -9792,7 +9792,7 @@ function aPy() {
 		aQN.resize(), aQO.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aQN = new wc(L(413), [new x("⬅️ " + L(40), function() {
+	}, aQN = new wc(L(414), [new x("⬅️ " + L(40), function() {
 		u.v(7, u.a7I(7).a3U)
 	}), new x(L(216), function() {
 		bm.qo.qp(105, bJ.f0.yO(aQO.sH[0].ry[0].e.value, 5)), bm.qo.qp(106, bJ.f0.yO(aQO.sH[1].ry[0].e.value, 15)), u.v(8, u.a7I(7).a3U, new ub(18))
@@ -9813,7 +9813,7 @@ function aPy() {
 		}).button])), aQl
 	}()), sF.push(function() {
 		var aQl = new rx;
-		return aQl.s0(L(201)), aQl.s2(L(414)), aQl.s2(L(415)), aQl.s2(L(416)), aQl
+		return aQl.s0(L(201)), aQl.s2(L(415)), aQl.s2(L(416)), aQl.s2(L(417)), aQl
 	}()), sF))
 }
 
@@ -9835,17 +9835,17 @@ function aQ5() {
 		aQN.resize(), aTk.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aTl = [new x(L(375), function() {
+	}, aTl = [new x(L(376), function() {
 		aTm(5)
-	}, 0, 0, 1), new x(L(376), function() {
-		aTm(6)
 	}, 0, 0, 1), new x(L(377), function() {
+		aTm(6)
+	}, 0, 0, 1), new x(L(378), function() {
 		aTm(7)
 	}, 0, 0, 1), new x("Audit Log", function() {
 		aTm(12)
 	}, 0, 0, 1)], wd = [new x("⬅️ " + L(40), function() {
 		u.a3O()
-	})], aQN = new wc(L(417), wd), aTk = new ss(aTl, aQN.wi)
+	})], aQN = new wc(L(418), wd), aTk = new ss(aTl, aQN.wi)
 }
 
 function aPp() {
@@ -9881,8 +9881,8 @@ function aPp() {
 		this.uu[1] = "[" + this.uu[1] + "]", 5 === u.ua && (u.a3T().aJ9.qp(this.uu), u.a3T().resize())
 	}, this.aQu = function(g1, qm, a8o) {
 		g1 = bD.gv.a62(g1, 1, 1e6);
-		qm = L(418, [qm]);
-		return (qm += "<br>") + L(419, [__fx.utils.escapeHtml("" + a8o)]) + "<br>" + L(420, [g1 + "–" + (g1 + 2)]) + "<br>" + L(421, [g1])
+		qm = L(419, [qm]);
+		return (qm += "<br>") + L(420, [__fx.utils.escapeHtml("" + a8o)]) + "<br>" + L(421, [g1 + "–" + (g1 + 2)]) + "<br>" + L(422, [g1])
 	}
 }
 
@@ -9920,26 +9920,26 @@ function aQ8() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(340), [new x("⬅️ " + L(40), aRh)]), 2 === aE.data.mapType && b7.dk(), aRf = new sD(aRe.wi, (function(sF) {
+	}, aRe = new wc(L(341), [new x("⬅️ " + L(40), aRh)]), 2 === aE.data.mapType && b7.dk(), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(306)), aQl.s8(new wY({
-			oM: [L(422), L(423), L(424)],
+		aQl.s0(L(307)), aQl.s8(new wY({
+			oM: [L(423), L(424), L(425)],
 			value: aE.data.mapType
 		}, function(eI) {
 			2 === (aE.data.mapType = eI) ? (b7.dk(), aE.data.canvas = null) : (aE.data.passableWater = aE.data.passableMountains = 1, b7.vx()), u.v(20)
 		})), 2 <= aE.data.mapType && (aQl.sB(new tw), aQl.sB(new th({
 			value: aE.data.passableWater
-		}, L(425), function(value) {
+		}, L(426), function(value) {
 			aE.data.passableWater = value
 		})), aQl.sB(new th({
 			value: aE.data.passableMountains
-		}, L(426), function(value) {
+		}, L(427), function(value) {
 			aE.data.passableMountains = value
 		})));
 		sF.push(aQl)
 	}(sF = []), function(sF) {
 		if (0 === aE.data.mapType) {
-			for (var aQl = new rx, oM = (aQl.s0(L(340)), []), aC = 0; aC < bV.yd.aOh.length; aC++) oM.push(bV.yd.ye[bV.yd.aOh[aC]].name);
+			for (var aQl = new rx, oM = (aQl.s0(L(341)), []), aC = 0; aC < bV.yd.aOh.length; aC++) oM.push(bV.yd.ye[bV.yd.aOh[aC]].name);
 			aQl.s8(new wY({
 				oM: oM,
 				value: aE.data.mapProceduralIndex
@@ -9949,7 +9949,7 @@ function aQ8() {
 		}
 	}(sF), function(sF) {
 		if (1 === aE.data.mapType) {
-			for (var aQl = new rx, oM = (aQl.s0(L(340)), []), aC = 0; aC < bV.yd.aOi.length; aC++) oM.push(bV.yd.ye[bV.yd.aOi[aC]].name);
+			for (var aQl = new rx, oM = (aQl.s0(L(341)), []), aC = 0; aC < bV.yd.aOi.length; aC++) oM.push(bV.yd.ye[bV.yd.aOi[aC]].name);
 			aQl.s8(new wY({
 				oM: oM,
 				value: aE.data.mapRealisticIndex
@@ -9959,12 +9959,12 @@ function aQ8() {
 		}
 	}(sF), function(sF) {
 		var aQl;
-		2 === aE.data.mapType && ((aQl = new rx).s0(L(427)), aQl.sB(new t7(bm.buffer.data[162], 1)), aQl.s0(L(428), "0.8em"), aQl.sB(new tl([new x(L(429), function() {
+		2 === aE.data.mapType && ((aQl = new rx).s0(L(428)), aQl.sB(new t7(bm.buffer.data[162], 1)), aQl.s0(L(429), "0.8em"), aQl.sB(new tl([new x(L(430), function() {
 			return b7.aKG(), !0
 		}).button])), sF.push(aQl))
 	}(sF), function(sF) {
 		var aQl, t6;
-		2 === aE.data.mapType && ((aQl = new rx).s0(L(430)), t6 = new t7({
+		2 === aE.data.mapType && ((aQl = new rx).s0(L(431)), t6 = new t7({
 			eI: -1,
 			value: aE.data.mapName
 		}, 0, 0, function(e) {
@@ -9978,12 +9978,12 @@ function aQ8() {
 		}, 1, 0, function(e) {
 			e = Math.abs(Math.floor(e.target.value)) % 16384;
 			aE.data.mapSeed !== e && (aE.data.mapSeed = e, aUa())
-		}), aQt = new x(L(331), function(e) {
+		}), aQt = new x(L(332), function(e) {
 			var aNi = Math.floor(16384 * Math.random());
 			if (aE.data.mapSeed !== aNi) return t6.e.value = aE.data.mapSeed = aNi, aUa(), !0
 		}), aQl.sB(t6), aQl.sB(new tl([aQt.button])), sF.push(aQl))
 	}(sF), function(sF) {
-		(aUT = new rx).s0(L(431)), 2 !== aE.data.mapType ? aUb() : aE.data.canvas && aUc();
+		(aUT = new rx).s0(L(432)), 2 !== aE.data.mapType ? aUb() : aE.data.canvas && aUc();
 		sF.push(aUT)
 	}(sF), sF))
 }
@@ -10021,16 +10021,16 @@ function aQB() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(344), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
+	}, aRe = new wc(L(345), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(306)), aQl.s8(new wY({
-			oM: [L(345), L(346), L(309)],
+		aQl.s0(L(307)), aQl.s8(new wY({
+			oM: [L(346), L(347), L(310)],
 			value: aE.data.playerNamesType
 		}, function(eI) {
 			aRj(), aE.data.playerNamesType = eI, u.v(23)
 		})), aQl.sB(new tw), aQl.sB(new th({
 			value: aE.data.selectableName
-		}, L(432), function(value) {
+		}, L(433), function(value) {
 			aE.data.selectableName = value
 		})), sF.push(aQl)
 	}(sF = []), function(sF) {
@@ -10059,14 +10059,14 @@ function aQJ() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(433), [new x("⬅️ " + L(40), function() {
+	}, aRe = new wc(L(434), [new x("⬅️ " + L(40), function() {
 		u.a3O()
 	})]), aRf = new sD(aRe.wi, ((sF = []).push(function() {
 		var aQl = new rx;
-		return aQl.s0(L(434)), aQl.s6(b1.z.aQm("/wiki/propaganda"), "0.75em").style.marginBottom = "0.8em", aQl.s6("<a href='https://tt-propagandio.vercel.app/' target='_blank'>Unofficial Propaganda Generator</a>", "0.75em"), aQl
+		return aQl.s0(L(435)), aQl.s6(b1.z.aQm("/wiki/propaganda"), "0.75em").style.marginBottom = "0.8em", aQl.s6("<a href='https://tt-propagandio.vercel.app/' target='_blank'>Unofficial Propaganda Generator</a>", "0.75em"), aQl
 	}()), sF.push(function() {
 		var aQl = new rx,
-			el = (aQl.s0(L(435)), bm.buffer.data[174].value),
+			el = (aQl.s0(L(436)), bm.buffer.data[174].value),
 			s3 = aQl.s2(el.length + " / 180"),
 			aRN = (s3.style.textAlign = "center", new x0(0, 1, function(e) {
 				var e = e.target.value,
@@ -10076,27 +10076,27 @@ function aQJ() {
 		return aRN.e.rows = 6, aRN.e.style.fontSize = "1em", aRN.x6(el), aQl.sB(aRN), aQl
 	}()), sF.push(function() {
 		var aQl = new rx;
-		aQl.s0(L(330));
+		aQl.s0(L(331));
 		for (var aC = 0; aC < 11; aC++) {
 			var iv = aQl.sB(new t7(bm.buffer.data[163 + aC]));
 			aC && (iv.e.style.marginTop = "0.6em")
 		}
-		return aQl.sB(new tl([new x(L(436), function() {
+		return aQl.sB(new tl([new x(L(437), function() {
 			for (var data = bm.buffer.data, aC = 163; aC < 174; aC++) data[aC] && bm.buffer.xM(aC, data[aC].xP);
 			u.a3O(), u.aQM()[31] = null, u.v(31)
 		}).button])), aQl
 	}()), sF.push(function() {
 		var aQl = new rx;
-		return aQl.s0("Targeting"), aQl.s6(L(437)), aQl.sB(new t7(bm.buffer.data[175], 0, 0)), aQl
+		return aQl.s0("Targeting"), aQl.s6(L(438)), aQl.sB(new t7(bm.buffer.data[175], 0, 0)), aQl
 	}()), sF.push(function() {
 		var aQl = new rx;
-		return aQl.s0(L(431)), aQl.sB(new tl([new x(L(198), function() {
+		return aQl.s0(L(432)), aQl.sB(new tl([new x(L(198), function() {
 			(new ek).show(bm.buffer.data[174].value, aUl(), -1)
 		}).button])), aQl
 	}()), sF.push(function() {
 		var aQl = new rx,
-			aUm = (aQl.s0(L(438)), aQl.s6(L(439)), new t7(bm.buffer.data[176], 1, 0)),
-			aUn = (aQl.sB(aUm), new x(L(440), function(e) {
+			aUm = (aQl.s0(L(439)), aQl.s6(L(440)), new t7(bm.buffer.data[176], 1, 0)),
+			aUn = (aQl.sB(aUm), new x(L(441), function(e) {
 				return aUo.button.textContent === L(186) && b1.z.ef(0) && (bD.sK.wV(e), aQs(), b1.aHS.aUp(bm.buffer.data[176].value, aUl(), bm.buffer.data[175].value, bm.buffer.data[174].value)), !0
 			}, 1)),
 			aQs = function() {
@@ -10119,7 +10119,7 @@ function aQK() {
 		aQN.resize(), aQO.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aQN = new wc("🔒 " + L(441), [new x("⬅️ " + L(40), function() {
+	}, aQN = new wc("🔒 " + L(442), [new x("⬅️ " + L(40), function() {
 		u.a3O()
 	})]), aQO = new sD(aQN.wi, ((sF = []).push(function() {
 		var aQl = new rx,
@@ -10127,11 +10127,11 @@ function aQK() {
 				value: "",
 				eI: -1
 			})),
-			aRJ = (aQl.sB(t6), aQl.s0(L(264), "0.8em"), new t7({
+			aRJ = (aQl.sB(t6), aQl.s0(L(265), "0.8em"), new t7({
 				value: "",
 				eI: -1
 			}, 0, 0)),
-			aQr = (aRJ.e.type = "email", aRJ.e.autocomplete = "email", aRJ.e.name = "email", aRJ.e.inputMode = "email", aRJ.e.spellcheck = !1, aQl.sB(aRJ), new x(L(442), function(e) {
+			aQr = (aRJ.e.type = "email", aRJ.e.autocomplete = "email", aRJ.e.name = "email", aRJ.e.inputMode = "email", aRJ.e.spellcheck = !1, aQl.sB(aRJ), new x(L(443), function(e) {
 				return bD.sK.wV(e), b1.aHS.aRK({
 					action: 4,
 					s1: t6.e.value.trim() + aRJ.e.value.trim().substring(0, 63)
@@ -10159,17 +10159,17 @@ function aPw() {
 		aRe.resize(), x4.resize()
 	}, this.a4K = function(ej) {
 		2 === ej ? aRe.wj[0].sb() : aUr()
-	}, aRe = new wc(L(443), [new x("⬅️ " + L(40), function() {
+	}, aRe = new wc(L(444), [new x("⬅️ " + L(40), function() {
 		u.aQL(1)
-	}), new x(L(444), function() {
-		x4.x8()
 	}), new x(L(445), function() {
-		x4.x9()
+		x4.x8()
 	}), new x(L(446), function() {
-		x4.clear()
+		x4.x9()
 	}), new x(L(447), function() {
+		x4.clear()
+	}), new x(L(448), function() {
 		aUr()
-	})]), x4 = new x0(L(448)), aRe.wi.appendChild(x4.e)
+	})]), x4 = new x0(L(449)), aRe.wi.appendChild(x4.e)
 }
 
 function aPv() {
@@ -10186,12 +10186,12 @@ function aPv() {
 			aQN.resize(), aQO.resize()
 		}, this.a4K = function(ej) {
 			2 === ej && aQN.wj[0].sb()
-		}, aQN = new wc(L(449), [new x("⬅️ " + L(40), aUx), new x(L(450), function() {
+		}, aQN = new wc(L(450), [new x("⬅️ " + L(40), aUx), new x(L(451), function() {
 			u.y(), bm.qo.xw(), u.v(2)
-		})]), sF = [], (aQl = new rx).s0(L(451)), aQl.s2(L(452)), sF.push(aQl),
+		})]), sF = [], (aQl = new rx).s0(L(452)), aQl.s2(L(453)), sF.push(aQl),
 		function(sF) {
 			var aQl = new rx,
-				h = (aQl.s0(L(437)), bA.data.aEe());
+				h = (aQl.s0(L(438)), bA.data.aEe());
 			aQl.s8(new wY({
 				oM: h,
 				value: bA.data.aEi(h)
@@ -10201,8 +10201,8 @@ function aPv() {
 		}(sF),
 		function(sF) {
 			var aQl = new rx,
-				aV0 = (aQl.s0(L(477)), []);
-			aQl.sB(new tl([new x(L(436), function(e) {
+				aV0 = (aQl.s0(L(478)), []);
+			aQl.sB(new tl([new x(L(437), function(e) {
 				ba.aV1();
 				for (var aC = 0; aC < aV0.length; aC++) aV0[aC].e.value = ba.aDw[aC];
 				return bD.sK.wV(e), !0
@@ -10223,15 +10223,15 @@ function aPv() {
 				}
 			}
 			sF.push(aQl)
-		}(sF), (aQl = new rx).s0(L(453)), bm.buffer.data[1].oM = [L(454), L(455), L(456), L(457)], aQl.s8(new wY(bm.buffer.data[1])), sF.push(aQl), (aQl = new rx).s0(L(458)), bm.buffer.data[9].oM = [L(455), L(459), L(460)], aQl.s8(new wY(bm.buffer
-			.data[9])), sF.push(aQl), (aQl = new rx).s0(L(461)), bm.buffer.data[11].oM = [L(462), L(9), L(463)], aQl.s8(new wY(bm.buffer.data[11])), sF.push(aQl), (aQl = new rx).s0(L(464)), aQl.sB(new th(bm.buffer.data[2])), sF.push(aQl), (aQl =
-			new rx).s0(L(465)), aQl.sB(new th(bm.buffer.data[7])), sF.push(aQl), (aQl = new rx).s0(L(466)), aQl.sB(new th(bm.buffer.data[8])), sF.push(aQl), (aQl = new rx).s0(L(467)), aQl.sB(new t7(bm.buffer.data[5])), sF.push(aQl), (aQl = new rx)
-		.s0(L(468)), aQl.sB(new th(bm.buffer.data[13], L(469))), aQl.sB(new th(bm.buffer.data[14], L(470))), sF.push(aQl), (aQl = new rx).s0(L(471)), aQl.s8(new wY({
-			oM: [L(472), L(473), L(474)],
+		}(sF), (aQl = new rx).s0(L(454)), bm.buffer.data[1].oM = [L(455), L(456), L(457), L(458)], aQl.s8(new wY(bm.buffer.data[1])), sF.push(aQl), (aQl = new rx).s0(L(459)), bm.buffer.data[9].oM = [L(456), L(460), L(461)], aQl.s8(new wY(bm.buffer
+			.data[9])), sF.push(aQl), (aQl = new rx).s0(L(462)), bm.buffer.data[11].oM = [L(463), L(9), L(464)], aQl.s8(new wY(bm.buffer.data[11])), sF.push(aQl), (aQl = new rx).s0(L(465)), aQl.sB(new th(bm.buffer.data[2])), sF.push(aQl), (aQl =
+			new rx).s0(L(466)), aQl.sB(new th(bm.buffer.data[7])), sF.push(aQl), (aQl = new rx).s0(L(467)), aQl.sB(new th(bm.buffer.data[8])), sF.push(aQl), (aQl = new rx).s0(L(468)), aQl.sB(new t7(bm.buffer.data[5])), sF.push(aQl), (aQl = new rx)
+		.s0(L(469)), aQl.sB(new th(bm.buffer.data[13], L(470))), aQl.sB(new th(bm.buffer.data[14], L(471))), sF.push(aQl), (aQl = new rx).s0(L(472)), aQl.s8(new wY({
+			oM: [L(473), L(474), L(475)],
 			value: aa.aIM
 		}, function(aC) {
 			aa.aIM = aC
-		})), sF.push(aQl), (aQl = new rx).s0(L(475)), aQl.sB(new th(bm.buffer.data[15])), aQl.s2(L(476)), aQl.sB(new t7(bm.buffer.data[16], 1, 0, function(e) {
+		})), sF.push(aQl), (aQl = new rx).s0(L(476)), aQl.sB(new th(bm.buffer.data[15])), aQl.s2(L(477)), aQl.sB(new t7(bm.buffer.data[16], 1, 0, function(e) {
 			e.target.value = bO.ij(Math.floor(e.target.value), 0, 16)
 		})), sF.push(aQl), aQO = new sD(aQN.wi, sF)
 }
@@ -10254,9 +10254,9 @@ function aQC() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(478), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
+	}, aRe = new wc(L(479), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx,
-			oM = (aQl.s0(L(306)), [L(331), L(343), L(309)]),
+			oM = (aQl.s0(L(307)), [L(332), L(344), L(310)]),
 			value = aE.data.spawningType;
 		0 === aE.data.gameMode && (oM.splice(1, 1), 0 < value) && (value = 1);
 		aQl.s8(new wY({
@@ -10269,7 +10269,7 @@ function aQC() {
 		var aQl = new rx;
 		aQl.s0("My Spawn"), aQl.sB(new th({
 			value: aE.data.selectableSpawn
-		}, L(479), function(value) {
+		}, L(480), function(value) {
 			aE.data.selectableSpawn = value
 		})), sF.push(aQl)
 	}(sF), function(sF) {
@@ -10281,7 +10281,7 @@ function aQC() {
 				var value = Math.abs(Math.floor(e.target.value)) % 16384;
 				e.target.value = aE.data.spawningSeed = value
 			}));
-		aQl.sB(aV6), aQl.sB(new tl([new x(L(331), function() {
+		aQl.sB(aV6), aQl.sB(new tl([new x(L(332), function() {
 			aV6.e.value = aE.data.spawningSeed = Math.floor(16384 * Math.random())
 		}).button])), sF.push(aQl)
 	}(sF), function(sF) {
@@ -10307,64 +10307,64 @@ function aPu() {
 			.fJ) ? aTl[0].sc === bE.pa && aTl[0].se(0) : aTl[0].sc !== bE.pa && aTl[0].se(bE.pa))
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aTl = [new x(L(480), function() {
+	}, aTl = [new x(L(481), function() {
 		aV7(0)
-	}), new x(L(367), function() {
+	}), new x(L(368), function() {
 		u.v(16)
-	}), new x(L(417), function() {
+	}), new x(L(418), function() {
 		u.v(17)
-	}), new x(L(481), function() {
-		u.z.aSY()
-	}, 0, 0, 1), new x(L(443), function() {
-		u.v(3, 1)
 	}), new x(L(482), function() {
-		u.v(18)
-	}), new x(L(433), function() {
-		u.v(31)
+		u.z.aSY()
+	}, 0, 0, 1), new x(L(444), function() {
+		u.v(3, 1)
 	}), new x(L(483), function() {
-		u.z.a72(2)
-	}), new x(L(449), function() {
-		aV7(1)
-	}), new x("🔒 " + L(441), function() {
-		u.v(32)
+		u.v(18)
+	}), new x(L(434), function() {
+		u.v(31)
 	}), new x(L(484), function() {
+		u.z.a72(2)
+	}), new x(L(450), function() {
+		aV7(1)
+	}), new x("🔒 " + L(442), function() {
+		u.v(32)
+	}), new x(L(485), function() {
 		var a5V, sO;
 		(a5V = []).push(["Wiki", (sO = "https://territorial.io/") + "wiki/gold"]), a5V.push(["Team Games", sO + "log/team"]), a5V.push(["Battle Royale Games", sO + "log/br"]), a5V.push(["1v1 Games", sO + "log/1v1"]), a5V.push([
 			"Zombie Games", sO + "log/zombies"
 		]), a5V.push(["Transactions", sO + "log/transactions"]), a5V.push(["Changelog", sO + "changelog"]), 2 !== a1.id && a5V.push(["Android App", bN.aEv]), 1 !== a1.id && a5V.push(["iOS App", bN.a3L]), 0 === a1.id && a5V.push([
 			"Patreon", bN.aRc
-		]), a5V.push(["Terms", bN.aVD]), a5V.push(["Privacy", bN.aVE]), u.v(4, 1, new w(L(484), bD.sK.a5U(a5V), !1, [new x("⬅️ " + L(40), function() {
+		]), a5V.push(["Terms", bN.aVD]), a5V.push(["Privacy", bN.aVE]), u.v(4, 1, new w(L(485), bD.sK.a5U(a5V), !1, [new x("⬅️ " + L(40), function() {
 			u.v(1)
 		})]))
-	}), new x(L(485), function() {
-		u.v(4, 1, new w(L(485), m.e3 + "<br>" + b1.z.aQm("/changelog") + "<br><br><m>FX Client v" + __fx.version +
+	}), new x(L(486), function() {
+		u.v(4, 1, new w(L(486), m.e3 + "<br>" + b1.z.aQm("/changelog") + "<br><br><m>FX Client v" + __fx.version +
 			"<br><a href='https://discord.gg/dyxcwdNKwK' target='_blank'>FX Client Discord server</a><br><a href='https://github.com/fxclient/FXclient' target='_blank'>Github repository</a></m>", !0, [new x("⬅️ " + L(40),
 				function() {
 					u.v(1)
 				})]))
-	}), new x(L(486), function() {
-		u.v(4, 1, new w(L(486), L(493) + "<br>" + L(494), !1, [new x("⬅️ " + L(40), function() {
+	}), new x(L(487), function() {
+		u.v(4, 1, new w(L(487), L(494) + "<br>" + L(495), !1, [new x("⬅️ " + L(40), function() {
 			u.v(1)
-		}), new x(L(495), function() {
+		}), new x(L(496), function() {
 			a1.a2.a3F(), u.v(1)
 		})]))
-	}), new x("👁️ " + L(487), function() {
-		a1.a2.a3G(), u.v(4, 1, new w(L(496), L(497) + " " + b1.z.aQm("/privacy"), !1, [new x("⬅️ " + L(40), function() {
+	}), new x("👁️ " + L(488), function() {
+		a1.a2.a3G(), u.v(4, 1, new w(L(497), L(498) + " " + b1.z.aQm("/privacy"), !1, [new x("⬅️ " + L(40), function() {
 			u.v(1)
 		})]))
 	})], wd = [new x("⬅️ " + L(40), function() {
 		u.z.aEb()
-	})], 8 === ab.a3P() && (aTl.unshift(new x(L(354), function() {
+	})], 8 === ab.a3P() && (aTl.unshift(new x(L(355), function() {
 		u.v(30)
-	})), aTl.unshift(new x(L(490), function() {
+	})), aTl.unshift(new x(L(491), function() {
 		2 <= bg.aVC && (u.y(), bh.a4N(), bi.ds = !0)
-	}, 0, 1)), aTl.unshift(new x(L(491), function() {
-		!aE.hi && aN.rv(aE.fJ) && (bB.hz.r8(), u.y(), aN.hj) && aN.a4N()
 	}, 0, 1)), aTl.unshift(new x(L(492), function() {
+		!aE.hi && aN.rv(aE.fJ) && (bB.hz.r8(), u.y(), aN.hj) && aN.a4N()
+	}, 0, 1)), aTl.unshift(new x(L(493), function() {
 		!aE.hi && ax.iO(aE.fJ) && (bY.a7e(2), bB.hz.iK(), u.y(), aN.hj) && aN.a4N()
-	}, 0, 1))), 1 === a1.id && 5 <= a1.e3 && aTl.push(new x(L(488), function() {
+	}, 0, 1))), 1 === a1.id && 5 <= a1.e3 && aTl.push(new x(L(489), function() {
 		a1.a2.a3H()
-	})), aQN = new wc(L(489), wd), aTk = new ss(aTl, aQN.wi)
+	})), aQN = new wc(L(490), wd), aTk = new ss(aTl, aQN.wi)
 }
 
 function aQG() {
@@ -10385,10 +10385,10 @@ function aQG() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(349), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
+	}, aRe = new wc(L(350), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(306)), aQl.s8(new wY({
-			oM: [L(307), L(308), L(309)],
+		aQl.s0(L(307)), aQl.s8(new wY({
+			oM: [L(308), L(309), L(310)],
 			value: aE.data.sResourcesType
 		}, function(eI) {
 			aRj(), 2 !== eI || aE.data.sResourcesData || (aE.data.sResourcesData = new Uint16Array(aE.fW)), aE.data.sResourcesType = eI, u.v(28)
@@ -10426,10 +10426,10 @@ function aQE() {
 		aRe.resize(), aRf.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aRe.wj[0].sb()
-	}, aRe = new wc(L(347), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
+	}, aRe = new wc(L(348), [new x("⬅️ " + L(40), aRh)]), aRf = new sD(aRe.wi, (function(sF) {
 		var aQl = new rx;
-		aQl.s0(L(306)), aQl.s8(new wY({
-			oM: [L(307), L(308), L(309)],
+		aQl.s0(L(307)), aQl.s8(new wY({
+			oM: [L(308), L(309), L(310)],
 			value: aE.data.tIncomeType
 		}, function(eI) {
 			aRj(), 2 !== eI || aE.data.tIncomeData || (aE.data.tIncomeData = new Uint8Array(aE.fW), aE.data.tIncomeData.fill(32)), aE.data.tIncomeType = eI, u.v(26)
@@ -10459,21 +10459,21 @@ function aQ6() {
 		aQN.resize(), aQO.resize()
 	}, this.a4K = function(ej) {
 		2 === ej && aQN.wj[0].sb()
-	}, aQN = new wc(L(482), [new x("⬅️ " + L(40), function() {
+	}, aQN = new wc(L(483), [new x("⬅️ " + L(40), function() {
 		u.a3O()
 	})]), aQO = new sD(aQN.wi, ((sF = []).push(function() {
 		function aQs() {
 			aUo.button.textContent = L(185), aVH.e.readOnly = !1, aVI.e.readOnly = !1, aQr.se(1), aQr.button.style.color = bE.pO
 		}
 		var aQl = new rx,
-			aVG = (aQl.s6(b1.z.aQm("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", aQl.s0(L(498)), new t7({
+			aVG = (aQl.s6(b1.z.aQm("/wiki/transactions"), "0.75em").style.marginBottom = "0.8em", aQl.s0(L(499)), new t7({
 				value: bm.buffer.data[105].value,
 				eI: -1
 			})),
-			aVH = (aVG.e.readOnly = !0, aQl.sB(aVG), aQl.s0(L(393), "0.8em"), new t7(bm.buffer.data[148], 0, void 0, function(e) {
+			aVH = (aVG.e.readOnly = !0, aQl.sB(aVG), aQl.s0(L(394), "0.8em"), new t7(bm.buffer.data[148], 0, void 0, function(e) {
 				aQq(bm.buffer.data[149].value, e.target.value)
 			})),
-			aVI = (aQl.sB(aVH), aQl.s0(L(397), "0.8em"), new t7(bm.buffer.data[149], 1, void 0, function(e) {
+			aVI = (aQl.sB(aVH), aQl.s0(L(398), "0.8em"), new t7(bm.buffer.data[149], 1, void 0, function(e) {
 				aQq(e.target.value, bm.buffer.data[148].value)
 			})),
 			aUo = (aQl.sB(aVI), new x(L(185), function(e) {
@@ -10488,7 +10488,7 @@ function aQ6() {
 				})), !0
 			}, 1)),
 			s3 = aQl.s2(),
-			aQq = (aQl.s2(L(499)).style.fontWeight = "bold", function(g1, s1) {
+			aQq = (aQl.s2(L(500)).style.fontWeight = "bold", function(g1, s1) {
 				s3.innerHTML = u.z.aQu(g1, bm.buffer.data[105].value, s1)
 			});
 		return aQl.sB(new tl([aQr.button])), aQq(bm.buffer.data[149].value, bm.buffer.data[148].value), aQl
@@ -11324,7 +11324,7 @@ function aXv() {
 	var aY6 = 0;
 
 	function aYA(s1, id) {
-		console.log(s1), aY6 || (id ? 1 === id ? aO.a8H = L(501) + ": " + s1 : u.v(4, 3, new w(L(502), s1, 1)) : u.v(4, 3, new w("⚠️ " + L(500), s1, 1)))
+		console.log(s1), aY6 || (id ? 1 === id ? aO.a8H = L(502) + ": " + s1 : u.v(4, 3, new w(L(503), s1, 1)) : u.v(4, 3, new w("⚠️ " + L(501), s1, 1)))
 	}
 	this.yY = function(s1, aY7) {
 		var iv, sC;
@@ -12013,7 +12013,7 @@ function aZQ() {
 					if (abO = fL + bP.ie[aC] << 2, ad.fU(abO) && !ad.fQ(abO) && ad.fR(abO) === aae) {
 						fn = !0;
 						break
-					} fn && (aO.a8v(719, 0), iQ = iI < 25e3 ? L(503) + " (" + bD.tI.a1X(iI) + ") ⛵" : L(504) + " (" + bD.tI.a1X(iI) + ") 🚢", aO.a0i(180, iQ, 719, player, bE.pv, bE.pL, -1, !0, void 0, {
+					} fn && (aO.a8v(719, 0), iQ = iI < 25e3 ? L(504) + " (" + bD.tI.a1X(iI) + ") ⛵" : L(505) + " (" + bD.tI.a1X(iI) + ") 🚢", aO.a0i(180, iQ, 719, player, bE.pv, bE.pL, -1, !0, void 0, {
 					ft: 1,
 					ns: ns
 				}))
@@ -12336,7 +12336,7 @@ function aZY() {
 }
 
 function dn() {
-	this.aV2 = [L(505), L(506), L(507), L(508), L(509), L(510), L(511), L(512), L(513), L(514), L(515), L(516), L(517), L(518), L(519), L(520)];
+	this.aV2 = [L(506), L(507), L(508), L(509), L(510), L(511), L(512), L(513), L(514), L(515), L(516), L(517), L(518), L(519), L(520), L(521)];
 	var acW = ["Space", "", "KeyB", "", "KeyW", "", "KeyS", "", "KeyD", "", "KeyA", "", "KeyH", "", "NumpadAdd", "", "NumpadSubtract", "", "ArrowLeft", "", "ArrowRight", "", "ArrowUp", "", "ArrowDown", "", "KeyM", "", "KeyP", "", "KeyI", ""];
 	this.aDw = new Array(acW.length), this.dk = function() {
 		var h = bm.buffer.data[155].value.split(";"),
@@ -12440,7 +12440,7 @@ function dV() {
 		self.max[0] = Math.max(self.acn[aC], self.max[0]), self.max[1] = Math.max(self.a5k[aC], self.max[1]), self.max[2] = Math.max(self.aDb[aC], self.max[2])
 	}
 	this.max = [0, 0, 0], this.acp = 0, this.nQ = new Array(21), this.acq = null, this.dl = function() {
-		this.acq = [L(521), L(522), L(523), L(524), L(525), L(526), L(527), L(528), L(347), L(348), L(529), L(530), L(531), L(532), "", L(533), L(534), L(535), L(305), L(536), L(537)]
+		this.acq = [L(522), L(523), L(524), L(525), L(526), L(527), L(528), L(529), L(348), L(349), L(530), L(531), L(532), L(533), "", L(534), L(535), L(536), L(306), L(537), L(538)]
 	}, this.dk = function() {
 		this.aVC = 0, aco = 1, this.acp = 0, wA = 0, acr(this), this.nQ.fill(0)
 	}, this.rk = function(player, jC) {
@@ -12470,7 +12470,7 @@ function dW() {
 	this.j = 0, this.k = 0, this.uf = 0, this.ug = 0, this.acv = 0, this.acw = 0, this.aAf = 0, this.vN = 0;
 	var acy = this.acx = 0;
 	this.acz = 0, this.ad0 = 0, this.ad1 = 0, this.aA0 = 0, this.eI = 0, this.aDC = null, this.iL = !1, this.ad2 = -1, this.ad3 = !1, this.ad4 = [0, 0], this.dl = function() {
-		this.aDC = [L(538), L(125, 0, "Balance"), L(124, 0, "Interest"), L(539)]
+		this.aDC = [L(539), L(125, 0, "Balance"), L(124, 0, "Interest"), L(540)]
 	}, this.dk = function() {
 		this.iL = !1, this.ad2 = -1, this.ad3 = !1, this.resize()
 	}, this.resize = function() {
@@ -12513,7 +12513,7 @@ function dW() {
 				this.vN), ws.fillStyle = bE.pO, ws.fillRect(0, this.k - this.vN - .5 * this.aA0, this.j, this.aA0), aC = 1; aC <= 3; aC++) ws.fillRect(aC * ea, this.k - this.vN, this.aA0, this.vN);
 		for (aC = this.aDC.length - 1; 0 <= aC; aC--) ws.fillText(bD.ou.a5J(this.aDC[aC], 0, .9 * ea), (aC + .5) * ea, this.k - .46 * this.vN)
 	}, this.aTi = function() {
-		ws.fillStyle = bE.qA, ws.fillRect(0, 0, this.j, this.acz), ws.fillStyle = bE.pO, ws.fillRect(0, this.acz - .5 * this.aA0, this.j, this.aA0), ws.font = bD.sK.u8(1, .39 * this.acz), ws.fillText(bD.ou.a5J(L(540), 0, .8 * this.j), Math.floor(
+		ws.fillStyle = bE.qA, ws.fillRect(0, 0, this.j, this.acz), ws.fillStyle = bE.pO, ws.fillRect(0, this.acz - .5 * this.aA0, this.j, this.aA0), ws.font = bD.sK.u8(1, .39 * this.acz), ws.fillText(bD.ou.a5J(L(541), 0, .8 * this.j), Math.floor(
 			this.j / 2), Math.floor(.55 * this.acz))
 	}, this.ad7 = function(h, fg, fi) {
 		var lp = bg.max[this.eI],
@@ -12691,7 +12691,7 @@ function dP() {
 			[0, 0, 0]
 		], this.lH = [0, 1, 2, 3, 4, 5, 6, 7, 8], this.fX = new Uint8Array(aE.fW), this.aCs = new Uint8Array(aE.fW), this.zY = new Uint16Array(aE.fW), this.zZ = new Uint16Array(this.lH.length + 1), this.za = new Uint16Array(this.lH.length), this.dl =
 		function() {
-			this.a2c = [L(541), L(542), L(543), L(544), L(545), L(546), L(547), L(548), L(549)]
+			this.a2c = [L(542), L(543), L(544), L(545), L(546), L(547), L(548), L(549), L(550)]
 		}, this.dk = function() {
 			if (this.fX.fill(0), this.aCs.fill(0), this.adg(), aE.iT) {
 				if (9 === aE.lC) {
@@ -12915,9 +12915,9 @@ function db() {
 
 function ae3() {
 	this.iB = function(player) {
-		bD.gv.a5b(player) && aO.a0i(80, L(550), 637, 0, bE.qD, bE.pL, -1, !1)
-	}, this.iE = function(player) {
 		bD.gv.a5b(player) && aO.a0i(80, L(551), 637, 0, bE.qD, bE.pL, -1, !1)
+	}, this.iE = function(player) {
+		bD.gv.a5b(player) && aO.a0i(80, L(552), 637, 0, bE.qD, bE.pL, -1, !1)
 	}
 }
 
@@ -13063,7 +13063,7 @@ function cx() {
 		aeU = !0;
 
 	function aeV(id) {
-		id = [L(552), L(553), L(554), L(555)][id];
+		id = [L(553), L(554), L(555), L(556)][id];
 		aO.a8q(id)
 	}
 	this.ee = function() {
