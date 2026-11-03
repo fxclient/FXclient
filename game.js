@@ -7169,22 +7169,28 @@ function cf() {
 	function aMd(aC, fontSize, fg, fi, ib) {
 		var ___id = aC;
 		var showName = aC < aE.ku || !__fx.settings.hideBotNames;
+		var eliminationEstimate = __fx.settings.showEstimatedEliminationAttack ?
+			__fx.utils.getEstimatedEliminationAttack(___id, ah.playerBalances[___id] - ah.a4f[___id]) :
+			"";
 		if (showName) ib.fillText(ah.a0j[aC], fg, fi), aC < aE.ku && 2 !== ah.a5a[aC] || (aC = fontSize / aLw[aC], ib.fillRect(fg - .5 * aC, fi + bD.sK.a1H * fontSize, aC, Math.max(1, .1 * fontSize)));
 		aMJ && __fx.settings.showPlayerDensity && (
 			__fx.settings.coloredDensity && (ib.fillStyle = __fx.utils.textStyleBasedOnDensity(___id)),
-			ib.fillText(__fx.utils.getDensity(___id), fg, showName ? fi + fontSize : fi)
+			ib.fillText(__fx.utils.getDensity(___id), fg, showName ? fi + fontSize : fi),
+			eliminationEstimate && ib.fillText(eliminationEstimate, fg, showName ? fi + 2 * fontSize : fi + fontSize)
 		);
 	}
 
 	function aMc(ib, aC, fontSize, aMW, aMX, aMY) {
-		var a5j = ah.a5j[aC],
+		var ea, a5j = ah.a5j[aC],
 			aMi = bD.tI.a1X(ah.hb[aC] - a5j);
 
 		function drawDensity() {
-			!aMJ && __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (ib.fillStyle = __fx.utils.textStyleBasedOnDensity(aC)), ib.fillText(__fx.utils.getDensity(aC), aMW, aMX + fontSize))
+			var eliminationEstimate;
+			!aMJ && __fx.settings.showPlayerDensity && (__fx.settings.coloredDensity && (ib.fillStyle = __fx.utils.textStyleBasedOnDensity(aC)), ib.fillText(__fx.utils.getDensity(aC), aMW, aMX + fontSize), eliminationEstimate = __fx.settings
+				.showEstimatedEliminationAttack ? __fx.utils.getEstimatedEliminationAttack(aC, ah.hb[aC] - a5j) : "") && ib.fillText(eliminationEstimate, aMW, aMX + 2 * fontSize)
 		}
-		a5j ? (a5j = ib.fillStyle, ib.fillStyle = aMb(fontSize, 2 + aMY % 2), ib.fillText(aMi, aMW, aMX), ib.fillStyle = a5j) : aMY >> 1 & 1 ? (ib.lineWidth = .05 * fontSize, ib.strokeStyle = aMb(fontSize, aMY % 2), ib.strokeText(aMi, aMW, aMX)) : (
-			1 < aMY && (ib.lineWidth = .12 * fontSize, ib.strokeStyle = aMb(fontSize, aMY), ib.strokeText(aMi, aMW, aMX)), ib.fillText(aMi, aMW, aMX)), drawDensity()
+		a5j ? (ea = ib.fillStyle, ib.fillStyle = aMb(fontSize, 2 + aMY % 2), ib.fillText(aMi, aMW, aMX), ib.fillStyle = ea) : aMY >> 1 & 1 ? (ib.lineWidth = .05 * fontSize, ib.strokeStyle = aMb(fontSize, aMY % 2), ib.strokeText(aMi, aMW, aMX)) : (1 <
+			aMY && (ib.lineWidth = .12 * fontSize, ib.strokeStyle = aMb(fontSize, aMY), ib.strokeText(aMi, aMW, aMX)), ib.fillText(aMi, aMW, aMX)), drawDensity()
 	}
 
 	function aMf(aMW, aMX, fontSize, aMj, aMk, ib) {
