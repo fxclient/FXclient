@@ -68,7 +68,7 @@ function bx(by) {
 function dM() {
 	this.dw = 2, this.dx = 1764, this.dy = 0;
 	this.rVersion = 25, this.dk = function() {
-		this.o = "2.16.68", this.e3 = "3 Nov 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 = 0 <=
+		this.o = "2.16.69", this.e3 = "4 Nov 2026 [" + this.o + "]", this.hostname = window.location.hostname.toLowerCase(), this.aA = 0 <= this.hostname.indexOf("territorial.io"), this.e4 = 0 <= this.hostname.indexOf("github.io"), this.e5 = 0 <=
 			this.hostname.indexOf("game.territorial.io"), this.aB = function() {
 				try {
 					return window.self !== window.top
@@ -2238,7 +2238,7 @@ function xE() {
 		}
 	}
 	this.xm = function() {
-		bm.buffer.data[110].value.length && (bm.buffer.data[106].value = bm.buffer.data[110], bm.qo.qp(110, ""), this.xn())
+		bm.buffer.data[110].value.length && (bm.buffer.data[106].value = bm.buffer.data[110].value, bm.qo.qp(110, ""), this.xn())
 	}, this.xn = function() {
 		var h = bm.buffer.data[116].value.split(";");
 		for (h.length % 2 == 1 && h.pop(), h.unshift(bm.buffer.data[106].value), h.unshift(bm.buffer.data[105].value), aC = 2; aC < h.length; aC += 2)
@@ -2253,7 +2253,7 @@ function xE() {
 		h.splice(2 * eI, 2), xp(h)
 	}, this.xr = function(eI) {
 		var h = bm.buffer.data[116].value.split(";");
-		return {
+		return h.length < 2 * (eI + 1) ? null : {
 			uY: h[2 * eI],
 			password: h[2 * eI + 1]
 		}
@@ -2308,7 +2308,7 @@ function yE() {
 		for (yM[50] = 37, aC = 0; aC < 10; aC++) yM[aC + 3] = aC + 1;
 		for (aC = 0; aC < 26; aC++) yM[aC + 20] = aC + 11, yM[aC + 52] = aC + 38
 	}, this.yN = function(s1) {
-		return s1.trim().replace(new RegExp("[^a-zA-Z0-9_\\-]", "g"), "-")
+		return s1 || (console.log("validateString error: " + s1), s1 = ""), s1.trim().replace(new RegExp("[^a-zA-Z0-9_\\-]", "g"), "-")
 	}, this.yO = function(s1, size) {
 		if ((s1 = this.yN(s1)).length > size) return s1.substring(0, size);
 		for (; s1.length < size;) s1 = "-" + s1;
@@ -3090,8 +3090,8 @@ function da() {
 		bw.close(), 6 === a3J ? b1.z.a3c(e) : bq.f6 ? (u.y(), bq.vx(), b1.z.close(b1.z.f7, 3256)) : 8 === a3J && aE.a3d(!0)
 	}
 	this.q = [], this.a3M = function(oN, e) {
-		if (1 === oN && __fx.customLobby.isActive() && 6 !== ab.a3P() && __fx.customLobby.setActive(!1), console.log("socket close index " + oN + " error " + e), this.q.push(e), 4321 === e && (data = bm.z.xr(0), console.log("Reset to: " + data
-				.uY), bm.qo.qp(105, data.uY), bm.qo.qp(106, data.password)), 8 === u.ua && 0 === oN)
+		if (1 === oN && __fx.customLobby.isActive() && 6 !== ab.a3P() && __fx.customLobby.setActive(!1), console.log("socket close index " + oN + " error " + e), this.q.push(e), 4321 === e && (data = bm.z.xr(0)) && (console.log("Reset to: " +
+				data.uY), bm.qo.qp(105, data.uY), bm.qo.qp(106, data.password)), 8 === u.ua && 0 === oN)
 			if (4211 === e) a3N(e);
 			else {
 				if (bq.f6 && (4495 === e || 4480 === e) && b1.z.f7 !== oN) return void u.a3O();
@@ -8544,7 +8544,7 @@ function aPz(data) {
 			aQl.s0(L(214)), aQl.s2(L(215)), bm.z.xn();
 			return aQz = [new x(L(216), function() {
 				var eI = Math.min(bm.buffer.data[117].value, s9.sA.length - 1);
-				eI < 1 || (eI = bm.z.xr(eI), bm.qo.qp(105, eI.uY), bm.qo.qp(106, eI.password), u.v(8, u.a3T().a3U, new ub(18)))
+				eI < 1 || (eI = bm.z.xr(eI)) && (bm.qo.qp(105, eI.uY), bm.qo.qp(106, eI.password), u.v(8, u.a3T().a3U, new ub(18)))
 			}, bE.pa, 1), new x(L(213), function() {
 				var eI = Math.min(bm.buffer.data[117].value, s9.sA.length - 1);
 				if (!(eI < 1)) {
@@ -9071,8 +9071,8 @@ function ub(id, a65, aSv) {
 			a65.aS7, a65.a2x) : 24 === id ? b1.aT2.aT8(a65.aS7, a65.us, a65.ut) : 25 === id ? b1.aHS.aQx(a65) : 28 === id ? b1.aT2.aT9(a65.ur, a65.aT5, a65.aT6) : 29 === id ? b1.aHS.aRK(a65) : 30 === id ? bA.aEW() || aTA() : 1e3 === id && (
 			this.aSy = id = 25, b1.aHS.aQx(a65))
 	}, this.aEa = function(code, by, data) {
-		!by && code !== id || (15 === code || 16 === code ? u.v(7, this.a3U) : 17 === code ? (b1.z.close(0, 3252), bm.z.xq(0), bm.buffer.data[117].oM && 0 < bm.buffer.data[117].oM.length ? (by = bm.z.xr(0), bm.qo.qp(105, by.uY), bm.qo.qp(106, by
-			.password), u.v(8, this.a3U, new ub(16))) : (bm.qo.qp(105, ""), u.z.aEb())) : 21 === code ? u.v(10, this.a3U, new aD4(data)) : 23 === code ? u.v(13, this.a3U, new aRp({
+		!by && code !== id || (15 === code || 16 === code ? u.v(7, this.a3U) : 17 === code ? (b1.z.close(0, 3252), bm.z.xq(0), bm.buffer.data[117].oM && 0 < bm.buffer.data[117].oM.length && (by = bm.z.xr(0)) ? (bm.qo.qp(105, by.uY), bm.qo.qp(106,
+			by.password), u.v(8, this.a3U, new ub(16))) : (bm.qo.qp(105, ""), u.z.aEb())) : 21 === code ? u.v(10, this.a3U, new aD4(data)) : 23 === code ? u.v(13, this.a3U, new aRp({
 			data: data,
 			aS7: a65.aS7
 		})) : 25 === code ? (u.z.aQ3.uY = a65.uY, bm.xF.nH(a65.uY), u.v(15, this.a3U)) : 30 === code && (data ? u.v(1) : aTA()))
