@@ -34,6 +34,7 @@ var settings = {
   highlightClanSpawns: false,
   highlightDuplicateIps: false,
   highlightSameClan: false,
+  smoothUI: true,
   detailedTeamPercentage: false,
   openDonationHistoryFromLb: true,
   //"customMapFileBtn": true
@@ -476,6 +477,12 @@ const settingsManager = new (function () {
       type: "checkbox",
       label: "Hide propaganda popup"
     },
+    {
+      for: "smoothUI",
+      type: "checkbox",
+      label: "Smoother UI style",
+      note: "Softer lines, rounded boxes, fading pages and buttons, thin scrollbars, a cleaner multiplayer lobby and a matching in-game HUD.",
+    },
     //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
     SectionHeader("In-game display"),
     {
@@ -739,6 +746,8 @@ const settingsManager = new (function () {
       document.body.style.backgroundPosition = "center";
     }
     __fx.makeMainMenuTransparent = settings.customBackgroundUrl !== "";
+    if (document.documentElement.classList.contains("fx-smooth") !== settings.smoothUI) window.dispatchEvent(new Event("resize"));
+    document.documentElement.classList.toggle("fx-smooth", settings.smoothUI);
   };
 
   if (settings.useFullscreenMode) tryEnterFullscreen();

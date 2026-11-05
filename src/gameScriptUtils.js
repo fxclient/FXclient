@@ -1,5 +1,5 @@
 import { getSettings } from "./settings.js";
-import { getVar } from "./gameInterface.js";
+import { getVar, getUIGap } from "./gameInterface.js";
 import { leaderboardFilter } from "./clanFilters.js";
 import { escapeHtml } from "./utils.js";
 
@@ -120,9 +120,24 @@ function getSameClanHighlightColor(player, ownPlayer, nameField) {
     return leaderboardFilter.parseClanFromPlayerName(player[nameField]) === ownClan ? sameClanColor : null;
 }
 
+const softLineColor = "rgba(255, 255, 255, 0.3)";
+const lineColor = color => getSettings().smoothUI ? softLineColor : color;
+function smoothFrame(ctx, width, height, lineWidth = 1, x = 0, y = 0) {
+    if (!getSettings().smoothUI || !ctx.roundRect) return false;
+    const radius = Math.min(getUIGap() / 2, width / 2, height / 2), inset = lineWidth / 2;
+    ctx.save();
+    ctx.beginPath(), ctx.rect(x, y, width, height), ctx.clip();
+    ctx.globalCompositeOperation = "destination-in", ctx.fillStyle = "#000";
+    ctx.beginPath(), ctx.roundRect(x, y, width, height, radius), ctx.fill();
+    ctx.globalCompositeOperation = "source-over", ctx.strokeStyle = softLineColor, ctx.lineWidth = lineWidth;
+    if (lineWidth) ctx.beginPath(), ctx.roundRect(x + inset, y + inset, width - lineWidth, height - lineWidth, radius - inset), ctx.stroke();
+    ctx.restore();
+    return true;
+}
+
 function parseAccountId(value) {
     const match = /^[a-zA-Z0-9_-]{1,5}/.exec(value);
     return match ? match[0] : null;
 }
 
-export default { getMaxTroops, getDensity, getEstimatedEliminationAttack, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId }
+export default { getMaxTroops, getDensity, getEstimatedEliminationAttack, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId, lineColor, smoothFrame }

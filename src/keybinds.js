@@ -47,6 +47,7 @@ export const mobileKeybinds = {
         keybinds.forEach((keybind, i) => {
             ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
             ctx.fillRect(i * (buttonWidth + gap), 0, buttonWidth, h);
+            __fx.utils.smoothFrame(ctx, buttonWidth, h, 1, i * (buttonWidth + gap), 0);
             ctx.fillStyle = "white";
             const label = keybind.type === "absolute" ? (keybind.value * 100).toFixed() + "%" : "x " + Math.round(keybind.value * 100) / 100;
             ctx.fillText(label, (i + 0.5) * (buttonWidth + gap), h / 2);
