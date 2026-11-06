@@ -25,10 +25,16 @@ const playerList = new (function () {
     }
     this.hoveringOverButton = false;
     this.drawButton = (canvas, x, y, size) => {
+        if (__fx.settings.smoothUI && canvas.roundRect) {
+            canvas.beginPath(), canvas.roundRect(x + 0.5, y + 0.5, size - 1, size - 1, 0.15 * size);
+            canvas.fillStyle = this.hoveringOverButton ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.35)", canvas.fill();
+            canvas.strokeStyle = "rgba(255, 255, 255, 0.3)", canvas.lineWidth = 1, canvas.stroke();
+        } else {
         canvas.fillRect(x, y, size, size);
         canvas.fillStyle = this.hoveringOverButton ? "#aaaaaaaa" : "#000000aa";
         canvas.clearRect(x + 1, y + 1, size - 2, size - 2);
         canvas.fillRect(x + 1, y + 1, size - 2, size - 2);
+        }
         canvas.fillStyle = "#ffffff";
         canvas.imageSmoothingEnabled = true;
         canvas.drawImage(playersIcon, x + 2, y + 2, size - 4, size - 4);

@@ -420,3 +420,52 @@ label.checkbox .checkmark:after {
 	font-family     : 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
 	text-align      : center;
 }
+
+@keyframes fx-fade-in { from { opacity: 0; } }
+.fx-smooth .fx-page, .fx-smooth .fx-lobby, .fx-smooth .fx-panel > * { animation: fx-fade-in 0.15s ease-out; }
+.fx-smooth .fx-line { border-color: rgba(255, 255, 255, 0.3) !important; }
+.fx-smooth .fx-box { border-radius: 0.35em; }
+.fx-smooth .fx-box [style*="border: inherit"] { border-radius: 0.25em; overflow: hidden; }
+.fx-smooth button { transition: background-color 0.18s ease, box-shadow 0.18s ease; }
+.fx-smooth .fx-selected {
+	background-image: linear-gradient(to top, rgba(0, 255, 0, 0.18), rgba(0, 255, 0, 0) 65%);
+	box-shadow: inset 0 -0.16em 0 rgba(60, 255, 60, 0.85);
+}
+.fx-smooth .fx-lobby button > span, .fx-smooth .fx-lobby > :first-child > span { opacity: 0.8; }
+.fx-smooth .fx-progress { overflow: hidden; background-color: rgba(0, 0, 0, 0.25); }
+.fx-smooth .fx-progress > div {
+	transition: width 0.5s linear;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 70%);
+	box-shadow: 0 0 0.6em rgba(0, 255, 0, 0.45);
+}
+.fx-smooth .fx-progress > span { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); font-variant-numeric: tabular-nums; }
+.fx-smooth .fx-players-scroll { mask-image: linear-gradient(to bottom, #000 calc(100% - 1.4em), transparent); }
+.fx-smooth .fx-players { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.6em, 1fr)); gap: 0.65em 0.4em; padding-bottom: 1.2em; }
+.fx-smooth .fx-players.fx-wide { grid-template-columns: repeat(auto-fill, minmax(10.6em, 1fr)); }
+.fx-smooth .fx-players > span {
+	width: auto !important; max-width: none !important; margin: 0 !important;
+	padding: 0 0.35em; border-radius: 0.35em; transition: background-color 0.15s ease;
+}
+.fx-smooth .fx-players > span:hover { background-color: rgba(255, 255, 255, 0.1); }
+.fx-smooth ::-webkit-scrollbar { width: 8px; height: 6px; }
+.fx-smooth ::-webkit-scrollbar-track { background: transparent; }
+.fx-smooth ::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, 0.28); border-radius: 4px; }
+.fx-smooth ::-webkit-scrollbar-thumb:hover { background-color: rgba(255, 255, 255, 0.45); }
+.fx-smooth .window, .fx-smooth #replayTimebar {
+	background-color: rgba(0, 0, 0, 0.85); border-color: rgba(255, 255, 255, 0.3); border-radius: 0.35em;
+	font-family: system-ui, sans-serif; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+.fx-smooth .window { animation: fx-fade-in 0.15s ease-out; }
+.fx-smooth .window :is(button, input, select) { border-color: rgba(255, 255, 255, 0.3); border-radius: 0.25em; }
+.fx-smooth .window button:hover { background-color: rgba(255, 255, 255, 0.15); border-radius: 0.25em; }
+.fx-smooth .window input:focus { background-color: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.6); border-radius: 0.25em; outline: none; }
+.fx-smooth .settings-section-title { border-bottom-color: rgba(255, 255, 255, 0.3); }
+.fx-smooth .window hr { border: 0; border-top: 2px solid rgba(255, 255, 255, 0.3); }
+.fx-smooth .checkmark {
+	background-color: rgba(255, 255, 255, 0.12); box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+	border-radius: 0.25em; transition: background-color 0.18s ease;
+}
+.fx-smooth label.checkbox:hover .checkmark { background-color: rgba(255, 255, 255, 0.25); }
+.fx-smooth label.checkbox input:checked ~ .checkmark { background-color: rgba(0, 255, 0, 0.5); }
+@supports not selector(::-webkit-scrollbar) { .fx-smooth * { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.3) transparent; } }
+@media (prefers-reduced-motion: reduce) { .fx-smooth * { animation: none !important; transition: none !important; } }

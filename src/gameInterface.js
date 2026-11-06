@@ -8,6 +8,7 @@ export const getVar = varName => {
     if (gameObjectProperties.includes(varName)) return window[dictionary.game]?.[dictionary[varName]];
     if (replayRecorderProperties.includes(varName))
         return window[dictionary.protocol]?.[dictionary.replayRecorder]?.[dictionary[varName]];
+    if (varName === "playerTeamColors") return window[dictionary.teamManager]?.[dictionary.playerTeamColors];
     return window[dictionary[varName]]
 };
 

@@ -98,6 +98,9 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 			}`, { dictionary: { game, gIsTeamGame, gIsSingleplayer, rawPlayerNames }})
 	}
 
+	matchCode(`function setTeamColor(player) { if (game.gIsTeamGame) { ctx.fillStyle = teamManager.teamColors[teamManager.playerTeamColors[player]] } }`,
+		{ dictionary: { game: dict.game, gIsTeamGame: dict.gIsTeamGame }, addToDictionary: ["teamManager", "playerTeamColors"] })
+
     waitForMinification(() => {
         const { cachedDisplayNameProp } = matchCode(
             `PD.cachedDisplayNameProp[i] = someObj1.someObj2.someFn(RPN[i], someFont, someWidth)`,
@@ -167,14 +170,16 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 		//console.log("drawing", a0P),
 		a0A.clearRect(0, y9 - __fx.leaderboardFilter.tabBarOffset, a04, __fx.leaderboardFilter.tabBarOffset);
 		a0A.fillRect(0, y9 - __fx.leaderboardFilter.tabBarOffset, a04, __fx.leaderboardFilter.tabBarOffset);
-		a0A.fillStyle = aZ.gF,
+		a0A.fillStyle = __fx.utils.lineColor(aZ.gF),
 		a0A.fillRect(0, a0F, a04, 1),
 		a0A.fillRect(0, y9 - __fx.leaderboardFilter.tabBarOffset, a04, 1),
 		__fx.leaderboardFilter.drawTabs(a0A, a04, y9 - __fx.leaderboardFilter.tabBarOffset, aZ.kw),
+		__fx.utils.smoothFrame(a0A, a04, y9, b0.ur) || (
 		a0A.fillRect(0, 0, a04, b0.ur),
 		a0A.fillRect(0, 0, b0.ur, y9),
 		a0A.fillRect(a04 - b0.ur, 0, b0.ur, y9),
-		a0A.fillRect(0, y9 - b0.ur, a04, b0.ur),`, { windowHeight })
+		a0A.fillRect(0, y9 - b0.ur, a04, b0.ur)),
+		a0A.fillStyle = aZ.gF,`, { windowHeight })
             replaceRawCode("var hZ,eh=leaderboardPositionsById[game.playerId]<position+windowHeight-1?1:2;for(a0A.font=a07,aY.g0.textAlign(a0A,0),hZ=windowHeight-eh;0<=hZ;hZ--)a0a(leaderboardArray[hZ+position]),a0b(hZ,hZ+position,leaderboardArray[hZ+position]);for(aY.g0.textAlign(a0A,2),hZ=windowHeight-eh;0<=hZ;hZ--)a0a(leaderboardArray[hZ+position]),a0c(hZ,leaderboardArray[hZ+position]);",
                 `var hZ, eh = playerPos < position + windowHeight - 1 ? 1 : 2;
 		if (__fx.leaderboardFilter.showingRivals) eh = 1;
