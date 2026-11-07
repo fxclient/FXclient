@@ -24,6 +24,7 @@ var settings = {
   displayTickNumber: true,
   useFullscreenMode: false,
   hoveringTooltip: true,
+  applyRecommendedTerritorialSettings: true,
   //"hideAllLinks": false,
   realisticNames: false,
   showPlayerDensity: true,
@@ -504,6 +505,12 @@ const settingsManager = new (function () {
       type: "checkbox",
       label: "Hovering tooltip",
       note: "Display map territory info constantly (on mouse hover) instead of only when right clicking on the map",
+    },
+    {
+      for: "applyRecommendedTerritorialSettings",
+      type: "checkbox",
+      label: "Recommended territorial settings",
+      note: "Sets Resolution to Very High, Minimum Font Size to Very Small, Text Rendering Speed to Fast, Place Balance Above to On, and Large UI off. Turn this off to keep your own territorial settings.",
     },
     {
       for: "highlightClanSpawns",
