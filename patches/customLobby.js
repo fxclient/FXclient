@@ -5,13 +5,13 @@ export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceCode, r
 
     // set player id correctly
     insertCode(`function aBG(aBE) {
-		if (!Lobby.aAl) { return -1; }
         /* here */
+		if (!Lobby.aAl || !Lobby.rooms.isSelected()) { return -1; }
 		var s = aBE.length;
 		var qu = Lobby.aAl.qu;
 		for (var i = 0; i < s; i++) { if (aBE[i].qu === qu) { return i; } }
 		return -1;
-	}`, `if (__fx.customLobby.isActive()) return __fx.customLobby.getPlayerId();`);
+	}`, `if (__fx.customLobby.isActive()) return Lobby.aAl ? __fx.customLobby.getPlayerId() : -1;`);
 
     modifyCode(`this.a0 = function() { u.v(5, 5); };
 	this.a71 = function(aUM) {
@@ -67,8 +67,6 @@ export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceCode, r
         replaceRawCode(`(sV.style.backdropFilter="blur(4px)",sV.style.webkitBackdropFilter="blur(4px)"),`,
             `(sV.style.backdropFilter="blur(4px)",sV.style.webkitBackdropFilter="blur(4px)"),
             __fx.customLobby.isActive() && (sV.style.display = "none"),`);
-        // allow games with one player
-        replaceRawCode("if((t3=bk.t1.t3[e0])<2)return!1;", "if((t3=bk.t1.t3[e0])<2 && !__fx.customLobby.isActive())return!1;")
         // error descriptions
         const errors = { 3249: "No servers found", 4705: "Lobby not found", 4730: "Kicked from lobby" };
         replaceRawCode(`m.n___(4,5,new o(__L(),xT(e),!0))`,

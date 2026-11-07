@@ -90,15 +90,11 @@ export default definePatch(({ modifyCode, replaceCode }) => {
 
     modifyCode(`function assembleLobby() {
         header.appendChild(createTitle());
-        roomTabs.appendChild(roomTabRow.element);
-        infoBar.appendChild(infoRow.element);
         panelTabs.appendChild(panelTabRow.element);
         progressBar.appendChild(progressFill);
         progressBar.appendChild(progressText);
         footer.appendChild(footerRow.element);
         root.appendChild(header);
-        root.appendChild(roomTabs);
-        root.appendChild(infoBar);
         root.appendChild(panelTabs);
         root.appendChild(content);
         root.appendChild(progressBar);
@@ -123,16 +119,23 @@ export default definePatch(({ modifyCode, replaceCode }) => {
         playerList.textContent = "";
         lobby.tooltip.visible && lobby.tooltip.hide(1);
         var fragment = document.createDocumentFragment();
-        var roomIndex = lobby.state.selection[0];
-        var players = lobby.playerData.lists[roomIndex];
-        var onlineCount = lobby.playerData.onlineCounts[roomIndex];
-        for (var i = 0; i < players.length; i++) { addEntry(fragment, players[i], i < onlineCount, roomIndex) }
+        var players = lobby.playerData.list;
+        var onlineCount = lobby.playerData.onlineCount;
+        var isOneVsOne = lobby.rooms.checkOneVsOne();
+        for (var i = 0; i < players.length; i++) { addEntry(fragment, players[i], i < onlineCount, isOneVsOne) }
         playerList.appendChild(fragment);
-        ${insert(`playerList.classList.toggle("fx-wide", roomIndex === 2);`)}
+        ${insert(`playerList.classList.toggle("fx-wide", !!isOneVsOne);`)}
     }`);
 
-    modifyCode(`function setTabSelected(row, index, isSelected) {
-        lobbyScreen.rows[row].buttons[index].setColor(isSelected ? colors.selectedColor : colors.normalColor);
-        ${insert(`lobbyScreen.rows[row].buttons[index].button.classList.toggle("fx-selected", !!isSelected);`)}
+    modifyCode(`function setTabSelected(index, isSelected) {
+        tabRow.buttons[index].setColor(isSelected ? colors.selectedColor : colors.normalColor);
+        ${insert(`tabRow.buttons[index].button.classList.toggle("fx-selected", !!isSelected);`)}
+    }`);
+
+    modifyCode(`if (card.selectedState !== isSelected) {
+        card.selectedState = isSelected;
+        card.topBar.style.backgroundColor = card.bottomBar.style.backgroundColor = isSelected ? colors.selectedBar : colors.bar;
+        helpers.ui.addBorder(card.button, 5, isSelected ? colors.selectedBorder : colors.white);
+        ${insert(`card.button.classList.toggle("fx-line", !isSelected);`)}
     }`);
 });
