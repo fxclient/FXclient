@@ -8,7 +8,7 @@ const SOUND_INTERVAL = 260;
 let rooms = null;
 let playGameSound = null;
 let showPopup = null;
-const roomStates = [];
+const roomStates = new Map();
 
 function playReminderSound() {
     for (let i = 0; i < SOUND_REPEATS; i++) setTimeout(() => playGameSound?.(), i * SOUND_INTERVAL);
@@ -16,7 +16,6 @@ function playReminderSound() {
 
 function setRooms(lobbyRooms) {
     rooms = lobbyRooms;
-    roomStates.length = 0;
 }
 
 function setSound(playSound) {
@@ -31,16 +30,20 @@ function check() {
     if (rooms === null) return;
     const rules = getSettings().lobbyReminderRules || [];
     if (rules.length === 0) return;
+    const presentIds = new Set();
     for (let index = 0; index < rooms.length; index++) {
         const room = rooms[index];
         if (!room) continue;
+        const id = room[dictionary.lobbyRoomId];
+        presentIds.add(id);
         const game = {
             map: room[dictionary.lobbyRoomMap],
             mode: room[dictionary.lobbyRoomMode],
             isContest: !!room[dictionary.lobbyRoomIsContest]
         };
         const timeLeft = room[dictionary.lobbyRoomTimeLeft];
-        const state = roomStates[index] ?? (roomStates[index] = { timeLeft: -1, reminded: null });
+        let state = roomStates.get(id);
+        if (!state) roomStates.set(id, state = { timeLeft: -1, reminded: null });
         if (timeLeft > state.timeLeft) state.reminded = null;
         state.timeLeft = timeLeft;
 
@@ -53,6 +56,7 @@ function check() {
         showPopup?.(`Reminder: ${description}`);
         playReminderSound();
     }
+    roomStates.forEach((_state, id) => { if (!presentIds.has(id)) roomStates.delete(id); });
 }
 
 export default { setRooms, setSound, setPopupHandler, check };

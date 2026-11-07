@@ -6,7 +6,6 @@ const everyoneAliases = ["@0ya", "@0og", "@0pl"];
 
 const settingForType = {
     everyone: "mutePingEveryone",
-    room: "mutePingRoom",
     clan: "mutePingClan",
     language: "mutePingLanguage",
     direct: "mutePingDirect"
@@ -20,7 +19,6 @@ function getLanguageCodes() {
 function getMentionType(mention) {
     if (mention.startsWith("@[") && mention.endsWith("]")) return "clan";
     if (mention === "@all" || mention === "@everyone" || everyoneAliases.includes(mention)) return "everyone";
-    if (/^@room[1-9]$/.test(mention)) return "room";
     const name = mention.slice(1);
     const languageCodes = getLanguageCodes();
     if (languageCodes !== null)
