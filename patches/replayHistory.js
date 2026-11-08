@@ -31,9 +31,6 @@ export default definePatch(({ replaceRawCode, matchCode, insertCode, modifyCode 
       }
       return text;
     };
-    this.encode = function(text) {
-      return text;
-    };
     /* here */`,
     `__fx.replayHistory.load = (saved) => {
       saved = ${protocol}.${stripPrefix}(saved);

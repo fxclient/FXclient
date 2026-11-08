@@ -80,9 +80,9 @@ export default definePatch(({ insertCode, modifyCode, replaceCode }) => {
   )
 
   insertCode(
-    `var value = getParam("account");
+    `var value = getParam("account", 5);
     if (!value) {
-      value = getParam("a");
+      value = getParam("a", 5);
       if (!value) {
         b.clear();
         return false;

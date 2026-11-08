@@ -440,8 +440,8 @@ label.checkbox .checkmark:after {
 }
 .fx-smooth .fx-progress > span { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); font-variant-numeric: tabular-nums; }
 .fx-smooth .fx-players-scroll { mask-image: linear-gradient(to bottom, #000 calc(100% - 1.4em), transparent); }
-.fx-smooth .fx-players { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.6em, 1fr)); gap: 0.65em 0.4em; padding-bottom: 1.2em; }
-.fx-smooth .fx-players.fx-wide { grid-template-columns: repeat(auto-fill, minmax(10.6em, 1fr)); }
+.fx-smooth .fx-players { display: grid; grid-template-columns: repeat(auto-fill, minmax(11em, 1fr)); gap: 0.65em 0.4em; padding-bottom: 1.2em; }
+.fx-smooth .fx-players.fx-wide { grid-template-columns: repeat(auto-fill, minmax(12em, 1fr)); }
 .fx-smooth .fx-players > span {
 	width: auto !important; max-width: none !important; margin: 0 !important;
 	padding: 0 0.35em; border-radius: 0.35em; transition: background-color 0.15s ease;

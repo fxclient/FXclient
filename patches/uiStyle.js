@@ -113,6 +113,8 @@ export default definePatch(({ modifyCode, replaceCode }) => {
         playerList.style.margin = "0.4em";
         scrollContainer.appendChild(playerList);
         ${insert(`scrollContainer.className = "fx-players-scroll", playerList.className = "fx-players";`)}
+        rowTemplate = createRowTemplate();
+        badgeColors = createBadgeColors();
     }`);
 
     modifyCode(`this.renderPlayers = function() {
@@ -120,9 +122,11 @@ export default definePatch(({ modifyCode, replaceCode }) => {
         lobby.tooltip.visible && lobby.tooltip.hide(1);
         var fragment = document.createDocumentFragment();
         var players = lobby.playerData.list;
-        var onlineCount = lobby.playerData.onlineCount;
-        var isOneVsOne = lobby.rooms.checkOneVsOne();
-        for (var i = 0; i < players.length; i++) { addEntry(fragment, players[i], i < onlineCount, isOneVsOne) }
+        var rooms = lobby.rooms.roomArray;
+        var isOneVsOne = 0;
+        for (var i = 0; i < rooms.length; i++) { isOneVsOne = isOneVsOne || rooms[i].mode === 8 }
+        rowTemplate.style.width = rowTemplate.style.maxWidth = isOneVsOne ? "11.3em" : "10.3em";
+        for (i = 0; i < players.length; i++) { var roomIndex = lobby.rooms.findRoom(players[i].roomId); addEntry(fragment, players[i], roomIndex, roomIndex >= 0 && rooms[roomIndex].mode === 8) }
         playerList.appendChild(fragment);
         ${insert(`playerList.classList.toggle("fx-wide", !!isOneVsOne);`)}
     }`);
