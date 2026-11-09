@@ -6,9 +6,8 @@ export default definePatch(({ matchCode, insertCode, modifyCode, matchRawCode })
         var count = reader.read(4);
         var rooms = new Array(count);
         for (var i = 0; i < count; i++) {
-            rooms[i] = { lobbyRoomId: reader.read(13), lobbyRoomTimeLeft: reader.read(12), lobbyRoomPlayerCount: reader.read(16), lobbyRoomMap: reader.read(6), lobbyRoomMapSeed: reader.read(14), lobbyRoomMode: reader.read(4), lobbyRoomIsContest: reader.read(1) };
+            rooms[i] = { lobbyRoomId: reader.read(13), lobbyRoomTimeLeft: reader.read(12), lobbyRoomPlayerCount: reader.read(16), lobbyRoomMaxPlayers: reader.read(10), lobbyRoomMap: reader.read(6), lobbyRoomMapSeed: reader.read(14), lobbyRoomMode: reader.read(4), lobbyRoomIsContest: reader.read(1) };
         }
-        var wasOneVsOne = this.isOneVsOne();
         this.lobbyRoomList = rooms;
         /* here */
         /*...*/
