@@ -138,8 +138,8 @@ export default definePatch(({ modifyCode, replaceCode }) => {
 
     modifyCode(`if (card.selectedState !== isSelected) {
         card.selectedState = isSelected;
-        card.topBar.style.backgroundColor = card.bottomBar.style.backgroundColor = isSelected ? colors.selectedBar : colors.bar;
-        helpers.ui.addBorder(card.button, 5, isSelected ? colors.selectedBorder : colors.white);
+        card.topBar.style.backgroundColor = card.bottomBar.style.backgroundColor = [colors.bar, colors.selectedBar, colors.observingBar][isSelected];
+        helpers.ui.addBorder(card.button, 5, [colors.white, colors.selectedBorder, colors.observingBorder][isSelected]);
         ${insert(`card.button.classList.toggle("fx-line", !isSelected);`)}
     }`);
 });

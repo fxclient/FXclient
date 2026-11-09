@@ -32,11 +32,11 @@ export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceRawCode
         /*...*/}`)
 
     insertCode(`player = aQ.eF(eR);
-		if (game.gIsReplay /* here */) { game.playerId = player; }
+		if (game.gIsReplay || game.gIsObserver) { /* here */ game.playerId = player; }
 		str = __L(/* Player: {0} */ [b0.context.truncateAndFillText(playerData.rawPlayerNames[player], b0.qZ.sN(0, 10), 150)]) + "   ";
 		str += __L(/* Strength: {10} */ [b0.rY.formatNumber(playerData.playerBalances[player])]) + "   ";
 		str += __L(/* Territory: {10} */ [b0.rY.formatNumber(playerData.playerTerritories[player])]) + "   ";`,
-    `&& __fx.hoveringTooltip.active === false`)
+    `if (__fx.hoveringTooltip.active === false)`)
     
     waitForMinification(() => {
         replaceRawCode("aK.nH=(window.devicePixelRatio||1)*aEr,",

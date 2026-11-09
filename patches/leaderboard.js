@@ -93,7 +93,7 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 		modifyCode(`
 			${insert(`if (!isEmptySpace && game.gIsTeamGame && __fx.settings.openDonationHistoryFromLb)
 				__fx.donationsTracker.displayHistory(player, playerData.rawPlayerNames, game.gIsSingleplayer);`)}
-			if (playerData.b[player] !== 0 ${insert(`&& !isEmptySpace`)} && !(game.d && !game.e && !game.f ${insert(`&& player !== ${game}.${playerId}`)})) {
+			if (playerData.b[player] !== 0 ${insert(`&& !isEmptySpace`)} && !(game.d && !game.e && !game.f && !game.g ${insert(`&& player !== ${game}.${playerId}`)})) {
 				c.animateCamera(player, 800, false, 0);
 			}`, { dictionary: { game, gIsTeamGame, gIsSingleplayer, rawPlayerNames }})
 	}
