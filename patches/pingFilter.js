@@ -7,7 +7,7 @@ export default definePatch(({ matchCode, matchRawCode, modifyCode }) => {
     }`, { addToDictionary: ["languageHolder", "languageData", "languageCodes"] })
 
     const { textField } = matchRawCode(
-        `if(msgId===0){return{msgId:msgId,senderField:reader.readBits(30),textField:container.decoder.decode(helper1.helper2.helper3(7))}}`
+        `if(msgId===0){return{msgId:msgId,senderField:reader.readBits(30),senderExtra:readExtra(),textField:container.decoder.decode(helper1.helper2.helper3(8))}}`
     )
 
     modifyCode(`${insert(`if (__fx.pingFilter.isMuted(message, "textField")) return;`)}

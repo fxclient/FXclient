@@ -6,7 +6,7 @@ export default definePatch(({ matchCode, insertCode, modifyCode, matchRawCode })
         var count = reader.read(4);
         var rooms = new Array(count);
         for (var i = 0; i < count; i++) {
-            rooms[i] = { lobbyRoomId: reader.read(13), lobbyRoomTimeLeft: reader.read(12), lobbyRoomPlayerCount: reader.read(16), lobbyRoomMaxPlayers: reader.read(10), lobbyRoomMap: reader.read(6), lobbyRoomMapSeed: reader.read(14), lobbyRoomMode: reader.read(4), lobbyRoomIsContest: reader.read(1) };
+            rooms[i] = { lobbyRoomId: reader.read(13), lobbyRoomTimeLeft: reader.read(12), lobbyRoomPlayerCount: reader.read(16), lobbyRoomSpectatorCount: reader.read(16), lobbyRoomMaxPlayers: reader.read(10), lobbyRoomMap: reader.read(6), lobbyRoomMapSeed: reader.read(14), lobbyRoomMode: reader.read(4), lobbyRoomIsContest: reader.read(1) };
         }
         this.lobbyRoomList = rooms;
         /* here */
@@ -20,7 +20,8 @@ export default definePatch(({ matchCode, insertCode, modifyCode, matchRawCode })
 
     matchCode(`var room = rooms[i];
         var card = cards[i];
-        var isSelected = room.lobbyRoomId === lobbyManager.lobbyRooms.selectedId ? 1 : 0;
+        var isSelected = room.lobbyRoomId === lobbyManager.lobbyRooms.selectedId ? 1 + lobbyManager.lobbyRooms.observing : 0;
+        var playerCount = lobbyManager.lobbyRooms.getPlayerCount(room);
         setText(card.mapLabel, mapHolder.mapInfo.mapNames[room.lobbyRoomMap]);
         /*...*/`,
         { addToDictionary: ["mapHolder", "mapInfo", "mapNames"] })
