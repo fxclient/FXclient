@@ -1,8 +1,14 @@
 {
-    "version": "0.6.35",
-    "lastUpdated": "November 6",
+    "version": "0.6.36",
+    "lastUpdated": "November 10",
     "changes": [
-        "Implemented a smoother UI style that is toggleable in the FX Client settings. (Merged pull request #48 by antimmdev)"
+        "Merged pull request #52 by divineistaken: Adds a default-on \"Recommended territorial settings\" toggle that is applied after the game loads its saved settings:",
+        "Resolution: Very High",
+        "Minimum Font Size: Very Small",
+        "Text Rendering Speed: Fast",
+        "Place Balance Above: On",
+        "Large UI: Off",
+        "Turning the toggle off keeps the user's own territorial settings."
     ],
     "isSignificant": true
 }
