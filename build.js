@@ -68,8 +68,8 @@ async function patchGameCode() {
 	script = script.replace(/\bS\[(\d+)\]/g, (_match, index) => `"${stringArray[index]}"`);
 
 	const modUtils = new ModUtils(minifyCode(script))
-	const gameVersion = tryParseGameVersion(modUtils)
-	fs.writeFileSync("./build/version.txt", gameVersion ?? "unknown")
+	const v = tryParseGameVersion(modUtils)
+	fs.writeFileSync("./build/version.txt", v === null ? "unknown" : `${v.game} ${v.protocol}`)
 
 	/** @type {{ code: string, addToDictionary: string[] }[]} */
 	const codeSegments = [{

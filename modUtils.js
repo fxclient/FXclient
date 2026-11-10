@@ -231,7 +231,7 @@ export function tryParseGameVersion(modUtils) {
     const result = modUtils.matchCode(
       `function a() {
         this.b = 2;
-        this.c = __number;
+        this.protocolVersion = __proto;
         this.d = __number;
         var majorVersion = __major;
         var minorVersion = __minor;
@@ -240,9 +240,12 @@ export function tryParseGameVersion(modUtils) {
         this.e = 0;
         this.f = function() {var g = ""; /*...*/}
       }`,
-      { dictionary: { __number: "\\d+" }, matchAsRegEx: { __major: "\\d+", __minor: "\\d+", __patch: "\\d+" } },
+      {
+        dictionary: { __number: "\\d+" },
+        matchAsRegEx: Object.fromEntries(["__major", "__minor", "__patch", "__proto"].map(k => [k, "\\d+"]))
+      }
     )
-    return result.__major + "." + result.__minor + "." + result.__patch
+    return { game: result.__major + "." + result.__minor + "." + result.__patch, protocol: result.__proto }
   } catch (error) {
     console.warn(styleText("yellowBright", "Unable to parse version:"), error)
     return null
