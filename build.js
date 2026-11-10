@@ -5,7 +5,7 @@ import UglifyJS from 'uglify-js';
 import fs from 'fs';
 import webpack from 'webpack';
 import path from 'path';
-import ModUtils, { minifyCode } from './modUtils.js';
+import ModUtils, { minifyCode, tryParseGameVersion } from './modUtils.js';
 
 { // color debug output in gray
   const old_debug = console.debug
@@ -67,7 +67,9 @@ async function patchGameCode() {
 	const stringArray = JSON.parse(stringArrayRaw);
 	script = script.replace(/\bS\[(\d+)\]/g, (_match, index) => `"${stringArray[index]}"`);
 
-	const modUtils = new ModUtils(minifyCode(script));
+	const modUtils = new ModUtils(minifyCode(script))
+	const gameVersion = tryParseGameVersion(modUtils)
+	fs.writeFileSync("./build/version.txt", gameVersion ?? "unknown")
 
 	/** @type {{ code: string, addToDictionary: string[] }[]} */
 	const codeSegments = [{

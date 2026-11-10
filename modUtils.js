@@ -1,5 +1,6 @@
 // @ts-check
 import UglifyJS from 'uglify-js';
+import { styleText } from 'node:util';
 
 // https://stackoverflow.com/a/63838890
 const escapeRegExp = (/** @type {string} */ string) => string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
@@ -107,19 +108,21 @@ class ModUtils {
         }
         return Object.fromEntries(Object.entries(groups).map(([identifier, groupNumber]) => [identifier, expressionMatchResult[groupNumber]]));
     }
-    /** @param {{ [x: string]: string; }} [nameMappings] */
-    matchRawCode(/** @type {string} */ raw, nameMappings) {
-        const { expression, groups } = this.generateRegularExpression(raw, false, nameMappings);
+    /** @param {{ [x: string]: string; }} [nameMappings] @param {{ [x: string]: string; }} [matchAsRegEx] */
+    matchRawCode(/** @type {string} */ raw, nameMappings, matchAsRegEx) {
+        const { expression, groups } = this.generateRegularExpression(raw, false, nameMappings, matchAsRegEx);
         try {
             const expressionMatchResult = this.matchOne(expression);
             return Object.fromEntries(Object.entries(groups).map(
                 ([identifier, groupNumber]) => [identifier, expressionMatchResult[groupNumber]]
             ));
         } catch (e) {
-            throw new Error("matchRawCode match error:\n\n" + e + "\n\nRaw code: " + raw + "\n");
+            throw new Error("Code match error:\n\n" + e + "\n\nRaw code: " + raw + "\n");
         }
     }
-    generateRegularExpression(/** @type {string} */ code, /** @type {boolean} */ isForDictionary, nameMappings) {
+    /** @param {{ [x: string]: string; }} [nameMappings] @param {{ [x: string]: string; }} [matchAsRegEx] */
+    generateRegularExpression(/** @type {string} */ code, /** @type {boolean} */ isForDictionary, nameMappings, matchAsRegEx) {
+        /** @type {Record<string, number>} */
         const groups = {};
         let groupNumberCounter = 1;
         let localizerCount = 0;
@@ -129,6 +132,10 @@ class ModUtils {
         raw = raw.replace(isForDictionary ? /(?:@@)*(@?)(\w+)/g : /()(\w+)/g, (_match, modifier, word) => {
             // if a substitution string for the "word" is specified in the nameMappings, use it
             if (nameMappings && nameMappings.hasOwnProperty(word)) return nameMappings[word];
+            if (matchAsRegEx && matchAsRegEx.hasOwnProperty(word)) { // for matching something with limited regex syntax
+                groups[word] = groupNumberCounter++
+                return `(${matchAsRegEx[word]})` // wrap in group
+            }
             // if the "word" is a number or is one of these specific words, ingore it
             if (/^\d/.test(word) || ["return", "this", "var", "function", "new", "Math", "WebSocket"].includes(word)) return word;
             // for easy localizer function matching
@@ -148,10 +155,10 @@ class ModUtils {
 
     /**
      * @typedef {{ dictionary?: { [x: string]: string } }} BaseOptions
-     * @typedef {BaseOptions & { addToDictionary?: string[] }} MatchCodeOptions
+     * @typedef {BaseOptions & { addToDictionary?: string[], matchAsRegEx?: Record<string, string> }} MatchCodeOptions
      */
     matchCode(/** @type {string} */ code, /** @type {MatchCodeOptions=} */ options) {
-        const result = this.matchRawCode(minifyCode(code), options?.dictionary);
+        const result = this.matchRawCode(minifyCode(code), options?.dictionary, options?.matchAsRegEx);
         if (options?.addToDictionary !== undefined) {
             options.addToDictionary.forEach(varName => {
                 if (result[varName] === undefined)
@@ -217,3 +224,27 @@ export function definePatch(callback) {
 export const insert = (code) => (
     "\n" + code.split(/\r?\n/g).map(l => "/*insert line:*/" + l).join("\n") + "\n"
 );
+
+/** @param {ModUtils} modUtils instance of ModUtils with terri code loaded */
+export function tryParseGameVersion(modUtils) {
+  try {
+    const result = modUtils.matchCode(
+      `function a() {
+        this.b = 2;
+        this.c = __number;
+        this.d = __number;
+        var majorVersion = __major;
+        var minorVersion = __minor;
+        var patchVersion = __patch;
+        this.replayVersion = __number;
+        this.e = 0;
+        this.f = function() {var g = ""; /*...*/}
+      }`,
+      { dictionary: { __number: "\\d+" }, matchAsRegEx: { __major: "\\d+", __minor: "\\d+", __patch: "\\d+" } },
+    )
+    return result.__major + "." + result.__minor + "." + result.__patch
+  } catch (error) {
+    console.warn(styleText("yellowBright", "Unable to parse version:"), error)
+    return null
+  }
+}
