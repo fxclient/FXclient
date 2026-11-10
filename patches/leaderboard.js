@@ -15,7 +15,7 @@ export default definePatch(({ safeDictionary: dict, modifyCode, waitForMinificat
 	// and create a function for scrolling the leaderboard to the top
 	modifyCode(`/*insert line:*/__fx.leaderboardFilter.scrollToTop = function(){position = 0;}
 			this.mouseDown = function(x, y) {
-	if (a4L(x, y)) {
+	if (isInsideLeaderboard(x, y)) {
 		/*insert line:*/ if (${buttonBoundsCheck}) return (__fx.playerList.display(${rawPlayerNames}), true)
 		/*insert line:*/ if (y - ${uiOffset} > __fx.leaderboardFilter.verticalClickThreshold)
 		/*insert line:*/    return __fx.leaderboardFilter.handleMouseDown(x - ${uiOffset})
