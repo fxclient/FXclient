@@ -2279,7 +2279,8 @@ function yR(yS, yT, yU, oU) {
 
 function dP() {
 	this.sz = new yc, this.buffer = new yd, this.r0 = new ye, this.z = new yf, this.yg = new yh, this.dm = function() {
-		this.buffer.dm(), (new yi).dm(), this.yg.dm(), this.z.yj()
+		this.buffer.dm(), (new yi).dm(), this.yg.dm(), this.z.yj(), __fx.settings.applyRecommendedTerritorialSettings && (bm.buffer.data[1].value = 3, bm.buffer.data[9].value = 2, bm.buffer.data[11].value = 2, bm.buffer.data[7].value = 1, bm
+			.buffer.data[2].value = bm.buffer.data[2].xP = 0)
 	}
 }
 
