@@ -421,6 +421,208 @@ label.checkbox .checkmark:after {
 	text-align      : center;
 }
 
+/* In-game chat window */
+.fx-chat-window {
+	position        : fixed;
+	z-index         : 9;
+	display         : flex;
+	flex-direction  : column;
+	overflow        : hidden;
+	box-sizing      : border-box;
+	background-color: rgba(0, 0, 0, 0.7);
+	color           : white;
+	border          : 2px solid white;
+	border-width    : calc(0.15 * (1vw + 1vh));
+	font-family     : 'Trebuchet MS', 'Franklin Gothic Medium', Arial, sans-serif;
+	font-size       : 15px;
+}
+.fx-chat-window[hidden] { display: none; }
+/* hidden, but kept at its size so the chat in the iframe doesn't have to lay itself out again */
+.fx-chat-window.fx-chat-ui-hidden, .fx-chat-window.fx-chat-user-hidden { visibility: hidden; }
+
+/* Show/hide button above the game's leave button, drawn like it (sizes are set from the game) */
+.fx-chat-toggle {
+	position        : fixed;
+	z-index         : 9;
+	display         : flex;
+	align-items     : center;
+	justify-content : center;
+	box-sizing      : border-box;
+	margin          : 0;
+	padding         : 0;
+	color           : white;
+	background-color: rgba(0, 0, 0, 0.85);
+	border          : var(--fx-toggle-line, 1px) solid white;
+	border-radius   : 0;
+	cursor          : pointer;
+	touch-action    : manipulation;
+}
+.fx-chat-toggle[hidden] { display: none; }
+.fx-chat-toggle:hover { background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)); }
+.fx-chat-toggle svg { width: 62%; height: 62%; pointer-events: none; }
+.fx-chat-toggle.fx-chat-toggle-off svg { opacity: 0.5; }
+.fx-chat-toggle .fx-chat-unread {
+	position : absolute;
+	top      : -0.6em;
+	right    : -0.6em;
+	font-size: 11px;
+	font-family: 'Trebuchet MS', 'Franklin Gothic Medium', Arial, sans-serif;
+	pointer-events: none;
+}
+
+.fx-chat-titlebar {
+	flex         : none;
+	display      : flex;
+	align-items  : center;
+	gap          : 6px;
+	height       : 2em;
+	padding      : 0 3px 0 8px;
+	border-bottom: 2px solid white;
+	cursor       : move;
+	user-select  : none;
+	touch-action : none;
+}
+.fx-chat-window.fx-chat-minimized .fx-chat-titlebar { border-bottom-color: transparent; }
+.fx-chat-title { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.fx-chat-dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background-color: #aaaaaa; }
+.fx-chat-dot[data-status="connecting"] { background-color: #e6b800; }
+.fx-chat-dot[data-status="connected"] { background-color: #32cd32; }
+.fx-chat-dot[data-status="failed"] { background-color: #dc143c; }
+.fx-chat-unread {
+	flex            : none;
+	min-width       : 1.4em;
+	padding         : 0 0.35em;
+	border-radius   : 0.7em;
+	background-color: #dc143c;
+	font-size       : 0.8em;
+	line-height     : 1.4em;
+	text-align      : center;
+}
+.fx-chat-unread[hidden] { display: none; }
+.fx-chat-titlebar button {
+	flex            : none;
+	width           : 1.6em;
+	height          : 1.5em;
+	margin          : 0;
+	padding         : 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	color           : white;
+	border          : 1px solid #fff;
+	border-radius   : 5px;
+	font            : inherit;
+	line-height     : 1;
+	cursor          : pointer;
+	transition      : 0.2s;
+}
+.fx-chat-titlebar button:hover { background-color: rgba(222, 222, 222, 0.52); border-radius: 8px; }
+
+.fx-chat-body { position: relative; flex: 1 1 auto; min-height: 0; }
+.fx-chat-window.fx-chat-minimized .fx-chat-body {
+	position  : absolute;
+	top       : 100%;
+	left      : 0;
+	right     : 0;
+	height    : var(--fx-chat-body-height);
+	visibility: hidden;
+}
+.fx-chat-body iframe {
+	position        : absolute;
+	inset           : 0;
+	width           : 100%;
+	height          : 100%;
+	border          : none;
+	background-color: transparent;
+	color-scheme    : normal;
+}
+.fx-chat-dragging .fx-chat-body iframe { pointer-events: none; }
+.fx-chat-notice {
+	display        : flex;
+	flex-direction : column;
+	align-items    : center;
+	justify-content: center;
+	gap            : 0.6em;
+	height         : 100%;
+	padding        : 0.8em;
+	box-sizing     : border-box;
+	overflow-y     : auto;
+	text-align     : center;
+}
+.fx-chat-notice p { margin: 0; }
+.fx-chat-notice button {
+	background-color: rgba(0, 0, 0, 0.7);
+	color           : white;
+	border          : 1px solid #fff;
+	border-radius   : 5px;
+	padding         : 0.4rem;
+	font            : inherit;
+	cursor          : pointer;
+	transition      : 0.2s;
+}
+.fx-chat-notice button:hover { background-color: rgba(222, 222, 222, 0.52); border-radius: 8px; }
+
+.fx-chat-resize {
+	position    : absolute;
+	right       : 0;
+	bottom      : 0;
+	width       : 16px;
+	height      : 16px;
+	cursor      : nwse-resize;
+	touch-action: none;
+	background  : linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 60%, transparent 60%, transparent 75%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.5) 85%, transparent 85%);
+}
+.fx-chat-window.fx-chat-minimized .fx-chat-resize { display: none; }
+
+/* Chat-only client, inside the in-game chat window */
+html.fx-chat-mode, html.fx-chat-mode body { background: transparent !important; }
+html.fx-chat-mode #canvasA, html.fx-chat-mode #windowContainer { display: none !important; }
+/* while the chat isn't shown, only the status screen and the Cloudflare check can be seen */
+html.fx-chat-offline body > :not(#fxChatStatus):not([style*="z-index: 100"]) { visibility: hidden !important; }
+html.fx-chat-mode .fx-lobby {
+	background-color: transparent !important;
+	-webkit-backdrop-filter: none !important;
+	backdrop-filter: none !important;
+	font-size: 14px !important;
+}
+html.fx-chat-mode .fx-lobby > :not(.fx-panel) { display: none !important; }
+html.fx-chat-mode .fx-lobby > .fx-panel { top: 0 !important; height: 100% !important; }
+html.fx-chat-mode .fx-chat-log { top: 0 !important; bottom: 2.4em !important; height: auto !important; border: none !important; }
+html.fx-chat-mode .fx-chat-messages { font-size: 1em !important; margin: 0 0.2em !important; }
+html.fx-chat-mode .fx-chat-input { top: auto !important; bottom: 0 !important; height: 2.4em !important; }
+html.fx-chat-mode .fx-chat-input > input { width: calc(100% - 4.5em) !important; font-size: 1em !important; }
+html.fx-chat-mode .fx-chat-input > button {
+	position: absolute !important; top: 0 !important; left: auto !important; right: 0 !important;
+	width: 4.5em !important; height: 100% !important; font-size: 1em !important;
+}
+
+#fxChatStatus {
+	position       : fixed;
+	inset          : 0;
+	z-index        : 99;
+	display        : flex;
+	flex-direction : column;
+	align-items    : center;
+	justify-content: center;
+	gap            : 0.6em;
+	padding        : 1em;
+	box-sizing     : border-box;
+	text-align     : center;
+	color          : white;
+	font           : 15px 'Trebuchet MS', 'Franklin Gothic Medium', Arial, sans-serif;
+}
+#fxChatStatus[hidden], #fxChatStatus [hidden] { display: none; }
+#fxChatStatus p { margin: 0; opacity: 0.85; }
+#fxChatStatus button {
+	background-color: rgba(0, 0, 0, 0.7);
+	color           : white;
+	border          : 1px solid #fff;
+	border-radius   : 5px;
+	padding         : 0.4rem 0.8rem;
+	font            : inherit;
+	cursor          : pointer;
+	transition      : 0.2s;
+}
+#fxChatStatus button:hover { background-color: rgba(222, 222, 222, 0.52); border-radius: 8px; }
+
 @keyframes fx-fade-in { from { opacity: 0; } }
 .fx-smooth .fx-page, .fx-smooth .fx-lobby, .fx-smooth .fx-panel > * { animation: fx-fade-in 0.15s ease-out; }
 .fx-smooth .fx-line { border-color: rgba(255, 255, 255, 0.3) !important; }
@@ -467,5 +669,19 @@ label.checkbox .checkmark:after {
 }
 .fx-smooth label.checkbox:hover .checkmark { background-color: rgba(255, 255, 255, 0.25); }
 .fx-smooth label.checkbox input:checked ~ .checkmark { background-color: rgba(0, 255, 0, 0.5); }
+.fx-smooth .fx-chat-window {
+	background-color: rgba(0, 0, 0, 0.85); border-color: rgba(255, 255, 255, 0.3); border-radius: 0.35em;
+	font-family: system-ui, sans-serif; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+	animation: fx-fade-in 0.15s ease-out;
+}
+.fx-smooth .fx-chat-titlebar { border-bottom-color: rgba(255, 255, 255, 0.3); }
+.fx-smooth .fx-chat-toggle { border-color: rgba(255, 255, 255, 0.3); border-radius: var(--fx-toggle-radius, 0.35em); }
+.fx-smooth .fx-chat-toggle .fx-chat-unread { font-family: system-ui, sans-serif; }
+.fx-smooth .fx-chat-window.fx-chat-minimized .fx-chat-titlebar { border-bottom-color: transparent; }
+.fx-smooth .fx-chat-dot[data-status="connected"] { box-shadow: 0 0 0.4em rgba(60, 255, 60, 0.7); }
+.fx-smooth :is(.fx-chat-titlebar, .fx-chat-notice, #fxChatStatus) button { border-color: rgba(255, 255, 255, 0.3); border-radius: 0.25em; }
+.fx-smooth :is(.fx-chat-titlebar, .fx-chat-notice, #fxChatStatus) button:hover { background-color: rgba(255, 255, 255, 0.15); border-radius: 0.25em; }
+.fx-smooth .fx-chat-resize { background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 60%, transparent 60%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3) 85%, transparent 85%); }
+.fx-smooth #fxChatStatus { font-family: system-ui, sans-serif; }
 @supports not selector(::-webkit-scrollbar) { .fx-smooth * { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.3) transparent; } }
 @media (prefers-reduced-motion: reduce) { .fx-smooth * { animation: none !important; transition: none !important; } }
