@@ -1,5 +1,6 @@
 import { getSettings } from "./settings.js";
 import { describeGame, matchesFilters } from "./lobbyFilters.js";
+import chatMode from "./chatMode.js";
 
 
 const SOUND_REPEATS = 3;
@@ -27,7 +28,8 @@ function setPopupHandler(handler) {
 }
 
 function check() {
-    if (rooms === null) return;
+    // the chat-only client (in-game chat) is in Lobby 2 while the player is in a game
+    if (rooms === null || chatMode.isActive()) return;
     const rules = getSettings().lobbyReminderRules || [];
     if (rules.length === 0) return;
     const presentIds = new Set();
