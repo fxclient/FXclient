@@ -21,6 +21,8 @@ import nameFilter from './nameFilter.js';
 import followedAccounts from './followedAccounts.js';
 import passwordReset from './passwordReset.js';
 import savedAccounts from './savedAccounts.js';
+import chatMode from './chatMode.js';
+import ingameChat from './ingameChat.js';
 
 window.__fx = window.__fx || {};
 const __fx = window.__fx;
@@ -55,5 +57,7 @@ __fx.nameFilter = nameFilter;
 __fx.followedAccounts = followedAccounts;
 __fx.passwordReset = passwordReset;
 __fx.savedAccounts = savedAccounts;
+__fx.chatMode = chatMode;
+__fx.ingameChat = ingameChat;
 
 console.log('Successfully loaded FX Client');
