@@ -7,10 +7,25 @@ export default definePatch(({ matchCode, modifyCode }) => {
         if (source.storageKey !== -1) { storage.setter.set(source.storageKey, input.value) }
     });`);
 
+    const accountMetadata = insert(`
+        __fx.passwordReset.getCustomPassword(data.uu, passwordInput.element.value);
+    `);
+
     const customPasswordField = insert(`
         var customPasswordInput = new TextInput({ value: "", storageKey: -1 });
         customPasswordInput.element.placeholder = "Custom new password (optional)";
         section.add(customPasswordInput);
+    `);
+
+    const generatePassword = insert(`
+        section.add(new ButtonRow([
+            new Button("Generate random password", function() {
+                __fx.passwordReset.generatePassword(function(generatedPassword) {
+                    customPasswordInput.element.value = generatedPassword;
+                });
+                return true;
+            }).button
+        ]));
     `);
 
     const saveCustomPassword = insert(`
@@ -21,6 +36,7 @@ export default definePatch(({ matchCode, modifyCode }) => {
         passwordInput.element.readOnly = true;
         passwordInput.element.type = "password";
         section.add(passwordInput);
+        ${accountMetadata}
 
         section.add(new ButtonRow([
             new Button(__L(), function(clickedButton) {
@@ -42,6 +58,7 @@ export default definePatch(({ matchCode, modifyCode }) => {
         ]));
 
         ${customPasswordField}
+        ${generatePassword}
 
         section.add(new ButtonRow([
             new Button(__L(), function() {
