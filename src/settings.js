@@ -38,6 +38,7 @@ var settings = {
   smoothUI: true,
   detailedTeamPercentage: false,
   openDonationHistoryFromLb: true,
+  ingameChat: true,
   //"customMapFileBtn": true
   customBackgroundUrl: "",
   keybindButtons: false,
@@ -484,6 +485,12 @@ const settingsManager = new (function () {
     },
     //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
     SectionHeader("In-game display"),
+    {
+      for: "ingameChat",
+      type: "checkbox",
+      label: "Lobby 2 chat during games",
+      note: "Shows the Lobby 2 chat in a window you can move and resize. It opens at the start of every game and closes when you leave it.",
+    },
     {
       for: "displayWinCounter",
       type: "checkbox",
