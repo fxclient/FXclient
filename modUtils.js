@@ -237,11 +237,12 @@ export function tryParseGameVersion(modUtils) {
         var minorVersion = __minor;
         var patchVersion = __patch;
         this.replayVersion = __number;
+        this.buildDate = __date;
         this.e = 0;
         this.f = function() {var g = ""; /*...*/}
       }`,
       {
-        dictionary: { __number: "\\d+" },
+        dictionary: { __number: "\\d+", __date: '"[^"]*"' },
         matchAsRegEx: Object.fromEntries(["__major", "__minor", "__patch", "__proto"].map(k => [k, "\\d+"]))
       }
     )
