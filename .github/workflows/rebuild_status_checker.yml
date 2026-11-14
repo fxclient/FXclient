@@ -5,10 +5,13 @@ on:
       - main
     paths:
       - 'modUtils.js'
+  workflow_dispatch:
 
 jobs:
   trigger-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Call status checker Cloudflare deploy hook
-        run: curl -X POST "${{ secrets.STATUS_CHECKER_DEPLOY_HOOK }}"
+        env:
+          HOOK_URL: ${{ secrets.STATUS_CHECKER_DEPLOY_HOOK }}
+        run: curl -fsS -X POST "$HOOK_URL"
