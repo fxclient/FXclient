@@ -1,0 +1,14 @@
+name: Rebuild status checker on version parsing changes
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'modUtils.js'
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call status checker Cloudflare deploy hook
+        run: curl -X POST "${{ secrets.STATUS_CHECKER_DEPLOY_HOOK }}"
