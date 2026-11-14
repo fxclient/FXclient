@@ -69,13 +69,9 @@ export default definePatch(({ safeDictionary: dict, insertCode, modifyCode, matc
     modifyCode(`
         ${insert(`__fx.replay.restartReplay = () => this.watchReplay();`)}
         this.watchReplay = function() {
-            var wasInGame = game.gameState !== 0;
-            var returnPage = game.returnPageState;
-            if (!wasInGame) {
-                menuSystem.exitToMenu();
-            }
-            /*...*/
-        };`)
+            var mapKey = maps.getKey(game.data);
+            if (game.data.mapType !== 2 && !maps.cache.has(mapKey)) { /*...*/ }
+         };`)
 
     insertCode(`
         this.dh = function() {
