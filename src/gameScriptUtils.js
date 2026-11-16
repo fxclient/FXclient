@@ -122,9 +122,9 @@ function getSameClanHighlightColor(player, ownPlayer, nameField) {
 
 const softLineColor = "rgba(255, 255, 255, 0.3)";
 const lineColor = color => getSettings().smoothUI ? softLineColor : color;
-function smoothFrame(ctx, width, height, lineWidth = 1, x = 0, y = 0) {
+function smoothFrame(ctx, width, height, lineWidth = 1, x = 0, y = 0, cornerRadius = getUIGap() / 2) {
     if (!getSettings().smoothUI || !ctx.roundRect) return false;
-    const radius = Math.min(getUIGap() / 2, width / 2, height / 2), inset = lineWidth / 2;
+    const radius = Math.min(cornerRadius, width / 2, height / 2), inset = lineWidth / 2;
     ctx.save();
     ctx.beginPath(), ctx.rect(x, y, width, height), ctx.clip();
     ctx.globalCompositeOperation = "destination-in", ctx.fillStyle = "#000";

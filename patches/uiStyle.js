@@ -39,7 +39,7 @@ export default definePatch(({ modifyCode, replaceCode }) => {
         ctx.fillRect(0, 0, size, 1); ctx.fillRect(0, 0, 1, size); ctx.fillRect(0, size - 1, size, 1); ctx.fillRect(size - 1, 0, 1, size);
         ${insert(`}`)}`);
     modifyCode(`ctx.fillStyle = colors.white;
-        ${insert(`if (!__fx.utils.smoothFrame(ctx, width, this.height)) {`)}
+        ${insert(`if (!__fx.utils.smoothFrame(ctx, width, this.height, 1, 0, 0, this.height / 12)) {`)}
         ctx.fillRect(0, 0, width, 1); ctx.fillRect(0, 0, 1, this.height); ctx.fillRect(0, this.height - 1, width, 1); ctx.fillRect(width - 1, 0, 1, this.height);
         ${insert(`}`)}`);
     modifyCode(`ctx.fillStyle = colors.white;

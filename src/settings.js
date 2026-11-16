@@ -510,7 +510,7 @@ const settingsManager = new (function () {
       for: "applyRecommendedTerritorialSettings",
       type: "checkbox",
       label: "Recommended territorial settings",
-      note: "Sets Resolution to Very High, Minimum Font Size to Very Small, Text Rendering Speed to Fast, Place Balance Above to On, and Large UI off. Turn this off to keep your own territorial settings.",
+      note: "Sets Resolution to Very High, Minimum Font Size to Very Small, Text Rendering Speed to Fast, and Place Balance Above to On. Turn this off to keep your own territorial settings.",
     },
     {
       for: "highlightClanSpawns",
