@@ -2389,8 +2389,7 @@ function z4(z5, z6, z7, z8) {
 
 function dT() {
 	this.te = new zG, this.buffer = new zH, this.rv = new zI, this.z = new zJ, this.zK = new zL, this.dv = function() {
-		this.buffer.dv(), (new zM).dv(), this.zK.dv(), this.z.zN(), __fx.settings.applyRecommendedTerritorialSettings && (bm.buffer.data[1].value = 3, bm.buffer.data[9].value = 2, bm.buffer.data[11].value = 2, bm.buffer.data[7].value = 1, bm
-			.buffer.data[2].value = bm.buffer.data[2].xP = 0)
+		this.buffer.dv(), (new zM).dv(), this.zK.dv(), this.z.zN(), __fx.settings.applyRecommendedTerritorialSettings && (bm.buffer.data[1].value = 3, bm.buffer.data[9].value = 2, bm.buffer.data[11].value = 2, bm.buffer.data[7].value = 1)
 	}
 }
 
@@ -3470,7 +3469,7 @@ function dF() {
 	}
 
 	function a5X(e) {
-		if (__fx.keybindHandler(e.key)) return;
+		if (!(0 < i.vE) && __fx.keybindHandler(e.key)) return;
 		a5a() || 0 < i.vE || (e = e.code) && e.length && (ba.eu(e, 18) ? at.a5r(3) : ba.eu(e, 22) ? at.a5r(0) : ba.eu(e, 20) ? at.a5r(1) : ba.eu(e, 24) ? at.a5r(2) : ba.eu(e, 10) ? aS.a5s(31 / 32) : ba.eu(e, 8) ? aS.a5s(32 / 31) : ba.eu(e, 6) ? aS
 			.a5s(7 / 8) : ba.eu(e, 4) ? aS.a5s(8 / 7) : ba.eu(e, 14) ? 0 !== aE.a3m && aT.a5O(Math.floor(i.j / 2), Math.floor(i.k / 2), -200) : ba.eu(e, 16) ? 0 !== aE.a3m && aT.a5O(Math.floor(i.j / 2), Math.floor(i.k / 2), 200) : ba.eu(e, 0) ?
 			aE.a3m && bW.hs(0) : ba.eu(e, 2) ? aE.a3m && bW.hs(1) : ba.eu(e, 30) ? aE.a3m && bW.hs(2) : ba.eu(e, 26) ? aE.a3m && bW.iR() : ba.eu(e, 28) && aE.a3m && bW.iW())
@@ -3704,7 +3703,8 @@ function a61() {
 			return eu.width = j, eu.height = k, eu
 		}, this.getContext = function(canvas, alpha) {
 			return canvas.getContext("2d", {
-				alpha: alpha
+				alpha: alpha,
+				willReadFrequently: !0
 			})
 		}, this.getImageData = function(p6, j, k) {
 			return p6.getImageData(0, 0, j, k)
@@ -4030,7 +4030,7 @@ function cA() {
 				.dv(), aQ.dv(), aM.dv(), aY.dv(), aG.dv(), aH.dv(), gn(), ae.dv(), ag.dv(), b5.dv(), b6.dv(), b2.dv(), b8.dv(), b9.dv(), this.a46.dv(), bi.a8b(), aI.o2(), 0 === ah.ni[aE.fU] && aY.show(!1, !0), ag.nU(!0), aw.dv(), bi.e2 = !0, this
 				.ht || this.lQ && this.i9 || a1.a2.setState(1), this.a8S = 0
 		}, this.a5C = function(ej) {
-			bC.sk.a8g.length ? this.a8T = bC.sk.a8g : this.a8T = bC.a8h.a3G(), __fx.replayHistory.save(this.a8T), !1 === __fx.customLobby.isActive() && b1.z.a8i(), bu.clear(), this.a3m = 0, bi.a8j(), a1.a2.setState(0), ab.setState(0), __fx
+			bC.sk.a8g.length ? this.a8T = bC.sk.a8g : this.a8T = bC.a8h.a3G(), this.ht || __fx.replayHistory.save(this.a8T), !1 === __fx.customLobby.isActive() && b1.z.a8i(), bu.clear(), this.a3m = 0, bi.a8j(), a1.a2.setState(0), ab.setState(0), __fx
 				.customLobby.isActive() || bX.eb.show(ej), __fx.customLobby.isActive() ? __fx.customLobby.rejoinLobby() : 2 === this.a8S ? u.z.a8k(0) : 1 === this.a8S ? u.v(19) : u.v(5, 5)
 		}, this.a8l = function() {
 			return this.ht ? aN.hv || !bF.a8m : this.lQ && (aN.hv || this.i9)
@@ -4413,7 +4413,7 @@ function cN() {
 	}, this.a57 = function(s) {
 		aA4(200, L(69, [s]), 94, 0, bE.qP, bE.r3, -1, !1)
 	}, this.a4C = function(aAU) {
-		if (aE.fU === aAU && !aE.lQ && !aE.ht)
+		if (aE.fU === aAU && !aE.lQ && !aE.ht && !aE.hu)
 			__fx.wins.count++, window.localStorage.setItem("fx_winCount", __fx.wins.count),
 			aA4(0, "Your Win Count is now " + __fx.wins.count, 3, aAU, bE.qP, bE.qM, -1, !0);
 		ah.hY[aAU] && (aR.et(aAU, 2), aE.l6 < 100 ? aA4(0, L(63, [ah.a2G[aAU]]), 3, aAU, bE.qP, bE.qM, -1, !0) : aA4(0, L(70, [ah.a2G[aAU]]), 3, aAU, bE.qP, bE.qM, -1, !0))
@@ -5174,8 +5174,8 @@ function cU() {
 			aE9 = Math.floor(this.k / 12),
 			aE5 = .5 * (j + aE5) + aE9;
 		(aE5 + vd + aDu <= j || 1e3 <= aE6 && (aE8 = "+" + Math.floor(aE6 / 1e3) + "K", aE5 + (vd = p6.measureText(aE8).width) + aDu <= j)) && p6.fillText(aE8, Math.floor(aE5 + .5 * vd), Math.floor(.3 * this.k)), __fx.settings
-			.displayTickNumber && p6.fillText(9 - eu, Math.floor(2 * aDu + aE9), Math.floor(.3 * this.k)), p6.fillStyle = bE.qP, __fx.utils.smoothFrame(p6, j, this.k) || (p6.fillRect(0, 0, j, 1), p6.fillRect(0, 0, 1, this.k), p6.fillRect(0, this
-				.k - 1, j, 1), p6.fillRect(j - 1, 0, 1, this.k))
+			.displayTickNumber && p6.fillText(9 - eu, Math.floor(2 * aDu + aE9), Math.floor(.3 * this.k)), p6.fillStyle = bE.qP, __fx.utils.smoothFrame(p6, j, this.k, 1, 0, 0, this.k / 12) || (p6.fillRect(0, 0, j, 1), p6.fillRect(0, 0, 1, this
+				.k), p6.fillRect(0, this.k - 1, j, 1), p6.fillRect(j - 1, 0, 1, this.k))
 	}, this.aE3 = function() {
 		var eu = bi.l3() % 100,
 			a0u = (eu = 9 - bO.gB(eu -= eu % 10, 10), Math.floor(eu * (this.k - aDu) / 9));
@@ -7380,8 +7380,10 @@ function d6() {
 			aNg = (max = a1.id || bM.tr() ? Math.min(1400, aNg) : max) / Math.max(j, k);
 		if (aNg < 1 && (j = Math.floor(aNg * j + .125), k = Math.floor(aNg * k + .125)), max < j || max < k || j < 10 || k < 10) aNg = "Invalid Image Dimensions!", a1.ze ? a1.ze.showToast(aNg) : alert(aNg);
 		else {
-			for (var max = document.createElement("canvas"), aNg = (max.width = j, max.height = k, max.getContext("2d")), aNj = document.createElement("canvas"), aNk = (aNj.width = e.width, aNj.height = e.height, aNj.getContext("2d")), e = (aNk
-					.drawImage(e, 0, 0), aNk.getImageData(0, 0, aNj.width, aNj.height)), aNk = aNg.createImageData(j, k), src = e.data, aNn = aNk.data, aD8 = aNj.width / j, aD9 = aNj.height / k, ft = 0; ft < k; ft++)
+			for (var max = document.createElement("canvas"), aNg = (max.width = j, max.height = k, max.getContext("2d", {
+						willReadFrequently: !0
+					})), aNj = document.createElement("canvas"), aNk = (aNj.width = e.width, aNj.height = e.height, aNj.getContext("2d")), e = (aNk.drawImage(e, 0, 0), aNk.getImageData(0, 0, aNj.width, aNj.height)), aNk = aNg.createImageData(j, k),
+					src = e.data, aNn = aNk.data, aD8 = aNj.width / j, aD9 = aNj.height / k, ft = 0; ft < k; ft++)
 				for (var fr = 0; fr < j; fr++) {
 					var aNo = Math.floor(fr * aD8),
 						aNo = 4 * (Math.floor(ft * aD9) * aNj.width + aNo),
@@ -7747,10 +7749,14 @@ function ck() {
 		aEc = 112,
 		aPa = 0;
 
-	function tR() {
-		aPE = Math.floor(+i.iy), aPF = Math.floor(.5 * aPE), aPO.width = i.j, aPO.height = i.k, aPP = aPO.getContext("2d", {
+	function aPe() {
+		aPO.width = i.j, aPO.height = i.k, aPP = aPO.getContext("2d", {
 			alpha: !0
-		}), bD.tO.textAlign(aPP, 1), bD.tO.textBaseline(aPP, 1), aPP.imageSmoothingEnabled = !0
+		}), bD.tO.textAlign(aPP, 1), bD.tO.textBaseline(aPP, 1), aPP.imageSmoothingEnabled = !0, aPO.oncontextrestored = aPe
+	}
+
+	function tR() {
+		aPE = Math.floor(+i.iy), aPF = Math.floor(.5 * aPE), aPe()
 	}
 
 	function aPb() {
@@ -8402,7 +8408,8 @@ function cp() {
 		var aS0, aC, g3, gT, im = function() {
 				var im;
 				return bV.a1r = document.createElement("canvas"), bV.a1r.width = bV.fv, bV.a1r.height = bV.fw, bV.aBL = bV.a1r.getContext("2d", {
-					alpha: !1
+					alpha: !1,
+					willReadFrequently: !0
 				}), im = bV.aBL.getImageData(0, 0, bV.fv, bV.fw), bV.aQv = im.data, im
 			}(),
 			j = aRr[bV.fQ].j,
@@ -8759,7 +8766,8 @@ function a8Z() {
 function aR0() {
 	function aSx(aAn, q5) {
 		for (var canvas = document.createElement("canvas"), p6 = (canvas.width = q5.j, canvas.height = q5.k, canvas.getContext("2d", {
-				alpha: !1
+				alpha: !1,
+				willReadFrequently: !0
 			})), im = p6.getImageData(0, 0, q5.j, q5.k), a2I = im.data, src = q5.a2I, fk = src.length, q5 = aAn.aRT, aAn = aAn.aRU, aSz = q5[0], aT0 = q5[1], aT1 = q5[2], aT2 = aAn[0], aT3 = aAn[1], aT4 = aAn[2], aC = 0; aC < fk; aC++) {
 			var ie = aC << 2;
 			src[aC] ? (a2I[ie] = aSz, a2I[1 + ie] = aT0, a2I[2 + ie] = aT1) : (a2I[ie] = aT2, a2I[1 + ie] = aT3, a2I[2 + ie] = aT4), a2I[3 + ie] = 255
@@ -10314,8 +10322,10 @@ function aUj() {
 		for (var aC = 0; aC < aYY.length; aC++) aYY[aC].button.style.font = bD.tO.ux(0, bD.tO.yO(.065 * aXY.k)), bD.tO.tX(aYY[aC].button, 5);
 		uA.e.style.font = bD.tO.ux(0, bD.tO.yO(.08 * aXY.k)), bD.tO.tX(uA.e, 5)
 	}, this.yv = function() {
-		if (ab.aLm(), aU.yv(), fk = Math.floor((a1.a2.ix() ? .018 : .0137) * i.iy), yw.font = bD.tO.ux(0, Math.max(5, fk)), bD.tO.textBaseline(yw, 0), bD.tO.textAlign(yw, 2), yw.fillStyle = bE.qP, yw.fillText(m.eC, i.j, 0), text = "Win count: " +
-			__fx.wins.count, textLength = yw.measureText(text).width, fk = Math.max(5, fk), yw.textAlign = "left", yw.textBaseline = "middle", yw.fillText(text, yw.canvas.width - textLength - fk / 2, 2 * fk), aP.yv(uq), bb.yv(), ac.vx()) {
+		ab.aLm(), aU.yv();
+		var fk = Math.floor((a1.a2.ix() ? .018 : .0137) * i.iy);
+		if (yw.font = bD.tO.ux(0, Math.max(5, fk)), bD.tO.textBaseline(yw, 0), bD.tO.textAlign(yw, 2), yw.fillStyle = bE.qP, yw.fillText(m.eC, i.j, 0), __fx.settings.displayWinCounter && (text = "Win count: " + __fx.wins.count, textLength = yw
+				.measureText(text).width, fk = Math.max(5, fk), yw.textAlign = "left", yw.textBaseline = "middle", yw.fillText(text, yw.canvas.width - textLength - fk / 2, 2 * fk)), aP.yv(uq), bb.yv(), ac.vx()) {
 			yw.imageSmoothingEnabled = !1;
 			var text = ac.x7("territorial.io"),
 				textLength = .84 * aXY.j / text.width;
@@ -11104,8 +11114,9 @@ function aUi() {
 
 	function aZg() {
 		u.y();
-		var pY = bC.aZk(z9.zC());
-		(aE.a3m && 0 < pY.length && pY === bC.sk.a8g || bC.aOc.a0c(pY)) && bC.aZl()
+		var playedGame = aE.a3m && !aE.ht ? bC.a8h.a3G() : "",
+			pY = bC.aZk(z9.zC());
+		(aE.a3m && 0 < pY.length && pY === bC.sk.a8g || bC.aOc.a0c(pY)) && (__fx.replayHistory.save(playedGame), bC.aZl())
 	}
 	this.show = function(aZh) {
 		this.aZi(aZh), aWX.show(), this.resize()
@@ -12413,7 +12424,9 @@ function acv() {
 			}()) && (bK.eT < 8 * bK.size - 13 || bK.eT > 8 * bK.size ? (adB("Out Of Bounds Error: " + bK.eT + " " + 8 * bK.size), !1) : (bC.sk.a8g = pY, 2 !== aE.data.mapType || (adB("Load base64 image...", 2), ad8)))
 	}, this.aOd = function(aNf, adC) {
 		var a6f = document.createElement("canvas"),
-			iq = a6f.getContext("2d");
+			iq = a6f.getContext("2d", {
+				willReadFrequently: !0
+			});
 		if (a6f.width = aNf.width, a6f.height = aNf.height, iq.drawImage(aNf, 0, 0), aE.data.canvas = a6f, ad7 || adC) return aE.a3m ? void 0 : (aE.data.mapType = 2, u.y(), void u.v(19));
 		bC.aZl()
 	}
@@ -12487,7 +12500,9 @@ function cy() {
 	}, this.dv = function() {
 		eu = 1, a5K = document.getElementById("canvasA"), 2 === a1.id && (a5K.style.webkitUserSelect = "none"), (yw = a5K.getContext("2d", {
 			alpha: !!__fx.makeMainMenuTransparent
-		})).imageSmoothingEnabled = !1, adh(0)
+		})).imageSmoothingEnabled = !1, adh(0), a5K.addEventListener("contextrestored", function() {
+			c3 = !0, resize(0)
+		})
 	}, this.ep = function() {
 		50 <= ++eu && resize(0), -1 === ade || bi.ek < ade || (ade = -1, 2e3 * ++adf >= bi.ek + 8e3 ? console.log("error 3748") : a1.a2.setState(15))
 	}, this.e5 = function(kL) {
@@ -12609,7 +12624,8 @@ function cv() {
 		else {
 			for (aeA = bO.gB(96, 4), aeD = 1 === bV.fQ ? (aXm = 0, 160) : (aXm = 128, 32), aeC = "rgb(" + aXm + "," + aXm + "," + aXm + ")", aeB = new Array(4), aC = 3; 0 <= aC; aC--) {
 				if (aeB[aC] = document.createElement("canvas"), j = aC % 2 == 0 ? bV.fv : aeA, k = aC % 2 == 0 ? aeA : bV.fw + 2 * aeA, aeB[aC].width = j, aeB[aC].height = k, a2I = (im = (p6 = aeB[aC].getContext("2d", {
-						alpha: !1
+						alpha: !1,
+						willReadFrequently: !0
 					})).getImageData(0, 0, j, k)).data, aC % 2 == 0)
 					for (ft = aeA - 1; 0 <= ft; ft--)
 						for (gC = aeD + Math.floor((ft + 1) * (aXm - aeD) / (aeA + 1)), fr = j - 1; 0 <= fr; fr--) a2I[hI = 4 * ((0 === aC ? aeA - ft - 1 : ft) * j + fr)] = gC, a2I[hI + 1] = gC, a2I[hI + 2] = gC, a2I[hI + 3] = 255;
