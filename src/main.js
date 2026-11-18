@@ -1,5 +1,4 @@
-import versionData from '../version.json';
-const { version, lastUpdated, isSignificant } = versionData;
+import { version, lastUpdated, isSignificant } from '../version.js';
 
 import settingsManager from './settings.js';
 import { clanFilter, leaderboardFilter } from "./clanFilters.js";

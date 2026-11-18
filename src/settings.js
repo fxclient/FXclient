@@ -1,7 +1,7 @@
 import { KeybindsInput } from "./keybindsInput.js";
 import winCounter from "./winCounter.js";
 import WindowManager from "./windowManager.js";
-import versionData from '../version.json';
+import { version } from '../version.js';
 import { displayChangelog } from './changelog.js';
 import replayHistory from './replayHistory.js'
 import { LobbyReminderRulesInput } from './lobbyReminderRulesInput.js';
@@ -603,7 +603,7 @@ const settingsManager = new (function () {
     SectionHeader("About"),
     function Footer(container) {
       const versionInfo = document.createElement("p");
-      versionInfo.innerText = `FX Client v${versionData.version}`;
+      versionInfo.innerText = `FX Client v${version}`;
       const links = document.createElement("p");
       links.innerHTML = `<a href="https://discord.gg/dyxcwdNKwK" target="_blank">Discord server</a> |
         <a href="https://github.com/fxclient/FXclient#readme">Github repository</a>`;
