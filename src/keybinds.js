@@ -7,7 +7,10 @@ export const keybindFunctions = {
     repaintAttackPercentageBar: () => {}
 };
 export const keybindHandler = key => {
-    const keybindData = getSettings().attackPercentageKeybinds.find(keybind => keybind.key === key);
+    const keybinds = getSettings().attackPercentageKeybinds;
+    const lowerCaseKey = typeof key === "string" ? key.toLowerCase() : key;
+    const keybindData = keybinds.find(keybind => keybind.key === key)
+        ?? keybinds.find(keybind => typeof keybind.key === "string" && keybind.key.toLowerCase() === lowerCaseKey);
     if (keybindData === undefined) return false;
     if (getVar("gameState") !== 0) executeKeybind(keybindData);
     return true;

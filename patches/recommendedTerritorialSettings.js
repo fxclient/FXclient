@@ -12,7 +12,6 @@ if(__fx.settings.applyRecommendedTerritorialSettings){
   bm.buffer.data[9].value=2;
   bm.buffer.data[11].value=2;
   bm.buffer.data[7].value=1;
-  bm.buffer.data[2].value=bm.buffer.data[2].xP=0;
 }`;
   replaceCode(anchor, anchor + apply, { dictionary: { bm } });
 });

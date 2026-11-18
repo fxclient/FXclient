@@ -5,6 +5,9 @@ import { styleText } from 'node:util';
 // https://stackoverflow.com/a/63838890
 const escapeRegExp = (/** @type {string} */ string) => string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
 
+const wrapNames = (/** @type {string} */ string) => string.replace(/\w+/g, "ᐅ$&ᐊ");
+const unwrapNames = (/** @type {string} */ string) => string.replace(/ᐅ(\w+)ᐊ/g, "$1");
+
 export function minifyCode(/** @type {string} */ script) {
     // "return" statements outside of a function throw a parse error
     script = "()=>{" + script + "}";
@@ -16,7 +19,7 @@ export function minifyCode(/** @type {string} */ script) {
     if (output.error) throw output.error;
     if (output.warnings) throw (output.warnings);
     if (output.warnings) console.warn(output.warnings);
-    let code = output.code;
+    let code = output.code.replace(/([{,])"(ᐅ\w+ᐊ)"(?=[:(])/g, "$1$2");
     if (code.endsWith(";")) code = code.slice(0, -1);
     code = code.slice(5, -1); // unwrap from function
     // to allow finding a function without having to include all of its code:
@@ -31,7 +34,7 @@ class ModUtils {
     safeDictionary = new Proxy(this.dictionary, {
         get(target, prop) {
             if (typeof prop === 'symbol') prop = prop.toString();
-            if (prop in target) return target[prop];
+            if (prop in target) return typeof target[prop] === "string" ? wrapNames(target[prop]) : target[prop];
             throw new Error(`Property ${prop} is not defined in dictionary`);
         }
     });
@@ -62,6 +65,8 @@ class ModUtils {
         for (let [key, value] of Object.entries(result.groups)) this.addToDictionary(key, value);
     }
     replace(/** @type {Parameters<typeof String.prototype.replace>} */ ...args) {
+        if (typeof args[0] === "string") args[0] = unwrapNames(args[0]);
+        if (typeof args[1] === "string") args[1] = unwrapNames(args[1]);
         return this.script = this.script.replace(...args);
     };
     /** Expressions passed to this function must have the global flag set. */
@@ -72,6 +77,7 @@ class ModUtils {
         return result;
     };
     addToDictionary(/** @type {string} */ key, /** @type {string} */ value) {
+        value = unwrapNames(value);
         if (this.dictionary[key] !== undefined && this.dictionary[key] !== value)
             throw new Error("name different from existing one:\n  KEY: " + key + "\n  VALUE: " + value + "\n  Value in dictionary: " + this.dictionary[key]);
         this.dictionary[key] = value;
@@ -83,7 +89,7 @@ class ModUtils {
     replaceOne(expression, replaceValue) {
         const result = this.matchOne(expression);
         // this (below) works correctly because expression.lastIndex gets reset above in matchOne when there is no match
-        this.script = this.script.replace(expression, replaceValue);
+        this.script = this.script.replace(expression, typeof replaceValue === "string" ? unwrapNames(replaceValue) : replaceValue);
         return result;
     };
 
@@ -95,8 +101,9 @@ class ModUtils {
         const { expression, groups } = this.generateRegularExpression(raw, false, nameMappings);
         let localizerCount = 0;
         let replacementString = result.replaceAll("$", "$$").replaceAll("__L()", "__L)").replaceAll("__L(", "__L,")
-            .replace(/\w+/g, match => {
-                if (nameMappings !== undefined && nameMappings.hasOwnProperty(match)) return nameMappings[match];
+            .replace(/ᐅ(\w+)ᐊ|\w+/g, (match, name) => {
+                if (name !== undefined) return name;
+                if (nameMappings !== undefined && nameMappings.hasOwnProperty(match)) return unwrapNames(nameMappings[match]);
                 // these would get stored as "___localizer1", "___localizer2", ...
                 if (match === "__L") match = "___localizer" + (++localizerCount);
                 return groups.hasOwnProperty(match) ? "$" + groups[match] : match;
@@ -129,9 +136,10 @@ class ModUtils {
         let raw = escapeRegExp(code).replaceAll("__L\\(\\)", "___localizer\\)")
             // when there is a parameter, add a comma to separate it from the added number
             .replaceAll("__L\\(", "___localizer,");
-        raw = raw.replace(isForDictionary ? /(?:@@)*(@?)(\w+)/g : /()(\w+)/g, (_match, modifier, word) => {
+        raw = raw.replace(isForDictionary ? /ᐅ(\w+)ᐊ|(?:@@)*(@?)(\w+)/g : /ᐅ(\w+)ᐊ|()(\w+)/g, (_match, name, modifier, word) => {
+            if (name !== undefined) return name;
             // if a substitution string for the "word" is specified in the nameMappings, use it
-            if (nameMappings && nameMappings.hasOwnProperty(word)) return nameMappings[word];
+            if (nameMappings && nameMappings.hasOwnProperty(word)) return unwrapNames(nameMappings[word]);
             if (matchAsRegEx && matchAsRegEx.hasOwnProperty(word)) { // for matching something with limited regex syntax
                 groups[word] = groupNumberCounter++
                 return `(${matchAsRegEx[word]})` // wrap in group
@@ -166,7 +174,7 @@ class ModUtils {
                 this.addToDictionary(varName, result[varName]);
             });
         }
-        return result;
+        return Object.fromEntries(Object.entries(result).map(([key, value]) => [key, typeof value === "string" ? wrapNames(value) : value]));
     }
 
     replaceCode(/** @type {string} */ code, /** @type {string} */ replacement, /** @type {BaseOptions=} */ options) {
@@ -246,7 +254,7 @@ export function tryParseGameVersion(modUtils) {
         matchAsRegEx: Object.fromEntries(["__major", "__minor", "__patch", "__proto"].map(k => [k, "\\d+"]))
       }
     )
-    return { game: result.__major + "." + result.__minor + "." + result.__patch, protocol: result.__proto }
+    return { game: unwrapNames(result.__major + "." + result.__minor + "." + result.__patch), protocol: unwrapNames(result.__proto) }
   } catch (error) {
     console.warn(styleText("yellowBright", "Unable to parse version:"), error)
     return null

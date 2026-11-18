@@ -22,8 +22,7 @@ function persist(replays) {
 function save(replayData) {
   if (!replayData) return;
   const replays = load();
-  // avoid saving an exact duplicate if this fires twice for the same match
-  if (replays.length && replays[replays.length - 1].data === replayData) return;
+  if (replays.some((replay) => replay.data === replayData)) return;
   replays.push({ data: replayData, timestamp: Date.now() });
   while (replays.length > MAX_REPLAYS) replays.shift();
   persist(replays);

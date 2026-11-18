@@ -12,12 +12,14 @@ export default (/** @type {ModUtils} */ modUtils) => {
 		ctx.fillStyle = Colors.nl;
 		ctx.fillText(clientInfo.gameVersion, h___.w, 0);
         /* here */`,
-        `const text = "Win count: " + __fx.wins.count;
+        `if (__fx.settings.displayWinCounter) {
+        const text = "Win count: " + __fx.wins.count;
         const textLength = ctx.measureText(text).width;
         const size = Math.max(5, s);
         ctx.textAlign = "left";
         ctx.textBaseline = "middle";
-        ctx.fillText(text, ctx.canvas.width - textLength - size / 2, size * 2);`)
+        ctx.fillText(text, ctx.canvas.width - textLength - size / 2, size * 2);
+        }`)
 
     // Make the main canvas context have an alpha channel if a custom background is being used
     insertCode(`mainCanvasElement = document.getElementById("canvasA");
@@ -72,7 +74,7 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
     // Increment win counter on wins
     replaceRawCode(`=function(sE){a8.gD[sE]&&(o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0))`,
         `=function(sE){
-		if (${playerId} === sE && !${gIsSingleplayer} && !${dict.game}.${dict.gIsReplay})
+		if (${playerId} === sE && !${gIsSingleplayer} && !${dict.game}.${dict.gIsReplay} && !${dict.game}.${dict.gIsObserver})
 			__fx.wins.count++, window.localStorage.setItem("fx_winCount", __fx.wins.count),
 			xD(0,"Your Win Count is now " + __fx.wins.count,3,sE,ad.gN,ad.kl,-1,!0);
 		a8.gD[sE]&&(o.ha(sE,2),b.h9<100?xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0):xD(0,__L([a8.jx[sE]]),3,sE,ad.gN,ad.kl,-1,!0))`);
@@ -101,8 +103,8 @@ function applyPatches(/** @type {ModUtils} */ { replace, replaceOne, replaceRawC
             + "__fx.keybindFunctions.setAbsolute = this.setAbsolutePercentage; "
             + `__fx.keybindFunctions.setRelative = (arg1) => ${attackBarObject}.${setRelative}(arg1); $1`);
         // insert keybind handling code into the keyDown handler function
-        replaceOne(new RegExp(/(function \w+\((?<event>\w+)\){)([^}]+matched)/g.source.replace(/matched/g, escapeRegExp(match)), "g"),
-            "$1 if (__fx.keybindHandler($<event>.key)) return; $3");
+        replaceOne(new RegExp(/(function \w+\((?<event>\w+)\){)(\w+\(\)\|\|(?<typing>0<\w+\.\w+)\|\|[^}]+matched)/g.source.replace(/matched/g, escapeRegExp(match)), "g"),
+            "$1 if (!($<typing>) && __fx.keybindHandler($<event>.key)) return; $3");
     }
 
     // Custom starting attack percentage

@@ -78,7 +78,7 @@ async function patchGameCode() {
 			str = __L(/* Player: {0} */ [b0.context.truncateAndFillText(playerData.rawPlayerNames[player], b0.qZ.sN(0, 10), 150)]) + "   ";
 			str += __L(/* Strength: {10} */ [b0.rY.formatNumber(playerData.playerBalances[player])]) + "   ";
 			str += __L(/* Territory: {10} */ [b0.rY.formatNumber(playerData.playerTerritories[player])]) + "   ";
-		`, addToDictionary: ["game", "gIsReplay", "playerData", "rawPlayerNames", "playerBalances", "playerTerritories"]
+		`, addToDictionary: ["game", "gIsReplay", "gIsObserver", "playerData", "rawPlayerNames", "playerBalances", "playerTerritories"]
 	}, {
 		code: `this.a = Math.floor(0.066 * b.c);
 			d = b.d - 4 * uiSizes.gap - this.a;`,
@@ -173,6 +173,7 @@ async function patchGameCode() {
 		"indent_empty_lines": false
 	});
 
+	if (/[ᐅᐊ]/.test(script)) throw new Error("Name markers were left in game.js");
 	fs.writeFileSync("./build/game.js", script);
 	console.log("Wrote ./build/game.js");
 }
