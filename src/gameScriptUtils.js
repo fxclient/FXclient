@@ -124,13 +124,29 @@ const softLineColor = "rgba(255, 255, 255, 0.3)";
 const lineColor = color => getSettings().smoothUI ? softLineColor : color;
 function smoothFrame(ctx, width, height, lineWidth = 1, x = 0, y = 0, cornerRadius = getUIGap() / 2) {
     if (!getSettings().smoothUI || !ctx.roundRect) return false;
-    const radius = Math.min(cornerRadius, width / 2, height / 2), inset = lineWidth / 2;
+    const radius = Math.max(0, Math.min(cornerRadius, width / 2, height / 2)), inset = lineWidth / 2;
     ctx.save();
     ctx.beginPath(), ctx.rect(x, y, width, height), ctx.clip();
     ctx.globalCompositeOperation = "destination-in", ctx.fillStyle = "#000";
     ctx.beginPath(), ctx.roundRect(x, y, width, height, radius), ctx.fill();
     ctx.globalCompositeOperation = "source-over", ctx.strokeStyle = softLineColor, ctx.lineWidth = lineWidth;
-    if (lineWidth) ctx.beginPath(), ctx.roundRect(x + inset, y + inset, width - lineWidth, height - lineWidth, radius - inset), ctx.stroke();
+    if (lineWidth) ctx.beginPath(), ctx.roundRect(x + inset, y + inset, width - lineWidth, height - lineWidth, Math.max(0, radius - inset)), ctx.stroke();
+    ctx.restore();
+    return true;
+}
+
+function clipRounded(ctx, x, y, width, height, cornerRadius = getUIGap() / 2) {
+    if (!getSettings().smoothUI || !ctx.roundRect) return false;
+    ctx.save();
+    ctx.beginPath(), ctx.roundRect(x, y, width, height, Math.max(0, Math.min(cornerRadius, width / 2, height / 2))), ctx.clip();
+    return true;
+}
+function strokeRounded(ctx, x, y, width, height, lineWidth = 1, cornerRadius = getUIGap() / 2) {
+    if (!getSettings().smoothUI || !ctx.roundRect) return false;
+    const radius = Math.max(0, Math.min(cornerRadius, width / 2, height / 2)), inset = lineWidth / 2;
+    ctx.save();
+    ctx.strokeStyle = softLineColor, ctx.lineWidth = lineWidth;
+    ctx.beginPath(), ctx.roundRect(x + inset, y + inset, width - lineWidth, height - lineWidth, Math.max(0, radius - inset)), ctx.stroke();
     ctx.restore();
     return true;
 }
@@ -140,4 +156,4 @@ function parseAccountId(value) {
     return match ? match[0] : null;
 }
 
-export default { getMaxTroops, getDensity, getEstimatedEliminationAttack, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId, lineColor, smoothFrame }
+export default { getMaxTroops, getDensity, getEstimatedEliminationAttack, isPointInRectangle, fillTextMultiline, textStyleBasedOnDensity, getDuplicateIpHighlightColor, getSameClanHighlightColor, escapeHtml, parseAccountId, lineColor, smoothFrame, clipRounded, strokeRounded }

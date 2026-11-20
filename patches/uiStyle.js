@@ -70,6 +70,185 @@ export default definePatch(({ modifyCode, replaceCode }) => {
         /*...*/
     }`);
 
+    // In-game exit menu 
+    modifyCode(`function drawQuitRow() {
+        var crossSize;
+        var width = Math.floor(5.5 * size);
+        ctx.setTransform(1, 0, 0, 1, sizes.gap, layout.y);
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, 0, 0, width, size);`)}
+        ctx.fillStyle = colors.background;
+        ctx.fillRect(0, 0, width, size);
+        if (hovered === 0) { ctx.fillStyle = colors.hover; ctx.fillRect(0, 0, 4 * size, size) }
+        else if (hovered === 1) { ctx.fillStyle = colors.hover; ctx.fillRect(4 * size, 0, Math.floor(1.5 * size), size) }
+        ${insert(`if (fxSmooth) ctx.restore(), __fx.utils.strokeRounded(ctx, 0, 0, width, size), ctx.fillStyle = __fx.utils.lineColor(colors.white), ctx.fillRect(4 * size, 0, 1, size);`)}
+        ctx.fillStyle = colors.white;
+        ${insert(`if (!fxSmooth) {`)}
+        ctx.fillRect(0, 0, width, 1); ctx.fillRect(0, 0, 1, size); ctx.fillRect(4 * size, 0, 1, size); ctx.fillRect(0, size - 1, width, 1); ctx.fillRect(width - 1, 0, 1, size);
+        ${insert(`}`)}
+        /*...*/
+    }`);
+    modifyCode(`function drawMenuRow(row) {
+        ctx.setTransform(1, 0, 0, 1, sizes.gap, layout.y - row * spacing * sizes.gap - row * size);
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, 0, 0, 4 * size, size);`)}
+        ctx.fillStyle = colors.background;
+        ctx.fillRect(0, 0, 4 * size, size);
+        if (hovered === row + 1) { ctx.fillStyle = colors.hover; ctx.fillRect(0, 0, 4 * size, size) }
+        ${insert(`if (fxSmooth) ctx.restore(), __fx.utils.strokeRounded(ctx, 0, 0, 4 * size, size);`)}
+        ctx.fillStyle = colors.white;
+        ${insert(`if (!fxSmooth) {`)}
+        ctx.fillRect(0, 0, 4 * size, 1); ctx.fillRect(0, 0, 1, size); ctx.fillRect(4 * size, 0, 1, size); ctx.fillRect(0, size - 1, 4 * size, 1);
+        ${insert(`}`)}
+        /*...*/
+    }`);
+
+    // in game stats page
+    modifyCode(`this.drawStats = function() {
+        var x = util.half(canvas.width - this.width, 2);
+        var y = util.half(canvas.height - this.height, 2);
+        ctx.setTransform(1, 0, 0, 1, x, y);
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, 0, 0, this.width, this.height, 0.15 * this.headerHeight);`)}
+        ctx.fillStyle = colors.panel;
+        ctx.fillRect(0, this.headerHeight, this.width, this.height - this.headerHeight);
+        this.drawTabs();
+        this.drawHeader();
+        ${insert(`if (fxSmooth) __fx.utils.strokeRounded(ctx, 0, 0, this.width, this.height, ctx.lineWidth, 0.15 * this.headerHeight); else`)}
+        ctx.strokeRect(0, 0, this.width, this.height);
+        util2.text.textAlign(ctx, 2);
+        ctx.font = util2.text.makeFont(0, this.fontSize);
+        if (this.tab === 0) { this.drawGraph(stats.territory, x, y) }
+        else if (this.tab === 1) { this.drawGraph(stats.balance, x, y) }
+        else if (this.tab === 2) { this.drawInterest(x, y) }
+        else if (this.tab === 3) { this.drawNumbers(x, y); this.drawCosts(x, y) }
+        exitMenu.drawCross(Math.floor(x + this.width - .725 * this.headerHeight), Math.floor(y + .275 * this.headerHeight), Math.floor(.45 * this.headerHeight));
+        ${insert(`fxSmooth && ctx.restore();`)}
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+    }`);
+    modifyCode(`this.drawTabs = function() {
+        var i, tabWidth;
+        ctx.lineWidth = this.lineSize;
+        util2.text.textBaseline(ctx, 1);
+        util2.text.textAlign(ctx, 1);
+        ctx.strokeStyle = colors.white;
+        ctx.font = util2.text.makeFont(1, this.tabFontSize);
+        tabWidth = this.width / this.tabNames.length;
+        ctx.fillStyle = colors.selected;
+        ctx.fillRect(this.tab * tabWidth, this.height - this.tabHeight, tabWidth, this.tabHeight);
+        ctx.fillStyle = colors.white;
+        ${insert(`ctx.fillStyle = __fx.utils.lineColor(colors.white);`)}
+        ctx.fillRect(0, this.height - this.tabHeight - .5 * this.lineSize, this.width, this.lineSize);
+        for (i = 1; i <= 3; i++) { ctx.fillRect(i * tabWidth, this.height - this.tabHeight, this.lineSize, this.tabHeight) }
+        ${insert(`ctx.fillStyle = colors.white;`)}
+        /*...*/
+    }`);
+    modifyCode(`this.drawHeader = function() {
+        ctx.fillStyle = colors.header;
+        ctx.fillRect(0, 0, this.width, this.headerHeight);
+        ctx.fillStyle = colors.white;
+        ${insert(`ctx.fillStyle = __fx.utils.lineColor(colors.white);`)}
+        ctx.fillRect(0, this.headerHeight - .5 * this.lineSize, this.width, this.lineSize);
+        ${insert(`ctx.fillStyle = colors.white;`)}
+        /*...*/
+    }`);
+
+    // "You are leaving Territorial.io!" popup
+    modifyCode(`this.draw = function() {
+        if (!this.visible) { return }
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, x, y, width, height);`)}
+        ctx.fillStyle = colors.panel;
+        ctx.fillRect(x, y + headerHeight, width, height - headerHeight);
+        ctx.fillStyle = colors.header;
+        ctx.fillRect(x, y, width, headerHeight);
+        ${insert(`fxSmooth && ctx.restore();`)}
+        ctx.fillStyle = colors.white;
+        ctx.lineWidth = sizes.lineSize;
+        ctx.strokeStyle = colors.white;
+        ${insert(`if (fxSmooth) __fx.utils.strokeRounded(ctx, x, y, width, height, sizes.lineSize), ctx.fillStyle = __fx.utils.lineColor(colors.white); else`)}
+        ctx.strokeRect(x, y, width, height);
+        ctx.fillRect(x, y + headerHeight, width, sizes.lineSize);
+        ${insert(`ctx.fillStyle = colors.white;`)}
+        /*...*/
+    }`);
+
+    // Victory / defeat popup
+    modifyCode(`function createPopupCanvas() {
+        canvas = document.createElement("canvas");
+        canvas.width = popupWidth;
+        canvas.height = popupHeight;
+        var ctx = canvas.getContext("2d", { alpha: true });
+        var border = Math.floor(1 + popupHeight / 40);
+        ctx.clearRect(0, 0, popupWidth, popupHeight);
+        ctx.fillStyle = colors.panel;
+        ctx.fillRect(border, border, popupWidth - 2 * border, popupHeight - 2 * border);
+        ctx.lineJoin = "bevel";
+        ctx.lineWidth = 2 * border;
+        ctx.strokeStyle = colors.white;
+        ${insert(`if (!__fx.utils.smoothFrame(ctx, popupWidth - 2 * border, popupHeight - 2 * border, 2 * border, border, border, popupHeight / 10))`)}
+        ctx.strokeRect(border, border, popupWidth - 2 * border, popupHeight - 2 * border);
+        /*...*/
+    }`);
+
+    // Emoji panel
+    modifyCode(`this.draw = function() {
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, left - .5 * gap, top - .5 * gap, panelWidth, panelHeight);`)}
+        ctx.fillStyle = colors.panel;
+        ctx.fillRect(left - .5 * gap, top - .5 * gap, panelWidth, panelHeight);
+        ${insert(`fxSmooth && ctx.restore();`)}
+        var inset = .5 * sizes.lineSize;
+        ctx.lineWidth = sizes.lineSize;
+        ctx.strokeStyle = ctx.fillStyle = colors.white;
+        ${insert(`if (fxSmooth) __fx.utils.strokeRounded(ctx, left - .5 * gap, top - .5 * gap, panelWidth, panelHeight, sizes.lineSize); else`)}
+        ctx.strokeRect(left - .5 * gap + inset, top - .5 * gap + inset, panelWidth - 2 * inset, panelHeight - 2 * inset);
+        /*...*/
+    }`);
+
+    // Player color picker (preview box and the three sliders)
+    modifyCode(`function drawColorPreview() {
+        var r = getColor(0);
+        var g = getColor(1);
+        var b = getColor(2);
+        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, rect.x, rect.y, previewWidth, rect.height);`)}
+        ctx.fillRect(rect.x, rect.y, previewWidth, rect.height);
+        ${insert(`fxSmooth && ctx.restore();`)}
+        ctx.strokeStyle = palette.white;
+        ${insert(`if (fxSmooth) __fx.utils.strokeRounded(ctx, rect.x, rect.y, previewWidth, rect.height, ctx.lineWidth); else`)}
+        ctx.strokeRect(rect.x, rect.y, previewWidth, rect.height);
+        /*...*/
+    }`);
+    modifyCode(`function drawColorSlider(i) {
+        var r = i === 0 ? 150 : i === 2 ? 30 : 0;
+        var g = i === 1 ? 130 : i === 2 ? 30 : 0;
+        var b = i === 2 ? 220 : 0;
+        var sliderY = rect.y + i * (sizes.gap + sliderHeight);
+        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, sliderX, sliderY, sliderWidth, sliderHeight);`)}
+        ctx.fillRect(sliderX, sliderY, values[i] * sliderWidth, sliderHeight);
+        ${insert(`fxSmooth && ctx.restore();`)}
+        ctx.strokeStyle = palette.white;
+        ${insert(`if (fxSmooth) __fx.utils.strokeRounded(ctx, sliderX, sliderY, sliderWidth, sliderHeight, ctx.lineWidth); else`)}
+        ctx.strokeRect(sliderX, sliderY, sliderWidth, sliderHeight);
+        /*...*/
+    }`);
+
+    // Fallback main menu buttons 
+    modifyCode(`function drawButton(i) {
+        var button = menu.buttons[i];
+        var x = button.x;
+        var y = button.y;
+        var w = button.w;
+        var h = button.h;
+        ctx.fillStyle = button.fill;
+        ${insert(`var fxSmooth = __fx.utils.clipRounded(ctx, x, y, w, h, .1 * h);`)}
+        ctx.fillRect(x, y, w, h);
+        if (i === hovered) { ctx.fillStyle = hoverColor; ctx.fillRect(x, y, w, h) }
+        ${insert(`fxSmooth && ctx.restore();`)}
+        ctx.lineWidth = sizes.lineSize;
+        ctx.strokeStyle = textColor;
+        ${insert(`if (fxSmooth) __fx.utils.strokeRounded(ctx, x, y, w, h, sizes.lineSize, .1 * h); else`)}
+        ctx.strokeRect(x, y, w, h);
+        drawText(button);
+    }`);
+
     modifyCode(`this.addBorder = function(element, side, color) {
         ${insert(`element.classList.toggle("fx-line", !color), element.classList.toggle("fx-box", !side || side === 5);`)}
         var value = this.toPx(sizes.borderWidth) + " solid " + (color || colors.white);
