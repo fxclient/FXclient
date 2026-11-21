@@ -25,6 +25,7 @@ export default (/** @type {ModUtils} */ { modifyCode, insertCode, replaceRawCode
 			b8.ec(1);
 		}
 		if (!bO.isInMapBounds(hO, hQ)) { return false; }
+		if (!menu.isOpen && !this.panelHit() && orders.ships.click(lj, lk, ev, a39)) { return true; }
 		if (a39) {
 			a6b(lj, lk, en);
 			return false;
