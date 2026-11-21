@@ -2970,9 +2970,9 @@ function a2U() {
 	}, this.a2w = function(mI, mJ) {
 		return !(mI < o6 - .5 * gap || mJ < o7 - .5 * gap || o6 + a2g - .5 * gap <= mI || o7 + a2h - .5 * gap <= mJ)
 	}, this.z6 = function() {
-		z7.fillStyle = bE.qK, z7.fillRect(o6 - .5 * gap, o7 - .5 * gap, a2g, a2h);
-		for (var ia = .5 * bf.a2x, fk = (z7.lineWidth = bf.a2x, z7.strokeStyle = z7.fillStyle = bE.qN, z7.strokeRect(o6 - .5 * gap + ia, o7 - .5 * gap + ia, a2g - 2 * ia, a2h - 2 * ia), z7.imageSmoothingEnabled = !0, a2c.length), aC = 0; aC <
-			fk; aC++) this.a2y(a2c[aC], z7, o6 + aC % 10 * a2V, o7 + bO.gB(aC, 10) * a2V, ig);
+		for (var fxSmooth = __fx.utils.clipRounded(z7, o6 - .5 * gap, o7 - .5 * gap, a2g, a2h), ia = (z7.fillStyle = bE.qK, z7.fillRect(o6 - .5 * gap, o7 - .5 * gap, a2g, a2h), fxSmooth && z7.restore(), .5 * bf.a2x), fk = (z7.lineWidth = bf.a2x,
+				z7.strokeStyle = z7.fillStyle = bE.qN, fxSmooth ? __fx.utils.strokeRounded(z7, o6 - .5 * gap, o7 - .5 * gap, a2g, a2h, bf.a2x) : z7.strokeRect(o6 - .5 * gap + ia, o7 - .5 * gap + ia, a2g - 2 * ia, a2h - 2 * ia), z7
+				.imageSmoothingEnabled = !0, a2c.length), aC = 0; aC < fk; aC++) this.a2y(a2c[aC], z7, o6 + aC % 10 * a2V, o7 + bO.gB(aC, 10) * a2V, ig);
 		z7.imageSmoothingEnabled = !1
 	}, this.a2y = function(sE, im, fr, ft, ig) {
 		var fO;
@@ -4312,12 +4312,17 @@ function cM() {
 		mI = aA0(mI, mJ);
 		return -1 !== mI && a9v === mI && (this.hv ? aE.o9 ? (0 <= mI && bF.a66(!1), !aE.ht) : (0 === mI ? aE.a5N() : 1 === mI ? this.a67() : 2 === mI && u.v(1, 0), !0) : 9 === mI && (this.a67(), !0))
 	}, this.z6 = function() {
-		var j;
-		this.hv ? (j = Math.floor(5.5 * k), z7.setTransform(1, 0, 0, 1, bf.gap, aS.ft), z7.fillStyle = bE.qJ, z7.fillRect(0, 0, j, k), 0 === a9t ? (z7.fillStyle = bE.qO, z7.fillRect(0, 0, 4 * k, k)) : 1 === a9t && (z7.fillStyle = bE.qO, z7
-				.fillRect(4 * k, 0, Math.floor(1.5 * k), k)), z7.fillStyle = bE.qN, z7.fillRect(0, 0, j, 1), z7.fillRect(0, 0, 1, k), z7.fillRect(4 * k, 0, 1, k), z7.fillRect(0, k - 1, j, 1), z7.fillRect(j - 1, 0, 1, k), z7.font = a9s, bD.ta
-			.textBaseline(z7, 1), bD.ta.textAlign(z7, 1), z7.fillText(L(54), 2 * k, .54 * k), j = .4 * k, aN.aA4(bf.gap + 4 * k + (1.5 * k - j) / 2, aS.ft + .3 * k, j), j = 1, z7.setTransform(1, 0, 0, 1, bf.gap, aS.ft - j * a9u * bf.gap - j *
-				k), z7.fillStyle = bE.qJ, z7.fillRect(0, 0, 4 * k, k), a9t === j + 1 && (z7.fillStyle = bE.qO, z7.fillRect(0, 0, 4 * k, k)), z7.fillStyle = bE.qN, z7.fillRect(0, 0, 4 * k, 1), z7.fillRect(0, 0, 1, k), z7.fillRect(4 * k, 0, 1,
-				k), z7.fillRect(0, k - 1, 4 * k, 1), z7.fillText(L(0 === j ? 54 : 55), 2 * k, .54 * k), z7.setTransform(1, 0, 0, 1, 0, 0)) : z7.drawImage(canvas, bf.gap, aS.ft)
+		var aC, fxSmooth;
+		this.hv ? (function() {
+			var j = Math.floor(5.5 * k),
+				fxSmooth = (z7.setTransform(1, 0, 0, 1, bf.gap, aS.ft), __fx.utils.clipRounded(z7, 0, 0, j, k));
+			z7.fillStyle = bE.qJ, z7.fillRect(0, 0, j, k), 0 === a9t ? (z7.fillStyle = bE.qO, z7.fillRect(0, 0, 4 * k, k)) : 1 === a9t && (z7.fillStyle = bE.qO, z7.fillRect(4 * k, 0, Math.floor(1.5 * k), k));
+			fxSmooth && (z7.restore(), __fx.utils.strokeRounded(z7, 0, 0, j, k), z7.fillStyle = __fx.utils.lineColor(bE.qN), z7.fillRect(4 * k, 0, 1, k));
+			z7.fillStyle = bE.qN, fxSmooth || (z7.fillRect(0, 0, j, 1), z7.fillRect(0, 0, 1, k), z7.fillRect(4 * k, 0, 1, k), z7.fillRect(0, k - 1, j, 1), z7.fillRect(j - 1, 0, 1, k));
+			z7.font = a9s, bD.ta.textBaseline(z7, 1), bD.ta.textAlign(z7, 1), z7.fillText(L(54), 2 * k, .54 * k), fxSmooth = .4 * k, aN.aA4(bf.gap + 4 * k + (1.5 * k - fxSmooth) / 2, aS.ft + .3 * k, fxSmooth)
+		}(), aC = 1, z7.setTransform(1, 0, 0, 1, bf.gap, aS.ft - aC * a9u * bf.gap - aC * k), fxSmooth = __fx.utils.clipRounded(z7, 0, 0, 4 * k, k), z7.fillStyle = bE.qJ, z7.fillRect(0, 0, 4 * k, k), a9t === aC + 1 && (z7.fillStyle = bE
+			.qO, z7.fillRect(0, 0, 4 * k, k)), fxSmooth && (z7.restore(), __fx.utils.strokeRounded(z7, 0, 0, 4 * k, k)), z7.fillStyle = bE.qN, fxSmooth || (z7.fillRect(0, 0, 4 * k, 1), z7.fillRect(0, 0, 1, k), z7.fillRect(4 * k, 0, 1, k),
+			z7.fillRect(0, k - 1, 4 * k, 1)), z7.fillText(L(0 === aC ? 54 : 55), 2 * k, .54 * k), z7.setTransform(1, 0, 0, 1, 0, 0)) : z7.drawImage(canvas, bf.gap, aS.ft)
 	}, this.tD = function(player) {
 		return 0 !== ah.nf[player] && 2 !== aE.a3x && !bD.h6.kQ(player)
 	}, this.aA4 = function(fr, ft, fk) {
@@ -5542,9 +5547,10 @@ function cX() {
 		iU && (j = aFv(j = a1.a2.iu() ? Math.floor(.69 * i.iv) : Math.floor(.5 * i.iv), aAU(i.j - 2 * bf.gap, 10)), j = aFv(j, Math.floor(3.57 * aAU(i.k - 2 * bf.gap, 3))), k = Math.floor(.28 * j), (canvas = document.createElement("canvas"))
 			.width = j, canvas.height = k, p3 = canvas.getContext("2d", {
 				alpha: !0
-			}), o6 = Math.floor(1 + k / 40), p3.clearRect(0, 0, j, k), p3.fillStyle = bE.qK, p3.fillRect(o6, o6, j - 2 * o6, k - 2 * o6), p3.lineJoin = "bevel", p3.lineWidth = 2 * o6, p3.strokeStyle = bE.qN, p3.strokeRect(o6, o6, j - 2 * o6,
-				k - 2 * o6), p3.imageSmoothingEnabled = !1, eu = ac.get(aFr), aFz = eu.width, a9x = (1 === aFr ? .85 : 21 === aFr ? .666 : .9) * aCr * k / (aG0 = eu.height), p3.setTransform(a9x, 0, 0, a9x, Math.floor((j - a9x * aFz) / 2),
-				Math.floor((k - a9x * aG0) / 2)), p3.drawImage(eu, 0, 0), p3.setTransform(1, 0, 0, 1, Math.floor(j - aFt * k - aFs * k - o6), Math.floor(o6 + aFs * k)),
+			}), o6 = Math.floor(1 + k / 40), p3.clearRect(0, 0, j, k), p3.fillStyle = bE.qK, p3.fillRect(o6, o6, j - 2 * o6, k - 2 * o6), p3.lineJoin = "bevel", p3.lineWidth = 2 * o6, p3.strokeStyle = bE.qN, __fx.utils.smoothFrame(p3, j - 2 *
+				o6, k - 2 * o6, 2 * o6, o6, o6, k / 10) || p3.strokeRect(o6, o6, j - 2 * o6, k - 2 * o6), p3.imageSmoothingEnabled = !1, eu = ac.get(aFr), aFz = eu.width, a9x = (1 === aFr ? .85 : 21 === aFr ? .666 : .9) * aCr * k / (aG0 = eu
+				.height), p3.setTransform(a9x, 0, 0, a9x, Math.floor((j - a9x * aFz) / 2), Math.floor((k - a9x * aG0) / 2)), p3.drawImage(eu, 0, 0), p3.setTransform(1, 0, 0, 1, Math.floor(j - aFt * k - aFs * k - o6), Math.floor(o6 + aFs *
+			k)),
 			function(p3, fk) {
 				p3.lineWidth = Math.floor(1 + k / 80), p3.strokeStyle = bE.qN, p3.beginPath(), p3.moveTo(0, 0), p3.lineTo(fk, fk), p3.moveTo(0, fk), p3.lineTo(fk, 0), p3.stroke()
 			}(p3, Math.floor(aFt * k)), p3.setTransform(1, 0, 0, 1, 0, 0))
@@ -5918,9 +5924,11 @@ function e0() {
 			.l * aR.measureText(a7J, a9s)), fr = Math.floor((i.j - j) / 2), ft = Math.floor((i.k - k) / 2), aH8.style.font = a9s, aH8.style.top = Math.floor((ft + 1.4 * aH4 + wc) / i.l) + "px", aH8.style.left = Math.floor((fr + (j -
 			aH7) / 2) / i.l) + "px")
 	}, this.z6 = function() {
-		this.iU && (z7.fillStyle = bE.qK, z7.fillRect(fr, ft + wc, j, k - wc), z7.fillStyle = bE.rc, z7.fillRect(fr, ft, j, wc), z7.fillStyle = bE.qN, z7.lineWidth = bf.a2x, z7.strokeStyle = bE.qN, z7.strokeRect(fr, ft, j, k), z7.fillRect(fr,
-			ft + wc, j, bf.a2x), z7.font = bD.ta.v9(1, .48 * wc), bD.ta.textAlign(z7, 1), bD.ta.textBaseline(z7, 1), z7.fillText(L(143), Math.floor(fr + (j - .5 * wc) / 2), Math.floor(ft + .55 * wc)), aN.aA4(Math.floor(fr + j - .8 * wc),
-			Math.floor(ft + .25 * wc), Math.floor(.5 * wc)), z7.setTransform(1, 0, 0, 1, 0, 0))
+		var fxSmooth;
+		this.iU && (fxSmooth = __fx.utils.clipRounded(z7, fr, ft, j, k), z7.fillStyle = bE.qK, z7.fillRect(fr, ft + wc, j, k - wc), z7.fillStyle = bE.rc, z7.fillRect(fr, ft, j, wc), fxSmooth && z7.restore(), z7.fillStyle = bE.qN, z7.lineWidth =
+			bf.a2x, z7.strokeStyle = bE.qN, fxSmooth ? (__fx.utils.strokeRounded(z7, fr, ft, j, k, bf.a2x), z7.fillStyle = __fx.utils.lineColor(bE.qN)) : z7.strokeRect(fr, ft, j, k), z7.fillRect(fr, ft + wc, j, bf.a2x), z7.fillStyle = bE.qN,
+			z7.font = bD.ta.v9(1, .48 * wc), bD.ta.textAlign(z7, 1), bD.ta.textBaseline(z7, 1), z7.fillText(L(143), Math.floor(fr + (j - .5 * wc) / 2), Math.floor(ft + .55 * wc)), aN.aA4(Math.floor(fr + j - .8 * wc), Math.floor(ft + .25 *
+				wc), Math.floor(.5 * wc)), z7.setTransform(1, 0, 0, 1, 0, 0))
 	}
 }
 
@@ -6816,8 +6824,10 @@ function cY() {
 			fr = button.fr,
 			ft = button.ft,
 			j = button.j,
-			k = button.k;
-		z7.fillStyle = button.aLN, z7.fillRect(fr, ft, j, k), aC === aLI && (z7.fillStyle = aLK, z7.fillRect(fr, ft, j, k)), z7.lineWidth = bf.a2x, z7.strokeStyle = aLJ, z7.strokeRect(fr, ft, j, k),
+			k = button.k,
+			fxSmooth = (z7.fillStyle = button.aLN, __fx.utils.clipRounded(z7, fr, ft, j, k, .1 * k));
+		z7.fillRect(fr, ft, j, k), aC === aLI && (z7.fillStyle = aLK, z7.fillRect(fr, ft, j, k)), fxSmooth && z7.restore(), z7.lineWidth = bf.a2x, z7.strokeStyle = aLJ, fxSmooth ? __fx.utils.strokeRounded(z7, fr, ft, j, k, bf.a2x, .1 * k) : z7
+			.strokeRect(fr, ft, j, k),
 			function(button) {
 				var fr = button.fr,
 					ft = button.ft,
@@ -9938,9 +9948,10 @@ function aV7() {
 		aXw = -1;
 
 	function aXz(aC) {
-		var aY0 = aXs.ft + aC * (bf.gap + aXv);
-		z7.fillStyle = "rgb(" + (0 === aC ? 150 : 2 === aC ? 30 : 0) + "," + (1 === aC ? 130 : 2 === aC ? 30 : 0) + "," + (2 === aC ? 220 : 0) + ")", z7.fillRect(aXt, aY0, colors[aC] * aXu, aXv), z7.strokeStyle = bE.qN, z7.strokeRect(aXt, aY0, aXu,
-			aXv), z7.fillStyle = bE.qN, z7.font = bD.ta.v9(0, .32 * aXv), bD.ta.textBaseline(z7, 1), bD.ta.textAlign(z7, 0), z7.fillText(L(0 === aC ? 380 : 1 === aC ? 381 : 382) + aXx(aC), aXt + bf.gap, aY0 + .53 * aXv)
+		var aY0 = aXs.ft + aC * (bf.gap + aXv),
+			fxSmooth = (z7.fillStyle = "rgb(" + (0 === aC ? 150 : 2 === aC ? 30 : 0) + "," + (1 === aC ? 130 : 2 === aC ? 30 : 0) + "," + (2 === aC ? 220 : 0) + ")", __fx.utils.clipRounded(z7, aXt, aY0, aXu, aXv));
+		z7.fillRect(aXt, aY0, colors[aC] * aXu, aXv), fxSmooth && z7.restore(), z7.strokeStyle = bE.qN, fxSmooth ? __fx.utils.strokeRounded(z7, aXt, aY0, aXu, aXv, z7.lineWidth) : z7.strokeRect(aXt, aY0, aXu, aXv), z7.fillStyle = bE.qN, z7.font = bD
+			.ta.v9(0, .32 * aXv), bD.ta.textBaseline(z7, 1), bD.ta.textAlign(z7, 0), z7.fillText(L(0 === aC ? 380 : 1 === aC ? 381 : 382) + aXx(aC), aXt + bf.gap, aY0 + .53 * aXv)
 	}
 
 	function aXx(aC, aY1) {
@@ -9962,10 +9973,14 @@ function aV7() {
 			aXy = (aXs.ft = Math.max(aXs.ft, eu * z5.uc + bf.gap), eu * z5.z4 - 2 * bf.gap);
 		aXs.k = Math.min(aXs.k, aXy), aXs.j = 2 * aXs.k, aXs.ft = eu * z5.uc + .5 * (eu * z5.z4 - aXs.k), aXs.fr = .5 * (i.j - aXs.j), aX5 = .25 * aXs.j, aXt = aXs.fr + aX5 + bf.gap, aXu = aXs.j - aX5 - bf.gap, aXv = (aXs.k - 2 * bf.gap) / 3
 	}, this.z6 = function() {
-		var eS, w5, g4;
-		aVT.z6(), z7.lineWidth = bf.a2x, eS = aXx(0), w5 = aXx(1), g4 = aXx(2), z7.fillStyle = "rgb(" + eS + "," + w5 + "," + g4 + ")", z7.fillRect(aXs.fr, aXs.ft, aX5, aXs.k), z7.strokeStyle = bE.qN, z7.strokeRect(aXs.fr, aXs.ft, aX5, aXs.k), z7
-			.fillStyle = eS + w5 + g4 < 306 && w5 < 150 ? bE.qN : bE.qE, bD.ta.textBaseline(z7, 1), bD.ta.textAlign(z7, 1), z7.font = bD.ta.v9(0, .1 * aXs.k), z7.rotate(-Math.PI / 2), z7.fillText(L(379), -aXs.ft - .5 * aXs.k, aXs.fr + .5 * aX5),
-			z7.setTransform(1, 0, 0, 1, 0, 0), aXz(0), aXz(1), aXz(2)
+		aVT.z6(), z7.lineWidth = bf.a2x;
+		var eS = aXx(0),
+			w5 = aXx(1),
+			g4 = aXx(2),
+			fxSmooth = (z7.fillStyle = "rgb(" + eS + "," + w5 + "," + g4 + ")", __fx.utils.clipRounded(z7, aXs.fr, aXs.ft, aX5, aXs.k));
+		z7.fillRect(aXs.fr, aXs.ft, aX5, aXs.k), fxSmooth && z7.restore(), z7.strokeStyle = bE.qN, fxSmooth ? __fx.utils.strokeRounded(z7, aXs.fr, aXs.ft, aX5, aXs.k, z7.lineWidth) : z7.strokeRect(aXs.fr, aXs.ft, aX5, aXs.k), z7.fillStyle = eS +
+			w5 + g4 < 306 && w5 < 150 ? bE.qN : bE.qE, bD.ta.textBaseline(z7, 1), bD.ta.textAlign(z7, 1), z7.font = bD.ta.v9(0, .1 * aXs.k), z7.rotate(-Math.PI / 2), z7.fillText(L(379), -aXs.ft - .5 * aXs.k, aXs.fr + .5 * aX5), z7.setTransform(1,
+				0, 0, 1, 0, 0), aXz(0), aXz(1), aXz(2)
 	}, this.hy = function(mI, mJ) {
 		a60(mI, mJ) && (aXw = bO.it(Math.floor((mJ - aXs.ft) / (aXv + .75 * bf.gap)), 0, 2), colors[aXw] = bO.it((mI - aXt) / aXu, 0, 1), bi.e2 = !0)
 	}, this.a5W = function(mI) {
@@ -13885,18 +13900,19 @@ function db() {
 		this.iU && this.aD8()
 	}, this.aD8 = function() {
 		var fr = bO.gB(i.j - this.j, 2),
-			ft = bO.gB(i.k - this.k, 2);
-		z7.setTransform(1, 0, 0, 1, fr, ft), z7.fillStyle = bE.qK, z7.fillRect(0, this.ajy, this.j, this.k - this.ajy), this.ak5(), this.aZ0(), z7.strokeRect(0, 0, this.j, this.k), bD.ta.textAlign(z7, 2), z7.font = bD.ta.v9(0, this.ajz), 0 ===
-			this.eT ? this.ak6(bg.ajk, fr, ft) : 1 === this.eT ? this.ak6(bg.t6, fr, ft) : 2 === this.eT ? this.ak7(fr, ft) : 3 === this.eT && (this.ak8(fr, ft), this.ak9(fr, ft)), aN.aA4(Math.floor(fr + this.j - .725 * this.ajy), Math.floor(ft +
-				.275 * this.ajy), Math.floor(.45 * this.ajy)), z7.setTransform(1, 0, 0, 1, 0, 0)
+			ft = bO.gB(i.k - this.k, 2),
+			fxSmooth = (z7.setTransform(1, 0, 0, 1, fr, ft), __fx.utils.clipRounded(z7, 0, 0, this.j, this.k, .15 * this.ajy));
+		z7.fillStyle = bE.qK, z7.fillRect(0, this.ajy, this.j, this.k - this.ajy), this.ak5(), this.aZ0(), fxSmooth ? __fx.utils.strokeRounded(z7, 0, 0, this.j, this.k, z7.lineWidth, .15 * this.ajy) : z7.strokeRect(0, 0, this.j, this.k), bD.ta
+			.textAlign(z7, 2), z7.font = bD.ta.v9(0, this.ajz), 0 === this.eT ? this.ak6(bg.ajk, fr, ft) : 1 === this.eT ? this.ak6(bg.t6, fr, ft) : 2 === this.eT ? this.ak7(fr, ft) : 3 === this.eT && (this.ak8(fr, ft), this.ak9(fr, ft)), aN.aA4(
+				Math.floor(fr + this.j - .725 * this.ajy), Math.floor(ft + .275 * this.ajy), Math.floor(.45 * this.ajy)), fxSmooth && z7.restore(), z7.setTransform(1, 0, 0, 1, 0, 0)
 	}, this.ak5 = function() {
 		var aC, el;
 		for (z7.lineWidth = this.aCC, bD.ta.textBaseline(z7, 1), bD.ta.textAlign(z7, 1), z7.strokeStyle = bE.qN, z7.font = bD.ta.v9(1, this.ak0), el = this.j / this.aFN.length, z7.fillStyle = bE.qj, z7.fillRect(this.eT * el, this.k - this.wU, el,
-				this.wU), z7.fillStyle = bE.qN, z7.fillRect(0, this.k - this.wU - .5 * this.aCC, this.j, this.aCC), aC = 1; aC <= 3; aC++) z7.fillRect(aC * el, this.k - this.wU, this.aCC, this.wU);
-		for (aC = this.aFN.length - 1; 0 <= aC; aC--) z7.fillText(bD.p3.a75(this.aFN[aC], 0, .9 * el), (aC + .5) * el, this.k - .46 * this.wU)
+				this.wU), z7.fillStyle = bE.qN, z7.fillStyle = __fx.utils.lineColor(bE.qN), z7.fillRect(0, this.k - this.wU - .5 * this.aCC, this.j, this.aCC), aC = 1; aC <= 3; aC++) z7.fillRect(aC * el, this.k - this.wU, this.aCC, this.wU);
+		for (z7.fillStyle = bE.qN, aC = this.aFN.length - 1; 0 <= aC; aC--) z7.fillText(bD.p3.a75(this.aFN[aC], 0, .9 * el), (aC + .5) * el, this.k - .46 * this.wU)
 	}, this.aZ0 = function() {
-		z7.fillStyle = bE.rB, z7.fillRect(0, 0, this.j, this.ajy), z7.fillStyle = bE.qN, z7.fillRect(0, this.ajy - .5 * this.aCC, this.j, this.aCC), z7.font = bD.ta.v9(1, .39 * this.ajy), z7.fillText(bD.p3.a75(L(595), 0, .8 * this.j), Math.floor(
-			this.j / 2), Math.floor(.55 * this.ajy))
+		z7.fillStyle = bE.rB, z7.fillRect(0, 0, this.j, this.ajy), z7.fillStyle = bE.qN, z7.fillStyle = __fx.utils.lineColor(bE.qN), z7.fillRect(0, this.ajy - .5 * this.aCC, this.j, this.aCC), z7.fillStyle = bE.qN, z7.font = bD.ta.v9(1, .39 *
+			this.ajy), z7.fillText(bD.p3.a75(L(595), 0, .8 * this.j), Math.floor(this.j / 2), Math.floor(.55 * this.ajy))
 	}, this.ak6 = function(h, fr, ft) {
 		var ly = bg.max[this.eT],
 			a6P = (z7.setTransform(1, 0, 0, 1, fr + 2 * this.vo + this.aju, ft + this.aCr + this.ajy), z7.lineWidth = 2, this.ajw / Math.sqrt(ly));
