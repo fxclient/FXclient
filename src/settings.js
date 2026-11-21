@@ -480,7 +480,7 @@ const settingsManager = new (function () {
       for: "smoothUI",
       type: "checkbox",
       label: "Smoother UI style",
-      note: "Softer lines, rounded boxes, fading pages and buttons, thin scrollbars, a cleaner multiplayer lobby and a matching in-game HUD.",
+      note: "Softer lines, rounded boxes, fading pages and buttons, thin scrollbars, a cleaner multiplayer lobby and a matching in-game HUD, stats page, exit menu and popups.",
     },
     //{ for: "hideAllLinks", type: "checkbox", label: "Hide Links option also hides app store links" },
     SectionHeader("In-game display"),
