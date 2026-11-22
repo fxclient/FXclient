@@ -247,6 +247,7 @@ export function tryParseGameVersion(modUtils) {
         this.replayVersion = __number;
         this.buildDate = __date;
         this.e = 0;
+        this.h = __number;
         this.f = function() {var g = ""; /*...*/}
       }`,
       {
