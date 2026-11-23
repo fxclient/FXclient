@@ -1,6 +1,6 @@
 
-export const version = "0.6.38"
-export const lastUpdated = "November 21"
+export const version = "0.6.39"
+export const lastUpdated = "November 23"
 export const isSignificant = true
 
-export const changes = `Smooth UI now also redesigns the stats page, exit menu and some popups (Merged pull request #60 by antimmdev)`
+export const changes = `The client now restores the smooth pre-2.17.15 ship movement, replacing the default jumpy movement in the vanilla game. This is purely cosmetic and can be toggled in the settings. (Merged pull request #63 by QZxV4)`
