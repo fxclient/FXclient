@@ -12919,7 +12919,7 @@ function aev() {
 				agp = (.9 + .1 * Math.log10(Math.max(iS, 1))) * fa,
 				iS = bD.pa.a8A(iS),
 				agp = Math.floor(tA.agH * agp),
-				fs = (j5 = n9[aC]) % agt / 16 * fa - jN,
+				fs = (j5 = __fx.shipSmoothing.smoothedPosition(aC, n9[aC])) % agt / 16 * fa - jN,
 				j5 = Math.floor(j5 / agt) / 16 * fa - jO;
 			fs < -(aEM = 1.5 * agp) || j5 < -aEM || agr + aEM < fs || ags + aEM < j5 || (aEM = bQ.af4.agv(player) ? aga[aC] ? 4 : 1 : aga[aC] ? 2 : 0, (alpha = (agp - tA.agO) / (tA.agN - tA.agO)) <= 0) || (alpha = Math.min(alpha, 1), player ===
 				agq && function(io, fs, fu, fontSize, ev, alpha) {
@@ -12949,7 +12949,8 @@ function aev() {
 			tA = bQ.tA,
 			ago = .9 + .1 * Math.log10(Math.max(lz.aAp[n6], 1)),
 			ago = Math.floor(tA.agH * ago * ix);
-		return !(ago <= tA.agO) && (tA = bV.fw << 4, n6 = (lz = lz.n9[n6]) % tA / 16 * ix - jN, lz = Math.floor(lz / tA) / 16 * ix - jO, tA = .62 * ago, Math.abs(mJ - n6) <= tA * agj) && Math.abs(mK - lz) <= tA
+		return !(ago <= tA.agO) && (tA = bV.fw << 4, n6 = (lz = __fx.shipSmoothing.smoothedPosition(n6, lz.n9[n6])) % tA / 16 * ix - jN, lz = Math.floor(lz / tA) / 16 * ix - jO, tA = .62 * ago, Math.abs(mJ - n6) <= tA * agj) && Math.abs(mK -
+			lz) <= tA
 	}
 }
 
@@ -12967,9 +12968,9 @@ function afH() {
 	function ah9(io, n6) {
 		var lz = bQ.z,
 			mP = lz.mw[n6],
-			aft = lz.n8[n6],
+			aft = __fx.shipSmoothing.smoothedSegment(n6, lz.n8[n6]),
 			fl = mP.length - 1,
-			lz = lz.n9[n6];
+			lz = __fx.shipSmoothing.smoothedPosition(n6, lz.n9[n6]);
 		io.beginPath(), io.moveTo(ahC(mP[fl]), ahD(mP[fl]));
 		for (var ib = fl - 1; aft < ib; ib--) io.lineTo(ahC(mP[ib]), ahD(mP[ib]));
 		n6 = bP.j8(lz) * ix / 16 - jN, fl = bP.jB(lz) * ix / 16 - jO;
@@ -13043,7 +13044,7 @@ function af5() {
 	}, this.z8 = function() {
 		for (var oR = ix, agr = i.j, ags = i.k, o7 = jN / oR, o8 = jO / oR, oK = (agr + jN) / oR, oL = (ags + jO) / oR, hK = -ahG * oR, ahM = .5 * hK, agt = bV.fw << 4, fl = bQ.z.mu, n9 = bQ.z.n9, my = bQ.z.my, aFJ = bj.aFJ, a6s = ahF, io = z9,
 				aC = 0; aC < fl; aC++) {
-			var j5 = n9[aC],
+			var j5 = __fx.shipSmoothing.smoothedPosition(aC, n9[aC]),
 				fs = agr * (j5 % agt / 16 - o7) / (oK - o7) + ahM,
 				j5 = ags * (Math.floor(j5 / agt) / 16 - o8) / (oL - o8) + ahM;
 			agr < fs || ags < j5 || fs < hK || j5 < hK || (io.setTransform(oR, 0, 0, oR, fs, j5), fs = my[aC] >> 3, j5 = ahH ? function(player) {
@@ -13145,7 +13146,7 @@ function af9() {
 	}, this.a9o = function(mJ, mK) {
 		var fl = bQ.z.mu;
 		if (fl < 1) return -1;
-		for (var n9 = bQ.z.n9, aAp = bQ.z.aAp, ahr = 0, aXo = -1, aC = 0; aC < fl; aC++) {
+		for (var n9 = __fx.shipSmoothing.smoothedPositions(bQ.z.n9), aAp = bQ.z.aAp, ahr = 0, aXo = -1, aC = 0; aC < fl; aC++) {
 			var g1 = bP.j2(mJ, mK, n9[aC]);
 			g1 <= bQ.a9e.ahs(aAp[aC]) && (-1 === aXo || g1 < ahr) && (ahr = g1, aXo = aC)
 		}
@@ -13337,103 +13338,127 @@ function aew() {
 	this.lI = 512, this.afy = 6, this.mu = 0, this.nD = 0, this.my = new Uint16Array(this.lI), this.n9 = new Uint32Array(this.lI), this.afw = new Uint16Array(this.lI), this.aAp = new Uint32Array(this.lI), this.agY = new Uint16Array(this.lI), this
 		.mx = new Uint16Array(this.lI), this.mv = new Uint8Array(this.lI), this.aga = new Uint8Array(this.lI), this.agb = new Uint8Array(this.lI), this.mw = new Array(this.lI), this.n8 = new Uint16Array(this.lI), this.afx = new Uint32Array(this.lI),
 		this.aCM = new Uint16Array(this.lI), this.agc = new Int16Array(this.lI);
-	var aiN = new Float64Array(this.lI);
-	this.l8 = new Uint8Array(aE.fi), this.aCJ = new Uint16Array(aE.fi << 3), this.dv = function() {
-		this.mu = 0, this.nD = 0, this.l8.fill(0), this.mw.fill(null)
-	}, this.nF = function(player, jM) {
-		var iS = bR.gI[0],
-			mz = bR.gN[1],
-			mP = bR.h[0],
-			aiO = this.nD,
-			fl = this.mu,
-			aiP = bP.jT(mP[0]),
-			aiQ = this.l8[player],
-			aiR = (player << 3) + aiQ;
-		this.my[fl] = aiR, this.n9[fl] = aiP, this.afw[fl] = 0, iS < 60 && (bD.h7.h8(player, 60 - iS), iS = 60), this.aAp[fl] = iS, this.agY[fl] = bQ.jW.nF(fl, bP.jV(aiP)), this.mx[fl] = aiO, this.mv[fl] = mz, this.aga[fl] = 0, this.agb[fl] = 0,
-			this.mw[fl] = mP, this.n8[fl] = 0, this.afx[fl] = aiP, this.aCM[fl] = jM + 1, this.agc[fl] = bQ.lt.ahu(mP[mP.length - 1], mz), this.nD = (aiO + 1) % 65536, this.l8[player] = aiQ + 1, this.aCJ[aiR] = fl, this.mu++, bQ.mz.aiF(player,
-				mP[mP.length - 1], mz, aiO, iS), bQ.aAq.show(player, aiO)
-	}, this.eq = function() {
-		bQ.mz.eq(), bQ.t5.eq();
-		var tA = bQ.tA;
-		if (! function(uv) {
-				var aiW, tA = bQ.tA,
-					aiY = tA.ag0;
-				if (bi.l1() % aiY == 0)
-					for (var aOl, n9 = uv.n9, aAp = uv.aAp, agb = uv.agb, afw = uv.afw, agY = uv.agY, fl = uv.mu, agt = bV.fw << 4, aC = fl - 1; 0 <= aC; aC--) 65535 === afw[aC] || agb[aC] || (aOl = aAp[aC], aOl = tA.ag1 + Math.min(tA.ag2 * aOl,
-						tA.ag3) + Math.min(aOl >> 3, tA.ag4), aiW = n9[aC], n9[aC] = aOl = function(uv, aC, g1, agt) {
-						var mP = uv.mw[aC],
-							fl = mP.length,
-							aft = uv.n8[aC],
-							aiP = 0 === aft ? uv.afx[aC] : bP.jT(mP[aft]),
-							ahb = bP.jT(mP[aft + 1]),
-							aia = aiP % agt,
-							aib = ~~((aiP + .5) / agt),
-							aic = ahb % agt,
-							aid = ~~((ahb + .5) / agt),
-							aie = aic - aia,
-							aif = aid - aib,
-							fo = Math.max(~~Math.sqrt(aie * aie + aif * aif + .5), 1),
-							aiP = bO.gC(fo * (65535 - uv.afw[aC]), 65535) + function(mP, from, agt) {
-								for (var eT = 0, fl = mP.length - 1, ib = from; ib < fl; ib++) {
-									var aiP = bP.jT(mP[ib]),
-										ahb = bP.jT(mP[ib + 1]),
-										j6 = ahb % agt - aiP % agt,
-										ahb = bO.gC(ahb, agt) - bO.gC(aiP, agt);
-									eT += ~~Math.sqrt(j6 * j6 + ahb * ahb + .5)
-								}
-								return eT
-							}(mP, aft + 1, agt),
-							hE = bO.gC(65535 * aiP + g1 - 1, g1);
-						if (hE <= 1) return uv.n8[aC] = fl - 2, uv.afw[aC] = 65535, bP.jT(mP[fl - 1]);
-						g1 = bO.gC(65535 * aiP, hE);
-						var aih = uv.afw[aC] + Math.max(bO.gC(g1, fo), 1);
-						for (; 65535 <= aih && aft + 2 < fl;) {
-							aft++, aia = aic, aib = aid, ahb = bP.jT(mP[aft + 1]), aie = (aic = ahb % agt) - aia, aif = (aid = ~~((ahb + .5) / agt)) - aib;
-							var aii = Math.max(~~Math.sqrt(aie * aie + aif * aif + .5), 1);
-							aih = bO.gC((aih - 65535) * fo, aii), fo = aii
-						}
-						if (uv.n8[aC] = aft, 65535 <= aih) return uv.afw[aC] = 65535, ahb;
-						return uv.afw[aC] = aih, aia + bO.gC(aih * aie, 65535) + agt * (aib + bO.gC(aih * aif, 65535))
-					}(uv, aC, aOl * aiY, agt), agY[aC] = bQ.jW.aiZ(agY[aC], aiW, aOl))
-			}(this), bi.l1() % tA.ag5 == 0) {
-			var aC, lz, g5, ev, aij, a2w, aik, iE, aDn, o7, o8, aiP, lh, ail, aim, hJ = aE.fV,
-				em = bQ.lt.aNo(hJ),
-				fl = (uv = this).mu,
-				n9 = uv.n9,
-				my = uv.my,
-				aAp = uv.aAp,
-				aga = uv.aga,
-				jW = bQ.jW.jW,
-				ain = jW.length,
-				aio = bQ.jW.aio,
-				agt = bV.fw << 4,
-				aip = aE.ie,
-				acp = bj.fj,
-				ahr = bQ.tA.agB * bQ.tA.agB,
-				uv = bQ.tA.ag5,
-				aiq = 1 << Math.min(uv + 1, 7),
-				hk = aiN;
-			for (hk.fill(0, 0, fl), aC = 0; aC < fl; aC++)
-				for (aiP = n9[aC], lz = bP.jV(aiP), iE = my[aC] >> 3, o7 = aiP % agt, o8 = ~~((aiP + .5) / agt), aim = aAp[aC], g5 = 0; g5 < 9; g5++)
-					if (!((aij = lz + aio[g5]) < 0 || ain <= aij))
-						for (aik = jW[aij], a2w = aik.length, ev = 0; ev < a2w; ev++) ail = aik[ev], lh = my[ail] >> 3, iE == lh || aip && acp[iE] === acp[lh] && acp[iE] || (lh = n9[ail], (aDn = o7 - lh % agt) * aDn + (aDn = o8 - ~~((lh + .5) /
-							agt)) * aDn < ahr && (hk[ail] += aim));
-			for (aC = 0; aC < fl; aC++) 0 !== hk[aC] && (aAp[aC] = Math.max(aAp[aC] - hk[aC], 0), aga[aC] = aiq);
-			bg.hB(hJ, em - bQ.lt.aNo(hJ), 15)
-		}
-		bi.l1() % tA.ag6 === tA.ag7 && ! function(uv) {
-				for (var g5, fP, aAp = uv.aAp, my = uv.my, t8 = ah.hn, tA = bQ.tA, hK = tA.ag8, fl = uv.mu, aC = 0; aC < fl; aC++) {
-					var player = my[aC] >> 3,
-						aES = af.aPP(player),
-						target = bQ.lt.aCL(aC),
-						gD = aAp[aC];
-					gD < target ? (g5 = Math.min(bO.gC(t8[player], tA.ag9), gD), fP = Math.max(bO.gC(g5, hK), 1), fP = Math.min(fP, target - gD, t8[player]), aAp[aC] = gD + fP, t8[player] -= fP) : target < gD && (g5 = Math.max(bO.gC(aES, tA.agA),
-						gD), fP = Math.max(bO.gC(g5, hK), 1), fP = Math.min(fP, gD - target), aAp[aC] = gD - fP, bD.h7.hA(player, fP))
+	var aiN = new Float64Array(this.lI),
+		fxFake = (this.l8 = new Uint8Array(aE.fi), this.aCJ = new Uint16Array(aE.fi << 3), this.dv = function() {
+			this.mu = 0, this.nD = 0, this.l8.fill(0), this.mw.fill(null)
+		}, this.nF = function(player, jM) {
+			var iS = bR.gI[0],
+				mz = bR.gN[1],
+				mP = bR.h[0],
+				aiO = this.nD,
+				fl = this.mu,
+				aiP = bP.jT(mP[0]),
+				aiQ = this.l8[player],
+				aiR = (player << 3) + aiQ;
+			this.my[fl] = aiR, this.n9[fl] = aiP, this.afw[fl] = 0, iS < 60 && (bD.h7.h8(player, 60 - iS), iS = 60), this.aAp[fl] = iS, this.agY[fl] = bQ.jW.nF(fl, bP.jV(aiP)), this.mx[fl] = aiO, this.mv[fl] = mz, this.aga[fl] = 0, this.agb[fl] =
+				0, this.mw[fl] = mP, this.n8[fl] = 0, this.afx[fl] = aiP, this.aCM[fl] = jM + 1, this.agc[fl] = bQ.lt.ahu(mP[mP.length - 1], mz), this.nD = (aiO + 1) % 65536, this.l8[player] = aiQ + 1, this.aCJ[aiR] = fl, this.mu++, bQ.mz.aiF(
+					player, mP[mP.length - 1], mz, aiO, iS), bQ.aAq.show(player, aiO)
+		}, this.eq = function() {
+			bQ.mz.eq(), bQ.t5.eq();
+			var tA = bQ.tA;
+			if (! function(uv) {
+					var aiW, tA = bQ.tA,
+						aiY = tA.ag0;
+					if (__fx.shipSmoothing.onTick(uv, bi.l1(), aiY, bV.fw << 4), bi.l1() % aiY == 0)
+						for (var aOl, n9 = uv.n9, aAp = uv.aAp, agb = uv.agb, afw = uv.afw, agY = uv.agY, fl = uv.mu, agt = bV.fw << 4, aC = fl - 1; 0 <= aC; aC--) 65535 === afw[aC] || agb[aC] || (aOl = aAp[aC], aOl = tA.ag1 + Math.min(tA.ag2 *
+							aOl, tA.ag3) + Math.min(aOl >> 3, tA.ag4), aiW = n9[aC], n9[aC] = aOl = v9(uv, aC, aOl * aiY, agt), agY[aC] = bQ.jW.aiZ(agY[aC], aiW, aOl))
+				}(this), bi.l1() % tA.ag5 == 0) {
+				var aC, lz, g5, ev, aij, a2w, aik, iE, aDn, o7, o8, aiP, lh, ail, aim, hJ = aE.fV,
+					em = bQ.lt.aNo(hJ),
+					fl = (uv = this).mu,
+					n9 = uv.n9,
+					my = uv.my,
+					aAp = uv.aAp,
+					aga = uv.aga,
+					jW = bQ.jW.jW,
+					ain = jW.length,
+					aio = bQ.jW.aio,
+					agt = bV.fw << 4,
+					aip = aE.ie,
+					acp = bj.fj,
+					ahr = bQ.tA.agB * bQ.tA.agB,
+					uv = bQ.tA.ag5,
+					aiq = 1 << Math.min(uv + 1, 7),
+					hk = aiN;
+				for (hk.fill(0, 0, fl), aC = 0; aC < fl; aC++)
+					for (aiP = n9[aC], lz = bP.jV(aiP), iE = my[aC] >> 3, o7 = aiP % agt, o8 = ~~((aiP + .5) / agt), aim = aAp[aC], g5 = 0; g5 < 9; g5++)
+						if (!((aij = lz + aio[g5]) < 0 || ain <= aij))
+							for (aik = jW[aij], a2w = aik.length, ev = 0; ev < a2w; ev++) ail = aik[ev], lh = my[ail] >> 3, iE == lh || aip && acp[iE] === acp[lh] && acp[iE] || (lh = n9[ail], (aDn = o7 - lh % agt) * aDn + (aDn = o8 - ~~((lh +
+								.5) / agt)) * aDn < ahr && (hk[ail] += aim));
+				for (aC = 0; aC < fl; aC++) 0 !== hk[aC] && (aAp[aC] = Math.max(aAp[aC] - hk[aC], 0), aga[aC] = aiq);
+				bg.hB(hJ, em - bQ.lt.aNo(hJ), 15)
+			}
+			bi.l1() % tA.ag6 === tA.ag7 && ! function(uv) {
+					for (var g5, fP, aAp = uv.aAp, my = uv.my, t8 = ah.hn, tA = bQ.tA, hK = tA.ag8, fl = uv.mu, aC = 0; aC < fl; aC++) {
+						var player = my[aC] >> 3,
+							aES = af.aPP(player),
+							target = bQ.lt.aCL(aC),
+							gD = aAp[aC];
+						gD < target ? (g5 = Math.min(bO.gC(t8[player], tA.ag9), gD), fP = Math.max(bO.gC(g5, hK), 1), fP = Math.min(fP, target - gD, t8[player]), aAp[aC] = gD + fP, t8[player] -= fP) : target < gD && (g5 = Math.max(bO.gC(aES, tA
+							.agA), gD), fP = Math.max(bO.gC(g5, hK), 1), fP = Math.min(fP, gD - target), aAp[aC] = gD - fP, bD.h7.hA(player, fP))
+					}
+				}(this),
+				function(uv) {
+					for (var aAp = uv.aAp, aga = uv.aga, aC = uv.mu - 1; 0 <= aC; aC--) aga[aC] = aga[aC] >> 1, 0 === aAp[aC] && (bQ.n3.afd(aC), bQ.aNr.agT(aC))
+				}(this)
+		}, this.fxNames = {
+			fxPos: "n9",
+			fxId: "mx",
+			fxPath: "mw",
+			fxSeg: "n8",
+			fxProgress: "afw",
+			fxTroops: "aAp",
+			fxBlocked: "agb",
+			fxCount: "mu"
+		}, null);
+
+	function v9(uv, aC, g1, agt) {
+		var mP = uv.mw[aC],
+			fl = mP.length,
+			aft = uv.n8[aC],
+			aiP = 0 === aft ? uv.afx[aC] : bP.jT(mP[aft]),
+			aie = (aic = (ahb = bP.jT(mP[aft + 1])) % agt) - (aia = aiP % agt),
+			aif = (aid = ~~((ahb + .5) / agt)) - (aib = ~~((aiP + .5) / agt)),
+			fo = Math.max(~~Math.sqrt(aie * aie + aif * aif + .5), 1),
+			aiP = bO.gC(fo * (65535 - uv.afw[aC]), 65535) + function(mP, from, agt) {
+				for (var eT = 0, fl = mP.length - 1, ib = from; ib < fl; ib++) {
+					var aiP = bP.jT(mP[ib]),
+						ahb = bP.jT(mP[ib + 1]),
+						j6 = ahb % agt - aiP % agt,
+						ahb = bO.gC(ahb, agt) - bO.gC(aiP, agt);
+					eT += ~~Math.sqrt(j6 * j6 + ahb * ahb + .5)
 				}
-			}(this),
-			function(uv) {
-				for (var aAp = uv.aAp, aga = uv.aga, aC = uv.mu - 1; 0 <= aC; aC--) aga[aC] = aga[aC] >> 1, 0 === aAp[aC] && (bQ.n3.afd(aC), bQ.aNr.agT(aC))
-			}(this)
+				return eT
+			}(mP, aft + 1, agt),
+			hE = bO.gC(65535 * aiP + g1 - 1, g1);
+		if (hE <= 1) return uv.n8[aC] = fl - 2, uv.afw[aC] = 65535, bP.jT(mP[fl - 1]);
+		g1 = bO.gC(65535 * aiP, hE);
+		for (var aih = uv.afw[aC] + Math.max(bO.gC(g1, fo), 1); 65535 <= aih && aft + 2 < fl;) {
+			aft++;
+			var ahb, aic, aid, aia = aic,
+				aib = aid,
+				aie = (aic = (ahb = bP.jT(mP[aft + 1])) % agt) - aia,
+				aif = (aid = ~~((ahb + .5) / agt)) - aib,
+				aii = Math.max(~~Math.sqrt(aie * aie + aif * aif + .5), 1),
+				aih = bO.gC((aih - 65535) * fo, aii),
+				fo = aii
+		}
+		return uv.n8[aC] = aft, 65535 <= aih ? (uv.afw[aC] = 65535, ahb) : (uv.afw[aC] = aih, aia + bO.gC(aih * aie, 65535) + agt * (aib + bO.gC(aih * aif, 65535)))
+	}
+	this.fxPredict = function(fxIndex, fxOut) {
+		var fxCount = 0,
+			fxPoints = (fxOut[fxCount++] = this.n9[fxIndex], this.mw[fxIndex]);
+		if (65535 !== this.afw[fxIndex] && !this.agb[fxIndex] && null !== fxPoints) {
+			for (var fxConfig = bQ.tA, fxTroops = this.aAp[fxIndex], fxTroops = fxConfig.ag1 + Math.min(fxConfig.ag2 * fxTroops, fxConfig.ag3) + Math.min(fxTroops >> 3, fxConfig.ag4), fxFrom = ((fxFake = null === fxFake ? {
+					mw: null,
+					afx: null,
+					n8: new Uint16Array(this.n9.length),
+					afw: new Uint16Array(this.n9.length)
+				} : fxFake).mw = this.mw, fxFake.afx = this.afx, this.n8[fxIndex]), fxTroops = (fxFake.n8[fxIndex] = fxFrom, fxFake.afw[fxIndex] = this.afw[fxIndex], v9(fxFake, fxIndex, fxTroops * fxConfig.ag0, bV.fw << 4)), fxTo = fxFake.n8[
+					fxIndex], fxK = fxFrom + 1; fxK <= fxTo && fxCount < fxOut.length - 1; fxK++) fxOut[fxCount++] = bP.jT(fxPoints[fxK]);
+			fxOut[fxCount++] = fxTroops
+		}
+		return fxCount
 	}
 }
 
@@ -13682,8 +13707,9 @@ function afG() {
 		var aBn;
 		return ajc() ? -1 === (aBn = this.aBo()) ? -1 !== (mJ = function(mJ, mK) {
 			for (var player = aE.fV, lz = bQ.z, w3 = player << 3, w4 = w3 + lz.l8[player], ajd = bP.j7(mJ), aje = bP.jA(mK), ahr = 0, aXo = -1, aC = w3; aC < w4; aC++) {
-				var j6, j9, n6 = lz.aCJ[aC];
-				bQ.s8.ajT(n6) && (j6 = ajd - bP.j8(lz.n9[n6]), j9 = aje - bP.jB(lz.n9[n6]), j6 = j6 * j6 + j9 * j9, (j9 = bQ.a9e.ahs(lz.aAp[n6])) * j9 < j6 && !bQ.a27.agy(n6, mJ, mK) || (-1 === aXo || j6 < ahr) && (ahr = j6, aXo = n6))
+				var j6, fxDrawn, n6 = lz.aCJ[aC];
+				bQ.s8.ajT(n6) && (fxDrawn = __fx.shipSmoothing.smoothedPosition(n6, lz.n9[n6]), j6 = ajd - bP.j8(fxDrawn), fxDrawn = aje - bP.jB(fxDrawn), j6 = j6 * j6 + fxDrawn * fxDrawn, (fxDrawn = bQ.a9e.ahs(lz.aAp[n6])) * fxDrawn <
+					j6 && !bQ.a27.agy(n6, mJ, mK) || (-1 === aXo || j6 < ahr) && (ahr = j6, aXo = n6))
 			}
 			return aXo
 		}(mJ, mK)) && (ajb = bQ.z.mx[mJ], !0) : (function(n6, fX) {
