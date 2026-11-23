@@ -24,6 +24,7 @@ var settings = {
   displayTickNumber: true,
   useFullscreenMode: false,
   hoveringTooltip: true,
+  smoothShipMovement: true,
   applyRecommendedTerritorialSettings: true,
   //"hideAllLinks": false,
   realisticNames: false,
@@ -505,6 +506,12 @@ const settingsManager = new (function () {
       type: "checkbox",
       label: "Hovering tooltip",
       note: "Display map territory info constantly (on mouse hover) instead of only when right clicking on the map",
+    },
+    {
+      for: "smoothShipMovement",
+      type: "checkbox",
+      label: "Smooth ship movement",
+      note: "Restores smooth ship movement rather than the jumpy movement on every tick",
     },
     {
       for: "applyRecommendedTerritorialSettings",
