@@ -36,9 +36,10 @@ const shipSmoothing = new (function () {
     }
 
     function curve(e, phase, out) {
-        const u = Math.min(Math.max((phase - e.startPhase) / Math.max(stepTicks - e.startPhase, MIN_SPAN_TICKS), 0), 1);
+        const minSpan = Math.min(MIN_SPAN_TICKS, stepTicks);
+        const u = Math.min(Math.max((phase - e.startPhase) / Math.max(stepTicks - e.startPhase, minSpan), 0), 1);
         const corners = pointAt(e, u * e.length, out);
-        const fade = 1 - Math.min(Math.max((phase - e.offPhase) / Math.max(stepTicks - e.offPhase, MIN_SPAN_TICKS), 0), 1);
+        const fade = 1 - Math.min(Math.max((phase - e.offPhase) / Math.max(stepTicks - e.offPhase, minSpan), 0), 1);
         out[0] += e.offsetX * fade; out[1] += e.offsetY * fade;
         return corners;
     }
